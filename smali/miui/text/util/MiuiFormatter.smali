@@ -55,9 +55,6 @@
 
     const/4 v6, 0x0
 
-    .line 38
-    if-nez p0, :cond_0
-
     .line 39
     const-string v3, ""
 
