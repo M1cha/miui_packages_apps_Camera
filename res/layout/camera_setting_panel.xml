@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/setting_view_popup_layout" android:background="@drawable/ic_camera_setting_background_body" android:paddingLeft="@dimen/setting_view_popup_layout_paddingLeft" android:paddingTop="@dimen/setting_view_popup_layout_paddingTop" android:paddingRight="@dimen/setting_view_popup_layout_paddingRight" android:paddingBottom="@dimen/setting_view_popup_layout_paddingBottom" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/control_panel_bottom"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/setting_view_popup_parent" android:focusable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <com.android.camera.ui.SettingScreenView android:id="@id/setting_view" android:paddingLeft="4.0dip" android:paddingRight="4.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:measureAllChildren="false">
+            <com.android.camera.ui.ScreenView android:gravity="center" android:id="@id/setting_screens" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </com.android.camera.ui.SettingScreenView>
+    </RelativeLayout>
+</LinearLayout>

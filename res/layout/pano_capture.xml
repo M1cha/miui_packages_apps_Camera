@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/camera_app_root" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/camera_control_top" />
+    <RelativeLayout android:id="@id/frame_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.67">
+            <View android:layout_gravity="center" android:id="@id/pano_preview_area" android:background="@drawable/ic_pan_border_fast" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <com.android.camera.ui.RotateLayout android:id="@id/pano_capture_too_fast_textview_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/pano_capture_too_fast_textview" android:visibility="gone" android:layout_width="@dimen/pano_capture_too_fast_text_height" android:layout_height="wrap_content" android:text="@string/pano_too_fast_prompt" />
+        </com.android.camera.ui.RotateLayout>
+    </RelativeLayout>
+    <include android:id="@id/camera_popup_menu" layout="@layout/camera_popup" />
+    <include layout="@layout/zoom_control" />
+    <include layout="@layout/camera_control_bottom" />
+    <include layout="@layout/pano_start_hint" />
+    <include layout="@layout/camera_simple_mode_exit" />
+    <include layout="@layout/pano_progress" />
+    <include layout="@layout/on_screen_hint" />
+</RelativeLayout>

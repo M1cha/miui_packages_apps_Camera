@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.camera.ui.HorizontalSettingPopup style="@style/SettingPopupWindow"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:id="@id/title" style="@style/PopupTitleText" />
+        </FrameLayout>
+        <HorizontalScrollView android:id="@id/settingHorList" android:paddingTop="18.0dip" style="@style/SettingItemListHorizontal">
+            <LinearLayout android:id="@id/settingList" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </HorizontalScrollView>
+        <View style="@style/PopupTitleSeperator" />
+    </LinearLayout>
+</com.android.camera.ui.HorizontalSettingPopup>

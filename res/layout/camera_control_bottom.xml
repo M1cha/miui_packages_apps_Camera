@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/control_panel_bottom" android:paddingLeft="@dimen/camera_control_bottom_paddingLeft" android:paddingRight="@dimen/camera_control_bottom_paddingRight" android:layout_width="fill_parent" android:layout_height="@dimen/camera_control_bottom_height" android:layout_alignParentBottom="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/review_thumbnail" />
+    <include layout="@layout/review_control" />
+    <com.android.camera.ShutterButton android:id="@id/shutter_button" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:layout_centerVertical="true">
+        <com.android.camera.ui.RotateImageView android:gravity="center_vertical" android:id="@id/shutter_button_background" android:focusable="false" android:clickable="false" android:src="@drawable/btn_shutter_bg" android:contentDescription="@string/accessibility_shutter_button" style="@style/ReviewThumbnailMask" />
+        <com.android.camera.ui.RotateImageView android:gravity="center_vertical" android:id="@id/shutter_button_imagesource" android:focusable="false" android:clickable="false" android:src="@drawable/btn_shutter" android:contentDescription="@string/accessibility_shutter_button" style="@style/ReviewThumbnailMask" />
+    </com.android.camera.ShutterButton>
+    <com.android.camera.ui.SettingButton android:id="@id/show_setting_panel_button" android:src="@drawable/btn_setting_button_bg_holo_16_9" android:layout_alignParentRight="true" style="@style/RotateImageViewStyle" />
+</RelativeLayout>

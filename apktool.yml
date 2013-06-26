@@ -1,0 +1,16 @@
+version: 1.5.3.69ee710e30
+apkFileName: Camera.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+  - 6
+sdkInfo:
+  minSdkVersion: '16'
+  targetSdkVersion: '16'
+packageInfo:
+  cur_package: com.android.camera
+  cur_package_id: '127'
+  orig_package: com.android.camera
+compressionType: false
+packageId: '127'

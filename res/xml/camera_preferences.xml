@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceGroup camera:title="@string/pref_camera_settings_category"
+  xmlns:camera="http://schemas.android.com/apk/res/com.android.camera">
+    <IconListPreference camera:key="pref_camera_panoramamode_key" camera:singleIcon="@drawable/bg_indicator_panorama" />
+    <IconListPreference camera:key="pref_camera_ae_bracket_hdr_key" camera:singleIcon="@drawable/bg_indicator_hdr" />
+    <IconListPreference camera:key="pref_camera_hand_night_key" camera:singleIcon="@drawable/bg_indicator_hand_night" />
+    <IconListPreference camera:key="pref_audio_capture" camera:singleIcon="@drawable/bg_indicator_audio_capture" />
+    <IconListPreference camera:key="pref_camera_hand_night" camera:singleIcon="@drawable/ic_camera_settings_hand_night" />
+    <IconListPreference camera:title="@string/pref_camera_coloreffect_title" camera:key="pref_camera_coloreffect_key" camera:defaultValue="@string/pref_camera_coloreffect_default" camera:entryValues="@array/pref_camera_coloreffect_entryvalues" camera:entries="@array/pref_camera_coloreffect_entries" camera:singleIcon="@drawable/bg_indicator_coloreffect" camera:largeIcons="@array/camera_coloreffect_largeIcons" />
+    <IconListPreference camera:title="@string/pref_exposure_title" camera:key="pref_camera_exposure_key" camera:defaultValue="@string/pref_exposure_default" camera:icons="@array/exposure_icons" camera:singleIcon="@drawable/bg_indicator_exposure" />
+    <IconListPreference camera:title="@string/pref_camera_iso_title" camera:key="pref_camera_iso_key" camera:defaultValue="@string/pref_camera_iso_default" camera:entryValues="@array/pref_camera_iso_entryvalues" camera:entries="@array/pref_camera_iso_entries" camera:icons="@array/iso_icons" camera:singleIcon="@drawable/bg_indicator_iso" />
+    <IconListPreference camera:title="@string/pref_camera_whitebalance_title" camera:key="pref_camera_whitebalance_key" camera:defaultValue="@string/pref_camera_whitebalance_default" camera:entryValues="@array/pref_camera_whitebalance_entryvalues" camera:entries="@array/pref_camera_whitebalance_entries" camera:icons="@array/whitebalance_icons" camera:singleIcon="@drawable/bg_indicator_whitebalance" />
+    <IconListPreference camera:key="pref_key_camera_referenceline" camera:defaultValue="@string/pref_camera_referenceline_entryvalue_off" camera:entryValues="@array/pref_key_camera_referenceline_entryvalues" camera:entries="@array/pref_key_camera_referenceline_entries" camera:largeIcons="@array/pref_key_camera_referenceline_largeicons" />
+    <IconListPreference camera:key="pref_settings" camera:singleIcon="@drawable/bg_indicator_setting" />
+    <IconListPreference camera:title="@string/pref_camera_id_title" camera:key="pref_camera_id_key" camera:defaultValue="@string/pref_camera_id_default" />
+</PreferenceGroup>

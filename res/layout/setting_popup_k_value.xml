@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.camera.ui.SettingPopupK style="@style/SettingPopupWindow"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:id="@id/title" android:text="@string/pref_camera_whitebalance_k_value_title" style="@style/PopupTitleText" />
+        </FrameLayout>
+        <View style="@style/PopupTitleSeperator" />
+        <LinearLayout android:clickable="true" style="@style/SettingItemList">
+            <TextView android:textSize="18.0sp" android:gravity="center_horizontal" android:id="@id/k_value" android:paddingTop="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/pref_camera_current_k_value" />
+            <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:gravity="center" android:id="@id/k_reduce" android:background="@drawable/ic_k_value_reduce_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textSize="30.0sp" android:id="@id/k_value_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pref_camera_whitebalance_k_value_title" />
+                <ImageView android:gravity="center" android:id="@id/k_add" android:background="@drawable/ic_k_value_add_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:gravity="center_horizontal" android:id="@id/k_return" android:background="@drawable/ic_k_value_return_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.android.camera.ui.SettingPopupK>

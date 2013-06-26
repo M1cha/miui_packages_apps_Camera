@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.camera.ui.RotateImageView android:id="@id/thumbnail_mask" android:background="@drawable/border_last_picture_16_9" android:focusable="false" android:visibility="gone" android:clickable="true" android:onClick="onThumbnailClicked" android:contentDescription="@string/accessibility_review_thumbnail" style="@style/ReviewThumbnailMask" />
+    <com.android.camera.ui.RotateImageView android:gravity="center_vertical" android:id="@id/thumbnail" android:focusable="false" android:visibility="gone" android:clickable="false" android:contentDescription="@string/accessibility_review_thumbnail" style="@style/ReviewThumbnail" />
+    <com.android.camera.ui.RotateImageView android:gravity="center_vertical" android:id="@id/thumbnail_bg" android:background="@drawable/ic_thumbnail_bg_16_9" android:focusable="false" android:visibility="gone" android:clickable="false" android:contentDescription="@string/accessibility_review_thumbnail" style="@style/ReviewThumbnailMask" />
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/gl_root_group" />
+    <RelativeLayout android:id="@id/camera_app_root" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include layout="@layout/preview_frame" />
+        <include layout="@layout/priority_indicators" />
+        <include layout="@layout/camera_control_top" />
+        <include android:id="@id/camera_popup_menu" layout="@layout/camera_popup" />
+        <include layout="@layout/camera_setting_panel" />
+        <include layout="@layout/camera_control_bottom" />
+        <include layout="@layout/zoom_control" />
+        <include layout="@layout/on_screen_hint" />
+        <include layout="@layout/camera_hdr_exit" />
+        <include layout="@layout/camera_simple_mode_exit" />
+        <include layout="@layout/qrcode_viewfinder_layout" />
+    </RelativeLayout>
+    <include layout="@layout/qrcode_fragment_layout" />
+</FrameLayout>

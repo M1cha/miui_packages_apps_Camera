@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/review_control" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.camera.ui.RotateImageView android:id="@id/btn_done" android:visibility="gone" android:src="@drawable/ic_image_capture_done" android:layout_alignParentRight="true" android:onClick="onReviewDoneClicked" style="@style/ReviewControlIcon" />
+    <com.android.camera.ui.RotateImageView android:id="@id/btn_cancel" android:visibility="gone" android:src="@drawable/ic_image_capture_cancel" android:layout_alignParentLeft="true" android:onClick="onReviewCancelClicked" style="@style/ReviewControlIcon" />
+</RelativeLayout>

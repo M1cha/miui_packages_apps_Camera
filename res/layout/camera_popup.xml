@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.camera.ui.SettingPopupView android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@id/control_panel_bottom" android:layout_centerHorizontal="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:id="@id/setting_grid_top" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/setting_grid_top_left" android:background="@drawable/ic_camera_popup_top_left" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageView android:id="@id/setting_grid_top_middle" android:background="@drawable/ic_camera_popup_top" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <ImageView android:id="@id/setting_grid_top_right" android:background="@drawable/ic_camera_popup_top_right" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/setting_panel_content" android:background="@drawable/ic_camera_popup_content" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/setting_grid_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/setting_grid_bottom_left" android:background="@drawable/ic_camera_popup_bottom_left" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageView android:id="@id/setting_grid_bottom_middle" android:background="@drawable/ic_camera_popup_bottom_middle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <ImageView android:id="@id/setting_grid_bottom_anchor" android:background="@drawable/ic_camera_popup_bottom_anchor" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageView android:id="@id/setting_grid_bottom_right" android:background="@drawable/ic_camera_popup_bottom_right" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <com.android.camera.ui.SplitLineDrawer android:id="@id/split_line_view" android:layout_width="100.0dip" android:layout_height="100.0dip" />
+</com.android.camera.ui.SettingPopupView>

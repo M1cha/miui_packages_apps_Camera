@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android="@string/pref_camcorder_settings_category"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_settings_mode">
+        <CheckBoxPreference android:persistent="false" android:title="@string/simple_mode_title" android:key="pref_layout_mode_key" android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_grp_advanced_settings">
+        <CheckBoxPreference android:persistent="false" android:title="@string/pref_camera_recordlocation_title" android:key="pref_camera_recordlocation_key" android:defaultValue="false" />
+        <CheckBoxPreference android:persistent="false" android:title="@string/pref_video_captrue_ability_title" android:key="pref_video_captrue_ability_key" android:defaultValue="false" />
+        <com.android.camera.ui.PreviewListPreference android:persistent="false" android:entries="@array/pref_camera_volumekey_function_entries" android:title="@string/pref_camera_volumekey_function_title" android:key="pref_camera_volumekey_function_key" android:defaultValue="@string/pref_camera_volumekey_function_default" android:entryValues="@array/pref_camera_volumekey_function_entryvalues" />
+        <com.android.camera.ui.PreviewListPreference android:persistent="false" android:entries="@array/pref_camera_sound_entries" android:title="@string/pref_camera_sound_title" android:key="pref_camera_sound_key" android:defaultValue="@string/pref_camera_sound_default" android:entryValues="@array/pref_camera_sound_entryvalues" />
+        <com.android.camera.ui.PreviewListPreference android:persistent="false" android:entries="@array/pref_video_continuous_focus_entries" android:title="@string/pref_video_continuous_focus" android:key="pref_camera_continuousaf_key" android:defaultValue="@string/pref_video_continuous_focus_entryvalue_default" android:entryValues="@array/pref_video_continuous_focus_entryvalues" />
+        <com.android.camera.ui.PreviewListPreference android:persistent="false" android:entries="@array/pref_camera_hfr_entries" android:title="@string/pref_camera_hfr_title" android:key="pref_camera_hfr_key" android:defaultValue="@string/pref_camera_hfr_default" android:entryValues="@array/pref_camera_hfr_entryvalues" />
+        <com.android.camera.ui.PreviewListPreference android:persistent="false" android:entries="@array/pref_video_time_lapse_frame_interval_entries" android:title="@string/pref_video_time_lapse_frame_interval_title" android:key="pref_video_time_lapse_frame_interval_key" android:defaultValue="@string/pref_video_time_lapse_frame_interval_default" android:entryValues="@array/pref_video_time_lapse_frame_interval_entryvalues" />
+        <com.android.camera.ui.PreviewListPreference android:persistent="false" android:entries="@array/pref_camera_movie_solid_entries" android:title="@string/pref_camera_movie_solid_title" android:key="pref_camera_movie_solid_key" android:defaultValue="@string/pref_camera_movie_solid_default" android:entryValues="@array/pref_camera_movie_solid_entryvalues" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_grp_restore_settings">
+        <Preference android:persistent="false" android:title="@string/confirm_restore_title" android:key="pref_restore" />
+    </PreferenceCategory>
+</PreferenceScreen>

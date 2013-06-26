@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.android.camera.ui.ZoomControlBar android:gravity="center_vertical" android:id="@id/zoom_control" android:paddingLeft="14.0dip" android:paddingRight="14.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dip" android:layout_above="@id/control_panel_bottom" android:layout_centerVertical="true" />
+</merge>

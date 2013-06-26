@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceGroup camera:title="@string/pref_camcorder_settings_category"
+  xmlns:camera="http://schemas.android.com/apk/res/com.android.camera">
+    <IconListPreference camera:key="pref_video_hdr_key" camera:singleIcon="@drawable/bg_indicator_hdr" />
+    <IconListPreference camera:key="pref_settings" camera:singleIcon="@drawable/bg_indicator_setting" />
+    <IconListPreference camera:title="@string/pref_camera_coloreffect_title" camera:key="pref_camera_coloreffect_key" camera:defaultValue="@string/pref_camera_coloreffect_default" camera:entryValues="@array/pref_camera_coloreffect_entryvalues" camera:entries="@array/pref_camera_coloreffect_entries" camera:singleIcon="@drawable/bg_indicator_coloreffect" camera:largeIcons="@array/camera_coloreffect_largeIcons" />
+    <IconListPreference camera:title="@string/pref_video_quality_title" camera:key="pref_video_quality_key" camera:defaultValue="@string/pref_video_quality_default" camera:entryValues="@array/pref_video_quality_entryvalues" camera:entries="@array/pref_video_quality_entries" camera:icons="@array/video_quality_icons" camera:largeIcons="@array/video_quality_largeicons" />
+    <IconListPreference camera:title="@string/pref_camera_whitebalance_title" camera:key="pref_camera_whitebalance_key" camera:defaultValue="@string/pref_camera_whitebalance_default" camera:entryValues="@array/pref_camera_whitebalance_entryvalues" camera:entries="@array/pref_camera_whitebalance_entries" camera:icons="@array/whitebalance_icons" camera:singleIcon="@drawable/bg_indicator_whitebalance" />
+    <IconListPreference camera:title="@string/pref_video_speed_title" camera:key="pref_video_speed_key" camera:defaultValue="@string/pref_video_speed_default" camera:entryValues="@array/pref_video_speed_entryvalues" camera:entries="@array/pref_video_speed_entries" camera:icons="@array/pref_video_speed_largeicons" camera:singleIcon="@drawable/bg_indicator_video_speed" />
+    <IconListPreference camera:title="@string/pref_camera_id_title" camera:key="pref_camera_id_key" camera:defaultValue="@string/pref_camera_id_default" />
+</PreferenceGroup>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.camera.ui.RestrictRotateLayout android:id="@id/on_screen_indicators" android:layout_below="@id/control_panel_top" style="@style/OnScreenIndicators"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="horizontal" android:id="@id/on_screen_indicators_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
+            <com.android.camera.ui.RotateImageView android:id="@id/onscreen_gps_indicator" style="@style/OnScreenIndicator" />
+            <com.android.camera.ui.RotateImageView android:id="@id/onscreen_panorama_indicator" android:src="@drawable/ic_indicators_panorama" style="@style/OnScreenIndicator" />
+            <com.android.camera.ui.RotateImageView android:id="@id/onscreen_audio_indicator" android:src="@drawable/ic_indicators_audio" style="@style/OnScreenIndicator" />
+            <com.android.camera.ui.RotateImageView android:id="@id/onscreen_hdr_indicator" android:src="@drawable/ic_indicators_hdr" style="@style/OnScreenIndicator" />
+            <com.android.camera.ui.RotateImageView android:id="@id/onscreen_coloreffect_indicator" android:src="@drawable/ic_indicators_coloreffect" style="@style/OnScreenIndicator" />
+            <com.android.camera.ui.RotateImageView android:id="@id/onscreen_white_balance_indicator" android:src="@drawable/ic_indicators_whitebalance" style="@style/OnScreenIndicator" />
+            <com.android.camera.ui.RotateImageView android:id="@id/onscreen_exposure_indicator" android:src="@drawable/ic_indicators_expoure" style="@style/OnScreenIndicator" />
+            <com.android.camera.ui.RotateImageView android:id="@id/onscreen_focus_indicator" style="@style/OnScreenIndicator" />
+            <com.android.camera.ui.RotateImageView android:id="@id/onscreen_scene_indicator" android:src="@drawable/ic_indicators_scn" style="@style/OnScreenIndicator" />
+            <com.android.camera.ui.RotateImageView android:id="@id/onscreen_iso_indicator" android:src="@drawable/ic_indicators_iso" style="@style/OnScreenIndicator" />
+            <com.android.camera.ui.RotateImageView android:id="@id/onscreen_referenceline_indicator" android:src="@drawable/ic_indicators_referenceline" style="@style/OnScreenIndicator" />
+        </LinearLayout>
+        <com.android.camera.ui.RotateTextView android:textSize="50.0sp" android:textColor="#90ff8000" android:gravity="right" android:id="@id/multi_snap_number" android:visibility="gone" android:layout_alignParentRight="true" style="@style/RotateImageViewStyle" />
+    </RelativeLayout>
+</com.android.camera.ui.RestrictRotateLayout>

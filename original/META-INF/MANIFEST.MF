@@ -1,0 +1,1293 @@
+Manifest-Version: 1.0
+Created-By: 1.6.0_26 (Sun Microsystems Inc.)
+
+Name: res/drawable-hdpi/ic_timelapse_none.png
+SHA1-Digest: A1IJJplA3kJZwtDEtencQ/NkUVU=
+
+Name: res/layout/pano_progress.xml
+SHA1-Digest: FE01UsY7dyiBh5x582Badn9sCsA=
+
+Name: res/drawable-xhdpi/ic_quality_720p_pressed.png
+SHA1-Digest: tMY++YeYqaDNH5fTb5LGrfNr2/Q=
+
+Name: res/drawable-xhdpi/btn_shutter.png
+SHA1-Digest: w6DqUDUaB0klzoJ6RvNUHYDk6wQ=
+
+Name: res/menu/selection.xml
+SHA1-Digest: Yn9Mgr1T5Pl/6A7OzRREIBZexYY=
+
+Name: res/layout/qrcode_fragment_layout.xml
+SHA1-Digest: yAhBei9R16BmMZczDpBRyPcHALM=
+
+Name: res/drawable-xhdpi/ic_focus_focused.png
+SHA1-Digest: y4iVTZSAY0GEpj/YCY4PUCetnoI=
+
+Name: res/drawable-xhdpi/ic_thumbnail_bg_16_9.png
+SHA1-Digest: VbjFE8jeQ1U2b+gyfIvlw0l6Gao=
+
+Name: res/drawable-xhdpi/dialog_full_holo_dark.9.png
+SHA1-Digest: j1AGy6scejGAKbWMu/kUCv/BRM0=
+
+Name: res/drawable-xhdpi/ic_video_speed_fast.png
+SHA1-Digest: qQKwStIz3Ek/JiXHug2bnAYBAIU=
+
+Name: res/layout/setting_popup_k_value.xml
+SHA1-Digest: 7DEpfwwWMxHK/RhpmevCmFo+mX8=
+
+Name: res/drawable-xhdpi/ic_camera_simple_mode_setting_pressed.png
+SHA1-Digest: vm5AN6LvSEPc44B7MEvx3R/dZec=
+
+Name: res/drawable-xhdpi/ic_switch_video.png
+SHA1-Digest: +SbWDfpPc/Qt4QBOQXMEl1rq9cU=
+
+Name: res/drawable-hdpi/ic_indicators_whitebalance.png
+SHA1-Digest: RmzSYh4zlVrx0ZRLQrT/CMKlKqY=
+
+Name: res/drawable-xhdpi/overscroll_edge.png
+SHA1-Digest: 9nR+2/hjJjCSifys/YisRTtFi3M=
+
+Name: res/drawable/bg_video_speed_slow.xml
+SHA1-Digest: WbHzMx4Cwm0eWpXCnCo4zpJATkI=
+
+Name: res/drawable/bg_white_balance_sunlight.xml
+SHA1-Digest: Ao3OOEQxT6+FxslnkMPZsN0zIHA=
+
+Name: res/xml/camera_flashmode_preferences.xml
+SHA1-Digest: kPnPXbZadRNdK8/zoq0+dhpnj+0=
+
+Name: res/drawable-xhdpi/ic_iso_200_pressed.png
+SHA1-Digest: UAtIHA4ESVw78COlEhhRr9fandE=
+
+Name: res/drawable/bg_quality_720p.xml
+SHA1-Digest: 2xyeIHyGw3fa51CAPBPdc23DGvs=
+
+Name: res/drawable-xhdpi/ic_thumbnail_bg.png
+SHA1-Digest: +xanEU01MyzYpzR2Fug+uuJzhnE=
+
+Name: res/drawable-xhdpi/ic_iso_3200.png
+SHA1-Digest: HJ+daa0cZzXy8+BhDVfqb3aaJBE=
+
+Name: res/drawable-xhdpi/ic_indicators_iso.png
+SHA1-Digest: bjuQnqn2HBXpHMkZy+q5nxLFYZU=
+
+Name: res/drawable-xhdpi/btn_setting_button_bg_holo_16_9.png
+SHA1-Digest: PCd5lubczb/AUc6AW5WKnvkg8JA=
+
+Name: res/drawable-xhdpi/ic_camera_exposure3.png
+SHA1-Digest: oaasV3mu+uI4/vr4yV9RXYcw4kc=
+
+Name: res/drawable-xhdpi/ic_camera_scenemode_backlight.png
+SHA1-Digest: qj0TGdGs6d1whylHjTiVq0i7yLo=
+
+Name: res/xml/camera_other_preferences.xml
+SHA1-Digest: wJ/eSTEtgyO8Je49/+IMc18u3X4=
+
+Name: res/drawable/btn_find_qrcode.xml
+SHA1-Digest: T8Zg3YqiL5WYRAKH7rD5IxaiK6M=
+
+Name: res/drawable-xhdpi/ic_qrcode_web_symbol.png
+SHA1-Digest: mtgVURAI/jHlR+xZhLZ2EhKJO0o=
+
+Name: res/drawable-xhdpi/ic_camera_settings_while_balance_pressed.png
+SHA1-Digest: h+hYmU4sqi4nWjTDsNE4wlJKVoM=
+
+Name: res/drawable-xhdpi/screen_view_slide_bar_bg.9.png
+SHA1-Digest: i+uXOV9nXEDFP23m6g2AYVXRaLA=
+
+Name: res/layout/grid_setting_item.xml
+SHA1-Digest: U9tePxwiOBSm7Q1PgdDs2fFXNVI=
+
+Name: res/drawable-xhdpi/bg_list_pressed.9.png
+SHA1-Digest: dpt9g/ImRwcuCdYTXmLXTT4oF0M=
+
+Name: res/drawable-xhdpi/ic_camera_coloreffect_posterize.png
+SHA1-Digest: f80AYcd3BTywolC7PpBdiZ27L64=
+
+Name: res/layout/basic_setting_popup_horizontal_no_boder.xml
+SHA1-Digest: 0yYAr3mxxxT0rg01EXvAQG0rA9E=
+
+Name: res/drawable-xhdpi/ic_gallery_play_big.png
+SHA1-Digest: X0ynCAqpbE9L4GGOWh/pcTyzNmo=
+
+Name: res/mipmap-hdpi/ic_launcher_camera.png
+SHA1-Digest: 2gWUtC2ZpfXVr4oB3KQHIOoUfWk=
+
+Name: res/layout/review_control.xml
+SHA1-Digest: 9pf3wfWh7bTzeD7kR4+C7gqjJ6c=
+
+Name: res/drawable-xhdpi/bg_indicator_bar.9.png
+SHA1-Digest: X/ITQ3mDA0Q95RQ+MyhZM43Srgo=
+
+Name: res/drawable-xhdpi/ic_qrcode_back.png
+SHA1-Digest: 0FXrPO67pHAg4Tztd35BWzvECpM=
+
+Name: res/drawable-hdpi/ic_timelapse_10.png
+SHA1-Digest: T13fC4a9tiedKilPuTs/JLT83tM=
+
+Name: res/layout/camera_scroll_button.xml
+SHA1-Digest: cokLzaxPNrV/FisNBPD7VXu/LVU=
+
+Name: assets/sound_shuter_delay_bee.wav
+SHA1-Digest: 0N9JVDhl2zBsQ1mTkgh6cB9+x78=
+
+Name: res/drawable/bg_indicator_quality_720p.xml
+SHA1-Digest: epy0L9dqVyGu2h6SyT+AKXz/qFQ=
+
+Name: res/drawable-xhdpi/ic_camera_scenemode_sunset.png
+SHA1-Digest: Kin+kbp0h2cx45hiVqeQWJvHGro=
+
+Name: res/drawable-xhdpi/ic_menu_cancel_holo_light_16_9_pressed.png
+SHA1-Digest: gA08uL+T3UsUjh8MIaJqoHvl0Go=
+
+Name: res/drawable-xhdpi/ic_camera_simple_mode_audio_capture_normal.pn
+ g
+SHA1-Digest: gbjQRUM52k6gpjVqvhtbtihAYhc=
+
+Name: res/drawable-xhdpi/ic_camera_settings_hand_night_on.png
+SHA1-Digest: MyNg2XnFgsTMCQ75QF4aqPS3kfs=
+
+Name: res/drawable-xhdpi/ic_camera_settings_hdr_on.png
+SHA1-Digest: xMEg5WjGTPefsWHIVo1SWyZIwjg=
+
+Name: res/drawable-xhdpi/btn_shutter_video_recording.png
+SHA1-Digest: EmKElEUNSSmcajmrTnqb2JqwI1U=
+
+Name: res/drawable-hdpi/ic_timelapse_100.png
+SHA1-Digest: T13fC4a9tiedKilPuTs/JLT83tM=
+
+Name: res/drawable/ic_camera_simple_mode_coloreffect.xml
+SHA1-Digest: StNJ2zLNe3K3y5a+m5V0FMJd7/U=
+
+Name: res/drawable-xhdpi/ic_capture_video_picture_16_9.png
+SHA1-Digest: PuD4gVO5yPkKTW+Heoj8b5vTmVM=
+
+Name: res/drawable-xhdpi/ic_camera_scenemode_firworks.png
+SHA1-Digest: 6DESaoBIIo+jAmYO4iFXepwUnGU=
+
+Name: res/drawable-xhdpi/ic_find_qrcode_button_pressed.9.png
+SHA1-Digest: 3pFEJaPCQEDep29Ly34T5SaTKj0=
+
+Name: res/drawable-xhdpi/ic_camera_setting_background_body.9.png
+SHA1-Digest: dw90NzgHW4f1jucF6xSW8OsSyGw=
+
+Name: res/drawable-xhdpi/ic_camera_popup_bg.9.png
+SHA1-Digest: Z0zej8aOYDM7oDQ1pzw4QA1hp7g=
+
+Name: res/drawable-xhdpi/ic_camera_settings_iso.png
+SHA1-Digest: MuGFx1eanl8L7UocftyLD8MDi/M=
+
+Name: res/drawable-xhdpi/audio_0.png
+SHA1-Digest: Zcw3DcEuoZ4bJbxcx1wMKvEi7Yg=
+
+Name: res/drawable-xhdpi/ic_pan_progression.9.png
+SHA1-Digest: z/PnT0bWKSPRzWWipm0yLqxgyzM=
+
+Name: res/layout/pano_review.xml
+SHA1-Digest: 3V8f8VxqQJU4DRUnU58urgHoSps=
+
+Name: res/layout/camera_popup.xml
+SHA1-Digest: xQp+MbHeAF2nsRV8l97JiMvW9DI=
+
+Name: res/drawable-xhdpi/ic_indicators_gps_on.png
+SHA1-Digest: sqbtbLu6jY2czM8udRfsdLyk6Kg=
+
+Name: res/drawable/btn_pano_exit.xml
+SHA1-Digest: zU9nqAu5aeHTvz22Wu/+2jcyM0E=
+
+Name: res/drawable-xhdpi/ic_camera_settings_hand_night.png
+SHA1-Digest: bG9jpjqpBTA1gtG3VKUQwPk8vdg=
+
+Name: res/drawable-xhdpi/ic_focus_failed.png
+SHA1-Digest: nD3MjzTuew/NfHKdEqEoZkJZWbA=
+
+Name: res/drawable-xhdpi/ic_video_speed_normal.png
+SHA1-Digest: R6/fV6nwPl3YDLiXknRoshEc2w0=
+
+Name: res/drawable-xhdpi/ic_camera_coloreffect_none.png
+SHA1-Digest: vyLLLjKPO63f7z6saEZqqoPBE1o=
+
+Name: res/drawable-xhdpi/ic_pan_thumb.9.png
+SHA1-Digest: /zh1F9ZQaaxLFzbDtOH334OgBwA=
+
+Name: res/drawable-xhdpi/ic_iso_100.png
+SHA1-Digest: 4l9VMw1UGsVOoo0qEczkbKjCwuo=
+
+Name: res/drawable-xhdpi/ic_camera_scenemode_landscape.png
+SHA1-Digest: 6nCszScu1QbpiXE7L+pZ2l+5saI=
+
+Name: res/mipmap-hdpi/ic_launcher_video_camera.png
+SHA1-Digest: /Htsrm1m3iFR19D6TVkJoOGa8fc=
+
+Name: res/drawable-xhdpi/ic_pano_exit_button_pressed.9.png
+SHA1-Digest: gKx1Mz06uBx0f7T5QOmupIGluo8=
+
+Name: res/drawable-xhdpi/ic_indicator_video_speed.png
+SHA1-Digest: 0oGP1dtjZpDPNpgUPZ/E1g84hFA=
+
+Name: res/drawable-xhdpi/ic_camera_simple_mode_hand_night_pressed.png
+SHA1-Digest: +m8Cd0el8bXEMweD54TKJgV8t80=
+
+Name: res/drawable-xhdpi/ic_camera_simple_mode_setting_normal.png
+SHA1-Digest: Sq1fd/YykS81V93FEUhKCjey+WY=
+
+Name: res/xml/camera_preferences.xml
+SHA1-Digest: FkBq+8oEqkSRejQtRmw60ynUfqQ=
+
+Name: res/drawable-xhdpi/ic_camera_coloreffect_mono.png
+SHA1-Digest: 224gCdKPaF+jiEvagF3TMHTSuog=
+
+Name: res/anim/on_screen_hint_exit.xml
+SHA1-Digest: hOzEbPu2sqU6z9gtB8HTJOTUXKk=
+
+Name: res/drawable-xhdpi/ic_iso_100_pressed.png
+SHA1-Digest: k8PqNhglr83cvawbd1L5bBWcC+E=
+
+Name: res/xml/video_preferences.xml
+SHA1-Digest: mW5ipSjJus886/eYr8kRD+KvDnk=
+
+Name: res/drawable-xhdpi/ic_highlight_16_9.png
+SHA1-Digest: CKoJrn/cbrwcfs8Obx1KvVaM7zw=
+
+Name: res/drawable-xhdpi/ic_pano_direction_right.png
+SHA1-Digest: hLsGOTADg3QMiJ3d+fivcyeY52s=
+
+Name: res/drawable-xhdpi/sliding_btn_slider_video.png
+SHA1-Digest: hB6F/Ec82KY3lFxneibn+tMafuc=
+
+Name: res/drawable-xhdpi/ic_iso_1600.png
+SHA1-Digest: NLhlosdEqb6XKQoRPL2T+iF1JqU=
+
+Name: res/layout/details.xml
+SHA1-Digest: J0QejzOdIheLD7Sfj/5JeSZ7zIs=
+
+Name: res/drawable-hdpi/ic_control_play.png
+SHA1-Digest: F3sPciWYyLUJ4ghMtjh0YZORyQ0=
+
+Name: res/anim/qrcode_frament_layout_hide.xml
+SHA1-Digest: /2FHKg5db7Ll+0IreiNjAHzdHE4=
+
+Name: res/drawable-xhdpi/ic_quality_480p_pressed.png
+SHA1-Digest: eeaybZB4kjs7cfqFNHBGmk08QXA=
+
+Name: res/drawable-xhdpi/ic_switch_photo_facing_holo_light_16_9_0.png
+SHA1-Digest: 6hSCgeQC8Cdeyym8RCv7GoBB8I4=
+
+Name: res/drawable-xhdpi/ic_flash_auto_selector.png
+SHA1-Digest: bLjtQVSsu6FGfj2gTI1Hb5w8RSU=
+
+Name: res/drawable-xhdpi/sliding_btn_slider_camera_16_9.png
+SHA1-Digest: 6ThhuZyWbTsAO+VP+fwBVw2w/50=
+
+Name: res/drawable-hdpi/toast_frame_holo.9.png
+SHA1-Digest: CIAtkREiDcbsBbYJDr2Cz07ikhg=
+
+Name: res/drawable-xhdpi/ic_camera_exposure_cursor.png
+SHA1-Digest: Xi4naBHRfz7pQhy0Luo+0bga7qY=
+
+Name: res/drawable-xhdpi/ic_k_value_reduce_pressed.png
+SHA1-Digest: xUgCe2MgppNpnzyGKOFjnuVb9aQ=
+
+Name: res/drawable-hdpi/icn_media_play_normal_holo_dark.png
+SHA1-Digest: 1WVG1715vfpBCIVjmIGsvZkTdJo=
+
+Name: res/layout/grid_setting_item_with_title.xml
+SHA1-Digest: qMkgSj4u1wcZ+5sGsZ5s4WqabD0=
+
+Name: res/drawable-xhdpi/audio_6.png
+SHA1-Digest: TQmAJLl7Bze1Sw3metFH20adbqE=
+
+Name: res/drawable-xhdpi/grid_16_9.png
+SHA1-Digest: cUYdTtVaj7O4J4RGCbZx9DZpWho=
+
+Name: res/drawable/btn_camera_picker_bg.xml
+SHA1-Digest: N2+W0W+ENEJvEcIWOfHmoeqHHhM=
+
+Name: res/drawable-xhdpi/ic_camera_popup_bottom_middle.9.png
+SHA1-Digest: LOwou3NjZWzgpK3v7uiGFtPXkXo=
+
+Name: res/layout/details_list.xml
+SHA1-Digest: E4LGtPNa3tnKQ6WkxmT+uhn2OTA=
+
+Name: res/xml/camera_other_preferences_simple.xml
+SHA1-Digest: +ExLcSs7jSKj3hW4il+9leNiBvs=
+
+Name: res/drawable-xhdpi/ic_video_slow_speed_simple_mode_normal.png
+SHA1-Digest: eerz8uK4smPipRuk1jqwdgKBGo8=
+
+Name: res/drawable-xhdpi/ic_quality_1080p_pressed.png
+SHA1-Digest: cM625RzSUY1/nLbdmN67LezRRYQ=
+
+Name: res/layout/qrcode_viewfinder_layout.xml
+SHA1-Digest: Hj3SE6vmW6Gd/CN4XPAZ+lrZ5Ik=
+
+Name: res/drawable-xhdpi/ic_audio_captrue_delay_1.png
+SHA1-Digest: ygorWckrv2/A9znPJUAiQq+kQaw=
+
+Name: res/drawable-xhdpi/ic_camera_scenemode_beach.png
+SHA1-Digest: 9yV/w1TdmJk1Eh4gxeV2Gbrzw1Q=
+
+Name: res/drawable-xhdpi/ic_camera_simple_mode_panorama_pressed.png
+SHA1-Digest: QGUkvh9JV2bgPnBOFTiHagmxO/M=
+
+Name: res/drawable-xhdpi/btn_shutter_bg_holo_16_9.png
+SHA1-Digest: L5DjLUo+Nh6lk6ywOTldeg3Cfeg=
+
+Name: res/drawable/recording_animation.xml
+SHA1-Digest: 78juKftCiQxUSXOaaRR5SHQL2HE=
+
+Name: res/menu/photo.xml
+SHA1-Digest: a35++Ip2CQKs5EyAT5cPUY5bk9U=
+
+Name: res/layout/rotate_text_toast.xml
+SHA1-Digest: QgN7noPqxYCxd3OjOpG73CRgQzM=
+
+Name: res/drawable-xhdpi/ic_switch_video_facing_holo_light_0.png
+SHA1-Digest: maPNcNbpaK0HTe5pL1/obd0xzo0=
+
+Name: res/drawable/bg_video_speed_normal.xml
+SHA1-Digest: 4LGftiRjrp1t9x97i+EvXJhqtss=
+
+Name: res/anim/player_out.xml
+SHA1-Digest: X977hGMb946yTpxyN0oarWCLCU4=
+
+Name: res/drawable-xhdpi/ic_camera_popup_top.9.png
+SHA1-Digest: nTJ/o2LRIM8xk5L7nrl5+5JZKYw=
+
+Name: res/drawable-xhdpi/ic_pano_direction_left.png
+SHA1-Digest: 5nX/TDlEMKAVNiCBlDRML0HNK/M=
+
+Name: res/drawable/bg_indicator_coloreffect.xml
+SHA1-Digest: 5RnW8lcq4DPcjqc0sBR+3lWQPEo=
+
+Name: res/layout/priority_video_indicators.xml
+SHA1-Digest: LRtyp2higGCx9ndUKriQmT26dFs=
+
+Name: res/drawable-hdpi/ic_menu_share_holo_light.png
+SHA1-Digest: O6HLafE0If1GP7QCCM6xMDLFj4A=
+
+Name: AndroidManifest.xml
+SHA1-Digest: vLfh8B9DObeprWatSXlFRLnv7lk=
+
+Name: res/drawable-xhdpi/ic_flash_off_selector.png
+SHA1-Digest: BBpQ1itJZqol0SoiRDme/aRV0KI=
+
+Name: res/layout/preview_frame.xml
+SHA1-Digest: gXo1/78Oz53QzGCQaB6MTq4AJ9Y=
+
+Name: res/drawable-xhdpi/ic_camera_scenemode_snow.png
+SHA1-Digest: ZTdxD8L+XV6hdIGBN9M+R1rUTSE=
+
+Name: res/drawable-xhdpi/ic_qrcode_contacts_background.png
+SHA1-Digest: ILmxLcmbEEzE3hhGRpdfPB8iBtA=
+
+Name: res/drawable-xhdpi/ic_iso_3200_pressed.png
+SHA1-Digest: VdrJx3h99IGv3cF1ZP9CceTNXLU=
+
+Name: res/drawable-xhdpi/ic_zoom_big.9.png
+SHA1-Digest: Y0PBdlENxFmMWeDyAPf4vw7gNNw=
+
+Name: res/layout/setting_item_horizontal.xml
+SHA1-Digest: RjpNV+uLf+I9rGGg9VRXigAH0SM=
+
+Name: res/drawable/bg_indicator_hand_night.xml
+SHA1-Digest: 3KIHww1wP+p+W6lg2d8FBO5AVPg=
+
+Name: res/drawable-xhdpi/list_divider.9.png
+SHA1-Digest: 8+TP02NA3lGiMXaQ8fIb7yOyVIE=
+
+Name: res/drawable-xhdpi/ic_white_balance_fluorescent_holo_light.png
+SHA1-Digest: MEJAh+W4RXoZ39juN5tQPLzl0lY=
+
+Name: res/xml/video_flashmode_preferences.xml
+SHA1-Digest: PIg253lN0yRGDL54XwZO1c3Ft/k=
+
+Name: res/layout/setting_item.xml
+SHA1-Digest: zEebcVYfsVBumEHJZqF1uPxhfB0=
+
+Name: res/drawable/bg_indicator_hdr.xml
+SHA1-Digest: +8UfE885uQx/aTwLd104/Ra7+yI=
+
+Name: res/drawable-xhdpi/ic_zoom_in.png
+SHA1-Digest: jEsHcQXGbzddCOURRRvc3/UlG8A=
+
+Name: res/drawable-xhdpi/ic_camera_settings_exposure_pressed.png
+SHA1-Digest: iwGZhN/RFzOVtF3Tebczp2B1EiU=
+
+Name: res/drawable-xhdpi/sliding_btn_slider.png
+SHA1-Digest: hKu+/p1/MO2F2vrrtZaT/YaxEA4=
+
+Name: res/drawable-xhdpi/audio_1.png
+SHA1-Digest: w4JgbsoK2tmTRu0mpoRMqVgM9kI=
+
+Name: res/drawable-xhdpi/ic_camera_simple_mode_hand_night_normal.png
+SHA1-Digest: HI/SzKx/iKCitMmfP7YRJKSk9so=
+
+Name: res/drawable-xhdpi/ic_camera_settings_grid_selected.png
+SHA1-Digest: RxUmNmeCbrTB8hg3W2bLvEewrDE=
+
+Name: res/drawable-xhdpi/ic_pano_review_exit_button.9.png
+SHA1-Digest: LhMQUvUBYxKpLVESQ4f25RuNVN0=
+
+Name: res/drawable/ic_camera_simple_mode_setting.xml
+SHA1-Digest: fjoAimZbWR3u6hE90GiRtsB/5zM=
+
+Name: res/drawable-xhdpi/ic_iso_1600_pressed.png
+SHA1-Digest: pOHa4LgXRx4qPMCQhRjMZMSIQtk=
+
+Name: res/drawable-xhdpi/ic_camera_exposure4.png
+SHA1-Digest: EhA7cHgz8ykdaIzkzH1xIs1I2FI=
+
+Name: res/drawable-xhdpi/ic_white_balance_auto_holo_light_pressed.png
+SHA1-Digest: YrQpu6jbyc1C4OzJfPNFRGHujS8=
+
+Name: res/drawable-xhdpi/scrubber_knob.png
+SHA1-Digest: tlxYX4Py4esGKLYiHvVM+QNsUNk=
+
+Name: res/drawable/bg_indicator_quality_1080p.xml
+SHA1-Digest: 50KWsnUdX5opjokRq0r23NS/DBM=
+
+Name: res/drawable-xhdpi/ic_iso_auto_pressed.png
+SHA1-Digest: tXJJjCoN/rTq1FNVhAqXksUiO78=
+
+Name: res/drawable-xhdpi/ic_camera_exposure_line.png
+SHA1-Digest: AFERzQPVQ+VO4jWRemZ0XPqw6MU=
+
+Name: res/layout/priority_indicators.xml
+SHA1-Digest: oDXo/LWnf516fknVyKPmZ7jMVxs=
+
+Name: res/drawable/ic_image_capture_cancel.xml
+SHA1-Digest: ezlKTJh+ic+iZy3AmG2S8IQ6fUE=
+
+Name: res/drawable/border_last_picture.xml
+SHA1-Digest: R24vLTv96kSHH4Weg0E5K4GcO0k=
+
+Name: res/drawable-xhdpi/ic_menu_cancel_holo_light_16_9.png
+SHA1-Digest: OX/u03g4D5n0h6lkNTf0c76F4tk=
+
+Name: res/drawable-xhdpi/ic_iso_auto.png
+SHA1-Digest: jrTvlbW/gvAP7jJ0MU4g6C2WeRM=
+
+Name: res/layout/camera_control_top.xml
+SHA1-Digest: DNFVQiEyZwgCgMJ0irX+HfX+Jwk=
+
+Name: res/drawable/icn_media_play.xml
+SHA1-Digest: 4odvgnrKctFTl04tsDDmtcsRejk=
+
+Name: res/xml/video_other_preferences.xml
+SHA1-Digest: /3NHrev8bFj0KqoQYveR0AnVbnM=
+
+Name: res/menu/movie.xml
+SHA1-Digest: YmY0LW+4rJ8itLok4Cdk0RbTmLU=
+
+Name: res/drawable-xhdpi/ic_camera_popup_top_right.png
+SHA1-Digest: CSIfIDRBhUKl5jw8pY/BpcuoiNs=
+
+Name: res/layout/ruler_setting_popup.xml
+SHA1-Digest: lw8ly4qGKTi/eBwIOpNTXXvesPY=
+
+Name: res/drawable-xhdpi/btn_camera_shutter_holo.png
+SHA1-Digest: C9ybemP9eakcwGfGMNEAWlgeboo=
+
+Name: res/drawable-xhdpi/ic_white_balance_fluorescent_holo_light_press
+ ed.png
+SHA1-Digest: rHBpetljgnJueKr9mBcWs5U+eMo=
+
+Name: res/drawable/bg_quality_480p.xml
+SHA1-Digest: KIxqAaJfJBf7zw178mpVjEct7IA=
+
+Name: res/xml/qrcode_details.xml
+SHA1-Digest: os0MNZ4GJbuqpRW07mRJlr1eDU8=
+
+Name: res/drawable/bg_indicator_panorama.xml
+SHA1-Digest: PIjggQ/naI99Owpmzgsa60r5Bl4=
+
+Name: res/drawable/btn_pano_review_exit.xml
+SHA1-Digest: WDOvpzcKG/7JqF3yVjYaZ4OyL08=
+
+Name: res/drawable-xhdpi/ic_gallery_play.png
+SHA1-Digest: ZmtJj+NqY1IeIMdxnqFGAZgN3P4=
+
+Name: res/drawable-xhdpi/ic_camera_simple_mode_coloreffect_pressed.png
+SHA1-Digest: S21U31/CxZiCAwOoErOenLqlgRE=
+
+Name: res/drawable-xhdpi/ic_iso_400.png
+SHA1-Digest: N3yaTwJwQCo+EJTIOgDWkLR7RPU=
+
+Name: res/drawable-xhdpi/ic_camera_settings_exposure.png
+SHA1-Digest: PTahaNzN9fV/dasldFkdzqQZikg=
+
+Name: res/drawable/ic_camera_simple_mode_panorama.xml
+SHA1-Digest: CIjC4XABnuJHeuK8SlxG4vWwImk=
+
+Name: res/drawable-xhdpi/ic_iso_400_pressed.png
+SHA1-Digest: gT2LzDXBZ4jGsEz98GaXGdaiYmo=
+
+Name: res/drawable-xhdpi/ic_quality_720p.png
+SHA1-Digest: IvQ0BE6Jq0KvsCi8jJEhYMD+q1Y=
+
+Name: res/drawable-xhdpi/ic_video_slow_speed_simple_mode_pressed.png
+SHA1-Digest: pE10/NzPmx8pMc9l+FYYEpLSlbI=
+
+Name: res/drawable-xhdpi/ic_more_setting.png
+SHA1-Digest: sVFXmcq57mycnXYESh8BchHQQOc=
+
+Name: res/drawable-xhdpi/ic_camera_settings_panorama.png
+SHA1-Digest: IN4whY5x+aPheTeEhh/r4dlU9Ak=
+
+Name: res/drawable-xhdpi/ic_camera_scenemode_night.png
+SHA1-Digest: 6L4gs/Z//qMyXKgiVSnXeb8hZ8Q=
+
+Name: res/drawable-xhdpi/ic_camera_coloreffect_aqua.png
+SHA1-Digest: iOOKn2KKEmZvxRnpcG+erSVeMrQ=
+
+Name: res/layout/on_screen_hint.xml
+SHA1-Digest: A+dEAgMCt/pWtHL9DAsCmf+FANY=
+
+Name: res/drawable-xhdpi/ic_menu_revert_holo_dark.png
+SHA1-Digest: q99Ts2kO25G3JRjr+jfUx0WZLPk=
+
+Name: res/layout/basic_setting_popup_horizontal.xml
+SHA1-Digest: 4n3a5ry3crG/MsY6J7eRqV97PKg=
+
+Name: res/drawable-xhdpi/ic_camera_settings_hdr_off.png
+SHA1-Digest: etiMmrApEQNQRuQ5we496aRAFuk=
+
+Name: res/drawable-xhdpi/overscroll_glow.png
+SHA1-Digest: uR+WnhQlbk/gkXgJ+WMDSsI+0X8=
+
+Name: res/drawable-xhdpi/screen_view_arrow_left_gray.png
+SHA1-Digest: eWkLULSbojursO+1j7zR1mA1GRE=
+
+Name: res/layout/camera_simple_mode_exit.xml
+SHA1-Digest: mpyu20dKyg81YOavTNmawdkH1iA=
+
+Name: res/drawable-xhdpi/ic_k_value_reduce.png
+SHA1-Digest: vJZNmGN4GuJ/dgygCfXqncQ0yYs=
+
+Name: res/drawable-xhdpi/screen_view_slide_bar.9.png
+SHA1-Digest: dixiaw1RASghPX1BpiENurgXLJM=
+
+Name: res/drawable-xhdpi/ic_white_balance_incandescent_holo_light_pres
+ sed.png
+SHA1-Digest: 9fwLa1kwrFvCSDqVYoJVSYVDUbI=
+
+Name: res/drawable-xhdpi/ic_indicators_hdr.png
+SHA1-Digest: UYA3AzuvVrTSRX5+sXYXoCPm62U=
+
+Name: res/drawable/ic_k_value_add_selector.xml
+SHA1-Digest: QxV4npTmNXTxVdI5UsNau5l7A84=
+
+Name: res/drawable-xhdpi/ic_indicators_expoure.png
+SHA1-Digest: djt+1MdIE4zKWBjgjHaxxR+Jk5Y=
+
+Name: res/drawable-xhdpi/ic_camera_simple_mode_hdr_normal.png
+SHA1-Digest: 2dLS3KCdrl9Je8kMiERUv9NXnY0=
+
+Name: res/drawable-xhdpi/ic_indicators_panorama.png
+SHA1-Digest: 8c7Fw0DenN3TapBhic3wZZuQhqU=
+
+Name: res/anim/popup_menu_fade_in.xml
+SHA1-Digest: F97xXOP9ah3yx6oNg/d++t8hb+U=
+
+Name: res/drawable-xhdpi/ic_audio_capture_pressed.png
+SHA1-Digest: eK9GeebXe7GoDbqd+kTYD0Tg/OU=
+
+Name: res/layout/camera_setting_panel.xml
+SHA1-Digest: /l/UeBCfwDmjRsq/nejKJ1dpWGE=
+
+Name: res/drawable-xhdpi/btn_shutter_video.png
+SHA1-Digest: 1SPe83fQDtF6OC+EGYIooAnT9zI=
+
+Name: res/drawable-hdpi/ic_menu_done_holo_light.png
+SHA1-Digest: N3CYcpcvDpQSEHna2gF1i5Pb5SY=
+
+Name: res/drawable/bg_iso_1600.xml
+SHA1-Digest: 0sSgy7rpVHccD/a8FD//UXr2+DE=
+
+Name: res/drawable-xhdpi/ic_white_balance_auto_holo_light.png
+SHA1-Digest: HyYti7p9mggbOfwnLLpWfUO822A=
+
+Name: res/drawable/ic_image_capture_done.xml
+SHA1-Digest: yOwedmE5fx5gzNLb6vyR4POLftA=
+
+Name: res/drawable-xhdpi/ic_camera_setting_video_speed_pressed.png
+SHA1-Digest: j3Y1cF5Gnwo5eogywQr1pXLFC60=
+
+Name: res/drawable-xhdpi/ic_flash_off_selector_16_9.png
+SHA1-Digest: KyemjrYPXybGG727Wvdobr5nzxg=
+
+Name: res/drawable-xhdpi/ic_camera_skin_beatify_open.png
+SHA1-Digest: HlS8Q05WFBCnGsXzrof+HFYHAW8=
+
+Name: res/drawable/btn_camera_picker_bg_16_9.xml
+SHA1-Digest: xqNnALfs7LBqZAmHqHALemdSk2g=
+
+Name: res/drawable-xhdpi/ic_k_value_add.png
+SHA1-Digest: IKwNkWPgpjolVIHMyUuVf8G0GKI=
+
+Name: res/drawable-xhdpi/ic_camera_coloreffect_sepia.png
+SHA1-Digest: ibHZe8lHSgx1nzTtUgVOquTjfwE=
+
+Name: res/drawable-xhdpi/panel_undo_holo.9.png
+SHA1-Digest: yXJ5zhqd3qOpwkZIjYP7l6+9vNo=
+
+Name: res/drawable-xhdpi/ic_iso_800_pressed.png
+SHA1-Digest: m/zT5oQ4VjAP/Hq1Q/gmV7WIrzo=
+
+Name: res/drawable-xhdpi/ic_camera_simple_mode_coloreffect_normal.png
+SHA1-Digest: 0B+q2b2qXDNIfhxeQvOwcFaGjF0=
+
+Name: res/drawable-xhdpi/ic_white_balance_sunlight_holo_light_pressed.
+ png
+SHA1-Digest: +A9PbkHoVAWE3P21/jLhp5cHEiw=
+
+Name: res/drawable/ic_video_slow_speed_simple_mode.xml
+SHA1-Digest: NP5Em7f8JQk/0+o8I19RqJ2pPrY=
+
+Name: res/layout/video_camera.xml
+SHA1-Digest: +82nCE6ohdwooFL3m+k3BSGaoCM=
+
+Name: res/drawable-xhdpi/sliding_btn_slider_camera.png
+SHA1-Digest: B1RqAZdVKQLi0Cqp2RyP3x8KOpU=
+
+Name: res/xml/video_preferences_simple.xml
+SHA1-Digest: sJHJWp9rhjZTm7AEp32gBivmu5Y=
+
+Name: res/drawable/setting_picker.xml
+SHA1-Digest: FbjVPa3L9hGvbNUbtGxQrObHxkA=
+
+Name: res/layout/grid_setting_popup_white_balance.xml
+SHA1-Digest: wkSIsDK3GOVO/tPs+Q60rEYBeu4=
+
+Name: res/drawable/bg_indicator_audio_capture.xml
+SHA1-Digest: poddAxd2JNTNVb4PsKb0f1OVNqI=
+
+Name: res/drawable/btn_shutter_bg_16_9.xml
+SHA1-Digest: mBu/EzjdPnQV96cqPtXnNhZZhgE=
+
+Name: res/drawable-xhdpi/ic_camera_exposure0.png
+SHA1-Digest: L9BjzBa0yO7UGG4LzXfBJbiaLF8=
+
+Name: res/drawable/qrcode_back_btn.xml
+SHA1-Digest: VEa2D0SsWLg+6bG5bL8dEmYO4WY=
+
+Name: res/drawable-xhdpi/audio_5.png
+SHA1-Digest: 45OBHjwavw80ki0lZ5D9mP3VjC4=
+
+Name: res/drawable-xhdpi/ic_camera_popup_bottom_right.9.png
+SHA1-Digest: RRFc8uHpxCtua/IH6vrH9ER03os=
+
+Name: res/drawable-xhdpi/ic_white_balance_k_value.png
+SHA1-Digest: +zPJa7WLxp7PRedTFKXIghjB14s=
+
+Name: res/drawable/bg_iso_3200.xml
+SHA1-Digest: 9bChGdWReAtxsNny+Jzp3pVQxEk=
+
+Name: res/drawable/bg_iso_200.xml
+SHA1-Digest: Gbr0uSokkPYTWJRbqk49icjzZ38=
+
+Name: res/layout/effect_setting_item.xml
+SHA1-Digest: a3NaIm4kzf+e++7S5nW0Gn0Y80Y=
+
+Name: res/layout/basic_setting_popup.xml
+SHA1-Digest: hNQd1o9KmetYUJ/5ajyazMXnfYc=
+
+Name: res/drawable-xhdpi/ic_camera_simple_mode_panorama_normal.png
+SHA1-Digest: n6hzdjKtyPGQQOQILF/5m1wkY7M=
+
+Name: res/drawable-hdpi/icn_media_play_pressed_holo_dark.png
+SHA1-Digest: YJxTdS2viW0vh9fXb9CGmjAtb0E=
+
+Name: res/drawable/bg_white_balance_fluorescent.xml
+SHA1-Digest: o3miRryXg9YLSNyRvP2xlzqkPH0=
+
+Name: res/drawable-xhdpi/ic_camera_popup_bottom_left.png
+SHA1-Digest: N8kMP4yGvj4MDqVavekhJHdLmVQ=
+
+Name: res/drawable/btn_camera_exposure_cursor.xml
+SHA1-Digest: gbkAqtk8K4cLP697oZz0LZXHZ9s=
+
+Name: res/drawable/btn_setting_picker.xml
+SHA1-Digest: G4a3W+s2WbscuL8YsxFiB1HCYdI=
+
+Name: res/drawable-xhdpi/btn_setting_button_bg_pressed_holo_16_9.png
+SHA1-Digest: BriQJAsc32rYaOc1MqrYm/9byio=
+
+Name: res/drawable-xhdpi/ic_camera_exposure1.png
+SHA1-Digest: W2uR/njtm3jtDXv6zTZbxeOf7og=
+
+Name: res/drawable/bg_white_balance_cloudy.xml
+SHA1-Digest: 87hu2AZdRcIUvYUb0zP8/RM5Jqs=
+
+Name: res/raw/blank.jpg
+SHA1-Digest: zFuCXE/FBmGgXeaNko+kbkBDhLM=
+
+Name: res/drawable-xhdpi/ic_camera_simple_mode_audio_capture_pressed.p
+ ng
+SHA1-Digest: 86v4GCZmtweC9aJBDFerykVx3Os=
+
+Name: res/drawable-xhdpi/ic_white_balance_cloudy_holo_light_pressed.pn
+ g
+SHA1-Digest: wC9OLMto6pEmXClqWMWvR7X12Q0=
+
+Name: res/layout/movie_view.xml
+SHA1-Digest: 2Mk+Fgq0TVJXKmVcRev9gQAjlbA=
+
+Name: res/drawable-xhdpi/ic_flash_on_selector.png
+SHA1-Digest: jL0ZK+55q2vtA7ZADingjF3bEe8=
+
+Name: res/drawable-xhdpi/ic_audio_captrue_delay_2.png
+SHA1-Digest: YxHevpG+sEV5hg/PSLgqpAtxyEc=
+
+Name: res/drawable-xhdpi/screen_view_arrow_right_gray.png
+SHA1-Digest: 51U65yz4EZQfBQ68LfIkUJMqzvQ=
+
+Name: res/drawable-xhdpi/ic_camera_exposure2.png
+SHA1-Digest: H78qTsyz6gULVrFKr+cvxrEKQe8=
+
+Name: res/drawable-xhdpi/ic_switch_camera_16_9.png
+SHA1-Digest: 2W/kcvW2NxYxSyk0l3VnOUBlaqk=
+
+Name: res/drawable-xhdpi/screen_view_seekpoint_highlight.png
+SHA1-Digest: 8Ji71HOvecGFMlej3ik/nY44Of8=
+
+Name: res/drawable-xhdpi/ic_camera_exposure_cursor_pressed.png
+SHA1-Digest: wR+Eo26/aNhUqWZk9jp/L9+waQA=
+
+Name: res/drawable/bg_quality_1080p.xml
+SHA1-Digest: MONzrtFayBic4yZjgyu5fkpfjMQ=
+
+Name: res/layout/review_thumbnail.xml
+SHA1-Digest: IxmMdChVGMlgzIlJ8rxZJKzMG9A=
+
+Name: res/drawable-xhdpi/ic_video_thumb.png
+SHA1-Digest: rwTSBbvBmpzOlODPApBPFpQ0K78=
+
+Name: res/drawable-xhdpi/on_screen_hint_frame.9.png
+SHA1-Digest: r5SFWQ1/BeaXieHq5waikfVG/CM=
+
+Name: res/layout/camera_control_bottom.xml
+SHA1-Digest: hsWpnkfjQQdoqjOrpmpCSO1aVXc=
+
+Name: res/drawable-xhdpi/audio_4.png
+SHA1-Digest: T65/hmV6N3W53arZa2BYyTpe2Zo=
+
+Name: res/drawable-xhdpi/ic_white_balance_cloudy_holo_light.png
+SHA1-Digest: CwpQsw5mFs8oivV105Jf+K0OFQA=
+
+Name: res/drawable-xhdpi/ic_camera_popup_top_left.png
+SHA1-Digest: FwHVHM4/Qythdd55h7fitMBCCLc=
+
+Name: res/drawable-xhdpi/ic_pano_indicator.png
+SHA1-Digest: Yz3KzRkEk7X6TusGZYwY6Er9Iao=
+
+Name: res/drawable-xhdpi/ic_qrcode_wechat_symbol.png
+SHA1-Digest: Wd1QIOqOOTuh+4yRYskAj7PGHUI=
+
+Name: res/drawable-xhdpi/ic_switch_camera.png
+SHA1-Digest: DIBFfv+jlyfs5G//QCVUwy2BrgU=
+
+Name: res/drawable-xhdpi/ic_camera_settings_while_balance.png
+SHA1-Digest: KMwm1gUHXsMgS74Ure2qnut316c=
+
+Name: res/layout/action_bar_text.xml
+SHA1-Digest: ry7OFkH8xddx38HkVH9geRzR1Ec=
+
+Name: res/raw/backdropper.graph
+SHA1-Digest: 6aaFooCZG9FLuF2xtPVXB4LWBI8=
+
+Name: lib/armeabi-v7a/libjni_mosaic.so
+SHA1-Digest: yws8i5m5vyDxD9pxvDahHtQA1iQ=
+
+Name: res/drawable-xhdpi/ic_indicators_coloreffect.png
+SHA1-Digest: Noz8gVVOt6QM9Rk1K7lMErquoc4=
+
+Name: res/drawable-xhdpi/audio_3.png
+SHA1-Digest: A2acWF5MrNXrcNE42aOyyWoLZhg=
+
+Name: res/drawable-xhdpi/ic_indicator_quality_1080p.png
+SHA1-Digest: /Wo6jgRn9fzGmpZ/ydMXKRg1gK4=
+
+Name: res/drawable-xhdpi/ic_iso_200.png
+SHA1-Digest: d5eqvho5s27IzimdAlcl5cQA+iQ=
+
+Name: res/drawable-xhdpi/audio_10.png
+SHA1-Digest: oLZdDyqP0BxuPFMNaGbxAwBrABc=
+
+Name: res/drawable-xhdpi/ic_camera_settings_iso_pressed.png
+SHA1-Digest: GLAKOAHQG3Zfb7hsi7pV3qW51RE=
+
+Name: res/drawable-xhdpi/ic_indicators_referenceline.png
+SHA1-Digest: zdWijdZZw9qFPWh9AFQ/1t93pDo=
+
+Name: res/drawable-xhdpi/ic_indicator_quality_480p_pressed.png
+SHA1-Digest: x9FNVk/X4vTV+jhdQCVz4rRznNE=
+
+Name: res/drawable/bg_video_speed_fast.xml
+SHA1-Digest: 6jt+mtKpxULcic5Tj+s3CcQxn5w=
+
+Name: res/drawable-xhdpi/btn_camera_shutter_pressed_holo.png
+SHA1-Digest: 0DcDmXhc7VOCQXl/NMen3qY4h5g=
+
+Name: res/drawable-hdpi/bg_indicator_bar_transparent.9.png
+SHA1-Digest: c5aW6/zBo65K2Qa05K0nfSCVogI=
+
+Name: res/layout/preview_frame_video.xml
+SHA1-Digest: HSwqLUr0bLQsiyGTPevZUuV4uHo=
+
+Name: res/drawable-xhdpi/ic_flash_button_bg_holo.png
+SHA1-Digest: TE97rWQyKKPy/3Lj3vAomioqRsQ=
+
+Name: res/drawable-xhdpi/ic_flash_on_selector_16_9.png
+SHA1-Digest: 7RUk2jUtyTKhZNeQM/Av/tgYE68=
+
+Name: res/drawable-xhdpi/ic_flash_button_bg_pressed_holo_16_9.png
+SHA1-Digest: fZ1gkECQ9lP3WCmDgV2dhbXEZRg=
+
+Name: res/drawable-xhdpi/ic_audio_captrue_delay_3.png
+SHA1-Digest: UHJ5BxZdGZiYZ+0Vd0XhMmZ/I00=
+
+Name: res/layout/grid_setting_popup.xml
+SHA1-Digest: upIAnFj2sHp1RHUabxOsRwLe+fU=
+
+Name: res/drawable-xhdpi/bg_vidcontrol.png
+SHA1-Digest: 287xHwgVyj6Nd0abmeqiZ0AaYnU=
+
+Name: res/drawable-xhdpi/ic_white_balance_incandescent_holo_light.png
+SHA1-Digest: 6QEZBvaUIGHj7k6zzssMffepcMc=
+
+Name: res/drawable-xhdpi/sliding_btn_slider_video_16_9.png
+SHA1-Digest: k6QJZEzLsL4Uy98z/D0H2LY9ZO4=
+
+Name: res/drawable-xhdpi/ic_zoom_out.png
+SHA1-Digest: b9iq4wheRmE9arol20DNVjoRoVw=
+
+Name: res/drawable-xhdpi/ic_indicators_landscape.png
+SHA1-Digest: zZWlEz3WUzMlzU93boGMriwNeD8=
+
+Name: res/drawable-xhdpi/ic_video_speed_slow.png
+SHA1-Digest: i2gmrsAjwmoieBQIWLcHV4FzyKE=
+
+Name: res/drawable-xhdpi/ic_iso_800.png
+SHA1-Digest: JL9mlIGCBqVzZIVjfpH8S3kktaI=
+
+Name: res/drawable-xhdpi/sliding_btn_frame_16_9.png
+SHA1-Digest: LqBxYYvo8q9LAp8uGqqmgMneC/A=
+
+Name: res/drawable-xhdpi/audio_8.png
+SHA1-Digest: gq1wOWIst4lQV0070qNJJazACFA=
+
+Name: res/drawable-hdpi/ic_timelapse_50.png
+SHA1-Digest: T13fC4a9tiedKilPuTs/JLT83tM=
+
+Name: res/layout/bg_replacement_training_message.xml
+SHA1-Digest: q+rLC8+VlOBlWdoN2mNtj1Xtuog=
+
+Name: res/drawable-xhdpi/screen_view_seekpoint_normal.png
+SHA1-Digest: VtfuVoEj7K7PPoHs4/syIDeLM3w=
+
+Name: res/drawable-hdpi/ic_timelapse_250.png
+SHA1-Digest: T13fC4a9tiedKilPuTs/JLT83tM=
+
+Name: res/drawable-xhdpi/ic_audio_capture.png
+SHA1-Digest: 84jqydaI+cMfHXgcVMEIIJTm1+A=
+
+Name: res/drawable-xhdpi/btn_shutter_bg_holo.png
+SHA1-Digest: s9YNqfbMv55AIuxmP+2iAxgSUjs=
+
+Name: res/drawable-xhdpi/ic_pano_exit_button.9.png
+SHA1-Digest: NIrP54kNZATRVLiC+dMVkNvYqws=
+
+Name: res/drawable-hdpi/ic_menu_slideshow_holo_light.png
+SHA1-Digest: J2IFwALwRzcC+yQcu6gtRt4b1Gs=
+
+Name: res/drawable-xhdpi/ic_auto_mode.png
+SHA1-Digest: 77zp3CVUxIiOnPTCkJ/qDjlPtQg=
+
+Name: res/drawable-xhdpi/ic_normal.png
+SHA1-Digest: N/F3mI+T5iykNf5Rev0arXcw+WI=
+
+Name: res/drawable-xhdpi/ic_qrcode_app_background.png
+SHA1-Digest: Rh0w5kEc6nuda99mmPM5c2iPrOw=
+
+Name: res/drawable-xhdpi/ic_switch_video_16_9.png
+SHA1-Digest: 6pcHF5z5JgfE/v7rhwBg1b9bh2U=
+
+Name: res/drawable-xhdpi/ic_flash_button_bg_holo_16_9.png
+SHA1-Digest: I7beVzt5GYel977x+fM6jMVsU+Y=
+
+Name: res/drawable-xhdpi/ic_camera_popup_bottom_anchor.9.png
+SHA1-Digest: 9lzAJNJ7Jmk5r1O5T4zBZ9+MYWE=
+
+Name: res/drawable-xhdpi/ic_switch_video_facing_holo_light_16_9_0.png
+SHA1-Digest: 5NzZO5nWdw9DjS6+kIXOhdxm5OQ=
+
+Name: res/layout/gl_root_group.xml
+SHA1-Digest: zrLvOcyGFwxEoB7x1pvPRE5DP9A=
+
+Name: res/drawable-xhdpi/audio_7.png
+SHA1-Digest: AT+n+VF+yzh9xycKelnu1e600NA=
+
+Name: res/layout/preference_text_view.xml
+SHA1-Digest: 07C4JCmOJ+WpVW2kEKRt7x4uzJ0=
+
+Name: res/drawable-xhdpi/bg_status_bar_16_9.9.png
+SHA1-Digest: R8Sjkahz1xFZ2C82v+voGdBRUmg=
+
+Name: res/drawable-xhdpi/ic_indicator_quality_720p_pressed.png
+SHA1-Digest: mrDgfyR6gJrXLRDjpmqd9YCJn64=
+
+Name: res/drawable-xhdpi/ic_pano_review_exit_button_pressed.9.png
+SHA1-Digest: cIphql/T+op42LjguVsMI4/UxOg=
+
+Name: res/drawable-xhdpi/ic_camera_settings_color_effect_pressed.png
+SHA1-Digest: rwR/nQi17iAjuD98Xn9u6WD4jS8=
+
+Name: res/anim/on_screen_hint_enter.xml
+SHA1-Digest: oeHY9zkwRDngpeW5LSnFQ1N4Wqw=
+
+Name: res/drawable-xhdpi/ic_focus_focusing.png
+SHA1-Digest: fksOzOfAQXr04nSPum9l4ET8YM8=
+
+Name: res/layout/effect_setting_popup.xml
+SHA1-Digest: jCH+4Xk6t9+tpj3TUlvx+TomH0o=
+
+Name: res/drawable-xhdpi/ic_normal_16_9.png
+SHA1-Digest: iFKXWRCHvQIrI5n8b9Z3P7MRjJc=
+
+Name: res/drawable-xhdpi/sliding_btn_slider_16_9.png
+SHA1-Digest: wxfuHQlhMaCtGVVO7J6uqZkPTYU=
+
+Name: res/drawable-xhdpi/ic_indicator_quality_480p.png
+SHA1-Digest: xQ+412SOTy7qFL7qv1KcH9W+7ko=
+
+Name: res/drawable-xhdpi/audio_2.png
+SHA1-Digest: HxYVfn16QEDlHrwSnActiLgYry0=
+
+Name: res/layout/pano_capture.xml
+SHA1-Digest: zPHzX6LBo32RaqrM74J5irnvX6E=
+
+Name: res/drawable-xhdpi/ic_indicators_scn.png
+SHA1-Digest: Mw7LH7AvJv0Die/H0D0ubann93o=
+
+Name: res/drawable-xhdpi/ic_camera_setting_video_speed.png
+SHA1-Digest: 4tK0N9+4H1ZLtBqqc446uI4q5kA=
+
+Name: res/drawable/bg_indicator_iso.xml
+SHA1-Digest: llLfjDEq+mEqeveXo5bPKWE1mtE=
+
+Name: res/drawable/btn_flash_button_bg.xml
+SHA1-Digest: N2+W0W+ENEJvEcIWOfHmoeqHHhM=
+
+Name: res/drawable/bg_white_balance_auto.xml
+SHA1-Digest: tZ1kEss/esPRa06cVn91INfnwRg=
+
+Name: res/drawable-xhdpi/audio_9.png
+SHA1-Digest: ODh9SD29bJtbs8RF0qAdWHAwIio=
+
+Name: res/layout/zoom_control.xml
+SHA1-Digest: mMcVoOZtau2EzJbZaPu3HYHQzwA=
+
+Name: res/drawable/ic_k_value_reduce_selector.xml
+SHA1-Digest: HkU6w37snfmAjPssCFg316WWrzA=
+
+Name: res/drawable-xhdpi/ic_flash_auto_selector_16_9.png
+SHA1-Digest: T91Rs5w9gV3Nkl29aPCe90oznrc=
+
+Name: res/drawable-xhdpi/ic_auto_mode_pressed.png
+SHA1-Digest: SZCq431b3Cnfr0JyI9GWHoxezok=
+
+Name: res/drawable-xhdpi/ic_indicator_quality_1080p_pressed.png
+SHA1-Digest: YmsXZcZ2XQNAqEJBstW+gqeewbQ=
+
+Name: res/drawable-xhdpi/ic_switch_photo_facing_holo_light_0.png
+SHA1-Digest: kF84wBav6c2+jvy0EVVytvXMpB0=
+
+Name: res/drawable-xhdpi/sliding_btn_frame.png
+SHA1-Digest: TVaqccojSuhiC745NAepxZFWPPA=
+
+Name: res/drawable-hdpi/ic_timelapse_4.png
+SHA1-Digest: T13fC4a9tiedKilPuTs/JLT83tM=
+
+Name: res/drawable-xhdpi/ic_white_balance_sunlight_holo_light.png
+SHA1-Digest: SKOUfGUo8TF8t2U7aQGNmSt4NqY=
+
+Name: res/drawable-xhdpi/ic_pan_border_fast.9.png
+SHA1-Digest: MlBq1homD/H1fcIf366evcScSxo=
+
+Name: res/layout/focus_indicator.xml
+SHA1-Digest: GqbODcjaaisGVpvQ+8d/1gYZxqY=
+
+Name: res/drawable-xhdpi/screen_view_arrow_right.png
+SHA1-Digest: bVuwEKrlpj/axHzMZ9nMXRUx2CU=
+
+Name: res/drawable-xhdpi/ic_qrcode_wechat_background.png
+SHA1-Digest: miB0HYkPbxLaetXc3yhFP+fLawY=
+
+Name: res/drawable-xhdpi/btn_shutter_bg_pressed_holo_16_9.png
+SHA1-Digest: 659odzKHfU7Ufq0PPVr9wyAEbb4=
+
+Name: res/drawable-xhdpi/ic_zoom_slider.png
+SHA1-Digest: rmQMwLdsMqqtW6t0a4PPCJHs6uc=
+
+Name: res/drawable-xhdpi/ic_indicators_macro.png
+SHA1-Digest: Y5wUS0oGiDzv04t1I3+ENSj3mi4=
+
+Name: res/drawable-xhdpi/ic_camera_settings_grid.png
+SHA1-Digest: ifJw1fV5xRxZEopLr0BA8+XAZnY=
+
+Name: res/drawable-xhdpi/ic_camera_scenemode_portrait.png
+SHA1-Digest: tW7uuFcRsGK5ZoTxQNRR32Ta8Bc=
+
+Name: res/drawable/bg_indicator_exposure.xml
+SHA1-Digest: /Bhqq+pzp7p+4ZjFLzaZod4vlRQ=
+
+Name: res/layout/camera_hdr_exit.xml
+SHA1-Digest: rYhRb2sCcSVLewzNDPCQoz5mu34=
+
+Name: res/xml/camera_skin_beautify_preferences.xml
+SHA1-Digest: WebRlYHVwjZKp8/VoaahsQ3LQho=
+
+Name: res/drawable-xhdpi/ic_qrcode_contacts_symbol.png
+SHA1-Digest: fS4kcHImtrINW8/9TM5HYqtrIkI=
+
+Name: resources.arsc
+SHA1-Digest: qHBpzgWZTcE2KFVy7+2a59C48k4=
+
+Name: assets/camera_fast_burst.ogg
+SHA1-Digest: hSGRUCxXvrCEQYQUO5DDcZbwfxs=
+
+Name: res/drawable-xhdpi/ic_highlight.png
+SHA1-Digest: LB10jQSZQOVUIDITlzhLLxxOqtc=
+
+Name: res/drawable-xhdpi/btn_shutter_bg_pressed_holo.png
+SHA1-Digest: /d+Gid9goASdbWVhm+M5HT77gHY=
+
+Name: res/drawable-xhdpi/ic_vidcontrol_pause.png
+SHA1-Digest: VSCreJLsxvDrnceH96D16TCotZc=
+
+Name: res/drawable/ic_camera_simple_mode_hdr.xml
+SHA1-Digest: MVIr6s2MTmbh3PfMrqeDVfBeYXE=
+
+Name: res/drawable-xhdpi/screen_view_arrow_left.png
+SHA1-Digest: EDxwRVToVUqOHlQWdLsMSaxnxl8=
+
+Name: res/mipmap-xhdpi/ic_launcher_camera.png
+SHA1-Digest: URe9ZoSNy84xR/EYdVkaBttS/yM=
+
+Name: res/xml/camera_preferences_simple.xml
+SHA1-Digest: A6XZjJMb7nbQbh5DRgu3cJ9hT2k=
+
+Name: res/drawable-xhdpi/ic_indicators_audio.png
+SHA1-Digest: kcmCDuSkYtcwQcn6ay96+kK+//Q=
+
+Name: res/drawable-xhdpi/ic_camera_scenemode_night_portrait.png
+SHA1-Digest: kGDRpHzyqiYj97a8Jy8q5leZBCM=
+
+Name: res/drawable-xhdpi/ic_camera_scenemode_flowers.png
+SHA1-Digest: ynZX+gc+pbPiqsLm8whet1P3+js=
+
+Name: res/drawable/btn_flash_button_bg_16_9.xml
+SHA1-Digest: xqNnALfs7LBqZAmHqHALemdSk2g=
+
+Name: res/drawable-xhdpi/ic_menu_done_holo_light_16_9_pressed.png
+SHA1-Digest: SrmQr2sdfwcLIlWb/0vuo78Jv1w=
+
+Name: res/drawable-xhdpi/ic_k_value_add_pressed.png
+SHA1-Digest: Hc8JDF7Kz9fahINMZnSucuiCcyE=
+
+Name: res/drawable-xhdpi/ic_menu_done_holo_light_16_9.png
+SHA1-Digest: vxm21BA3HBIG9DZkN4IWfcMVqLs=
+
+Name: res/drawable-hdpi/icn_media_play_focused_holo_dark.png
+SHA1-Digest: KtOOWgZOkfSrYDclWGo0HC2I0/M=
+
+Name: res/drawable-xhdpi/ic_snapshot_border.9.png
+SHA1-Digest: qI8JEltaGySXy2QdawBCVPVEPPE=
+
+Name: res/drawable-xhdpi/ic_vidcontrol_reload.png
+SHA1-Digest: aBMVEpvLSSJEa1d9+HDxdQlyvYs=
+
+Name: res/drawable-xhdpi/ic_vidcontrol_play.png
+SHA1-Digest: VWUYmouqO/faN04tvyEh3kwIIm8=
+
+Name: res/drawable-xhdpi/ic_camera_settings_hand_night_off.png
+SHA1-Digest: VVDjGXsxKH3jSLm1zlsJwuUCyl4=
+
+Name: res/anim/screen_setting_fade_out.xml
+SHA1-Digest: DjudcXcuMTQjQlGrmhCbptoVVhw=
+
+Name: res/drawable-xhdpi/qrcode_details_info_content_bg.9.png
+SHA1-Digest: 109j25E/mkMfIFzj68LxuaJIvds=
+
+Name: res/anim/qrcode_frament_layout_show.xml
+SHA1-Digest: QcrSrlTppyUFJszGXMVlTGcJ5Gs=
+
+Name: res/drawable-xhdpi/ic_qrcode_back_pressed.png
+SHA1-Digest: MUkhg8Gh1qleN/XiWZq6ixt81Yc=
+
+Name: res/drawable/btn_shutter_bg.xml
+SHA1-Digest: QQQQb5v2kv0SLJY/vw5qtfJcBeY=
+
+Name: res/drawable-xhdpi/ic_qrcode_web_background.png
+SHA1-Digest: Kb0pd3CTyzJ+2VjhQtJ5qjDm27s=
+
+Name: res/drawable/bg_indicator_auto_mode.xml
+SHA1-Digest: 7O+Fh3yvbHIhCBwm5WYbK8oj8IM=
+
+Name: res/drawable-xhdpi/ic_qrcode_app_symbol.png
+SHA1-Digest: EHjpLECzUrL7VQWDJXOeWNmjp8M=
+
+Name: res/drawable-xhdpi/ic_video_speed_slow_pressed.png
+SHA1-Digest: GCPlpY4mGWXDdnKlEFTOBm4zrEw=
+
+Name: res/anim/screen_setting_fade_in.xml
+SHA1-Digest: P2Og4UGWGZmWmfB93GD8R/klOVY=
+
+Name: res/drawable-xhdpi/ic_camera_scenemode_sports.png
+SHA1-Digest: bcHgZYRDpAwXr4bvbx6dHIhKu6k=
+
+Name: res/drawable-xhdpi/ic_more_setting_pressed.png
+SHA1-Digest: k0o8K/+syCuGm7mgHqKHFNY8eTY=
+
+Name: res/drawable/ic_camera_simple_mode_audio_capture.xml
+SHA1-Digest: VDILrSyAEWHfWSFNVPxJaphSmn8=
+
+Name: res/drawable-xhdpi/ic_qrcode_text_symbol.png
+SHA1-Digest: l9/LKNFONXscnzj+HnCsv7WeJH8=
+
+Name: res/drawable-xhdpi/ic_indicator_quality_720p.png
+SHA1-Digest: iqkWq+xZ2pL7MOx0eUH0rOvzoZU=
+
+Name: res/drawable/ic_k_value_return_selector.xml
+SHA1-Digest: k69c3DMcBdyXx4mMpKUgcO8ma9o=
+
+Name: res/drawable-xhdpi/ic_k_value_return.png
+SHA1-Digest: oG1WpCD+u2spDF+kE4j3DQEhbuY=
+
+Name: res/layout/camera.xml
+SHA1-Digest: IrUSVZKgxeotuGpfmscc1YhR6Zc=
+
+Name: res/drawable/bg_indicator_setting.xml
+SHA1-Digest: 5b7JelT45q0TGvoo98hiYex0R+Y=
+
+Name: res/layout/rotate_dialog.xml
+SHA1-Digest: ZA/pSTqrJ5oZCgDsIDM22VbPvIo=
+
+Name: res/drawable/screen_view_seek_point_selector.xml
+SHA1-Digest: cIL0c0mkqvK50S08im5Uv0n5xJw=
+
+Name: res/drawable-xhdpi/ic_camera_scenemode_auto.png
+SHA1-Digest: VEvXEmnrWBqD+e0wt2ZMdFvOJ7s=
+
+Name: res/drawable-hdpi/ic_timelapse_2.png
+SHA1-Digest: GfrcXJX0jXA0MgoGIloKxYJGD7c=
+
+Name: res/drawable-xhdpi/ic_qrcode_text_background.png
+SHA1-Digest: eGHi/upPApt0f76il+imzsGboDM=
+
+Name: res/drawable-xhdpi/ic_quality_480p.png
+SHA1-Digest: pHfcJQYm8H89yzMgkc215S+nBa0=
+
+Name: res/drawable-xhdpi/ic_camera_popup_content.9.png
+SHA1-Digest: 0oQKxjHiiaRc9s2M3c6la+Uik70=
+
+Name: res/drawable-xhdpi/ic_quality_1080p.png
+SHA1-Digest: vTEEcbxLUeu8qdImExnWIcyDC58=
+
+Name: res/raw/goofy_face.graph
+SHA1-Digest: 9kOmURIk7f7Fm54dLuUz8OI+5vA=
+
+Name: res/drawable-xhdpi/ic_camera_coloreffect_negative.png
+SHA1-Digest: JWMQ0wHw1UZIBbLwat2Ge+8Yzg4=
+
+Name: res/drawable-xhdpi/grid_4_3.png
+SHA1-Digest: dSR2eUqAUY9vhxlgS5i7LZCcGg0=
+
+Name: res/drawable-xhdpi/camera_window_back_ground.png
+SHA1-Digest: p7+mjVlNAu1FHsqodhu2F6ckx60=
+
+Name: res/drawable/bg_white_balance_incandescent.xml
+SHA1-Digest: qkQbkbx3cr+Qk6brHPnpVnt/yBc=
+
+Name: res/layout/pano_start_hint.xml
+SHA1-Digest: ENT/faQ8Kb1X0hRtoZnpCK8m5eo=
+
+Name: res/drawable-xhdpi/ic_camera_settings_choose_screen.png
+SHA1-Digest: 6PqN7POF4/GHxKsaTZEaWuSqVw0=
+
+Name: res/drawable-xhdpi/grid_selected.9.png
+SHA1-Digest: zNKU5FboSgHrpPcnbZBzxGR5ckU=
+
+Name: res/drawable/border_last_picture_16_9.xml
+SHA1-Digest: IU2wrwZGXlRAqjP46p939ha3LSQ=
+
+Name: res/drawable/bg_indicator_video_speed.xml
+SHA1-Digest: +9cljQqr7vad2bM1fIdHt9fE778=
+
+Name: res/drawable-xhdpi/ic_k_value_return_pressed.png
+SHA1-Digest: NJT9gbnqPe2/VQb38rsn1Ann1ZA=
+
+Name: res/layout/qrcode_fragment_details_content.xml
+SHA1-Digest: tCc9ggluxnSr7t8ZyniHpBP4zC4=
+
+Name: res/drawable-xhdpi/ic_video_speed_fast_pressed.png
+SHA1-Digest: UjEjtBKVEvhcA5fkeqpoyKFaP20=
+
+Name: res/drawable-hdpi/ic_menu_ptp_holo_light.png
+SHA1-Digest: g1g8dSazQLRvOeveTDGofbgbFVw=
+
+Name: res/drawable/bg_iso_800.xml
+SHA1-Digest: 6dNwK8yFvcw1LcUkdmqGWUEtc9w=
+
+Name: res/drawable/bg_indicator_quality_480p.xml
+SHA1-Digest: mCf2MOWhVWoVw1xEUz6cSyRXPCw=
+
+Name: res/drawable-xhdpi/ic_face_detected.9.png
+SHA1-Digest: V8bcpNTsJXsMNvN3vKGNCxNio68=
+
+Name: res/drawable-xhdpi/ic_camera_settings_panorama_pressed.png
+SHA1-Digest: fCoRYmStQ8K5HsjI58SuK5Z+cks=
+
+Name: res/drawable/btn_shutter.xml
+SHA1-Digest: XEdpcKe9NXi+ReEtfUcnQSIK4J8=
+
+Name: res/drawable/bg_iso_100.xml
+SHA1-Digest: de3X5blIpXYtYPkHISc1ZWtpgJo=
+
+Name: res/drawable-xhdpi/grid_pressed.9.png
+SHA1-Digest: PvnUQgKirLQ2/XqRNuNNR41xgc8=
+
+Name: res/drawable/bg_iso_auto.xml
+SHA1-Digest: FGeyNUb2An9BLd2xMvj2UXMGKa8=
+
+Name: res/drawable-xhdpi/ic_find_qrcode_button.9.png
+SHA1-Digest: 6c6MzfF19ayAAoQmBC41ojuZhSM=
+
+Name: res/drawable/bg_iso_400.xml
+SHA1-Digest: fFCVA41JGHTqQdKHUia+OWYox40=
+
+Name: res/drawable-xhdpi/ic_camera_simple_mode_hdr_pressed.png
+SHA1-Digest: v+iprITP5ykK29ZavscQR+EBOJY=
+
+Name: res/drawable-xhdpi/ic_flash_button_bg_pressed_holo.png
+SHA1-Digest: 4Edao5wJHvkwoqflVA9xTBZ01oM=
+
+Name: res/drawable-xhdpi/ic_camera_skin_beatify_close.png
+SHA1-Digest: fLRhNeRhjbJPsLcZmdYB9qc+sLk=
+
+Name: res/drawable/bg_indicator_whitebalance.xml
+SHA1-Digest: rm3jGkAoqKKTPHKA2qVzhYCka7I=
+
+Name: res/drawable/ic_camera_simple_mode_hand_night.xml
+SHA1-Digest: xrkOs+bi/gTvFoukCFaeEyYW0Rc=
+
+Name: res/layout/panorama.xml
+SHA1-Digest: XxJ0RR7tQUIZpgJ7nHkxCWuDmdM=
+
+Name: res/drawable-xhdpi/ic_video_speed_normal_pressed.png
+SHA1-Digest: buQSBwFf3Adv83ZOq9wtlaNux9Y=
+
+Name: res/drawable-xhdpi/ic_camera_settings_color_effect.png
+SHA1-Digest: T3UyvJ4WRhX+RkTp9nD8RLv1/8s=
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.camera.ui.RestrictRotateLayout android:id="@id/on_screen_indicators" android:layout_below="@id/control_panel_top" style="@style/OnScreenIndicators"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="horizontal" android:id="@id/on_screen_indicators_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
+            <com.android.camera.ui.RotateImageView android:id="@id/onscreen_gps_indicator" style="@style/OnScreenIndicator" />
+            <com.android.camera.ui.RotateImageView android:id="@id/onscreen_video_speed_indicator" style="@style/OnScreenIndicator" />
+            <com.android.camera.ui.RotateImageView android:id="@id/onscreen_white_balance_indicator" android:src="@drawable/ic_indicators_whitebalance" style="@style/OnScreenIndicator" />
+            <com.android.camera.ui.RotateImageView android:id="@id/onscreen_color_effect_indicator" style="@style/OnScreenIndicator" />
+        </LinearLayout>
+        <com.android.camera.ui.RotateTextView android:textSize="@dimen/onscreen_exposure_indicator_text_size" android:textColor="@*android:color/white" android:gravity="center_vertical" android:id="@id/recording_time" android:visibility="gone" android:layout_alignParentRight="true" style="@style/OnScreenIndicator" />
+    </RelativeLayout>
+</com.android.camera.ui.RestrictRotateLayout>
