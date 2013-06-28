@@ -688,9 +688,9 @@
     if-eqz v1, :cond_0
 
     .line 902
-    const-string v1, "com.miui.videoplayer"
+    const-string v1, "com.android.gallery3d"
 
-    const-string v2, "com.miui.videoplayer.VideoPlayerActivity"
+    const-string v2, "com.android.gallery3d.app.MovieActivity"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
