@@ -798,11 +798,9 @@
     invoke-super {p0}, Landroid/app/Activity;->onStart()V
 
     .line 181
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getPackageName()Ljava/lang/String;
+    const/4 v3, 0x0
 
-    move-result-object v3
-
-    invoke-static {v3}, Landroid/os/Environment;->getExternalStorageAppFilesDirectory(Ljava/lang/String;)Ljava/io/File;
+    invoke-virtual {p0, v3}, Landroid/content/Context;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v0
 
