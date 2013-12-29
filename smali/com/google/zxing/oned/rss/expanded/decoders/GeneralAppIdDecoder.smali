@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private final buffer:Ljava/lang/StringBuffer;
+.field private final buffer:Ljava/lang/StringBuilder;
 
 .field private final current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
@@ -18,7 +18,7 @@
 
     .prologue
     .line 42
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 39
     new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
@@ -28,11 +28,11 @@
     iput-object v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
     .line 40
-    new-instance v0, Ljava/lang/StringBuffer;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iput-object v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuffer;
+    iput-object v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuilder;
 
     .line 43
     iput-object p1, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
@@ -42,209 +42,24 @@
 .end method
 
 .method private decodeAlphanumeric(I)Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-    .locals 5
-    .parameter "pos"
-
-    .prologue
-    const/16 v3, 0xf
-
-    const/4 v2, 0x5
-
-    .line 342
-    invoke-virtual {p0, p1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
-
-    move-result v0
-
-    .line 343
-    .local v0, fiveBitValue:I
-    if-ne v0, v3, :cond_0
-
-    .line 344
-    new-instance v2, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v3, p1, 0x5
-
-    const/16 v4, 0x24
-
-    invoke-direct {v2, v3, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    .line 362
-    :goto_0
-    return-object v2
-
-    .line 347
-    :cond_0
-    if-lt v0, v2, :cond_1
-
-    if-ge v0, v3, :cond_1
-
-    .line 348
-    new-instance v2, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v3, p1, 0x5
-
-    add-int/lit8 v4, v0, 0x30
-
-    add-int/lit8 v4, v4, -0x5
-
-    int-to-char v4, v4
-
-    invoke-direct {v2, v3, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto :goto_0
-
-    .line 351
-    :cond_1
-    const/4 v2, 0x6
-
-    invoke-virtual {p0, p1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
-
-    move-result v1
-
-    .line 353
-    .local v1, sixBitValue:I
-    const/16 v2, 0x20
-
-    if-lt v1, v2, :cond_2
-
-    const/16 v2, 0x3a
-
-    if-ge v1, v2, :cond_2
-
-    .line 354
-    new-instance v2, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v3, p1, 0x6
-
-    add-int/lit8 v4, v1, 0x21
-
-    int-to-char v4, v4
-
-    invoke-direct {v2, v3, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto :goto_0
-
-    .line 357
-    :cond_2
-    packed-switch v1, :pswitch_data_0
-
-    .line 365
-    new-instance v2, Ljava/lang/RuntimeException;
-
-    new-instance v3, Ljava/lang/StringBuffer;
-
-    invoke-direct {v3}, Ljava/lang/StringBuffer;-><init>()V
-
-    const-string v4, "Decoding invalid alphanumeric value: "
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-
-    .line 358
-    :pswitch_0
-    new-instance v2, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v3, p1, 0x6
-
-    const/16 v4, 0x2a
-
-    invoke-direct {v2, v3, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto :goto_0
-
-    .line 359
-    :pswitch_1
-    new-instance v2, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v3, p1, 0x6
-
-    const/16 v4, 0x2c
-
-    invoke-direct {v2, v3, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto :goto_0
-
-    .line 360
-    :pswitch_2
-    new-instance v2, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v3, p1, 0x6
-
-    const/16 v4, 0x2d
-
-    invoke-direct {v2, v3, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto :goto_0
-
-    .line 361
-    :pswitch_3
-    new-instance v2, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v3, p1, 0x6
-
-    const/16 v4, 0x2e
-
-    invoke-direct {v2, v3, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto :goto_0
-
-    .line 362
-    :pswitch_4
-    new-instance v2, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v3, p1, 0x6
-
-    const/16 v4, 0x2f
-
-    invoke-direct {v2, v3, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto :goto_0
-
-    .line 357
-    :pswitch_data_0
-    .packed-switch 0x3a
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-        :pswitch_4
-    .end packed-switch
-.end method
-
-.method private decodeIsoIec646(I)Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
     .locals 6
     .parameter "pos"
 
     .prologue
-    const/16 v5, 0x5a
-
     const/16 v4, 0xf
 
     const/4 v3, 0x5
 
-    .line 275
+    .line 388
     invoke-virtual {p0, p1, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
 
     move-result v1
 
-    .line 276
+    .line 389
     .local v1, fiveBitValue:I
     if-ne v1, v4, :cond_0
 
-    .line 277
+    .line 390
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
 
     add-int/lit8 v4, p1, 0x5
@@ -253,17 +68,17 @@
 
     invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
 
-    .line 316
+    .line 423
     :goto_0
     return-object v3
 
-    .line 280
+    .line 393
     :cond_0
     if-lt v1, v3, :cond_1
 
     if-ge v1, v4, :cond_1
 
-    .line 281
+    .line 394
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
 
     add-int/lit8 v4, p1, 0x5
@@ -278,28 +93,30 @@
 
     goto :goto_0
 
-    .line 284
+    .line 397
     :cond_1
-    const/4 v3, 0x7
+    const/4 v3, 0x6
 
     invoke-virtual {p0, p1, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
 
     move-result v2
 
-    .line 286
-    .local v2, sevenBitValue:I
-    const/16 v3, 0x40
+    .line 399
+    .local v2, sixBitValue:I
+    const/16 v3, 0x20
 
     if-lt v2, v3, :cond_2
 
-    if-ge v2, v5, :cond_2
+    const/16 v3, 0x3a
 
-    .line 287
+    if-ge v2, v3, :cond_2
+
+    .line 400
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
 
-    add-int/lit8 v4, p1, 0x7
+    add-int/lit8 v4, p1, 0x6
 
-    add-int/lit8 v5, v2, 0x1
+    add-int/lit8 v5, v2, 0x21
 
     int-to-char v5, v5
 
@@ -307,317 +124,434 @@
 
     goto :goto_0
 
-    .line 290
+    .line 404
     :cond_2
-    if-lt v2, v5, :cond_3
+    packed-switch v2, :pswitch_data_0
 
-    const/16 v3, 0x74
+    .line 421
+    new-instance v3, Ljava/lang/IllegalStateException;
 
-    if-ge v2, v3, :cond_3
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    .line 291
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    add-int/lit8 v4, p1, 0x7
+    const-string v5, "Decoding invalid alphanumeric value: "
 
-    add-int/lit8 v5, v2, 0x7
-
-    int-to-char v5, v5
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto :goto_0
-
-    .line 294
-    :cond_3
-    const/16 v3, 0x8
-
-    invoke-virtual {p0, p1, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
-
-    move-result v0
-
-    .line 295
-    .local v0, eightBitValue:I
-    packed-switch v0, :pswitch_data_0
-
-    .line 319
-    new-instance v3, Ljava/lang/RuntimeException;
-
-    new-instance v4, Ljava/lang/StringBuffer;
-
-    invoke-direct {v4}, Ljava/lang/StringBuffer;-><init>()V
-
-    const-string v5, "Decoding invalid ISO/IEC 646 value: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-direct {v3, v4}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v4}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v3
 
-    .line 296
+    .line 406
     :pswitch_0
+    const/16 v0, 0x2a
+
+    .line 423
+    .local v0, c:C
+    :goto_1
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
 
-    add-int/lit8 v4, p1, 0x8
+    add-int/lit8 v4, p1, 0x6
 
-    const/16 v5, 0x21
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
+    invoke-direct {v3, v4, v0}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
 
     goto :goto_0
 
-    .line 297
+    .line 409
+    .end local v0           #c:C
     :pswitch_1
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
+    const/16 v0, 0x2c
 
-    add-int/lit8 v4, p1, 0x8
+    .line 410
+    .restart local v0       #c:C
+    goto :goto_1
 
-    const/16 v5, 0x22
+    .line 412
+    .end local v0           #c:C
+    :pswitch_2
+    const/16 v0, 0x2d
 
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
+    .line 413
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 415
+    .end local v0           #c:C
+    :pswitch_3
+    const/16 v0, 0x2e
+
+    .line 416
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 418
+    .end local v0           #c:C
+    :pswitch_4
+    const/16 v0, 0x2f
+
+    .line 419
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 404
+    :pswitch_data_0
+    .packed-switch 0x3a
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+        :pswitch_3
+        :pswitch_4
+    .end packed-switch
+.end method
+
+.method private decodeIsoIec646(I)Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
+    .locals 7
+    .parameter "pos"
+
+    .prologue
+    const/16 v6, 0x5a
+
+    const/16 v5, 0xf
+
+    const/4 v4, 0x5
+
+    .line 277
+    invoke-virtual {p0, p1, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
+
+    move-result v2
+
+    .line 278
+    .local v2, fiveBitValue:I
+    if-ne v2, v5, :cond_0
+
+    .line 279
+    new-instance v4, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
+
+    add-int/lit8 v5, p1, 0x5
+
+    const/16 v6, 0x24
+
+    invoke-direct {v4, v5, v6}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
+
+    .line 365
+    :goto_0
+    return-object v4
+
+    .line 282
+    :cond_0
+    if-lt v2, v4, :cond_1
+
+    if-ge v2, v5, :cond_1
+
+    .line 283
+    new-instance v4, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
+
+    add-int/lit8 v5, p1, 0x5
+
+    add-int/lit8 v6, v2, 0x30
+
+    add-int/lit8 v6, v6, -0x5
+
+    int-to-char v6, v6
+
+    invoke-direct {v4, v5, v6}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
 
     goto :goto_0
+
+    .line 286
+    :cond_1
+    const/4 v4, 0x7
+
+    invoke-virtual {p0, p1, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
+
+    move-result v3
+
+    .line 288
+    .local v3, sevenBitValue:I
+    const/16 v4, 0x40
+
+    if-lt v3, v4, :cond_2
+
+    if-ge v3, v6, :cond_2
+
+    .line 289
+    new-instance v4, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
+
+    add-int/lit8 v5, p1, 0x7
+
+    add-int/lit8 v6, v3, 0x1
+
+    int-to-char v6, v6
+
+    invoke-direct {v4, v5, v6}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
+
+    goto :goto_0
+
+    .line 292
+    :cond_2
+    if-lt v3, v6, :cond_3
+
+    const/16 v4, 0x74
+
+    if-ge v3, v4, :cond_3
+
+    .line 293
+    new-instance v4, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
+
+    add-int/lit8 v5, p1, 0x7
+
+    add-int/lit8 v6, v3, 0x7
+
+    int-to-char v6, v6
+
+    invoke-direct {v4, v5, v6}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
+
+    goto :goto_0
+
+    .line 296
+    :cond_3
+    const/16 v4, 0x8
+
+    invoke-virtual {p0, p1, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
+
+    move-result v1
 
     .line 298
-    :pswitch_2
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
+    .local v1, eightBitValue:I
+    packed-switch v1, :pswitch_data_0
 
-    add-int/lit8 v4, p1, 0x8
+    .line 363
+    new-instance v4, Ljava/lang/IllegalArgumentException;
 
-    const/16 v5, 0x25
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Decoding invalid ISO/IEC 646 value: "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v4
+
+    .line 300
+    :pswitch_0
+    const/16 v0, 0x21
+
+    .line 365
+    .local v0, c:C
+    :goto_1
+    new-instance v4, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
+
+    add-int/lit8 v5, p1, 0x8
+
+    invoke-direct {v4, v5, v0}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
 
     goto :goto_0
 
-    .line 299
-    :pswitch_3
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x26
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
-
-    .line 300
-    :pswitch_4
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x27
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
-
-    .line 301
-    :pswitch_5
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x28
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
-
-    .line 302
-    :pswitch_6
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x29
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
-
     .line 303
-    :pswitch_7
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x2a
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
+    .end local v0           #c:C
+    :pswitch_1
+    const/16 v0, 0x22
 
     .line 304
-    :pswitch_8
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x2b
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
-
-    .line 305
-    :pswitch_9
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x2c
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
+    .restart local v0       #c:C
+    goto :goto_1
 
     .line 306
-    :pswitch_a
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x2d
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
+    .end local v0           #c:C
+    :pswitch_2
+    const/16 v0, 0x25
 
     .line 307
-    :pswitch_b
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x2e
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
-
-    .line 308
-    :pswitch_c
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x2f
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
+    .restart local v0       #c:C
+    goto :goto_1
 
     .line 309
-    :pswitch_d
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x3a
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
+    .end local v0           #c:C
+    :pswitch_3
+    const/16 v0, 0x26
 
     .line 310
-    :pswitch_e
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x3b
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
-
-    .line 311
-    :pswitch_f
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x3c
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
+    .restart local v0       #c:C
+    goto :goto_1
 
     .line 312
-    :pswitch_10
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x3d
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
+    .end local v0           #c:C
+    :pswitch_4
+    const/16 v0, 0x27
 
     .line 313
-    :pswitch_11
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x3e
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
-
-    .line 314
-    :pswitch_12
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x3f
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
+    .restart local v0       #c:C
+    goto :goto_1
 
     .line 315
-    :pswitch_13
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
-
-    add-int/lit8 v4, p1, 0x8
-
-    const/16 v5, 0x5f
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
+    .end local v0           #c:C
+    :pswitch_5
+    const/16 v0, 0x28
 
     .line 316
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 318
+    .end local v0           #c:C
+    :pswitch_6
+    const/16 v0, 0x29
+
+    .line 319
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 321
+    .end local v0           #c:C
+    :pswitch_7
+    const/16 v0, 0x2a
+
+    .line 322
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 324
+    .end local v0           #c:C
+    :pswitch_8
+    const/16 v0, 0x2b
+
+    .line 325
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 327
+    .end local v0           #c:C
+    :pswitch_9
+    const/16 v0, 0x2c
+
+    .line 328
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 330
+    .end local v0           #c:C
+    :pswitch_a
+    const/16 v0, 0x2d
+
+    .line 331
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 333
+    .end local v0           #c:C
+    :pswitch_b
+    const/16 v0, 0x2e
+
+    .line 334
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 336
+    .end local v0           #c:C
+    :pswitch_c
+    const/16 v0, 0x2f
+
+    .line 337
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 339
+    .end local v0           #c:C
+    :pswitch_d
+    const/16 v0, 0x3a
+
+    .line 340
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 342
+    .end local v0           #c:C
+    :pswitch_e
+    const/16 v0, 0x3b
+
+    .line 343
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 345
+    .end local v0           #c:C
+    :pswitch_f
+    const/16 v0, 0x3c
+
+    .line 346
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 348
+    .end local v0           #c:C
+    :pswitch_10
+    const/16 v0, 0x3d
+
+    .line 349
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 351
+    .end local v0           #c:C
+    :pswitch_11
+    const/16 v0, 0x3e
+
+    .line 352
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 354
+    .end local v0           #c:C
+    :pswitch_12
+    const/16 v0, 0x3f
+
+    .line 355
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 357
+    .end local v0           #c:C
+    :pswitch_13
+    const/16 v0, 0x5f
+
+    .line 358
+    .restart local v0       #c:C
+    goto :goto_1
+
+    .line 360
+    .end local v0           #c:C
     :pswitch_14
-    new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
+    const/16 v0, 0x20
 
-    add-int/lit8 v4, p1, 0x8
+    .line 361
+    .restart local v0       #c:C
+    goto :goto_1
 
-    const/16 v5, 0x20
-
-    invoke-direct {v3, v4, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;-><init>(IC)V
-
-    goto/16 :goto_0
-
-    .line 295
+    .line 298
     nop
 
     :pswitch_data_0
@@ -653,46 +587,52 @@
     .prologue
     const/16 v6, 0xa
 
-    .line 85
+    .line 87
     add-int/lit8 v3, p1, 0x7
 
     iget-object v4, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v4, v4, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v4}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v4
 
     if-le v3, v4, :cond_1
 
-    .line 86
+    .line 88
     const/4 v3, 0x4
 
     invoke-virtual {p0, p1, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
 
     move-result v2
 
-    .line 87
+    .line 89
     .local v2, numeric:I
     if-nez v2, :cond_0
 
-    .line 88
+    .line 90
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedNumeric;
 
     iget-object v4, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v4, v4, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v4}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v4
 
     invoke-direct {v3, v4, v6, v6}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedNumeric;-><init>(III)V
 
-    .line 97
+    .line 99
     :goto_0
     return-object v3
 
-    .line 90
+    .line 92
     :cond_0
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedNumeric;
 
     iget-object v4, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v4, v4, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v4}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v4
 
     add-int/lit8 v5, v2, -0x1
 
@@ -700,7 +640,7 @@
 
     goto :goto_0
 
-    .line 92
+    .line 94
     .end local v2           #numeric:I
     :cond_1
     const/4 v3, 0x7
@@ -709,19 +649,19 @@
 
     move-result v2
 
-    .line 94
+    .line 96
     .restart local v2       #numeric:I
     add-int/lit8 v3, v2, -0x8
 
     div-int/lit8 v0, v3, 0xb
 
-    .line 95
+    .line 97
     .local v0, digit1:I
     add-int/lit8 v3, v2, -0x8
 
     rem-int/lit8 v1, v3, 0xb
 
-    .line 97
+    .line 99
     .local v1, digit2:I
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedNumeric;
 
@@ -739,12 +679,12 @@
     .parameter "bits"
 
     .prologue
-    .line 105
+    .line 107
     const/16 v2, 0x20
 
     if-le p2, v2, :cond_0
 
-    .line 106
+    .line 108
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "extractNumberValueFromBitArray can\'t handle more than 32 bits"
@@ -753,11 +693,11 @@
 
     throw v2
 
-    .line 109
+    .line 111
     :cond_0
     const/4 v1, 0x0
 
-    .line 110
+    .line 112
     .local v1, value:I
     const/4 v0, 0x0
 
@@ -765,7 +705,7 @@
     :goto_0
     if-ge v0, p2, :cond_2
 
-    .line 111
+    .line 113
     add-int v2, p1, v0
 
     invoke-virtual {p0, v2}, Lcom/google/zxing/common/BitArray;->get(I)Z
@@ -774,7 +714,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 112
+    .line 114
     const/4 v2, 0x1
 
     sub-int v3, p2, v0
@@ -785,13 +725,13 @@
 
     or-int/2addr v1, v2
 
-    .line 110
+    .line 112
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 116
+    .line 118
     :cond_2
     return v1
 .end method
@@ -803,21 +743,23 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 388
+    .line 446
     add-int/lit8 v2, p1, 0x3
 
     iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v3, v3, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v3}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v3
 
     if-le v2, v3, :cond_1
 
-    .line 397
+    .line 455
     :cond_0
     :goto_0
     return v1
 
-    .line 392
+    .line 450
     :cond_1
     move v0, p1
 
@@ -827,7 +769,7 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 393
+    .line 451
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
     invoke-virtual {v2, v0}, Lcom/google/zxing/common/BitArray;->get(I)Z
@@ -836,12 +778,12 @@
 
     if-nez v2, :cond_0
 
-    .line 392
+    .line 450
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 397
+    .line 455
     :cond_2
     const/4 v1, 0x1
 
@@ -855,21 +797,23 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 369
+    .line 427
     add-int/lit8 v2, p1, 0x1
 
     iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v3, v3, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v3}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v3
 
     if-le v2, v3, :cond_1
 
-    .line 383
+    .line 441
     :cond_0
     :goto_0
     return v1
 
-    .line 373
+    .line 431
     :cond_1
     const/4 v0, 0x0
 
@@ -883,16 +827,18 @@
 
     iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v3, v3, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v3}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v3
 
     if-ge v2, v3, :cond_4
 
-    .line 374
+    .line 432
     const/4 v2, 0x2
 
     if-ne v0, v2, :cond_3
 
-    .line 375
+    .line 433
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
     add-int/lit8 v3, p1, 0x2
@@ -903,13 +849,13 @@
 
     if-eqz v2, :cond_0
 
-    .line 373
+    .line 431
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 378
+    .line 436
     :cond_3
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
@@ -923,7 +869,7 @@
 
     goto :goto_0
 
-    .line 383
+    .line 441
     :cond_4
     const/4 v1, 0x1
 
@@ -937,21 +883,23 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 403
+    .line 461
     add-int/lit8 v2, p1, 0x1
 
     iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v3, v3, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v3}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v3
 
     if-le v2, v3, :cond_1
 
-    .line 412
+    .line 470
     :cond_0
     :goto_0
     return v1
 
-    .line 407
+    .line 465
     :cond_1
     const/4 v0, 0x0
 
@@ -965,11 +913,13 @@
 
     iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v3, v3, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v3}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v3
 
     if-ge v2, v3, :cond_2
 
-    .line 408
+    .line 466
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
     add-int v3, p1, v0
@@ -980,12 +930,12 @@
 
     if-nez v2, :cond_0
 
-    .line 407
+    .line 465
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 412
+    .line 470
     :cond_2
     const/4 v1, 0x1
 
@@ -1005,27 +955,29 @@
 
     const/4 v3, 0x0
 
-    .line 323
+    .line 369
     add-int/lit8 v4, p1, 0x5
 
     iget-object v5, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v5, v5, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v5}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v5
 
     if-le v4, v5, :cond_1
 
-    .line 338
+    .line 384
     :cond_0
     :goto_0
     return v3
 
-    .line 328
+    .line 374
     :cond_1
     invoke-virtual {p0, p1, v6}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
 
     move-result v0
 
-    .line 329
+    .line 375
     .local v0, fiveBitValue:I
     if-lt v0, v6, :cond_2
 
@@ -1033,27 +985,29 @@
 
     move v3, v2
 
-    .line 330
+    .line 376
     goto :goto_0
 
-    .line 333
+    .line 379
     :cond_2
     add-int/lit8 v4, p1, 0x6
 
     iget-object v5, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v5, v5, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v5}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v5
 
     if-gt v4, v5, :cond_0
 
-    .line 337
+    .line 383
     const/4 v4, 0x6
 
     invoke-virtual {p0, p1, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
 
     move-result v1
 
-    .line 338
+    .line 384
     .local v1, sixBitValue:I
     if-lt v1, v7, :cond_3
 
@@ -1083,27 +1037,29 @@
 
     const/4 v4, 0x0
 
-    .line 247
+    .line 249
     add-int/lit8 v5, p1, 0x5
 
     iget-object v6, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v6, v6, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v6}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v6
 
     if-le v5, v6, :cond_1
 
-    .line 270
+    .line 272
     :cond_0
     :goto_0
     return v4
 
-    .line 251
+    .line 253
     :cond_1
     invoke-virtual {p0, p1, v7}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
 
     move-result v1
 
-    .line 252
+    .line 254
     .local v1, fiveBitValue:I
     if-lt v1, v7, :cond_2
 
@@ -1113,27 +1069,29 @@
 
     move v4, v3
 
-    .line 253
+    .line 255
     goto :goto_0
 
-    .line 256
+    .line 258
     :cond_2
     add-int/lit8 v5, p1, 0x7
 
     iget-object v6, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v6, v6, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v6}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v6
 
     if-gt v5, v6, :cond_0
 
-    .line 260
+    .line 262
     const/4 v5, 0x7
 
     invoke-virtual {p0, p1, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
 
     move-result v2
 
-    .line 261
+    .line 263
     .local v2, sevenBitValue:I
     const/16 v5, 0x40
 
@@ -1145,27 +1103,29 @@
 
     move v4, v3
 
-    .line 262
+    .line 264
     goto :goto_0
 
-    .line 265
+    .line 267
     :cond_3
     add-int/lit8 v5, p1, 0x8
 
     iget-object v6, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v6, v6, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v6}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v6
 
     if-gt v5, v6, :cond_0
 
-    .line 269
+    .line 271
     const/16 v5, 0x8
 
     invoke-virtual {p0, p1, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
 
     move-result v0
 
-    .line 270
+    .line 272
     .local v0, eightBitValue:I
     const/16 v5, 0xe8
 
@@ -1193,36 +1153,40 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 71
+    .line 73
     add-int/lit8 v2, p1, 0x7
 
     iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v3, v3, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v3}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v3
 
     if-le v2, v3, :cond_2
 
-    .line 72
+    .line 74
     add-int/lit8 v2, p1, 0x4
 
     iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v3, v3, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v3}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v3
 
     if-gt v2, v3, :cond_1
 
-    .line 81
+    .line 83
     :cond_0
     :goto_0
     return v1
 
-    .line 72
+    .line 74
     :cond_1
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 75
+    .line 77
     :cond_2
     move v0, p1
 
@@ -1232,7 +1196,7 @@
 
     if-ge v0, v2, :cond_3
 
-    .line 76
+    .line 78
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
     invoke-virtual {v2, v0}, Lcom/google/zxing/common/BitArray;->get(I)Z
@@ -1241,12 +1205,12 @@
 
     if-nez v2, :cond_0
 
-    .line 75
+    .line 77
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 81
+    .line 83
     :cond_3
     iget-object v1, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
@@ -1263,11 +1227,13 @@
     .locals 4
 
     .prologue
-    .line 219
+    .line 221
     :goto_0
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
+
+    move-result v2
 
     invoke-direct {p0, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->isStillAlpha(I)Z
 
@@ -1275,48 +1241,52 @@
 
     if-eqz v2, :cond_1
 
-    .line 220
+    .line 222
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
+
+    move-result v2
 
     invoke-direct {p0, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->decodeAlphanumeric(I)Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
 
     move-result-object v0
 
-    .line 221
+    .line 223
     .local v0, alpha:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;->getNewPosition()I
+    invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedObject;->getNewPosition()I
 
     move-result v3
 
-    iput v3, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->setPosition(I)V
 
-    .line 223
+    .line 225
     invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;->isFNC1()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 224
+    .line 226
     new-instance v1, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
 
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
 
-    iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuffer;
+    move-result v2
 
-    invoke-virtual {v3}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-direct {v1, v2, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;-><init>(ILjava/lang/String;)V
 
-    .line 225
+    .line 227
     .local v1, information:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
     new-instance v2, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;
 
@@ -1324,31 +1294,33 @@
 
     invoke-direct {v2, v1, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;-><init>(Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;Z)V
 
-    .line 243
+    .line 245
     .end local v0           #alpha:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
     .end local v1           #information:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
     :goto_1
     return-object v2
 
-    .line 228
+    .line 230
     .restart local v0       #alpha:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
     :cond_0
-    iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuffer;
+    iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;->getValue()C
 
     move-result v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 231
+    .line 233
     .end local v0           #alpha:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
     :cond_1
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
+
+    move-result v2
 
     invoke-direct {p0, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->isAlphaOr646ToNumericLatch(I)Z
 
@@ -1356,21 +1328,19 @@
 
     if-eqz v2, :cond_3
 
-    .line 232
+    .line 234
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v3, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    const/4 v3, 0x3
 
-    add-int/lit8 v3, v3, 0x3
+    invoke-virtual {v2, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->incrementPosition(I)V
 
-    iput v3, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
-
-    .line 233
+    .line 235
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
     invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->setNumeric()V
 
-    .line 243
+    .line 245
     :cond_2
     :goto_2
     new-instance v2, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;
@@ -1381,11 +1351,13 @@
 
     goto :goto_1
 
-    .line 234
+    .line 236
     :cond_3
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
+
+    move-result v2
 
     invoke-direct {p0, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->isAlphaTo646ToAlphaLatch(I)Z
 
@@ -1393,29 +1365,31 @@
 
     if-eqz v2, :cond_2
 
-    .line 235
+    .line 237
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
+
+    move-result v2
 
     add-int/lit8 v2, v2, 0x5
 
     iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v3, v3, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v3}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v3
 
     if-ge v2, v3, :cond_4
 
-    .line 236
+    .line 238
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v3, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    const/4 v3, 0x5
 
-    add-int/lit8 v3, v3, 0x5
+    invoke-virtual {v2, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->incrementPosition(I)V
 
-    iput v3, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
-
-    .line 241
+    .line 243
     :goto_3
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
@@ -1423,15 +1397,17 @@
 
     goto :goto_2
 
-    .line 238
+    .line 240
     :cond_4
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
     iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v3, v3, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v3}, Lcom/google/zxing/common/BitArray;->getSize()I
 
-    iput v3, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    move-result v3
+
+    invoke-virtual {v2, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->setPosition(I)V
 
     goto :goto_3
 .end method
@@ -1440,13 +1416,15 @@
     .locals 5
 
     .prologue
-    .line 139
+    .line 141
     :cond_0
     iget-object v4, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v0, v4, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v4}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
 
-    .line 141
+    move-result v0
+
+    .line 143
     .local v0, initialPosition:I
     iget-object v4, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
@@ -1456,36 +1434,38 @@
 
     if-eqz v4, :cond_1
 
-    .line 142
+    .line 144
     invoke-direct {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->parseAlphaBlock()Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;
 
     move-result-object v3
 
-    .line 143
+    .line 145
     .local v3, result:Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;
     invoke-virtual {v3}, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;->isFinished()Z
 
     move-result v1
 
-    .line 152
+    .line 154
     .local v1, isFinished:Z
     :goto_0
     iget-object v4, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v4, v4, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v4}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
+
+    move-result v4
 
     if-eq v0, v4, :cond_3
 
     const/4 v2, 0x1
 
-    .line 153
+    .line 155
     .local v2, positionChanged:Z
     :goto_1
     if-nez v2, :cond_4
 
     if-nez v1, :cond_4
 
-    .line 158
+    .line 160
     :goto_2
     invoke-virtual {v3}, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;->getDecodedInformation()Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
 
@@ -1493,7 +1473,7 @@
 
     return-object v4
 
-    .line 144
+    .line 146
     .end local v1           #isFinished:Z
     .end local v2           #positionChanged:Z
     .end local v3           #result:Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;
@@ -1506,12 +1486,12 @@
 
     if-eqz v4, :cond_2
 
-    .line 145
+    .line 147
     invoke-direct {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->parseIsoIec646Block()Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;
 
     move-result-object v3
 
-    .line 146
+    .line 148
     .restart local v3       #result:Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;
     invoke-virtual {v3}, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;->isFinished()Z
 
@@ -1520,7 +1500,7 @@
     .restart local v1       #isFinished:Z
     goto :goto_0
 
-    .line 148
+    .line 150
     .end local v1           #isFinished:Z
     .end local v3           #result:Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;
     :cond_2
@@ -1528,7 +1508,7 @@
 
     move-result-object v3
 
-    .line 149
+    .line 151
     .restart local v3       #result:Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;
     invoke-virtual {v3}, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;->isFinished()Z
 
@@ -1537,13 +1517,13 @@
     .restart local v1       #isFinished:Z
     goto :goto_0
 
-    .line 152
+    .line 154
     :cond_3
     const/4 v2, 0x0
 
     goto :goto_1
 
-    .line 156
+    .line 158
     .restart local v2       #positionChanged:Z
     :cond_4
     if-eqz v1, :cond_0
@@ -1555,11 +1535,13 @@
     .locals 4
 
     .prologue
-    .line 192
+    .line 194
     :goto_0
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
+
+    move-result v2
 
     invoke-direct {p0, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->isStillIsoIec646(I)Z
 
@@ -1567,48 +1549,52 @@
 
     if-eqz v2, :cond_1
 
-    .line 193
+    .line 195
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
+
+    move-result v2
 
     invoke-direct {p0, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->decodeIsoIec646(I)Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
 
     move-result-object v1
 
-    .line 194
+    .line 196
     .local v1, iso:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;->getNewPosition()I
+    invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedObject;->getNewPosition()I
 
     move-result v3
 
-    iput v3, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->setPosition(I)V
 
-    .line 196
+    .line 198
     invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;->isFNC1()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 197
+    .line 199
     new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
 
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
 
-    iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuffer;
+    move-result v2
 
-    invoke-virtual {v3}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-direct {v0, v2, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;-><init>(ILjava/lang/String;)V
 
-    .line 198
+    .line 200
     .local v0, information:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
     new-instance v2, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;
 
@@ -1616,31 +1602,33 @@
 
     invoke-direct {v2, v0, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;-><init>(Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;Z)V
 
-    .line 215
+    .line 217
     .end local v0           #information:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
     .end local v1           #iso:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
     :goto_1
     return-object v2
 
-    .line 200
+    .line 202
     .restart local v1       #iso:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
     :cond_0
-    iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuffer;
+    iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;->getValue()C
 
     move-result v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 203
+    .line 205
     .end local v1           #iso:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedChar;
     :cond_1
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
+
+    move-result v2
 
     invoke-direct {p0, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->isAlphaOr646ToNumericLatch(I)Z
 
@@ -1648,21 +1636,19 @@
 
     if-eqz v2, :cond_3
 
-    .line 204
+    .line 206
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v3, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    const/4 v3, 0x3
 
-    add-int/lit8 v3, v3, 0x3
+    invoke-virtual {v2, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->incrementPosition(I)V
 
-    iput v3, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
-
-    .line 205
+    .line 207
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
     invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->setNumeric()V
 
-    .line 215
+    .line 217
     :cond_2
     :goto_2
     new-instance v2, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;
@@ -1673,11 +1659,13 @@
 
     goto :goto_1
 
-    .line 206
+    .line 208
     :cond_3
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
+
+    move-result v2
 
     invoke-direct {p0, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->isAlphaTo646ToAlphaLatch(I)Z
 
@@ -1685,29 +1673,31 @@
 
     if-eqz v2, :cond_2
 
-    .line 207
+    .line 209
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
+
+    move-result v2
 
     add-int/lit8 v2, v2, 0x5
 
     iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v3, v3, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v3}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v3
 
     if-ge v2, v3, :cond_4
 
-    .line 208
+    .line 210
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v3, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    const/4 v3, 0x5
 
-    add-int/lit8 v3, v3, 0x5
+    invoke-virtual {v2, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->incrementPosition(I)V
 
-    iput v3, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
-
-    .line 213
+    .line 215
     :goto_3
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
@@ -1715,15 +1705,17 @@
 
     goto :goto_2
 
-    .line 210
+    .line 212
     :cond_4
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
     iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
-    iget v3, v3, Lcom/google/zxing/common/BitArray;->size:I
+    invoke-virtual {v3}, Lcom/google/zxing/common/BitArray;->getSize()I
 
-    iput v3, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    move-result v3
+
+    invoke-virtual {v2, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->setPosition(I)V
 
     goto :goto_3
 .end method
@@ -1734,11 +1726,13 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 162
+    .line 164
     :goto_0
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
+
+    move-result v2
 
     invoke-direct {p0, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->isStillNumeric(I)Z
 
@@ -1746,79 +1740,85 @@
 
     if-eqz v2, :cond_3
 
-    .line 163
+    .line 165
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
+
+    move-result v2
 
     invoke-direct {p0, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->decodeNumeric(I)Lcom/google/zxing/oned/rss/expanded/decoders/DecodedNumeric;
 
     move-result-object v1
 
-    .line 164
+    .line 166
     .local v1, numeric:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedNumeric;
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedNumeric;->getNewPosition()I
+    invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedObject;->getNewPosition()I
 
     move-result v3
 
-    iput v3, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->setPosition(I)V
 
-    .line 166
+    .line 168
     invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedNumeric;->isFirstDigitFNC1()Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 168
+    .line 170
     invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedNumeric;->isSecondDigitFNC1()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 169
+    .line 171
     new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
 
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
 
-    iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuffer;
+    move-result v2
 
-    invoke-virtual {v3}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-direct {v0, v2, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;-><init>(ILjava/lang/String;)V
 
-    .line 173
+    .line 175
     .local v0, information:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
     :goto_1
     new-instance v2, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;
 
     invoke-direct {v2, v0, v5}, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;-><init>(Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;Z)V
 
-    .line 188
+    .line 190
     .end local v0           #information:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
     .end local v1           #numeric:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedNumeric;
     :goto_2
     return-object v2
 
-    .line 171
+    .line 173
     .restart local v1       #numeric:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedNumeric;
     :cond_0
     new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
 
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
 
-    iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuffer;
+    move-result v2
 
-    invoke-virtual {v3}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -1831,40 +1831,42 @@
     .restart local v0       #information:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
     goto :goto_1
 
-    .line 175
+    .line 177
     .end local v0           #information:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
     :cond_1
-    iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuffer;
+    iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedNumeric;->getFirstDigit()I
 
     move-result v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 177
+    .line 179
     invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedNumeric;->isSecondDigitFNC1()Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 178
+    .line 180
     new-instance v0, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
 
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
 
-    iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuffer;
+    move-result v2
 
-    invoke-virtual {v3}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-direct {v0, v2, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;-><init>(ILjava/lang/String;)V
 
-    .line 179
+    .line 181
     .restart local v0       #information:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
     new-instance v2, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;
 
@@ -1872,25 +1874,27 @@
 
     goto :goto_2
 
-    .line 181
+    .line 183
     .end local v0           #information:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
     :cond_2
-    iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuffer;
+    iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedNumeric;->getSecondDigit()I
 
     move-result v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 184
+    .line 186
     .end local v1           #numeric:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedNumeric;
     :cond_3
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
+
+    move-result v2
 
     invoke-direct {p0, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->isNumericToAlphaNumericLatch(I)Z
 
@@ -1898,21 +1902,19 @@
 
     if-eqz v2, :cond_4
 
-    .line 185
+    .line 187
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
     invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->setAlpha()V
 
-    .line 186
+    .line 188
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v3, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    const/4 v3, 0x4
 
-    add-int/lit8 v3, v3, 0x4
+    invoke-virtual {v2, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->incrementPosition(I)V
 
-    iput v3, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
-
-    .line 188
+    .line 190
     :cond_4
     new-instance v2, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;
 
@@ -1925,7 +1927,7 @@
 
 
 # virtual methods
-.method decodeAllCodes(Ljava/lang/StringBuffer;I)Ljava/lang/String;
+.method decodeAllCodes(Ljava/lang/StringBuilder;I)Ljava/lang/String;
     .locals 5
     .parameter "buff"
     .parameter "initialPosition"
@@ -1962,16 +1964,20 @@
 
     .line 52
     .local v2, parsedFields:Ljava/lang/String;
-    invoke-virtual {p1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    if-eqz v2, :cond_0
 
     .line 53
+    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 55
+    :cond_0
     invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;->isRemaining()Z
 
     move-result v4
 
-    if-eqz v4, :cond_0
+    if-eqz v4, :cond_1
 
-    .line 54
+    .line 56
     invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;->getRemainingValue()I
 
     move-result v4
@@ -1980,34 +1986,34 @@
 
     move-result-object v3
 
-    .line 59
+    .line 61
     :goto_1
-    invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;->getNewPosition()I
+    invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedObject;->getNewPosition()I
 
     move-result v4
 
-    if-ne v0, v4, :cond_1
+    if-ne v0, v4, :cond_2
 
-    .line 65
-    invoke-virtual {p1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    .line 67
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
     return-object v4
 
-    .line 56
-    :cond_0
+    .line 58
+    :cond_1
     const/4 v3, 0x0
 
     goto :goto_1
 
-    .line 62
-    :cond_1
-    invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;->getNewPosition()I
+    .line 64
+    :cond_2
+    invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedObject;->getNewPosition()I
 
     move-result v0
 
-    .line 63
+    .line 65
     goto :goto_0
 .end method
 
@@ -2017,33 +2023,33 @@
     .parameter "remaining"
 
     .prologue
-    .line 120
-    iget-object v1, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuffer;
+    .line 122
+    iget-object v1, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuilder;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->setLength(I)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 122
+    .line 124
     if-eqz p2, :cond_0
 
-    .line 123
-    iget-object v1, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuffer;
+    .line 125
+    iget-object v1, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 126
+    .line 128
     :cond_0
     iget-object v1, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iput p1, v1, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v1, p1}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->setPosition(I)V
 
-    .line 128
+    .line 130
     invoke-direct {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->parseBlocks()Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
 
     move-result-object v0
 
-    .line 129
+    .line 131
     .local v0, lastDecoded:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
     if-eqz v0, :cond_1
 
@@ -2053,16 +2059,18 @@
 
     if-eqz v1, :cond_1
 
-    .line 130
+    .line 132
     new-instance v1, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
 
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
 
-    iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuffer;
+    move-result v2
 
-    invoke-virtual {v3}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -2072,7 +2080,7 @@
 
     invoke-direct {v1, v2, v3, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;-><init>(ILjava/lang/String;I)V
 
-    .line 132
+    .line 134
     :goto_0
     return-object v1
 
@@ -2081,11 +2089,13 @@
 
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->current:Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;
 
-    iget v2, v2, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->position:I
+    invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState;->getPosition()I
 
-    iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuffer;
+    move-result v2
 
-    invoke-virtual {v3}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->buffer:Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
@@ -2100,7 +2110,7 @@
     .parameter "bits"
 
     .prologue
-    .line 101
+    .line 103
     iget-object v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->information:Lcom/google/zxing/common/BitArray;
 
     invoke-static {v0, p1, p2}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(Lcom/google/zxing/common/BitArray;II)I

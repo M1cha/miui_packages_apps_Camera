@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Landroid/app/Activity;)V
     .locals 0
-    .parameter
 
     .prologue
     .line 277
     iput-object p1, p0, Lcom/android/camera/Util$1;->val$activity:Landroid/app/Activity;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

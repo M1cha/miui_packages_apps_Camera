@@ -1,4 +1,4 @@
-.class Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
+.class final Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 .super Ljava/lang/Object;
 .source "Detector.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x1a
     name = "ResultPointsAndTransitions"
 .end annotation
 
@@ -30,23 +30,23 @@
     .parameter "transitions"
 
     .prologue
-    .line 320
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 405
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 321
+    .line 406
     iput-object p1, p0, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->from:Lcom/google/zxing/ResultPoint;
 
-    .line 322
+    .line 407
     iput-object p2, p0, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->to:Lcom/google/zxing/ResultPoint;
 
-    .line 323
+    .line 408
     iput p3, p0, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->transitions:I
 
-    .line 324
+    .line 409
     return-void
 .end method
 
-.method constructor <init>(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;ILcom/google/zxing/datamatrix/detector/Detector$1;)V
+.method synthetic constructor <init>(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;ILcom/google/zxing/datamatrix/detector/Detector$1;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -54,7 +54,7 @@
     .parameter "x3"
 
     .prologue
-    .line 316
+    .line 399
     invoke-direct {p0, p1, p2, p3}, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;-><init>(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;I)V
 
     return-void
@@ -62,21 +62,21 @@
 
 
 # virtual methods
-.method public getFrom()Lcom/google/zxing/ResultPoint;
+.method getFrom()Lcom/google/zxing/ResultPoint;
     .locals 1
 
     .prologue
-    .line 326
+    .line 412
     iget-object v0, p0, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->from:Lcom/google/zxing/ResultPoint;
 
     return-object v0
 .end method
 
-.method public getTo()Lcom/google/zxing/ResultPoint;
+.method getTo()Lcom/google/zxing/ResultPoint;
     .locals 1
 
     .prologue
-    .line 329
+    .line 416
     iget-object v0, p0, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->to:Lcom/google/zxing/ResultPoint;
 
     return-object v0
@@ -86,7 +86,7 @@
     .locals 1
 
     .prologue
-    .line 332
+    .line 420
     iget v0, p0, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->transitions:I
 
     return v0
@@ -96,42 +96,42 @@
     .locals 2
 
     .prologue
-    .line 335
-    new-instance v0, Ljava/lang/StringBuffer;
+    .line 425
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     iget-object v1, p0, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->from:Lcom/google/zxing/ResultPoint;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     const-string v1, "/"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->to:Lcom/google/zxing/ResultPoint;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     const/16 v1, 0x2f
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     iget v1, p0, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->transitions:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 

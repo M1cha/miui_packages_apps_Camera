@@ -92,7 +92,7 @@
     const/4 v2, 0x0
 
     .line 131
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 76
     const-wide/16 v0, 0x0
@@ -909,7 +909,7 @@
     .line 405
     iget-object v3, p0, Lcom/android/camera/EffectsRecorder;->mGraphEnv:Landroid/filterfw/GraphEnvironment;
 
-    invoke-virtual {v3}, Landroid/filterfw/GraphEnvironment;->createGLEnvironment()V
+    invoke-virtual {v3}, Landroid/filterfw/MffEnvironment;->createGLEnvironment()V
 
     .line 407
     iget-object v3, p0, Lcom/android/camera/EffectsRecorder;->mProfile:Landroid/media/CamcorderProfile;
@@ -1420,7 +1420,7 @@
     .local v0, display:Landroid/filterpacks/videosrc/SurfaceTextureTarget;
     iget-object v1, p0, Lcom/android/camera/EffectsRecorder;->mGraphEnv:Landroid/filterfw/GraphEnvironment;
 
-    invoke-virtual {v1}, Landroid/filterfw/GraphEnvironment;->getContext()Landroid/filterfw/core/FilterContext;
+    invoke-virtual {v1}, Landroid/filterfw/MffEnvironment;->getContext()Landroid/filterfw/core/FilterContext;
 
     move-result-object v1
 

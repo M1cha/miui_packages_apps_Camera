@@ -86,7 +86,7 @@
     const/4 v0, 0x0
 
     .line 53
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 14
     iput-boolean v0, p0, Lcom/android/camera/AudioCapture;->mIsRunning:Z
@@ -247,7 +247,7 @@
     invoke-interface {v0, v1}, Lcom/android/camera/AudioCapture$Callback;->setAudioCaptureICPressed(Z)V
 
     .line 89
-    const v0, 0x7f02003f
+    const v0, 0x7f02003a
 
     invoke-direct {p0, v0}, Lcom/android/camera/AudioCapture;->updateShutterButton(I)V
 

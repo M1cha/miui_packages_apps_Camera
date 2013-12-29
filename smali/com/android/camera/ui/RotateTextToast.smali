@@ -22,7 +22,7 @@
 
     .prologue
     .line 35
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 46
     new-instance v3, Lcom/android/camera/ui/RotateTextToast$1;
@@ -61,7 +61,7 @@
 
     .line 39
     .local v2, v:Landroid/view/View;
-    const v3, 0x7f0c0096
+    const v3, 0x7f0c0091
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -76,7 +76,7 @@
 
     const v4, 0x7f0c004a
 
-    invoke-virtual {v3, v4}, Lcom/android/camera/ui/RotateLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -115,7 +115,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/android/camera/ui/RotateLayout;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 57
     iget-object v0, p0, Lcom/android/camera/ui/RotateTextToast;->mHandler:Landroid/os/Handler;

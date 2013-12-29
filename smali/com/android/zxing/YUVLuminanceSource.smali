@@ -76,13 +76,13 @@
 
     .prologue
     .line 51
-    invoke-virtual {p0}, Lcom/android/zxing/YUVLuminanceSource;->getWidth()I
+    invoke-virtual {p0}, Lcom/google/zxing/LuminanceSource;->getWidth()I
 
     move-result v5
 
     .line 52
     .local v5, width:I
-    invoke-virtual {p0}, Lcom/android/zxing/YUVLuminanceSource;->getHeight()I
+    invoke-virtual {p0}, Lcom/google/zxing/LuminanceSource;->getHeight()I
 
     move-result v1
 
@@ -178,7 +178,7 @@
     .line 37
     if-ltz p1, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/zxing/YUVLuminanceSource;->getHeight()I
+    invoke-virtual {p0}, Lcom/google/zxing/LuminanceSource;->getHeight()I
 
     move-result v2
 
@@ -212,7 +212,7 @@
 
     .line 40
     :cond_1
-    invoke-virtual {p0}, Lcom/android/zxing/YUVLuminanceSource;->getWidth()I
+    invoke-virtual {p0}, Lcom/google/zxing/LuminanceSource;->getWidth()I
 
     move-result v1
 

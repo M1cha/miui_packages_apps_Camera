@@ -46,7 +46,7 @@
     const/16 v1, 0x10
 
     .line 82
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 85
     new-array v0, v1, [I
@@ -225,7 +225,6 @@
 .method public put(ILjava/lang/Object;)Ljava/lang/Object;
     .locals 4
     .parameter "key"
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITV;)TV;"

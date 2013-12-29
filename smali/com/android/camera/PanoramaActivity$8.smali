@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/PanoramaActivity;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 888
+    .line 882
     iput-object p1, p0, Lcom/android/camera/PanoramaActivity$8;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,7 +41,7 @@
     .parameter "v"
 
     .prologue
-    .line 890
+    .line 884
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$8;->this$0:Lcom/android/camera/PanoramaActivity;
 
     iget-object v0, v0, Lcom/android/camera/ActivityBase;->mPreferences:Lcom/android/camera/ComboPreferences;
@@ -51,12 +50,12 @@
 
     invoke-static {v0, v1}, Lcom/android/camera/CameraSettings;->writePreferredCameraId(Landroid/content/SharedPreferences;I)V
 
-    .line 891
+    .line 885
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$8;->this$0:Lcom/android/camera/PanoramaActivity;
 
     #calls: Lcom/android/camera/PanoramaActivity;->switchToCameraMode()V
-    invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$2300(Lcom/android/camera/PanoramaActivity;)V
+    invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$2200(Lcom/android/camera/PanoramaActivity;)V
 
-    .line 892
+    .line 886
     return-void
 .end method

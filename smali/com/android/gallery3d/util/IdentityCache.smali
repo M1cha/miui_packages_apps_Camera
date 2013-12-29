@@ -51,7 +51,7 @@
     .prologue
     .line 31
     .local p0, this:Lcom/android/gallery3d/util/IdentityCache;,"Lcom/android/gallery3d/util/IdentityCache<TK;TV;>;"
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 27
     new-instance v0, Ljava/util/HashMap;
@@ -119,7 +119,6 @@
 # virtual methods
 .method public declared-synchronized get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;)TV;"
@@ -159,7 +158,7 @@
 
     :cond_0
     :try_start_1
-    invoke-virtual {v0}, Lcom/android/gallery3d/util/IdentityCache$Entry;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -179,8 +178,6 @@
 
 .method public declared-synchronized put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 4
-    .parameter
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;)TV;"
@@ -227,7 +224,7 @@
 
     :cond_0
     :try_start_1
-    invoke-virtual {v0}, Lcom/android/gallery3d/util/IdentityCache$Entry;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 

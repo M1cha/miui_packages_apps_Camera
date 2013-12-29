@@ -16,6 +16,12 @@
 
 
 # static fields
+.field private static CENTER_FRAME_WIDTH:I
+
+.field private static MAX_FRAME_HEIGHT:I
+
+.field private static MAX_FRAME_WIDTH:I
+
 .field private static mRectFinderCenter:Landroid/graphics/Rect;
 
 .field private static mRectFinderFocusArea:Landroid/graphics/Rect;
@@ -24,7 +30,17 @@
 
 .field private static mRectPreviewFocusArea:Landroid/graphics/Rect;
 
-.field private static sQRCodeManager:Lcom/android/zxing/QRCodeManager;
+.field private static sMap:Ljava/util/WeakHashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/WeakHashMap",
+            "<",
+            "Landroid/content/Context;",
+            "Lcom/android/zxing/QRCodeManager;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
@@ -34,13 +50,15 @@
 
 .field private mDecodeHandlerFactory:Lcom/android/zxing/DecodeHandlerFactory;
 
-.field private mHandler:Landroid/os/Handler;
+.field private mFragment:Lcom/android/zxing/ui/QRCodeFragment;
 
-.field private mInitialized:Z
+.field private mHandler:Landroid/os/Handler;
 
 .field private mIsScanQRCodeIntent:Z
 
 .field private mListener:Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;
+
+.field private mNeedScan:Z
 
 .field private mPreviewCallback:Landroid/hardware/Camera$PreviewCallback;
 
@@ -62,6 +80,8 @@
 
 .field private mType:Lcom/android/zxing/QRCodeType;
 
+.field private mUIInitialized:Z
+
 .field private mViewFinderButton:Landroid/widget/TextView;
 
 .field private mViewFinderFrame:Landroid/view/ViewGroup;
@@ -73,39 +93,110 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 4
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
-    .line 35
-    new-instance v0, Landroid/graphics/Rect;
+    .line 34
+    new-instance v2, Ljava/util/WeakHashMap;
 
-    invoke-direct {v0, v1, v1, v1, v1}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {v2}, Ljava/util/WeakHashMap;-><init>()V
 
-    sput-object v0, Lcom/android/zxing/QRCodeManager;->mRectPreviewFocusArea:Landroid/graphics/Rect;
+    sput-object v2, Lcom/android/zxing/QRCodeManager;->sMap:Ljava/util/WeakHashMap;
 
-    .line 36
-    new-instance v0, Landroid/graphics/Rect;
+    .line 39
+    new-instance v2, Landroid/graphics/Rect;
 
-    invoke-direct {v0, v1, v1, v1, v1}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {v2, v3, v3, v3, v3}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    sput-object v0, Lcom/android/zxing/QRCodeManager;->mRectPreviewCenter:Landroid/graphics/Rect;
+    sput-object v2, Lcom/android/zxing/QRCodeManager;->mRectPreviewFocusArea:Landroid/graphics/Rect;
 
-    .line 37
-    new-instance v0, Landroid/graphics/Rect;
+    .line 40
+    new-instance v2, Landroid/graphics/Rect;
 
-    invoke-direct {v0, v1, v1, v1, v1}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {v2, v3, v3, v3, v3}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    sput-object v0, Lcom/android/zxing/QRCodeManager;->mRectFinderFocusArea:Landroid/graphics/Rect;
+    sput-object v2, Lcom/android/zxing/QRCodeManager;->mRectPreviewCenter:Landroid/graphics/Rect;
 
-    .line 38
-    new-instance v0, Landroid/graphics/Rect;
+    .line 41
+    new-instance v2, Landroid/graphics/Rect;
 
-    invoke-direct {v0, v1, v1, v1, v1}, Landroid/graphics/Rect;-><init>(IIII)V
+    invoke-direct {v2, v3, v3, v3, v3}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    sput-object v0, Lcom/android/zxing/QRCodeManager;->mRectFinderCenter:Landroid/graphics/Rect;
+    sput-object v2, Lcom/android/zxing/QRCodeManager;->mRectFinderFocusArea:Landroid/graphics/Rect;
 
+    .line 42
+    new-instance v2, Landroid/graphics/Rect;
+
+    invoke-direct {v2, v3, v3, v3, v3}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    sput-object v2, Lcom/android/zxing/QRCodeManager;->mRectFinderCenter:Landroid/graphics/Rect;
+
+    .line 71
+    const/16 v2, 0x168
+
+    sput v2, Lcom/android/zxing/QRCodeManager;->MAX_FRAME_HEIGHT:I
+
+    .line 72
+    const/16 v2, 0x1e0
+
+    sput v2, Lcom/android/zxing/QRCodeManager;->MAX_FRAME_WIDTH:I
+
+    .line 73
+    const/16 v2, 0x2d0
+
+    sput v2, Lcom/android/zxing/QRCodeManager;->CENTER_FRAME_WIDTH:I
+
+    .line 76
+    new-instance v0, Landroid/util/DisplayMetrics;
+
+    invoke-direct {v0}, Landroid/util/DisplayMetrics;-><init>()V
+
+    .line 77
+    .local v0, metrics:Landroid/util/DisplayMetrics;
+    invoke-static {}, Lcom/android/camera/CameraAppImpl;->sGetAndroidContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    const-string v3, "window"
+
+    invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/view/WindowManager;
+
+    .line 79
+    .local v1, wm:Landroid/view/WindowManager;
+    invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Landroid/view/Display;->getMetrics(Landroid/util/DisplayMetrics;)V
+
+    .line 80
+    iget v2, v0, Landroid/util/DisplayMetrics;->widthPixels:I
+
+    sput v2, Lcom/android/zxing/QRCodeManager;->CENTER_FRAME_WIDTH:I
+
+    .line 81
+    sget v2, Lcom/android/zxing/QRCodeManager;->CENTER_FRAME_WIDTH:I
+
+    div-int/lit8 v2, v2, 0x2
+
+    sput v2, Lcom/android/zxing/QRCodeManager;->MAX_FRAME_HEIGHT:I
+
+    .line 82
+    sget v2, Lcom/android/zxing/QRCodeManager;->CENTER_FRAME_WIDTH:I
+
+    mul-int/lit8 v2, v2, 0x2
+
+    div-int/lit8 v2, v2, 0x3
+
+    sput v2, Lcom/android/zxing/QRCodeManager;->MAX_FRAME_WIDTH:I
+
+    .line 83
     return-void
 .end method
 
@@ -113,27 +204,27 @@
     .locals 1
 
     .prologue
-    .line 181
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 215
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
+    .line 37
     const/16 v0, 0x11
 
     iput v0, p0, Lcom/android/zxing/QRCodeManager;->mPreviewFormat:I
 
-    .line 55
+    .line 60
     sget-object v0, Lcom/android/zxing/QRCodeType;->NONE:Lcom/android/zxing/QRCodeType;
 
     iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
 
-    .line 65
+    .line 85
     new-instance v0, Lcom/android/zxing/QRCodeManager$1;
 
     invoke-direct {v0, p0}, Lcom/android/zxing/QRCodeManager$1;-><init>(Lcom/android/zxing/QRCodeManager;)V
 
     iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mPreviewCallback:Landroid/hardware/Camera$PreviewCallback;
 
-    .line 181
+    .line 215
     return-void
 .end method
 
@@ -142,7 +233,7 @@
     .parameter "x0"
 
     .prologue
-    .line 27
+    .line 32
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mDecodeHandlerFactory:Lcom/android/zxing/DecodeHandlerFactory;
 
     return-object v0
@@ -153,43 +244,44 @@
     .parameter "x0"
 
     .prologue
-    .line 27
+    .line 32
     iget v0, p0, Lcom/android/zxing/QRCodeManager;->mPreviewHeight:I
 
     return v0
 .end method
 
-.method static synthetic access$1000(Lcom/android/zxing/QRCodeManager;)Landroid/os/Handler;
+.method static synthetic access$1000(Lcom/android/zxing/QRCodeManager;)Landroid/widget/TextView;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 27
-    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mHandler:Landroid/os/Handler;
+    .line 32
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
 
     return-object v0
 .end method
 
-.method static synthetic access$1100(Lcom/android/zxing/QRCodeManager;)Z
-    .locals 1
+.method static synthetic access$1100(Lcom/android/zxing/QRCodeManager;I)V
+    .locals 0
     .parameter "x0"
+    .parameter "x1"
 
     .prologue
-    .line 27
-    iget-boolean v0, p0, Lcom/android/zxing/QRCodeManager;->mInitialized:Z
+    .line 32
+    invoke-direct {p0, p1}, Lcom/android/zxing/QRCodeManager;->sendDecodeMessageSafe(I)V
 
-    return v0
+    return-void
 .end method
 
-.method static synthetic access$1200(Lcom/android/zxing/QRCodeManager;)I
+.method static synthetic access$1200(Lcom/android/zxing/QRCodeManager;)Landroid/hardware/Camera$PreviewCallback;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 27
-    iget v0, p0, Lcom/android/zxing/QRCodeManager;->mPreviewLayoutWidth:I
+    .line 32
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mPreviewCallback:Landroid/hardware/Camera$PreviewCallback;
 
-    return v0
+    return-object v0
 .end method
 
 .method static synthetic access$1300(Lcom/android/zxing/QRCodeManager;)Lcom/android/camera/CameraManager$CameraProxy;
@@ -197,29 +289,18 @@
     .parameter "x0"
 
     .prologue
-    .line 27
+    .line 32
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mCameraDevice:Lcom/android/camera/CameraManager$CameraProxy;
 
     return-object v0
 .end method
 
-.method static synthetic access$1400(Lcom/android/zxing/QRCodeManager;)Landroid/hardware/Camera$PreviewCallback;
+.method static synthetic access$1400(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/ui/ViewFinderView;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 27
-    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mPreviewCallback:Landroid/hardware/Camera$PreviewCallback;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1500(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/ui/ViewFinderView;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 27
+    .line 32
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderView:Lcom/android/zxing/ui/ViewFinderView;
 
     return-object v0
@@ -230,7 +311,7 @@
     .parameter "x0"
 
     .prologue
-    .line 27
+    .line 32
     iget v0, p0, Lcom/android/zxing/QRCodeManager;->mPreviewWidth:I
 
     return v0
@@ -241,7 +322,7 @@
     .parameter "x0"
 
     .prologue
-    .line 27
+    .line 32
     iget-boolean v0, p0, Lcom/android/zxing/QRCodeManager;->mIsScanQRCodeIntent:Z
 
     return v0
@@ -252,7 +333,7 @@
     .parameter "x0"
 
     .prologue
-    .line 27
+    .line 32
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mListener:Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;
 
     return-object v0
@@ -263,7 +344,7 @@
     .parameter "x0"
 
     .prologue
-    .line 27
+    .line 32
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mResult:Ljava/lang/String;
 
     return-object v0
@@ -275,7 +356,7 @@
     .parameter "x1"
 
     .prologue
-    .line 27
+    .line 32
     iput-object p1, p0, Lcom/android/zxing/QRCodeManager;->mResult:Ljava/lang/String;
 
     return-object p1
@@ -286,7 +367,7 @@
     .parameter "x0"
 
     .prologue
-    .line 27
+    .line 32
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
 
     return-object v0
@@ -297,66 +378,68 @@
     .parameter "x0"
 
     .prologue
-    .line 27
+    .line 32
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
 
     return-object v0
 .end method
 
-.method static synthetic access$800(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/QRCodeType;
+.method static synthetic access$800(Lcom/android/zxing/QRCodeManager;)Z
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 27
+    .line 32
+    invoke-direct {p0}, Lcom/android/zxing/QRCodeManager;->scanQRCodeEnabled()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static synthetic access$900(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/QRCodeType;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 32
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
 
     return-object v0
 .end method
 
-.method static synthetic access$802(Lcom/android/zxing/QRCodeManager;Lcom/android/zxing/QRCodeType;)Lcom/android/zxing/QRCodeType;
+.method static synthetic access$902(Lcom/android/zxing/QRCodeManager;Lcom/android/zxing/QRCodeType;)Lcom/android/zxing/QRCodeType;
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 27
+    .line 32
     iput-object p1, p0, Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
 
     return-object p1
-.end method
-
-.method static synthetic access$900(Lcom/android/zxing/QRCodeManager;)Landroid/widget/TextView;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 27
-    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
-
-    return-object v0
 .end method
 
 .method private hide()Z
     .locals 1
 
     .prologue
-    .line 105
+    .line 139
     invoke-virtual {p0}, Lcom/android/zxing/QRCodeManager;->isFragmentShow()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 106
+    .line 140
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeFragmentLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
 
     invoke-virtual {v0}, Lcom/android/zxing/ui/QRCodeFragmentLayout;->hide()V
 
-    .line 107
+    .line 141
     const/4 v0, 0x1
 
-    .line 109
+    .line 143
     :goto_0
     return v0
 
@@ -366,106 +449,219 @@
     goto :goto_0
 .end method
 
-.method public static instance()Lcom/android/zxing/QRCodeManager;
-    .locals 1
+.method public static instance(Landroid/content/Context;)Lcom/android/zxing/QRCodeManager;
+    .locals 2
+    .parameter "context"
 
     .prologue
-    .line 184
-    sget-object v0, Lcom/android/zxing/QRCodeManager;->sQRCodeManager:Lcom/android/zxing/QRCodeManager;
+    .line 235
+    sget-object v1, Lcom/android/zxing/QRCodeManager;->sMap:Ljava/util/WeakHashMap;
 
-    if-nez v0, :cond_0
-
-    .line 185
-    new-instance v0, Lcom/android/zxing/QRCodeManager;
-
-    invoke-direct {v0}, Lcom/android/zxing/QRCodeManager;-><init>()V
-
-    sput-object v0, Lcom/android/zxing/QRCodeManager;->sQRCodeManager:Lcom/android/zxing/QRCodeManager;
-
-    .line 187
-    :cond_0
-    sget-object v0, Lcom/android/zxing/QRCodeManager;->sQRCodeManager:Lcom/android/zxing/QRCodeManager;
-
-    return-object v0
-.end method
-
-.method private show()V
-    .locals 4
-
-    .prologue
-    .line 88
-    iget-boolean v2, p0, Lcom/android/zxing/QRCodeManager;->mInitialized:Z
-
-    if-eqz v2, :cond_0
-
-    .line 89
-    iget-object v2, p0, Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
-
-    invoke-virtual {v2}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
-
-    move-result-object v1
-
-    .line 90
-    .local v1, fragmentManager:Landroid/app/FragmentManager;
-    const v2, 0x7f0c0081
-
-    invoke-virtual {v1, v2}, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
+    invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/android/zxing/ui/QRCodeFragment;
+    check-cast v0, Lcom/android/zxing/QRCodeManager;
 
-    .line 92
-    .local v0, fragment:Lcom/android/zxing/ui/QRCodeFragment;
-    iget-object v2, p0, Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
+    .line 236
+    .local v0, instance:Lcom/android/zxing/QRCodeManager;
+    if-nez v0, :cond_0
 
-    iget-object v3, p0, Lcom/android/zxing/QRCodeManager;->mResult:Ljava/lang/String;
+    .line 237
+    new-instance v0, Lcom/android/zxing/QRCodeManager;
 
-    invoke-virtual {v0, v2, v3}, Lcom/android/zxing/ui/QRCodeFragment;->initialize(Lcom/android/zxing/QRCodeType;Ljava/lang/String;)V
+    .end local v0           #instance:Lcom/android/zxing/QRCodeManager;
+    invoke-direct {v0}, Lcom/android/zxing/QRCodeManager;-><init>()V
 
-    .line 93
-    iget-object v2, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeFragmentLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
+    .line 238
+    .restart local v0       #instance:Lcom/android/zxing/QRCodeManager;
+    sget-object v1, Lcom/android/zxing/QRCodeManager;->sMap:Ljava/util/WeakHashMap;
 
-    invoke-virtual {v2}, Lcom/android/zxing/ui/QRCodeFragmentLayout;->show()V
+    invoke-virtual {v1, p0, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 94
-    iget-object v2, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
+    .line 240
+    :cond_0
+    return-object v0
+.end method
 
-    const/16 v3, 0x8
+.method public static removeInstance(Landroid/content/Context;)V
+    .locals 2
+    .parameter "context"
 
-    invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->setVisibility(I)V
+    .prologue
+    .line 244
+    sget-object v1, Lcom/android/zxing/QRCodeManager;->sMap:Ljava/util/WeakHashMap;
 
-    .line 96
-    .end local v0           #fragment:Lcom/android/zxing/ui/QRCodeFragment;
-    .end local v1           #fragmentManager:Landroid/app/FragmentManager;
+    invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/zxing/QRCodeManager;
+
+    .line 245
+    .local v0, instance:Lcom/android/zxing/QRCodeManager;
+    if-eqz v0, :cond_0
+
+    .line 246
+    invoke-virtual {v0}, Lcom/android/zxing/QRCodeManager;->onPause()V
+
+    .line 248
+    :cond_0
+    return-void
+.end method
+
+.method private scanQRCodeEnabled()Z
+    .locals 1
+
+    .prologue
+    .line 218
+    iget-boolean v0, p0, Lcom/android/zxing/QRCodeManager;->mUIInitialized:Z
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Lcom/android/zxing/QRCodeManager;->mPreviewWidth:I
+
+    if-eqz v0, :cond_0
+
+    iget v0, p0, Lcom/android/zxing/QRCodeManager;->mPreviewLayoutWidth:I
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mCameraDevice:Lcom/android/camera/CameraManager$CameraProxy;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mListener:Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mListener:Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;
+
+    invoke-interface {v0}, Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;->scanQRCodeEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
+
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/zxing/QRCodeManager;->isFragmentShow()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private sendDecodeMessageSafe(I)V
+    .locals 4
+    .parameter "delay"
+
+    .prologue
+    const v3, 0x7f0c0007
+
+    .line 228
+    iget-boolean v0, p0, Lcom/android/zxing/QRCodeManager;->mNeedScan:Z
+
+    if-eqz v0, :cond_0
+
+    iget-boolean v0, p0, Lcom/android/zxing/QRCodeManager;->mUIInitialized:Z
+
+    if-eqz v0, :cond_0
+
+    .line 229
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mHandler:Landroid/os/Handler;
+
+    invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
+
+    .line 230
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mHandler:Landroid/os/Handler;
+
+    int-to-long v1, p1
+
+    invoke-virtual {v0, v3, v1, v2}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+
+    .line 232
+    :cond_0
+    return-void
+.end method
+
+.method private show()V
+    .locals 3
+
+    .prologue
+    .line 111
+    iget-boolean v0, p0, Lcom/android/zxing/QRCodeManager;->mUIInitialized:Z
+
+    if-eqz v0, :cond_0
+
+    .line 112
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mFragment:Lcom/android/zxing/ui/QRCodeFragment;
+
+    iget-object v1, p0, Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
+
+    iget-object v2, p0, Lcom/android/zxing/QRCodeManager;->mResult:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Lcom/android/zxing/ui/QRCodeFragment;->initialize(Lcom/android/zxing/QRCodeType;Ljava/lang/String;)V
+
+    .line 113
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeFragmentLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
+
+    invoke-virtual {v0}, Lcom/android/zxing/ui/QRCodeFragmentLayout;->show()V
+
+    .line 114
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 116
     :cond_0
     return-void
 .end method
 
 .method private startDecodeThreadIfNeeded()V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 283
+    .line 278
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mDecodeHandlerFactory:Lcom/android/zxing/DecodeHandlerFactory;
 
     if-nez v0, :cond_0
 
-    .line 284
+    .line 279
     new-instance v0, Lcom/android/zxing/DecodeHandlerFactory;
 
-    iget-boolean v1, p0, Lcom/android/zxing/QRCodeManager;->mIsScanQRCodeIntent:Z
+    iget-object v1, p0, Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
 
-    invoke-direct {v0, v1}, Lcom/android/zxing/DecodeHandlerFactory;-><init>(Z)V
+    iget-boolean v2, p0, Lcom/android/zxing/QRCodeManager;->mIsScanQRCodeIntent:Z
+
+    invoke-direct {v0, v1, v2}, Lcom/android/zxing/DecodeHandlerFactory;-><init>(Landroid/content/Context;Z)V
 
     iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mDecodeHandlerFactory:Lcom/android/zxing/DecodeHandlerFactory;
 
-    .line 285
+    .line 280
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mDecodeHandlerFactory:Lcom/android/zxing/DecodeHandlerFactory;
 
     invoke-virtual {v0}, Lcom/android/zxing/DecodeHandlerFactory;->start()V
 
-    .line 287
+    .line 282
     :cond_0
     return-void
 .end method
@@ -474,16 +670,16 @@
     .locals 7
 
     .prologue
-    .line 267
+    .line 337
     iget v2, p0, Lcom/android/zxing/QRCodeManager;->mPreviewLayoutWidth:I
 
     if-nez v2, :cond_0
 
-    .line 280
+    .line 350
     :goto_0
     return-void
 
-    .line 268
+    .line 338
     :cond_0
     iget v2, p0, Lcom/android/zxing/QRCodeManager;->mPreviewWidth:I
 
@@ -495,7 +691,7 @@
 
     div-float v1, v2, v3
 
-    .line 269
+    .line 339
     .local v1, scaleWidth:F
     iget v2, p0, Lcom/android/zxing/QRCodeManager;->mPreviewHeight:I
 
@@ -507,7 +703,7 @@
 
     div-float v0, v2, v3
 
-    .line 270
+    .line 340
     .local v0, scaleHeight:F
     sget-object v2, Lcom/android/zxing/QRCodeManager;->mRectPreviewFocusArea:Landroid/graphics/Rect;
 
@@ -553,7 +749,7 @@
 
     invoke-virtual {v2, v3, v4, v5, v6}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 275
+    .line 345
     sget-object v2, Lcom/android/zxing/QRCodeManager;->mRectPreviewCenter:Landroid/graphics/Rect;
 
     sget-object v3, Lcom/android/zxing/QRCodeManager;->mRectFinderCenter:Landroid/graphics/Rect;
@@ -611,14 +807,14 @@
     .parameter "center"
 
     .prologue
-    .line 327
+    .line 396
     iget v0, p0, Lcom/android/zxing/QRCodeManager;->mPreviewFormat:I
 
     const/16 v1, 0x11
 
     if-ne v0, v1, :cond_1
 
-    .line 328
+    .line 397
     if-eqz p4, :cond_0
 
     sget-object v0, Lcom/android/zxing/QRCodeManager;->mRectPreviewCenter:Landroid/graphics/Rect;
@@ -629,7 +825,7 @@
 
     if-nez v0, :cond_0
 
-    .line 329
+    .line 398
     new-instance v0, Lcom/android/zxing/YUVLuminanceSource;
 
     sget-object v1, Lcom/android/zxing/QRCodeManager;->mRectPreviewCenter:Landroid/graphics/Rect;
@@ -660,11 +856,11 @@
 
     invoke-direct/range {v0 .. v7}, Lcom/android/zxing/YUVLuminanceSource;-><init>([BIIIIII)V
 
-    .line 339
+    .line 408
     :goto_0
     return-object v0
 
-    .line 332
+    .line 401
     :cond_0
     sget-object v0, Lcom/android/zxing/QRCodeManager;->mRectPreviewFocusArea:Landroid/graphics/Rect;
 
@@ -684,7 +880,7 @@
 
     if-nez v0, :cond_1
 
-    .line 334
+    .line 403
     new-instance v0, Lcom/android/zxing/YUVLuminanceSource;
 
     sget-object v1, Lcom/android/zxing/QRCodeManager;->mRectPreviewFocusArea:Landroid/graphics/Rect;
@@ -717,7 +913,7 @@
 
     goto :goto_0
 
-    .line 339
+    .line 408
     :cond_1
     const/4 v0, 0x0
 
@@ -728,7 +924,7 @@
     .locals 1
 
     .prologue
-    .line 315
+    .line 385
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mHandler:Landroid/os/Handler;
 
     return-object v0
@@ -738,7 +934,7 @@
     .locals 1
 
     .prologue
-    .line 307
+    .line 377
     sget-object v0, Lcom/android/zxing/QRCodeManager;->mRectFinderCenter:Landroid/graphics/Rect;
 
     return-object v0
@@ -748,7 +944,7 @@
     .locals 1
 
     .prologue
-    .line 311
+    .line 381
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderView:Lcom/android/zxing/ui/ViewFinderView;
 
     return-object v0
@@ -758,175 +954,29 @@
     .locals 2
 
     .prologue
-    .line 99
+    .line 119
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
 
-    invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 100
+    .line 120
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
 
     const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 102
+    .line 122
     :cond_0
     return-void
-.end method
-
-.method public initialize(Landroid/app/Activity;Landroid/os/Looper;Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;Z)V
-    .locals 5
-    .parameter "activity"
-    .parameter "loop"
-    .parameter "listener"
-    .parameter "isScanQRCodeIntent"
-
-    .prologue
-    const/4 v4, 0x1
-
-    .line 191
-    iput-object p1, p0, Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
-
-    .line 192
-    iput-object p3, p0, Lcom/android/zxing/QRCodeManager;->mListener:Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;
-
-    .line 193
-    new-instance v0, Lcom/android/zxing/QRCodeManager$MyHander;
-
-    invoke-direct {v0, p0, p2}, Lcom/android/zxing/QRCodeManager$MyHander;-><init>(Lcom/android/zxing/QRCodeManager;Landroid/os/Looper;)V
-
-    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mHandler:Landroid/os/Handler;
-
-    .line 194
-    iput-boolean p4, p0, Lcom/android/zxing/QRCodeManager;->mIsScanQRCodeIntent:Z
-
-    .line 196
-    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
-
-    const v1, 0x7f0c0080
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/zxing/ui/QRCodeFragmentLayout;
-
-    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeFragmentLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
-
-    .line 197
-    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
-
-    const v1, 0x7f0c0082
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/zxing/ui/QRCodeFragmentLayout;
-
-    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeViewFindertLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
-
-    .line 198
-    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeViewFindertLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
-
-    const v1, 0x7f0c0083
-
-    invoke-virtual {v0, v1}, Lcom/android/zxing/ui/QRCodeFragmentLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/android/zxing/ui/ViewFinderView;
-
-    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderView:Lcom/android/zxing/ui/ViewFinderView;
-
-    .line 199
-    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeViewFindertLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
-
-    const v1, 0x7f0c0084
-
-    invoke-virtual {v0, v1}, Lcom/android/zxing/ui/QRCodeFragmentLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/ViewGroup;
-
-    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
-
-    .line 200
-    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeViewFindertLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
-
-    const v1, 0x7f0c0085
-
-    invoke-virtual {v0, v1}, Lcom/android/zxing/ui/QRCodeFragmentLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
-
-    .line 201
-    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeViewFindertLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
-
-    const v1, 0x7f0c0086
-
-    invoke-virtual {v0, v1}, Lcom/android/zxing/ui/QRCodeFragmentLayout;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/TextView;
-
-    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderButton:Landroid/widget/TextView;
-
-    .line 202
-    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderButton:Landroid/widget/TextView;
-
-    invoke-virtual {v0, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 204
-    iget-boolean v0, p0, Lcom/android/zxing/QRCodeManager;->mIsScanQRCodeIntent:Z
-
-    if-eqz v0, :cond_0
-
-    .line 205
-    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderView:Lcom/android/zxing/ui/ViewFinderView;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Lcom/android/zxing/ui/ViewFinderView;->setVisibility(I)V
-
-    .line 209
-    :goto_0
-    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mHandler:Landroid/os/Handler;
-
-    const v1, 0x7f0c0007
-
-    const-wide/16 v2, 0x7d0
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
-
-    .line 210
-    iput-boolean v4, p0, Lcom/android/zxing/QRCodeManager;->mInitialized:Z
-
-    .line 211
-    return-void
-
-    .line 207
-    :cond_0
-    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeViewFindertLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
-
-    invoke-virtual {v0, v4}, Lcom/android/zxing/ui/QRCodeFragmentLayout;->setDispatchTouchEvent(Z)V
-
-    goto :goto_0
 .end method
 
 .method public isFragmentShow()Z
@@ -935,7 +985,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 113
+    .line 147
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeFragmentLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
 
     if-nez v1, :cond_1
@@ -947,7 +997,7 @@
     :cond_1
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeFragmentLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
 
-    invoke-virtual {v1}, Lcom/android/zxing/ui/QRCodeFragmentLayout;->getVisibility()I
+    invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
 
     move-result v1
 
@@ -958,11 +1008,68 @@
     goto :goto_0
 .end method
 
+.method public needScanQRCode(Z)V
+    .locals 2
+    .parameter "scan"
+
+    .prologue
+    .line 125
+    iput-boolean p1, p0, Lcom/android/zxing/QRCodeManager;->mNeedScan:Z
+
+    .line 126
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mHandler:Landroid/os/Handler;
+
+    if-eqz v0, :cond_0
+
+    .line 127
+    if-eqz p1, :cond_2
+
+    .line 128
+    const/16 v0, 0x7d0
+
+    invoke-direct {p0, v0}, Lcom/android/zxing/QRCodeManager;->sendDecodeMessageSafe(I)V
+
+    .line 133
+    :cond_0
+    :goto_0
+    iget-boolean v0, p0, Lcom/android/zxing/QRCodeManager;->mNeedScan:Z
+
+    if-eqz v0, :cond_1
+
+    .line 134
+    invoke-direct {p0}, Lcom/android/zxing/QRCodeManager;->startDecodeThreadIfNeeded()V
+
+    .line 136
+    :cond_1
+    return-void
+
+    .line 130
+    :cond_2
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mHandler:Landroid/os/Handler;
+
+    const v1, 0x7f0c0007
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
+
+    goto :goto_0
+.end method
+
 .method public onBackPressed()Z
     .locals 1
 
     .prologue
-    .line 84
+    .line 104
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mFragment:Lcom/android/zxing/ui/QRCodeFragment;
+
+    if-eqz v0, :cond_0
+
+    .line 105
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mFragment:Lcom/android/zxing/ui/QRCodeFragment;
+
+    invoke-virtual {v0}, Lcom/android/zxing/ui/QRCodeFragment;->onBackPressed()V
+
+    .line 107
+    :cond_0
     invoke-direct {p0}, Lcom/android/zxing/QRCodeManager;->hide()Z
 
     move-result v0
@@ -975,7 +1082,7 @@
     .parameter "v"
 
     .prologue
-    .line 79
+    .line 99
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
 
     invoke-static {v0}, Lcom/android/camera/AutoLockManager;->getInstance(Landroid/content/Context;)Lcom/android/camera/AutoLockManager;
@@ -984,78 +1091,257 @@
 
     invoke-virtual {v0}, Lcom/android/camera/AutoLockManager;->onUserInteraction()V
 
-    .line 80
+    .line 100
     invoke-direct {p0}, Lcom/android/zxing/QRCodeManager;->show()V
 
-    .line 81
+    .line 101
     return-void
 .end method
 
-.method public quit()V
+.method public onCreate(Landroid/app/Activity;Landroid/os/Looper;Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;Z)V
+    .locals 3
+    .parameter "activity"
+    .parameter "looper"
+    .parameter "listener"
+    .parameter "isScanQRCodeIntent"
+
+    .prologue
+    const/4 v2, 0x1
+
+    .line 254
+    iput-object p1, p0, Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+
+    .line 255
+    iput-object p3, p0, Lcom/android/zxing/QRCodeManager;->mListener:Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;
+
+    .line 256
+    new-instance v0, Lcom/android/zxing/QRCodeManager$MyHander;
+
+    invoke-direct {v0, p0, p2}, Lcom/android/zxing/QRCodeManager$MyHander;-><init>(Lcom/android/zxing/QRCodeManager;Landroid/os/Looper;)V
+
+    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mHandler:Landroid/os/Handler;
+
+    .line 257
+    iput-boolean p4, p0, Lcom/android/zxing/QRCodeManager;->mIsScanQRCodeIntent:Z
+
+    .line 259
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+
+    const v1, 0x7f0c007b
+
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/zxing/ui/QRCodeFragmentLayout;
+
+    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeFragmentLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
+
+    .line 260
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+
+    const v1, 0x7f0c007d
+
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/zxing/ui/QRCodeFragmentLayout;
+
+    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeViewFindertLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
+
+    .line 261
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeViewFindertLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
+
+    const v1, 0x7f0c007e
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/zxing/ui/ViewFinderView;
+
+    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderView:Lcom/android/zxing/ui/ViewFinderView;
+
+    .line 262
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeViewFindertLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
+
+    const v1, 0x7f0c007f
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup;
+
+    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
+
+    .line 263
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeViewFindertLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
+
+    const v1, 0x7f0c0080
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
+
+    .line 264
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeViewFindertLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
+
+    const v1, 0x7f0c0081
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderButton:Landroid/widget/TextView;
+
+    .line 265
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderButton:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 267
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
+
+    move-result-object v0
+
+    const v1, 0x7f0c007c
+
+    invoke-virtual {v0, v1}, Landroid/app/FragmentManager;->findFragmentById(I)Landroid/app/Fragment;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/android/zxing/ui/QRCodeFragment;
+
+    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mFragment:Lcom/android/zxing/ui/QRCodeFragment;
+
+    .line 269
+    iget-boolean v0, p0, Lcom/android/zxing/QRCodeManager;->mIsScanQRCodeIntent:Z
+
+    if-eqz v0, :cond_0
+
+    .line 270
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderView:Lcom/android/zxing/ui/ViewFinderView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 274
+    :goto_0
+    iput-boolean v2, p0, Lcom/android/zxing/QRCodeManager;->mUIInitialized:Z
+
+    .line 275
+    return-void
+
+    .line 272
+    :cond_0
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mQRCodeViewFindertLayout:Lcom/android/zxing/ui/QRCodeFragmentLayout;
+
+    invoke-virtual {v0, v2}, Lcom/android/zxing/ui/QRCodeFragmentLayout;->setDispatchTouchEvent(Z)V
+
+    goto :goto_0
+.end method
+
+.method public onDestroy()V
+    .locals 1
+
+    .prologue
+    .line 372
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+
+    invoke-static {v0}, Lcom/android/zxing/QRCodeManager;->removeInstance(Landroid/content/Context;)V
+
+    .line 373
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+
+    .line 374
+    return-void
+.end method
+
+.method public onPause()V
     .locals 3
 
     .prologue
     const/4 v2, 0x0
 
-    .line 290
+    .line 353
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mHandler:Landroid/os/Handler;
 
     if-eqz v0, :cond_0
 
-    .line 291
+    .line 354
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mHandler:Landroid/os/Handler;
 
     const v1, 0x7f0c0006
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 292
+    .line 355
+    iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mHandler:Landroid/os/Handler;
+
+    const v1, 0x7f0c0007
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
+
+    .line 356
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mHandler:Landroid/os/Handler;
 
     const v1, 0x7f0c0005
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 294
+    .line 358
     :cond_0
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
 
     if-eqz v0, :cond_1
 
-    .line 295
+    .line 359
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
 
     const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 297
+    .line 361
     :cond_1
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mDecodeHandlerFactory:Lcom/android/zxing/DecodeHandlerFactory;
 
     if-eqz v0, :cond_2
 
-    .line 298
+    .line 362
     iget-object v0, p0, Lcom/android/zxing/QRCodeManager;->mDecodeHandlerFactory:Lcom/android/zxing/DecodeHandlerFactory;
 
     invoke-virtual {v0}, Lcom/android/zxing/DecodeHandlerFactory;->quit()V
 
-    .line 300
+    .line 365
     :cond_2
     iput-object v2, p0, Lcom/android/zxing/QRCodeManager;->mDecodeHandlerFactory:Lcom/android/zxing/DecodeHandlerFactory;
 
-    .line 301
+    .line 366
     iput-object v2, p0, Lcom/android/zxing/QRCodeManager;->mCameraDevice:Lcom/android/camera/CameraManager$CameraProxy;
 
-    .line 302
+    .line 367
     iput-object v2, p0, Lcom/android/zxing/QRCodeManager;->mResult:Ljava/lang/String;
 
-    .line 303
+    .line 368
     sget-object v0, Lcom/android/zxing/QRCodeType;->NONE:Lcom/android/zxing/QRCodeType;
 
     iput-object v0, p0, Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
 
-    .line 304
+    .line 369
     return-void
 .end method
 
@@ -1064,13 +1350,10 @@
     .parameter "cameraDevice"
 
     .prologue
-    .line 214
+    .line 285
     iput-object p1, p0, Lcom/android/zxing/QRCodeManager;->mCameraDevice:Lcom/android/camera/CameraManager$CameraProxy;
 
-    .line 215
-    invoke-direct {p0}, Lcom/android/zxing/QRCodeManager;->startDecodeThreadIfNeeded()V
-
-    .line 216
+    .line 286
     return-void
 .end method
 
@@ -1079,10 +1362,10 @@
     .parameter "format"
 
     .prologue
-    .line 235
+    .line 305
     iput p1, p0, Lcom/android/zxing/QRCodeManager;->mPreviewFormat:I
 
-    .line 236
+    .line 306
     return-void
 .end method
 
@@ -1092,7 +1375,7 @@
     .parameter "height"
 
     .prologue
-    .line 219
+    .line 289
     iget v0, p0, Lcom/android/zxing/QRCodeManager;->mPreviewLayoutWidth:I
 
     if-ne v0, p1, :cond_0
@@ -1101,17 +1384,17 @@
 
     if-eq v0, p2, :cond_1
 
-    .line 220
+    .line 290
     :cond_0
     iput p1, p0, Lcom/android/zxing/QRCodeManager;->mPreviewLayoutWidth:I
 
-    .line 221
+    .line 291
     iput p2, p0, Lcom/android/zxing/QRCodeManager;->mPreviewLayoutHeight:I
 
-    .line 222
+    .line 292
     invoke-virtual {p0}, Lcom/android/zxing/QRCodeManager;->updateViewFinderRect()V
 
-    .line 224
+    .line 294
     :cond_1
     return-void
 .end method
@@ -1122,7 +1405,7 @@
     .parameter "height"
 
     .prologue
-    .line 227
+    .line 297
     iget v0, p0, Lcom/android/zxing/QRCodeManager;->mPreviewWidth:I
 
     if-ne v0, p2, :cond_0
@@ -1131,17 +1414,17 @@
 
     if-eq v0, p1, :cond_1
 
-    .line 228
+    .line 298
     :cond_0
     iput p2, p0, Lcom/android/zxing/QRCodeManager;->mPreviewWidth:I
 
-    .line 229
+    .line 299
     iput p1, p0, Lcom/android/zxing/QRCodeManager;->mPreviewHeight:I
 
-    .line 230
+    .line 300
     invoke-direct {p0}, Lcom/android/zxing/QRCodeManager;->updateRectInPreview()V
 
-    .line 232
+    .line 302
     :cond_1
     return-void
 .end method
@@ -1150,12 +1433,12 @@
     .locals 1
 
     .prologue
-    .line 263
+    .line 333
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/zxing/QRCodeManager;->updateViewFinderRect(Landroid/graphics/Point;)V
 
-    .line 264
+    .line 334
     return-void
 .end method
 
@@ -1164,26 +1447,28 @@
     .parameter "area"
 
     .prologue
-    const/16 v7, 0x2d0
-
     const/4 v8, 0x0
 
-    .line 239
+    .line 309
     iget v6, p0, Lcom/android/zxing/QRCodeManager;->mPreviewLayoutWidth:I
+
+    sget v7, Lcom/android/zxing/QRCodeManager;->CENTER_FRAME_WIDTH:I
 
     invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
 
     move-result v5
 
-    .line 240
+    .line 310
     .local v5, width:I
     iget v6, p0, Lcom/android/zxing/QRCodeManager;->mPreviewLayoutHeight:I
+
+    sget v7, Lcom/android/zxing/QRCodeManager;->CENTER_FRAME_WIDTH:I
 
     invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
 
     move-result v1
 
-    .line 241
+    .line 311
     .local v1, height:I
     const/4 v2, 0x0
 
@@ -1196,7 +1481,7 @@
     .local v3, right:I
     const/4 v0, 0x0
 
-    .line 242
+    .line 312
     .local v0, bottom:I
     iget v6, p0, Lcom/android/zxing/QRCodeManager;->mPreviewLayoutWidth:I
 
@@ -1204,46 +1489,46 @@
 
     div-int/lit8 v2, v6, 0x2
 
-    .line 243
+    .line 313
     iget v6, p0, Lcom/android/zxing/QRCodeManager;->mPreviewLayoutHeight:I
 
     sub-int/2addr v6, v1
 
     div-int/lit8 v4, v6, 0x2
 
-    .line 244
+    .line 314
     add-int v3, v2, v5
 
-    .line 245
+    .line 315
     add-int v0, v4, v1
 
-    .line 246
+    .line 316
     sget-object v6, Lcom/android/zxing/QRCodeManager;->mRectFinderCenter:Landroid/graphics/Rect;
 
     invoke-virtual {v6, v2, v4, v3, v0}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 248
+    .line 318
     if-eqz p1, :cond_0
 
-    .line 249
+    .line 319
     iget v6, p0, Lcom/android/zxing/QRCodeManager;->mPreviewLayoutWidth:I
 
-    const/16 v7, 0x1e0
+    sget v7, Lcom/android/zxing/QRCodeManager;->MAX_FRAME_WIDTH:I
 
     invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
 
     move-result v5
 
-    .line 250
+    .line 320
     iget v6, p0, Lcom/android/zxing/QRCodeManager;->mPreviewLayoutHeight:I
 
-    const/16 v7, 0x168
+    sget v7, Lcom/android/zxing/QRCodeManager;->MAX_FRAME_HEIGHT:I
 
     invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
 
     move-result v1
 
-    .line 251
+    .line 321
     iget v6, p1, Landroid/graphics/Point;->x:I
 
     div-int/lit8 v7, v5, 0x2
@@ -1254,7 +1539,7 @@
 
     move-result v2
 
-    .line 252
+    .line 322
     iget v6, p1, Landroid/graphics/Point;->y:I
 
     div-int/lit8 v7, v1, 0x2
@@ -1265,7 +1550,7 @@
 
     move-result v4
 
-    .line 253
+    .line 323
     iget v6, p1, Landroid/graphics/Point;->x:I
 
     div-int/lit8 v7, v5, 0x2
@@ -1278,7 +1563,7 @@
 
     move-result v3
 
-    .line 254
+    .line 324
     iget v6, p1, Landroid/graphics/Point;->y:I
 
     div-int/lit8 v7, v1, 0x2
@@ -1291,19 +1576,19 @@
 
     move-result v0
 
-    .line 255
+    .line 325
     sget-object v6, Lcom/android/zxing/QRCodeManager;->mRectFinderFocusArea:Landroid/graphics/Rect;
 
     invoke-virtual {v6, v2, v4, v3, v0}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 259
+    .line 329
     :goto_0
     invoke-direct {p0}, Lcom/android/zxing/QRCodeManager;->updateRectInPreview()V
 
-    .line 260
+    .line 330
     return-void
 
-    .line 257
+    .line 327
     :cond_0
     sget-object v6, Lcom/android/zxing/QRCodeManager;->mRectFinderFocusArea:Landroid/graphics/Rect;
 

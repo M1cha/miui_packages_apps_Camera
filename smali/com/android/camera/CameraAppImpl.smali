@@ -39,7 +39,7 @@
     .line 34
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/android/camera/CameraAppImpl;->mLock:Ljava/lang/Object;
 
@@ -117,7 +117,7 @@
     .line 109
     iget-object v3, p0, Lcom/android/camera/CameraAppImpl;->mActivities:Ljava/util/Stack;
 
-    invoke-virtual {v3, v0}, Ljava/util/Stack;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v0}, Ljava/util/Vector;->remove(Ljava/lang/Object;)Z
 
     .line 105
     :goto_1
@@ -161,7 +161,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/camera/CameraAppImpl;->mActivities:Ljava/util/Stack;
 
-    invoke-virtual {v0, p1}, Ljava/util/Stack;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/util/Vector;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -177,7 +177,7 @@
     .line 85
     iget-object v0, p0, Lcom/android/camera/CameraAppImpl;->mActivities:Ljava/util/Stack;
 
-    invoke-virtual {v0}, Ljava/util/Stack;->size()I
+    invoke-virtual {v0}, Ljava/util/Vector;->size()I
 
     move-result v0
 
@@ -353,7 +353,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/camera/CameraAppImpl;->mActivities:Ljava/util/Stack;
 
-    invoke-virtual {v0, p1}, Ljava/util/Stack;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Ljava/util/Vector;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 .end method

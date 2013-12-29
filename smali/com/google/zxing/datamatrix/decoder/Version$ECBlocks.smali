@@ -27,13 +27,13 @@
     .parameter "ecBlocks"
 
     .prologue
-    .line 128
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 122
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 129
+    .line 123
     iput p1, p0, Lcom/google/zxing/datamatrix/decoder/Version$ECBlocks;->ecCodewords:I
 
-    .line 130
+    .line 124
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/zxing/datamatrix/decoder/Version$ECB;
@@ -44,18 +44,18 @@
 
     iput-object v0, p0, Lcom/google/zxing/datamatrix/decoder/Version$ECBlocks;->ecBlocks:[Lcom/google/zxing/datamatrix/decoder/Version$ECB;
 
-    .line 131
+    .line 125
     return-void
 .end method
 
-.method constructor <init>(ILcom/google/zxing/datamatrix/decoder/Version$ECB;Lcom/google/zxing/datamatrix/decoder/Version$1;)V
+.method synthetic constructor <init>(ILcom/google/zxing/datamatrix/decoder/Version$ECB;Lcom/google/zxing/datamatrix/decoder/Version$1;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
 
     .prologue
-    .line 124
+    .line 118
     invoke-direct {p0, p1, p2}, Lcom/google/zxing/datamatrix/decoder/Version$ECBlocks;-><init>(ILcom/google/zxing/datamatrix/decoder/Version$ECB;)V
 
     return-void
@@ -68,13 +68,13 @@
     .parameter "ecBlocks2"
 
     .prologue
-    .line 133
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 127
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 134
+    .line 128
     iput p1, p0, Lcom/google/zxing/datamatrix/decoder/Version$ECBlocks;->ecCodewords:I
 
-    .line 135
+    .line 129
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/zxing/datamatrix/decoder/Version$ECB;
@@ -89,11 +89,11 @@
 
     iput-object v0, p0, Lcom/google/zxing/datamatrix/decoder/Version$ECBlocks;->ecBlocks:[Lcom/google/zxing/datamatrix/decoder/Version$ECB;
 
-    .line 136
+    .line 130
     return-void
 .end method
 
-.method constructor <init>(ILcom/google/zxing/datamatrix/decoder/Version$ECB;Lcom/google/zxing/datamatrix/decoder/Version$ECB;Lcom/google/zxing/datamatrix/decoder/Version$1;)V
+.method synthetic constructor <init>(ILcom/google/zxing/datamatrix/decoder/Version$ECB;Lcom/google/zxing/datamatrix/decoder/Version$ECB;Lcom/google/zxing/datamatrix/decoder/Version$1;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -101,7 +101,7 @@
     .parameter "x3"
 
     .prologue
-    .line 124
+    .line 118
     invoke-direct {p0, p1, p2, p3}, Lcom/google/zxing/datamatrix/decoder/Version$ECBlocks;-><init>(ILcom/google/zxing/datamatrix/decoder/Version$ECB;Lcom/google/zxing/datamatrix/decoder/Version$ECB;)V
 
     return-void
@@ -113,7 +113,7 @@
     .locals 1
 
     .prologue
-    .line 143
+    .line 137
     iget-object v0, p0, Lcom/google/zxing/datamatrix/decoder/Version$ECBlocks;->ecBlocks:[Lcom/google/zxing/datamatrix/decoder/Version$ECB;
 
     return-object v0
@@ -123,7 +123,7 @@
     .locals 1
 
     .prologue
-    .line 139
+    .line 133
     iget v0, p0, Lcom/google/zxing/datamatrix/decoder/Version$ECBlocks;->ecCodewords:I
 
     return v0

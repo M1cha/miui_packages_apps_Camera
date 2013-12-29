@@ -202,7 +202,6 @@
 # virtual methods
 .method public filterUnsupported(Ljava/util/List;)V
     .locals 6
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -394,7 +393,7 @@
     if-nez v0, :cond_0
 
     .line 94
-    invoke-virtual {p0}, Lcom/android/camera/ListPreference;->getSharedPreferences()Landroid/content/SharedPreferences;
+    invoke-virtual {p0}, Lcom/android/camera/CameraPreference;->getSharedPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -428,7 +427,7 @@
 
     .prologue
     .line 137
-    invoke-virtual {p0}, Lcom/android/camera/ListPreference;->getSharedPreferences()Landroid/content/SharedPreferences;
+    invoke-virtual {p0}, Lcom/android/camera/CameraPreference;->getSharedPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v1
 

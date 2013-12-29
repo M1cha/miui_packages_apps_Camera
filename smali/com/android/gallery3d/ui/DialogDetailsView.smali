@@ -38,7 +38,7 @@
 
     .prologue
     .line 57
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 58
     iput-object p1, p0, Lcom/android/gallery3d/ui/DialogDetailsView;->mContext:Lcom/android/gallery3d/app/GalleryActivity;
@@ -115,7 +115,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d019c
+    const v3, 0x7f0d01b2
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -198,7 +198,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d019b
+    const v3, 0x7f0d01b1
 
     new-instance v4, Lcom/android/gallery3d/ui/DialogDetailsView$1;
 

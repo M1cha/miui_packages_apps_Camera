@@ -44,7 +44,7 @@
     iput-object p1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
     .line 31
-    invoke-virtual {p0}, Lcom/android/camera/ui/GridSettingPopupWhiteBalance;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -52,7 +52,7 @@
     .local v2, context:Landroid/content/Context;
     iget-object v1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->getEntries()[Ljava/lang/CharSequence;
+    invoke-virtual {v1}, Lcom/android/camera/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v7
 
@@ -81,7 +81,7 @@
 
     iget-object v4, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v4}, Lcom/android/camera/IconListPreference;->getTitle()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/android/camera/CameraPreference;->getTitle()Ljava/lang/String;
 
     move-result-object v4
 
@@ -177,10 +177,10 @@
     .line 61
     iget-object v1, p0, Lcom/android/camera/ui/GridSettingPopup;->mGridView:Landroid/widget/GridView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/GridView;->setChoiceMode(I)V
+    invoke-virtual {v1, v11}, Landroid/widget/AbsListView;->setChoiceMode(I)V
 
     .line 62
-    invoke-virtual {p0}, Lcom/android/camera/ui/GridSettingPopupWhiteBalance;->reloadPreference()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/GridSettingPopup;->reloadPreference()V
 
     .line 63
     return-void

@@ -4,7 +4,19 @@
 
 
 # virtual methods
-.method public abstract decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Hashtable;)Lcom/google/zxing/Result;
+.method public abstract decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/zxing/BinaryBitmap;",
+            "Ljava/util/Map",
+            "<",
+            "Lcom/google/zxing/DecodeHintType;",
+            "*>;)",
+            "Lcom/google/zxing/Result;"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;,

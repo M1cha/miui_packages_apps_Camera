@@ -310,12 +310,12 @@
     .local v0, anim:Landroid/view/animation/AlphaAnimation;
     sget-object v1, Landroid/support/v4/app/FragmentManagerImpl;->DECELERATE_CUBIC:Landroid/view/animation/Interpolator;
 
-    invoke-virtual {v0, v1}, Landroid/view/animation/AlphaAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     .line 697
     const-wide/16 v1, 0xdc
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
+    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 698
     return-object v0
@@ -363,12 +363,12 @@
     .local v0, scale:Landroid/view/animation/ScaleAnimation;
     sget-object v1, Landroid/support/v4/app/FragmentManagerImpl;->DECELERATE_QUINT:Landroid/view/animation/Interpolator;
 
-    invoke-virtual {v0, v1}, Landroid/view/animation/ScaleAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     .line 685
     const-wide/16 v1, 0xdc
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/ScaleAnimation;->setDuration(J)V
+    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 686
     invoke-virtual {v10, v0}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
@@ -382,12 +382,12 @@
     .local v9, alpha:Landroid/view/animation/AlphaAnimation;
     sget-object v1, Landroid/support/v4/app/FragmentManagerImpl;->DECELERATE_CUBIC:Landroid/view/animation/Interpolator;
 
-    invoke-virtual {v9, v1}, Landroid/view/animation/AlphaAnimation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {v9, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     .line 689
     const-wide/16 v1, 0xdc
 
-    invoke-virtual {v9, v1, v2}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
+    invoke-virtual {v9, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 690
     invoke-virtual {v10, v9}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
@@ -2655,7 +2655,6 @@
 
 .method public freeBackStackIndex(I)V
     .locals 3
-    .parameter
 
     .prologue
     .line 1388
@@ -3045,7 +3044,7 @@
 
     iget-object v4, p0, Landroid/support/v4/app/FragmentManagerImpl;->mActivity:Landroid/support/v4/app/FragmentActivity;
 
-    invoke-virtual {v4}, Landroid/support/v4/app/FragmentActivity;->getWindow()Landroid/view/Window;
+    invoke-virtual {v4}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v4
 
@@ -3054,7 +3053,7 @@
     .line 741
     iget-object v4, p0, Landroid/support/v4/app/FragmentManagerImpl;->mActivity:Landroid/support/v4/app/FragmentActivity;
 
-    invoke-virtual {v4}, Landroid/support/v4/app/FragmentActivity;->getWindow()Landroid/view/Window;
+    invoke-virtual {v4}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v4
 
@@ -4002,7 +4001,7 @@
 
     iget v1, p1, Landroid/support/v4/app/Fragment;->mContainerId:I
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
     move-result-object v7
 
@@ -4704,7 +4703,7 @@
     .line 961
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl;->mActivity:Landroid/support/v4/app/FragmentActivity;
 
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->isFinishing()Z
+    invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
 
     move-result v0
 
@@ -5111,10 +5110,6 @@
 
 .method popBackStackState(Landroid/os/Handler;Ljava/lang/String;II)Z
     .locals 8
-    .parameter
-    .parameter
-    .parameter
-    .parameter
 
     .prologue
     const/4 v2, 0x1
@@ -5646,8 +5641,6 @@
 
 .method restoreAllState(Landroid/os/Parcelable;Ljava/util/ArrayList;)V
     .locals 8
-    .parameter
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -5764,7 +5757,7 @@
 
     iget-object v5, p0, Landroid/support/v4/app/FragmentManagerImpl;->mActivity:Landroid/support/v4/app/FragmentActivity;
 
-    invoke-virtual {v5}, Landroid/support/v4/app/FragmentActivity;->getClassLoader()Ljava/lang/ClassLoader;
+    invoke-virtual {v5}, Landroid/content/ContextWrapper;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v5
 
@@ -7255,8 +7248,6 @@
 
 .method public setBackStackIndex(ILandroid/support/v4/app/BackStackRecord;)V
     .locals 4
-    .parameter
-    .parameter
 
     .prologue
     .line 1363

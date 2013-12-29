@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/PhotoPage;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 725
+    .line 734
     iput-object p1, p0, Lcom/android/gallery3d/app/PhotoPage$5;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,12 +40,12 @@
     .locals 1
 
     .prologue
-    .line 728
+    .line 737
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$5;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
     #calls: Lcom/android/gallery3d/app/PhotoPage;->hideDetails()V
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$1900(Lcom/android/gallery3d/app/PhotoPage;)V
 
-    .line 729
+    .line 738
     return-void
 .end method

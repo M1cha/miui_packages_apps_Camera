@@ -32,7 +32,7 @@
     .line 17
     const v0, 0x7f04001e
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/TextViewPreference;->setLayoutResource(I)V
+    invoke-virtual {p0, v0}, Landroid/preference/Preference;->setLayoutResource(I)V
 
     .line 18
     return-void

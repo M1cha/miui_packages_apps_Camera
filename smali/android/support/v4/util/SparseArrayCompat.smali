@@ -36,7 +36,7 @@
     .line 24
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/support/v4/util/SparseArrayCompat;->DELETED:Ljava/lang/Object;
 
@@ -66,7 +66,7 @@
     const/4 v1, 0x0
 
     .line 39
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
     iput-boolean v1, p0, Landroid/support/v4/util/SparseArrayCompat;->mGarbage:Z
@@ -415,7 +415,6 @@
 .method public get(ILjava/lang/Object;)Ljava/lang/Object;
     .locals 4
     .parameter "key"
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITE;)TE;"
@@ -489,7 +488,6 @@
 .method public put(ILjava/lang/Object;)V
     .locals 8
     .parameter "key"
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITE;)V"

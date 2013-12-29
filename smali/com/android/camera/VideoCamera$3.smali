@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/VideoCamera;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 2693
+    .line 2637
     iput-object p1, p0, Lcom/android/camera/VideoCamera$3;->this$0:Lcom/android/camera/VideoCamera;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,12 +41,12 @@
     .parameter "v"
 
     .prologue
-    .line 2697
+    .line 2641
     iget-object v0, p0, Lcom/android/camera/VideoCamera$3;->this$0:Lcom/android/camera/VideoCamera;
 
     #calls: Lcom/android/camera/VideoCamera;->capture()Z
-    invoke-static {v0}, Lcom/android/camera/VideoCamera;->access$1600(Lcom/android/camera/VideoCamera;)Z
+    invoke-static {v0}, Lcom/android/camera/VideoCamera;->access$1500(Lcom/android/camera/VideoCamera;)Z
 
-    .line 2698
+    .line 2642
     return-void
 .end method

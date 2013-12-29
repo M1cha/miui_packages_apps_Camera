@@ -9,21 +9,31 @@
 
     .prologue
     .line 39
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 40
     return-void
 .end method
 
-.method static buildBitArray(Ljava/util/Vector;)Lcom/google/zxing/common/BitArray;
+.method static buildBitArray(Ljava/util/List;)Lcom/google/zxing/common/BitArray;
     .locals 13
-    .parameter "pairs"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/zxing/oned/rss/expanded/ExpandedPair;",
+            ">;)",
+            "Lcom/google/zxing/common/BitArray;"
+        }
+    .end annotation
 
     .prologue
+    .local p0, pairs:Ljava/util/List;,"Ljava/util/List<Lcom/google/zxing/oned/rss/expanded/ExpandedPair;>;"
     const/4 v12, 0x1
 
     .line 43
-    invoke-virtual {p0}, Ljava/util/Vector;->size()I
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v11
 
@@ -33,7 +43,13 @@
 
     .line 44
     .local v2, charNumber:I
-    invoke-virtual {p0}, Ljava/util/Vector;->lastElement()Ljava/lang/Object;
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result v11
+
+    add-int/lit8 v11, v11, -0x1
+
+    invoke-interface {p0, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v11
 
@@ -66,7 +82,7 @@
     .local v0, accPos:I
     const/4 v11, 0x0
 
-    invoke-virtual {p0, v11}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    invoke-interface {p0, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -114,14 +130,14 @@
     const/4 v6, 0x1
 
     :goto_1
-    invoke-virtual {p0}, Ljava/util/Vector;->size()I
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v11
 
     if-ge v6, v11, :cond_7
 
     .line 63
-    invoke-virtual {p0, v6}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    invoke-interface {p0, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 

@@ -79,7 +79,7 @@
     iput-object p1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
     .line 31
-    invoke-virtual {p0}, Lcom/android/camera/ui/GridSettingPopup;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -87,7 +87,7 @@
     .local v2, context:Landroid/content/Context;
     iget-object v1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->getEntries()[Ljava/lang/CharSequence;
+    invoke-virtual {v1}, Lcom/android/camera/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v7
 
@@ -116,7 +116,7 @@
 
     iget-object v4, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v4}, Lcom/android/camera/IconListPreference;->getTitle()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/android/camera/CameraPreference;->getTitle()Ljava/lang/String;
 
     move-result-object v4
 
@@ -208,7 +208,7 @@
     .line 56
     iget-object v1, p0, Lcom/android/camera/ui/GridSettingPopup;->mGridView:Landroid/widget/GridView;
 
-    invoke-virtual {v1, v11}, Landroid/widget/GridView;->setChoiceMode(I)V
+    invoke-virtual {v1, v11}, Landroid/widget/AbsListView;->setChoiceMode(I)V
 
     .line 57
     invoke-virtual {p0}, Lcom/android/camera/ui/GridSettingPopup;->reloadPreference()V
@@ -253,12 +253,12 @@
 
     const/4 v2, 0x1
 
-    invoke-virtual {v1, v0, v2}, Landroid/widget/GridView;->setItemChecked(IZ)V
+    invoke-virtual {v1, v0, v2}, Landroid/widget/AbsListView;->setItemChecked(IZ)V
 
     .line 95
     iget-object v1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1, v0}, Lcom/android/camera/IconListPreference;->setValueIndex(I)V
+    invoke-virtual {v1, v0}, Lcom/android/camera/ListPreference;->setValueIndex(I)V
 
     .line 96
     iget-object v1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mListener:Lcom/android/camera/ui/AbstractSettingPopup$Listener;
@@ -282,7 +282,7 @@
     .line 102
     const v0, 0x7f0c0046
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/GridSettingPopup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -303,11 +303,11 @@
 
     iget-object v1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->getValue()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/android/camera/IconListPreference;->findIndexOfValue(Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Lcom/android/camera/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
 
     move-result v0
 
@@ -327,7 +327,7 @@
 
     const/4 v2, 0x1
 
-    invoke-virtual {v0, v1, v2}, Landroid/widget/GridView;->setItemChecked(IZ)V
+    invoke-virtual {v0, v1, v2}, Landroid/widget/AbsListView;->setItemChecked(IZ)V
 
     .line 69
     :goto_0
@@ -344,7 +344,7 @@
     .line 67
     iget-object v0, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v0}, Lcom/android/camera/IconListPreference;->print()V
+    invoke-virtual {v0}, Lcom/android/camera/ListPreference;->print()V
 
     goto :goto_0
 .end method
@@ -384,7 +384,7 @@
     :goto_2
     iget-object v2, p0, Lcom/android/camera/ui/GridSettingPopup;->mGridView:Landroid/widget/GridView;
 
-    invoke-virtual {v2}, Landroid/widget/GridView;->getChildCount()I
+    invoke-virtual {v2}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
 
@@ -393,7 +393,7 @@
     .line 114
     iget-object v2, p0, Lcom/android/camera/ui/GridSettingPopup;->mGridView:Landroid/widget/GridView;
 
-    invoke-virtual {v2, v0}, Landroid/widget/GridView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v2, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 

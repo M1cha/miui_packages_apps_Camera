@@ -111,7 +111,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 227
-    invoke-virtual {p0}, Lcom/android/gallery3d/data/FilterDeleteSet;->notifyContentChanged()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/data/MediaSet;->notifyContentChanged()V
 
     .line 228
     return-void
@@ -367,7 +367,7 @@
 
     .prologue
     .line 232
-    invoke-virtual {p0}, Lcom/android/gallery3d/data/FilterDeleteSet;->notifyContentChanged()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/data/MediaSet;->notifyContentChanged()V
 
     .line 233
     return-void
@@ -897,7 +897,7 @@
 
     .line 202
     :cond_9
-    invoke-virtual {v6}, Lcom/android/gallery3d/data/MediaItem;->getPath()Lcom/android/gallery3d/data/Path;
+    invoke-virtual {v6}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v13
 

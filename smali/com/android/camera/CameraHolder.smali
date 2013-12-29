@@ -49,7 +49,7 @@
     const/4 v4, -0x1
 
     .line 105
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
     iput v4, p0, Lcom/android/camera/CameraHolder;->mCameraId:I
@@ -69,7 +69,7 @@
 
     .line 107
     .local v0, ht:Landroid/os/HandlerThread;
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     .line 108
     new-instance v2, Lcom/android/camera/CameraHolder$MyHandler;

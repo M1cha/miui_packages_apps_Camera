@@ -84,12 +84,12 @@
     .parameter "context"
 
     .prologue
-    .line 113
+    .line 111
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/gallery3d/ui/GLRootView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 114
+    .line 112
     return-void
 .end method
 
@@ -103,71 +103,71 @@
 
     const/4 v2, 0x0
 
-    .line 117
+    .line 115
     invoke-direct {p0, p1, p2}, Landroid/opengl/GLSurfaceView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 59
+    .line 57
     iput v2, p0, Lcom/android/gallery3d/ui/GLRootView;->mFrameCount:I
 
-    .line 60
+    .line 58
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mFrameCountingStart:J
 
-    .line 63
+    .line 61
     iput v2, p0, Lcom/android/gallery3d/ui/GLRootView;->mInvalidateColor:I
 
-    .line 83
+    .line 81
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mCompensationMatrix:Landroid/graphics/Matrix;
 
-    .line 89
+    .line 87
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mFlags:I
 
-    .line 90
+    .line 88
     iput-boolean v2, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderRequested:Z
 
-    .line 92
+    .line 90
     new-instance v0, Lcom/android/gallery3d/ui/GalleryEGLConfigChooser;
 
     invoke-direct {v0}, Lcom/android/gallery3d/ui/GalleryEGLConfigChooser;-><init>()V
 
     iput-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mEglConfigChooser:Lcom/android/gallery3d/ui/GalleryEGLConfigChooser;
 
-    .line 95
+    .line 93
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mAnimations:Ljava/util/ArrayList;
 
-    .line 98
+    .line 96
     new-instance v0, Ljava/util/ArrayDeque;
 
     invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
 
     iput-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
 
-    .line 101
+    .line 99
     new-instance v0, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;
 
     invoke-direct {v0, p0, v3}, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;-><init>(Lcom/android/gallery3d/ui/GLRootView;Lcom/android/gallery3d/ui/GLRootView$1;)V
 
     iput-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mIdleRunner:Lcom/android/gallery3d/ui/GLRootView$IdleRunner;
 
-    .line 103
+    .line 101
     new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
     iput-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
-    .line 104
+    .line 102
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->newCondition()Ljava/util/concurrent/locks/Condition;
@@ -176,34 +176,34 @@
 
     iput-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mFreezeCondition:Ljava/util/concurrent/locks/Condition;
 
-    .line 109
+    .line 107
     iput-boolean v2, p0, Lcom/android/gallery3d/ui/GLRootView;->mInDownState:Z
 
-    .line 110
+    .line 108
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mFirstDraw:Z
 
-    .line 118
+    .line 116
     iget v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mFlags:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mFlags:I
 
-    .line 119
-    invoke-virtual {p0, v3}, Lcom/android/gallery3d/ui/GLRootView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    .line 117
+    invoke-virtual {p0, v3}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 120
+    .line 118
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mEglConfigChooser:Lcom/android/gallery3d/ui/GalleryEGLConfigChooser;
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/ui/GLRootView;->setEGLConfigChooser(Landroid/opengl/GLSurfaceView$EGLConfigChooser;)V
+    invoke-virtual {p0, v0}, Landroid/opengl/GLSurfaceView;->setEGLConfigChooser(Landroid/opengl/GLSurfaceView$EGLConfigChooser;)V
 
-    .line 121
-    invoke-virtual {p0, p0}, Lcom/android/gallery3d/ui/GLRootView;->setRenderer(Landroid/opengl/GLSurfaceView$Renderer;)V
+    .line 119
+    invoke-virtual {p0, p0}, Landroid/opengl/GLSurfaceView;->setRenderer(Landroid/opengl/GLSurfaceView$Renderer;)V
 
-    .line 122
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->getHolder()Landroid/view/SurfaceHolder;
+    .line 120
+    invoke-virtual {p0}, Landroid/view/SurfaceView;->getHolder()Landroid/view/SurfaceHolder;
 
     move-result-object v0
 
@@ -211,7 +211,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/SurfaceHolder;->setFormat(I)V
 
-    .line 126
+    .line 124
     return-void
 .end method
 
@@ -220,7 +220,7 @@
     .parameter "x0"
 
     .prologue
-    .line 54
+    .line 52
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
 
     return-object v0
@@ -231,7 +231,7 @@
     .parameter "x0"
 
     .prologue
-    .line 54
+    .line 52
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     return-object v0
@@ -242,7 +242,7 @@
     .parameter "x0"
 
     .prologue
-    .line 54
+    .line 52
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mCanvas:Lcom/android/gallery3d/ui/GLCanvas;
 
     return-object v0
@@ -253,7 +253,7 @@
     .parameter "x0"
 
     .prologue
-    .line 54
+    .line 52
     iget-boolean v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderRequested:Z
 
     return v0
@@ -265,69 +265,69 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 197
+    .line 195
     iget v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mFlags:I
 
     and-int/lit8 v5, v5, -0x3
 
     iput v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mFlags:I
 
-    .line 199
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->getWidth()I
+    .line 197
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v4
 
-    .line 200
+    .line 198
     .local v4, w:I
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v2
 
-    .line 201
+    .line 199
     .local v2, h:I
     const/4 v1, 0x0
 
-    .line 202
+    .line 200
     .local v1, displayRotation:I
     const/4 v0, 0x0
 
-    .line 205
+    .line 203
     .local v0, compensation:I
     iget-object v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mOrientationSource:Lcom/android/gallery3d/ui/OrientationSource;
 
     if-eqz v5, :cond_3
 
-    .line 206
+    .line 204
     iget-object v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mOrientationSource:Lcom/android/gallery3d/ui/OrientationSource;
 
     invoke-interface {v5}, Lcom/android/gallery3d/ui/OrientationSource;->getDisplayRotation()I
 
     move-result v1
 
-    .line 207
+    .line 205
     iget-object v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mOrientationSource:Lcom/android/gallery3d/ui/OrientationSource;
 
     invoke-interface {v5}, Lcom/android/gallery3d/ui/OrientationSource;->getCompensation()I
 
     move-result v0
 
-    .line 213
+    .line 211
     :goto_0
     iget v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mCompensation:I
 
     if-eq v5, v0, :cond_0
 
-    .line 214
+    .line 212
     iput v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mCompensation:I
 
-    .line 215
+    .line 213
     iget v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mCompensation:I
 
     rem-int/lit16 v5, v5, 0xb4
 
     if-eqz v5, :cond_4
 
-    .line 216
+    .line 214
     iget-object v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mCompensationMatrix:Landroid/graphics/Matrix;
 
     iget v6, p0, Lcom/android/gallery3d/ui/GLRootView;->mCompensation:I
@@ -336,7 +336,7 @@
 
     invoke-virtual {v5, v6}, Landroid/graphics/Matrix;->setRotate(F)V
 
-    .line 218
+    .line 216
     iget-object v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mCompensationMatrix:Landroid/graphics/Matrix;
 
     neg-int v6, v4
@@ -353,7 +353,7 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/graphics/Matrix;->preTranslate(FF)Z
 
-    .line 220
+    .line 218
     iget-object v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mCompensationMatrix:Landroid/graphics/Matrix;
 
     div-int/lit8 v6, v2, 0x2
@@ -366,29 +366,29 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 225
+    .line 223
     :cond_0
     :goto_1
     iput v1, p0, Lcom/android/gallery3d/ui/GLRootView;->mDisplayRotation:I
 
-    .line 228
+    .line 226
     iget v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mCompensation:I
 
     rem-int/lit16 v5, v5, 0xb4
 
     if-eqz v5, :cond_1
 
-    .line 229
+    .line 227
     move v3, v4
 
-    .line 230
+    .line 228
     .local v3, tmp:I
     move v4, v2
 
-    .line 231
+    .line 229
     move v2, v3
 
-    .line 233
+    .line 231
     .end local v3           #tmp:I
     :cond_1
     const-string v5, "GLRootView"
@@ -441,7 +441,7 @@
 
     invoke-static {v5, v6}, Lcom/android/gallery3d/ui/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 235
+    .line 233
     iget-object v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mContentView:Lcom/android/gallery3d/ui/GLView;
 
     if-eqz v5, :cond_2
@@ -450,25 +450,25 @@
 
     if-eqz v2, :cond_2
 
-    .line 236
+    .line 234
     iget-object v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mContentView:Lcom/android/gallery3d/ui/GLView;
 
     invoke-virtual {v5, v9, v9, v4, v2}, Lcom/android/gallery3d/ui/GLView;->layout(IIII)V
 
-    .line 240
+    .line 238
     :cond_2
     return-void
 
-    .line 209
+    .line 207
     :cond_3
     const/4 v1, 0x0
 
-    .line 210
+    .line 208
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 222
+    .line 220
     :cond_4
     iget-object v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mCompensationMatrix:Landroid/graphics/Matrix;
 
@@ -494,20 +494,20 @@
     .parameter "gl"
 
     .prologue
-    .line 348
+    .line 346
     iget-object v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mCanvas:Lcom/android/gallery3d/ui/GLCanvas;
 
     invoke-interface {v4}, Lcom/android/gallery3d/ui/GLCanvas;->deleteRecycledResources()V
 
-    .line 351
+    .line 349
     invoke-static {}, Lcom/android/gallery3d/ui/UploadedTexture;->resetUploadLimit()V
 
-    .line 353
+    .line 351
     const/4 v4, 0x0
 
     iput-boolean v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderRequested:Z
 
-    .line 355
+    .line 353
     iget v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mFlags:I
 
     and-int/lit8 v4, v4, 0x2
@@ -516,7 +516,7 @@
 
     invoke-direct {p0}, Lcom/android/gallery3d/ui/GLRootView;->layoutContentPane()V
 
-    .line 357
+    .line 355
     :cond_0
     iget-object v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mCanvas:Lcom/android/gallery3d/ui/GLCanvas;
 
@@ -524,32 +524,32 @@
 
     invoke-interface {v4, v5}, Lcom/android/gallery3d/ui/GLCanvas;->save(I)V
 
-    .line 358
+    .line 356
     iget v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mCompensation:I
 
     neg-int v4, v4
 
     invoke-direct {p0, v4}, Lcom/android/gallery3d/ui/GLRootView;->rotateCanvas(I)V
 
-    .line 359
+    .line 357
     iget-object v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mContentView:Lcom/android/gallery3d/ui/GLView;
 
     if-eqz v4, :cond_1
 
-    .line 360
+    .line 358
     iget-object v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mContentView:Lcom/android/gallery3d/ui/GLView;
 
     iget-object v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mCanvas:Lcom/android/gallery3d/ui/GLCanvas;
 
     invoke-virtual {v4, v5}, Lcom/android/gallery3d/ui/GLView;->render(Lcom/android/gallery3d/ui/GLCanvas;)V
 
-    .line 362
+    .line 360
     :cond_1
     iget-object v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mCanvas:Lcom/android/gallery3d/ui/GLCanvas;
 
     invoke-interface {v4}, Lcom/android/gallery3d/ui/GLCanvas;->restore()V
 
-    .line 364
+    .line 362
     iget-object v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mAnimations:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
@@ -558,12 +558,12 @@
 
     if-nez v4, :cond_3
 
-    .line 365
+    .line 363
     invoke-static {}, Lcom/android/gallery3d/ui/AnimationTime;->get()J
 
     move-result-wide v2
 
-    .line 366
+    .line 364
     .local v2, now:J
     const/4 v0, 0x0
 
@@ -578,7 +578,7 @@
     :goto_0
     if-ge v0, v1, :cond_2
 
-    .line 367
+    .line 365
     iget-object v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mAnimations:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -587,20 +587,20 @@
 
     check-cast v4, Lcom/android/gallery3d/anim/CanvasAnimation;
 
-    invoke-virtual {v4, v2, v3}, Lcom/android/gallery3d/anim/CanvasAnimation;->setStartTime(J)V
+    invoke-virtual {v4, v2, v3}, Lcom/android/gallery3d/anim/Animation;->setStartTime(J)V
 
-    .line 366
+    .line 364
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 369
+    .line 367
     :cond_2
     iget-object v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mAnimations:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
-    .line 372
+    .line 370
     .end local v0           #i:I
     .end local v1           #n:I
     .end local v2           #now:J
@@ -611,16 +611,16 @@
 
     if-eqz v4, :cond_4
 
-    .line 373
+    .line 371
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->requestRender()V
 
-    .line 376
+    .line 374
     :cond_4
     iget-object v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
 
     monitor-enter v5
 
-    .line 377
+    .line 375
     :try_start_0
     iget-object v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
 
@@ -634,14 +634,14 @@
 
     invoke-virtual {v4}, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;->enable()V
 
-    .line 378
+    .line 376
     :cond_5
     monitor-exit v5
 
-    .line 388
+    .line 386
     return-void
 
-    .line 378
+    .line 376
     :catchall_0
     move-exception v4
 
@@ -659,34 +659,34 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 391
+    .line 389
     if-nez p1, :cond_0
 
-    .line 403
+    .line 401
     :goto_0
     return-void
 
-    .line 392
+    .line 390
     :cond_0
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
-    .line 393
+    .line 391
     .local v3, w:I
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v2
 
-    .line 394
+    .line 392
     .local v2, h:I
     div-int/lit8 v0, v3, 0x2
 
-    .line 395
+    .line 393
     .local v0, cx:I
     div-int/lit8 v1, v2, 0x2
 
-    .line 396
+    .line 394
     .local v1, cy:I
     iget-object v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mCanvas:Lcom/android/gallery3d/ui/GLCanvas;
 
@@ -696,7 +696,7 @@
 
     invoke-interface {v4, v5, v6}, Lcom/android/gallery3d/ui/GLCanvas;->translate(FF)V
 
-    .line 397
+    .line 395
     iget-object v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mCanvas:Lcom/android/gallery3d/ui/GLCanvas;
 
     int-to-float v5, p1
@@ -705,12 +705,12 @@
 
     invoke-interface {v4, v5, v7, v7, v6}, Lcom/android/gallery3d/ui/GLCanvas;->rotate(FFFF)V
 
-    .line 398
+    .line 396
     rem-int/lit16 v4, p1, 0xb4
 
     if-eqz v4, :cond_1
 
-    .line 399
+    .line 397
     iget-object v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mCanvas:Lcom/android/gallery3d/ui/GLCanvas;
 
     neg-int v5, v1
@@ -725,7 +725,7 @@
 
     goto :goto_0
 
-    .line 401
+    .line 399
     :cond_1
     iget-object v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mCanvas:Lcom/android/gallery3d/ui/GLCanvas;
 
@@ -749,29 +749,29 @@
     .parameter "listener"
 
     .prologue
-    .line 139
+    .line 137
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
 
     monitor-enter v1
 
-    .line 140
+    .line 138
     :try_start_0
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayDeque;->addLast(Ljava/lang/Object;)V
 
-    .line 141
+    .line 139
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mIdleRunner:Lcom/android/gallery3d/ui/GLRootView$IdleRunner;
 
     invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;->enable()V
 
-    .line 142
+    .line 140
     monitor-exit v1
 
-    .line 143
+    .line 141
     return-void
 
-    .line 142
+    .line 140
     :catchall_0
     move-exception v0
 
@@ -791,24 +791,24 @@
 
     const/4 v1, 0x0
 
-    .line 407
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->isEnabled()Z
+    .line 405
+    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 431
+    .line 429
     :goto_0
     return v1
 
-    .line 409
+    .line 407
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 410
+    .line 408
     .local v0, action:I
     const/4 v3, 0x3
 
@@ -816,28 +816,28 @@
 
     if-ne v0, v2, :cond_6
 
-    .line 412
+    .line 410
     :cond_1
     iput-boolean v1, p0, Lcom/android/gallery3d/ui/GLRootView;->mInDownState:Z
 
-    .line 417
+    .line 415
     :cond_2
     iget v3, p0, Lcom/android/gallery3d/ui/GLRootView;->mCompensation:I
 
     if-eqz v3, :cond_3
 
-    .line 418
+    .line 416
     iget-object v3, p0, Lcom/android/gallery3d/ui/GLRootView;->mCompensationMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p1, v3}, Landroid/view/MotionEvent;->transform(Landroid/graphics/Matrix;)V
 
-    .line 421
+    .line 419
     :cond_3
     iget-object v3, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 424
+    .line 422
     :try_start_0
     iget-object v3, p0, Lcom/android/gallery3d/ui/GLRootView;->mContentView:Lcom/android/gallery3d/ui/GLView;
 
@@ -853,21 +853,21 @@
 
     move v1, v2
 
-    .line 426
+    .line 424
     .local v1, handled:Z
     :cond_4
     if-nez v0, :cond_5
 
     if-eqz v1, :cond_5
 
-    .line 427
+    .line 425
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/android/gallery3d/ui/GLRootView;->mInDownState:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 431
+    .line 429
     :cond_5
     iget-object v2, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
@@ -875,7 +875,7 @@
 
     goto :goto_0
 
-    .line 413
+    .line 411
     .end local v1           #handled:Z
     :cond_6
     iget-boolean v3, p0, Lcom/android/gallery3d/ui/GLRootView;->mInDownState:Z
@@ -886,7 +886,7 @@
 
     goto :goto_0
 
-    .line 431
+    .line 429
     :catchall_0
     move-exception v2
 
@@ -906,19 +906,19 @@
     .end annotation
 
     .prologue
-    .line 565
+    .line 563
     :try_start_0
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->unfreeze()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 567
+    .line 565
     invoke-super {p0}, Landroid/opengl/GLSurfaceView;->finalize()V
 
-    .line 569
+    .line 567
     return-void
 
-    .line 567
+    .line 565
     :catchall_0
     move-exception v0
 
@@ -931,22 +931,22 @@
     .locals 1
 
     .prologue
-    .line 511
+    .line 509
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 512
+    .line 510
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mFreeze:Z
 
-    .line 513
+    .line 511
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 514
+    .line 512
     return-void
 .end method
 
@@ -954,7 +954,7 @@
     .locals 1
 
     .prologue
-    .line 501
+    .line 499
     iget v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mCompensation:I
 
     return v0
@@ -964,7 +964,7 @@
     .locals 1
 
     .prologue
-    .line 506
+    .line 504
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mCompensationMatrix:Landroid/graphics/Matrix;
 
     return-object v0
@@ -974,7 +974,7 @@
     .locals 1
 
     .prologue
-    .line 496
+    .line 494
     iget v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mDisplayRotation:I
 
     return v0
@@ -984,12 +984,12 @@
     .locals 1
 
     .prologue
-    .line 469
+    .line 467
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 470
+    .line 468
     return-void
 .end method
 
@@ -997,13 +997,13 @@
     .locals 0
 
     .prologue
-    .line 558
+    .line 556
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->unfreeze()V
 
-    .line 559
+    .line 557
     invoke-super {p0}, Landroid/opengl/GLSurfaceView;->onDetachedFromWindow()V
 
-    .line 560
+    .line 558
     return-void
 .end method
 
@@ -1012,43 +1012,43 @@
     .parameter "gl"
 
     .prologue
-    .line 311
+    .line 309
     invoke-static {}, Lcom/android/gallery3d/ui/AnimationTime;->update()V
 
-    .line 317
+    .line 315
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 318
+    .line 316
     :goto_0
     iget-boolean v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mFreeze:Z
 
     if-eqz v0, :cond_0
 
-    .line 319
+    .line 317
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mFreezeCondition:Ljava/util/concurrent/locks/Condition;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->awaitUninterruptibly()V
 
     goto :goto_0
 
-    .line 323
+    .line 321
     :cond_0
     :try_start_0
     invoke-direct {p0, p1}, Lcom/android/gallery3d/ui/GLRootView;->onDrawFrameLocked(Ljavax/microedition/khronos/opengles/GL10;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 325
+    .line 323
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 342
+    .line 340
     return-void
 
-    .line 325
+    .line 323
     :catchall_0
     move-exception v0
 
@@ -1068,12 +1068,12 @@
     .parameter "bottom"
 
     .prologue
-    .line 245
+    .line 243
     if-eqz p1, :cond_0
 
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->requestLayoutContentPane()V
 
-    .line 246
+    .line 244
     :cond_0
     return-void
 .end method
@@ -1082,13 +1082,13 @@
     .locals 0
 
     .prologue
-    .line 479
+    .line 477
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->unfreeze()V
 
-    .line 480
+    .line 478
     invoke-super {p0}, Landroid/opengl/GLSurfaceView;->onPause()V
 
-    .line 487
+    .line 485
     return-void
 .end method
 
@@ -1099,7 +1099,7 @@
     .parameter "height"
 
     .prologue
-    .line 282
+    .line 280
     const-string v1, "GLRootView"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1146,20 +1146,20 @@
 
     invoke-static {v1, v2}, Lcom/android/gallery3d/ui/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 284
+    .line 282
     const/4 v1, -0x4
 
     invoke-static {v1}, Landroid/os/Process;->setThreadPriority(I)V
 
-    .line 285
+    .line 283
     invoke-static {}, Lcom/android/gallery3d/util/GalleryUtils;->setRenderThread()V
 
     move-object v0, p1
 
-    .line 290
+    .line 288
     check-cast v0, Ljavax/microedition/khronos/opengles/GL11;
 
-    .line 291
+    .line 289
     .local v0, gl:Ljavax/microedition/khronos/opengles/GL11;
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView;->mGL:Ljavax/microedition/khronos/opengles/GL11;
 
@@ -1170,15 +1170,15 @@
     :goto_0
     invoke-static {v1}, Lcom/android/gallery3d/common/Utils;->assertTrue(Z)V
 
-    .line 293
+    .line 291
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView;->mCanvas:Lcom/android/gallery3d/ui/GLCanvas;
 
     invoke-interface {v1, p2, p3}, Lcom/android/gallery3d/ui/GLCanvas;->setSize(II)V
 
-    .line 294
+    .line 292
     return-void
 
-    .line 291
+    .line 289
     :cond_0
     const/4 v1, 0x0
 
@@ -1191,18 +1191,18 @@
     .parameter "config"
 
     .prologue
-    .line 254
+    .line 252
     move-object v0, p1
 
     check-cast v0, Ljavax/microedition/khronos/opengles/GL11;
 
-    .line 255
+    .line 253
     .local v0, gl:Ljavax/microedition/khronos/opengles/GL11;
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView;->mGL:Ljavax/microedition/khronos/opengles/GL11;
 
     if-eqz v1, :cond_0
 
-    .line 257
+    .line 255
     const-string v1, "GLRootView"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1237,42 +1237,42 @@
 
     invoke-static {v1, v2}, Lcom/android/gallery3d/ui/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 259
+    .line 257
     :cond_0
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 261
+    .line 259
     :try_start_0
     iput-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mGL:Ljavax/microedition/khronos/opengles/GL11;
 
-    .line 262
+    .line 260
     new-instance v1, Lcom/android/gallery3d/ui/GLCanvasImpl;
 
     invoke-direct {v1, v0}, Lcom/android/gallery3d/ui/GLCanvasImpl;-><init>(Ljavax/microedition/khronos/opengles/GL11;)V
 
     iput-object v1, p0, Lcom/android/gallery3d/ui/GLRootView;->mCanvas:Lcom/android/gallery3d/ui/GLCanvas;
 
-    .line 263
+    .line 261
     invoke-static {}, Lcom/android/gallery3d/ui/BasicTexture;->invalidateAllTextures()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 265
+    .line 263
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 271
+    .line 269
     const/4 v1, 0x0
 
-    invoke-virtual {p0, v1}, Lcom/android/gallery3d/ui/GLRootView;->setRenderMode(I)V
+    invoke-virtual {p0, v1}, Landroid/opengl/GLSurfaceView;->setRenderMode(I)V
 
-    .line 273
+    .line 271
     return-void
 
-    .line 265
+    .line 263
     :catchall_0
     move-exception v1
 
@@ -1287,12 +1287,12 @@
     .locals 2
 
     .prologue
-    .line 181
+    .line 179
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 183
+    .line 181
     :try_start_0
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mContentView:Lcom/android/gallery3d/ui/GLView;
 
@@ -1306,17 +1306,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 192
+    .line 190
     :cond_0
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 194
+    .line 192
     :goto_0
     return-void
 
-    .line 187
+    .line 185
     :cond_1
     :try_start_1
     iget v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mFlags:I
@@ -1327,14 +1327,14 @@
 
     if-nez v0, :cond_2
 
-    .line 192
+    .line 190
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     goto :goto_0
 
-    .line 189
+    .line 187
     :cond_2
     :try_start_2
     iget v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mFlags:I
@@ -1343,12 +1343,12 @@
 
     iput v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mFlags:I
 
-    .line 190
+    .line 188
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->requestRender()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 192
+    .line 190
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
@@ -1369,22 +1369,22 @@
     .locals 1
 
     .prologue
-    .line 174
+    .line 172
     iget-boolean v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderRequested:Z
 
     if-eqz v0, :cond_0
 
-    .line 177
+    .line 175
     :goto_0
     return-void
 
-    .line 175
+    .line 173
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderRequested:Z
 
-    .line 176
+    .line 174
     invoke-super {p0}, Landroid/opengl/GLSurfaceView;->requestRender()V
 
     goto :goto_0
@@ -1399,33 +1399,33 @@
 
     const/4 v5, 0x0
 
-    .line 147
+    .line 145
     iget-object v2, p0, Lcom/android/gallery3d/ui/GLRootView;->mContentView:Lcom/android/gallery3d/ui/GLView;
 
     if-ne v2, p1, :cond_1
 
-    .line 165
+    .line 163
     :cond_0
     :goto_0
     return-void
 
-    .line 148
+    .line 146
     :cond_1
     iget-object v2, p0, Lcom/android/gallery3d/ui/GLRootView;->mContentView:Lcom/android/gallery3d/ui/GLView;
 
     if-eqz v2, :cond_3
 
-    .line 149
+    .line 147
     iget-boolean v2, p0, Lcom/android/gallery3d/ui/GLRootView;->mInDownState:Z
 
     if-eqz v2, :cond_2
 
-    .line 150
+    .line 148
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 151
+    .line 149
     .local v0, now:J
     const/4 v4, 0x3
 
@@ -1437,19 +1437,19 @@
 
     move-result-object v8
 
-    .line 153
+    .line 151
     .local v8, cancelEvent:Landroid/view/MotionEvent;
     iget-object v2, p0, Lcom/android/gallery3d/ui/GLRootView;->mContentView:Lcom/android/gallery3d/ui/GLView;
 
     invoke-virtual {v2, v8}, Lcom/android/gallery3d/ui/GLView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 154
+    .line 152
     invoke-virtual {v8}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 155
+    .line 153
     iput-boolean v7, p0, Lcom/android/gallery3d/ui/GLRootView;->mInDownState:Z
 
-    .line 157
+    .line 155
     .end local v0           #now:J
     .end local v8           #cancelEvent:Landroid/view/MotionEvent;
     :cond_2
@@ -1457,20 +1457,20 @@
 
     invoke-virtual {v2}, Lcom/android/gallery3d/ui/GLView;->detachFromRoot()V
 
-    .line 158
+    .line 156
     invoke-static {}, Lcom/android/gallery3d/ui/BasicTexture;->yieldAllTextures()V
 
-    .line 160
+    .line 158
     :cond_3
     iput-object p1, p0, Lcom/android/gallery3d/ui/GLRootView;->mContentView:Lcom/android/gallery3d/ui/GLView;
 
-    .line 161
+    .line 159
     if-eqz p1, :cond_0
 
-    .line 162
+    .line 160
     invoke-virtual {p1, p0}, Lcom/android/gallery3d/ui/GLView;->attachToRoot(Lcom/android/gallery3d/ui/GLRoot;)V
 
-    .line 163
+    .line 161
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->requestLayoutContentPane()V
 
     goto :goto_0
@@ -1481,20 +1481,20 @@
     .parameter "enabled"
 
     .prologue
-    .line 526
+    .line 524
     if-eqz p1, :cond_0
 
     const/16 v0, 0x105
 
-    .line 531
+    .line 529
     .local v0, flags:I
     :goto_0
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/ui/GLRootView;->setSystemUiVisibility(I)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
 
-    .line 532
+    .line 530
     return-void
 
-    .line 526
+    .line 524
     .end local v0           #flags:I
     :cond_0
     const/4 v0, 0x0
@@ -1507,10 +1507,10 @@
     .parameter "source"
 
     .prologue
-    .line 491
+    .line 489
     iput-object p1, p0, Lcom/android/gallery3d/ui/GLRootView;->mOrientationSource:Lcom/android/gallery3d/ui/OrientationSource;
 
-    .line 492
+    .line 490
     return-void
 .end method
 
@@ -1522,13 +1522,13 @@
     .parameter "h"
 
     .prologue
-    .line 540
+    .line 538
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->unfreeze()V
 
-    .line 541
+    .line 539
     invoke-super {p0, p1, p2, p3, p4}, Landroid/opengl/GLSurfaceView;->surfaceChanged(Landroid/view/SurfaceHolder;III)V
 
-    .line 542
+    .line 540
     return-void
 .end method
 
@@ -1537,13 +1537,13 @@
     .parameter "holder"
 
     .prologue
-    .line 546
+    .line 544
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->unfreeze()V
 
-    .line 547
+    .line 545
     invoke-super {p0, p1}, Landroid/opengl/GLSurfaceView;->surfaceCreated(Landroid/view/SurfaceHolder;)V
 
-    .line 548
+    .line 546
     return-void
 .end method
 
@@ -1552,13 +1552,13 @@
     .parameter "holder"
 
     .prologue
-    .line 552
+    .line 550
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->unfreeze()V
 
-    .line 553
+    .line 551
     invoke-super {p0, p1}, Landroid/opengl/GLSurfaceView;->surfaceDestroyed(Landroid/view/SurfaceHolder;)V
 
-    .line 554
+    .line 552
     return-void
 .end method
 
@@ -1566,27 +1566,27 @@
     .locals 1
 
     .prologue
-    .line 518
+    .line 516
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 519
+    .line 517
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mFreeze:Z
 
-    .line 520
+    .line 518
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mFreezeCondition:Ljava/util/concurrent/locks/Condition;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->signalAll()V
 
-    .line 521
+    .line 519
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 522
+    .line 520
     return-void
 .end method
 
@@ -1594,11 +1594,11 @@
     .locals 1
 
     .prologue
-    .line 474
+    .line 472
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 475
+    .line 473
     return-void
 .end method

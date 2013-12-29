@@ -82,12 +82,12 @@
     .line 62
     const/16 v0, 0x12c
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/ui/PhotoFallbackEffect;->setDuration(I)V
+    invoke-virtual {p0, v0}, Lcom/android/gallery3d/anim/Animation;->setDuration(I)V
 
     .line 63
     sget-object v0, Lcom/android/gallery3d/ui/PhotoFallbackEffect;->ANIM_INTERPOLATE:Landroid/view/animation/Interpolator;
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/ui/PhotoFallbackEffect;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {p0, v0}, Lcom/android/gallery3d/anim/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     .line 64
     return-void

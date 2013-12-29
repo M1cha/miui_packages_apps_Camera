@@ -37,7 +37,7 @@
     .line 32
     sget-object v0, Lcom/android/camera/ThumbnailHolder$LazyHandlerHolder;->sHandlerThread:Landroid/os/HandlerThread;
 
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     .line 34
     new-instance v0, Landroid/os/Handler;
@@ -64,7 +64,7 @@
 
     .prologue
     .line 29
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

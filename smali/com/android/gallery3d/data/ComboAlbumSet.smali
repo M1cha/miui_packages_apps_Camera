@@ -57,11 +57,11 @@
     .line 37
     .end local v3           #set:Lcom/android/gallery3d/data/MediaSet;
     :cond_0
-    invoke-virtual {p2}, Lcom/android/camera/CameraAppImpl;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p2}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
-    const v5, 0x7f0d01d2
+    const v5, 0x7f0d01e8
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -193,7 +193,7 @@
 
     .prologue
     .line 87
-    invoke-virtual {p0}, Lcom/android/gallery3d/data/ComboAlbumSet;->notifyContentChanged()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/data/MediaSet;->notifyContentChanged()V
 
     .line 88
     return-void

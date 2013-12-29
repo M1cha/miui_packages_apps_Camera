@@ -53,7 +53,7 @@
 
     .prologue
     .line 8
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -62,7 +62,7 @@
     .locals 1
 
     .prologue
-    .line 115
+    .line 116
     sget-boolean v0, Lcom/android/camera/Device;->IS_MITWO_A:Z
 
     if-nez v0, :cond_0
@@ -82,42 +82,20 @@
     .locals 1
 
     .prologue
-    .line 80
+    .line 81
     sget-boolean v0, Lcom/android/camera/Device;->IS_MIONE:Z
 
     if-eqz v0, :cond_0
 
-    .line 81
+    .line 82
     const-string v0, "3264x1836"
 
-    .line 83
+    .line 84
     :goto_0
     return-object v0
 
     :cond_0
     const-string v0, "3264x1840"
-
-    goto :goto_0
-.end method
-
-.method public static defaultZSL()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 63
-    sget-boolean v0, Lcom/android/camera/Device;->IS_MIONE:Z
-
-    if-eqz v0, :cond_0
-
-    .line 64
-    const-string v0, "off"
-
-    .line 66
-    :goto_0
-    return-object v0
-
-    :cond_0
-    const-string v0, "on"
 
     goto :goto_0
 .end method
@@ -129,12 +107,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 119
+    .line 120
     sget-boolean v6, Lcom/android/camera/Device;->IS_MITWO:Z
 
     if-eqz v6, :cond_1
 
-    .line 120
+    .line 121
     const-string v6, "4208x2368"
 
     const/16 v7, 0x78
@@ -143,7 +121,7 @@
 
     move-result v2
 
-    .line 121
+    .line 122
     .local v2, index:I
     const-string v6, "4208x2368"
 
@@ -155,13 +133,13 @@
 
     move-result v0
 
-    .line 122
+    .line 123
     .local v0, WIDTH:I
     invoke-virtual {p0}, Landroid/hardware/Camera$Parameters;->getSupportedPictureSizes()Ljava/util/List;
 
     move-result-object v4
 
-    .line 123
+    .line 124
     .local v4, sizes:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Size;>;"
     invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -181,16 +159,16 @@
 
     check-cast v3, Landroid/hardware/Camera$Size;
 
-    .line 124
+    .line 125
     .local v3, s:Landroid/hardware/Camera$Size;
     iget v6, v3, Landroid/hardware/Camera$Size;->width:I
 
     if-ne v6, v0, :cond_0
 
-    .line 125
+    .line 126
     const/4 v5, 0x1
 
-    .line 129
+    .line 130
     .end local v0           #WIDTH:I
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #index:I
@@ -204,30 +182,30 @@
     .locals 1
 
     .prologue
-    .line 70
+    .line 71
     sget-boolean v0, Lcom/android/camera/Device;->IS_MITWO_A:Z
 
     if-eqz v0, :cond_0
 
-    .line 71
+    .line 72
     const-string v0, "640x480"
 
-    .line 75
+    .line 76
     :goto_0
     return-object v0
 
-    .line 72
+    .line 73
     :cond_0
     sget-boolean v0, Lcom/android/camera/Device;->IS_MITWO:Z
 
     if-eqz v0, :cond_1
 
-    .line 73
+    .line 74
     const-string v0, "1280x720"
 
     goto :goto_0
 
-    .line 75
+    .line 76
     :cond_1
     const-string v0, "768x432"
 
@@ -248,7 +226,7 @@
     .locals 1
 
     .prologue
-    .line 55
+    .line 59
     sget-boolean v0, Lcom/android/camera/Device;->IS_MIONE:Z
 
     if-nez v0, :cond_0
@@ -273,7 +251,7 @@
     .locals 1
 
     .prologue
-    .line 35
+    .line 39
     sget-boolean v0, Lcom/android/camera/Device;->IS_MITWO:Z
 
     if-nez v0, :cond_0
@@ -298,7 +276,7 @@
     .locals 1
 
     .prologue
-    .line 47
+    .line 51
     sget-boolean v0, Lcom/android/camera/Device;->IS_MITWO:Z
 
     return v0
@@ -308,7 +286,7 @@
     .locals 1
 
     .prologue
-    .line 59
+    .line 63
     sget-boolean v0, Lcom/android/camera/Device;->IS_MITWO:Z
 
     if-nez v0, :cond_0
@@ -333,7 +311,7 @@
     .locals 1
 
     .prologue
-    .line 43
+    .line 47
     sget-boolean v0, Lcom/android/camera/Device;->IS_MITWO:Z
 
     if-nez v0, :cond_0
@@ -358,10 +336,45 @@
     .locals 1
 
     .prologue
-    .line 110
+    .line 111
     sget-boolean v0, Lcom/android/camera/Device;->IS_MITWO:Z
 
     return v0
+.end method
+
+.method public static supportWaterMark()Z
+    .locals 1
+
+    .prologue
+    .line 31
+    sget-boolean v0, Lcom/android/camera/Device;->IS_MITWO:Z
+
+    return v0
+.end method
+
+.method public static supportZSL()Z
+    .locals 1
+
+    .prologue
+    .line 67
+    sget-boolean v0, Lcom/android/camera/Device;->IS_MITWO:Z
+
+    if-nez v0, :cond_0
+
+    sget-boolean v0, Lcom/android/camera/Device;->IS_MITWO_A:Z
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public static updatePreviewSize(Landroid/hardware/Camera$Size;)V
@@ -369,12 +382,12 @@
     .parameter "size"
 
     .prologue
-    .line 96
+    .line 97
     sget-boolean v0, Lcom/android/camera/Device;->IS_MITWO_A:Z
 
     if-eqz v0, :cond_0
 
-    .line 97
+    .line 98
     iget v0, p0, Landroid/hardware/Camera$Size;->width:I
 
     int-to-double v0, v0
@@ -415,28 +428,28 @@
 
     if-lez v0, :cond_1
 
-    .line 99
+    .line 100
     const/16 v0, 0x1b0
 
     iput v0, p0, Landroid/hardware/Camera$Size;->height:I
 
-    .line 100
+    .line 101
     const/16 v0, 0x300
 
     iput v0, p0, Landroid/hardware/Camera$Size;->width:I
 
-    .line 106
+    .line 107
     :cond_0
     :goto_0
     return-void
 
-    .line 102
+    .line 103
     :cond_1
     const/16 v0, 0x1e0
 
     iput v0, p0, Landroid/hardware/Camera$Size;->height:I
 
-    .line 103
+    .line 104
     const/16 v0, 0x280
 
     iput v0, p0, Landroid/hardware/Camera$Size;->width:I

@@ -26,16 +26,14 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/BasePreferenceActivity;Landroid/preference/CheckBoxPreference;)V
     .locals 0
-    .parameter
-    .parameter
 
     .prologue
-    .line 290
+    .line 292
     iput-object p1, p0, Lcom/android/camera/BasePreferenceActivity$3;->this$0:Lcom/android/camera/BasePreferenceActivity;
 
     iput-object p2, p0, Lcom/android/camera/BasePreferenceActivity$3;->val$checkBox:Landroid/preference/CheckBoxPreference;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,7 +44,7 @@
     .locals 3
 
     .prologue
-    .line 295
+    .line 297
     iget-object v1, p0, Lcom/android/camera/BasePreferenceActivity$3;->this$0:Lcom/android/camera/BasePreferenceActivity;
 
     #getter for: Lcom/android/camera/BasePreferenceActivity;->mPreferences:Lcom/android/camera/ComboPreferences;
@@ -58,7 +56,7 @@
 
     move-result-object v0
 
-    .line 296
+    .line 298
     .local v0, editor:Landroid/content/SharedPreferences$Editor;
     const-string v2, "pref_layout_mode_key"
 
@@ -76,10 +74,10 @@
     :goto_0
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 297
+    .line 299
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 298
+    .line 300
     iget-object v1, p0, Lcom/android/camera/BasePreferenceActivity$3;->val$checkBox:Landroid/preference/CheckBoxPreference;
 
     iget-object v2, p0, Lcom/android/camera/BasePreferenceActivity$3;->this$0:Lcom/android/camera/BasePreferenceActivity;
@@ -89,12 +87,12 @@
 
     move-result v2
 
-    invoke-virtual {v1, v2}, Landroid/preference/CheckBoxPreference;->setChecked(Z)V
+    invoke-virtual {v1, v2}, Landroid/preference/TwoStatePreference;->setChecked(Z)V
 
-    .line 299
+    .line 301
     return-void
 
-    .line 296
+    .line 298
     :cond_0
     const/4 v1, 0x0
 

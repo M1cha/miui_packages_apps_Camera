@@ -25,13 +25,13 @@
     .parameter "context"
 
     .prologue
-    .line 302
+    .line 303
     iput-object p1, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    .line 303
+    .line 304
     invoke-direct {p0, p2}, Lcom/android/gallery3d/ui/SynchronizedHandler;-><init>(Lcom/android/gallery3d/app/GalleryActivity;)V
 
-    .line 304
+    .line 305
     return-void
 .end method
 
@@ -50,12 +50,12 @@
 
     const/4 v4, 0x0
 
-    .line 308
+    .line 309
     iget v2, p1, Landroid/os/Message;->what:I
 
     packed-switch v2, :pswitch_data_0
 
-    .line 367
+    .line 368
     new-instance v2, Ljava/lang/AssertionError;
 
     iget v3, p1, Landroid/os/Message;->what:I
@@ -64,7 +64,7 @@
 
     throw v2
 
-    .line 310
+    .line 311
     :pswitch_0
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
@@ -75,7 +75,7 @@
 
     invoke-virtual {v2}, Lcom/android/gallery3d/ui/GestureRecognizer;->cancelScale()V
 
-    .line 311
+    .line 312
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
     #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
@@ -85,18 +85,18 @@
 
     invoke-virtual {v2, v4}, Lcom/android/gallery3d/ui/PositionController;->setExtraScalingRange(Z)V
 
-    .line 312
+    .line 313
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
     #setter for: Lcom/android/gallery3d/ui/PhotoView;->mCancelExtraScalingPending:Z
     invoke-static {v2, v4}, Lcom/android/gallery3d/ui/PhotoView;->access$702(Lcom/android/gallery3d/ui/PhotoView;Z)Z
 
-    .line 369
+    .line 370
     :cond_0
     :goto_0
     return-void
 
-    .line 316
+    .line 317
     :pswitch_1
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
@@ -105,7 +105,7 @@
 
     goto :goto_0
 
-    .line 322
+    .line 323
     :pswitch_2
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
@@ -116,7 +116,7 @@
 
     goto :goto_0
 
-    .line 328
+    .line 329
     :pswitch_3
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
@@ -133,16 +133,6 @@
 
     invoke-interface {v5, v2, v6}, Lcom/android/gallery3d/ui/PhotoView$Listener;->onDeleteImage(Lcom/android/gallery3d/data/Path;I)V
 
-    .line 338
-    iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
-
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mHandler:Lcom/android/gallery3d/ui/SynchronizedHandler;
-    invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$1000(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/SynchronizedHandler;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v8}, Lcom/android/gallery3d/ui/SynchronizedHandler;->removeMessages(I)V
-
     .line 339
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
@@ -151,11 +141,21 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v8}, Lcom/android/gallery3d/ui/SynchronizedHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v2, v8}, Landroid/os/Handler;->removeMessages(I)V
+
+    .line 340
+    iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
+
+    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mHandler:Lcom/android/gallery3d/ui/SynchronizedHandler;
+    invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$1000(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/SynchronizedHandler;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v8}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0
 
-    .line 340
+    .line 341
     .local v0, m:Landroid/os/Message;
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
@@ -166,9 +166,9 @@
 
     const-wide/16 v5, 0x7d0
 
-    invoke-virtual {v2, v0, v5, v6}, Lcom/android/gallery3d/ui/SynchronizedHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v2, v0, v5, v6}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 342
+    .line 343
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
     #getter for: Lcom/android/gallery3d/ui/PhotoView;->mNextBound:I
@@ -187,11 +187,11 @@
 
     add-int/lit8 v1, v2, 0x1
 
-    .line 343
+    .line 344
     .local v1, numberOfPictures:I
     if-ne v1, v7, :cond_2
 
-    .line 344
+    .line 345
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
     #getter for: Lcom/android/gallery3d/ui/PhotoView;->mModel:Lcom/android/gallery3d/ui/PhotoView$Model;
@@ -232,11 +232,11 @@
 
     if-eqz v2, :cond_2
 
-    .line 346
+    .line 347
     :cond_1
     add-int/lit8 v1, v1, -0x1
 
-    .line 349
+    .line 350
     :cond_2
     iget-object v5, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
@@ -255,7 +255,7 @@
 
     goto :goto_1
 
-    .line 353
+    .line 354
     .end local v0           #m:Landroid/os/Message;
     .end local v1           #numberOfPictures:I
     :pswitch_4
@@ -268,20 +268,20 @@
 
     const/4 v3, 0x5
 
-    invoke-virtual {v2, v3}, Lcom/android/gallery3d/ui/SynchronizedHandler;->hasMessages(I)Z
+    invoke-virtual {v2, v3}, Landroid/os/Handler;->hasMessages(I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 354
+    .line 355
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
     const/4 v3, -0x5
 
     invoke-static {v2, v3}, Lcom/android/gallery3d/ui/PhotoView;->access$372(Lcom/android/gallery3d/ui/PhotoView;I)I
 
-    .line 355
+    .line 356
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
     #calls: Lcom/android/gallery3d/ui/PhotoView;->snapback()V
@@ -289,7 +289,7 @@
 
     goto/16 :goto_0
 
-    .line 360
+    .line 361
     :pswitch_5
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
@@ -298,7 +298,7 @@
 
     goto/16 :goto_0
 
-    .line 364
+    .line 365
     :pswitch_6
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyHandler;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
@@ -309,7 +309,7 @@
 
     goto/16 :goto_0
 
-    .line 308
+    .line 309
     :pswitch_data_0
     .packed-switch 0x2
         :pswitch_0

@@ -1,4 +1,4 @@
-.class public final Lcom/google/zxing/common/DetectorResult;
+.class public Lcom/google/zxing/common/DetectorResult;
 .super Ljava/lang/Object;
 .source "DetectorResult.java"
 
@@ -17,7 +17,7 @@
 
     .prologue
     .line 33
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 34
     iput-object p1, p0, Lcom/google/zxing/common/DetectorResult;->bits:Lcom/google/zxing/common/BitMatrix;
@@ -31,7 +31,7 @@
 
 
 # virtual methods
-.method public getBits()Lcom/google/zxing/common/BitMatrix;
+.method public final getBits()Lcom/google/zxing/common/BitMatrix;
     .locals 1
 
     .prologue
@@ -41,7 +41,7 @@
     return-object v0
 .end method
 
-.method public getPoints()[Lcom/google/zxing/ResultPoint;
+.method public final getPoints()[Lcom/google/zxing/ResultPoint;
     .locals 1
 
     .prologue

@@ -54,7 +54,7 @@
     iput-object v3, p0, Lcom/android/gallery3d/app/MovieActivity;->mUri:Landroid/net/Uri;
 
     .line 109
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/MovieActivity;->getActionBar()Landroid/app/ActionBar;
+    invoke-virtual {p0}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object v8
 
@@ -75,7 +75,7 @@
     .line 112
     new-instance v3, Landroid/graphics/drawable/BitmapDrawable;
 
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/MovieActivity;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
@@ -109,7 +109,7 @@
     :cond_1
     new-instance v0, Lcom/android/gallery3d/app/MovieActivity$2;
 
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/MovieActivity;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
 
@@ -155,22 +155,22 @@
     .line 66
     const/16 v0, 0x8
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/MovieActivity;->requestWindowFeature(I)Z
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->requestWindowFeature(I)Z
 
     .line 67
     const/16 v0, 0x9
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/MovieActivity;->requestWindowFeature(I)Z
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->requestWindowFeature(I)Z
 
     .line 69
     const v0, 0x7f040017
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/MovieActivity;->setContentView(I)V
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->setContentView(I)V
 
     .line 70
     const v0, 0x7f0c0047
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/MovieActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -181,7 +181,7 @@
     invoke-virtual {v2, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
 
     .line 74
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/MovieActivity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object v7
 
@@ -249,19 +249,19 @@
 
     .line 92
     .local v8, orientation:I
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/MovieActivity;->getRequestedOrientation()I
+    invoke-virtual {p0}, Landroid/app/Activity;->getRequestedOrientation()I
 
     move-result v0
 
     if-eq v8, v0, :cond_0
 
     .line 93
-    invoke-virtual {p0, v8}, Lcom/android/gallery3d/app/MovieActivity;->setRequestedOrientation(I)V
+    invoke-virtual {p0, v8}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
     .line 96
     .end local v8           #orientation:I
     :cond_0
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/MovieActivity;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v9
 
@@ -313,7 +313,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreateOptionsMenu(Landroid/view/Menu;)Z
 
     .line 152
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/MovieActivity;->getMenuInflater()Landroid/view/MenuInflater;
+    invoke-virtual {p0}, Landroid/app/Activity;->getMenuInflater()Landroid/view/MenuInflater;
 
     move-result-object v2
 
@@ -524,7 +524,7 @@
     .line 186
     const-string v0, "audio"
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/MovieActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -552,7 +552,7 @@
     .line 194
     const-string v0, "audio"
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/MovieActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 

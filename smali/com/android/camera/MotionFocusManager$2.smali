@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/MotionFocusManager;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 138
+    .line 146
     iput-object p1, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,7 +42,7 @@
     .parameter "accuracy"
 
     .prologue
-    .line 184
+    .line 192
     return-void
 .end method
 
@@ -58,7 +57,7 @@
 
     const/4 v8, 0x1
 
-    .line 141
+    .line 149
     iget-wide v4, p1, Landroid/hardware/SensorEvent;->timestamp:J
 
     iget-object v6, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
@@ -74,7 +73,7 @@
 
     move-result-wide v2
 
-    .line 142
+    .line 150
     .local v2, elapseTime:J
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
@@ -95,12 +94,12 @@
 
     if-gez v4, :cond_1
 
-    .line 179
+    .line 187
     :cond_0
     :goto_0
     return-void
 
-    .line 146
+    .line 154
     :cond_1
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
@@ -121,7 +120,7 @@
 
     if-lez v4, :cond_3
 
-    .line 147
+    .line 155
     :cond_2
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
@@ -132,7 +131,7 @@
 
     goto :goto_0
 
-    .line 151
+    .line 159
     :cond_3
     iget-object v4, p1, Landroid/hardware/SensorEvent;->values:[F
 
@@ -174,7 +173,7 @@
 
     move-result-wide v0
 
-    .line 154
+    .line 162
     .local v0, a:D
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
@@ -183,14 +182,14 @@
     #setter for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTimeStamp:J
     invoke-static {v4, v5, v6}, Lcom/android/camera/MotionFocusManager;->access$402(Lcom/android/camera/MotionFocusManager;J)J
 
-    .line 156
+    .line 164
     const-wide v4, 0x3fe99999a0000000L
 
     cmpl-double v4, v0, v4
 
     if-lez v4, :cond_5
 
-    .line 157
+    .line 165
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
     #getter for: Lcom/android/camera/MotionFocusManager;->mDeviceStable:Z
@@ -200,19 +199,19 @@
 
     if-eqz v4, :cond_4
 
-    .line 158
+    .line 166
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
     #setter for: Lcom/android/camera/MotionFocusManager;->mDeviceStable:Z
     invoke-static {v4, v9}, Lcom/android/camera/MotionFocusManager;->access$502(Lcom/android/camera/MotionFocusManager;Z)Z
 
-    .line 159
+    .line 167
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
     #setter for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTag:I
     invoke-static {v4, v9}, Lcom/android/camera/MotionFocusManager;->access$602(Lcom/android/camera/MotionFocusManager;I)I
 
-    .line 160
+    .line 168
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
     #getter for: Lcom/android/camera/MotionFocusManager;->mHandler:Landroid/os/Handler;
@@ -222,7 +221,7 @@
 
     invoke-virtual {v4, v8}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 161
+    .line 169
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
     #calls: Lcom/android/camera/MotionFocusManager;->deviceBeginMoving()V
@@ -230,7 +229,7 @@
 
     goto :goto_0
 
-    .line 163
+    .line 171
     :cond_4
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
@@ -239,7 +238,7 @@
 
     goto :goto_0
 
-    .line 166
+    .line 174
     :cond_5
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
@@ -250,12 +249,12 @@
 
     if-nez v4, :cond_6
 
-    .line 167
+    .line 175
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
     invoke-static {v4, v8}, Lcom/android/camera/MotionFocusManager;->access$612(Lcom/android/camera/MotionFocusManager;I)I
 
-    .line 168
+    .line 176
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
     #getter for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTag:I
@@ -267,13 +266,13 @@
 
     if-lt v4, v5, :cond_0
 
-    .line 169
+    .line 177
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
     #setter for: Lcom/android/camera/MotionFocusManager;->mDeviceStable:Z
     invoke-static {v4, v8}, Lcom/android/camera/MotionFocusManager;->access$502(Lcom/android/camera/MotionFocusManager;Z)Z
 
-    .line 170
+    .line 178
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
     #getter for: Lcom/android/camera/MotionFocusManager;->mHandler:Landroid/os/Handler;
@@ -287,7 +286,7 @@
 
     if-nez v4, :cond_0
 
-    .line 171
+    .line 179
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
     #getter for: Lcom/android/camera/MotionFocusManager;->mHandler:Landroid/os/Handler;
@@ -299,7 +298,7 @@
 
     goto/16 :goto_0
 
-    .line 175
+    .line 183
     :cond_6
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
@@ -314,7 +313,7 @@
 
     if-nez v4, :cond_0
 
-    .line 176
+    .line 184
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
     #calls: Lcom/android/camera/MotionFocusManager;->deviceKeepStable()V

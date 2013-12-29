@@ -24,6 +24,9 @@
 .method public abstract capture()Z
 .end method
 
+.method public abstract multiCapture()Z
+.end method
+
 .method public abstract playSound(I)V
 .end method
 

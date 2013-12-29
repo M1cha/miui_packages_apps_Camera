@@ -27,7 +27,7 @@
 
     .prologue
     .line 34
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -47,22 +47,22 @@
 
     const/4 v8, -0x1
 
-    .line 119
+    .line 102
     invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getWidth()I
 
     move-result v3
 
-    .line 120
+    .line 103
     .local v3, width:I
     invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
 
     move-result v0
 
-    .line 122
+    .line 105
     .local v0, height:I
     const/4 v1, 0x1
 
-    .line 123
+    .line 106
     .local v1, nudged:Z
     const/4 v2, 0x0
 
@@ -74,12 +74,12 @@
 
     if-eqz v1, :cond_6
 
-    .line 124
+    .line 107
     aget v6, p1, v2
 
     float-to-int v4, v6
 
-    .line 125
+    .line 108
     .local v4, x:I
     add-int/lit8 v6, v2, 0x1
 
@@ -87,7 +87,7 @@
 
     float-to-int v5, v6
 
-    .line 126
+    .line 109
     .local v5, y:I
     if-lt v4, v8, :cond_0
 
@@ -97,7 +97,7 @@
 
     if-le v5, v0, :cond_1
 
-    .line 127
+    .line 110
     :cond_0
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
@@ -105,60 +105,60 @@
 
     throw v6
 
-    .line 129
+    .line 112
     :cond_1
     const/4 v1, 0x0
 
-    .line 130
+    .line 113
     if-ne v4, v8, :cond_4
 
-    .line 131
+    .line 114
     aput v9, p1, v2
 
-    .line 132
+    .line 115
     const/4 v1, 0x1
 
-    .line 137
+    .line 120
     :cond_2
     :goto_1
     if-ne v5, v8, :cond_5
 
-    .line 138
+    .line 121
     add-int/lit8 v6, v2, 0x1
 
     aput v9, p1, v6
 
-    .line 139
+    .line 122
     const/4 v1, 0x1
 
-    .line 123
+    .line 106
     :cond_3
     :goto_2
     add-int/lit8 v2, v2, 0x2
 
     goto :goto_0
 
-    .line 133
+    .line 116
     :cond_4
     if-ne v4, v3, :cond_2
 
-    .line 134
+    .line 117
     add-int/lit8 v6, v3, -0x1
 
     int-to-float v6, v6
 
     aput v6, p1, v2
 
-    .line 135
+    .line 118
     const/4 v1, 0x1
 
     goto :goto_1
 
-    .line 140
+    .line 123
     :cond_5
     if-ne v5, v0, :cond_3
 
-    .line 141
+    .line 124
     add-int/lit8 v6, v2, 0x1
 
     add-int/lit8 v7, v0, -0x1
@@ -167,18 +167,18 @@
 
     aput v7, p1, v6
 
-    .line 142
+    .line 125
     const/4 v1, 0x1
 
     goto :goto_2
 
-    .line 146
+    .line 129
     .end local v4           #x:I
     .end local v5           #y:I
     :cond_6
     const/4 v1, 0x1
 
-    .line 147
+    .line 130
     array-length v6, p1
 
     add-int/lit8 v2, v6, -0x2
@@ -188,12 +188,12 @@
 
     if-eqz v1, :cond_d
 
-    .line 148
+    .line 131
     aget v6, p1, v2
 
     float-to-int v4, v6
 
-    .line 149
+    .line 132
     .restart local v4       #x:I
     add-int/lit8 v6, v2, 0x1
 
@@ -201,7 +201,7 @@
 
     float-to-int v5, v6
 
-    .line 150
+    .line 133
     .restart local v5       #y:I
     if-lt v4, v8, :cond_7
 
@@ -211,7 +211,7 @@
 
     if-le v5, v0, :cond_8
 
-    .line 151
+    .line 134
     :cond_7
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
@@ -219,60 +219,60 @@
 
     throw v6
 
-    .line 153
+    .line 136
     :cond_8
     const/4 v1, 0x0
 
-    .line 154
+    .line 137
     if-ne v4, v8, :cond_b
 
-    .line 155
+    .line 138
     aput v9, p1, v2
 
-    .line 156
+    .line 139
     const/4 v1, 0x1
 
-    .line 161
+    .line 144
     :cond_9
     :goto_4
     if-ne v5, v8, :cond_c
 
-    .line 162
+    .line 145
     add-int/lit8 v6, v2, 0x1
 
     aput v9, p1, v6
 
-    .line 163
+    .line 146
     const/4 v1, 0x1
 
-    .line 147
+    .line 130
     :cond_a
     :goto_5
     add-int/lit8 v2, v2, -0x2
 
     goto :goto_3
 
-    .line 157
+    .line 140
     :cond_b
     if-ne v4, v3, :cond_9
 
-    .line 158
+    .line 141
     add-int/lit8 v6, v3, -0x1
 
     int-to-float v6, v6
 
     aput v6, p1, v2
 
-    .line 159
+    .line 142
     const/4 v1, 0x1
 
     goto :goto_4
 
-    .line 164
+    .line 147
     :cond_c
     if-ne v5, v0, :cond_a
 
-    .line 165
+    .line 148
     add-int/lit8 v6, v2, 0x1
 
     add-int/lit8 v7, v0, -0x1
@@ -281,12 +281,12 @@
 
     aput v7, p1, v6
 
-    .line 166
+    .line 149
     const/4 v1, 0x1
 
     goto :goto_5
 
-    .line 169
+    .line 152
     .end local v4           #x:I
     .end local v5           #y:I
     :cond_d
@@ -297,7 +297,7 @@
     .locals 1
 
     .prologue
-    .line 58
+    .line 55
     sget-object v0, Lcom/google/zxing/common/GridSampler;->gridSampler:Lcom/google/zxing/common/GridSampler;
 
     return-object v0
@@ -305,7 +305,7 @@
 
 
 # virtual methods
-.method public abstract sampleGrid(Lcom/google/zxing/common/BitMatrix;IFFFFFFFFFFFFFFFF)Lcom/google/zxing/common/BitMatrix;
+.method public abstract sampleGrid(Lcom/google/zxing/common/BitMatrix;IIFFFFFFFFFFFFFFFF)Lcom/google/zxing/common/BitMatrix;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -313,22 +313,10 @@
     .end annotation
 .end method
 
-.method public sampleGrid(Lcom/google/zxing/common/BitMatrix;ILcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/BitMatrix;
-    .locals 1
-    .parameter "image"
-    .parameter "dimension"
-    .parameter "transform"
+.method public abstract sampleGrid(Lcom/google/zxing/common/BitMatrix;IILcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/BitMatrix;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
         }
     .end annotation
-
-    .prologue
-    .line 98
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw v0
 .end method

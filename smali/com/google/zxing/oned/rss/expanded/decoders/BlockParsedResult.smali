@@ -10,43 +10,22 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 1
-
-    .prologue
-    .line 38
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    .line 39
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;->finished:Z
-
-    .line 40
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;->decodedInformation:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
-
-    .line 41
-    return-void
-.end method
-
 .method constructor <init>(Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;Z)V
     .locals 0
     .parameter "information"
     .parameter "finished"
 
     .prologue
-    .line 48
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 42
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
+    .line 43
     iput-boolean p2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;->finished:Z
 
-    .line 50
+    .line 44
     iput-object p1, p0, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;->decodedInformation:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
 
-    .line 51
+    .line 45
     return-void
 .end method
 
@@ -55,18 +34,12 @@
     .parameter "finished"
 
     .prologue
-    .line 43
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    .line 44
-    iput-boolean p1, p0, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;->finished:Z
-
-    .line 45
+    .line 39
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;->decodedInformation:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
+    invoke-direct {p0, v0, p1}, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;-><init>(Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;Z)V
 
-    .line 46
+    .line 40
     return-void
 .end method
 
@@ -76,7 +49,7 @@
     .locals 1
 
     .prologue
-    .line 54
+    .line 48
     iget-object v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;->decodedInformation:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
 
     return-object v0
@@ -86,7 +59,7 @@
     .locals 1
 
     .prologue
-    .line 58
+    .line 52
     iget-boolean v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/BlockParsedResult;->finished:Z
 
     return v0

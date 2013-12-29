@@ -183,11 +183,11 @@
     invoke-virtual {v2, v3, v4, v5, v6}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
     .line 104
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    const v3, 0x7f02014f
+    const v3, 0x7f020146
 
     invoke-static {v2, v3}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 
@@ -573,7 +573,7 @@
 
     .line 123
     :cond_0
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     .line 124
     return-void
@@ -658,7 +658,7 @@
 
     div-int/lit8 v1, v1, 0x2
 
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->getPaddingLeft()I
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v2
 
@@ -699,11 +699,11 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v1
 
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->getPaddingRight()I
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v2
 
@@ -882,13 +882,13 @@
     .line 199
     iget-object v4, p0, Lcom/android/gallery3d/app/TimeBar;->progressBar:Landroid/graphics/Rect;
 
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->getPaddingLeft()I
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v5
 
     add-int/2addr v5, v1
 
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->getPaddingRight()I
+    invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
 
     move-result v6
 
@@ -1011,7 +1011,7 @@
     invoke-interface {v3, v4}, Lcom/android/gallery3d/app/TimeBar$Listener;->onScrubbingMove(I)V
 
     .line 254
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     goto :goto_0
 

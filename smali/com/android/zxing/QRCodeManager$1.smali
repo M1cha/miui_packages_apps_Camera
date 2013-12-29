@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/zxing/QRCodeManager;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 65
+    .line 85
     iput-object p1, p0, Lcom/android/zxing/QRCodeManager$1;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -45,7 +44,7 @@
     .prologue
     const v4, 0x7f0c0004
 
-    .line 68
+    .line 88
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$1;->this$0:Lcom/android/zxing/QRCodeManager;
 
     #getter for: Lcom/android/zxing/QRCodeManager;->mDecodeHandlerFactory:Lcom/android/zxing/DecodeHandlerFactory;
@@ -55,7 +54,9 @@
 
     if-eqz v1, :cond_0
 
-    .line 69
+    if-eqz p1, :cond_0
+
+    .line 89
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$1;->this$0:Lcom/android/zxing/QRCodeManager;
 
     #getter for: Lcom/android/zxing/QRCodeManager;->mDecodeHandlerFactory:Lcom/android/zxing/DecodeHandlerFactory;
@@ -69,7 +70,7 @@
 
     invoke-virtual {v1, v4}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 70
+    .line 90
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$1;->this$0:Lcom/android/zxing/QRCodeManager;
 
     #getter for: Lcom/android/zxing/QRCodeManager;->mDecodeHandlerFactory:Lcom/android/zxing/DecodeHandlerFactory;
@@ -99,11 +100,11 @@
 
     move-result-object v0
 
-    .line 72
+    .line 92
     .local v0, message:Landroid/os/Message;
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 74
+    .line 94
     .end local v0           #message:Landroid/os/Message;
     :cond_0
     return-void

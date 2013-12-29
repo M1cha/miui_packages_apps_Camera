@@ -17,7 +17,7 @@
 
     .prologue
     .line 33
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 34
     iput p1, p0, Lcom/google/zxing/LuminanceSource;->width:I
@@ -71,12 +71,140 @@
     .locals 2
 
     .prologue
-    .line 110
-    new-instance v0, Ljava/lang/RuntimeException;
+    .line 119
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    const-string v1, "This luminance source does not support rotation."
+    const-string v1, "This luminance source does not support rotation by 90 degrees."
 
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 8
+
+    .prologue
+    .line 134
+    iget v6, p0, Lcom/google/zxing/LuminanceSource;->width:I
+
+    new-array v3, v6, [B
+
+    .line 135
+    .local v3, row:[B
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    iget v6, p0, Lcom/google/zxing/LuminanceSource;->height:I
+
+    iget v7, p0, Lcom/google/zxing/LuminanceSource;->width:I
+
+    add-int/lit8 v7, v7, 0x1
+
+    mul-int/2addr v6, v7
+
+    invoke-direct {v2, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    .line 136
+    .local v2, result:Ljava/lang/StringBuilder;
+    const/4 v5, 0x0
+
+    .local v5, y:I
+    :goto_0
+    iget v6, p0, Lcom/google/zxing/LuminanceSource;->height:I
+
+    if-ge v5, v6, :cond_4
+
+    .line 137
+    invoke-virtual {p0, v5, v3}, Lcom/google/zxing/LuminanceSource;->getRow(I[B)[B
+
+    move-result-object v3
+
+    .line 138
+    const/4 v4, 0x0
+
+    .local v4, x:I
+    :goto_1
+    iget v6, p0, Lcom/google/zxing/LuminanceSource;->width:I
+
+    if-ge v4, v6, :cond_3
+
+    .line 139
+    aget-byte v6, v3, v4
+
+    and-int/lit16 v1, v6, 0xff
+
+    .line 141
+    .local v1, luminance:I
+    const/16 v6, 0x40
+
+    if-ge v1, v6, :cond_0
+
+    .line 142
+    const/16 v0, 0x23
+
+    .line 150
+    .local v0, c:C
+    :goto_2
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 138
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_1
+
+    .line 143
+    .end local v0           #c:C
+    :cond_0
+    const/16 v6, 0x80
+
+    if-ge v1, v6, :cond_1
+
+    .line 144
+    const/16 v0, 0x2b
+
+    .restart local v0       #c:C
+    goto :goto_2
+
+    .line 145
+    .end local v0           #c:C
+    :cond_1
+    const/16 v6, 0xc0
+
+    if-ge v1, v6, :cond_2
+
+    .line 146
+    const/16 v0, 0x2e
+
+    .restart local v0       #c:C
+    goto :goto_2
+
+    .line 148
+    .end local v0           #c:C
+    :cond_2
+    const/16 v0, 0x20
+
+    .restart local v0       #c:C
+    goto :goto_2
+
+    .line 152
+    .end local v0           #c:C
+    .end local v1           #luminance:I
+    :cond_3
+    const/16 v6, 0xa
+
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 136
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    .line 154
+    .end local v4           #x:I
+    :cond_4
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    return-object v6
 .end method

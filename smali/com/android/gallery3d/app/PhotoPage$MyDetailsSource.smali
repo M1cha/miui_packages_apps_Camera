@@ -26,13 +26,12 @@
 # direct methods
 .method private constructor <init>(Lcom/android/gallery3d/app/PhotoPage;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 1055
+    .line 1064
     iput-object p1, p0, Lcom/android/gallery3d/app/PhotoPage$MyDetailsSource;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,7 +42,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1055
+    .line 1064
     invoke-direct {p0, p1}, Lcom/android/gallery3d/app/PhotoPage$MyDetailsSource;-><init>(Lcom/android/gallery3d/app/PhotoPage;)V
 
     return-void
@@ -56,10 +55,10 @@
     .parameter "indexHint"
 
     .prologue
-    .line 1070
+    .line 1079
     iput p1, p0, Lcom/android/gallery3d/app/PhotoPage$MyDetailsSource;->mIndex:I
 
-    .line 1071
+    .line 1080
     return p1
 .end method
 
@@ -67,7 +66,7 @@
     .locals 2
 
     .prologue
-    .line 1060
+    .line 1069
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$MyDetailsSource;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
     #getter for: Lcom/android/gallery3d/app/PhotoPage;->mModel:Lcom/android/gallery3d/app/PhotoPage$Model;
@@ -81,7 +80,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaItem;->getDetails()Lcom/android/gallery3d/data/MediaDetails;
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaObject;->getDetails()Lcom/android/gallery3d/data/MediaDetails;
 
     move-result-object v0
 
@@ -92,7 +91,7 @@
     .locals 1
 
     .prologue
-    .line 1076
+    .line 1085
     iget v0, p0, Lcom/android/gallery3d/app/PhotoPage$MyDetailsSource;->mIndex:I
 
     return v0
@@ -102,7 +101,7 @@
     .locals 1
 
     .prologue
-    .line 1065
+    .line 1074
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$MyDetailsSource;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
     #getter for: Lcom/android/gallery3d/app/PhotoPage;->mMediaSet:Lcom/android/gallery3d/data/FilterDeleteSet;

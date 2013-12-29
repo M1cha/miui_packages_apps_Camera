@@ -36,7 +36,7 @@
 
     .prologue
     .line 49
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -150,7 +150,7 @@
     if-nez v1, :cond_0
 
     .line 288
-    const v4, 0x7f0d0193
+    const v4, 0x7f0d01a9
 
     invoke-virtual {p0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -182,7 +182,7 @@
     .line 290
     .end local v0           #durationValue:Ljava/lang/String;
     :cond_0
-    const v4, 0x7f0d0194
+    const v4, 0x7f0d01aa
 
     invoke-virtual {p0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

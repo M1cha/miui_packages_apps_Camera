@@ -8,7 +8,17 @@
 
 .field private final rawBytes:[B
 
-.field private resultMetadata:Ljava/util/Hashtable;
+.field private resultMetadata:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Lcom/google/zxing/ResultMetadataType;",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private resultPoints:[Lcom/google/zxing/ResultPoint;
 
@@ -48,7 +58,7 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;J)V
-    .locals 2
+    .locals 1
     .parameter "text"
     .parameter "rawBytes"
     .parameter "resultPoints"
@@ -57,108 +67,87 @@
 
     .prologue
     .line 47
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 48
-    if-nez p1, :cond_0
-
-    if-nez p2, :cond_0
-
-    .line 49
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "Text and bytes are null"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 51
-    :cond_0
     iput-object p1, p0, Lcom/google/zxing/Result;->text:Ljava/lang/String;
 
-    .line 52
+    .line 49
     iput-object p2, p0, Lcom/google/zxing/Result;->rawBytes:[B
 
-    .line 53
+    .line 50
     iput-object p3, p0, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
 
-    .line 54
+    .line 51
     iput-object p4, p0, Lcom/google/zxing/Result;->format:Lcom/google/zxing/BarcodeFormat;
 
-    .line 55
+    .line 52
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Hashtable;
+    iput-object v0, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Map;
 
-    .line 56
+    .line 53
     iput-wide p5, p0, Lcom/google/zxing/Result;->timestamp:J
 
-    .line 57
+    .line 54
     return-void
 .end method
 
 
 # virtual methods
 .method public addResultPoints([Lcom/google/zxing/ResultPoint;)V
-    .locals 4
+    .locals 5
     .parameter "newPoints"
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    .line 121
+    .line 113
     iget-object v1, p0, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
 
+    .line 114
+    .local v1, oldPoints:[Lcom/google/zxing/ResultPoint;
     if-nez v1, :cond_1
 
-    .line 122
+    .line 115
     iput-object p1, p0, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
 
-    .line 129
+    .line 122
     :cond_0
     :goto_0
     return-void
 
-    .line 123
+    .line 116
     :cond_1
     if-eqz p1, :cond_0
 
-    array-length v1, p1
-
-    if-lez v1, :cond_0
-
-    .line 124
-    iget-object v1, p0, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
-
-    array-length v1, v1
-
     array-length v2, p1
 
-    add-int/2addr v1, v2
+    if-lez v2, :cond_0
 
-    new-array v0, v1, [Lcom/google/zxing/ResultPoint;
+    .line 117
+    array-length v2, v1
 
-    .line 125
+    array-length v3, p1
+
+    add-int/2addr v2, v3
+
+    new-array v0, v2, [Lcom/google/zxing/ResultPoint;
+
+    .line 118
     .local v0, allPoints:[Lcom/google/zxing/ResultPoint;
-    iget-object v1, p0, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
+    array-length v2, v1
 
-    iget-object v2, p0, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
+    invoke-static {v1, v4, v0, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    array-length v2, v2
+    .line 119
+    array-length v2, v1
 
-    invoke-static {v1, v3, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    array-length v3, p1
 
-    .line 126
-    iget-object v1, p0, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
+    invoke-static {p1, v4, v0, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    array-length v1, v1
-
-    array-length v2, p1
-
-    invoke-static {p1, v3, v0, v1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 127
+    .line 120
     iput-object v0, p0, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
 
     goto :goto_0
@@ -168,18 +157,38 @@
     .locals 1
 
     .prologue
-    .line 86
+    .line 83
     iget-object v0, p0, Lcom/google/zxing/Result;->format:Lcom/google/zxing/BarcodeFormat;
 
     return-object v0
 .end method
 
-.method public getResultMetadata()Ljava/util/Hashtable;
+.method public getRawBytes()[B
     .locals 1
 
     .prologue
-    .line 95
-    iget-object v0, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Hashtable;
+    .line 67
+    iget-object v0, p0, Lcom/google/zxing/Result;->rawBytes:[B
+
+    return-object v0
+.end method
+
+.method public getResultMetadata()Ljava/util/Map;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map",
+            "<",
+            "Lcom/google/zxing/ResultMetadataType;",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 92
+    iget-object v0, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Map;
 
     return-object v0
 .end method
@@ -188,7 +197,7 @@
     .locals 1
 
     .prologue
-    .line 79
+    .line 76
     iget-object v0, p0, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
 
     return-object v0
@@ -198,143 +207,86 @@
     .locals 1
 
     .prologue
-    .line 63
+    .line 60
     iget-object v0, p0, Lcom/google/zxing/Result;->text:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public putAllMetadata(Ljava/util/Hashtable;)V
-    .locals 4
-    .parameter "metadata"
+.method public putAllMetadata(Ljava/util/Map;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map",
+            "<",
+            "Lcom/google/zxing/ResultMetadataType;",
+            "Ljava/lang/Object;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 106
+    .line 103
+    .local p1, metadata:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;>;"
     if-eqz p1, :cond_0
 
-    .line 107
-    iget-object v3, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Hashtable;
+    .line 104
+    iget-object v0, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Map;
 
-    if-nez v3, :cond_1
+    if-nez v0, :cond_1
 
-    .line 108
-    iput-object p1, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Hashtable;
-
-    .line 118
-    :cond_0
-    return-void
+    .line 105
+    iput-object p1, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Map;
 
     .line 110
-    :cond_1
-    invoke-virtual {p1}, Ljava/util/Hashtable;->keys()Ljava/util/Enumeration;
-
-    move-result-object v0
-
-    .line 111
-    .local v0, e:Ljava/util/Enumeration;
+    :cond_0
     :goto_0
-    invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
+    return-void
 
-    move-result v3
+    .line 107
+    :cond_1
+    iget-object v0, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Map;
 
-    if-eqz v3, :cond_0
-
-    .line 112
-    invoke-interface {v0}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/zxing/ResultMetadataType;
-
-    .line 113
-    .local v1, key:Lcom/google/zxing/ResultMetadataType;
-    invoke-virtual {p1, v1}, Ljava/util/Hashtable;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    .line 114
-    .local v2, value:Ljava/lang/Object;
-    iget-object v3, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Hashtable;
-
-    invoke-virtual {v3, v1, v2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
     goto :goto_0
 .end method
 
 .method public putMetadata(Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;)V
     .locals 2
-    .parameter "type"
-    .parameter "value"
 
     .prologue
-    .line 99
-    iget-object v0, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Hashtable;
+    .line 96
+    iget-object v0, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Map;
 
     if-nez v0, :cond_0
 
-    .line 100
-    new-instance v0, Ljava/util/Hashtable;
+    .line 97
+    new-instance v0, Ljava/util/EnumMap;
 
-    const/4 v1, 0x3
+    const-class v1, Lcom/google/zxing/ResultMetadataType;
 
-    invoke-direct {v0, v1}, Ljava/util/Hashtable;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
 
-    iput-object v0, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Hashtable;
+    iput-object v0, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Map;
 
-    .line 102
+    .line 99
     :cond_0
-    iget-object v0, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Hashtable;
+    iget-object v0, p0, Lcom/google/zxing/Result;->resultMetadata:Ljava/util/Map;
 
-    invoke-virtual {v0, p1, p2}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 103
+    .line 100
     return-void
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 136
+    .line 130
     iget-object v0, p0, Lcom/google/zxing/Result;->text:Ljava/lang/String;
 
-    if-nez v0, :cond_0
-
-    .line 137
-    new-instance v0, Ljava/lang/StringBuffer;
-
-    invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
-
-    const-string v1, "["
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/zxing/Result;->rawBytes:[B
-
-    array-length v1, v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
-
-    move-result-object v0
-
-    const-string v1, " bytes]"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 139
-    :goto_0
     return-object v0
-
-    :cond_0
-    iget-object v0, p0, Lcom/google/zxing/Result;->text:Ljava/lang/String;
-
-    goto :goto_0
 .end method

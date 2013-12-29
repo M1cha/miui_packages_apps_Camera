@@ -44,7 +44,7 @@
 
     .prologue
     .line 93
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 94
     invoke-static {p1}, Lcom/android/gallery3d/common/Utils;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -218,13 +218,13 @@
 
     .line 72
     .local v0, dialog:Landroid/app/ProgressDialog;
-    invoke-virtual {v0, p1}, Landroid/app/ProgressDialog;->setTitle(I)V
+    invoke-virtual {v0, p1}, Landroid/app/Dialog;->setTitle(I)V
 
     .line 73
     invoke-virtual {v0, p2}, Landroid/app/ProgressDialog;->setMax(I)V
 
     .line 74
-    invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setCancelable(Z)V
+    invoke-virtual {v0, v1}, Landroid/app/Dialog;->setCancelable(Z)V
 
     .line 75
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setIndeterminate(Z)V
@@ -489,11 +489,11 @@
     :sswitch_data_0
     .sparse-switch
         0x7f0c0003 -> :sswitch_3
-        0x7f0c00a1 -> :sswitch_5
-        0x7f0c00a2 -> :sswitch_0
-        0x7f0c00a5 -> :sswitch_2
-        0x7f0c00a6 -> :sswitch_1
-        0x7f0c00a9 -> :sswitch_4
+        0x7f0c009c -> :sswitch_5
+        0x7f0c009d -> :sswitch_0
+        0x7f0c00a0 -> :sswitch_2
+        0x7f0c00a1 -> :sswitch_1
+        0x7f0c00a4 -> :sswitch_4
     .end sparse-switch
 .end method
 
@@ -739,7 +739,7 @@
     .line 130
     iget-object v0, p0, Lcom/android/gallery3d/ui/MenuExecutor;->mDialog:Landroid/app/ProgressDialog;
 
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
     .line 131
     iput-object v1, p0, Lcom/android/gallery3d/ui/MenuExecutor;->mDialog:Landroid/app/ProgressDialog;
@@ -866,47 +866,47 @@
     .line 167
     .local v4, supportImport:Z
     :goto_9
-    const v10, 0x7f0c00a2
+    const v10, 0x7f0c009d
 
     invoke-static {p0, v10, v2}, Lcom/android/gallery3d/ui/MenuExecutor;->setMenuItemVisibility(Landroid/view/Menu;IZ)V
 
     .line 168
-    const v10, 0x7f0c00a5
+    const v10, 0x7f0c00a0
 
     invoke-static {p0, v10, v6}, Lcom/android/gallery3d/ui/MenuExecutor;->setMenuItemVisibility(Landroid/view/Menu;IZ)V
 
     .line 169
-    const v10, 0x7f0c00a6
+    const v10, 0x7f0c00a1
 
     invoke-static {p0, v10, v6}, Lcom/android/gallery3d/ui/MenuExecutor;->setMenuItemVisibility(Landroid/view/Menu;IZ)V
 
     .line 171
-    const v10, 0x7f0c00a0
+    const v10, 0x7f0c009b
 
     invoke-static {p0, v10, v8}, Lcom/android/gallery3d/ui/MenuExecutor;->setMenuItemVisibility(Landroid/view/Menu;IZ)V
 
     .line 172
-    const v10, 0x7f0c00a7
+    const v10, 0x7f0c00a2
 
     invoke-static {p0, v10, v7}, Lcom/android/gallery3d/ui/MenuExecutor;->setMenuItemVisibility(Landroid/view/Menu;IZ)V
 
     .line 173
-    const v10, 0x7f0c00a9
+    const v10, 0x7f0c00a4
 
     invoke-static {p0, v10, v9}, Lcom/android/gallery3d/ui/MenuExecutor;->setMenuItemVisibility(Landroid/view/Menu;IZ)V
 
     .line 174
-    const v10, 0x7f0c00a4
+    const v10, 0x7f0c009f
 
     invoke-static {p0, v10, v3}, Lcom/android/gallery3d/ui/MenuExecutor;->setMenuItemVisibility(Landroid/view/Menu;IZ)V
 
     .line 175
-    const v10, 0x7f0c00a8
+    const v10, 0x7f0c00a3
 
     invoke-static {p0, v10, v5}, Lcom/android/gallery3d/ui/MenuExecutor;->setMenuItemVisibility(Landroid/view/Menu;IZ)V
 
     .line 176
-    const v10, 0x7f0c00a1
+    const v10, 0x7f0c009c
 
     invoke-static {p0, v10, v4}, Lcom/android/gallery3d/ui/MenuExecutor;->setMenuItemVisibility(Landroid/view/Menu;IZ)V
 
@@ -1106,9 +1106,9 @@
 
     .line 223
     .local v6, activity:Landroid/app/Activity;
-    const v0, 0x7f0d01a6
+    const v0, 0x7f0d01bc
 
-    invoke-virtual {v6, v0}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v6, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1124,7 +1124,7 @@
     .end local v6           #activity:Landroid/app/Activity;
     .end local v7           #intent:Landroid/content/Intent;
     :pswitch_4
-    const v2, 0x7f0d0188
+    const v2, 0x7f0d019e
 
     .local v2, title:I
     :goto_1
@@ -1146,7 +1146,7 @@
     .line 231
     .end local v2           #title:I
     :pswitch_5
-    const v2, 0x7f0d018c
+    const v2, 0x7f0d01a2
 
     .line 232
     .restart local v2       #title:I
@@ -1155,7 +1155,7 @@
     .line 234
     .end local v2           #title:I
     :pswitch_6
-    const v2, 0x7f0d018b
+    const v2, 0x7f0d01a1
 
     .line 235
     .restart local v2       #title:I
@@ -1164,7 +1164,7 @@
     .line 237
     .end local v2           #title:I
     :pswitch_7
-    const v2, 0x7f0d018f
+    const v2, 0x7f0d01a5
 
     .line 238
     .restart local v2       #title:I
@@ -1173,7 +1173,7 @@
     .line 240
     .end local v2           #title:I
     :pswitch_8
-    const v2, 0x7f0d0187
+    const v2, 0x7f0d019d
 
     .line 241
     .restart local v2       #title:I
@@ -1181,7 +1181,7 @@
 
     .line 199
     :pswitch_data_0
-    .packed-switch 0x7f0c00a1
+    .packed-switch 0x7f0c009c
         :pswitch_8
         :pswitch_4
         :pswitch_0
@@ -1238,7 +1238,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d0188
+    const v3, 0x7f0d019e
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -1248,13 +1248,13 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d01a4
+    const v3, 0x7f0d01ba
 
     invoke-virtual {v2, v3, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v2
 
-    const v3, 0x7f0d01a5
+    const v3, 0x7f0d01bb
 
     invoke-virtual {v2, v3, v1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1264,7 +1264,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2}, Landroid/app/AlertDialog;->show()V
+    invoke-virtual {v2}, Landroid/app/Dialog;->show()V
 
     .line 299
     .end local v1           #cdl:Lcom/android/gallery3d/ui/MenuExecutor$ConfirmDialogListener;
@@ -1334,7 +1334,7 @@
     .line 313
     iget-object v3, p0, Lcom/android/gallery3d/ui/MenuExecutor;->mDialog:Landroid/app/ProgressDialog;
 
-    invoke-virtual {v3}, Landroid/app/ProgressDialog;->show()V
+    invoke-virtual {v3}, Landroid/app/Dialog;->show()V
 
     .line 315
     :cond_0

@@ -21,10 +21,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 684
+    .line 681
     iput-object p1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,12 +39,12 @@
     .parameter "intent"
 
     .prologue
-    .line 687
+    .line 684
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 688
+    .line 685
     .local v0, action:Ljava/lang/String;
     const-string v1, "camera"
 
@@ -69,7 +68,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 689
+    .line 686
     const-string v1, "android.intent.action.MEDIA_MOUNTED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -94,7 +93,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 692
+    .line 689
     :cond_0
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
@@ -102,12 +101,12 @@
 
     invoke-virtual {v1}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
 
-    .line 699
+    .line 696
     :cond_1
     :goto_0
     return-void
 
-    .line 693
+    .line 690
     :cond_2
     const-string v1, "android.intent.action.MEDIA_SCANNER_FINISHED"
 
@@ -117,14 +116,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 694
+    .line 691
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
     iget-object v1, v1, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
 
     invoke-virtual {v1}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
 
-    .line 695
+    .line 692
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mIsImageCaptureIntent:Z
@@ -134,10 +133,10 @@
 
     if-nez v1, :cond_1
 
-    .line 696
+    .line 693
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
-    invoke-virtual {v1}, Lcom/android/camera/Camera;->getLastThumbnail()V
+    invoke-virtual {v1}, Lcom/android/camera/ActivityBase;->getLastThumbnail()V
 
     goto :goto_0
 .end method

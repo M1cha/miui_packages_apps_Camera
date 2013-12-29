@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/PhotoPage;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 566
+    .line 575
     iput-object p1, p0, Lcom/android/gallery3d/app/PhotoPage$4;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,10 +41,10 @@
     .parameter "confirmed"
 
     .prologue
-    .line 580
+    .line 589
     if-eqz p1, :cond_0
 
-    .line 581
+    .line 590
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$4;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
     #getter for: Lcom/android/gallery3d/app/PhotoPage;->mMenuExecutor:Lcom/android/gallery3d/ui/MenuExecutor;
@@ -59,7 +58,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 587
+    .line 596
     :cond_0
     :goto_0
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$4;->this$0:Lcom/android/gallery3d/app/PhotoPage;
@@ -67,10 +66,10 @@
     #calls: Lcom/android/gallery3d/app/PhotoPage;->refreshHidingMessage()V
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$100(Lcom/android/gallery3d/app/PhotoPage;)V
 
-    .line 588
+    .line 597
     return-void
 
-    .line 583
+    .line 592
     :pswitch_0
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$4;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
@@ -96,11 +95,11 @@
 
     goto :goto_0
 
-    .line 581
+    .line 590
     nop
 
     :pswitch_data_0
-    .packed-switch 0x7f0c00a2
+    .packed-switch 0x7f0c009d
         :pswitch_0
     .end packed-switch
 .end method
@@ -109,7 +108,7 @@
     .locals 2
 
     .prologue
-    .line 575
+    .line 584
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$4;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
     #getter for: Lcom/android/gallery3d/app/PhotoPage;->mHandler:Landroid/os/Handler;
@@ -121,7 +120,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 576
+    .line 585
     return-void
 .end method
 
@@ -130,7 +129,7 @@
     .parameter "result"
 
     .prologue
-    .line 571
+    .line 580
     return-void
 .end method
 
@@ -139,6 +138,6 @@
     .parameter "index"
 
     .prologue
-    .line 568
+    .line 577
     return-void
 .end method

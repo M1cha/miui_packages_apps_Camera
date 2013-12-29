@@ -1,4 +1,4 @@
-.class Lcom/google/zxing/qrcode/decoder/DataMask$1;
+.class synthetic Lcom/google/zxing/qrcode/decoder/DataMask$1;
 .super Ljava/lang/Object;
 .source "DataMask.java"
 
@@ -9,6 +9,6 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x1008
     name = null
 .end annotation

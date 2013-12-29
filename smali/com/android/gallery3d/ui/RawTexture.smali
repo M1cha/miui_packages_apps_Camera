@@ -49,7 +49,7 @@
     iput-boolean p3, p0, Lcom/android/gallery3d/ui/RawTexture;->mOpaque:Z
 
     .line 32
-    invoke-virtual {p0, p1, p2}, Lcom/android/gallery3d/ui/RawTexture;->setSize(II)V
+    invoke-virtual {p0, p1, p2}, Lcom/android/gallery3d/ui/BasicTexture;->setSize(II)V
 
     .line 33
     return-void
@@ -355,7 +355,7 @@
     iput v10, p0, Lcom/android/gallery3d/ui/BasicTexture;->mState:I
 
     .line 72
-    invoke-virtual {p0, p1}, Lcom/android/gallery3d/ui/RawTexture;->setAssociatedCanvas(Lcom/android/gallery3d/ui/GLCanvas;)V
+    invoke-virtual {p0, p1}, Lcom/android/gallery3d/ui/BasicTexture;->setAssociatedCanvas(Lcom/android/gallery3d/ui/GLCanvas;)V
 
     .line 73
     return-void

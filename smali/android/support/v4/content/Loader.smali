@@ -44,7 +44,6 @@
 # virtual methods
 .method public dataToString(Ljava/lang/Object;)Ljava/lang/String;
     .locals 2
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TD;)",
@@ -180,7 +179,6 @@
 .method public registerListener(ILandroid/support/v4/content/Loader$OnLoadCompleteListener;)V
     .locals 2
     .parameter "id"
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -328,7 +326,6 @@
 
 .method public unregisterListener(Landroid/support/v4/content/Loader$OnLoadCompleteListener;)V
     .locals 2
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/ui/DialogDetailsView;)V
     .locals 0
-    .parameter
 
     .prologue
     .line 94
     iput-object p1, p0, Lcom/android/gallery3d/ui/DialogDetailsView$1;->this$0:Lcom/android/gallery3d/ui/DialogDetailsView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

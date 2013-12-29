@@ -80,7 +80,7 @@
     const/4 v5, -0x1
 
     .line 44
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 98
     new-instance v1, Lcom/android/camera/MiuiCameraSound$1;
@@ -229,7 +229,7 @@
 
     .line 76
     .local v0, e:Ljava/io/IOException;
-    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_0
 .end method

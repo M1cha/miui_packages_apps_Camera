@@ -24,13 +24,12 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/ui/ScreenView;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 1634
+    .line 1637
     iput-object p1, p0, Lcom/android/camera/ui/ScreenView$ScaleDetectorListener;->this$0:Lcom/android/camera/ui/ScreenView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +40,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1634
+    .line 1637
     invoke-direct {p0, p1}, Lcom/android/camera/ui/ScreenView$ScaleDetectorListener;-><init>(Lcom/android/camera/ui/ScreenView;)V
 
     return-void
@@ -56,12 +55,12 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1650
+    .line 1653
     invoke-virtual {p1}, Landroid/view/ScaleGestureDetector;->getScaleFactor()F
 
     move-result v0
 
-    .line 1652
+    .line 1655
     .local v0, scale:F
     iget-object v2, p0, Lcom/android/camera/ui/ScreenView$ScaleDetectorListener;->this$0:Lcom/android/camera/ui/ScreenView;
 
@@ -96,7 +95,7 @@
 
     if-lez v2, :cond_1
 
-    .line 1656
+    .line 1659
     :cond_0
     iget-object v2, p0, Lcom/android/camera/ui/ScreenView$ScaleDetectorListener;->this$0:Lcom/android/camera/ui/ScreenView;
 
@@ -106,7 +105,7 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/android/camera/ui/ScreenView;->setTouchState(Landroid/view/MotionEvent;I)V
 
-    .line 1659
+    .line 1662
     :cond_1
     const v2, 0x3f4ccccd
 
@@ -114,16 +113,16 @@
 
     if-gez v2, :cond_2
 
-    .line 1660
+    .line 1663
     iget-object v2, p0, Lcom/android/camera/ui/ScreenView$ScaleDetectorListener;->this$0:Lcom/android/camera/ui/ScreenView;
 
     invoke-virtual {v2, p1}, Lcom/android/camera/ui/ScreenView;->onPinchIn(Landroid/view/ScaleGestureDetector;)V
 
-    .line 1669
+    .line 1672
     :goto_0
     return v1
 
-    .line 1664
+    .line 1667
     :cond_2
     const v2, 0x3f99999a
 
@@ -131,14 +130,14 @@
 
     if-lez v2, :cond_3
 
-    .line 1665
+    .line 1668
     iget-object v2, p0, Lcom/android/camera/ui/ScreenView$ScaleDetectorListener;->this$0:Lcom/android/camera/ui/ScreenView;
 
     invoke-virtual {v2, p1}, Lcom/android/camera/ui/ScreenView;->onPinchOut(Landroid/view/ScaleGestureDetector;)V
 
     goto :goto_0
 
-    .line 1669
+    .line 1672
     :cond_3
     const/4 v1, 0x0
 
@@ -150,7 +149,7 @@
     .parameter "detector"
 
     .prologue
-    .line 1642
+    .line 1645
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView$ScaleDetectorListener;->this$0:Lcom/android/camera/ui/ScreenView;
 
     #getter for: Lcom/android/camera/ui/ScreenView;->mTouchState:I
@@ -176,11 +175,11 @@
     .parameter "detector"
 
     .prologue
-    .line 1646
+    .line 1649
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView$ScaleDetectorListener;->this$0:Lcom/android/camera/ui/ScreenView;
 
     invoke-virtual {v0}, Lcom/android/camera/ui/ScreenView;->finishCurrentGesture()V
 
-    .line 1647
+    .line 1650
     return-void
 .end method

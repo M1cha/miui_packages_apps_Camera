@@ -27,43 +27,47 @@
     .end annotation
 
     .prologue
-    .line 45
-    iget-object v1, p0, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->information:Lcom/google/zxing/common/BitArray;
+    .line 46
+    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->getInformation()Lcom/google/zxing/common/BitArray;
 
-    iget v1, v1, Lcom/google/zxing/common/BitArray;->size:I
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/zxing/common/BitArray;->getSize()I
+
+    move-result v1
 
     const/16 v2, 0x3c
 
     if-eq v1, v2, :cond_0
 
-    .line 46
+    .line 47
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
     move-result-object v1
 
     throw v1
 
-    .line 49
+    .line 50
     :cond_0
-    new-instance v0, Ljava/lang/StringBuffer;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
-
-    .line 51
-    .local v0, buf:Ljava/lang/StringBuffer;
-    const/4 v1, 0x5
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0xDecoder;->encodeCompressedGtin(Ljava/lang/StringBuffer;I)V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 52
+    .local v0, buf:Ljava/lang/StringBuilder;
+    const/4 v1, 0x5
+
+    invoke-virtual {p0, v0, v1}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01decoder;->encodeCompressedGtin(Ljava/lang/StringBuilder;I)V
+
+    .line 53
     const/16 v1, 0x2d
 
     const/16 v2, 0xf
 
-    invoke-virtual {p0, v0, v1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0xDecoder;->encodeCompressedWeight(Ljava/lang/StringBuffer;II)V
+    invoke-virtual {p0, v0, v1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01weightDecoder;->encodeCompressedWeight(Ljava/lang/StringBuilder;II)V
 
-    .line 54
-    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    .line 55
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 

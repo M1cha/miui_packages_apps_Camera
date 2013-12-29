@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/PanoramaActivity$2;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 290
+    .line 287
     iput-object p1, p0, Lcom/android/camera/PanoramaActivity$2$1;->this$1:Lcom/android/camera/PanoramaActivity$2;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,14 +40,14 @@
     .locals 1
 
     .prologue
-    .line 293
+    .line 290
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2$1;->this$1:Lcom/android/camera/PanoramaActivity$2;
 
     iget-object v0, v0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
     #calls: Lcom/android/camera/PanoramaActivity;->resetToPreview()V
-    invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$1000(Lcom/android/camera/PanoramaActivity;)V
+    invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$900(Lcom/android/camera/PanoramaActivity;)V
 
-    .line 294
+    .line 291
     return-void
 .end method

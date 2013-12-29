@@ -21,62 +21,22 @@
 
 
 # direct methods
-.method constructor <init>(ILcom/google/zxing/qrcode/decoder/Version$ECB;)V
-    .locals 2
+.method varargs constructor <init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
+    .locals 0
     .parameter "ecCodewordsPerBlock"
     .parameter "ecBlocks"
 
     .prologue
-    .line 192
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 188
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 193
+    .line 189
     iput p1, p0, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->ecCodewordsPerBlock:I
 
-    .line 194
-    const/4 v0, 0x1
+    .line 190
+    iput-object p2, p0, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->ecBlocks:[Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
-    new-array v0, v0, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v1, 0x0
-
-    aput-object p2, v0, v1
-
-    iput-object v0, p0, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->ecBlocks:[Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    .line 195
-    return-void
-.end method
-
-.method constructor <init>(ILcom/google/zxing/qrcode/decoder/Version$ECB;Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
-    .locals 2
-    .parameter "ecCodewordsPerBlock"
-    .parameter "ecBlocks1"
-    .parameter "ecBlocks2"
-
-    .prologue
-    .line 197
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    .line 198
-    iput p1, p0, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->ecCodewordsPerBlock:I
-
-    .line 199
-    const/4 v0, 0x2
-
-    new-array v0, v0, [Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    const/4 v1, 0x0
-
-    aput-object p2, v0, v1
-
-    const/4 v1, 0x1
-
-    aput-object p3, v0, v1
-
-    iput-object v0, p0, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->ecBlocks:[Lcom/google/zxing/qrcode/decoder/Version$ECB;
-
-    .line 200
+    .line 191
     return-void
 .end method
 
@@ -86,7 +46,7 @@
     .locals 1
 
     .prologue
-    .line 219
+    .line 210
     iget-object v0, p0, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->ecBlocks:[Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
     return-object v0
@@ -96,7 +56,7 @@
     .locals 1
 
     .prologue
-    .line 203
+    .line 194
     iget v0, p0, Lcom/google/zxing/qrcode/decoder/Version$ECBlocks;->ecCodewordsPerBlock:I
 
     return v0

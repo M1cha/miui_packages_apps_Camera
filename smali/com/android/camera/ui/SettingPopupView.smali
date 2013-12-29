@@ -95,7 +95,7 @@
 
     iput-object v0, p0, Lcom/android/camera/ui/SettingPopupView;->listener:Landroid/view/View$OnClickListener;
 
-    .line 226
+    .line 228
     new-instance v0, Lcom/android/camera/ui/SettingPopupView$2;
 
     invoke-direct {v0, p0}, Lcom/android/camera/ui/SettingPopupView$2;-><init>(Lcom/android/camera/ui/SettingPopupView;)V
@@ -134,7 +134,7 @@
 
     iput-object v0, p0, Lcom/android/camera/ui/SettingPopupView;->listener:Landroid/view/View$OnClickListener;
 
-    .line 226
+    .line 228
     new-instance v0, Lcom/android/camera/ui/SettingPopupView$2;
 
     invoke-direct {v0, p0}, Lcom/android/camera/ui/SettingPopupView$2;-><init>(Lcom/android/camera/ui/SettingPopupView;)V
@@ -205,7 +205,7 @@
 
     .prologue
     .line 187
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
 
@@ -217,7 +217,7 @@
 
     .line 188
     .local v4, w:I
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
 
@@ -236,11 +236,11 @@
     .line 191
     .local v3, viewWidth:I
     :goto_0
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
 
-    const v6, 0x7f020069
+    const v6, 0x7f020060
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -254,7 +254,7 @@
     .local v2, top:I
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mSplitLineDrawer:Lcom/android/camera/ui/SplitLineDrawer;
 
-    invoke-virtual {v5}, Lcom/android/camera/ui/SplitLineDrawer;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
@@ -264,12 +264,12 @@
     .local v1, layout:Landroid/widget/RelativeLayout$LayoutParams;
     iget v5, p0, Lcom/android/camera/ui/SettingPopupView;->mBackShadeWidth:I
 
-    iput v5, v1, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
+    iput v5, v1, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     .line 194
     iget v5, p0, Lcom/android/camera/ui/SettingPopupView;->mBackTopMargin:I
 
-    iput v5, v1, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
+    iput v5, v1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
     .line 195
     iget v5, p0, Lcom/android/camera/ui/SettingPopupView;->mRowCount:I
@@ -300,7 +300,7 @@
     .line 197
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mSplitLineDrawer:Lcom/android/camera/ui/SplitLineDrawer;
 
-    invoke-virtual {v5, v1}, Lcom/android/camera/ui/SplitLineDrawer;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v5, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 198
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mSplitLineDrawer:Lcom/android/camera/ui/SplitLineDrawer;
@@ -318,7 +318,7 @@
 
     const/4 v6, 0x0
 
-    invoke-virtual {v5, v6}, Lcom/android/camera/ui/SplitLineDrawer;->setVisibility(I)V
+    invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
 
     .line 200
     return-void
@@ -343,8 +343,8 @@
 
     const/high16 v8, 0x3f80
 
-    .line 249
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getContext()Landroid/content/Context;
+    .line 251
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v5
 
@@ -356,7 +356,7 @@
 
     check-cast v1, Landroid/view/LayoutInflater;
 
-    .line 251
+    .line 253
     .local v1, inflater:Landroid/view/LayoutInflater;
     const v5, 0x7f040003
 
@@ -370,41 +370,41 @@
 
     iput-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
 
-    .line 254
+    .line 256
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mSplitLineDrawer:Lcom/android/camera/ui/SplitLineDrawer;
 
     const/16 v6, 0x8
 
-    invoke-virtual {v5, v6}, Lcom/android/camera/ui/SplitLineDrawer;->setVisibility(I)V
+    invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 255
+    .line 257
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mLinearContent:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v5}, Landroid/widget/LinearLayout;->removeAllViews()V
+    invoke-virtual {v5}, Landroid/view/ViewGroup;->removeAllViews()V
 
-    .line 256
+    .line 258
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mLinearContent:Landroid/widget/LinearLayout;
 
     iget-object v6, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
 
-    invoke-virtual {v5, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v5, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 257
+    .line 259
     invoke-direct {p0}, Lcom/android/camera/ui/SettingPopupView;->restoreViewProperties()V
 
-    .line 258
+    .line 260
     iget-object v5, p0, Lcom/android/camera/ui/SettingView;->mRotatables:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->clear()V
 
-    .line 259
+    .line 261
     iget-object v5, p0, Lcom/android/camera/ui/SettingView;->mRotatables:Ljava/util/ArrayList;
 
     iget-object v6, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 260
+    .line 262
     iget-object v6, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
 
     iget-object v5, p0, Lcom/android/camera/ui/SettingView;->mPreferenceGroup:Lcom/android/camera/PreferenceGroup;
@@ -419,37 +419,37 @@
 
     invoke-virtual {v6, v5}, Lcom/android/camera/ui/HorizontalSettingPopup;->initialize(Lcom/android/camera/IconListPreference;)V
 
-    .line 262
+    .line 264
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
 
     new-instance v6, Lcom/android/camera/ui/SettingPopupView$3;
 
     invoke-direct {v6, p0}, Lcom/android/camera/ui/SettingPopupView$3;-><init>(Lcom/android/camera/ui/SettingPopupView;)V
 
-    invoke-virtual {v5, v6}, Lcom/android/camera/ui/HorizontalSettingPopup;->setSettingChangedListener(Lcom/android/camera/ui/AbstractSettingPopup$Listener;)V
-
-    .line 269
-    iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
-
-    invoke-virtual {v5, v11}, Lcom/android/camera/ui/HorizontalSettingPopup;->setVisibility(I)V
+    invoke-virtual {v5, v6}, Lcom/android/camera/ui/AbstractSettingPopup;->setSettingChangedListener(Lcom/android/camera/ui/AbstractSettingPopup$Listener;)V
 
     .line 271
-    iget v5, p0, Lcom/android/camera/ui/SettingView;->mOrientation:I
+    iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
 
-    invoke-virtual {p0, v5, v11}, Lcom/android/camera/ui/SettingPopupView;->setOrientation(IZ)V
+    invoke-virtual {v5, v11}, Landroid/view/View;->setVisibility(I)V
 
     .line 273
+    iget v5, p0, Lcom/android/camera/ui/SettingView;->mOrientation:I
+
+    invoke-virtual {p0, v5, v11}, Lcom/android/camera/ui/SettingView;->setOrientation(IZ)V
+
+    .line 275
     iget v5, p0, Lcom/android/camera/ui/SettingPopupView;->mPopupMenuMargin:I
 
     iget v6, p0, Lcom/android/camera/ui/SettingPopupView;->mColorMargin:I
 
     sub-int v0, v5, v6
 
-    .line 274
+    .line 276
     .local v0, diffW:I
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
 
-    invoke-virtual {v5}, Lcom/android/camera/ui/HorizontalSettingPopup;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v5
 
@@ -459,11 +459,11 @@
 
     check-cast v2, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 275
+    .line 277
     .local v2, layout:Landroid/widget/LinearLayout$LayoutParams;
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mPopupGridView:Lcom/android/camera/ui/PopupGridView;
 
-    invoke-virtual {v5}, Lcom/android/camera/ui/PopupGridView;->getWidth()I
+    invoke-virtual {v5}, Landroid/view/View;->getWidth()I
 
     move-result v5
 
@@ -473,39 +473,39 @@
 
     iput v5, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 276
+    .line 278
     iget v5, p0, Lcom/android/camera/ui/SettingPopupView;->mColorViewMargin:I
 
-    iput v5, v2, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
-
-    .line 277
-    iget v5, p0, Lcom/android/camera/ui/SettingPopupView;->mColorViewMargin:I
-
-    iput v5, v2, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
+    iput v5, v2, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
     .line 279
-    iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
+    iget v5, p0, Lcom/android/camera/ui/SettingPopupView;->mColorViewMargin:I
 
-    invoke-virtual {v5, v2}, Lcom/android/camera/ui/HorizontalSettingPopup;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 280
-    iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
-
-    invoke-virtual {v5}, Lcom/android/camera/ui/HorizontalSettingPopup;->scrollToChecked()V
+    iput v5, v2, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
     .line 281
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
 
-    const/4 v6, 0x0
-
-    invoke-virtual {v5, v6}, Lcom/android/camera/ui/HorizontalSettingPopup;->setAlpha(F)V
+    invoke-virtual {v5, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 282
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
 
+    invoke-virtual {v5}, Lcom/android/camera/ui/HorizontalSettingPopup;->scrollToChecked()V
+
+    .line 283
+    iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v5, v6}, Landroid/view/View;->setAlpha(F)V
+
+    .line 284
+    iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
+
     iget-object v6, p0, Lcom/android/camera/ui/SettingPopupView;->mPopupGridView:Lcom/android/camera/ui/PopupGridView;
 
-    invoke-virtual {v6}, Lcom/android/camera/ui/PopupGridView;->getWidth()I
+    invoke-virtual {v6}, Landroid/view/View;->getWidth()I
 
     move-result v6
 
@@ -517,18 +517,18 @@
 
     div-float/2addr v6, v7
 
-    invoke-virtual {v5, v6}, Lcom/android/camera/ui/HorizontalSettingPopup;->setScaleX(F)V
+    invoke-virtual {v5, v6}, Landroid/view/View;->setScaleX(F)V
 
-    .line 284
+    .line 286
     iget-object v5, p0, Lcom/android/camera/ui/SettingView;->mAnchor:Landroid/widget/ImageView;
 
-    invoke-virtual {v5}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v3
 
-    .line 285
+    .line 287
     .local v3, layoutAnchor:Landroid/view/ViewGroup$LayoutParams;
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
 
@@ -540,15 +540,15 @@
 
     iput v5, v3, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 287
+    .line 289
     iget-object v5, p0, Lcom/android/camera/ui/SettingView;->mAnchor:Landroid/widget/ImageView;
 
-    invoke-virtual {v5, v3}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v5, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 289
+    .line 291
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mPopupGridView:Lcom/android/camera/ui/PopupGridView;
 
-    invoke-virtual {v5}, Lcom/android/camera/ui/PopupGridView;->getWidth()I
+    invoke-virtual {v5}, Landroid/view/View;->getWidth()I
 
     move-result v5
 
@@ -556,7 +556,7 @@
 
     iget-object v6, p0, Lcom/android/camera/ui/SettingPopupView;->mPopupGridView:Lcom/android/camera/ui/PopupGridView;
 
-    invoke-virtual {v6}, Lcom/android/camera/ui/PopupGridView;->getWidth()I
+    invoke-virtual {v6}, Landroid/view/View;->getWidth()I
 
     move-result v6
 
@@ -568,66 +568,24 @@
 
     div-float v4, v5, v6
 
-    .line 290
+    .line 292
     .local v4, sx:F
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mTopView:Landroid/view/View;
 
     invoke-virtual {v5, v4}, Landroid/view/View;->setScaleX(F)V
 
-    .line 291
+    .line 293
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mLinearContent:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v5, v4}, Landroid/widget/LinearLayout;->setScaleX(F)V
+    invoke-virtual {v5, v4}, Landroid/view/View;->setScaleX(F)V
 
-    .line 292
+    .line 294
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mBootomView:Landroid/view/View;
 
     invoke-virtual {v5, v4}, Landroid/view/View;->setScaleX(F)V
 
-    .line 293
-    iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mTopView:Landroid/view/View;
-
-    invoke-virtual {v5}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/view/ViewPropertyAnimator;->withLayer()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v8}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v9, v10}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    .line 294
-    iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mLinearContent:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v5}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/view/ViewPropertyAnimator;->withLayer()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v8}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v9, v10}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/view/ViewPropertyAnimator;->start()V
-
     .line 295
-    iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mBootomView:Landroid/view/View;
+    iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mTopView:Landroid/view/View;
 
     invoke-virtual {v5}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -648,9 +606,51 @@
     invoke-virtual {v5}, Landroid/view/ViewPropertyAnimator;->start()V
 
     .line 296
+    iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mLinearContent:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v5}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/view/ViewPropertyAnimator;->withLayer()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v8}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v9, v10}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    .line 297
+    iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mBootomView:Landroid/view/View;
+
+    invoke-virtual {v5}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/view/ViewPropertyAnimator;->withLayer()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v8}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v9, v10}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    .line 298
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
 
-    invoke-virtual {v5}, Lcom/android/camera/ui/HorizontalSettingPopup;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v5}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v5
 
@@ -668,7 +668,7 @@
 
     invoke-virtual {v5}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 297
+    .line 299
     return-void
 .end method
 
@@ -680,27 +680,27 @@
 
     const/4 v1, 0x0
 
-    .line 300
-    iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView;->mLinearContent:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setScaleY(F)V
-
-    .line 301
-    iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView;->mLinearContent:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setTranslationY(F)V
-
     .line 302
-    iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView;->mPopupGridView:Lcom/android/camera/ui/PopupGridView;
+    iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView;->mLinearContent:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v0, v2}, Lcom/android/camera/ui/PopupGridView;->setAlpha(F)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setScaleY(F)V
 
     .line 303
-    iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView;->mTopView:Landroid/view/View;
+    iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView;->mLinearContent:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
     .line 304
+    iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView;->mPopupGridView:Lcom/android/camera/ui/PopupGridView;
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setAlpha(F)V
+
+    .line 305
+    iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView;->mTopView:Landroid/view/View;
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
+
+    .line 306
     return-void
 .end method
 
@@ -712,8 +712,8 @@
     .prologue
     const-wide/16 v7, 0x12c
 
-    .line 307
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
+    .line 309
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
@@ -723,13 +723,13 @@
 
     move-result v1
 
-    .line 308
+    .line 310
     .local v1, margin:I
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
-    const v5, 0x7f020058
+    const v5, 0x7f02004f
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -739,21 +739,21 @@
 
     move-result v0
 
-    .line 309
+    .line 311
     .local v0, drawableHeigh:I
     mul-int/lit8 v4, v1, 0x2
 
     add-int v2, v4, v0
 
-    .line 310
+    .line 312
     .local v2, newH:I
     iget-object v4, p0, Lcom/android/camera/ui/SettingPopupView;->mPopupGridView:Lcom/android/camera/ui/PopupGridView;
 
-    invoke-virtual {v4}, Lcom/android/camera/ui/PopupGridView;->getHeight()I
+    invoke-virtual {v4}, Landroid/view/View;->getHeight()I
 
     move-result v3
 
-    .line 311
+    .line 313
     .local v3, oldH:I
     iget-object v4, p0, Lcom/android/camera/ui/SettingPopupView;->mTopView:Landroid/view/View;
 
@@ -787,20 +787,20 @@
 
     invoke-virtual {v4}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 325
+    .line 327
     iget-object v4, p0, Lcom/android/camera/ui/SettingView;->mExitArea:Landroid/view/View;
 
     if-eqz v4, :cond_0
 
     iget-object v4, p0, Lcom/android/camera/ui/SettingView;->mExitView:Landroid/widget/TextView;
 
-    invoke-virtual {v4}, Landroid/widget/TextView;->getVisibility()I
+    invoke-virtual {v4}, Landroid/view/View;->getVisibility()I
 
     move-result v4
 
     if-nez v4, :cond_0
 
-    .line 326
+    .line 328
     iget-object v4, p0, Lcom/android/camera/ui/SettingView;->mExitArea:Landroid/view/View;
 
     invoke-virtual {v4}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -825,11 +825,11 @@
 
     invoke-virtual {v4}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 328
+    .line 330
     :cond_0
     iget-object v4, p0, Lcom/android/camera/ui/SettingPopupView;->mPopupGridView:Lcom/android/camera/ui/PopupGridView;
 
-    invoke-virtual {v4}, Lcom/android/camera/ui/PopupGridView;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v4}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v4
 
@@ -849,10 +849,10 @@
 
     invoke-virtual {v4}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 329
+    .line 331
     iget-object v4, p0, Lcom/android/camera/ui/SettingPopupView;->mLinearContent:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v4}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {v4}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v4
 
@@ -888,7 +888,7 @@
 
     invoke-virtual {v4}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 331
+    .line 333
     return-void
 .end method
 
@@ -914,7 +914,7 @@
     .prologue
     .line 91
     .local p2, keys:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
-    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingPopupView;->getRootView()Landroid/view/View;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v2
 
@@ -1000,7 +1000,7 @@
     iput v2, v0, Lcom/android/camera/ui/SettingPopupView;->mMarginHorizon:I
 
     .line 102
-    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingPopupView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v13
 
@@ -1023,10 +1023,10 @@
     .line 104
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v13}, Lcom/android/camera/ui/SettingPopupView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v13}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 106
-    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -1040,7 +1040,7 @@
 
     .line 107
     .local v18, w:I
-    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -1113,7 +1113,7 @@
     .line 114
     new-instance v2, Lcom/android/camera/ui/PopupGridView;
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingPopupView;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
@@ -1137,7 +1137,7 @@
 
     .line 120
     :goto_2
-    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingPopupView;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -1208,7 +1208,7 @@
     .local v12, item:Lcom/android/camera/ui/PopupMenuItem;
     const v2, 0x7f0c0038
 
-    invoke-virtual {v12, v2}, Lcom/android/camera/ui/PopupMenuItem;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v12, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v10
 
@@ -1218,7 +1218,7 @@
     .local v10, image:Landroid/widget/ImageView;
     const v2, 0x7f0c0039
 
-    invoke-virtual {v12, v2}, Lcom/android/camera/ui/PopupMenuItem;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v12, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v16
 
@@ -1233,7 +1233,7 @@
     invoke-virtual {v10, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 133
-    invoke-virtual {v15}, Lcom/android/camera/IconListPreference;->getTitle()Ljava/lang/String;
+    invoke-virtual {v15}, Lcom/android/camera/CameraPreference;->getTitle()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1246,21 +1246,21 @@
 
     iget-object v2, v0, Lcom/android/camera/ui/SettingPopupView;->listener:Landroid/view/View$OnClickListener;
 
-    invoke-virtual {v12, v2}, Lcom/android/camera/ui/PopupMenuItem;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v12, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 135
-    invoke-virtual {v15}, Lcom/android/camera/IconListPreference;->getKey()Ljava/lang/String;
+    invoke-virtual {v15}, Lcom/android/camera/ListPreference;->getKey()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v12, v2}, Lcom/android/camera/ui/PopupMenuItem;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v12, v2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     .line 136
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/ui/SettingPopupView;->mPopupGridView:Lcom/android/camera/ui/PopupGridView;
 
-    invoke-virtual {v2, v12}, Lcom/android/camera/ui/PopupGridView;->addView(Landroid/view/View;)V
+    invoke-virtual {v2, v12}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 137
     move-object/from16 v0, p0
@@ -1328,7 +1328,7 @@
 
     iget-object v2, v0, Lcom/android/camera/ui/SettingPopupView;->mPopupGridView:Lcom/android/camera/ui/PopupGridView;
 
-    invoke-virtual {v2}, Lcom/android/camera/ui/PopupGridView;->removeAllViews()V
+    invoke-virtual {v2}, Landroid/view/ViewGroup;->removeAllViews()V
 
     goto/16 :goto_2
 
@@ -1344,14 +1344,14 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v2, v3}, Lcom/android/camera/ui/SettingPopupView;->setOrientation(IZ)V
+    invoke-virtual {v0, v2, v3}, Lcom/android/camera/ui/SettingView;->setOrientation(IZ)V
 
     .line 141
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/ui/SettingPopupView;->mLinearContent:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v2}, Landroid/widget/LinearLayout;->removeAllViews()V
+    invoke-virtual {v2}, Landroid/view/ViewGroup;->removeAllViews()V
 
     .line 142
     move-object/from16 v0, p0
@@ -1362,7 +1362,7 @@
 
     iget-object v3, v0, Lcom/android/camera/ui/SettingPopupView;->mPopupGridView:Lcom/android/camera/ui/PopupGridView;
 
-    invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 143
     invoke-direct/range {p0 .. p0}, Lcom/android/camera/ui/SettingPopupView;->initializeSplitLine()V
@@ -1372,13 +1372,13 @@
 
     iget-object v2, v0, Lcom/android/camera/ui/SettingView;->mAnchor:Landroid/widget/ImageView;
 
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v14
 
     .line 146
     .local v14, layoutAnchor:Landroid/view/ViewGroup$LayoutParams;
-    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -1395,7 +1395,7 @@
 
     iget-object v2, v0, Lcom/android/camera/ui/SettingView;->mAnchor:Landroid/widget/ImageView;
 
-    invoke-virtual {v2, v14}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v2, v14}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 149
     return-void
@@ -1406,12 +1406,12 @@
 
     .prologue
     .line 75
-    invoke-super {p0}, Lcom/android/camera/ui/SettingView;->onFinishInflate()V
+    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
 
     .line 76
     const v0, 0x7f0c002a
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingPopupView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1422,7 +1422,7 @@
     .line 77
     const v0, 0x7f0c0024
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingPopupView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1433,7 +1433,7 @@
     .line 78
     const v0, 0x7f0c0020
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingPopupView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1442,7 +1442,7 @@
     .line 79
     const v0, 0x7f0c0025
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingPopupView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1451,7 +1451,7 @@
     .line 80
     const v0, 0x7f0c0028
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingPopupView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1460,7 +1460,7 @@
     iput-object v0, p0, Lcom/android/camera/ui/SettingView;->mAnchor:Landroid/widget/ImageView;
 
     .line 82
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -1473,7 +1473,7 @@
     iput v0, p0, Lcom/android/camera/ui/SettingPopupView;->mBackShadeWidth:I
 
     .line 83
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -1486,7 +1486,7 @@
     iput v0, p0, Lcom/android/camera/ui/SettingPopupView;->mBackTopMargin:I
 
     .line 84
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -1499,7 +1499,7 @@
     iput v0, p0, Lcom/android/camera/ui/SettingPopupView;->mColorViewMargin:I
 
     .line 85
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -1512,7 +1512,7 @@
     iput v0, p0, Lcom/android/camera/ui/SettingPopupView;->mPopupMenuMargin:I
 
     .line 86
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -1547,10 +1547,10 @@
     .parameter "b"
 
     .prologue
-    .line 373
+    .line 375
     invoke-super/range {p0 .. p5}, Lcom/android/camera/ui/SettingView;->onLayout(ZIIII)V
 
-    .line 374
+    .line 376
     return-void
 .end method
 
@@ -1560,10 +1560,10 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 368
-    invoke-super {p0, p1, p2}, Lcom/android/camera/ui/SettingView;->onMeasure(II)V
+    .line 370
+    invoke-super {p0, p1, p2}, Landroid/widget/RelativeLayout;->onMeasure(II)V
 
-    .line 369
+    .line 371
     return-void
 .end method
 
@@ -1587,38 +1587,55 @@
 .end method
 
 .method public resetSettings(Lcom/android/camera/ComboPreferences;)V
-    .locals 4
+    .locals 2
     .parameter "preferences"
 
     .prologue
-    .line 377
-    iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
-
-    if-eqz v0, :cond_0
-
-    .line 378
-    iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
+    .line 379
+    iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
 
     const-string v1, "pref_camera_coloreffect_key"
 
-    invoke-static {}, Lcom/android/camera/CameraAppImpl;->sGetAndroidContext()Landroid/content/Context;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v2
+    move-result v0
 
-    const v3, 0x7f0d007f
+    if-nez v0, :cond_0
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
 
-    move-result-object v2
+    const-string v1, "pref_video_speed_key"
 
-    invoke-virtual {p1, v1, v2}, Lcom/android/camera/ComboPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v1
+    move-result v0
 
-    invoke-virtual {v0, v1}, Lcom/android/camera/ui/HorizontalSettingPopup;->reloadPreference(Ljava/lang/String;)V
+    if-eqz v0, :cond_1
 
     .line 381
     :cond_0
+    const-string v0, "mode_none"
+
+    iput-object v0, p0, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
+
+    .line 382
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/camera/ui/SettingPopupView;->mNeedReinstall:Z
+
+    .line 383
+    iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mExitView:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mExitView:Landroid/widget/TextView;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+    .line 385
+    :cond_1
     return-void
 .end method
 
@@ -1659,7 +1676,7 @@
 
     check-cast v2, Lcom/android/camera/ui/PopupMenuItem;
 
-    invoke-virtual {v2}, Lcom/android/camera/ui/PopupMenuItem;->getTag()Ljava/lang/Object;
+    invoke-virtual {v2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -1724,7 +1741,7 @@
 
     check-cast v2, Lcom/android/camera/ui/PopupMenuItem;
 
-    invoke-virtual {v2}, Lcom/android/camera/ui/PopupMenuItem;->getTag()Ljava/lang/Object;
+    invoke-virtual {v2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -1744,7 +1761,7 @@
 
     .line 158
     :cond_1
-    invoke-super {p0, p1}, Lcom/android/camera/ui/SettingView;->setEnabled(Z)V
+    invoke-super {p0, p1}, Landroid/view/View;->setEnabled(Z)V
 
     .line 159
     return-void
@@ -1756,7 +1773,7 @@
 
     .prologue
     .line 173
-    invoke-super {p0, p1}, Lcom/android/camera/ui/SettingView;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     .line 174
     iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mSettingButton:Lcom/android/camera/ui/SettingButton;
@@ -1771,17 +1788,17 @@
     .locals 4
 
     .prologue
-    .line 241
+    .line 243
     iget-boolean v0, p0, Lcom/android/camera/ui/SettingPopupView;->mNeedReinstall:Z
 
     if-eqz v0, :cond_0
 
-    .line 242
+    .line 244
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/camera/ui/SettingPopupView;->mNeedReinstall:Z
 
-    .line 243
+    .line 245
     iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mPreferenceGroup:Lcom/android/camera/PreferenceGroup;
 
     iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView;->mKeys:Ljava/util/List;
@@ -1792,7 +1809,7 @@
 
     invoke-virtual {p0, v0, v1, v2, v3}, Lcom/android/camera/ui/SettingPopupView;->initializeSettingScreen(Lcom/android/camera/PreferenceGroup;Ljava/util/List;Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;I)V
 
-    .line 246
+    .line 248
     :cond_0
     return-void
 .end method
@@ -1802,7 +1819,7 @@
     .parameter "isMenuShow"
 
     .prologue
-    .line 356
+    .line 358
     iget-object v1, p0, Lcom/android/camera/ui/SettingView;->mExitView:Landroid/widget/TextView;
 
     if-eqz v1, :cond_0
@@ -1811,12 +1828,12 @@
 
     if-nez v1, :cond_1
 
-    .line 364
+    .line 366
     :cond_0
     :goto_0
     return-void
 
-    .line 357
+    .line 359
     :cond_1
     iget-object v1, p0, Lcom/android/camera/ui/SettingView;->mExitArea:Landroid/view/View;
 
@@ -1826,7 +1843,7 @@
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 358
+    .line 360
     .local v0, layout:Landroid/widget/RelativeLayout$LayoutParams;
     const/4 v2, 0x2
 
@@ -1837,12 +1854,12 @@
     :goto_1
     invoke-virtual {v0, v2, v1}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 360
+    .line 362
     iget-object v1, p0, Lcom/android/camera/ui/SettingView;->mExitArea:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 361
+    .line 363
     iget-object v1, p0, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
 
     const-string v2, "mode_none"
@@ -1853,16 +1870,16 @@
 
     if-nez v1, :cond_0
 
-    .line 362
+    .line 364
     iget-object v1, p0, Lcom/android/camera/ui/SettingView;->mExitView:Landroid/widget/TextView;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 358
+    .line 360
     :cond_2
     const v1, 0x7f0c0010
 
@@ -1874,7 +1891,7 @@
     .parameter "view"
 
     .prologue
-    .line 334
+    .line 336
     iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
 
     const-string v1, "pref_camera_coloreffect_key"
@@ -1945,24 +1962,24 @@
 
     if-eqz v0, :cond_2
 
-    .line 341
+    .line 343
     :cond_0
     iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mExitView:Landroid/widget/TextView;
 
     if-nez v0, :cond_1
 
-    .line 342
+    .line 344
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView;->mExitListener:Landroid/view/View$OnClickListener;
 
-    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 343
+    .line 345
     iput-object p1, p0, Lcom/android/camera/ui/SettingView;->mExitView:Landroid/widget/TextView;
 
-    .line 344
+    .line 346
     iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mExitView:Landroid/widget/TextView;
 
-    invoke-virtual {v0}, Landroid/widget/TextView;->getRootView()Landroid/view/View;
+    invoke-virtual {v0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v0
 
@@ -1974,7 +1991,7 @@
 
     iput-object v0, p0, Lcom/android/camera/ui/SettingView;->mExitArea:Landroid/view/View;
 
-    .line 346
+    .line 348
     :cond_1
     iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
 
@@ -1984,11 +2001,11 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(I)V
 
-    .line 353
+    .line 355
     :goto_0
     return-void
 
-    .line 348
+    .line 350
     :cond_2
     iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
 
@@ -2000,16 +2017,16 @@
 
     if-eqz v0, :cond_3
 
-    .line 349
+    .line 351
     const-string v0, "mode_none"
 
     iput-object v0, p0, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
 
-    .line 351
+    .line 353
     :cond_3
     const/16 v0, 0x8
 
-    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 .end method

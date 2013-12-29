@@ -8,10 +8,10 @@
     .locals 0
 
     .prologue
-    .line 48
+    .line 28
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
-    .line 50
+    .line 30
     return-void
 .end method
 
@@ -21,7 +21,7 @@
     .locals 1
 
     .prologue
-    .line 95
+    .line 37
     const/4 v0, 0x0
 
     return-object v0

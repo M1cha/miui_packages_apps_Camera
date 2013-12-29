@@ -20,7 +20,7 @@
 
     .prologue
     .line 77
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 78
     iput-object p1, p0, Lcom/android/gallery3d/util/ReverseGeocoder;->mContext:Landroid/content/Context;
@@ -439,7 +439,7 @@
 
     .line 350
     :cond_6
-    invoke-virtual {v15}, Ljava/io/DataOutputStream;->close()V
+    invoke-virtual {v15}, Ljava/io/FilterOutputStream;->close()V
 
     goto/16 :goto_0
 
@@ -534,7 +534,7 @@
     if-nez v3, :cond_b
 
     .line 370
-    invoke-virtual {v14}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v14}, Ljava/io/FilterInputStream;->close()V
 
     .line 371
     const/4 v8, 0x0
@@ -697,7 +697,7 @@
     invoke-virtual {v9, v3}, Landroid/location/Address;->setUrl(Ljava/lang/String;)V
 
     .line 390
-    invoke-virtual {v14}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v14}, Ljava/io/FilterInputStream;->close()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

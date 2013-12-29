@@ -25,7 +25,6 @@
     .locals 0
     .parameter
     .parameter "x0"
-    .parameter
 
     .prologue
     .line 124

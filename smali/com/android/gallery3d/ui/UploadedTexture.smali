@@ -129,7 +129,7 @@
     if-eqz p1, :cond_0
 
     .line 73
-    invoke-virtual {p0, v2}, Lcom/android/gallery3d/ui/UploadedTexture;->setBorder(Z)V
+    invoke-virtual {p0, v2}, Lcom/android/gallery3d/ui/BasicTexture;->setBorder(Z)V
 
     .line 74
     iput v2, p0, Lcom/android/gallery3d/ui/UploadedTexture;->mBorder:I
@@ -225,7 +225,7 @@
     if-ne v2, v3, :cond_0
 
     .line 141
-    invoke-virtual {p0, v1, v0}, Lcom/android/gallery3d/ui/UploadedTexture;->setSize(II)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/gallery3d/ui/BasicTexture;->setSize(II)V
 
     .line 144
     .end local v0           #h:I
@@ -390,13 +390,13 @@
 
     .line 226
     .local v25, height:I
-    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/UploadedTexture;->getTextureWidth()I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/BasicTexture;->getTextureWidth()I
 
     move-result v5
 
     .line 227
     .local v5, texWidth:I
-    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/UploadedTexture;->getTextureHeight()I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/BasicTexture;->getTextureHeight()I
 
     move-result v6
 
@@ -560,7 +560,7 @@
     invoke-direct/range {p0 .. p0}, Lcom/android/gallery3d/ui/UploadedTexture;->freeBitmap()V
 
     .line 296
-    invoke-virtual/range {p0 .. p1}, Lcom/android/gallery3d/ui/UploadedTexture;->setAssociatedCanvas(Lcom/android/gallery3d/ui/GLCanvas;)V
+    invoke-virtual/range {p0 .. p1}, Lcom/android/gallery3d/ui/BasicTexture;->setAssociatedCanvas(Lcom/android/gallery3d/ui/GLCanvas;)V
 
     .line 297
     sget-object v2, Lcom/android/gallery3d/ui/UploadedTexture;->sTextureId:[I
@@ -910,7 +910,7 @@
 
     .prologue
     .line 180
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->isLoaded()Z
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/BasicTexture;->isLoaded()Z
 
     move-result v0
 
@@ -1002,7 +1002,7 @@
     const/16 v0, 0xde1
 
     .line 188
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->isLoaded()Z
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/BasicTexture;->isLoaded()Z
 
     move-result v1
 

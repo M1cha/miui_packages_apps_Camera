@@ -180,10 +180,10 @@
     .local v0, blank:Landroid/widget/ImageView;
     iget-object v1, p0, Lcom/android/camera/ui/RulerSettingPopup;->mParamBlank:Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 162
-    invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 163
     return-void
@@ -204,15 +204,15 @@
 
     .line 153
     .local v0, img:Landroid/widget/ImageView;
-    invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setBackgroundResource(I)V
+    invoke-virtual {v0, p2}, Landroid/view/View;->setBackgroundResource(I)V
 
     .line 154
     iget-object v1, p0, Lcom/android/camera/ui/RulerSettingPopup;->mParamImg:Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 155
-    invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 156
     return-object v0
@@ -355,7 +355,7 @@
     iput-object p1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
     .line 64
-    invoke-virtual {p0}, Lcom/android/camera/ui/RulerSettingPopup;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v4
 
@@ -364,7 +364,7 @@
     .line 65
     iget-object v4, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v4}, Lcom/android/camera/IconListPreference;->getEntries()[Ljava/lang/CharSequence;
+    invoke-virtual {v4}, Lcom/android/camera/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -393,16 +393,16 @@
 
     iget-object v5, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v5}, Lcom/android/camera/IconListPreference;->getTitle()Ljava/lang/String;
+    invoke-virtual {v5}, Lcom/android/camera/CameraPreference;->getTitle()Ljava/lang/String;
 
     move-result-object v5
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 74
-    const v4, 0x7f0c0097
+    const v4, 0x7f0c0092
 
-    invoke-virtual {p0, v4}, Lcom/android/camera/ui/RulerSettingPopup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v4
 
@@ -411,9 +411,9 @@
     iput-object v4, p0, Lcom/android/camera/ui/RulerSettingPopup;->mCursors:Landroid/widget/LinearLayout;
 
     .line 75
-    const v4, 0x7f0c0099
+    const v4, 0x7f0c0094
 
-    invoke-virtual {p0, v4}, Lcom/android/camera/ui/RulerSettingPopup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v4
 
@@ -422,9 +422,9 @@
     iput-object v4, p0, Lcom/android/camera/ui/RulerSettingPopup;->mCursor:Landroid/widget/ImageView;
 
     .line 76
-    const v4, 0x7f0c0098
+    const v4, 0x7f0c0093
 
-    invoke-virtual {p0, v4}, Lcom/android/camera/ui/RulerSettingPopup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v4
 
@@ -437,14 +437,14 @@
 
     iget-object v5, p0, Lcom/android/camera/ui/RulerSettingPopup;->mTouchListener:Landroid/view/View$OnTouchListener;
 
-    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v4, v5}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 78
     iget-object v4, p0, Lcom/android/camera/ui/RulerSettingPopup;->mCursorLine:Landroid/widget/ImageView;
 
     iget-object v5, p0, Lcom/android/camera/ui/RulerSettingPopup;->mTouchListener:Landroid/view/View$OnTouchListener;
 
-    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v4, v5}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 80
     array-length v4, v0
@@ -493,7 +493,7 @@
     .line 91
     iget-object v4, p0, Lcom/android/camera/ui/RulerSettingPopup;->mCursors:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v4}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v3
 
@@ -501,11 +501,11 @@
 
     .line 92
     .local v3, layout:Landroid/widget/RelativeLayout$LayoutParams;
-    invoke-virtual {p0}, Lcom/android/camera/ui/RulerSettingPopup;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
-    const v5, 0x7f020062
+    const v5, 0x7f020059
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -520,7 +520,7 @@
     .line 93
     iget-object v4, p0, Lcom/android/camera/ui/RulerSettingPopup;->mCursors:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v4, v3}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v4, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 94
     const/4 v1, 0x0
@@ -589,7 +589,7 @@
     if-nez v1, :cond_2
 
     .line 130
-    invoke-super {p0, p1}, Lcom/android/camera/ui/AbstractSettingPopup;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
     .line 131
     iput-boolean v7, p0, Lcom/android/camera/ui/RulerSettingPopup;->mViewDrawed:Z
@@ -614,7 +614,7 @@
 
     aget-object v2, v2, v3
 
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getX()F
+    invoke-virtual {v2}, Landroid/view/View;->getX()F
 
     move-result v2
 
@@ -626,7 +626,7 @@
 
     aget-object v3, v3, v4
 
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getWidth()I
+    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
@@ -636,7 +636,7 @@
 
     iget-object v3, p0, Lcom/android/camera/ui/RulerSettingPopup;->mCursors:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v3}, Landroid/widget/LinearLayout;->getLeft()I
+    invoke-virtual {v3}, Landroid/view/View;->getLeft()I
 
     move-result v3
 
@@ -697,7 +697,7 @@
     iput v1, p0, Lcom/android/camera/ui/RulerSettingPopup;->mCursorX:I
 
     .line 140
-    invoke-virtual {p0}, Lcom/android/camera/ui/RulerSettingPopup;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     .line 144
     .end local v0           #i:I
@@ -712,7 +712,7 @@
 
     iget-object v3, p0, Lcom/android/camera/ui/RulerSettingPopup;->mCursor:Landroid/widget/ImageView;
 
-    invoke-virtual {v3}, Landroid/widget/ImageView;->getWidth()I
+    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
 
     move-result v3
 
@@ -722,7 +722,7 @@
 
     int-to-float v2, v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setX(F)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setX(F)V
 
     goto :goto_1
 .end method
@@ -733,7 +733,7 @@
 
     .prologue
     .line 148
-    invoke-super {p0, p1}, Lcom/android/camera/ui/AbstractSettingPopup;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
@@ -753,11 +753,11 @@
 
     iget-object v2, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v2}, Lcom/android/camera/IconListPreference;->getValue()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lcom/android/camera/IconListPreference;->findIndexOfValue(Ljava/lang/String;)I
+    invoke-virtual {v1, v2}, Lcom/android/camera/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
 
     move-result v1
 
@@ -775,7 +775,7 @@
     iput v0, p0, Lcom/android/camera/ui/RulerSettingPopup;->mCursorX:I
 
     .line 170
-    invoke-virtual {p0}, Lcom/android/camera/ui/RulerSettingPopup;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     .line 171
     return-void

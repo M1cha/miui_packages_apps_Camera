@@ -32,10 +32,9 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/ActivityBase;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 537
+    .line 519
     iput-object p1, p0, Lcom/android/camera/ActivityBase$SaveThumbnailTask;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
@@ -49,7 +48,7 @@
     .parameter "x1"
 
     .prologue
-    .line 537
+    .line 519
     invoke-direct {p0, p1}, Lcom/android/camera/ActivityBase$SaveThumbnailTask;-><init>(Lcom/android/camera/ActivityBase;)V
 
     return-void
@@ -62,7 +61,7 @@
     .parameter "x0"
 
     .prologue
-    .line 537
+    .line 519
     check-cast p1, [Lcom/android/camera/Thumbnail;
 
     .end local p1
@@ -78,18 +77,18 @@
     .parameter "params"
 
     .prologue
-    .line 540
+    .line 522
     array-length v2, p1
 
-    .line 541
+    .line 523
     .local v2, n:I
     iget-object v3, p0, Lcom/android/camera/ActivityBase$SaveThumbnailTask;->this$0:Lcom/android/camera/ActivityBase;
 
-    invoke-virtual {v3}, Lcom/android/camera/ActivityBase;->getFilesDir()Ljava/io/File;
+    invoke-virtual {v3}, Landroid/content/ContextWrapper;->getFilesDir()Ljava/io/File;
 
     move-result-object v0
 
-    .line 542
+    .line 524
     .local v0, filesDir:Ljava/io/File;
     const/4 v1, 0x0
 
@@ -97,17 +96,17 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 543
+    .line 525
     aget-object v3, p1, v1
 
     invoke-virtual {v3, v0}, Lcom/android/camera/Thumbnail;->saveLastThumbnailToFile(Ljava/io/File;)V
 
-    .line 542
+    .line 524
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 545
+    .line 527
     :cond_0
     const/4 v3, 0x0
 

@@ -21,7 +21,6 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/PhotoPage;)V
     .locals 0
-    .parameter
 
     .prologue
     .line 161
@@ -57,7 +56,7 @@
 
     sub-int v2, p5, p3
 
-    invoke-virtual {v0, v3, v3, v1, v2}, Lcom/android/gallery3d/ui/PhotoView;->layout(IIII)V
+    invoke-virtual {v0, v3, v3, v1, v2}, Lcom/android/gallery3d/ui/GLView;->layout(IIII)V
 
     .line 172
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$1;->this$0:Lcom/android/gallery3d/app/PhotoPage;

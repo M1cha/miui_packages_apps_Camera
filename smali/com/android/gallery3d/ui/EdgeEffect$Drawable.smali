@@ -90,7 +90,7 @@
 
     move-object v1, p1
 
-    invoke-virtual/range {v0 .. v5}, Lcom/android/gallery3d/ui/EdgeEffect$Drawable;->draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
+    invoke-virtual/range {v0 .. v5}, Lcom/android/gallery3d/ui/ResourceTexture;->draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
 
     .line 437
     invoke-interface {p1}, Lcom/android/gallery3d/ui/GLCanvas;->restore()V
@@ -104,7 +104,7 @@
 
     .prologue
     .line 421
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/EdgeEffect$Drawable;->getHeight()I
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/ResourceTexture;->getHeight()I
 
     move-result v0
 
@@ -116,7 +116,7 @@
 
     .prologue
     .line 417
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/EdgeEffect$Drawable;->getWidth()I
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/ResourceTexture;->getWidth()I
 
     move-result v0
 

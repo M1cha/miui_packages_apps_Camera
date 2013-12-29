@@ -21,10 +21,9 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/VideoCamera;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 390
+    .line 376
     iput-object p1, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +37,7 @@
     .parameter "x1"
 
     .prologue
-    .line 390
+    .line 376
     invoke-direct {p0, p1}, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;-><init>(Lcom/android/camera/VideoCamera;)V
 
     return-void
@@ -52,12 +51,12 @@
     .parameter "intent"
 
     .prologue
-    .line 393
+    .line 379
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 394
+    .line 380
     .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.MEDIA_EJECT"
 
@@ -67,25 +66,25 @@
 
     if-eqz v1, :cond_1
 
-    .line 395
+    .line 381
     iget-object v1, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
     iget-object v1, v1, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
 
     invoke-virtual {v1}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
 
-    .line 396
+    .line 382
     iget-object v1, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
     #calls: Lcom/android/camera/VideoCamera;->stopVideoRecording()Z
-    invoke-static {v1}, Lcom/android/camera/VideoCamera;->access$1100(Lcom/android/camera/VideoCamera;)Z
+    invoke-static {v1}, Lcom/android/camera/VideoCamera;->access$1000(Lcom/android/camera/VideoCamera;)Z
 
-    .line 409
+    .line 395
     :cond_0
     :goto_0
     return-void
 
-    .line 397
+    .line 383
     :cond_1
     const-string v1, "android.intent.action.MEDIA_MOUNTED"
 
@@ -95,21 +94,21 @@
 
     if-eqz v1, :cond_2
 
-    .line 398
+    .line 384
     iget-object v1, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
     iget-object v1, v1, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
 
     invoke-virtual {v1}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
 
-    .line 399
+    .line 385
     iget-object v1, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
-    invoke-virtual {v1}, Lcom/android/camera/VideoCamera;->getLastThumbnail()V
+    invoke-virtual {v1}, Lcom/android/camera/ActivityBase;->getLastThumbnail()V
 
     goto :goto_0
 
-    .line 400
+    .line 386
     :cond_2
     const-string v1, "android.intent.action.MEDIA_UNMOUNTED"
 
@@ -119,7 +118,7 @@
 
     if-nez v1, :cond_0
 
-    .line 403
+    .line 389
     const-string v1, "android.intent.action.MEDIA_SCANNER_STARTED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -128,12 +127,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 404
+    .line 390
     iget-object v1, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
-    invoke-virtual {v2}, Lcom/android/camera/VideoCamera;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v2}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -153,7 +152,7 @@
 
     goto :goto_0
 
-    .line 406
+    .line 392
     :cond_3
     const-string v1, "android.intent.action.MEDIA_SCANNER_FINISHED"
 
@@ -163,7 +162,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 407
+    .line 393
     iget-object v1, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
     iget-object v1, v1, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;

@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/MotionFocusManager;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 97
+    .line 105
     iput-object p1, p0, Lcom/android/camera/MotionFocusManager$1;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,7 +42,7 @@
     .parameter "accuracy"
 
     .prologue
-    .line 134
+    .line 142
     return-void
 .end method
 
@@ -58,7 +57,7 @@
 
     const/4 v9, 0x1
 
-    .line 100
+    .line 108
     iget-wide v5, p1, Landroid/hardware/SensorEvent;->timestamp:J
 
     iget-object v7, p0, Lcom/android/camera/MotionFocusManager$1;->this$0:Lcom/android/camera/MotionFocusManager;
@@ -74,7 +73,7 @@
 
     move-result-wide v1
 
-    .line 101
+    .line 109
     .local v1, elapseTime:J
     iget-object v5, p0, Lcom/android/camera/MotionFocusManager$1;->this$0:Lcom/android/camera/MotionFocusManager;
 
@@ -95,12 +94,12 @@
 
     if-gez v5, :cond_1
 
-    .line 129
+    .line 137
     :cond_0
     :goto_0
     return-void
 
-    .line 105
+    .line 113
     :cond_1
     iget-object v5, p0, Lcom/android/camera/MotionFocusManager$1;->this$0:Lcom/android/camera/MotionFocusManager;
 
@@ -121,7 +120,7 @@
 
     if-lez v5, :cond_3
 
-    .line 106
+    .line 114
     :cond_2
     iget-object v5, p0, Lcom/android/camera/MotionFocusManager$1;->this$0:Lcom/android/camera/MotionFocusManager;
 
@@ -132,7 +131,7 @@
 
     goto :goto_0
 
-    .line 110
+    .line 118
     :cond_3
     long-to-float v5, v1
 
@@ -140,7 +139,7 @@
 
     mul-float v0, v5, v6
 
-    .line 111
+    .line 119
     .local v0, dT:F
     iget-object v5, p1, Landroid/hardware/SensorEvent;->values:[F
 
@@ -182,7 +181,7 @@
 
     move-result-wide v3
 
-    .line 114
+    .line 122
     .local v3, w:D
     iget-object v5, p0, Lcom/android/camera/MotionFocusManager$1;->this$0:Lcom/android/camera/MotionFocusManager;
 
@@ -191,14 +190,14 @@
     #setter for: Lcom/android/camera/MotionFocusManager;->mGyrocopeTimeStamp:J
     invoke-static {v5, v6, v7}, Lcom/android/camera/MotionFocusManager;->access$002(Lcom/android/camera/MotionFocusManager;J)J
 
-    .line 116
+    .line 124
     const-wide v5, 0x3fa99999a0000000L
 
     cmpg-double v5, v3, v5
 
     if-ltz v5, :cond_0
 
-    .line 119
+    .line 127
     iget-object v5, p0, Lcom/android/camera/MotionFocusManager$1;->this$0:Lcom/android/camera/MotionFocusManager;
 
     float-to-double v6, v0
@@ -207,7 +206,7 @@
 
     invoke-static {v5, v6, v7}, Lcom/android/camera/MotionFocusManager;->access$218(Lcom/android/camera/MotionFocusManager;D)D
 
-    .line 120
+    .line 128
     iget-object v5, p0, Lcom/android/camera/MotionFocusManager$1;->this$0:Lcom/android/camera/MotionFocusManager;
 
     #getter for: Lcom/android/camera/MotionFocusManager;->mAngleTotal:D
@@ -221,7 +220,7 @@
 
     if-lez v5, :cond_4
 
-    .line 121
+    .line 129
     iget-object v5, p0, Lcom/android/camera/MotionFocusManager$1;->this$0:Lcom/android/camera/MotionFocusManager;
 
     #getter for: Lcom/android/camera/MotionFocusManager;->mHandler:Landroid/os/Handler;
@@ -235,7 +234,7 @@
 
     if-nez v5, :cond_4
 
-    .line 122
+    .line 130
     iget-object v5, p0, Lcom/android/camera/MotionFocusManager$1;->this$0:Lcom/android/camera/MotionFocusManager;
 
     #getter for: Lcom/android/camera/MotionFocusManager;->mHandler:Landroid/os/Handler;
@@ -245,7 +244,7 @@
 
     invoke-virtual {v5, v9}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 126
+    .line 134
     :cond_4
     const-wide v5, 0x3fb99999a0000000L
 
@@ -253,7 +252,7 @@
 
     if-lez v5, :cond_0
 
-    .line 127
+    .line 135
     iget-object v5, p0, Lcom/android/camera/MotionFocusManager$1;->this$0:Lcom/android/camera/MotionFocusManager;
 
     #getter for: Lcom/android/camera/MotionFocusManager;->mHandler:Landroid/os/Handler;

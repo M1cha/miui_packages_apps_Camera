@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 3059
+    .line 2961
     iput-object p1, p0, Lcom/android/camera/Camera$6;->this$0:Lcom/android/camera/Camera;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,12 +42,12 @@
     .prologue
     const/4 v2, 0x2
 
-    .line 3061
+    .line 2963
     iget-object v0, p0, Lcom/android/camera/Camera$6;->this$0:Lcom/android/camera/Camera;
 
     const v1, 0x7f0c0037
 
-    invoke-virtual {v0, v1}, Lcom/android/camera/Camera;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -56,15 +55,15 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3062
+    .line 2964
     invoke-static {v2}, Lcom/android/camera/ModeChangeManager;->setCurrentMode(I)V
 
-    .line 3063
+    .line 2965
     iget-object v0, p0, Lcom/android/camera/Camera$6;->this$0:Lcom/android/camera/Camera;
 
     #calls: Lcom/android/camera/Camera;->switchToOtherMode(I)V
-    invoke-static {v0, v2}, Lcom/android/camera/Camera;->access$6000(Lcom/android/camera/Camera;I)V
+    invoke-static {v0, v2}, Lcom/android/camera/Camera;->access$6300(Lcom/android/camera/Camera;I)V
 
-    .line 3064
+    .line 2966
     return-void
 .end method

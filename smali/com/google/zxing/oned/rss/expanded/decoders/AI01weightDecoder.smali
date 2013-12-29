@@ -18,13 +18,13 @@
 
 
 # virtual methods
-.method protected abstract addWeightCode(Ljava/lang/StringBuffer;I)V
+.method protected abstract addWeightCode(Ljava/lang/StringBuilder;I)V
 .end method
 
 .method protected abstract checkWeight(I)I
 .end method
 
-.method protected encodeCompressedWeight(Ljava/lang/StringBuffer;II)V
+.method protected final encodeCompressedWeight(Ljava/lang/StringBuilder;II)V
     .locals 5
     .parameter "buf"
     .parameter "currentPos"
@@ -32,7 +32,9 @@
 
     .prologue
     .line 41
-    iget-object v4, p0, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->generalDecoder:Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
+    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
+
+    move-result-object v4
 
     invoke-virtual {v4, p2, p3}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(II)I
 
@@ -40,7 +42,7 @@
 
     .line 42
     .local v2, originalWeightNumeric:I
-    invoke-virtual {p0, p1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01weightDecoder;->addWeightCode(Ljava/lang/StringBuffer;I)V
+    invoke-virtual {p0, p1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01weightDecoder;->addWeightCode(Ljava/lang/StringBuilder;I)V
 
     .line 44
     invoke-virtual {p0, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01weightDecoder;->checkWeight(I)I
@@ -69,7 +71,7 @@
     .line 49
     const/16 v4, 0x30
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 51
     :cond_0
@@ -82,7 +84,7 @@
 
     .line 53
     :cond_1
-    invoke-virtual {p1, v3}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
+    invoke-virtual {p1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 54
     return-void

@@ -251,7 +251,7 @@
     .line 76
     .local v0, indicatorKeys:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     :goto_0
-    invoke-virtual {p0}, Lcom/android/camera/VideoModeManager;->getSettingView()Lcom/android/camera/ui/SettingView;
+    invoke-virtual {p0}, Lcom/android/camera/ModeManager;->getSettingView()Lcom/android/camera/ui/SettingView;
 
     move-result-object v1
 

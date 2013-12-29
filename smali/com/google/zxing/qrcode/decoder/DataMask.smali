@@ -109,13 +109,13 @@
 
     .prologue
     .line 48
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 49
     return-void
 .end method
 
-.method constructor <init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
+.method synthetic constructor <init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
     .locals 0
     .parameter "x0"
 

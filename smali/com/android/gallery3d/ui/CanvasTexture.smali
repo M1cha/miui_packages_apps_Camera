@@ -25,12 +25,12 @@
     iput-object v0, p0, Lcom/android/gallery3d/ui/CanvasTexture;->mConfig:Landroid/graphics/Bitmap$Config;
 
     .line 32
-    invoke-virtual {p0, p1, p2}, Lcom/android/gallery3d/ui/CanvasTexture;->setSize(II)V
+    invoke-virtual {p0, p1, p2}, Lcom/android/gallery3d/ui/BasicTexture;->setSize(II)V
 
     .line 33
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/ui/CanvasTexture;->setOpaque(Z)V
+    invoke-virtual {p0, v0}, Lcom/android/gallery3d/ui/UploadedTexture;->setOpaque(Z)V
 
     .line 34
     return-void

@@ -21,10 +21,9 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/PanoramaActivity;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 155
+    .line 152
     iput-object p1, p0, Lcom/android/camera/PanoramaActivity$SetupCameraThread;->this$0:Lcom/android/camera/PanoramaActivity;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -38,7 +37,7 @@
     .parameter "x1"
 
     .prologue
-    .line 155
+    .line 152
     invoke-direct {p0, p1}, Lcom/android/camera/PanoramaActivity$SetupCameraThread;-><init>(Lcom/android/camera/PanoramaActivity;)V
 
     return-void
@@ -52,7 +51,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 159
+    .line 156
     :try_start_0
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$SetupCameraThread;->this$0:Lcom/android/camera/PanoramaActivity;
 
@@ -62,15 +61,15 @@
     .catch Lcom/android/camera/CameraHardwareException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Lcom/android/camera/CameraDisabledException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 165
+    .line 162
     :goto_0
     return-void
 
-    .line 160
+    .line 157
     :catch_0
     move-exception v0
 
-    .line 161
+    .line 158
     .local v0, e:Lcom/android/camera/CameraHardwareException;
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$SetupCameraThread;->this$0:Lcom/android/camera/PanoramaActivity;
 
@@ -78,12 +77,12 @@
 
     goto :goto_0
 
-    .line 162
+    .line 159
     .end local v0           #e:Lcom/android/camera/CameraHardwareException;
     :catch_1
     move-exception v0
 
-    .line 163
+    .line 160
     .local v0, e:Lcom/android/camera/CameraDisabledException;
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$SetupCameraThread;->this$0:Lcom/android/camera/PanoramaActivity;
 

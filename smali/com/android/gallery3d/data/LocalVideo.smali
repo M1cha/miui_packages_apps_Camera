@@ -145,7 +145,7 @@
     .line 84
     iget-object v3, p0, Lcom/android/gallery3d/data/LocalVideo;->mApplication:Lcom/android/camera/CameraAppImpl;
 
-    invoke-virtual {v3}, Lcom/android/camera/CameraAppImpl;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v3}, Landroid/content/ContextWrapper;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
@@ -475,7 +475,7 @@
     .local v0, baseUri:Landroid/net/Uri;
     iget-object v1, p0, Lcom/android/gallery3d/data/LocalVideo;->mApplication:Lcom/android/camera/CameraAppImpl;
 
-    invoke-virtual {v1}, Lcom/android/camera/CameraAppImpl;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v1}, Landroid/content/ContextWrapper;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
@@ -648,7 +648,7 @@
 
     iget-object v1, p0, Lcom/android/gallery3d/data/LocalVideo;->mApplication:Lcom/android/camera/CameraAppImpl;
 
-    invoke-virtual {p0}, Lcom/android/gallery3d/data/LocalVideo;->getPath()Lcom/android/gallery3d/data/Path;
+    invoke-virtual {p0}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v2
 

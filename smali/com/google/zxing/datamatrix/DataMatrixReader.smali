@@ -19,7 +19,7 @@
     .locals 1
 
     .prologue
-    .line 44
+    .line 45
     const/4 v0, 0x0
 
     new-array v0, v0, [Lcom/google/zxing/ResultPoint;
@@ -33,10 +33,10 @@
     .locals 1
 
     .prologue
-    .line 42
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 43
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
+    .line 47
     new-instance v0, Lcom/google/zxing/datamatrix/decoder/Decoder;
 
     invoke-direct {v0}, Lcom/google/zxing/datamatrix/decoder/Decoder;-><init>()V
@@ -56,249 +56,255 @@
     .end annotation
 
     .prologue
-    const/4 v14, 0x0
+    .line 104
+    invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getTopLeftOnBit()[I
 
-    .line 98
-    invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
+    move-result-object v4
 
-    move-result v2
+    .line 105
+    .local v4, leftTopBlack:[I
+    invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getBottomRightOnBit()[I
 
-    .line 99
-    .local v2, height:I
-    invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getWidth()I
+    move-result-object v10
 
-    move-result v10
+    .line 106
+    .local v10, rightBottomBlack:[I
+    if-eqz v4, :cond_0
 
-    .line 100
-    .local v10, width:I
-    invoke-static {v2, v10}, Ljava/lang/Math;->min(II)I
+    if-nez v10, :cond_1
+
+    .line 107
+    :cond_0
+    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
+
+    move-result-object v14
+
+    throw v14
+
+    .line 110
+    :cond_1
+    invoke-static {v4, p0}, Lcom/google/zxing/datamatrix/DataMatrixReader;->moduleSize([ILcom/google/zxing/common/BitMatrix;)I
 
     move-result v7
 
-    .line 104
-    .local v7, minDimension:I
-    invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getTopLeftOnBit()[I
+    .line 112
+    .local v7, moduleSize:I
+    const/4 v14, 0x1
 
-    move-result-object v6
-
-    .line 105
-    .local v6, leftTopBlack:[I
-    if-nez v6, :cond_0
-
-    .line 106
-    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
-
-    move-result-object v13
-
-    throw v13
-
-    .line 108
-    :cond_0
-    aget v11, v6, v14
-
-    .line 109
-    .local v11, x:I
-    const/4 v13, 0x1
-
-    aget v12, v6, v13
-
-    .line 110
-    .local v12, y:I
-    :goto_0
-    if-ge v11, v7, :cond_1
-
-    if-ge v12, v7, :cond_1
-
-    invoke-virtual {p0, v11, v12}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
-
-    move-result v13
-
-    if-eqz v13, :cond_1
-
-    .line 111
-    add-int/lit8 v11, v11, 0x1
-
-    goto :goto_0
+    aget v11, v4, v14
 
     .line 113
-    :cond_1
-    if-ne v11, v7, :cond_2
+    .local v11, top:I
+    const/4 v14, 0x1
+
+    aget v1, v10, v14
 
     .line 114
-    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
+    .local v1, bottom:I
+    const/4 v14, 0x0
 
-    move-result-object v13
+    aget v3, v4, v14
 
-    throw v13
+    .line 115
+    .local v3, left:I
+    const/4 v14, 0x0
+
+    aget v9, v10, v14
 
     .line 117
-    :cond_2
-    aget v13, v6, v14
+    .local v9, right:I
+    sub-int v14, v9, v3
 
-    sub-int v8, v11, v13
+    add-int/lit8 v14, v14, 0x1
+
+    div-int v6, v14, v7
+
+    .line 118
+    .local v6, matrixWidth:I
+    sub-int v14, v1, v11
+
+    add-int/lit8 v14, v14, 0x1
+
+    div-int v5, v14, v7
+
+    .line 119
+    .local v5, matrixHeight:I
+    if-lez v6, :cond_2
+
+    if-gtz v5, :cond_3
 
     .line 120
-    .local v8, moduleSize:I
-    add-int/lit8 v9, v10, -0x1
+    :cond_2
+    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    .line 121
-    .local v9, rowEndOfSymbol:I
+    move-result-object v14
+
+    throw v14
+
+    .line 126
+    :cond_3
+    shr-int/lit8 v8, v7, 0x1
+
+    .line 127
+    .local v8, nudge:I
+    add-int/2addr v11, v8
+
+    .line 128
+    add-int/2addr v3, v8
+
+    .line 131
+    new-instance v0, Lcom/google/zxing/common/BitMatrix;
+
+    invoke-direct {v0, v6, v5}, Lcom/google/zxing/common/BitMatrix;-><init>(II)V
+
+    .line 132
+    .local v0, bits:Lcom/google/zxing/common/BitMatrix;
+    const/4 v13, 0x0
+
+    .local v13, y:I
+    :goto_0
+    if-ge v13, v5, :cond_6
+
+    .line 133
+    mul-int v14, v13, v7
+
+    add-int v2, v11, v14
+
+    .line 134
+    .local v2, iOffset:I
+    const/4 v12, 0x0
+
+    .local v12, x:I
     :goto_1
-    if-ltz v9, :cond_3
+    if-ge v12, v6, :cond_5
 
-    invoke-virtual {p0, v9, v12}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
+    .line 135
+    mul-int v14, v12, v7
 
-    move-result v13
+    add-int/2addr v14, v3
 
-    if-nez v13, :cond_3
+    invoke-virtual {p0, v14, v2}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
-    .line 122
-    add-int/lit8 v9, v9, -0x1
+    move-result v14
+
+    if-eqz v14, :cond_4
+
+    .line 136
+    invoke-virtual {v0, v12, v13}, Lcom/google/zxing/common/BitMatrix;->set(II)V
+
+    .line 134
+    :cond_4
+    add-int/lit8 v12, v12, 0x1
 
     goto :goto_1
 
-    .line 124
-    :cond_3
-    if-gez v9, :cond_4
-
-    .line 125
-    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
-
-    move-result-object v13
-
-    throw v13
-
-    .line 127
-    :cond_4
-    add-int/lit8 v9, v9, 0x1
-
-    .line 130
-    sub-int v13, v9, v11
-
-    rem-int/2addr v13, v8
-
-    if-eqz v13, :cond_5
-
-    .line 131
-    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
-
-    move-result-object v13
-
-    throw v13
-
-    .line 133
+    .line 132
     :cond_5
-    sub-int v13, v9, v11
+    add-int/lit8 v13, v13, 0x1
 
-    div-int/2addr v13, v8
-
-    add-int/lit8 v1, v13, 0x2
-
-    .line 135
-    .local v1, dimension:I
-    add-int/2addr v12, v8
+    goto :goto_0
 
     .line 140
-    shr-int/lit8 v13, v8, 0x1
-
-    sub-int/2addr v11, v13
-
-    .line 141
-    shr-int/lit8 v13, v8, 0x1
-
-    sub-int/2addr v12, v13
-
-    .line 143
-    add-int/lit8 v13, v1, -0x1
-
-    mul-int/2addr v13, v8
-
-    add-int/2addr v13, v11
-
-    if-ge v13, v10, :cond_6
-
-    add-int/lit8 v13, v1, -0x1
-
-    mul-int/2addr v13, v8
-
-    add-int/2addr v13, v12
-
-    if-lt v13, v2, :cond_7
-
-    .line 145
+    .end local v2           #iOffset:I
+    .end local v12           #x:I
     :cond_6
-    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
+    return-object v0
+.end method
 
-    move-result-object v13
+.method private static moduleSize([ILcom/google/zxing/common/BitMatrix;)I
+    .locals 6
+    .parameter "leftTopBlack"
+    .parameter "image"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/zxing/NotFoundException;
+        }
+    .end annotation
 
-    throw v13
-
-    .line 149
-    :cond_7
-    new-instance v0, Lcom/google/zxing/common/BitMatrix;
-
-    invoke-direct {v0, v1}, Lcom/google/zxing/common/BitMatrix;-><init>(I)V
-
-    .line 150
-    .local v0, bits:Lcom/google/zxing/common/BitMatrix;
-    const/4 v3, 0x0
-
-    .local v3, i:I
-    :goto_2
-    if-ge v3, v1, :cond_a
-
-    .line 151
-    mul-int v13, v3, v8
-
-    add-int v4, v12, v13
-
-    .line 152
-    .local v4, iOffset:I
+    .prologue
     const/4 v5, 0x0
 
-    .local v5, j:I
-    :goto_3
-    if-ge v5, v1, :cond_9
+    .line 144
+    invoke-virtual {p1}, Lcom/google/zxing/common/BitMatrix;->getWidth()I
 
-    .line 153
-    mul-int v13, v5, v8
+    move-result v1
 
-    add-int/2addr v13, v11
+    .line 145
+    .local v1, width:I
+    aget v2, p0, v5
 
-    invoke-virtual {p0, v13, v4}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
+    .line 146
+    .local v2, x:I
+    const/4 v4, 0x1
 
-    move-result v13
+    aget v3, p0, v4
 
-    if-eqz v13, :cond_8
+    .line 147
+    .local v3, y:I
+    :goto_0
+    if-ge v2, v1, :cond_0
 
-    .line 154
-    invoke-virtual {v0, v5, v3}, Lcom/google/zxing/common/BitMatrix;->set(II)V
+    invoke-virtual {p1, v2, v3}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
 
-    .line 152
-    :cond_8
-    add-int/lit8 v5, v5, 0x1
+    move-result v4
 
-    goto :goto_3
+    if-eqz v4, :cond_0
+
+    .line 148
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
 
     .line 150
-    :cond_9
-    add-int/lit8 v3, v3, 0x1
+    :cond_0
+    if-ne v2, v1, :cond_1
 
-    goto :goto_2
+    .line 151
+    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
+
+    move-result-object v4
+
+    throw v4
+
+    .line 154
+    :cond_1
+    aget v4, p0, v5
+
+    sub-int v0, v2, v4
+
+    .line 155
+    .local v0, moduleSize:I
+    if-nez v0, :cond_2
+
+    .line 156
+    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
+
+    move-result-object v4
+
+    throw v4
 
     .line 158
-    .end local v4           #iOffset:I
-    .end local v5           #j:I
-    :cond_a
-    return-object v0
+    :cond_2
+    return v0
 .end method
 
 
 # virtual methods
-.method public decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Hashtable;)Lcom/google/zxing/Result;
-    .locals 8
+.method public decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
+    .locals 10
     .parameter "image"
-    .parameter "hints"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/zxing/BinaryBitmap;",
+            "Ljava/util/Map",
+            "<",
+            "Lcom/google/zxing/DecodeHintType;",
+            "*>;)",
+            "Lcom/google/zxing/Result;"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;,
@@ -308,134 +314,129 @@
     .end annotation
 
     .prologue
-    .line 64
+    .line 67
+    .local p2, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     if-eqz p2, :cond_2
 
-    sget-object v5, Lcom/google/zxing/DecodeHintType;->PURE_BARCODE:Lcom/google/zxing/DecodeHintType;
+    sget-object v7, Lcom/google/zxing/DecodeHintType;->PURE_BARCODE:Lcom/google/zxing/DecodeHintType;
 
-    invoke-virtual {p2, v5}, Ljava/util/Hashtable;->containsKey(Ljava/lang/Object;)Z
+    invoke-interface {p2, v7}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v7
 
-    if-eqz v5, :cond_2
+    if-eqz v7, :cond_2
 
-    .line 65
+    .line 68
     invoke-virtual {p1}, Lcom/google/zxing/BinaryBitmap;->getBlackMatrix()Lcom/google/zxing/common/BitMatrix;
 
-    move-result-object v5
+    move-result-object v7
 
-    invoke-static {v5}, Lcom/google/zxing/datamatrix/DataMatrixReader;->extractPureBits(Lcom/google/zxing/common/BitMatrix;)Lcom/google/zxing/common/BitMatrix;
+    invoke-static {v7}, Lcom/google/zxing/datamatrix/DataMatrixReader;->extractPureBits(Lcom/google/zxing/common/BitMatrix;)Lcom/google/zxing/common/BitMatrix;
 
     move-result-object v0
 
-    .line 66
-    .local v0, bits:Lcom/google/zxing/common/BitMatrix;
-    iget-object v5, p0, Lcom/google/zxing/datamatrix/DataMatrixReader;->decoder:Lcom/google/zxing/datamatrix/decoder/Decoder;
-
-    invoke-virtual {v5, v0}, Lcom/google/zxing/datamatrix/decoder/Decoder;->decode(Lcom/google/zxing/common/BitMatrix;)Lcom/google/zxing/common/DecoderResult;
-
-    move-result-object v1
-
-    .line 67
-    .local v1, decoderResult:Lcom/google/zxing/common/DecoderResult;
-    sget-object v3, Lcom/google/zxing/datamatrix/DataMatrixReader;->NO_POINTS:[Lcom/google/zxing/ResultPoint;
-
-    .line 73
-    .end local v0           #bits:Lcom/google/zxing/common/BitMatrix;
-    .local v3, points:[Lcom/google/zxing/ResultPoint;
-    :goto_0
-    new-instance v4, Lcom/google/zxing/Result;
-
-    invoke-virtual {v1}, Lcom/google/zxing/common/DecoderResult;->getText()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v1}, Lcom/google/zxing/common/DecoderResult;->getRawBytes()[B
-
-    move-result-object v6
-
-    sget-object v7, Lcom/google/zxing/BarcodeFormat;->DATA_MATRIX:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-direct {v4, v5, v6, v3, v7}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
-
-    .line 75
-    .local v4, result:Lcom/google/zxing/Result;
-    invoke-virtual {v1}, Lcom/google/zxing/common/DecoderResult;->getByteSegments()Ljava/util/Vector;
-
-    move-result-object v5
-
-    if-eqz v5, :cond_0
-
-    .line 76
-    sget-object v5, Lcom/google/zxing/ResultMetadataType;->BYTE_SEGMENTS:Lcom/google/zxing/ResultMetadataType;
-
-    invoke-virtual {v1}, Lcom/google/zxing/common/DecoderResult;->getByteSegments()Ljava/util/Vector;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Lcom/google/zxing/Result;->putMetadata(Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;)V
-
-    .line 78
-    :cond_0
-    invoke-virtual {v1}, Lcom/google/zxing/common/DecoderResult;->getECLevel()Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
-
-    move-result-object v5
-
-    if-eqz v5, :cond_1
-
-    .line 79
-    sget-object v5, Lcom/google/zxing/ResultMetadataType;->ERROR_CORRECTION_LEVEL:Lcom/google/zxing/ResultMetadataType;
-
-    invoke-virtual {v1}, Lcom/google/zxing/common/DecoderResult;->getECLevel()Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v5, v6}, Lcom/google/zxing/Result;->putMetadata(Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;)V
-
-    .line 81
-    :cond_1
-    return-object v4
-
     .line 69
-    .end local v1           #decoderResult:Lcom/google/zxing/common/DecoderResult;
-    .end local v3           #points:[Lcom/google/zxing/ResultPoint;
-    .end local v4           #result:Lcom/google/zxing/Result;
-    :cond_2
-    new-instance v5, Lcom/google/zxing/datamatrix/detector/Detector;
+    .local v0, bits:Lcom/google/zxing/common/BitMatrix;
+    iget-object v7, p0, Lcom/google/zxing/datamatrix/DataMatrixReader;->decoder:Lcom/google/zxing/datamatrix/decoder/Decoder;
 
-    invoke-virtual {p1}, Lcom/google/zxing/BinaryBitmap;->getBlackMatrix()Lcom/google/zxing/common/BitMatrix;
-
-    move-result-object v6
-
-    invoke-direct {v5, v6}, Lcom/google/zxing/datamatrix/detector/Detector;-><init>(Lcom/google/zxing/common/BitMatrix;)V
-
-    invoke-virtual {v5}, Lcom/google/zxing/datamatrix/detector/Detector;->detect()Lcom/google/zxing/common/DetectorResult;
+    invoke-virtual {v7, v0}, Lcom/google/zxing/datamatrix/decoder/Decoder;->decode(Lcom/google/zxing/common/BitMatrix;)Lcom/google/zxing/common/DecoderResult;
 
     move-result-object v2
 
     .line 70
-    .local v2, detectorResult:Lcom/google/zxing/common/DetectorResult;
-    iget-object v5, p0, Lcom/google/zxing/datamatrix/DataMatrixReader;->decoder:Lcom/google/zxing/datamatrix/decoder/Decoder;
+    .local v2, decoderResult:Lcom/google/zxing/common/DecoderResult;
+    sget-object v5, Lcom/google/zxing/datamatrix/DataMatrixReader;->NO_POINTS:[Lcom/google/zxing/ResultPoint;
 
-    invoke-virtual {v2}, Lcom/google/zxing/common/DetectorResult;->getBits()Lcom/google/zxing/common/BitMatrix;
+    .line 76
+    .end local v0           #bits:Lcom/google/zxing/common/BitMatrix;
+    .local v5, points:[Lcom/google/zxing/ResultPoint;
+    :goto_0
+    new-instance v6, Lcom/google/zxing/Result;
 
-    move-result-object v6
+    invoke-virtual {v2}, Lcom/google/zxing/common/DecoderResult;->getText()Ljava/lang/String;
 
-    invoke-virtual {v5, v6}, Lcom/google/zxing/datamatrix/decoder/Decoder;->decode(Lcom/google/zxing/common/BitMatrix;)Lcom/google/zxing/common/DecoderResult;
+    move-result-object v7
+
+    invoke-virtual {v2}, Lcom/google/zxing/common/DecoderResult;->getRawBytes()[B
+
+    move-result-object v8
+
+    sget-object v9, Lcom/google/zxing/BarcodeFormat;->DATA_MATRIX:Lcom/google/zxing/BarcodeFormat;
+
+    invoke-direct {v6, v7, v8, v5, v9}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
+
+    .line 78
+    .local v6, result:Lcom/google/zxing/Result;
+    invoke-virtual {v2}, Lcom/google/zxing/common/DecoderResult;->getByteSegments()Ljava/util/List;
 
     move-result-object v1
 
-    .line 71
-    .restart local v1       #decoderResult:Lcom/google/zxing/common/DecoderResult;
-    invoke-virtual {v2}, Lcom/google/zxing/common/DetectorResult;->getPoints()[Lcom/google/zxing/ResultPoint;
+    .line 79
+    .local v1, byteSegments:Ljava/util/List;,"Ljava/util/List<[B>;"
+    if-eqz v1, :cond_0
+
+    .line 80
+    sget-object v7, Lcom/google/zxing/ResultMetadataType;->BYTE_SEGMENTS:Lcom/google/zxing/ResultMetadataType;
+
+    invoke-virtual {v6, v7, v1}, Lcom/google/zxing/Result;->putMetadata(Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;)V
+
+    .line 82
+    :cond_0
+    invoke-virtual {v2}, Lcom/google/zxing/common/DecoderResult;->getECLevel()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 83
+    .local v4, ecLevel:Ljava/lang/String;
+    if-eqz v4, :cond_1
+
+    .line 84
+    sget-object v7, Lcom/google/zxing/ResultMetadataType;->ERROR_CORRECTION_LEVEL:Lcom/google/zxing/ResultMetadataType;
+
+    invoke-virtual {v6, v7, v4}, Lcom/google/zxing/Result;->putMetadata(Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;)V
+
+    .line 86
+    :cond_1
+    return-object v6
+
+    .line 72
+    .end local v1           #byteSegments:Ljava/util/List;,"Ljava/util/List<[B>;"
+    .end local v2           #decoderResult:Lcom/google/zxing/common/DecoderResult;
+    .end local v4           #ecLevel:Ljava/lang/String;
+    .end local v5           #points:[Lcom/google/zxing/ResultPoint;
+    .end local v6           #result:Lcom/google/zxing/Result;
+    :cond_2
+    new-instance v7, Lcom/google/zxing/datamatrix/detector/Detector;
+
+    invoke-virtual {p1}, Lcom/google/zxing/BinaryBitmap;->getBlackMatrix()Lcom/google/zxing/common/BitMatrix;
+
+    move-result-object v8
+
+    invoke-direct {v7, v8}, Lcom/google/zxing/datamatrix/detector/Detector;-><init>(Lcom/google/zxing/common/BitMatrix;)V
+
+    invoke-virtual {v7}, Lcom/google/zxing/datamatrix/detector/Detector;->detect()Lcom/google/zxing/common/DetectorResult;
 
     move-result-object v3
 
-    .restart local v3       #points:[Lcom/google/zxing/ResultPoint;
+    .line 73
+    .local v3, detectorResult:Lcom/google/zxing/common/DetectorResult;
+    iget-object v7, p0, Lcom/google/zxing/datamatrix/DataMatrixReader;->decoder:Lcom/google/zxing/datamatrix/decoder/Decoder;
+
+    invoke-virtual {v3}, Lcom/google/zxing/common/DetectorResult;->getBits()Lcom/google/zxing/common/BitMatrix;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Lcom/google/zxing/datamatrix/decoder/Decoder;->decode(Lcom/google/zxing/common/BitMatrix;)Lcom/google/zxing/common/DecoderResult;
+
+    move-result-object v2
+
+    .line 74
+    .restart local v2       #decoderResult:Lcom/google/zxing/common/DecoderResult;
+    invoke-virtual {v3}, Lcom/google/zxing/common/DetectorResult;->getPoints()[Lcom/google/zxing/ResultPoint;
+
+    move-result-object v5
+
+    .restart local v5       #points:[Lcom/google/zxing/ResultPoint;
     goto :goto_0
 .end method
 
@@ -443,6 +444,6 @@
     .locals 0
 
     .prologue
-    .line 86
+    .line 92
     return-void
 .end method

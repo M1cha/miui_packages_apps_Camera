@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/zxing/ui/QRCodeFragment;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 191
+    .line 259
     iput-object p1, p0, Lcom/android/zxing/ui/QRCodeFragment$1;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,7 +41,7 @@
     .parameter "v"
 
     .prologue
-    .line 194
+    .line 262
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$1;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
     #getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
@@ -54,13 +53,13 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 195
+    .line 263
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$1;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    #calls: Lcom/android/zxing/ui/QRCodeFragment;->launchMIUIBrowser()V
+    #calls: Lcom/android/zxing/ui/QRCodeFragment;->launchBrowser()V
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$100(Lcom/android/zxing/ui/QRCodeFragment;)V
 
-    .line 197
+    .line 265
     :cond_0
     return-void
 .end method

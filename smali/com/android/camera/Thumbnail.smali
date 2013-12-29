@@ -31,7 +31,7 @@
     .line 65
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/android/camera/Thumbnail;->sLock:Ljava/lang/Object;
 
@@ -47,7 +47,7 @@
 
     .prologue
     .line 67
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 61
     const/4 v0, 0x0
@@ -1104,7 +1104,7 @@
     if-nez v12, :cond_0
 
     .line 187
-    invoke-virtual {v5}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v5}, Ljava/io/FilterInputStream;->close()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_5
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3
@@ -1156,7 +1156,7 @@
     move-result-object v3
 
     .line 191
-    invoke-virtual {v5}, Ljava/io/DataInputStream;->close()V
+    invoke-virtual {v5}, Ljava/io/FilterInputStream;->close()V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
@@ -1885,7 +1885,7 @@
     invoke-virtual {v8, v10, v11, v3}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
     .line 160
-    invoke-virtual {v3}, Ljava/io/DataOutputStream;->close()V
+    invoke-virtual {v3}, Ljava/io/FilterOutputStream;->close()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_5
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_3

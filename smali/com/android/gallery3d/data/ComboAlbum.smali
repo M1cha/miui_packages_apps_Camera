@@ -231,7 +231,7 @@
 
     .prologue
     .line 90
-    invoke-virtual {p0}, Lcom/android/gallery3d/data/ComboAlbum;->notifyContentChanged()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/data/MediaSet;->notifyContentChanged()V
 
     .line 91
     return-void

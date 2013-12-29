@@ -26,8 +26,6 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/ui/DetailsAddressResolver$1;Lcom/android/gallery3d/util/Future;)V
     .locals 0
-    .parameter
-    .parameter
 
     .prologue
     .line 69
@@ -35,7 +33,7 @@
 
     iput-object p2, p0, Lcom/android/gallery3d/ui/DetailsAddressResolver$1$1;->val$future:Lcom/android/gallery3d/util/Future;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

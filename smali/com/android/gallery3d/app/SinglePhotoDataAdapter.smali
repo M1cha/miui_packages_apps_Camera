@@ -99,7 +99,7 @@
     iput-object v0, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mItem:Lcom/android/gallery3d/data/MediaItem;
 
     .line 57
-    invoke-virtual {p3}, Lcom/android/gallery3d/data/MediaItem;->getSupportedOperations()I
+    invoke-virtual {p3}, Lcom/android/gallery3d/data/MediaObject;->getSupportedOperations()I
 
     move-result v0
 
@@ -212,12 +212,12 @@
 
     move-result v3
 
-    invoke-virtual {p0, v1, v2, v3}, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->setScreenNail(Landroid/graphics/Bitmap;II)V
+    invoke-virtual {p0, v1, v2, v3}, Lcom/android/gallery3d/ui/TileImageViewAdapter;->setScreenNail(Landroid/graphics/Bitmap;II)V
 
     .line 117
     iget-object v1, p1, Lcom/android/gallery3d/app/SinglePhotoDataAdapter$ImageBundle;->decoder:Landroid/graphics/BitmapRegionDecoder;
 
-    invoke-virtual {p0, v1}, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->setRegionDecoder(Landroid/graphics/BitmapRegionDecoder;)V
+    invoke-virtual {p0, v1}, Lcom/android/gallery3d/ui/TileImageViewAdapter;->setRegionDecoder(Landroid/graphics/BitmapRegionDecoder;)V
 
     .line 118
     iget-object v1, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mPhotoView:Lcom/android/gallery3d/ui/PhotoView;
@@ -249,7 +249,6 @@
 
 .method private onDecodeThumbComplete(Lcom/android/gallery3d/util/Future;)V
     .locals 4
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -300,7 +299,7 @@
 
     move-result v3
 
-    invoke-virtual {p0, v0, v2, v3}, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->setScreenNail(Landroid/graphics/Bitmap;II)V
+    invoke-virtual {p0, v0, v2, v3}, Lcom/android/gallery3d/ui/TileImageViewAdapter;->setScreenNail(Landroid/graphics/Bitmap;II)V
 
     .line 134
     iget-object v2, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mPhotoView:Lcom/android/gallery3d/ui/PhotoView;
@@ -445,7 +444,7 @@
     .line 185
     if-nez p1, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->getScreenNail()Lcom/android/gallery3d/ui/ScreenNail;
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/TileImageViewAdapter;->getScreenNail()Lcom/android/gallery3d/ui/ScreenNail;
 
     move-result-object v0
 
@@ -497,7 +496,7 @@
     .line 210
     iget-object v0, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mItem:Lcom/android/gallery3d/data/MediaItem;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaItem;->getSupportedOperations()I
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaObject;->getSupportedOperations()I
 
     move-result v0
 
@@ -545,7 +544,7 @@
     .line 205
     iget-object v0, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mItem:Lcom/android/gallery3d/data/MediaItem;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaItem;->getMediaType()I
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaObject;->getMediaType()I
 
     move-result v0
 

@@ -93,7 +93,7 @@
     iput-object v1, p0, Lcom/android/zxing/ui/ViewFinderView;->mPaint:Landroid/graphics/Paint;
 
     .line 42
-    invoke-virtual {p0}, Lcom/android/zxing/ui/ViewFinderView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -187,7 +187,7 @@
     iput-object v0, p0, Lcom/android/zxing/ui/ViewFinderView;->mResultBitmap:Landroid/graphics/Bitmap;
 
     .line 114
-    invoke-virtual {p0}, Lcom/android/zxing/ui/ViewFinderView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     .line 115
     return-void
@@ -199,7 +199,11 @@
 
     .prologue
     .line 54
-    invoke-static {}, Lcom/android/zxing/QRCodeManager;->instance()Lcom/android/zxing/QRCodeManager;
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Landroid/view/View;->mContext:Landroid/content/Context;
+
+    invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->instance(Landroid/content/Context;)Lcom/android/zxing/QRCodeManager;
 
     move-result-object v1
 
@@ -808,7 +812,7 @@
 
     move-object/from16 v1, p0
 
-    invoke-virtual/range {v1 .. v7}, Lcom/android/zxing/ui/ViewFinderView;->postInvalidateDelayed(JIIII)V
+    invoke-virtual/range {v1 .. v7}, Landroid/view/View;->postInvalidateDelayed(JIIII)V
 
     goto/16 :goto_1
 .end method

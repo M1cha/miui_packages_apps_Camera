@@ -226,55 +226,58 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 135
+    .line 136
     iget-boolean v1, p0, Lcom/android/camera/ui/SettingView;->mIsAnimating:Z
 
     if-nez v1, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->getVisibility()I
+    invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 136
+    .line 137
     :cond_0
     iget-object v1, p0, Lcom/android/camera/ui/SettingView;->mRunnable:Ljava/lang/Runnable;
 
     if-eqz v1, :cond_1
 
-    .line 137
+    .line 138
     iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mRunnable:Ljava/lang/Runnable;
 
-    .line 138
+    .line 139
     .local v0, runnalbe:Ljava/lang/Runnable;
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/camera/ui/SettingView;->mRunnable:Ljava/lang/Runnable;
 
-    .line 139
+    .line 140
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 147
+    .line 149
     .end local v0           #runnalbe:Ljava/lang/Runnable;
     :cond_1
     :goto_0
     return-void
 
-    .line 143
+    .line 144
     :cond_2
     iget-object v1, p0, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Lcom/android/camera/ui/SettingView;->setPressed(Ljava/lang/String;)V
 
-    .line 144
-    iput-boolean v2, p0, Lcom/android/camera/ui/SettingView;->mDismissRequest:Z
-
     .line 145
-    iput-boolean v2, p0, Lcom/android/camera/ui/SettingView;->mIsAnimating:Z
+    invoke-virtual {p0, v2}, Lcom/android/camera/ui/SettingView;->updateExitLayout(Z)V
 
     .line 146
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->requestLayout()V
+    iput-boolean v2, p0, Lcom/android/camera/ui/SettingView;->mDismissRequest:Z
+
+    .line 147
+    iput-boolean v2, p0, Lcom/android/camera/ui/SettingView;->mIsAnimating:Z
+
+    .line 148
+    invoke-virtual {p0}, Landroid/widget/RelativeLayout;->requestLayout()V
 
     goto :goto_0
 .end method
@@ -313,7 +316,7 @@
     if-eqz v2, :cond_0
 
     .line 78
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     .line 79
     const/4 v2, 0x1
@@ -380,7 +383,7 @@
     .locals 1
 
     .prologue
-    .line 234
+    .line 236
     iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
 
     return-object v0
@@ -412,35 +415,35 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 206
+    .line 208
     invoke-super/range {p0 .. p5}, Landroid/widget/RelativeLayout;->onLayout(ZIIII)V
 
-    .line 207
+    .line 209
     iget-boolean v0, p0, Lcom/android/camera/ui/SettingView;->mPopupRequest:Z
 
     if-eqz v0, :cond_0
 
-    .line 208
+    .line 210
     iput-boolean v1, p0, Lcom/android/camera/ui/SettingView;->mPopupRequest:Z
 
-    .line 209
+    .line 211
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingView;->startAnim(Z)V
 
-    .line 211
+    .line 213
     :cond_0
     iget-boolean v0, p0, Lcom/android/camera/ui/SettingView;->mDismissRequest:Z
 
     if-eqz v0, :cond_1
 
-    .line 212
+    .line 214
     iput-boolean v1, p0, Lcom/android/camera/ui/SettingView;->mDismissRequest:Z
 
-    .line 213
+    .line 215
     invoke-virtual {p0, v1}, Lcom/android/camera/ui/SettingView;->startAnim(Z)V
 
-    .line 215
+    .line 217
     :cond_1
     return-void
 .end method
@@ -499,24 +502,26 @@
 .end method
 
 .method public popup(Z)V
-    .locals 2
+    .locals 3
     .parameter "animate"
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v2, 0x1
+
+    const/4 v1, 0x0
 
     .line 121
     iget-boolean v0, p0, Lcom/android/camera/ui/SettingView;->mIsAnimating:Z
 
     if-nez v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->getVisibility()I
+    invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 132
+    .line 133
     :cond_0
     :goto_0
     return-void
@@ -531,21 +536,22 @@
     invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingView;->setPressed(Ljava/lang/String;)V
 
     .line 126
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingView;->setVisibility(I)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 127
-    if-eqz p1, :cond_0
+    invoke-virtual {p0, v1}, Lcom/android/camera/ui/SettingView;->updateExitLayout(Z)V
 
     .line 128
-    iput-boolean v1, p0, Lcom/android/camera/ui/SettingView;->mPopupRequest:Z
+    if-eqz p1, :cond_0
 
     .line 129
-    iput-boolean v1, p0, Lcom/android/camera/ui/SettingView;->mIsAnimating:Z
+    iput-boolean v2, p0, Lcom/android/camera/ui/SettingView;->mPopupRequest:Z
 
     .line 130
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->requestLayout()V
+    iput-boolean v2, p0, Lcom/android/camera/ui/SettingView;->mIsAnimating:Z
+
+    .line 131
+    invoke-virtual {p0}, Landroid/widget/RelativeLayout;->requestLayout()V
 
     goto :goto_0
 .end method
@@ -597,7 +603,7 @@
     .parameter "preferences"
 
     .prologue
-    .line 261
+    .line 263
     return-void
 .end method
 
@@ -606,13 +612,13 @@
     .parameter "run"
 
     .prologue
-    .line 150
+    .line 152
     iput-object p1, p0, Lcom/android/camera/ui/SettingView;->mRunnable:Ljava/lang/Runnable;
 
-    .line 151
+    .line 153
     invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->dismiss()V
 
-    .line 152
+    .line 154
     return-void
 .end method
 
@@ -621,7 +627,7 @@
     .parameter "key"
 
     .prologue
-    .line 242
+    .line 244
     iget-object v3, p0, Lcom/android/camera/ui/SettingView;->mRotatables:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -643,7 +649,7 @@
 
     check-cast v2, Lcom/android/camera/ui/Rotatable;
 
-    .line 243
+    .line 245
     .local v2, r:Lcom/android/camera/ui/Rotatable;
     instance-of v3, v2, Lcom/android/camera/ui/PopupMenuItem;
 
@@ -651,12 +657,12 @@
 
     move-object v1, v2
 
-    .line 244
+    .line 246
     check-cast v1, Lcom/android/camera/ui/PopupMenuItem;
 
-    .line 245
+    .line 247
     .local v1, item:Lcom/android/camera/ui/PopupMenuItem;
-    invoke-virtual {v1}, Lcom/android/camera/ui/PopupMenuItem;->getTag()Ljava/lang/Object;
+    invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v3
 
@@ -666,12 +672,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 246
-    invoke-virtual {v1}, Lcom/android/camera/ui/PopupMenuItem;->performClick()Z
+    .line 248
+    invoke-virtual {v1}, Landroid/view/View;->performClick()Z
 
     goto :goto_0
 
-    .line 250
+    .line 252
     .end local v1           #item:Lcom/android/camera/ui/PopupMenuItem;
     .end local v2           #r:Lcom/android/camera/ui/Rotatable;
     :cond_1
@@ -683,10 +689,10 @@
     .parameter "currentMode"
 
     .prologue
-    .line 238
+    .line 240
     iput-object p1, p0, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
 
-    .line 239
+    .line 241
     return-void
 .end method
 
@@ -742,7 +748,7 @@
     invoke-virtual {v0}, Lcom/android/camera/ui/AbstractIndicatorButton;->setBackgoundLocked()V
 
     .line 100
-    invoke-virtual {v0, p2}, Lcom/android/camera/ui/AbstractIndicatorButton;->setImageResource(I)V
+    invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
     goto :goto_0
 .end method
@@ -825,7 +831,7 @@
     .parameter "key"
 
     .prologue
-    .line 218
+    .line 220
     iget-object v2, p0, Lcom/android/camera/ui/SettingView;->mRotatables:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -847,7 +853,7 @@
 
     check-cast v1, Lcom/android/camera/ui/Rotatable;
 
-    .line 219
+    .line 221
     .local v1, v:Lcom/android/camera/ui/Rotatable;
     instance-of v2, v1, Lcom/android/camera/ui/PopupMenuItem;
 
@@ -855,10 +861,10 @@
 
     move-object v2, v1
 
-    .line 220
+    .line 222
     check-cast v2, Lcom/android/camera/ui/PopupMenuItem;
 
-    invoke-virtual {v2}, Lcom/android/camera/ui/PopupMenuItem;->getTag()Ljava/lang/Object;
+    invoke-virtual {v2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -868,7 +874,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 221
+    .line 223
     check-cast v1, Lcom/android/camera/ui/PopupMenuItem;
 
     .end local v1           #v:Lcom/android/camera/ui/Rotatable;
@@ -878,7 +884,7 @@
 
     goto :goto_0
 
-    .line 223
+    .line 225
     .restart local v1       #v:Lcom/android/camera/ui/Rotatable;
     :cond_1
     check-cast v1, Lcom/android/camera/ui/PopupMenuItem;
@@ -890,7 +896,7 @@
 
     goto :goto_0
 
-    .line 227
+    .line 229
     :cond_2
     return-void
 .end method
@@ -899,12 +905,12 @@
     .locals 1
 
     .prologue
-    .line 230
+    .line 232
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingView;->popup(Z)V
 
-    .line 231
+    .line 233
     return-void
 .end method
 
@@ -913,7 +919,7 @@
     .parameter "key"
 
     .prologue
-    .line 260
+    .line 262
     return-void
 .end method
 
@@ -932,8 +938,8 @@
 
     const v8, 0x3c23d70a
 
-    .line 155
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->getHeight()I
+    .line 157
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v5
 
@@ -943,13 +949,13 @@
 
     div-float v3, v5, v7
 
-    .line 156
+    .line 158
     .local v3, moveY:F
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
 
-    const v6, 0x7f020067
+    const v6, 0x7f02005e
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -959,13 +965,13 @@
 
     move-result v4
 
-    .line 157
+    .line 159
     .local v4, rightW:I
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
 
-    const v6, 0x7f020064
+    const v6, 0x7f02005b
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -975,19 +981,19 @@
 
     move-result v1
 
-    .line 158
+    .line 160
     .local v1, anchorW:I
     iget-object v5, p0, Lcom/android/camera/ui/SettingView;->mAnchor:Landroid/widget/ImageView;
 
-    invoke-virtual {v5}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v5
 
     iget v0, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 159
+    .line 161
     .local v0, anchorActualW:I
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v5
 
@@ -1007,12 +1013,12 @@
 
     sub-float v2, v5, v6
 
-    .line 160
+    .line 162
     .local v2, moveX:F
     if-eqz p1, :cond_1
 
-    .line 161
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->getLeft()I
+    .line 163
+    invoke-virtual {p0}, Landroid/view/View;->getLeft()I
 
     move-result v5
 
@@ -1020,10 +1026,10 @@
 
     add-float/2addr v5, v2
 
-    invoke-virtual {p0, v5}, Lcom/android/camera/ui/SettingView;->setX(F)V
+    invoke-virtual {p0, v5}, Landroid/view/View;->setX(F)V
 
-    .line 162
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->getTop()I
+    .line 164
+    invoke-virtual {p0}, Landroid/view/View;->getTop()I
 
     move-result v5
 
@@ -1031,15 +1037,15 @@
 
     add-float/2addr v5, v3
 
-    invoke-virtual {p0, v5}, Lcom/android/camera/ui/SettingView;->setY(F)V
-
-    .line 163
-    invoke-virtual {p0, v8}, Lcom/android/camera/ui/SettingView;->setScaleX(F)V
-
-    .line 164
-    invoke-virtual {p0, v8}, Lcom/android/camera/ui/SettingView;->setScaleY(F)V
+    invoke-virtual {p0, v5}, Landroid/view/View;->setY(F)V
 
     .line 165
+    invoke-virtual {p0, v8}, Landroid/view/View;->setScaleX(F)V
+
+    .line 166
+    invoke-virtual {p0, v8}, Landroid/view/View;->setScaleY(F)V
+
+    .line 167
     iget-object v5, p0, Lcom/android/camera/ui/SettingView;->mExitArea:Landroid/view/View;
 
     if-eqz v5, :cond_0
@@ -1052,7 +1058,7 @@
 
     if-nez v5, :cond_0
 
-    .line 166
+    .line 168
     iget-object v5, p0, Lcom/android/camera/ui/SettingView;->mExitArea:Landroid/view/View;
 
     invoke-virtual {v5}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1063,7 +1069,7 @@
 
     move-result-object v5
 
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v6
 
@@ -1083,9 +1089,9 @@
 
     invoke-virtual {v5}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 169
+    .line 171
     :cond_0
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v5
 
@@ -1127,11 +1133,11 @@
 
     invoke-virtual {v5}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 202
+    .line 204
     :goto_0
     return-void
 
-    .line 181
+    .line 183
     :cond_1
     iget-object v5, p0, Lcom/android/camera/ui/SettingView;->mExitArea:Landroid/view/View;
 
@@ -1145,7 +1151,7 @@
 
     if-nez v5, :cond_2
 
-    .line 182
+    .line 184
     iget-object v5, p0, Lcom/android/camera/ui/SettingView;->mExitArea:Landroid/view/View;
 
     invoke-virtual {v5}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1156,7 +1162,7 @@
 
     move-result-object v5
 
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v6
 
@@ -1174,9 +1180,9 @@
 
     invoke-virtual {v5}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 185
+    .line 187
     :cond_2
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v5
 
@@ -1221,7 +1227,7 @@
     .locals 0
 
     .prologue
-    .line 259
+    .line 261
     return-void
 .end method
 
@@ -1230,7 +1236,7 @@
     .parameter "isMenuShow"
 
     .prologue
-    .line 257
+    .line 259
     return-void
 .end method
 
@@ -1239,6 +1245,6 @@
     .parameter "view"
 
     .prologue
-    .line 255
+    .line 257
     return-void
 .end method

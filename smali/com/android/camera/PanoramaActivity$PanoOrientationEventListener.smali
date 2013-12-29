@@ -25,13 +25,13 @@
     .parameter "context"
 
     .prologue
-    .line 190
+    .line 187
     iput-object p1, p0, Lcom/android/camera/PanoramaActivity$PanoOrientationEventListener;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    .line 191
+    .line 188
     invoke-direct {p0, p2}, Landroid/view/OrientationEventListener;-><init>(Landroid/content/Context;)V
 
-    .line 192
+    .line 189
     return-void
 .end method
 
@@ -42,17 +42,17 @@
     .parameter "orientation"
 
     .prologue
-    .line 199
+    .line 196
     const/4 v1, -0x1
 
     if-ne p1, v1, :cond_1
 
-    .line 209
+    .line 206
     :cond_0
     :goto_0
     return-void
 
-    .line 200
+    .line 197
     :cond_1
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$PanoOrientationEventListener;->this$0:Lcom/android/camera/PanoramaActivity;
 
@@ -70,7 +70,7 @@
     #setter for: Lcom/android/camera/PanoramaActivity;->mDeviceOrientation:I
     invoke-static {v1, v2}, Lcom/android/camera/PanoramaActivity;->access$102(Lcom/android/camera/PanoramaActivity;I)I
 
-    .line 203
+    .line 200
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$PanoOrientationEventListener;->this$0:Lcom/android/camera/PanoramaActivity;
 
     #getter for: Lcom/android/camera/PanoramaActivity;->mDeviceOrientation:I
@@ -86,7 +86,7 @@
 
     add-int v0, v1, v2
 
-    .line 205
+    .line 202
     .local v0, orientationCompensation:I
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$PanoOrientationEventListener;->this$0:Lcom/android/camera/PanoramaActivity;
 
@@ -94,12 +94,12 @@
 
     if-eq v1, v0, :cond_0
 
-    .line 206
+    .line 203
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$PanoOrientationEventListener;->this$0:Lcom/android/camera/PanoramaActivity;
 
     iput v0, v1, Lcom/android/camera/ActivityBase;->mOrientationCompensation:I
 
-    .line 207
+    .line 204
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$PanoOrientationEventListener;->this$0:Lcom/android/camera/PanoramaActivity;
 
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$PanoOrientationEventListener;->this$0:Lcom/android/camera/PanoramaActivity;

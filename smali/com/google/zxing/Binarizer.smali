@@ -9,30 +9,17 @@
 
 # direct methods
 .method protected constructor <init>(Lcom/google/zxing/LuminanceSource;)V
-    .locals 2
+    .locals 0
     .parameter "source"
 
     .prologue
     .line 34
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 35
-    if-nez p1, :cond_0
-
-    .line 36
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string v1, "Source must be non-null."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 38
-    :cond_0
     iput-object p1, p0, Lcom/google/zxing/Binarizer;->source:Lcom/google/zxing/LuminanceSource;
 
-    .line 39
+    .line 36
     return-void
 .end method
 
@@ -57,12 +44,40 @@
     .end annotation
 .end method
 
-.method public getLuminanceSource()Lcom/google/zxing/LuminanceSource;
+.method public final getHeight()I
     .locals 1
 
     .prologue
-    .line 42
+    .line 82
+    iget-object v0, p0, Lcom/google/zxing/Binarizer;->source:Lcom/google/zxing/LuminanceSource;
+
+    invoke-virtual {v0}, Lcom/google/zxing/LuminanceSource;->getHeight()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public final getLuminanceSource()Lcom/google/zxing/LuminanceSource;
+    .locals 1
+
+    .prologue
+    .line 39
     iget-object v0, p0, Lcom/google/zxing/Binarizer;->source:Lcom/google/zxing/LuminanceSource;
 
     return-object v0
+.end method
+
+.method public final getWidth()I
+    .locals 1
+
+    .prologue
+    .line 78
+    iget-object v0, p0, Lcom/google/zxing/Binarizer;->source:Lcom/google/zxing/LuminanceSource;
+
+    invoke-virtual {v0}, Lcom/google/zxing/LuminanceSource;->getWidth()I
+
+    move-result v0
+
+    return v0
 .end method

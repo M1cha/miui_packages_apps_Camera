@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/Camera$ImageSaver;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 1242
+    .line 1109
     iput-object p1, p0, Lcom/android/camera/Camera$ImageSaver$1;->this$1:Lcom/android/camera/Camera$ImageSaver;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 1245
+    .line 1112
     iget-object v0, p0, Lcom/android/camera/Camera$ImageSaver$1;->this$1:Lcom/android/camera/Camera$ImageSaver;
 
     iget-object v0, v0, Lcom/android/camera/Camera$ImageSaver;->this$0:Lcom/android/camera/Camera;
@@ -50,6 +49,6 @@
 
     invoke-virtual {v0}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
 
-    .line 1246
+    .line 1113
     return-void
 .end method

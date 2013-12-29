@@ -27,16 +27,16 @@
     .parameter "dataCodewords"
 
     .prologue
-    .line 232
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 223
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 233
+    .line 224
     iput p1, p0, Lcom/google/zxing/qrcode/decoder/Version$ECB;->count:I
 
-    .line 234
+    .line 225
     iput p2, p0, Lcom/google/zxing/qrcode/decoder/Version$ECB;->dataCodewords:I
 
-    .line 235
+    .line 226
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .locals 1
 
     .prologue
-    .line 238
+    .line 229
     iget v0, p0, Lcom/google/zxing/qrcode/decoder/Version$ECB;->count:I
 
     return v0
@@ -56,7 +56,7 @@
     .locals 1
 
     .prologue
-    .line 242
+    .line 233
     iget v0, p0, Lcom/google/zxing/qrcode/decoder/Version$ECB;->dataCodewords:I
 
     return v0

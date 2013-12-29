@@ -31,7 +31,13 @@
 
 .field public static final enum WEB_URL_APK:Lcom/android/zxing/QRCodeType;
 
+.field public static final enum WEB_URL_CLOUD_ALBUM:Lcom/android/zxing/QRCodeType;
+
+.field public static final enum WEB_URL_QQ:Lcom/android/zxing/QRCodeType;
+
 .field public static final enum WECHAT:Lcom/android/zxing/QRCodeType;
+
+.field public static final enum WIFI:Lcom/android/zxing/QRCodeType;
 
 
 # direct methods
@@ -52,45 +58,64 @@
     .line 6
     new-instance v0, Lcom/android/zxing/QRCodeType;
 
-    const-string v1, "VCARD"
+    const-string v1, "WECHAT"
 
     invoke-direct {v0, v1, v3}, Lcom/android/zxing/QRCodeType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/zxing/QRCodeType;->VCARD:Lcom/android/zxing/QRCodeType;
+    sput-object v0, Lcom/android/zxing/QRCodeType;->WECHAT:Lcom/android/zxing/QRCodeType;
 
     .line 7
     new-instance v0, Lcom/android/zxing/QRCodeType;
 
-    const-string v1, "WECHAT"
+    const-string v1, "WEB_URL_APK"
 
     invoke-direct {v0, v1, v4}, Lcom/android/zxing/QRCodeType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/zxing/QRCodeType;->WECHAT:Lcom/android/zxing/QRCodeType;
+    sput-object v0, Lcom/android/zxing/QRCodeType;->WEB_URL_APK:Lcom/android/zxing/QRCodeType;
+
+    new-instance v0, Lcom/android/zxing/QRCodeType;
+
+    const-string v1, "WEB_URL_QQ"
+
+    invoke-direct {v0, v1, v5}, Lcom/android/zxing/QRCodeType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/android/zxing/QRCodeType;->WEB_URL_QQ:Lcom/android/zxing/QRCodeType;
+
+    new-instance v0, Lcom/android/zxing/QRCodeType;
+
+    const-string v1, "WEB_URL_CLOUD_ALBUM"
+
+    invoke-direct {v0, v1, v6}, Lcom/android/zxing/QRCodeType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/android/zxing/QRCodeType;->WEB_URL_CLOUD_ALBUM:Lcom/android/zxing/QRCodeType;
 
     .line 8
     new-instance v0, Lcom/android/zxing/QRCodeType;
 
-    const-string v1, "WEB_URL_APK"
+    const-string v1, "WEB_URL"
 
-    invoke-direct {v0, v1, v5}, Lcom/android/zxing/QRCodeType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v7}, Lcom/android/zxing/QRCodeType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/android/zxing/QRCodeType;->WEB_URL_APK:Lcom/android/zxing/QRCodeType;
+    sput-object v0, Lcom/android/zxing/QRCodeType;->WEB_URL:Lcom/android/zxing/QRCodeType;
 
     .line 9
     new-instance v0, Lcom/android/zxing/QRCodeType;
 
-    const-string v1, "WEB_URL"
+    const-string v1, "WIFI"
 
-    invoke-direct {v0, v1, v6}, Lcom/android/zxing/QRCodeType;-><init>(Ljava/lang/String;I)V
+    const/4 v2, 0x5
 
-    sput-object v0, Lcom/android/zxing/QRCodeType;->WEB_URL:Lcom/android/zxing/QRCodeType;
+    invoke-direct {v0, v1, v2}, Lcom/android/zxing/QRCodeType;-><init>(Ljava/lang/String;I)V
 
-    .line 10
+    sput-object v0, Lcom/android/zxing/QRCodeType;->WIFI:Lcom/android/zxing/QRCodeType;
+
     new-instance v0, Lcom/android/zxing/QRCodeType;
 
     const-string v1, "MARKET"
 
-    invoke-direct {v0, v1, v7}, Lcom/android/zxing/QRCodeType;-><init>(Ljava/lang/String;I)V
+    const/4 v2, 0x6
+
+    invoke-direct {v0, v1, v2}, Lcom/android/zxing/QRCodeType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/android/zxing/QRCodeType;->MARKET:Lcom/android/zxing/QRCodeType;
 
@@ -98,72 +123,100 @@
 
     const-string v1, "MECARD"
 
-    const/4 v2, 0x5
+    const/4 v2, 0x7
 
     invoke-direct {v0, v1, v2}, Lcom/android/zxing/QRCodeType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/android/zxing/QRCodeType;->MECARD:Lcom/android/zxing/QRCodeType;
 
-    .line 11
+    new-instance v0, Lcom/android/zxing/QRCodeType;
+
+    const-string v1, "VCARD"
+
+    const/16 v2, 0x8
+
+    invoke-direct {v0, v1, v2}, Lcom/android/zxing/QRCodeType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/android/zxing/QRCodeType;->VCARD:Lcom/android/zxing/QRCodeType;
+
+    .line 10
     new-instance v0, Lcom/android/zxing/QRCodeType;
 
     const-string v1, "TEXT"
 
-    const/4 v2, 0x6
+    const/16 v2, 0x9
 
     invoke-direct {v0, v1, v2}, Lcom/android/zxing/QRCodeType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/android/zxing/QRCodeType;->TEXT:Lcom/android/zxing/QRCodeType;
 
-    .line 12
+    .line 11
     new-instance v0, Lcom/android/zxing/QRCodeType;
 
     const-string v1, "NONE"
 
-    const/4 v2, 0x7
+    const/16 v2, 0xa
 
     invoke-direct {v0, v1, v2}, Lcom/android/zxing/QRCodeType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/android/zxing/QRCodeType;->NONE:Lcom/android/zxing/QRCodeType;
 
     .line 5
-    const/16 v0, 0x8
+    const/16 v0, 0xb
 
     new-array v0, v0, [Lcom/android/zxing/QRCodeType;
 
-    sget-object v1, Lcom/android/zxing/QRCodeType;->VCARD:Lcom/android/zxing/QRCodeType;
+    sget-object v1, Lcom/android/zxing/QRCodeType;->WECHAT:Lcom/android/zxing/QRCodeType;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/android/zxing/QRCodeType;->WECHAT:Lcom/android/zxing/QRCodeType;
+    sget-object v1, Lcom/android/zxing/QRCodeType;->WEB_URL_APK:Lcom/android/zxing/QRCodeType;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/android/zxing/QRCodeType;->WEB_URL_APK:Lcom/android/zxing/QRCodeType;
+    sget-object v1, Lcom/android/zxing/QRCodeType;->WEB_URL_QQ:Lcom/android/zxing/QRCodeType;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/android/zxing/QRCodeType;->WEB_URL:Lcom/android/zxing/QRCodeType;
+    sget-object v1, Lcom/android/zxing/QRCodeType;->WEB_URL_CLOUD_ALBUM:Lcom/android/zxing/QRCodeType;
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/android/zxing/QRCodeType;->MARKET:Lcom/android/zxing/QRCodeType;
+    sget-object v1, Lcom/android/zxing/QRCodeType;->WEB_URL:Lcom/android/zxing/QRCodeType;
 
     aput-object v1, v0, v7
 
     const/4 v1, 0x5
 
-    sget-object v2, Lcom/android/zxing/QRCodeType;->MECARD:Lcom/android/zxing/QRCodeType;
+    sget-object v2, Lcom/android/zxing/QRCodeType;->WIFI:Lcom/android/zxing/QRCodeType;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    sget-object v2, Lcom/android/zxing/QRCodeType;->TEXT:Lcom/android/zxing/QRCodeType;
+    sget-object v2, Lcom/android/zxing/QRCodeType;->MARKET:Lcom/android/zxing/QRCodeType;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
+
+    sget-object v2, Lcom/android/zxing/QRCodeType;->MECARD:Lcom/android/zxing/QRCodeType;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
+
+    sget-object v2, Lcom/android/zxing/QRCodeType;->VCARD:Lcom/android/zxing/QRCodeType;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x9
+
+    sget-object v2, Lcom/android/zxing/QRCodeType;->TEXT:Lcom/android/zxing/QRCodeType;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xa
 
     sget-object v2, Lcom/android/zxing/QRCodeType;->NONE:Lcom/android/zxing/QRCodeType;
 
@@ -176,8 +229,6 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
-    .parameter
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -193,7 +244,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/zxing/QRCodeType;
     .locals 1
-    .parameter
 
     .prologue
     .line 5
@@ -215,7 +265,7 @@
     .line 5
     sget-object v0, Lcom/android/zxing/QRCodeType;->$VALUES:[Lcom/android/zxing/QRCodeType;
 
-    invoke-virtual {v0}, [Lcom/android/zxing/QRCodeType;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

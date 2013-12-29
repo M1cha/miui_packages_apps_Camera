@@ -107,7 +107,7 @@
     iput-object p1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
     .line 33
-    invoke-virtual {p0}, Lcom/android/camera/ui/HorizontalSettingPopup;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -115,7 +115,7 @@
     .local v0, context:Landroid/content/Context;
     iget-object v8, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v8}, Lcom/android/camera/IconListPreference;->getEntries()[Ljava/lang/CharSequence;
+    invoke-virtual {v8}, Lcom/android/camera/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v1
 
@@ -149,7 +149,7 @@
 
     iget-object v9, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v9}, Lcom/android/camera/IconListPreference;->getTitle()Ljava/lang/String;
+    invoke-virtual {v9}, Lcom/android/camera/CameraPreference;->getTitle()Ljava/lang/String;
 
     move-result-object v9
 
@@ -231,7 +231,7 @@
     .line 51
     iget-object v8, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mViewContainer:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v8, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v8, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 52
     new-instance v8, Ljava/lang/Integer;
@@ -276,7 +276,7 @@
     .line 73
     const v0, 0x7f0c000b
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/HorizontalSettingPopup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -287,7 +287,7 @@
     .line 74
     const v0, 0x7f0c000a
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/HorizontalSettingPopup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -320,7 +320,7 @@
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v0, p3}, Lcom/android/camera/IconListPreference;->setValueIndex(I)V
+    invoke-virtual {v0, p3}, Lcom/android/camera/ListPreference;->setValueIndex(I)V
 
     .line 121
     iget-object v0, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mListener:Lcom/android/camera/ui/AbstractSettingPopup$Listener;
@@ -343,7 +343,7 @@
     .line 86
     iget-object v1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->getValue()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
@@ -373,7 +373,7 @@
     :cond_1
     iget-object v1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1, v0}, Lcom/android/camera/IconListPreference;->findIndexOfValue(Ljava/lang/String;)I
+    invoke-virtual {v1, v0}, Lcom/android/camera/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
 
     move-result v1
 
@@ -415,54 +415,9 @@
     .line 98
     iget-object v1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->print()V
+    invoke-virtual {v1}, Lcom/android/camera/ListPreference;->print()V
 
     goto :goto_0
-.end method
-
-.method public reloadPreference(Ljava/lang/String;)V
-    .locals 2
-    .parameter "value"
-
-    .prologue
-    .line 103
-    iget-object v0, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
-
-    invoke-virtual {v0, p1}, Lcom/android/camera/IconListPreference;->findIndexOfValue(Ljava/lang/String;)I
-
-    move-result v0
-
-    iput v0, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mSelectedIndex:I
-
-    .line 104
-    iget v0, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mSelectedIndex:I
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_0
-
-    .line 105
-    invoke-direct {p0}, Lcom/android/camera/ui/HorizontalSettingPopup;->clearViewBackground()V
-
-    .line 106
-    iget-object v0, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mViewList:[Landroid/view/View;
-
-    iget v1, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mSelectedIndex:I
-
-    aget-object v0, v0, v1
-
-    const v1, 0x7f020022
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
-
-    .line 108
-    iget-object v0, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
-
-    invoke-virtual {v0, p1}, Lcom/android/camera/IconListPreference;->setValue(Ljava/lang/String;)V
-
-    .line 110
-    :cond_0
-    return-void
 .end method
 
 .method public scrollToChecked()V
@@ -490,7 +445,7 @@
     .local v0, right:I
     iget-object v2, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mHorizontalScrollView:Landroid/widget/HorizontalScrollView;
 
-    invoke-virtual {v2}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
 
     move-result v2
 
@@ -498,7 +453,7 @@
 
     iget-object v2, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mHorizontalScrollView:Landroid/widget/HorizontalScrollView;
 
-    invoke-virtual {v2}, Landroid/widget/HorizontalScrollView;->getWidth()I
+    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
 
     move-result v2
 
@@ -509,7 +464,7 @@
     :cond_0
     iget-object v2, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mHorizontalScrollView:Landroid/widget/HorizontalScrollView;
 
-    invoke-virtual {v2, v1}, Landroid/widget/HorizontalScrollView;->setScrollX(I)V
+    invoke-virtual {v2, v1}, Landroid/view/View;->setScrollX(I)V
 
     .line 82
     return-void

@@ -27,15 +27,15 @@
     .parameter "state"
 
     .prologue
-    .line 285
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
     .line 286
-    iput-object p1, p0, Lcom/android/gallery3d/app/StateManager$StateEntry;->data:Landroid/os/Bundle;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 287
-    iput-object p2, p0, Lcom/android/gallery3d/app/StateManager$StateEntry;->activityState:Lcom/android/gallery3d/app/ActivityState;
+    iput-object p1, p0, Lcom/android/gallery3d/app/StateManager$StateEntry;->data:Landroid/os/Bundle;
 
     .line 288
+    iput-object p2, p0, Lcom/android/gallery3d/app/StateManager$StateEntry;->activityState:Lcom/android/gallery3d/app/ActivityState;
+
+    .line 289
     return-void
 .end method

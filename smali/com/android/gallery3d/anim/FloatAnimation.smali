@@ -32,7 +32,7 @@
     iput p1, p0, Lcom/android/gallery3d/anim/FloatAnimation;->mCurrent:F
 
     .line 29
-    invoke-virtual {p0, p3}, Lcom/android/gallery3d/anim/FloatAnimation;->setDuration(I)V
+    invoke-virtual {p0, p3}, Lcom/android/gallery3d/anim/Animation;->setDuration(I)V
 
     .line 30
     return-void

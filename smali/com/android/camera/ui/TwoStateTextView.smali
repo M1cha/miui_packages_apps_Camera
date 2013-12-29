@@ -68,7 +68,7 @@
     .line 24
     const/high16 v0, 0x3f80
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/TwoStateTextView;->setAlpha(F)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
 
     .line 29
     :cond_0
@@ -79,7 +79,7 @@
     :cond_1
     const v0, 0x3ecccccd
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/TwoStateTextView;->setAlpha(F)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
 
     goto :goto_0
 .end method

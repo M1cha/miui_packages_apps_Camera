@@ -21,10 +21,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ActivityBase;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 186
+    .line 182
     iput-object p1, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,19 +39,19 @@
     .parameter "intent"
 
     .prologue
-    .line 189
+    .line 185
     iget-object v0, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
 
     iget-boolean v0, v0, Lcom/android/camera/ActivityBase;->mShowCameraAppView:Z
 
     if-eqz v0, :cond_0
 
-    .line 190
+    .line 186
     iget-object v0, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->getLastThumbnailUncached()V
 
-    .line 194
+    .line 190
     :goto_0
     iget-object v0, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
 
@@ -60,10 +59,10 @@
 
     invoke-virtual {v0}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
 
-    .line 195
+    .line 191
     return-void
 
-    .line 192
+    .line 188
     :cond_0
     iget-object v0, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
 

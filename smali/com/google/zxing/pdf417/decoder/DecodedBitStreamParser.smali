@@ -3,8 +3,17 @@
 .source "DecodedBitStreamParser.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$1;,
+        Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
+    }
+.end annotation
+
+
 # static fields
-.field private static final EXP900:[Ljava/lang/String;
+.field private static final EXP900:[Ljava/math/BigInteger;
 
 .field private static final MIXED_CHARS:[C
 
@@ -13,135 +22,94 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 5
 
     .prologue
-    .line 53
-    const/16 v0, 0x1d
+    .line 61
+    const/16 v2, 0x1d
 
-    new-array v0, v0, [C
+    new-array v2, v2, [C
 
-    fill-array-data v0, :array_0
+    fill-array-data v2, :array_0
 
-    sput-object v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->PUNCT_CHARS:[C
+    sput-object v2, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->PUNCT_CHARS:[C
 
-    .line 57
-    const/16 v0, 0x19
+    .line 66
+    const/16 v2, 0x19
 
-    new-array v0, v0, [C
+    new-array v2, v2, [C
 
-    fill-array-data v0, :array_1
+    fill-array-data v2, :array_1
 
-    sput-object v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->MIXED_CHARS:[C
+    sput-object v2, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->MIXED_CHARS:[C
 
-    .line 63
-    const/16 v0, 0x10
+    .line 77
+    const/16 v2, 0x10
 
-    new-array v0, v0, [Ljava/lang/String;
+    new-array v2, v2, [Ljava/math/BigInteger;
 
-    const/4 v1, 0x0
+    sput-object v2, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->EXP900:[Ljava/math/BigInteger;
 
-    const-string v2, "000000000000000000000000000000000000000000001"
+    .line 78
+    sget-object v2, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->EXP900:[Ljava/math/BigInteger;
 
-    aput-object v2, v0, v1
+    const/4 v3, 0x0
 
-    const/4 v1, 0x1
+    sget-object v4, Ljava/math/BigInteger;->ONE:Ljava/math/BigInteger;
 
-    const-string v2, "000000000000000000000000000000000000000000900"
+    aput-object v4, v2, v3
 
-    aput-object v2, v0, v1
+    .line 79
+    const-wide/16 v2, 0x384
 
-    const/4 v1, 0x2
+    invoke-static {v2, v3}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
-    const-string v2, "000000000000000000000000000000000000000810000"
+    move-result-object v1
 
-    aput-object v2, v0, v1
+    .line 80
+    .local v1, nineHundred:Ljava/math/BigInteger;
+    sget-object v2, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->EXP900:[Ljava/math/BigInteger;
 
-    const/4 v1, 0x3
+    const/4 v3, 0x1
 
-    const-string v2, "000000000000000000000000000000000000729000000"
+    aput-object v1, v2, v3
 
-    aput-object v2, v0, v1
+    .line 81
+    const/4 v0, 0x2
 
-    const/4 v1, 0x4
+    .local v0, i:I
+    :goto_0
+    sget-object v2, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->EXP900:[Ljava/math/BigInteger;
 
-    const-string v2, "000000000000000000000000000000000656100000000"
+    array-length v2, v2
 
-    aput-object v2, v0, v1
+    if-ge v0, v2, :cond_0
 
-    const/4 v1, 0x5
+    .line 82
+    sget-object v2, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->EXP900:[Ljava/math/BigInteger;
 
-    const-string v2, "000000000000000000000000000000590490000000000"
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->EXP900:[Ljava/math/BigInteger;
 
-    aput-object v2, v0, v1
+    add-int/lit8 v4, v0, -0x1
 
-    const/4 v1, 0x6
+    aget-object v3, v3, v4
 
-    const-string v2, "000000000000000000000000000531441000000000000"
+    invoke-virtual {v3, v1}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-    aput-object v2, v0, v1
+    move-result-object v3
 
-    const/4 v1, 0x7
+    aput-object v3, v2, v0
 
-    const-string v2, "000000000000000000000000478296900000000000000"
+    .line 81
+    add-int/lit8 v0, v0, 0x1
 
-    aput-object v2, v0, v1
+    goto :goto_0
 
-    const/16 v1, 0x8
-
-    const-string v2, "000000000000000000000430467210000000000000000"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x9
-
-    const-string v2, "000000000000000000387420489000000000000000000"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xa
-
-    const-string v2, "000000000000000348678440100000000000000000000"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xb
-
-    const-string v2, "000000000000313810596090000000000000000000000"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xc
-
-    const-string v2, "000000000282429536481000000000000000000000000"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xd
-
-    const-string v2, "000000254186582832900000000000000000000000000"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xe
-
-    const-string v2, "000228767924549610000000000000000000000000000"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xf
-
-    const-string v2, "205891132094649000000000000000000000000000000"
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->EXP900:[Ljava/lang/String;
-
+    .line 84
+    :cond_0
     return-void
 
-    .line 53
-    nop
-
+    .line 61
     :array_0
     .array-data 0x2
         0x3bt 0x0t
@@ -175,7 +143,7 @@
         0x27t 0x0t
     .end array-data
 
-    .line 57
+    .line 66
     nop
 
     :array_1
@@ -212,598 +180,432 @@
     .locals 0
 
     .prologue
-    .line 81
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 88
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 82
+    .line 89
     return-void
 .end method
 
-.method private static add(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuffer;
-    .locals 11
-    .parameter "value1"
-    .parameter "value2"
-
-    .prologue
-    const/4 v8, 0x5
-
-    const/4 v10, 0x0
-
-    .line 582
-    new-instance v6, Ljava/lang/StringBuffer;
-
-    invoke-direct {v6, v8}, Ljava/lang/StringBuffer;-><init>(I)V
-
-    .line 583
-    .local v6, temp1:Ljava/lang/StringBuffer;
-    new-instance v7, Ljava/lang/StringBuffer;
-
-    invoke-direct {v7, v8}, Ljava/lang/StringBuffer;-><init>(I)V
-
-    .line 584
-    .local v7, temp2:Ljava/lang/StringBuffer;
-    new-instance v4, Ljava/lang/StringBuffer;
-
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v8
-
-    invoke-direct {v4, v8}, Ljava/lang/StringBuffer;-><init>(I)V
-
-    .line 585
-    .local v4, result:Ljava/lang/StringBuffer;
-    const/4 v1, 0x0
-
-    .local v1, i:I
-    :goto_0
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v8
-
-    if-ge v1, v8, :cond_0
-
-    .line 587
-    const/16 v8, 0x30
-
-    invoke-virtual {v4, v8}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    .line 585
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    .line 589
-    :cond_0
-    const/4 v0, 0x0
-
-    .line 590
-    .local v0, carry:I
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v8
-
-    add-int/lit8 v1, v8, -0x3
-
-    :goto_1
-    const/4 v8, -0x1
-
-    if-le v1, v8, :cond_1
-
-    .line 592
-    invoke-virtual {v6, v10}, Ljava/lang/StringBuffer;->setLength(I)V
-
-    .line 593
-    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v8
-
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    .line 594
-    add-int/lit8 v8, v1, 0x1
-
-    invoke-virtual {p0, v8}, Ljava/lang/String;->charAt(I)C
-
-    move-result v8
-
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    .line 595
-    add-int/lit8 v8, v1, 0x2
-
-    invoke-virtual {p0, v8}, Ljava/lang/String;->charAt(I)C
-
-    move-result v8
-
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    .line 597
-    invoke-virtual {v7, v10}, Ljava/lang/StringBuffer;->setLength(I)V
-
-    .line 598
-    invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    .line 599
-    add-int/lit8 v8, v1, 0x1
-
-    invoke-virtual {p1, v8}, Ljava/lang/String;->charAt(I)C
-
-    move-result v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    .line 600
-    add-int/lit8 v8, v1, 0x2
-
-    invoke-virtual {p1, v8}, Ljava/lang/String;->charAt(I)C
-
-    move-result v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    .line 602
-    invoke-virtual {v6}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v2
-
-    .line 603
-    .local v2, intValue1:I
-    invoke-virtual {v7}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v3
-
-    .line 605
-    .local v3, intValue2:I
-    add-int v8, v2, v3
-
-    add-int/2addr v8, v0
-
-    rem-int/lit16 v5, v8, 0x3e8
-
-    .line 606
-    .local v5, sumval:I
-    add-int v8, v2, v3
-
-    add-int/2addr v8, v0
-
-    div-int/lit16 v0, v8, 0x3e8
-
-    .line 608
-    add-int/lit8 v8, v1, 0x2
-
-    rem-int/lit8 v9, v5, 0xa
-
-    add-int/lit8 v9, v9, 0x30
-
-    int-to-char v9, v9
-
-    invoke-virtual {v4, v8, v9}, Ljava/lang/StringBuffer;->setCharAt(IC)V
-
-    .line 609
-    add-int/lit8 v8, v1, 0x1
-
-    div-int/lit8 v9, v5, 0xa
-
-    rem-int/lit8 v9, v9, 0xa
-
-    add-int/lit8 v9, v9, 0x30
-
-    int-to-char v9, v9
-
-    invoke-virtual {v4, v8, v9}, Ljava/lang/StringBuffer;->setCharAt(IC)V
-
-    .line 610
-    div-int/lit8 v8, v5, 0x64
-
-    add-int/lit8 v8, v8, 0x30
-
-    int-to-char v8, v8
-
-    invoke-virtual {v4, v1, v8}, Ljava/lang/StringBuffer;->setCharAt(IC)V
-
-    .line 590
-    add-int/lit8 v1, v1, -0x3
-
-    goto :goto_1
-
-    .line 612
-    .end local v2           #intValue1:I
-    .end local v3           #intValue2:I
-    .end local v5           #sumval:I
-    :cond_1
-    return-object v4
-.end method
-
-.method private static byteCompaction(I[IILjava/lang/StringBuffer;)I
-    .locals 15
+.method private static byteCompaction(I[IILjava/lang/StringBuilder;)I
+    .locals 17
     .parameter "mode"
     .parameter "codewords"
     .parameter "codeIndex"
     .parameter "result"
 
     .prologue
-    .line 336
-    const/16 v11, 0x385
+    .line 433
+    const/16 v13, 0x385
 
-    if-ne p0, v11, :cond_5
+    move/from16 v0, p0
 
-    .line 339
+    if-ne v0, v13, :cond_5
+
+    .line 436
     const/4 v4, 0x0
 
-    .line 340
+    .line 437
     .local v4, count:I
-    const-wide/16 v9, 0x0
+    const-wide/16 v11, 0x0
 
-    .line 341
-    .local v9, value:J
-    const/4 v11, 0x6
+    .line 438
+    .local v11, value:J
+    const/4 v13, 0x6
 
-    new-array v5, v11, [C
+    new-array v6, v13, [C
 
-    .line 342
-    .local v5, decodedData:[C
-    const/4 v11, 0x6
+    .line 439
+    .local v6, decodedData:[C
+    const/4 v13, 0x6
 
-    new-array v1, v11, [I
+    new-array v1, v13, [I
 
-    .line 343
+    .line 440
     .local v1, byteCompactedCodewords:[I
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    .line 344
-    .local v6, end:Z
-    :cond_0
-    :goto_0
-    const/4 v11, 0x0
-
-    aget v11, p1, v11
-
-    move/from16 v0, p2
-
-    if-ge v0, v11, :cond_4
-
-    if-nez v6, :cond_4
-
-    .line 345
+    .line 441
+    .local v7, end:Z
     add-int/lit8 v3, p2, 0x1
 
     .end local p2
     .local v3, codeIndex:I
-    aget v2, p1, p2
+    aget v10, p1, p2
 
-    .line 346
-    .local v2, code:I
-    const/16 v11, 0x384
-
-    if-ge v2, v11, :cond_1
-
-    .line 347
-    aput v2, v1, v4
-
-    .line 348
-    add-int/lit8 v4, v4, 0x1
-
-    .line 350
-    const-wide/16 v11, 0x384
-
-    mul-long/2addr v11, v9
-
-    int-to-long v13, v2
-
-    add-long v9, v11, v13
-
+    .local v10, nextCode:I
     move/from16 p2, v3
 
-    .line 363
+    .line 442
     .end local v3           #codeIndex:I
     .restart local p2
+    :goto_0
+    const/4 v13, 0x0
+
+    aget v13, p1, v13
+
+    move/from16 v0, p2
+
+    if-ge v0, v13, :cond_3
+
+    if-nez v7, :cond_3
+
+    .line 443
+    add-int/lit8 v5, v4, 0x1
+
+    .end local v4           #count:I
+    .local v5, count:I
+    aput v10, v1, v4
+
+    .line 445
+    const-wide/16 v13, 0x384
+
+    mul-long/2addr v13, v11
+
+    int-to-long v15, v10
+
+    add-long v11, v13, v15
+
+    .line 446
+    add-int/lit8 v3, p2, 0x1
+
+    .end local p2
+    .restart local v3       #codeIndex:I
+    aget v10, p1, p2
+
+    .line 448
+    const/16 v13, 0x384
+
+    if-eq v10, v13, :cond_0
+
+    const/16 v13, 0x385
+
+    if-eq v10, v13, :cond_0
+
+    const/16 v13, 0x386
+
+    if-eq v10, v13, :cond_0
+
+    const/16 v13, 0x39c
+
+    if-eq v10, v13, :cond_0
+
+    const/16 v13, 0x3a0
+
+    if-eq v10, v13, :cond_0
+
+    const/16 v13, 0x39b
+
+    if-eq v10, v13, :cond_0
+
+    const/16 v13, 0x39a
+
+    if-ne v10, v13, :cond_1
+
+    .line 455
+    :cond_0
+    add-int/lit8 p2, v3, -0x1
+
+    .line 456
+    .end local v3           #codeIndex:I
+    .restart local p2
+    const/4 v7, 0x1
+
+    move v4, v5
+
+    .end local v5           #count:I
+    .restart local v4       #count:I
+    goto :goto_0
+
+    .line 458
+    .end local v4           #count:I
+    .end local p2
+    .restart local v3       #codeIndex:I
+    .restart local v5       #count:I
+    :cond_1
+    rem-int/lit8 v13, v5, 0x5
+
+    if-nez v13, :cond_c
+
+    if-lez v5, :cond_c
+
+    .line 461
+    const/4 v9, 0x0
+
+    .local v9, j:I
     :goto_1
-    rem-int/lit8 v11, v4, 0x5
+    const/4 v13, 0x6
 
-    if-nez v11, :cond_0
+    if-ge v9, v13, :cond_2
 
-    if-lez v4, :cond_0
+    .line 462
+    rsub-int/lit8 v13, v9, 0x5
 
-    .line 366
+    const-wide/16 v14, 0x100
+
+    rem-long v14, v11, v14
+
+    long-to-int v14, v14
+
+    int-to-char v14, v14
+
+    aput-char v14, v6, v13
+
+    .line 463
+    const/16 v13, 0x8
+
+    shr-long/2addr v11, v13
+
+    .line 461
+    add-int/lit8 v9, v9, 0x1
+
+    goto :goto_1
+
+    .line 465
+    :cond_2
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append([C)Ljava/lang/StringBuilder;
+
+    .line 466
+    const/4 v4, 0x0
+
+    .end local v5           #count:I
+    .restart local v4       #count:I
+    move/from16 p2, v3
+
+    .end local v3           #codeIndex:I
+    .restart local p2
+    goto :goto_0
+
+    .line 472
+    .end local v9           #j:I
+    :cond_3
+    const/4 v13, 0x0
+
+    aget v13, p1, v13
+
+    move/from16 v0, p2
+
+    if-ne v0, v13, :cond_4
+
+    const/16 v13, 0x384
+
+    if-ge v10, v13, :cond_4
+
+    .line 473
+    add-int/lit8 v5, v4, 0x1
+
+    .end local v4           #count:I
+    .restart local v5       #count:I
+    aput v10, v1, v4
+
+    move v4, v5
+
+    .line 479
+    .end local v5           #count:I
+    .restart local v4       #count:I
+    :cond_4
     const/4 v8, 0x0
 
-    .local v8, j:I
+    .local v8, i:I
     :goto_2
-    const/4 v11, 0x6
+    if-ge v8, v4, :cond_a
 
-    if-ge v8, v11, :cond_3
+    .line 480
+    aget v13, v1, v8
 
-    .line 367
-    rsub-int/lit8 v11, v8, 0x5
+    int-to-char v13, v13
 
-    const-wide/16 v12, 0x100
+    move-object/from16 v0, p3
 
-    rem-long v12, v9, v12
+    invoke-virtual {v0, v13}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    long-to-int v12, v12
-
-    int-to-char v12, v12
-
-    aput-char v12, v5, v11
-
-    .line 368
-    const/16 v11, 0x8
-
-    shr-long/2addr v9, v11
-
-    .line 366
+    .line 479
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_2
 
-    .line 352
-    .end local v8           #j:I
-    .end local p2
-    .restart local v3       #codeIndex:I
-    :cond_1
-    const/16 v11, 0x384
-
-    if-eq v2, v11, :cond_2
-
-    const/16 v11, 0x385
-
-    if-eq v2, v11, :cond_2
-
-    const/16 v11, 0x386
-
-    if-eq v2, v11, :cond_2
-
-    const/16 v11, 0x39c
-
-    if-eq v2, v11, :cond_2
-
-    const/16 v11, 0x3a0
-
-    if-eq v2, v11, :cond_2
-
-    const/16 v11, 0x39b
-
-    if-eq v2, v11, :cond_2
-
-    const/16 v11, 0x39a
-
-    if-ne v2, v11, :cond_c
-
-    .line 359
-    :cond_2
-    add-int/lit8 p2, v3, -0x1
-
-    .line 360
-    .end local v3           #codeIndex:I
-    .restart local p2
-    const/4 v6, 0x1
-
-    goto :goto_1
-
-    .line 370
-    .restart local v8       #j:I
-    :cond_3
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuffer;->append([C)Ljava/lang/StringBuffer;
-
-    .line 371
-    const/4 v4, 0x0
-
-    goto :goto_0
-
-    .line 377
-    .end local v2           #code:I
-    .end local v8           #j:I
-    :cond_4
-    div-int/lit8 v11, v4, 0x5
-
-    mul-int/lit8 v7, v11, 0x5
-
-    .local v7, i:I
-    :goto_3
-    if-ge v7, v4, :cond_a
-
-    .line 378
-    aget v11, v1, v7
-
-    int-to-char v11, v11
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v0, v11}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    .line 377
-    add-int/lit8 v7, v7, 0x1
-
-    goto :goto_3
-
-    .line 381
+    .line 483
     .end local v1           #byteCompactedCodewords:[I
     .end local v4           #count:I
-    .end local v5           #decodedData:[C
-    .end local v6           #end:Z
-    .end local v7           #i:I
-    .end local v9           #value:J
+    .end local v6           #decodedData:[C
+    .end local v7           #end:Z
+    .end local v8           #i:I
+    .end local v10           #nextCode:I
+    .end local v11           #value:J
     :cond_5
-    const/16 v11, 0x39c
+    const/16 v13, 0x39c
 
-    if-ne p0, v11, :cond_a
+    move/from16 v0, p0
 
-    .line 384
+    if-ne v0, v13, :cond_a
+
+    .line 486
     const/4 v4, 0x0
 
-    .line 385
+    .line 487
     .restart local v4       #count:I
-    const-wide/16 v9, 0x0
+    const-wide/16 v11, 0x0
 
-    .line 386
-    .restart local v9       #value:J
-    const/4 v6, 0x0
+    .line 488
+    .restart local v11       #value:J
+    const/4 v7, 0x0
 
-    .line 387
-    .restart local v6       #end:Z
+    .line 489
+    .restart local v7       #end:Z
     :cond_6
-    :goto_4
-    const/4 v11, 0x0
+    :goto_3
+    const/4 v13, 0x0
 
-    aget v11, p1, v11
+    aget v13, p1, v13
 
     move/from16 v0, p2
 
-    if-ge v0, v11, :cond_a
+    if-ge v0, v13, :cond_a
 
-    if-nez v6, :cond_a
+    if-nez v7, :cond_a
 
-    .line 388
+    .line 490
     add-int/lit8 v3, p2, 0x1
 
     .end local p2
     .restart local v3       #codeIndex:I
     aget v2, p1, p2
 
-    .line 389
-    .restart local v2       #code:I
-    const/16 v11, 0x384
+    .line 491
+    .local v2, code:I
+    const/16 v13, 0x384
 
-    if-ge v2, v11, :cond_7
+    if-ge v2, v13, :cond_7
 
-    .line 390
+    .line 492
     add-int/lit8 v4, v4, 0x1
 
-    .line 392
-    const-wide/16 v11, 0x384
+    .line 494
+    const-wide/16 v13, 0x384
 
-    mul-long/2addr v11, v9
+    mul-long/2addr v13, v11
 
-    int-to-long v13, v2
+    int-to-long v15, v2
 
-    add-long v9, v11, v13
+    add-long v11, v13, v15
 
     move/from16 p2, v3
 
-    .line 405
+    .line 507
     .end local v3           #codeIndex:I
     .restart local p2
-    :goto_5
-    rem-int/lit8 v11, v4, 0x5
+    :goto_4
+    rem-int/lit8 v13, v4, 0x5
 
-    if-nez v11, :cond_6
+    if-nez v13, :cond_6
 
     if-lez v4, :cond_6
 
-    .line 408
-    const/4 v11, 0x6
+    .line 510
+    const/4 v13, 0x6
 
-    new-array v5, v11, [C
+    new-array v6, v13, [C
 
-    .line 409
-    .restart local v5       #decodedData:[C
-    const/4 v8, 0x0
+    .line 511
+    .restart local v6       #decodedData:[C
+    const/4 v9, 0x0
 
-    .restart local v8       #j:I
-    :goto_6
-    const/4 v11, 0x6
+    .restart local v9       #j:I
+    :goto_5
+    const/4 v13, 0x6
 
-    if-ge v8, v11, :cond_9
+    if-ge v9, v13, :cond_9
 
-    .line 410
-    rsub-int/lit8 v11, v8, 0x5
+    .line 512
+    rsub-int/lit8 v13, v9, 0x5
 
-    const-wide/16 v12, 0xff
+    const-wide/16 v14, 0xff
 
-    and-long/2addr v12, v9
+    and-long/2addr v14, v11
 
-    long-to-int v12, v12
+    long-to-int v14, v14
 
-    int-to-char v12, v12
+    int-to-char v14, v14
 
-    aput-char v12, v5, v11
+    aput-char v14, v6, v13
 
-    .line 411
-    const/16 v11, 0x8
+    .line 513
+    const/16 v13, 0x8
 
-    shr-long/2addr v9, v11
+    shr-long/2addr v11, v13
 
-    .line 409
-    add-int/lit8 v8, v8, 0x1
-
-    goto :goto_6
-
-    .line 394
-    .end local v5           #decodedData:[C
-    .end local v8           #j:I
-    .end local p2
-    .restart local v3       #codeIndex:I
-    :cond_7
-    const/16 v11, 0x384
-
-    if-eq v2, v11, :cond_8
-
-    const/16 v11, 0x385
-
-    if-eq v2, v11, :cond_8
-
-    const/16 v11, 0x386
-
-    if-eq v2, v11, :cond_8
-
-    const/16 v11, 0x39c
-
-    if-eq v2, v11, :cond_8
-
-    const/16 v11, 0x3a0
-
-    if-eq v2, v11, :cond_8
-
-    const/16 v11, 0x39b
-
-    if-eq v2, v11, :cond_8
-
-    const/16 v11, 0x39a
-
-    if-ne v2, v11, :cond_b
-
-    .line 401
-    :cond_8
-    add-int/lit8 p2, v3, -0x1
-
-    .line 402
-    .end local v3           #codeIndex:I
-    .restart local p2
-    const/4 v6, 0x1
+    .line 511
+    add-int/lit8 v9, v9, 0x1
 
     goto :goto_5
 
-    .line 413
-    .restart local v5       #decodedData:[C
-    .restart local v8       #j:I
-    :cond_9
-    move-object/from16 v0, p3
+    .line 496
+    .end local v6           #decodedData:[C
+    .end local v9           #j:I
+    .end local p2
+    .restart local v3       #codeIndex:I
+    :cond_7
+    const/16 v13, 0x384
 
-    invoke-virtual {v0, v5}, Ljava/lang/StringBuffer;->append([C)Ljava/lang/StringBuffer;
+    if-eq v2, v13, :cond_8
+
+    const/16 v13, 0x385
+
+    if-eq v2, v13, :cond_8
+
+    const/16 v13, 0x386
+
+    if-eq v2, v13, :cond_8
+
+    const/16 v13, 0x39c
+
+    if-eq v2, v13, :cond_8
+
+    const/16 v13, 0x3a0
+
+    if-eq v2, v13, :cond_8
+
+    const/16 v13, 0x39b
+
+    if-eq v2, v13, :cond_8
+
+    const/16 v13, 0x39a
+
+    if-ne v2, v13, :cond_b
+
+    .line 503
+    :cond_8
+    add-int/lit8 p2, v3, -0x1
+
+    .line 504
+    .end local v3           #codeIndex:I
+    .restart local p2
+    const/4 v7, 0x1
 
     goto :goto_4
 
-    .line 417
+    .line 515
+    .restart local v6       #decodedData:[C
+    .restart local v9       #j:I
+    :cond_9
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append([C)Ljava/lang/StringBuilder;
+
+    .line 516
+    const/4 v4, 0x0
+
+    goto :goto_3
+
+    .line 520
     .end local v2           #code:I
     .end local v4           #count:I
-    .end local v5           #decodedData:[C
-    .end local v6           #end:Z
-    .end local v8           #j:I
-    .end local v9           #value:J
+    .end local v6           #decodedData:[C
+    .end local v7           #end:Z
+    .end local v9           #j:I
+    .end local v11           #value:J
     :cond_a
     return p2
 
@@ -811,30 +613,39 @@
     .restart local v2       #code:I
     .restart local v3       #codeIndex:I
     .restart local v4       #count:I
-    .restart local v6       #end:Z
-    .restart local v9       #value:J
+    .restart local v7       #end:Z
+    .restart local v11       #value:J
     :cond_b
     move/from16 p2, v3
 
     .end local v3           #codeIndex:I
     .restart local p2
-    goto :goto_5
+    goto :goto_4
 
+    .end local v2           #code:I
+    .end local v4           #count:I
     .end local p2
     .restart local v1       #byteCompactedCodewords:[I
     .restart local v3       #codeIndex:I
-    .restart local v5       #decodedData:[C
+    .restart local v5       #count:I
+    .restart local v6       #decodedData:[C
+    .restart local v10       #nextCode:I
     :cond_c
+    move v4, v5
+
+    .end local v5           #count:I
+    .restart local v4       #count:I
     move/from16 p2, v3
 
     .end local v3           #codeIndex:I
     .restart local p2
-    goto/16 :goto_1
+    goto/16 :goto_0
 .end method
 
-.method static decode([I)Lcom/google/zxing/common/DecoderResult;
-    .locals 7
+.method static decode([ILjava/lang/String;)Lcom/google/zxing/common/DecoderResult;
+    .locals 8
     .parameter "codewords"
+    .parameter "ecLevel"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -842,20 +653,22 @@
     .end annotation
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
-    .line 85
-    new-instance v3, Ljava/lang/StringBuffer;
+    .line 92
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    const/16 v4, 0x64
+    array-length v6, p0
 
-    invoke-direct {v3, v4}, Ljava/lang/StringBuffer;-><init>(I)V
+    mul-int/lit8 v6, v6, 0x2
 
-    .line 87
-    .local v3, result:Ljava/lang/StringBuffer;
+    invoke-direct {v4, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    .line 94
+    .local v4, result:Ljava/lang/StringBuilder;
     const/4 v1, 0x1
 
-    .line 88
+    .line 95
     .local v1, codeIndex:I
     add-int/lit8 v2, v1, 0x1
 
@@ -863,37 +676,43 @@
     .local v2, codeIndex:I
     aget v0, p0, v1
 
+    .line 96
     .local v0, code:I
+    new-instance v5, Lcom/google/zxing/pdf417/PDF417ResultMetadata;
+
+    invoke-direct {v5}, Lcom/google/zxing/pdf417/PDF417ResultMetadata;-><init>()V
+
+    .local v5, resultMetadata:Lcom/google/zxing/pdf417/PDF417ResultMetadata;
     move v1, v2
 
-    .line 89
+    .line 97
     .end local v2           #codeIndex:I
     .restart local v1       #codeIndex:I
     :goto_0
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
-    aget v4, p0, v4
+    aget v6, p0, v6
 
-    if-ge v1, v4, :cond_1
+    if-ge v1, v6, :cond_1
 
-    .line 90
+    .line 98
     sparse-switch v0, :sswitch_data_0
 
-    .line 115
+    .line 121
     add-int/lit8 v1, v1, -0x1
 
-    .line 116
-    invoke-static {p0, v1, v3}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->textCompaction([IILjava/lang/StringBuffer;)I
+    .line 122
+    invoke-static {p0, v1, v4}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->textCompaction([IILjava/lang/StringBuilder;)I
 
     move-result v1
 
-    .line 120
+    .line 125
     :goto_1
-    array-length v4, p0
+    array-length v6, p0
 
-    if-ge v1, v4, :cond_0
+    if-ge v1, v6, :cond_0
 
-    .line 121
+    .line 126
     add-int/lit8 v2, v1, 0x1
 
     .end local v1           #codeIndex:I
@@ -906,74 +725,101 @@
     .restart local v1       #codeIndex:I
     goto :goto_0
 
-    .line 92
-    :sswitch_0
-    invoke-static {p0, v1, v3}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->textCompaction([IILjava/lang/StringBuffer;)I
-
-    move-result v1
-
-    .line 93
-    goto :goto_1
-
-    .line 96
-    :sswitch_1
-    invoke-static {v0, p0, v1, v3}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->byteCompaction(I[IILjava/lang/StringBuffer;)I
-
-    move-result v1
-
-    .line 97
-    goto :goto_1
-
     .line 100
-    :sswitch_2
-    invoke-static {p0, v1, v3}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->numericCompaction([IILjava/lang/StringBuffer;)I
+    :sswitch_0
+    invoke-static {p0, v1, v4}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->textCompaction([IILjava/lang/StringBuilder;)I
 
     move-result v1
 
     .line 101
     goto :goto_1
 
-    .line 104
-    :sswitch_3
-    invoke-static {v0, p0, v1, v3}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->byteCompaction(I[IILjava/lang/StringBuffer;)I
+    .line 103
+    :sswitch_1
+    invoke-static {v0, p0, v1, v4}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->byteCompaction(I[IILjava/lang/StringBuilder;)I
 
     move-result v1
 
-    .line 105
+    .line 104
     goto :goto_1
 
-    .line 108
-    :sswitch_4
-    invoke-static {v0, p0, v1, v3}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->byteCompaction(I[IILjava/lang/StringBuffer;)I
+    .line 106
+    :sswitch_2
+    invoke-static {p0, v1, v4}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->numericCompaction([IILjava/lang/StringBuilder;)I
 
     move-result v1
+
+    .line 107
+    goto :goto_1
 
     .line 109
+    :sswitch_3
+    invoke-static {v0, p0, v1, v4}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->byteCompaction(I[IILjava/lang/StringBuilder;)I
+
+    move-result v1
+
+    .line 110
     goto :goto_1
 
-    .line 123
+    .line 112
+    :sswitch_4
+    invoke-static {v0, p0, v1, v4}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->byteCompaction(I[IILjava/lang/StringBuilder;)I
+
+    move-result v1
+
+    .line 113
+    goto :goto_1
+
+    .line 115
+    :sswitch_5
+    invoke-static {p0, v1, v5}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->decodeMacroBlock([IILcom/google/zxing/pdf417/PDF417ResultMetadata;)I
+
+    move-result v1
+
+    .line 116
+    goto :goto_1
+
+    .line 128
     :cond_0
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
-    move-result-object v4
+    move-result-object v6
 
-    throw v4
+    throw v6
 
-    .line 126
+    .line 131
     :cond_1
-    new-instance v4, Lcom/google/zxing/common/DecoderResult;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->length()I
 
-    invoke-virtual {v3}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    move-result v6
 
-    move-result-object v5
+    if-nez v6, :cond_2
 
-    invoke-direct {v4, v6, v5, v6, v6}, Lcom/google/zxing/common/DecoderResult;-><init>([BLjava/lang/String;Ljava/util/Vector;Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;)V
+    .line 132
+    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
-    return-object v4
+    move-result-object v6
 
-    .line 90
-    nop
+    throw v6
 
+    .line 134
+    :cond_2
+    new-instance v3, Lcom/google/zxing/common/DecoderResult;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-direct {v3, v7, v6, v7, p1}, Lcom/google/zxing/common/DecoderResult;-><init>([BLjava/lang/String;Ljava/util/List;Ljava/lang/String;)V
+
+    .line 135
+    .local v3, decoderResult:Lcom/google/zxing/common/DecoderResult;
+    invoke-virtual {v3, v5}, Lcom/google/zxing/common/DecoderResult;->setOther(Ljava/lang/Object;)V
+
+    .line 136
+    return-object v3
+
+    .line 98
     :sswitch_data_0
     .sparse-switch
         0x384 -> :sswitch_0
@@ -981,6 +827,7 @@
         0x386 -> :sswitch_2
         0x391 -> :sswitch_3
         0x39c -> :sswitch_4
+        0x3a0 -> :sswitch_5
     .end sparse-switch
 .end method
 
@@ -988,641 +835,793 @@
     .locals 6
     .parameter "codewords"
     .parameter "count"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/zxing/FormatException;
+        }
+    .end annotation
 
     .prologue
-    .line 516
+    .line 615
+    sget-object v1, Ljava/math/BigInteger;->ZERO:Ljava/math/BigInteger;
+
+    .line 616
+    .local v1, result:Ljava/math/BigInteger;
     const/4 v0, 0x0
 
-    .line 517
-    .local v0, accum:Ljava/lang/StringBuffer;
-    const/4 v1, 0x0
-
-    .local v1, i:I
+    .local v0, i:I
     :goto_0
-    if-ge v1, p1, :cond_1
+    if-ge v0, p1, :cond_0
 
-    .line 518
-    sget-object v4, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->EXP900:[Ljava/lang/String;
+    .line 617
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->EXP900:[Ljava/math/BigInteger;
 
-    sub-int v5, p1, v1
+    sub-int v4, p1, v0
 
-    add-int/lit8 v5, v5, -0x1
+    add-int/lit8 v4, v4, -0x1
 
-    aget-object v4, v4, v5
+    aget-object v3, v3, v4
 
-    aget v5, p0, v1
+    aget v4, p0, v0
 
-    invoke-static {v4, v5}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->multiply(Ljava/lang/String;I)Ljava/lang/StringBuffer;
+    int-to-long v4, v4
+
+    invoke-static {v4, v5}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     move-result-object v3
 
-    .line 519
-    .local v3, value:Ljava/lang/StringBuffer;
-    if-nez v0, :cond_0
+    invoke-virtual {v1, v3}, Ljava/math/BigInteger;->add(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-    .line 521
-    move-object v0, v3
+    move-result-object v1
 
-    .line 517
-    :goto_1
-    add-int/lit8 v1, v1, 0x1
+    .line 616
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 523
+    .line 619
     :cond_0
-    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/math/BigInteger;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v3}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    .line 620
+    .local v2, resultString:Ljava/lang/String;
+    const/4 v3, 0x0
 
-    move-result-object v5
+    invoke-virtual {v2, v3}, Ljava/lang/String;->charAt(I)C
 
-    invoke-static {v4, v5}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->add(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuffer;
+    move-result v3
 
-    move-result-object v0
+    const/16 v4, 0x31
 
-    goto :goto_1
+    if-eq v3, v4, :cond_1
 
-    .line 526
-    .end local v3           #value:Ljava/lang/StringBuffer;
+    .line 621
+    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
+
+    move-result-object v3
+
+    throw v3
+
+    .line 623
     :cond_1
-    const/4 v2, 0x0
+    const/4 v3, 0x1
 
-    .line 529
-    .local v2, result:Ljava/lang/String;
-    const/4 v1, 0x0
+    invoke-virtual {v2, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    :goto_2
-    invoke-virtual {v0}, Ljava/lang/StringBuffer;->length()I
+    move-result-object v3
 
-    move-result v4
-
-    if-ge v1, v4, :cond_2
-
-    .line 530
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->charAt(I)C
-
-    move-result v4
-
-    const/16 v5, 0x31
-
-    if-ne v4, v5, :cond_4
-
-    .line 532
-    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    add-int/lit8 v5, v1, 0x1
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 536
-    :cond_2
-    if-nez v2, :cond_3
-
-    .line 538
-    invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 540
-    :cond_3
-    return-object v2
-
-    .line 529
-    :cond_4
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_2
+    return-object v3
 .end method
 
-.method private static decodeTextCompaction([I[IILjava/lang/StringBuffer;)V
+.method private static decodeMacroBlock([IILcom/google/zxing/pdf417/PDF417ResultMetadata;)I
     .locals 11
+    .parameter "codewords"
+    .parameter "codeIndex"
+    .parameter "resultMetadata"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/zxing/FormatException;
+        }
+    .end annotation
+
+    .prologue
+    .line 141
+    add-int/lit8 v9, p1, 0x2
+
+    const/4 v10, 0x0
+
+    aget v10, p0, v10
+
+    if-le v9, v10, :cond_0
+
+    .line 143
+    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
+
+    move-result-object v9
+
+    throw v9
+
+    .line 145
+    :cond_0
+    const/4 v9, 0x2
+
+    new-array v8, v9, [I
+
+    .line 146
+    .local v8, segmentIndexArray:[I
+    const/4 v7, 0x0
+
+    .local v7, i:I
+    :goto_0
+    const/4 v9, 0x2
+
+    if-ge v7, v9, :cond_1
+
+    .line 147
+    aget v9, p0, p1
+
+    aput v9, v8, v7
+
+    .line 146
+    add-int/lit8 v7, v7, 0x1
+
+    add-int/lit8 p1, p1, 0x1
+
+    goto :goto_0
+
+    .line 149
+    :cond_1
+    const/4 v9, 0x2
+
+    invoke-static {v8, v9}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->decodeBase900toBase10([II)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v9
+
+    invoke-virtual {p2, v9}, Lcom/google/zxing/pdf417/PDF417ResultMetadata;->setSegmentIndex(I)V
+
+    .line 152
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 153
+    .local v6, fileId:Ljava/lang/StringBuilder;
+    invoke-static {p0, p1, v6}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->textCompaction([IILjava/lang/StringBuilder;)I
+
+    move-result p1
+
+    .line 154
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {p2, v9}, Lcom/google/zxing/pdf417/PDF417ResultMetadata;->setFileId(Ljava/lang/String;)V
+
+    .line 156
+    aget v9, p0, p1
+
+    const/16 v10, 0x39b
+
+    if-ne v9, v10, :cond_5
+
+    .line 157
+    add-int/lit8 p1, p1, 0x1
+
+    .line 158
+    const/4 v9, 0x0
+
+    aget v9, p0, v9
+
+    sub-int/2addr v9, p1
+
+    new-array v0, v9, [I
+
+    .line 159
+    .local v0, additionalOptionCodeWords:[I
+    const/4 v1, 0x0
+
+    .line 161
+    .local v1, additionalOptionCodeWordsIndex:I
+    const/4 v5, 0x0
+
+    .line 162
+    .local v5, end:Z
+    :goto_1
+    const/4 v9, 0x0
+
+    aget v9, p0, v9
+
+    if-ge p1, v9, :cond_3
+
+    if-nez v5, :cond_3
+
+    .line 163
+    add-int/lit8 v4, p1, 0x1
+
+    .end local p1
+    .local v4, codeIndex:I
+    aget v3, p0, p1
+
+    .line 164
+    .local v3, code:I
+    const/16 v9, 0x384
+
+    if-ge v3, v9, :cond_2
+
+    .line 165
+    add-int/lit8 v2, v1, 0x1
+
+    .end local v1           #additionalOptionCodeWordsIndex:I
+    .local v2, additionalOptionCodeWordsIndex:I
+    aput v3, v0, v1
+
+    move v1, v2
+
+    .end local v2           #additionalOptionCodeWordsIndex:I
+    .restart local v1       #additionalOptionCodeWordsIndex:I
+    move p1, v4
+
+    .end local v4           #codeIndex:I
+    .restart local p1
+    goto :goto_1
+
+    .line 167
+    .end local p1
+    .restart local v4       #codeIndex:I
+    :cond_2
+    packed-switch v3, :pswitch_data_0
+
+    .line 174
+    invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
+
+    move-result-object v9
+
+    throw v9
+
+    .line 169
+    :pswitch_0
+    const/4 v9, 0x1
+
+    invoke-virtual {p2, v9}, Lcom/google/zxing/pdf417/PDF417ResultMetadata;->setLastSegment(Z)V
+
+    .line 170
+    add-int/lit8 p1, v4, 0x1
+
+    .line 171
+    .end local v4           #codeIndex:I
+    .restart local p1
+    const/4 v5, 0x1
+
+    .line 172
+    goto :goto_1
+
+    .line 179
+    .end local v3           #code:I
+    :cond_3
+    invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([II)[I
+
+    move-result-object v9
+
+    invoke-virtual {p2, v9}, Lcom/google/zxing/pdf417/PDF417ResultMetadata;->setOptionalData([I)V
+
+    .line 185
+    .end local v0           #additionalOptionCodeWords:[I
+    .end local v1           #additionalOptionCodeWordsIndex:I
+    .end local v5           #end:Z
+    :cond_4
+    :goto_2
+    return p1
+
+    .line 180
+    :cond_5
+    aget v9, p0, p1
+
+    const/16 v10, 0x39a
+
+    if-ne v9, v10, :cond_4
+
+    .line 181
+    const/4 v9, 0x1
+
+    invoke-virtual {p2, v9}, Lcom/google/zxing/pdf417/PDF417ResultMetadata;->setLastSegment(Z)V
+
+    .line 182
+    add-int/lit8 p1, p1, 0x1
+
+    goto :goto_2
+
+    .line 167
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x39a
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method private static decodeTextCompaction([I[IILjava/lang/StringBuilder;)V
+    .locals 12
     .parameter "textCompactionData"
     .parameter "byteCompactionData"
     .parameter "length"
     .parameter "result"
 
     .prologue
-    const/16 v10, 0x19
+    const/16 v11, 0x1b
 
-    const/16 v9, 0x391
+    const/16 v10, 0x391
 
-    const/16 v8, 0x1c
+    const/16 v9, 0x384
+
+    const/16 v8, 0x1d
 
     const/16 v7, 0x1a
 
-    const/16 v6, 0x1d
+    .line 285
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
-    .line 218
-    const/4 v3, 0x0
+    .line 286
+    .local v3, subMode:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
+    sget-object v2, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
-    .line 219
-    .local v3, subMode:I
-    const/4 v2, 0x0
-
-    .line 220
-    .local v2, priorToShiftMode:I
+    .line 287
+    .local v2, priorToShiftMode:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
     const/4 v1, 0x0
 
-    .line 221
+    .line 288
     .local v1, i:I
     :goto_0
-    if-ge v1, p2, :cond_14
+    if-ge v1, p2, :cond_1d
 
-    .line 222
+    .line 289
     aget v4, p0, v1
 
-    .line 223
+    .line 290
     .local v4, subModeCh:I
     const/4 v0, 0x0
 
-    .line 224
+    .line 291
     .local v0, ch:C
-    packed-switch v3, :pswitch_data_0
+    sget-object v5, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$1;->$SwitchMap$com$google$zxing$pdf417$decoder$DecodedBitStreamParser$Mode:[I
 
-    .line 316
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v6
+
+    aget v5, v5, v6
+
+    packed-switch v5, :pswitch_data_0
+
+    .line 413
     :cond_0
     :goto_1
     if-eqz v0, :cond_1
 
-    .line 318
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    .line 415
+    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 320
+    .line 417
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
-    .line 321
+    .line 418
     goto :goto_0
 
-    .line 227
+    .line 294
     :pswitch_0
     if-ge v4, v7, :cond_2
 
-    .line 229
+    .line 296
     add-int/lit8 v5, v4, 0x41
 
     int-to-char v0, v5
 
     goto :goto_1
 
-    .line 231
+    .line 298
     :cond_2
     if-ne v4, v7, :cond_3
 
-    .line 232
+    .line 299
     const/16 v0, 0x20
 
     goto :goto_1
 
-    .line 233
+    .line 300
     :cond_3
-    const/16 v5, 0x1b
+    if-ne v4, v11, :cond_4
 
-    if-ne v4, v5, :cond_4
-
-    .line 234
-    const/4 v3, 0x1
+    .line 301
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->LOWER:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
     goto :goto_1
 
-    .line 235
+    .line 302
     :cond_4
-    if-ne v4, v8, :cond_5
+    const/16 v5, 0x1c
 
-    .line 236
-    const/4 v3, 0x2
+    if-ne v4, v5, :cond_5
+
+    .line 303
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->MIXED:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
     goto :goto_1
 
-    .line 237
+    .line 304
     :cond_5
-    if-ne v4, v6, :cond_6
+    if-ne v4, v8, :cond_6
 
-    .line 239
-    move v2, v3
+    .line 306
+    move-object v2, v3
 
-    .line 240
-    const/4 v3, 0x4
+    .line 307
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->PUNCT_SHIFT:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
     goto :goto_1
 
-    .line 241
+    .line 308
     :cond_6
-    if-ne v4, v9, :cond_0
+    if-ne v4, v10, :cond_7
 
-    .line 242
+    .line 309
     aget v5, p1, v1
 
     int-to-char v5, v5
 
-    invoke-virtual {p3, v5}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {p3, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_1
 
-    .line 249
-    :pswitch_1
-    if-ge v4, v7, :cond_7
+    .line 310
+    :cond_7
+    if-ne v4, v9, :cond_0
 
-    .line 250
+    .line 311
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
+
+    goto :goto_1
+
+    .line 318
+    :pswitch_1
+    if-ge v4, v7, :cond_8
+
+    .line 319
     add-int/lit8 v5, v4, 0x61
 
     int-to-char v0, v5
 
     goto :goto_1
 
-    .line 252
-    :cond_7
-    if-ne v4, v7, :cond_8
+    .line 321
+    :cond_8
+    if-ne v4, v7, :cond_9
 
-    .line 253
+    .line 322
     const/16 v0, 0x20
 
     goto :goto_1
 
-    .line 254
-    :cond_8
-    if-ne v4, v8, :cond_9
-
-    .line 255
-    const/4 v3, 0x0
-
-    goto :goto_1
-
-    .line 256
+    .line 323
     :cond_9
-    if-ne v4, v8, :cond_a
+    if-ne v4, v11, :cond_a
 
-    .line 257
-    const/4 v3, 0x2
+    .line 325
+    move-object v2, v3
+
+    .line 326
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA_SHIFT:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
     goto :goto_1
 
-    .line 258
+    .line 327
     :cond_a
-    if-ne v4, v6, :cond_b
+    const/16 v5, 0x1c
 
-    .line 260
-    move v2, v3
+    if-ne v4, v5, :cond_b
 
-    .line 261
-    const/4 v3, 0x4
+    .line 328
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->MIXED:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
     goto :goto_1
 
-    .line 262
+    .line 329
     :cond_b
-    if-ne v4, v9, :cond_0
+    if-ne v4, v8, :cond_c
 
-    .line 263
+    .line 331
+    move-object v2, v3
+
+    .line 332
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->PUNCT_SHIFT:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
+
+    goto :goto_1
+
+    .line 333
+    :cond_c
+    if-ne v4, v10, :cond_d
+
+    .line 334
     aget v5, p1, v1
 
     int-to-char v5, v5
 
-    invoke-virtual {p3, v5}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {p3, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_1
 
-    .line 270
-    :pswitch_2
-    if-ge v4, v10, :cond_c
+    .line 335
+    :cond_d
+    if-ne v4, v9, :cond_0
 
-    .line 271
+    .line 336
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
+
+    goto :goto_1
+
+    .line 343
+    :pswitch_2
+    const/16 v5, 0x19
+
+    if-ge v4, v5, :cond_e
+
+    .line 344
     sget-object v5, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->MIXED_CHARS:[C
 
     aget-char v0, v5, v4
 
     goto :goto_1
 
-    .line 273
-    :cond_c
-    if-ne v4, v10, :cond_d
+    .line 346
+    :cond_e
+    const/16 v5, 0x19
 
-    .line 274
-    const/4 v3, 0x3
+    if-ne v4, v5, :cond_f
+
+    .line 347
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->PUNCT:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
     goto :goto_1
 
-    .line 275
-    :cond_d
-    if-ne v4, v7, :cond_e
+    .line 348
+    :cond_f
+    if-ne v4, v7, :cond_10
 
-    .line 276
+    .line 349
     const/16 v0, 0x20
 
     goto :goto_1
 
-    .line 277
-    :cond_e
-    const/16 v5, 0x1b
-
-    if-eq v4, v5, :cond_0
-
-    .line 279
-    if-ne v4, v8, :cond_f
-
-    .line 280
-    const/4 v3, 0x0
-
-    goto :goto_1
-
-    .line 281
-    :cond_f
-    if-ne v4, v6, :cond_10
-
-    .line 283
-    move v2, v3
-
-    .line 284
-    const/4 v3, 0x4
-
-    goto :goto_1
-
-    .line 285
+    .line 350
     :cond_10
-    if-ne v4, v9, :cond_0
+    if-ne v4, v11, :cond_11
 
-    .line 286
-    aget v5, p1, v1
-
-    int-to-char v5, v5
-
-    invoke-virtual {p3, v5}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    .line 351
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->LOWER:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
     goto :goto_1
 
-    .line 293
-    :pswitch_3
-    if-ge v4, v6, :cond_11
-
-    .line 294
-    sget-object v5, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->PUNCT_CHARS:[C
-
-    aget-char v0, v5, v4
-
-    goto :goto_1
-
-    .line 296
+    .line 352
     :cond_11
-    if-ne v4, v6, :cond_12
+    const/16 v5, 0x1c
 
-    .line 297
-    const/4 v3, 0x0
+    if-ne v4, v5, :cond_12
+
+    .line 353
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
     goto :goto_1
 
-    .line 298
+    .line 354
     :cond_12
-    if-ne v4, v9, :cond_0
+    if-ne v4, v8, :cond_13
 
-    .line 299
+    .line 356
+    move-object v2, v3
+
+    .line 357
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->PUNCT_SHIFT:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
+
+    goto/16 :goto_1
+
+    .line 358
+    :cond_13
+    if-ne v4, v10, :cond_14
+
+    .line 359
     aget v5, p1, v1
 
     int-to-char v5, v5
 
-    invoke-virtual {p3, v5}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {p3, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto/16 :goto_1
 
-    .line 306
-    :pswitch_4
-    move v3, v2
+    .line 360
+    :cond_14
+    if-ne v4, v9, :cond_0
 
-    .line 307
-    if-ge v4, v6, :cond_13
+    .line 361
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
-    .line 308
+    goto/16 :goto_1
+
+    .line 368
+    :pswitch_3
+    if-ge v4, v8, :cond_15
+
+    .line 369
     sget-object v5, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->PUNCT_CHARS:[C
 
     aget-char v0, v5, v4
 
     goto/16 :goto_1
 
-    .line 310
-    :cond_13
-    if-ne v4, v6, :cond_0
+    .line 371
+    :cond_15
+    if-ne v4, v8, :cond_16
 
-    .line 311
-    const/4 v3, 0x0
+    .line 372
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
     goto/16 :goto_1
 
-    .line 322
+    .line 373
+    :cond_16
+    if-ne v4, v10, :cond_17
+
+    .line 374
+    aget v5, p1, v1
+
+    int-to-char v5, v5
+
+    invoke-virtual {p3, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto/16 :goto_1
+
+    .line 375
+    :cond_17
+    if-ne v4, v9, :cond_0
+
+    .line 376
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
+
+    goto/16 :goto_1
+
+    .line 383
+    :pswitch_4
+    move-object v3, v2
+
+    .line 384
+    if-ge v4, v7, :cond_18
+
+    .line 385
+    add-int/lit8 v5, v4, 0x41
+
+    int-to-char v0, v5
+
+    goto/16 :goto_1
+
+    .line 387
+    :cond_18
+    if-ne v4, v7, :cond_19
+
+    .line 388
+    const/16 v0, 0x20
+
+    goto/16 :goto_1
+
+    .line 389
+    :cond_19
+    if-ne v4, v9, :cond_0
+
+    .line 390
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
+
+    goto/16 :goto_1
+
+    .line 397
+    :pswitch_5
+    move-object v3, v2
+
+    .line 398
+    if-ge v4, v8, :cond_1a
+
+    .line 399
+    sget-object v5, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->PUNCT_CHARS:[C
+
+    aget-char v0, v5, v4
+
+    goto/16 :goto_1
+
+    .line 401
+    :cond_1a
+    if-ne v4, v8, :cond_1b
+
+    .line 402
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
+
+    goto/16 :goto_1
+
+    .line 403
+    :cond_1b
+    if-ne v4, v10, :cond_1c
+
+    .line 406
+    aget v5, p1, v1
+
+    int-to-char v5, v5
+
+    invoke-virtual {p3, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto/16 :goto_1
+
+    .line 407
+    :cond_1c
+    if-ne v4, v9, :cond_0
+
+    .line 408
+    sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
+
+    goto/16 :goto_1
+
+    .line 419
     .end local v0           #ch:C
     .end local v4           #subModeCh:I
-    :cond_14
+    :cond_1d
     return-void
 
-    .line 224
-    nop
-
+    .line 291
     :pswitch_data_0
-    .packed-switch 0x0
+    .packed-switch 0x1
         :pswitch_0
         :pswitch_1
         :pswitch_2
         :pswitch_3
         :pswitch_4
+        :pswitch_5
     .end packed-switch
 .end method
 
-.method private static multiply(Ljava/lang/String;I)Ljava/lang/StringBuffer;
-    .locals 10
-    .parameter "value1"
-    .parameter "value2"
-
-    .prologue
-    const/16 v9, 0x30
-
-    .line 551
-    new-instance v4, Ljava/lang/StringBuffer;
-
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v6
-
-    invoke-direct {v4, v6}, Ljava/lang/StringBuffer;-><init>(I)V
-
-    .line 552
-    .local v4, result:Ljava/lang/StringBuffer;
-    const/4 v1, 0x0
-
-    .local v1, i:I
-    :goto_0
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
-
-    move-result v6
-
-    if-ge v1, v6, :cond_0
-
-    .line 554
-    invoke-virtual {v4, v9}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    .line 552
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    .line 556
-    :cond_0
-    div-int/lit8 v0, p1, 0x64
-
-    .line 557
-    .local v0, hundreds:I
-    div-int/lit8 v6, p1, 0xa
-
-    rem-int/lit8 v5, v6, 0xa
-
-    .line 558
-    .local v5, tens:I
-    rem-int/lit8 v3, p1, 0xa
-
-    .line 560
-    .local v3, ones:I
-    const/4 v2, 0x0
-
-    .local v2, j:I
-    :goto_1
-    if-ge v2, v3, :cond_1
-
-    .line 561
-    invoke-virtual {v4}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v6, p0}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->add(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    move-result-object v4
-
-    .line 560
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
-
-    .line 564
-    :cond_1
-    const/4 v2, 0x0
-
-    :goto_2
-    if-ge v2, v5, :cond_2
-
-    .line 565
-    invoke-virtual {v4}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    new-instance v7, Ljava/lang/StringBuffer;
-
-    invoke-direct {v7}, Ljava/lang/StringBuffer;-><init>()V
-
-    invoke-virtual {v7, p0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    const/4 v8, 0x1
-
-    invoke-virtual {v7, v8}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->add(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    move-result-object v4
-
-    .line 564
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_2
-
-    .line 568
-    :cond_2
-    const/4 v2, 0x0
-
-    :goto_3
-    if-ge v2, v0, :cond_3
-
-    .line 569
-    invoke-virtual {v4}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    new-instance v7, Ljava/lang/StringBuffer;
-
-    invoke-direct {v7}, Ljava/lang/StringBuffer;-><init>()V
-
-    invoke-virtual {v7, p0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    move-result-object v7
-
-    const-string v8, "00"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    const/4 v8, 0x2
-
-    invoke-virtual {v7, v8}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->add(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    move-result-object v4
-
-    .line 568
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_3
-
-    .line 571
-    :cond_3
-    return-object v4
-.end method
-
-.method private static numericCompaction([IILjava/lang/StringBuffer;)I
+.method private static numericCompaction([IILjava/lang/StringBuilder;)I
     .locals 9
     .parameter "codewords"
     .parameter "codeIndex"
     .parameter "result"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lcom/google/zxing/FormatException;
+        }
+    .end annotation
 
     .prologue
     const/16 v8, 0x384
 
     const/4 v7, 0x0
 
-    .line 429
+    .line 532
     const/4 v2, 0x0
 
-    .line 430
+    .line 533
     .local v2, count:I
     const/4 v3, 0x0
 
-    .line 432
+    .line 535
     .local v3, end:Z
     const/16 v6, 0xf
 
     new-array v4, v6, [I
 
-    .line 434
+    .line 537
     .local v4, numericCodewords:[I
     :cond_0
     :goto_0
@@ -1632,35 +1631,35 @@
 
     if-nez v3, :cond_5
 
-    .line 435
+    .line 538
     add-int/lit8 v1, p1, 0x1
 
     .end local p1
     .local v1, codeIndex:I
     aget v0, p0, p1
 
-    .line 436
+    .line 539
     .local v0, code:I
     aget v6, p0, v7
 
     if-ne v1, v6, :cond_1
 
-    .line 437
+    .line 540
     const/4 v3, 0x1
 
-    .line 439
+    .line 542
     :cond_1
     if-ge v0, v8, :cond_3
 
-    .line 440
+    .line 543
     aput v0, v4, v2
 
-    .line 441
+    .line 544
     add-int/lit8 v2, v2, 0x1
 
     move p1, v1
 
-    .line 453
+    .line 556
     .end local v1           #codeIndex:I
     .restart local p1
     :goto_1
@@ -1674,22 +1673,22 @@
 
     if-eqz v3, :cond_0
 
-    .line 460
+    .line 563
     :cond_2
     invoke-static {v4, v2}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->decodeBase900toBase10([II)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 461
+    .line 564
     .local v5, s:Ljava/lang/String;
-    invoke-virtual {p2, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {p2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 462
+    .line 565
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 443
+    .line 546
     .end local v5           #s:Ljava/lang/String;
     .end local p1
     .restart local v1       #codeIndex:I
@@ -1716,18 +1715,18 @@
 
     if-ne v0, v6, :cond_6
 
-    .line 449
+    .line 552
     :cond_4
     add-int/lit8 p1, v1, -0x1
 
-    .line 450
+    .line 553
     .end local v1           #codeIndex:I
     .restart local p1
     const/4 v3, 0x1
 
     goto :goto_1
 
-    .line 465
+    .line 568
     .end local v0           #code:I
     :cond_5
     return p1
@@ -1743,73 +1742,77 @@
     goto :goto_1
 .end method
 
-.method private static textCompaction([IILjava/lang/StringBuffer;)I
-    .locals 9
+.method private static textCompaction([IILjava/lang/StringBuilder;)I
+    .locals 11
     .parameter "codewords"
     .parameter "codeIndex"
     .parameter "result"
 
     .prologue
-    const/4 v8, 0x0
+    const/16 v10, 0x384
 
-    .line 141
-    aget v6, p0, v8
+    const/4 v9, 0x0
 
-    shl-int/lit8 v6, v6, 0x1
+    .line 200
+    aget v7, p0, v9
 
-    new-array v5, v6, [I
+    sub-int/2addr v7, p1
 
-    .line 143
-    .local v5, textCompactionData:[I
-    aget v6, p0, v8
+    shl-int/lit8 v7, v7, 0x1
 
-    shl-int/lit8 v6, v6, 0x1
+    new-array v6, v7, [I
 
-    new-array v0, v6, [I
+    .line 202
+    .local v6, textCompactionData:[I
+    aget v7, p0, v9
 
-    .line 145
+    sub-int/2addr v7, p1
+
+    shl-int/lit8 v7, v7, 0x1
+
+    new-array v0, v7, [I
+
+    .line 204
     .local v0, byteCompactionData:[I
     const/4 v4, 0x0
 
-    .line 146
+    .line 205
     .local v4, index:I
     const/4 v3, 0x0
 
-    .line 147
+    .line 206
     .local v3, end:Z
     :goto_0
-    aget v6, p0, v8
+    aget v7, p0, v9
 
-    if-ge p1, v6, :cond_1
+    if-ge p1, v7, :cond_1
 
     if-nez v3, :cond_1
 
-    .line 148
+    .line 207
     add-int/lit8 v2, p1, 0x1
 
     .end local p1
     .local v2, codeIndex:I
     aget v1, p0, p1
 
-    .line 149
+    .line 208
     .local v1, code:I
-    const/16 v6, 0x384
+    if-ge v1, v10, :cond_0
 
-    if-ge v1, v6, :cond_0
+    .line 209
+    div-int/lit8 v7, v1, 0x1e
 
-    .line 150
-    div-int/lit8 v6, v1, 0x1e
+    aput v7, v6, v4
 
-    aput v6, v5, v4
+    .line 210
+    add-int/lit8 v7, v4, 0x1
 
-    .line 151
-    add-int/lit8 v6, v4, 0x1
+    rem-int/lit8 v8, v1, 0x1e
 
-    rem-int/lit8 v7, v1, 0x1e
+    aput v8, v6, v7
 
-    aput v7, v5, v6
-
-    .line 152
+    .line 211
     add-int/lit8 v4, v4, 0x2
 
     move p1, v2
@@ -1818,7 +1821,7 @@
     .restart local p1
     goto :goto_0
 
-    .line 154
+    .line 213
     .end local p1
     .restart local v2       #codeIndex:I
     :cond_0
@@ -1830,97 +1833,152 @@
     .restart local p1
     goto :goto_0
 
-    .line 156
+    .line 216
     .end local p1
     .restart local v2       #codeIndex:I
     :sswitch_0
-    add-int/lit8 p1, v2, -0x1
+    add-int/lit8 v5, v4, 0x1
 
-    .line 157
+    .end local v4           #index:I
+    .local v5, index:I
+    aput v10, v6, v4
+
+    move v4, v5
+
+    .end local v5           #index:I
+    .restart local v4       #index:I
+    move p1, v2
+
+    .line 217
     .end local v2           #codeIndex:I
     .restart local p1
-    const/4 v3, 0x1
-
-    .line 158
     goto :goto_0
 
-    .line 161
+    .line 219
     .end local p1
     .restart local v2       #codeIndex:I
     :sswitch_1
     add-int/lit8 p1, v2, -0x1
 
-    .line 162
+    .line 220
     .end local v2           #codeIndex:I
     .restart local p1
     const/4 v3, 0x1
 
-    .line 163
+    .line 221
     goto :goto_0
 
-    .line 166
+    .line 223
     .end local p1
     .restart local v2       #codeIndex:I
     :sswitch_2
     add-int/lit8 p1, v2, -0x1
 
-    .line 167
+    .line 224
     .end local v2           #codeIndex:I
     .restart local p1
     const/4 v3, 0x1
 
-    .line 168
+    .line 225
     goto :goto_0
 
-    .line 177
+    .line 227
     .end local p1
     .restart local v2       #codeIndex:I
     :sswitch_3
-    const/16 v6, 0x391
+    add-int/lit8 p1, v2, -0x1
 
-    aput v6, v5, v4
-
-    .line 178
-    aput v1, v0, v4
-
-    .line 179
-    add-int/lit8 v4, v4, 0x1
-
-    move p1, v2
-
-    .line 180
+    .line 228
     .end local v2           #codeIndex:I
     .restart local p1
+    const/4 v3, 0x1
+
+    .line 229
     goto :goto_0
 
-    .line 183
+    .line 231
     .end local p1
     .restart local v2       #codeIndex:I
     :sswitch_4
     add-int/lit8 p1, v2, -0x1
 
-    .line 184
+    .line 232
+    .end local v2           #codeIndex:I
+    .restart local p1
+    const/4 v3, 0x1
+
+    .line 233
+    goto :goto_0
+
+    .line 235
+    .end local p1
+    .restart local v2       #codeIndex:I
+    :sswitch_5
+    add-int/lit8 p1, v2, -0x1
+
+    .line 236
+    .end local v2           #codeIndex:I
+    .restart local p1
+    const/4 v3, 0x1
+
+    .line 237
+    goto :goto_0
+
+    .line 245
+    .end local p1
+    .restart local v2       #codeIndex:I
+    :sswitch_6
+    const/16 v7, 0x391
+
+    aput v7, v6, v4
+
+    .line 246
+    add-int/lit8 p1, v2, 0x1
+
+    .end local v2           #codeIndex:I
+    .restart local p1
+    aget v1, p0, v2
+
+    .line 247
+    aput v1, v0, v4
+
+    .line 248
+    add-int/lit8 v4, v4, 0x1
+
+    .line 249
+    goto :goto_0
+
+    .line 251
+    .end local p1
+    .restart local v2       #codeIndex:I
+    :sswitch_7
+    add-int/lit8 p1, v2, -0x1
+
+    .line 252
     .end local v2           #codeIndex:I
     .restart local p1
     const/4 v3, 0x1
 
     goto :goto_0
 
-    .line 190
+    .line 257
     .end local v1           #code:I
     :cond_1
-    invoke-static {v5, v0, v4, p2}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->decodeTextCompaction([I[IILjava/lang/StringBuffer;)V
+    invoke-static {v6, v0, v4, p2}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->decodeTextCompaction([I[IILjava/lang/StringBuilder;)V
 
-    .line 191
+    .line 258
     return p1
 
-    .line 154
+    .line 213
     :sswitch_data_0
     .sparse-switch
         0x384 -> :sswitch_0
         0x385 -> :sswitch_1
         0x386 -> :sswitch_2
-        0x391 -> :sswitch_3
-        0x39c -> :sswitch_4
+        0x391 -> :sswitch_6
+        0x39a -> :sswitch_5
+        0x39b -> :sswitch_4
+        0x39c -> :sswitch_7
+        0x3a0 -> :sswitch_3
     .end sparse-switch
 .end method

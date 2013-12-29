@@ -28,9 +28,6 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/data/FilterTypeSet;I[Lcom/android/gallery3d/data/Path;)V
     .locals 0
-    .parameter
-    .parameter
-    .parameter
 
     .prologue
     .line 102
@@ -40,7 +37,7 @@
 
     iput-object p3, p0, Lcom/android/gallery3d/data/FilterTypeSet$1;->val$buf:[Lcom/android/gallery3d/data/Path;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -54,7 +51,7 @@
 
     .prologue
     .line 104
-    invoke-virtual {p2}, Lcom/android/gallery3d/data/MediaItem;->getMediaType()I
+    invoke-virtual {p2}, Lcom/android/gallery3d/data/MediaObject;->getMediaType()I
 
     move-result v1
 
@@ -81,7 +78,7 @@
 
     .line 106
     :cond_1
-    invoke-virtual {p2}, Lcom/android/gallery3d/data/MediaItem;->getPath()Lcom/android/gallery3d/data/Path;
+    invoke-virtual {p2}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v0
 

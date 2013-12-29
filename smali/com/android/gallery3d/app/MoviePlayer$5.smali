@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/MoviePlayer;)V
     .locals 0
-    .parameter
 
     .prologue
     .line 144
     iput-object p1, p0, Lcom/android/gallery3d/app/MoviePlayer$5;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -51,7 +50,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/VideoView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/SurfaceView;->setVisibility(I)V
 
     .line 148
     return-void

@@ -28,7 +28,7 @@
 
 # virtual methods
 .method aboutEquals(FFF)Z
-    .locals 4
+    .locals 3
     .parameter "moduleSize"
     .parameter "i"
     .parameter "j"
@@ -36,10 +36,8 @@
     .prologue
     const/4 v1, 0x0
 
-    const/high16 v3, 0x3f80
-
     .line 41
-    invoke-virtual {p0}, Lcom/google/zxing/qrcode/detector/AlignmentPattern;->getY()F
+    invoke-virtual {p0}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v2
 
@@ -53,7 +51,7 @@
 
     if-gtz v2, :cond_1
 
-    invoke-virtual {p0}, Lcom/google/zxing/qrcode/detector/AlignmentPattern;->getX()F
+    invoke-virtual {p0}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v2
 
@@ -78,15 +76,15 @@
 
     .line 43
     .local v0, moduleSizeDiff:F
-    cmpg-float v2, v0, v3
+    const/high16 v2, 0x3f80
+
+    cmpg-float v2, v0, v2
 
     if-lez v2, :cond_0
 
     iget v2, p0, Lcom/google/zxing/qrcode/detector/AlignmentPattern;->estimatedModuleSize:F
 
-    div-float v2, v0, v2
-
-    cmpg-float v2, v2, v3
+    cmpg-float v2, v0, v2
 
     if-gtz v2, :cond_1
 
@@ -97,4 +95,49 @@
     .end local v0           #moduleSizeDiff:F
     :cond_1
     return v1
+.end method
+
+.method combineEstimate(FFF)Lcom/google/zxing/qrcode/detector/AlignmentPattern;
+    .locals 5
+    .parameter "i"
+    .parameter "j"
+    .parameter "newModuleSize"
+
+    .prologue
+    const/high16 v4, 0x4000
+
+    .line 53
+    invoke-virtual {p0}, Lcom/google/zxing/ResultPoint;->getX()F
+
+    move-result v3
+
+    add-float/2addr v3, p2
+
+    div-float v1, v3, v4
+
+    .line 54
+    .local v1, combinedX:F
+    invoke-virtual {p0}, Lcom/google/zxing/ResultPoint;->getY()F
+
+    move-result v3
+
+    add-float/2addr v3, p1
+
+    div-float v2, v3, v4
+
+    .line 55
+    .local v2, combinedY:F
+    iget v3, p0, Lcom/google/zxing/qrcode/detector/AlignmentPattern;->estimatedModuleSize:F
+
+    add-float/2addr v3, p3
+
+    div-float v0, v3, v4
+
+    .line 56
+    .local v0, combinedModuleSize:F
+    new-instance v3, Lcom/google/zxing/qrcode/detector/AlignmentPattern;
+
+    invoke-direct {v3, v1, v2, v0}, Lcom/google/zxing/qrcode/detector/AlignmentPattern;-><init>(FFF)V
+
+    return-object v3
 .end method

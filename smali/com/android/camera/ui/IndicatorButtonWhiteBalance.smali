@@ -32,10 +32,10 @@
 
     .prologue
     .line 48
-    invoke-virtual {p0}, Lcom/android/camera/ui/IndicatorButtonWhiteBalance;->dismissPopup()Z
+    invoke-virtual {p0}, Lcom/android/camera/ui/AbstractIndicatorButton;->dismissPopup()Z
 
     .line 49
-    invoke-virtual {p0}, Lcom/android/camera/ui/IndicatorButtonWhiteBalance;->getRootView()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v1
 
@@ -72,7 +72,7 @@
     .line 55
     const/4 v1, 0x1
 
-    invoke-virtual {p0, v1}, Lcom/android/camera/ui/IndicatorButtonWhiteBalance;->showPopup(Z)V
+    invoke-virtual {p0, v1}, Lcom/android/camera/ui/AbstractIndicatorButton;->showPopup(Z)V
 
     .line 56
     return-void

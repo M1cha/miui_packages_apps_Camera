@@ -18,18 +18,18 @@
 
 
 # virtual methods
-.method protected addWeightCode(Ljava/lang/StringBuffer;I)V
+.method protected addWeightCode(Ljava/lang/StringBuilder;I)V
     .locals 1
     .parameter "buf"
     .parameter "weight"
 
     .prologue
-    .line 41
+    .line 42
     const-string v0, "(3103)"
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 42
+    .line 43
     return-void
 .end method
 
@@ -38,6 +38,6 @@
     .parameter "weight"
 
     .prologue
-    .line 45
+    .line 47
     return p1
 .end method
