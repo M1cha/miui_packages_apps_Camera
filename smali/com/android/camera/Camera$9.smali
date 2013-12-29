@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 3471
+    .line 3480
     iput-object p1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 3475
+    .line 3484
     iget-object v0, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mCameraState:I
@@ -73,7 +73,7 @@
     .locals 5
 
     .prologue
-    .line 3480
+    .line 3489
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mFocusAreaSupported:Z
@@ -92,12 +92,12 @@
 
     if-nez v1, :cond_1
 
-    .line 3511
+    .line 3520
     :cond_0
     :goto_0
     return-void
 
-    .line 3486
+    .line 3495
     :cond_1
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
@@ -140,7 +140,7 @@
 
     if-nez v1, :cond_0
 
-    .line 3493
+    .line 3502
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mCameraState:I
@@ -170,7 +170,7 @@
 
     if-nez v1, :cond_0
 
-    .line 3499
+    .line 3508
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
     iget-object v1, v1, Lcom/android/camera/ActivityBase;->mPreferences:Lcom/android/camera/ComboPreferences;
@@ -183,7 +183,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 3500
+    .line 3509
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
     iget-object v1, v1, Lcom/android/camera/ActivityBase;->mPreferences:Lcom/android/camera/ComboPreferences;
@@ -202,7 +202,7 @@
 
     move-result-object v0
 
-    .line 3503
+    .line 3512
     .local v0, flashMode:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
@@ -218,7 +218,7 @@
 
     if-nez v1, :cond_2
 
-    .line 3504
+    .line 3513
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
     iget-object v1, v1, Lcom/android/camera/ActivityBase;->mParameters:Landroid/hardware/Camera$Parameters;
@@ -227,7 +227,7 @@
 
     invoke-virtual {v1, v2}, Landroid/hardware/Camera$Parameters;->setFlashMode(Ljava/lang/String;)V
 
-    .line 3505
+    .line 3514
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
     iget-object v1, v1, Lcom/android/camera/ActivityBase;->mCameraDevice:Lcom/android/camera/CameraManager$CameraProxy;
@@ -238,7 +238,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraManager$CameraProxy;->setParameters(Landroid/hardware/Camera$Parameters;)V
 
-    .line 3509
+    .line 3518
     .end local v0           #flashMode:Ljava/lang/String;
     :cond_2
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
@@ -257,7 +257,7 @@
     .locals 0
 
     .prologue
-    .line 3524
+    .line 3533
     return-void
 .end method
 
@@ -266,7 +266,7 @@
     .parameter "a"
 
     .prologue
-    .line 3515
+    .line 3524
     iget-object v0, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
@@ -285,7 +285,7 @@
 
     if-nez v0, :cond_0
 
-    .line 3516
+    .line 3525
     iget-object v0, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
@@ -295,7 +295,7 @@
 
     invoke-virtual {v0, p1, p2}, Lcom/android/camera/FocusManager;->onDeviceKeepMoving(D)V
 
-    .line 3519
+    .line 3528
     :cond_0
     return-void
 .end method
@@ -304,6 +304,6 @@
     .locals 0
 
     .prologue
-    .line 3529
+    .line 3538
     return-void
 .end method

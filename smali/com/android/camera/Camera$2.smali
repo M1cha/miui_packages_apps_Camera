@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 597
+    .line 598
     iput-object p1, p0, Lcom/android/camera/Camera$2;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,10 +40,10 @@
     .locals 1
 
     .prologue
-    .line 600
+    .line 601
     invoke-static {}, Lcom/android/camera/Storage;->ensureOSXCompatible()V
 
-    .line 601
+    .line 602
     const/4 v0, 0x0
 
     return v0

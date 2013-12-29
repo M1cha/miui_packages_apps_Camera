@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 857
+    .line 858
     iput-object p1, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "x1"
 
     .prologue
-    .line 857
+    .line 858
     invoke-direct {p0, p1}, Lcom/android/camera/Camera$JpegQuickPictureCallback;-><init>(Lcom/android/camera/Camera;)V
 
     return-void
@@ -52,7 +52,7 @@
     .locals 3
 
     .prologue
-    .line 866
+    .line 867
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mBurstShotTitle:Ljava/lang/String;
@@ -62,7 +62,7 @@
 
     if-nez v0, :cond_0
 
-    .line 867
+    .line 868
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -76,7 +76,7 @@
     #setter for: Lcom/android/camera/Camera;->mBurstShotTitle:Ljava/lang/String;
     invoke-static {v0, v1}, Lcom/android/camera/Camera;->access$5402(Lcom/android/camera/Camera;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 869
+    .line 870
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -125,7 +125,7 @@
     .parameter "camera"
 
     .prologue
-    .line 874
+    .line 875
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     iget-boolean v0, v0, Lcom/android/camera/ActivityBase;->mPaused:Z
@@ -134,18 +134,18 @@
 
     if-nez p1, :cond_1
 
-    .line 912
+    .line 913
     :cond_0
     :goto_0
     return-void
 
-    .line 878
+    .line 879
     :cond_1
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     invoke-static {v0}, Lcom/android/camera/Camera;->access$2304(Lcom/android/camera/Camera;)I
 
-    .line 879
+    .line 880
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mTextMulitSnapNumber:Landroid/widget/TextView;
@@ -180,12 +180,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 880
+    .line 881
     invoke-static {p1}, Lcom/android/camera/Exif;->getOrientation([B)I
 
     move-result v8
 
-    .line 882
+    .line 883
     .local v8, orientation:I
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
@@ -200,7 +200,7 @@
 
     if-nez v0, :cond_3
 
-    .line 883
+    .line 884
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mMultiSnapPictureSize:Landroid/hardware/Camera$Size;
@@ -210,7 +210,7 @@
 
     iget v5, v0, Landroid/hardware/Camera$Size;->width:I
 
-    .line 884
+    .line 885
     .local v5, width:I
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
@@ -221,7 +221,7 @@
 
     iget v6, v0, Landroid/hardware/Camera$Size;->height:I
 
-    .line 889
+    .line 890
     .local v6, height:I
     :goto_1
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -233,12 +233,12 @@
 
     invoke-virtual {v0}, Lcom/android/camera/FocusManager;->onShutter()V
 
-    .line 890
+    .line 891
     invoke-direct {p0}, Lcom/android/camera/Camera$JpegQuickPictureCallback;->getBurstShotTitle()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 891
+    .line 892
     .local v3, title:Ljava/lang/String;
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
@@ -270,7 +270,7 @@
 
     invoke-virtual/range {v0 .. v9}, Lcom/android/camera/Camera$ImageSaver;->addImage([BLandroid/net/Uri;Ljava/lang/String;Landroid/location/Location;IIIIZ)V
 
-    .line 895
+    .line 896
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mMultiSnappedCount:I
@@ -291,7 +291,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 896
+    .line 897
     :cond_2
     invoke-static {}, Lcom/android/camera/CameraDataAnalytics;->instance()Lcom/android/camera/CameraDataAnalytics;
 
@@ -310,7 +310,7 @@
 
     invoke-virtual {v0, v1, v9, v10}, Lcom/android/camera/CameraDataAnalytics;->trackEvent(Ljava/lang/String;J)V
 
-    .line 898
+    .line 899
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     #calls: Lcom/android/camera/Camera;->handleMultiSnapDone()V
@@ -318,7 +318,7 @@
 
     goto/16 :goto_0
 
-    .line 886
+    .line 887
     .end local v3           #title:Ljava/lang/String;
     .end local v5           #width:I
     .end local v6           #height:I
@@ -332,7 +332,7 @@
 
     iget v5, v0, Landroid/hardware/Camera$Size;->height:I
 
-    .line 887
+    .line 888
     .restart local v5       #width:I
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
@@ -346,7 +346,7 @@
     .restart local v6       #height:I
     goto :goto_1
 
-    .line 909
+    .line 910
     .restart local v3       #title:Ljava/lang/String;
     :cond_4
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -363,9 +363,9 @@
     .parameter "loc"
 
     .prologue
-    .line 861
+    .line 862
     iput-object p1, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->mLocation:Landroid/location/Location;
 
-    .line 862
+    .line 863
     return-object p0
 .end method

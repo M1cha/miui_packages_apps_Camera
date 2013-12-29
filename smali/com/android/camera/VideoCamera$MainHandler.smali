@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 300
+    .line 307
     iput-object p1, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -37,7 +37,7 @@
     .parameter "x1"
 
     .prologue
-    .line 300
+    .line 307
     invoke-direct {p0, p1}, Lcom/android/camera/VideoCamera$MainHandler;-><init>(Lcom/android/camera/VideoCamera;)V
 
     return-void
@@ -54,12 +54,12 @@
 
     const/4 v3, 0x4
 
-    .line 303
+    .line 310
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 368
+    .line 375
     const-string v0, "videocamera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -84,12 +84,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 371
+    .line 378
     :cond_0
     :goto_0
     return-void
 
-    .line 306
+    .line 313
     :pswitch_0
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
@@ -101,7 +101,7 @@
 
     goto :goto_0
 
-    .line 310
+    .line 317
     :pswitch_1
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
@@ -113,7 +113,7 @@
 
     goto :goto_0
 
-    .line 315
+    .line 322
     :pswitch_2
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
@@ -126,7 +126,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 316
+    .line 323
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
     #getter for: Lcom/android/camera/VideoCamera;->mHandler:Landroid/os/Handler;
@@ -136,7 +136,7 @@
 
     invoke-virtual {v0, v3}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 317
+    .line 324
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
@@ -145,7 +145,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/Window;->addFlags(I)V
 
-    .line 318
+    .line 325
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
     #getter for: Lcom/android/camera/VideoCamera;->mHandler:Landroid/os/Handler;
@@ -159,7 +159,7 @@
 
     goto :goto_0
 
-    .line 322
+    .line 329
     :pswitch_3
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
@@ -168,7 +168,7 @@
 
     goto :goto_0
 
-    .line 332
+    .line 339
     :pswitch_4
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
@@ -203,13 +203,13 @@
 
     if-nez v0, :cond_1
 
-    .line 334
+    .line 341
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
     #calls: Lcom/android/camera/VideoCamera;->startPreview()V
     invoke-static {v0}, Lcom/android/camera/VideoCamera;->access$600(Lcom/android/camera/VideoCamera;)V
 
-    .line 336
+    .line 343
     :cond_1
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -230,7 +230,7 @@
 
     if-gez v0, :cond_0
 
-    .line 337
+    .line 344
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
     #getter for: Lcom/android/camera/VideoCamera;->mHandler:Landroid/os/Handler;
@@ -246,13 +246,13 @@
 
     goto/16 :goto_0
 
-    .line 343
+    .line 350
     :pswitch_5
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
     invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->resetSimpleMode()V
 
-    .line 344
+    .line 351
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
     #calls: Lcom/android/camera/VideoCamera;->switchCamera()V
@@ -260,7 +260,7 @@
 
     goto/16 :goto_0
 
-    .line 349
+    .line 356
     :pswitch_6
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
@@ -270,7 +270,7 @@
 
     invoke-virtual {v0}, Lcom/android/camera/CameraScreenNail;->animateSwitchCamera()V
 
-    .line 352
+    .line 359
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
     const/4 v1, 0x0
@@ -280,7 +280,7 @@
 
     goto/16 :goto_0
 
-    .line 357
+    .line 364
     :pswitch_7
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
@@ -291,7 +291,7 @@
 
     goto/16 :goto_0
 
-    .line 360
+    .line 367
     :pswitch_8
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
@@ -299,7 +299,7 @@
 
     invoke-static {v0}, Lcom/android/camera/Util;->fadeOut(Landroid/view/View;)V
 
-    .line 361
+    .line 368
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
     iget-object v0, v0, Lcom/android/camera/ActivityBase;->mPreferences:Lcom/android/camera/ComboPreferences;
@@ -310,7 +310,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 362
+    .line 369
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
     iget-object v0, v0, Lcom/android/camera/ActivityBase;->mSimpleExitArea:Landroid/view/View;
@@ -319,7 +319,7 @@
 
     goto/16 :goto_0
 
-    .line 363
+    .line 370
     :cond_2
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
@@ -327,7 +327,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 364
+    .line 371
     iget-object v0, p0, Lcom/android/camera/VideoCamera$MainHandler;->this$0:Lcom/android/camera/VideoCamera;
 
     iget-object v0, v0, Lcom/android/camera/ActivityBase;->mHDRExitArea:Landroid/view/View;
@@ -336,7 +336,7 @@
 
     goto/16 :goto_0
 
-    .line 303
+    .line 310
     nop
 
     :pswitch_data_0

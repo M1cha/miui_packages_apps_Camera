@@ -30,15 +30,15 @@
     .parameter "loc"
 
     .prologue
-    .line 3065
+    .line 3237
     iput-object p1, p0, Lcom/android/camera/VideoCamera$JpegPictureCallback;->this$0:Lcom/android/camera/VideoCamera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3066
+    .line 3238
     iput-object p2, p0, Lcom/android/camera/VideoCamera$JpegPictureCallback;->mLocation:Landroid/location/Location;
 
-    .line 3067
+    .line 3239
     return-void
 .end method
 
@@ -52,32 +52,32 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 3071
+    .line 3243
     const-string v0, "videocamera"
 
     const-string v1, "onPictureTaken"
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3072
+    .line 3244
     iget-object v0, p0, Lcom/android/camera/VideoCamera$JpegPictureCallback;->this$0:Lcom/android/camera/VideoCamera;
 
     #setter for: Lcom/android/camera/VideoCamera;->mSnapshotInProgress:Z
-    invoke-static {v0, v2}, Lcom/android/camera/VideoCamera;->access$1702(Lcom/android/camera/VideoCamera;Z)Z
+    invoke-static {v0, v2}, Lcom/android/camera/VideoCamera;->access$3202(Lcom/android/camera/VideoCamera;Z)Z
 
-    .line 3073
+    .line 3245
     iget-object v0, p0, Lcom/android/camera/VideoCamera$JpegPictureCallback;->this$0:Lcom/android/camera/VideoCamera;
 
     invoke-virtual {v0, v2}, Lcom/android/camera/VideoCamera;->showVideoSnapshotUI(Z)V
 
-    .line 3074
+    .line 3246
     iget-object v0, p0, Lcom/android/camera/VideoCamera$JpegPictureCallback;->this$0:Lcom/android/camera/VideoCamera;
 
     iget-object v1, p0, Lcom/android/camera/VideoCamera$JpegPictureCallback;->mLocation:Landroid/location/Location;
 
     #calls: Lcom/android/camera/VideoCamera;->storeImage([BLandroid/location/Location;)V
-    invoke-static {v0, p1, v1}, Lcom/android/camera/VideoCamera;->access$1800(Lcom/android/camera/VideoCamera;[BLandroid/location/Location;)V
+    invoke-static {v0, p1, v1}, Lcom/android/camera/VideoCamera;->access$3300(Lcom/android/camera/VideoCamera;[BLandroid/location/Location;)V
 
-    .line 3075
+    .line 3247
     return-void
 .end method

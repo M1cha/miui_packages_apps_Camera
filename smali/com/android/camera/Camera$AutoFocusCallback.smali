@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 925
+    .line 926
     iput-object p1, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .parameter "x1"
 
     .prologue
-    .line 925
+    .line 926
     invoke-direct {p0, p1}, Lcom/android/camera/Camera$AutoFocusCallback;-><init>(Lcom/android/camera/Camera;)V
 
     return-void
@@ -54,18 +54,18 @@
     .parameter "camera"
 
     .prologue
-    .line 930
+    .line 931
     iget-object v0, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
 
     iget-boolean v0, v0, Lcom/android/camera/ActivityBase;->mPaused:Z
 
     if-eqz v0, :cond_0
 
-    .line 937
+    .line 938
     :goto_0
     return-void
 
-    .line 932
+    .line 933
     :cond_0
     iget-object v0, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
 
@@ -84,7 +84,7 @@
 
     iput-wide v1, v0, Lcom/android/camera/Camera;->mAutoFocusTime:J
 
-    .line 933
+    .line 934
     const-string v0, "camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -117,7 +117,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 934
+    .line 935
     iget-object v0, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
 
     const/4 v1, 0x1
@@ -125,7 +125,7 @@
     #calls: Lcom/android/camera/Camera;->setCameraState(I)V
     invoke-static {v0, v1}, Lcom/android/camera/Camera;->access$2000(Lcom/android/camera/Camera;I)V
 
-    .line 935
+    .line 936
     iget-object v0, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
@@ -135,7 +135,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/camera/FocusManager;->onAutoFocus(Z)V
 
-    .line 936
+    .line 937
     iget-object v0, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mMotionFocusManager:Lcom/android/camera/MotionFocusManager;

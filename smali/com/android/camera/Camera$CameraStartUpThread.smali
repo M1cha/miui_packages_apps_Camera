@@ -25,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 302
+    .line 303
     iput-object p1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -39,7 +39,7 @@
     .parameter "x1"
 
     .prologue
-    .line 302
+    .line 303
     invoke-direct {p0, p1}, Lcom/android/camera/Camera$CameraStartUpThread;-><init>(Lcom/android/camera/Camera;)V
 
     return-void
@@ -51,12 +51,12 @@
     .locals 1
 
     .prologue
-    .line 306
+    .line 307
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/camera/Camera$CameraStartUpThread;->mCancelled:Z
 
-    .line 307
+    .line 308
     return-void
 .end method
 
@@ -64,18 +64,18 @@
     .locals 4
 
     .prologue
-    .line 314
+    .line 315
     :try_start_0
     iget-boolean v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->mCancelled:Z
 
     if-eqz v1, :cond_1
 
-    .line 339
+    .line 340
     :cond_0
     :goto_0
     return-void
 
-    .line 315
+    .line 316
     :cond_1
     invoke-static {}, Lcom/android/camera/CameraDataAnalytics;->instance()Lcom/android/camera/CameraDataAnalytics;
 
@@ -85,7 +85,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraDataAnalytics;->trackEventTime(Ljava/lang/String;)V
 
-    .line 316
+    .line 317
     iget-object v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
 
     iget-object v2, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
@@ -100,7 +100,7 @@
 
     iput-object v2, v1, Lcom/android/camera/ActivityBase;->mCameraDevice:Lcom/android/camera/CameraManager$CameraProxy;
 
-    .line 317
+    .line 318
     iget-object v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
 
     iget-object v2, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
@@ -113,20 +113,20 @@
 
     iput-object v2, v1, Lcom/android/camera/ActivityBase;->mParameters:Landroid/hardware/Camera$Parameters;
 
-    .line 320
+    .line 321
     iget-object v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
 
     iget-object v1, v1, Lcom/android/camera/Camera;->mStartPreviewPrerequisiteReady:Landroid/os/ConditionVariable;
 
     invoke-virtual {v1}, Landroid/os/ConditionVariable;->block()V
 
-    .line 322
+    .line 323
     iget-object v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
 
     #calls: Lcom/android/camera/Camera;->initializeCapabilities()V
     invoke-static {v1}, Lcom/android/camera/Camera;->access$600(Lcom/android/camera/Camera;)V
 
-    .line 323
+    .line 324
     iget-object v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
@@ -141,13 +141,13 @@
     #calls: Lcom/android/camera/Camera;->initializeFocusManager()V
     invoke-static {v1}, Lcom/android/camera/Camera;->access$800(Lcom/android/camera/Camera;)V
 
-    .line 324
+    .line 325
     :cond_2
     iget-boolean v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->mCancelled:Z
 
     if-nez v1, :cond_0
 
-    .line 325
+    .line 326
     iget-object v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
 
     iget-object v2, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
@@ -156,7 +156,7 @@
 
     invoke-virtual {v1, v2}, Lcom/android/camera/ActivityBase;->addMuteToParameters(Landroid/hardware/Camera$Parameters;)V
 
-    .line 326
+    .line 327
     iget-object v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
 
     const/4 v2, -0x1
@@ -164,7 +164,7 @@
     #calls: Lcom/android/camera/Camera;->setCameraParameters(I)V
     invoke-static {v1, v2}, Lcom/android/camera/Camera;->access$900(Lcom/android/camera/Camera;I)V
 
-    .line 328
+    .line 329
     iget-object v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mHandler:Landroid/os/Handler;
@@ -176,18 +176,18 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 329
+    .line 330
     iget-boolean v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->mCancelled:Z
 
     if-nez v1, :cond_0
 
-    .line 330
+    .line 331
     iget-object v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
 
     #calls: Lcom/android/camera/Camera;->startPreview()V
     invoke-static {v1}, Lcom/android/camera/Camera;->access$1100(Lcom/android/camera/Camera;)V
 
-    .line 331
+    .line 332
     iget-object v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mHandler:Landroid/os/Handler;
@@ -199,7 +199,7 @@
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 332
+    .line 333
     iget-object v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -209,7 +209,7 @@
     #setter for: Lcom/android/camera/Camera;->mOnResumeTime:J
     invoke-static {v1, v2, v3}, Lcom/android/camera/Camera;->access$1202(Lcom/android/camera/Camera;J)J
 
-    .line 333
+    .line 334
     iget-object v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mHandler:Landroid/os/Handler;
@@ -226,11 +226,11 @@
 
     goto/16 :goto_0
 
-    .line 334
+    .line 335
     :catch_0
     move-exception v0
 
-    .line 335
+    .line 336
     .local v0, e:Lcom/android/camera/CameraHardwareException;
     iget-object v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
 
@@ -245,12 +245,12 @@
 
     goto/16 :goto_0
 
-    .line 336
+    .line 337
     .end local v0           #e:Lcom/android/camera/CameraHardwareException;
     :catch_1
     move-exception v0
 
-    .line 337
+    .line 338
     .local v0, e:Lcom/android/camera/CameraDisabledException;
     iget-object v1, p0, Lcom/android/camera/Camera$CameraStartUpThread;->this$0:Lcom/android/camera/Camera;
 

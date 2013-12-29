@@ -30,15 +30,15 @@
     .parameter "loc"
 
     .prologue
-    .line 734
+    .line 735
     iput-object p1, p0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 735
+    .line 736
     iput-object p2, p0, Lcom/android/camera/Camera$JpegPictureCallback;->mLocation:Landroid/location/Location;
 
-    .line 736
+    .line 737
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .parameter "camera"
 
     .prologue
-    .line 741
+    .line 742
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -59,12 +59,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 837
+    .line 838
     :cond_0
     :goto_0
     return-void
 
-    .line 744
+    .line 745
     :cond_1
     move-object/from16 v0, p0
 
@@ -84,7 +84,7 @@
     #setter for: Lcom/android/camera/Camera;->mReceivedJpegCallbackNum:I
     invoke-static {v2, v3}, Lcom/android/camera/Camera;->access$3802(Lcom/android/camera/Camera;I)I
 
-    .line 745
+    .line 746
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -98,7 +98,7 @@
     #setter for: Lcom/android/camera/Camera;->mJpegPictureCallbackTime:J
     invoke-static {v2, v0, v1}, Lcom/android/camera/Camera;->access$3902(Lcom/android/camera/Camera;J)J
 
-    .line 749
+    .line 750
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -114,7 +114,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 750
+    .line 751
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -143,7 +143,7 @@
 
     iput-wide v0, v2, Lcom/android/camera/Camera;->mShutterToPictureDisplayedTime:J
 
-    .line 752
+    .line 753
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -172,7 +172,7 @@
 
     iput-wide v0, v2, Lcom/android/camera/Camera;->mPictureDisplayedToJpegCallbackTime:J
 
-    .line 760
+    .line 761
     :goto_1
     const-string v2, "camera"
 
@@ -212,7 +212,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 763
+    .line 764
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -224,7 +224,7 @@
 
     invoke-virtual {v2}, Lcom/android/camera/FocusManager;->onShutter()V
 
-    .line 766
+    .line 767
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -269,7 +269,7 @@
 
     if-eq v2, v3, :cond_7
 
-    .line 768
+    .line 769
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -278,7 +278,7 @@
 
     invoke-virtual {v2}, Lcom/android/camera/CameraManager$CameraProxy;->cancelAutoFocus()V
 
-    .line 769
+    .line 770
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -286,7 +286,7 @@
     #calls: Lcom/android/camera/Camera;->startPreview()V
     invoke-static {v2}, Lcom/android/camera/Camera;->access$1100(Lcom/android/camera/Camera;)V
 
-    .line 770
+    .line 771
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -298,7 +298,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 772
+    .line 773
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -308,7 +308,7 @@
     #setter for: Lcom/android/camera/Camera;->mNeedFlash:Z
     invoke-static {v2, v3}, Lcom/android/camera/Camera;->access$4202(Lcom/android/camera/Camera;Z)Z
 
-    .line 773
+    .line 774
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -316,7 +316,7 @@
     #calls: Lcom/android/camera/Camera;->startPreview()V
     invoke-static {v2}, Lcom/android/camera/Camera;->access$1100(Lcom/android/camera/Camera;)V
 
-    .line 775
+    .line 776
     :cond_2
     move-object/from16 v0, p0
 
@@ -327,14 +327,14 @@
     #calls: Lcom/android/camera/Camera;->setCameraState(I)V
     invoke-static {v2, v3}, Lcom/android/camera/Camera;->access$2000(Lcom/android/camera/Camera;I)V
 
-    .line 776
+    .line 777
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     invoke-virtual {v2}, Lcom/android/camera/Camera;->startFaceDetection()V
 
-    .line 784
+    .line 785
     :cond_3
     :goto_2
     move-object/from16 v0, p0
@@ -368,7 +368,7 @@
     :cond_4
     if-eqz p1, :cond_0
 
-    .line 790
+    .line 791
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -379,13 +379,13 @@
 
     move-result-object v16
 
-    .line 791
+    .line 792
     .local v16, s:Landroid/hardware/Camera$Size;
     invoke-static/range {p1 .. p1}, Lcom/android/camera/Exif;->getOrientation([B)I
 
     move-result v10
 
-    .line 793
+    .line 794
     .local v10, orientation:I
     move-object/from16 v0, p0
 
@@ -402,18 +402,18 @@
 
     if-nez v2, :cond_8
 
-    .line 794
+    .line 795
     move-object/from16 v0, v16
 
     iget v7, v0, Landroid/hardware/Camera$Size;->width:I
 
-    .line 795
+    .line 796
     .local v7, width:I
     move-object/from16 v0, v16
 
     iget v8, v0, Landroid/hardware/Camera$Size;->height:I
 
-    .line 800
+    .line 801
     .local v8, height:I
     :goto_3
     move-object/from16 v0, p0
@@ -427,7 +427,7 @@
 
     if-nez v2, :cond_9
 
-    .line 801
+    .line 802
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -441,7 +441,7 @@
 
     move-result-object v4
 
-    .line 802
+    .line 803
     .local v4, uri:Landroid/net/Uri;
     move-object/from16 v0, p0
 
@@ -456,7 +456,7 @@
 
     move-result-object v5
 
-    .line 803
+    .line 804
     .local v5, title:Ljava/lang/String;
     invoke-static {}, Lcom/android/camera/CameraDataAnalytics;->instance()Lcom/android/camera/CameraDataAnalytics;
 
@@ -466,7 +466,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/camera/CameraDataAnalytics;->trackEvent(Ljava/lang/String;)V
 
-    .line 804
+    .line 805
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -492,7 +492,7 @@
 
     invoke-virtual/range {v2 .. v11}, Lcom/android/camera/Camera$ImageSaver;->addImage([BLandroid/net/Uri;Ljava/lang/String;Landroid/location/Location;IIIIZ)V
 
-    .line 821
+    .line 822
     .end local v4           #uri:Landroid/net/Uri;
     .end local v5           #title:Ljava/lang/String;
     :goto_4
@@ -500,7 +500,7 @@
 
     move-result-wide v13
 
-    .line 822
+    .line 823
     .local v13, now:J
     move-object/from16 v0, p0
 
@@ -521,7 +521,7 @@
 
     iput-wide v0, v2, Lcom/android/camera/Camera;->mJpegCallbackFinishTime:J
 
-    .line 823
+    .line 824
     const-string v2, "camera"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -560,7 +560,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 828
+    .line 829
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -581,7 +581,7 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 829
+    .line 830
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -590,7 +590,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 830
+    .line 831
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -600,7 +600,7 @@
     #calls: Lcom/android/camera/Camera;->showHDRExit(Z)V
     invoke-static {v2, v3}, Lcom/android/camera/Camera;->access$5100(Lcom/android/camera/Camera;Z)V
 
-    .line 832
+    .line 833
     :cond_5
     move-object/from16 v0, p0
 
@@ -613,7 +613,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 833
+    .line 834
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -623,7 +623,7 @@
     #setter for: Lcom/android/camera/Camera;->mPlayCaptureAnimationAfter:Z
     invoke-static {v2, v3}, Lcom/android/camera/Camera;->access$5202(Lcom/android/camera/Camera;Z)Z
 
-    .line 834
+    .line 835
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -633,7 +633,7 @@
 
     goto/16 :goto_0
 
-    .line 755
+    .line 756
     .end local v7           #width:I
     .end local v8           #height:I
     .end local v10           #orientation:I
@@ -668,7 +668,7 @@
 
     iput-wide v0, v2, Lcom/android/camera/Camera;->mShutterToPictureDisplayedTime:J
 
-    .line 757
+    .line 758
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -699,7 +699,7 @@
 
     goto/16 :goto_1
 
-    .line 777
+    .line 778
     :cond_7
     move-object/from16 v0, p0
 
@@ -721,7 +721,7 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 778
+    .line 779
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -731,14 +731,14 @@
     #calls: Lcom/android/camera/Camera;->setCameraState(I)V
     invoke-static {v2, v3}, Lcom/android/camera/Camera;->access$2000(Lcom/android/camera/Camera;I)V
 
-    .line 779
+    .line 780
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
 
     invoke-virtual {v2}, Lcom/android/camera/Camera;->startFaceDetection()V
 
-    .line 780
+    .line 781
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -747,7 +747,7 @@
 
     goto/16 :goto_2
 
-    .line 797
+    .line 798
     .restart local v10       #orientation:I
     .restart local v16       #s:Landroid/hardware/Camera$Size;
     :cond_8
@@ -755,7 +755,7 @@
 
     iget v7, v0, Landroid/hardware/Camera$Size;->height:I
 
-    .line 798
+    .line 799
     .restart local v7       #width:I
     move-object/from16 v0, v16
 
@@ -764,7 +764,7 @@
     .restart local v8       #height:I
     goto/16 :goto_3
 
-    .line 807
+    .line 808
     :cond_9
     move-object/from16 v0, p0
 
@@ -775,7 +775,7 @@
     #setter for: Lcom/android/camera/Camera;->mJpegImageData:[B
     invoke-static {v2, v0}, Lcom/android/camera/Camera;->access$4502(Lcom/android/camera/Camera;[B)[B
 
-    .line 808
+    .line 809
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -787,7 +787,7 @@
 
     if-nez v2, :cond_a
 
-    .line 809
+    .line 810
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/Camera$JpegPictureCallback;->this$0:Lcom/android/camera/Camera;
@@ -795,7 +795,7 @@
     #calls: Lcom/android/camera/Camera;->showPostCaptureAlert()V
     invoke-static {v2}, Lcom/android/camera/Camera;->access$4700(Lcom/android/camera/Camera;)V
 
-    .line 810
+    .line 811
     int-to-double v2, v7
 
     move-object/from16 v0, p0
@@ -819,13 +819,13 @@
 
     double-to-int v15, v2
 
-    .line 811
+    .line 812
     .local v15, ratio:I
     invoke-static {v15}, Ljava/lang/Integer;->highestOneBit(I)I
 
     move-result v12
 
-    .line 812
+    .line 813
     .local v12, inSampleSize:I
     move-object/from16 v0, p0
 
@@ -867,7 +867,7 @@
 
     goto/16 :goto_4
 
-    .line 817
+    .line 818
     .end local v12           #inSampleSize:I
     .end local v15           #ratio:I
     :cond_a

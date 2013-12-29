@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 2969
+    .line 2977
     iput-object p1, p0, Lcom/android/camera/Camera$7;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,11 +40,11 @@
     .locals 1
 
     .prologue
-    .line 2971
+    .line 2979
     iget-object v0, p0, Lcom/android/camera/Camera$7;->this$0:Lcom/android/camera/Camera;
 
     invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->openSettingActivity()V
 
-    .line 2972
+    .line 2980
     return-void
 .end method

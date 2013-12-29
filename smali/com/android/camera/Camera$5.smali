@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 1446
+    .line 1447
     iput-object p1, p0, Lcom/android/camera/Camera$5;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +41,13 @@
     .parameter "v"
 
     .prologue
-    .line 1449
+    .line 1450
     iget-object v0, p0, Lcom/android/camera/Camera$5;->this$0:Lcom/android/camera/Camera;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/camera/ActivityBase;->exitHDRMode(Z)V
 
-    .line 1450
+    .line 1451
     return-void
 .end method

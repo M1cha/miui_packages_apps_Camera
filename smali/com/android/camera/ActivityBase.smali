@@ -2495,7 +2495,7 @@
     .locals 1
 
     .prologue
-    .line 1193
+    .line 1198
     const/4 v0, 0x0
 
     return v0
@@ -2804,6 +2804,16 @@
     return-void
 .end method
 
+.method protected shouldIgnoreZoomChange()Z
+    .locals 1
+
+    .prologue
+    .line 1191
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method protected showIndicators(Z)V
     .locals 2
 
@@ -2883,12 +2893,12 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1195
     iget-object v0, p0, Lcom/android/camera/ActivityBase;->mCameraScreenNail:Lcom/android/camera/CameraScreenNail;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraScreenNail;->onSwitchingPassedHalf()V
 
-    .line 1191
+    .line 1196
     return-void
 .end method
 
