@@ -66,7 +66,7 @@
 
     .prologue
     .line 133
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 85
     const/16 v0, 0x12c
@@ -81,7 +81,7 @@
     .line 134
     new-instance v0, Lcom/android/gallery3d/ui/EdgeEffect$Drawable;
 
-    const v1, 0x7f020140
+    const v1, 0x7f020137
 
     invoke-direct {v0, p1, v1}, Lcom/android/gallery3d/ui/EdgeEffect$Drawable;-><init>(Landroid/content/Context;I)V
 
@@ -90,7 +90,7 @@
     .line 135
     new-instance v0, Lcom/android/gallery3d/ui/EdgeEffect$Drawable;
 
-    const v1, 0x7f020141
+    const v1, 0x7f020138
 
     invoke-direct {v0, p1, v1}, Lcom/android/gallery3d/ui/EdgeEffect$Drawable;-><init>(Landroid/content/Context;I)V
 

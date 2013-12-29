@@ -31,7 +31,7 @@
 
     .prologue
     .line 86
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -150,7 +150,7 @@
     .line 93
     iget-object v1, p0, Lcom/android/gallery3d/ui/UploadedTexture$BorderKey;->config:Landroid/graphics/Bitmap$Config;
 
-    invoke-virtual {v1}, Landroid/graphics/Bitmap$Config;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->hashCode()I
 
     move-result v1
 

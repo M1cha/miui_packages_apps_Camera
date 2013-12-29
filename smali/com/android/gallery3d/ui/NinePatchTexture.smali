@@ -120,7 +120,7 @@
 
     .prologue
     .line 160
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/NinePatchTexture;->isLoaded()Z
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/ResourceTexture;->isLoaded()Z
 
     move-result v0
 
@@ -253,7 +253,7 @@
 
     move-result v4
 
-    invoke-virtual {p0, v3, v4}, Lcom/android/gallery3d/ui/NinePatchTexture;->setSize(II)V
+    invoke-virtual {p0, v3, v4}, Lcom/android/gallery3d/ui/BasicTexture;->setSize(II)V
 
     .line 58
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getNinePatchChunk()[B

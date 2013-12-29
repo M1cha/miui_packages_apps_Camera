@@ -72,7 +72,7 @@
     .line 54
     iget-object v0, p0, Lcom/android/gallery3d/ui/SlideshowView;->mTransitionAnimation:Lcom/android/gallery3d/anim/FloatAnimation;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/anim/FloatAnimation;->start()V
+    invoke-virtual {v0}, Lcom/android/gallery3d/anim/Animation;->start()V
 
     .line 56
     iget-object v0, p0, Lcom/android/gallery3d/ui/SlideshowView;->mPrevTexture:Lcom/android/gallery3d/ui/BitmapTexture;
@@ -151,10 +151,10 @@
     :goto_0
     iget-object v0, p0, Lcom/android/gallery3d/ui/SlideshowView;->mCurrentAnimation:Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;->start()V
+    invoke-virtual {v0}, Lcom/android/gallery3d/anim/Animation;->start()V
 
     .line 78
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/SlideshowView;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->invalidate()V
 
     .line 79
     return-void
@@ -244,7 +244,7 @@
     .local v1, animTime:J
     iget-object v6, p0, Lcom/android/gallery3d/ui/SlideshowView;->mTransitionAnimation:Lcom/android/gallery3d/anim/FloatAnimation;
 
-    invoke-virtual {v6, v1, v2}, Lcom/android/gallery3d/anim/FloatAnimation;->calculate(J)Z
+    invoke-virtual {v6, v1, v2}, Lcom/android/gallery3d/anim/Animation;->calculate(J)Z
 
     move-result v4
 
@@ -279,7 +279,7 @@
     .line 101
     iget-object v6, p0, Lcom/android/gallery3d/ui/SlideshowView;->mPrevAnimation:Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;
 
-    invoke-virtual {v6, v1, v2}, Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;->calculate(J)Z
+    invoke-virtual {v6, v1, v2}, Lcom/android/gallery3d/anim/Animation;->calculate(J)Z
 
     move-result v6
 
@@ -342,7 +342,7 @@
     .line 111
     iget-object v6, p0, Lcom/android/gallery3d/ui/SlideshowView;->mCurrentAnimation:Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;
 
-    invoke-virtual {v6, v1, v2}, Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;->calculate(J)Z
+    invoke-virtual {v6, v1, v2}, Lcom/android/gallery3d/anim/Animation;->calculate(J)Z
 
     move-result v6
 
@@ -398,7 +398,7 @@
     :cond_1
     if-eqz v4, :cond_2
 
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/SlideshowView;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->invalidate()V
 
     .line 121
     :cond_2

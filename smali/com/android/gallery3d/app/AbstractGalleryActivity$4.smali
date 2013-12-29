@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/AbstractGalleryActivity;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 190
+    .line 191
     iput-object p1, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity$4;->this$0:Lcom/android/gallery3d/app/AbstractGalleryActivity;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -43,9 +42,9 @@
     .parameter "which"
 
     .prologue
-    .line 193
+    .line 194
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 194
+    .line 195
     return-void
 .end method

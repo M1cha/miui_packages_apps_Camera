@@ -22,10 +22,10 @@
     .parameter "attrs"
 
     .prologue
-    .line 25
+    .line 29
     invoke-direct {p0, p1, p2}, Landroid/widget/RelativeLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 26
+    .line 30
     return-void
 .end method
 
@@ -33,14 +33,14 @@
     .locals 2
 
     .prologue
-    .line 58
+    .line 63
     iget-object v1, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->getEntryValues()[Ljava/lang/CharSequence;
+    invoke-virtual {v1}, Lcom/android/camera/ListPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 59
+    .line 64
     .local v0, entries:[Ljava/lang/CharSequence;
     if-eqz v0, :cond_0
 
@@ -55,37 +55,81 @@
     goto :goto_0
 .end method
 
+.method private getSkinBeautifyState()Ljava/lang/String;
+    .locals 3
+
+    .prologue
+    .line 120
+    const-string v1, "off"
+
+    iget-object v2, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mPreference:Lcom/android/camera/IconListPreference;
+
+    invoke-virtual {v2}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 121
+    const v0, 0x7f0d0134
+
+    .line 125
+    .local v0, resId:I
+    :goto_0
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    return-object v1
+
+    .line 123
+    .end local v0           #resId:I
+    :cond_0
+    const v0, 0x7f0d0133
+
+    .restart local v0       #resId:I
+    goto :goto_0
+.end method
+
 .method private toggle()V
     .locals 3
 
     .prologue
-    .line 68
+    .line 73
     iget-object v1, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mPreference:Lcom/android/camera/IconListPreference;
 
     if-nez v1, :cond_1
 
-    .line 82
+    .line 87
     :cond_0
     :goto_0
     return-void
 
-    .line 72
+    .line 77
     :cond_1
     iget-object v1, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mPreference:Lcom/android/camera/IconListPreference;
 
     iget-object v2, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v2}, Lcom/android/camera/IconListPreference;->getValue()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lcom/android/camera/IconListPreference;->findIndexOfValue(Ljava/lang/String;)I
+    invoke-virtual {v1, v2}, Lcom/android/camera/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
 
     move-result v1
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 73
+    .line 78
     .local v0, index:I
     invoke-direct {p0}, Lcom/android/camera/ui/SkinBeautifyButton;->getPrefrenceSize()I
 
@@ -93,24 +137,24 @@
 
     if-lt v0, v1, :cond_2
 
-    .line 74
+    .line 79
     const/4 v0, 0x0
 
-    .line 77
+    .line 82
     :cond_2
     iget-object v1, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1, v0}, Lcom/android/camera/IconListPreference;->setValueIndex(I)V
+    invoke-virtual {v1, v0}, Lcom/android/camera/ListPreference;->setValueIndex(I)V
 
-    .line 78
+    .line 83
     invoke-virtual {p0}, Lcom/android/camera/ui/SkinBeautifyButton;->refreshValue()V
 
-    .line 79
+    .line 84
     iget-object v1, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mListener:Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
 
     if-eqz v1, :cond_0
 
-    .line 80
+    .line 85
     iget-object v1, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mListener:Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
 
     invoke-interface {v1}, Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;->onSharedPreferenceChanged()V
@@ -120,18 +164,64 @@
 
 
 # virtual methods
+.method public dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
+    .locals 4
+    .parameter "event"
+
+    .prologue
+    .line 109
+    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
+
+    move-result v0
+
+    .line 110
+    .local v0, ret:Z
+    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-ne v2, v3, :cond_0
+
+    .line 111
+    invoke-direct {p0}, Lcom/android/camera/ui/SkinBeautifyButton;->getSkinBeautifyState()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 112
+    .local v1, text:Ljava/lang/String;
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 113
+    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getText()Ljava/util/List;
+
+    move-result-object v2
+
+    invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 115
+    .end local v1           #text:Ljava/lang/String;
+    :cond_0
+    return v0
+.end method
+
 .method public initialize()V
     .locals 2
 
     .prologue
-    .line 52
+    .line 57
     new-instance v0, Lcom/android/camera/PreferenceInflater;
 
-    iget-object v1, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Lcom/android/camera/PreferenceInflater;-><init>(Landroid/content/Context;)V
 
-    .line 53
+    .line 58
     .local v0, inflater:Lcom/android/camera/PreferenceInflater;
     const v1, 0x7f060005
 
@@ -143,22 +233,27 @@
 
     iput-object v1, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    .line 54
+    .line 59
     invoke-virtual {p0}, Lcom/android/camera/ui/SkinBeautifyButton;->refreshValue()V
 
-    .line 55
+    .line 60
     return-void
 .end method
 
 .method public onClick(Landroid/view/View;)V
-    .locals 0
+    .locals 1
     .parameter "v"
 
     .prologue
-    .line 44
+    .line 48
     invoke-direct {p0}, Lcom/android/camera/ui/SkinBeautifyButton;->toggle()V
 
-    .line 45
+    .line 49
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, v0}, Landroid/view/View;->sendAccessibilityEvent(I)V
+
+    .line 50
     return-void
 .end method
 
@@ -166,13 +261,13 @@
     .locals 1
 
     .prologue
-    .line 30
-    invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
+    .line 34
+    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
 
-    .line 31
+    .line 35
     const v0, 0x7f0c0019
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SkinBeautifyButton;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -180,16 +275,35 @@
 
     iput-object v0, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mBeautifyImage:Lcom/android/camera/ui/RotateImageView;
 
-    .line 32
-    invoke-virtual {p0, p0}, Lcom/android/camera/ui/SkinBeautifyButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    .line 36
+    invoke-virtual {p0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 33
+    .line 37
     invoke-virtual {p0}, Lcom/android/camera/ui/SkinBeautifyButton;->refreshValue()V
 
-    .line 34
-    invoke-virtual {p0}, Lcom/android/camera/ui/SkinBeautifyButton;->requestLayout()V
+    .line 38
+    invoke-virtual {p0}, Landroid/widget/RelativeLayout;->requestLayout()V
 
-    .line 35
+    .line 39
+    return-void
+.end method
+
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .locals 1
+    .parameter "info"
+
+    .prologue
+    .line 103
+    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+
+    .line 104
+    invoke-direct {p0}, Lcom/android/camera/ui/SkinBeautifyButton;->getSkinBeautifyState()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    .line 105
     return-void
 .end method
 
@@ -197,44 +311,44 @@
     .locals 5
 
     .prologue
-    .line 85
+    .line 90
     iget-object v3, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mPreference:Lcom/android/camera/IconListPreference;
 
     if-eqz v3, :cond_1
 
-    .line 86
+    .line 91
     iget-object v3, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v3}, Lcom/android/camera/IconListPreference;->getValue()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 87
+    .line 92
     .local v2, value:Ljava/lang/String;
     iget-object v3, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v3, v2}, Lcom/android/camera/IconListPreference;->findIndexOfValue(Ljava/lang/String;)I
+    invoke-virtual {v3, v2}, Lcom/android/camera/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
 
     move-result v3
 
     if-gez v3, :cond_0
 
-    .line 88
+    .line 93
     iget-object v3, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mPreference:Lcom/android/camera/IconListPreference;
 
     const/4 v4, 0x0
 
-    invoke-virtual {v3, v4}, Lcom/android/camera/IconListPreference;->setValueIndex(I)V
+    invoke-virtual {v3, v4}, Lcom/android/camera/ListPreference;->setValueIndex(I)V
 
-    .line 90
+    .line 95
     :cond_0
     iget-object v3, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v3, v2}, Lcom/android/camera/IconListPreference;->findIndexOfValue(Ljava/lang/String;)I
+    invoke-virtual {v3, v2}, Lcom/android/camera/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 91
+    .line 96
     .local v1, index:I
     iget-object v3, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mPreference:Lcom/android/camera/IconListPreference;
 
@@ -244,13 +358,13 @@
 
     aget v0, v3, v1
 
-    .line 92
+    .line 97
     .local v0, iconId:I
     iget-object v3, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mBeautifyImage:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v3, v0}, Lcom/android/camera/ui/RotateImageView;->setImageResource(I)V
+    invoke-virtual {v3, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 94
+    .line 99
     .end local v0           #iconId:I
     .end local v1           #index:I
     .end local v2           #value:Ljava/lang/String;
@@ -263,10 +377,10 @@
     .parameter "l"
 
     .prologue
-    .line 48
+    .line 53
     iput-object p1, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mListener:Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
 
-    .line 49
+    .line 54
     return-void
 .end method
 
@@ -276,11 +390,11 @@
     .parameter "animation"
 
     .prologue
-    .line 39
+    .line 43
     iget-object v0, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mBeautifyImage:Lcom/android/camera/ui/RotateImageView;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/camera/ui/RotateImageView;->setOrientation(IZ)V
 
-    .line 40
+    .line 44
     return-void
 .end method

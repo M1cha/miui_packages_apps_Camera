@@ -2,16 +2,16 @@
 <RelativeLayout android:id="@id/control_panel_top" android:paddingLeft="@dimen/camera_control_top_paddingLeft" android:paddingRight="@dimen/camera_control_top_paddingRight" android:layout_width="fill_parent" android:layout_height="@dimen/camera_control_top_height" android:layout_alignParentTop="true"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <com.android.camera.ui.FlashButton android:id="@id/flash_mode_button" android:background="@drawable/btn_flash_button_bg_16_9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
-            <com.android.camera.ui.RotateImageView android:id="@id/flash_mode_image" android:src="@drawable/ic_flash_auto_selector_16_9" android:layout_centerInParent="true" style="@style/RotateImageViewStyle" />
+        <com.android.camera.ui.FlashButton android:id="@id/flash_mode_button" android:background="@drawable/btn_flash_button_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+            <com.android.camera.ui.RotateImageView android:id="@id/flash_mode_image" android:src="@drawable/ic_flash_auto_selector" android:layout_centerInParent="true" style="@style/RotateImageViewStyle" />
         </com.android.camera.ui.FlashButton>
-        <com.android.camera.ui.SkinBeautifyButton android:id="@id/skin_beatify_button" android:background="@drawable/btn_flash_button_bg_16_9" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+        <com.android.camera.ui.SkinBeautifyButton android:id="@id/skin_beatify_button" android:background="@drawable/btn_flash_button_bg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
             <com.android.camera.ui.RotateImageView android:id="@id/skin_beatify_image" android:src="@drawable/ic_camera_skin_beatify_close" android:layout_centerInParent="true" style="@style/RotateImageViewStyle" />
         </com.android.camera.ui.SkinBeautifyButton>
         <include layout="@layout/camera_scroll_button" />
-        <com.android.camera.ui.CameraPickerButton android:id="@id/camera_picker_button" android:background="@drawable/btn_camera_picker_bg_16_9" android:layout_alignParentRight="true" style="@style/RotateImageViewStyle">
-            <com.android.camera.ui.RotateImageView android:id="@id/camera_picker_button_image" android:src="@drawable/ic_switch_photo_facing_holo_light_16_9_0" android:layout_centerInParent="true" android:contentDescription="@string/accessibility_camera_picker" style="@style/RotateImageViewStyle" />
+        <com.android.camera.ui.CameraPickerButton android:id="@id/camera_picker_button" android:background="@drawable/btn_camera_picker_bg" android:layout_alignParentRight="true" style="@style/RotateImageViewStyle">
+            <com.android.camera.ui.RotateImageView android:id="@id/camera_picker_button_image" android:src="@drawable/ic_switch_photo_facing_holo_light" android:layout_centerInParent="true" style="@style/RotateImageViewStyle" />
         </com.android.camera.ui.CameraPickerButton>
-        <com.android.camera.ui.RotateImageView android:id="@id/capture_button" android:background="@drawable/btn_camera_picker_bg_16_9" android:visibility="gone" android:clickable="true" android:src="@drawable/ic_capture_video_picture_16_9" android:layout_alignParentRight="true" style="@style/RotateImageViewStyle" />
+        <com.android.camera.ui.RotateImageView android:id="@id/capture_button" android:background="@drawable/btn_camera_picker_bg" android:visibility="gone" android:clickable="true" android:src="@drawable/ic_capture_video_picture" android:layout_alignParentRight="true" style="@style/RotateImageViewStyle" />
     </RelativeLayout>
 </RelativeLayout>

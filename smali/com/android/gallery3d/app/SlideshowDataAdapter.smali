@@ -74,7 +74,7 @@
     const/4 v2, 0x0
 
     .line 69
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 51
     iput v2, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter;->mLoadIndex:I
@@ -309,7 +309,7 @@
 
     iget-object v1, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter;->mImageQueue:Ljava/util/LinkedList;
 
-    invoke-virtual {v1}, Ljava/util/LinkedList;->isEmpty()Z
+    invoke-virtual {v1}, Ljava/util/AbstractCollection;->isEmpty()Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -355,7 +355,7 @@
     :try_start_3
     iget-object v1, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter;->mImageQueue:Ljava/util/LinkedList;
 
-    invoke-virtual {v1}, Ljava/util/LinkedList;->isEmpty()Z
+    invoke-virtual {v1}, Ljava/util/AbstractCollection;->isEmpty()Z
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
@@ -479,7 +479,6 @@
 # virtual methods
 .method public nextSlide(Lcom/android/gallery3d/util/FutureListener;)Lcom/android/gallery3d/util/Future;
     .locals 2
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

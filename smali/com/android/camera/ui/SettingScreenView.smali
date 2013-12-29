@@ -158,7 +158,7 @@
     iput v0, p0, Lcom/android/camera/ui/SettingScreenView;->mRowCount:I
 
     .line 88
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingScreenView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -171,7 +171,7 @@
     iput v0, p0, Lcom/android/camera/ui/SettingScreenView;->mRowHeight:I
 
     .line 89
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingScreenView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -287,7 +287,7 @@
     .line 251
     const/4 v2, 0x1
 
-    invoke-virtual {v0, v2}, Lcom/android/camera/ui/AbstractIndicatorButton;->enableFilter(Z)V
+    invoke-virtual {v0, v2}, Lcom/android/camera/ui/TwoStateImageView;->enableFilter(Z)V
 
     .line 252
     invoke-virtual {v0, p2}, Lcom/android/camera/ui/AbstractIndicatorButton;->setEnabled(Z)V
@@ -333,7 +333,6 @@
 
 .method protected initIndicators(Ljava/util/List;)V
     .locals 17
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -371,7 +370,7 @@
 
     .line 95
     .local v13, screenCount:I
-    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingScreenView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -403,19 +402,19 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/camera/ui/SettingScreenView;->mPaddingLeft:I
+    iget v3, v0, Landroid/view/View;->mPaddingLeft:I
 
     sub-int/2addr v2, v3
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Lcom/android/camera/ui/SettingScreenView;->mPaddingRight:I
+    iget v3, v0, Landroid/view/View;->mPaddingRight:I
 
     sub-int v16, v2, v3
 
     .line 98
     .local v16, w:I
-    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingScreenView;->getResources()Landroid/content/res/Resources;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -462,7 +461,7 @@
     .line 102
     new-instance v1, Lcom/android/camera/ui/StaticGridView;
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingScreenView;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -518,7 +517,7 @@
 
     iget-object v2, v0, Lcom/android/camera/ui/SettingScreenView;->mSettingScreen:Lcom/android/camera/ui/ScreenView;
 
-    invoke-virtual {v2, v1}, Lcom/android/camera/ui/ScreenView;->addView(Landroid/view/View;)V
+    invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 101
     add-int/lit8 v15, v15, 0x1
@@ -567,7 +566,7 @@
     if-eqz v12, :cond_3
 
     .line 115
-    invoke-virtual {v12}, Lcom/android/camera/IconListPreference;->getKey()Ljava/lang/String;
+    invoke-virtual {v12}, Lcom/android/camera/ListPreference;->getKey()Ljava/lang/String;
 
     move-result-object v2
 
@@ -582,7 +581,7 @@
     .line 116
     new-instance v7, Lcom/android/camera/ui/IndicatorButtonWhiteBalance;
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingScreenView;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -598,14 +597,14 @@
     .line 122
     move-object/from16 v0, p0
 
-    invoke-virtual {v7, v0}, Lcom/android/camera/ui/IndicatorButton;->setIndicatorClickListener(Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;)V
+    invoke-virtual {v7, v0}, Lcom/android/camera/ui/AbstractIndicatorButton;->setIndicatorClickListener(Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;)V
 
     .line 123
-    invoke-virtual {v12}, Lcom/android/camera/IconListPreference;->getTitle()Ljava/lang/String;
+    invoke-virtual {v12}, Lcom/android/camera/CameraPreference;->getTitle()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v7, v2}, Lcom/android/camera/ui/IndicatorButton;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v7, v2}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
     .line 124
     new-instance v10, Landroid/view/ViewGroup$LayoutParams;
@@ -618,10 +617,10 @@
 
     .line 126
     .local v10, layout:Landroid/view/ViewGroup$LayoutParams;
-    invoke-virtual {v7, v10}, Lcom/android/camera/ui/IndicatorButton;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v7, v10}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 127
-    invoke-virtual {v1, v7}, Lcom/android/camera/ui/StaticGridView;->addView(Landroid/view/View;)V
+    invoke-virtual {v1, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 128
     move-object/from16 v0, p0
@@ -642,7 +641,7 @@
     :cond_4
     new-instance v7, Lcom/android/camera/ui/IndicatorButton;
 
-    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingScreenView;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -687,7 +686,7 @@
     const/4 v5, 0x0
 
     .line 55
-    iget-object v1, p0, Lcom/android/camera/ui/SettingScreenView;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     const v2, 0x7f050006
 
@@ -698,7 +697,7 @@
     iput-object v1, p0, Lcom/android/camera/ui/SettingScreenView;->mFadeIn:Landroid/view/animation/Animation;
 
     .line 56
-    iget-object v1, p0, Lcom/android/camera/ui/SettingScreenView;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
     const v2, 0x7f050007
 
@@ -719,7 +718,7 @@
     invoke-virtual {v1, p0}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
     .line 59
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingScreenView;->getRootView()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v1
 
@@ -732,7 +731,7 @@
     iput-object v1, p0, Lcom/android/camera/ui/SettingScreenView;->mParent:Landroid/view/View;
 
     .line 60
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingScreenView;->getRootView()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v1
 
@@ -758,7 +757,7 @@
     .line 66
     const v1, 0x7f0c0033
 
-    invoke-virtual {p0, v1}, Lcom/android/camera/ui/SettingScreenView;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -769,7 +768,7 @@
     .line 67
     iget-object v1, p0, Lcom/android/camera/ui/SettingScreenView;->mSettingScreen:Lcom/android/camera/ui/ScreenView;
 
-    const v2, 0x7f02014a
+    const v2, 0x7f020141
 
     invoke-virtual {v1, v2}, Lcom/android/camera/ui/ScreenView;->setSeekPointResource(I)V
 
@@ -784,7 +783,7 @@
 
     invoke-direct {v2, v3, v4}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
 
-    invoke-virtual {v1, v2}, Lcom/android/camera/ui/ScreenView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 71
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
@@ -801,7 +800,7 @@
 
     mul-int/2addr v1, v2
 
-    invoke-virtual {v0, v5, v1, v5, v5}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
+    invoke-virtual {v0, v5, v1, v5, v5}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
     .line 75
     iget-object v1, p0, Lcom/android/camera/ui/SettingScreenView;->mSettingScreen:Lcom/android/camera/ui/ScreenView;
@@ -822,7 +821,7 @@
     invoke-direct {p0}, Lcom/android/camera/ui/SettingScreenView;->dissmissAllPopup()V
 
     .line 79
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingScreenView;->getRootView()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v1
 
@@ -978,7 +977,7 @@
     .line 142
     .end local v0           #i:Lcom/android/camera/ui/AbstractIndicatorButton;
     :cond_1
-    invoke-super {p0, p1}, Lcom/android/camera/ui/SettingView;->setEnabled(Z)V
+    invoke-super {p0, p1}, Landroid/view/View;->setEnabled(Z)V
 
     .line 143
     return-void

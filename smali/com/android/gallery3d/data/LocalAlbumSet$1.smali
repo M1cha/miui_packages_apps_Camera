@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/data/LocalAlbumSet;)V
     .locals 0
-    .parameter
 
     .prologue
     .line 297
     iput-object p1, p0, Lcom/android/gallery3d/data/LocalAlbumSet$1;->this$0:Lcom/android/gallery3d/data/LocalAlbumSet;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -44,7 +43,7 @@
     .line 300
     iget-object v0, p0, Lcom/android/gallery3d/data/LocalAlbumSet$1;->this$0:Lcom/android/gallery3d/data/LocalAlbumSet;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/LocalAlbumSet;->notifyContentChanged()V
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaSet;->notifyContentChanged()V
 
     .line 301
     return-void

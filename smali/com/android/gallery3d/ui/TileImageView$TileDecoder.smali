@@ -36,13 +36,12 @@
 # direct methods
 .method private constructor <init>(Lcom/android/gallery3d/ui/TileImageView;)V
     .locals 1
-    .parameter
 
     .prologue
     .line 744
     iput-object p1, p0, Lcom/android/gallery3d/ui/TileImageView$TileDecoder;->this$0:Lcom/android/gallery3d/ui/TileImageView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 746
     new-instance v0, Lcom/android/gallery3d/ui/TileImageView$TileDecoder$1;

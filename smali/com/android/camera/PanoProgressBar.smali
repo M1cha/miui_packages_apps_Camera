@@ -185,7 +185,7 @@
 
     .line 80
     :cond_0
-    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     .line 82
     :cond_1
@@ -370,7 +370,7 @@
     invoke-direct {p0, v0}, Lcom/android/camera/PanoProgressBar;->setDirection(I)V
 
     .line 173
-    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     .line 174
     return-void
@@ -387,7 +387,7 @@
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 91
-    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     .line 92
     return-void
@@ -404,7 +404,7 @@
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 96
-    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     .line 97
     return-void
@@ -419,7 +419,7 @@
     iput-object p1, p0, Lcom/android/camera/PanoProgressBar;->mIndicator:Landroid/graphics/Bitmap;
 
     .line 107
-    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     .line 108
     return-void
@@ -436,7 +436,7 @@
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 101
-    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     .line 102
     return-void
@@ -451,7 +451,7 @@
     iput p1, p0, Lcom/android/camera/PanoProgressBar;->mIndicatorWidth:F
 
     .line 123
-    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     .line 124
     return-void
@@ -579,7 +579,7 @@
 
     .line 165
     :cond_2
-    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     .line 167
     :cond_3
@@ -628,7 +628,7 @@
     iput-boolean p1, p0, Lcom/android/camera/PanoProgressBar;->mRightIncreasing:Z
 
     .line 139
-    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     .line 140
     return-void

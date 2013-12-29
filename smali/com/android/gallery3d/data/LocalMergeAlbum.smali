@@ -266,7 +266,7 @@
 
     aget-object v5, v5, v0
 
-    invoke-virtual {v5}, Lcom/android/gallery3d/data/MediaSet;->getSupportedOperations()I
+    invoke-virtual {v5}, Lcom/android/gallery3d/data/MediaObject;->getSupportedOperations()I
 
     move-result v5
 
@@ -364,7 +364,7 @@
 
     .line 182
     .local v3, set:Lcom/android/gallery3d/data/MediaSet;
-    invoke-virtual {v3}, Lcom/android/gallery3d/data/MediaSet;->delete()V
+    invoke-virtual {v3}, Lcom/android/gallery3d/data/MediaObject;->delete()V
 
     .line 181
     add-int/lit8 v1, v1, 0x1
@@ -465,7 +465,7 @@
 
     check-cast v9, [I
 
-    invoke-virtual {v9}, [I->clone()Ljava/lang/Object;
+    invoke-virtual {v9}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v8
 
@@ -625,7 +625,7 @@
 
     move-result-object v10
 
-    invoke-virtual {v8}, [I->clone()Ljava/lang/Object;
+    invoke-virtual {v8}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v11
 
@@ -717,7 +717,7 @@
 
     .prologue
     .line 171
-    invoke-virtual {p0}, Lcom/android/gallery3d/data/LocalMergeAlbum;->notifyContentChanged()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/data/MediaSet;->notifyContentChanged()V
 
     .line 172
     return-void
@@ -812,7 +812,7 @@
 
     .line 189
     .local v3, set:Lcom/android/gallery3d/data/MediaSet;
-    invoke-virtual {v3, p1}, Lcom/android/gallery3d/data/MediaSet;->rotate(I)V
+    invoke-virtual {v3, p1}, Lcom/android/gallery3d/data/MediaObject;->rotate(I)V
 
     .line 188
     add-int/lit8 v1, v1, 0x1

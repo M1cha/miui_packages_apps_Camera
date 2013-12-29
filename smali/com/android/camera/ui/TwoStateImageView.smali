@@ -67,7 +67,7 @@
 
     .prologue
     .line 40
-    invoke-super {p0, p1}, Landroid/widget/ImageView;->setEnabled(Z)V
+    invoke-super {p0, p1}, Landroid/view/View;->setEnabled(Z)V
 
     .line 41
     iget-boolean v0, p0, Lcom/android/camera/ui/TwoStateImageView;->mFilterEnabled:Z
@@ -80,7 +80,7 @@
     .line 43
     const/high16 v0, 0x3f80
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/TwoStateImageView;->setAlpha(F)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
 
     .line 48
     :cond_0
@@ -91,7 +91,7 @@
     :cond_1
     const v0, 0x3ecccccd
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/TwoStateImageView;->setAlpha(F)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
 
     goto :goto_0
 .end method

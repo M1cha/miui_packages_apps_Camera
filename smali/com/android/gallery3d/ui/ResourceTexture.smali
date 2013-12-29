@@ -50,7 +50,7 @@
 
     .prologue
     .line 27
-    invoke-super {p0, p1, p2, p3}, Lcom/android/gallery3d/ui/UploadedTexture;->draw(Lcom/android/gallery3d/ui/GLCanvas;II)V
+    invoke-super {p0, p1, p2, p3}, Lcom/android/gallery3d/ui/BasicTexture;->draw(Lcom/android/gallery3d/ui/GLCanvas;II)V
 
     return-void
 .end method
@@ -65,7 +65,7 @@
 
     .prologue
     .line 27
-    invoke-super/range {p0 .. p5}, Lcom/android/gallery3d/ui/UploadedTexture;->draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
+    invoke-super/range {p0 .. p5}, Lcom/android/gallery3d/ui/BasicTexture;->draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
 
     return-void
 .end method
@@ -87,7 +87,7 @@
 
     .prologue
     .line 27
-    invoke-super {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->getId()I
+    invoke-super {p0}, Lcom/android/gallery3d/ui/BasicTexture;->getId()I
 
     move-result v0
 
@@ -99,7 +99,7 @@
 
     .prologue
     .line 27
-    invoke-super {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->getTextureHeight()I
+    invoke-super {p0}, Lcom/android/gallery3d/ui/BasicTexture;->getTextureHeight()I
 
     move-result v0
 
@@ -111,7 +111,7 @@
 
     .prologue
     .line 27
-    invoke-super {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->getTextureWidth()I
+    invoke-super {p0}, Lcom/android/gallery3d/ui/BasicTexture;->getTextureWidth()I
 
     move-result v0
 
@@ -135,7 +135,7 @@
 
     .prologue
     .line 27
-    invoke-super {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->hasBorder()Z
+    invoke-super {p0}, Lcom/android/gallery3d/ui/BasicTexture;->hasBorder()Z
 
     move-result v0
 
@@ -159,7 +159,7 @@
 
     .prologue
     .line 27
-    invoke-super {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->isLoaded()Z
+    invoke-super {p0}, Lcom/android/gallery3d/ui/BasicTexture;->isLoaded()Z
 
     move-result v0
 
@@ -266,7 +266,7 @@
 
     .prologue
     .line 27
-    invoke-super {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->yield()V
+    invoke-super {p0}, Lcom/android/gallery3d/ui/BasicTexture;->yield()V
 
     return-void
 .end method

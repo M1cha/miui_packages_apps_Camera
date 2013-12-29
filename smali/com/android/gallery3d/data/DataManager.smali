@@ -68,7 +68,7 @@
     .line 65
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/android/gallery3d/data/DataManager;->LOCK:Ljava/lang/Object;
 
@@ -90,7 +90,7 @@
 
     .prologue
     .line 107
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 98
     const/4 v0, 0x0
@@ -117,7 +117,7 @@
     .line 109
     new-instance v0, Landroid/os/Handler;
 
-    invoke-virtual {p1}, Lcom/android/camera/CameraAppImpl;->getMainLooper()Landroid/os/Looper;
+    invoke-virtual {p1}, Landroid/content/ContextWrapper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v1
 
@@ -938,7 +938,7 @@
     :try_start_1
     iget-object v3, p0, Lcom/android/gallery3d/data/DataManager;->mApplication:Lcom/android/camera/CameraAppImpl;
 
-    invoke-virtual {v3}, Lcom/android/camera/CameraAppImpl;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v3}, Landroid/content/ContextWrapper;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
 

@@ -1,14 +1,11 @@
 .class Lcom/android/camera/ShutterButton$1;
-.super Ljava/lang/Object;
+.super Landroid/os/Handler;
 .source "ShutterButton.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/camera/ShutterButton;->drawableStateChanged()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/camera/ShutterButton;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,40 +17,63 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/camera/ShutterButton;
 
-.field final synthetic val$pressed:Z
-
 
 # direct methods
-.method constructor <init>(Lcom/android/camera/ShutterButton;Z)V
+.method constructor <init>(Lcom/android/camera/ShutterButton;)V
     .locals 0
-    .parameter
-    .parameter
 
     .prologue
-    .line 122
+    .line 56
     iput-object p1, p0, Lcom/android/camera/ShutterButton$1;->this$0:Lcom/android/camera/ShutterButton;
 
-    iput-boolean p2, p0, Lcom/android/camera/ShutterButton$1;->val$pressed:Z
-
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/os/Handler;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 2
+.method public dispatchMessage(Landroid/os/Message;)V
+    .locals 1
+    .parameter "msg"
 
     .prologue
-    .line 124
+    .line 60
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    packed-switch v0, :pswitch_data_0
+
+    .line 67
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 62
+    :pswitch_0
     iget-object v0, p0, Lcom/android/camera/ShutterButton$1;->this$0:Lcom/android/camera/ShutterButton;
 
-    iget-boolean v1, p0, Lcom/android/camera/ShutterButton$1;->val$pressed:Z
+    #getter for: Lcom/android/camera/ShutterButton;->mListener:Lcom/android/camera/ShutterButton$OnShutterButtonListener;
+    invoke-static {v0}, Lcom/android/camera/ShutterButton;->access$000(Lcom/android/camera/ShutterButton;)Lcom/android/camera/ShutterButton$OnShutterButtonListener;
 
-    #calls: Lcom/android/camera/ShutterButton;->callShutterButtonFocus(Z)V
-    invoke-static {v0, v1}, Lcom/android/camera/ShutterButton;->access$000(Lcom/android/camera/ShutterButton;Z)V
+    move-result-object v0
 
-    .line 125
-    return-void
+    if-eqz v0, :cond_0
+
+    .line 63
+    iget-object v0, p0, Lcom/android/camera/ShutterButton$1;->this$0:Lcom/android/camera/ShutterButton;
+
+    #getter for: Lcom/android/camera/ShutterButton;->mListener:Lcom/android/camera/ShutterButton$OnShutterButtonListener;
+    invoke-static {v0}, Lcom/android/camera/ShutterButton;->access$000(Lcom/android/camera/ShutterButton;)Lcom/android/camera/ShutterButton$OnShutterButtonListener;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/android/camera/ShutterButton$OnShutterButtonListener;->onShutterButtonLongClick()Z
+
+    goto :goto_0
+
+    .line 60
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

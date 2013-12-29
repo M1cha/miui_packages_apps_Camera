@@ -233,7 +233,6 @@
 .method protected getIndexOf(Lcom/android/gallery3d/data/Path;Ljava/util/ArrayList;)I
     .locals 3
     .parameter "path"
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

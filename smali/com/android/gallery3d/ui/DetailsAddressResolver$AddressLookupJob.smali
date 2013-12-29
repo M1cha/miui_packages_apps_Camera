@@ -43,7 +43,7 @@
     .line 42
     iput-object p1, p0, Lcom/android/gallery3d/ui/DetailsAddressResolver$AddressLookupJob;->this$0:Lcom/android/gallery3d/ui/DetailsAddressResolver;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
     iput-object p2, p0, Lcom/android/gallery3d/ui/DetailsAddressResolver$AddressLookupJob;->mLatlng:[D

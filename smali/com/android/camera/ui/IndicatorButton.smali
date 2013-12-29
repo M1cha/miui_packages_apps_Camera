@@ -58,7 +58,7 @@
     .line 84
     iget-object v0, p0, Lcom/android/camera/ui/IndicatorButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v0}, Lcom/android/camera/IconListPreference;->getKey()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/android/camera/ListPreference;->getKey()Ljava/lang/String;
 
     move-result-object v0
 
@@ -76,7 +76,7 @@
 
     iget-object v1, p0, Lcom/android/camera/ui/IndicatorButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->getValue()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v1
 
@@ -98,7 +98,7 @@
 
     iget-object v3, p0, Lcom/android/camera/ui/IndicatorButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v3}, Lcom/android/camera/IconListPreference;->getKey()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/android/camera/ListPreference;->getKey()Ljava/lang/String;
 
     move-result-object v3
 
@@ -118,7 +118,7 @@
 
     .line 114
     :cond_1
-    invoke-virtual {p0}, Lcom/android/camera/ui/IndicatorButton;->getRootView()Landroid/view/View;
+    invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v1
 
@@ -136,7 +136,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/android/camera/ui/IndicatorButton;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -257,7 +257,7 @@
     const/4 v3, 0x1
 
     :goto_1
-    invoke-virtual {p0, v3}, Lcom/android/camera/ui/IndicatorButton;->setEnabled(Z)V
+    invoke-virtual {p0, v3}, Lcom/android/camera/ui/AbstractIndicatorButton;->setEnabled(Z)V
 
     .line 104
     .end local v1           #key:Ljava/lang/String;
@@ -309,7 +309,7 @@
     if-eqz v2, :cond_1
 
     .line 58
-    invoke-virtual {p0, v2}, Lcom/android/camera/ui/IndicatorButton;->setImageResource(I)V
+    invoke-virtual {p0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 79
     :goto_1
@@ -336,11 +336,11 @@
 
     iget-object v5, p0, Lcom/android/camera/ui/IndicatorButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v5}, Lcom/android/camera/IconListPreference;->getValue()Ljava/lang/String;
+    invoke-virtual {v5}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v4, v5}, Lcom/android/camera/IconListPreference;->findIndexOfValue(Ljava/lang/String;)I
+    invoke-virtual {v4, v5}, Lcom/android/camera/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
 
     move-result v1
 
@@ -361,7 +361,7 @@
 
     iget-object v4, p0, Lcom/android/camera/ui/IndicatorButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v4}, Lcom/android/camera/IconListPreference;->getValue()Ljava/lang/String;
+    invoke-virtual {v4}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
@@ -393,7 +393,7 @@
     .line 74
     iget-object v4, p0, Lcom/android/camera/ui/IndicatorButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v4}, Lcom/android/camera/IconListPreference;->print()V
+    invoke-virtual {v4}, Lcom/android/camera/ListPreference;->print()V
 
     goto :goto_0
 
@@ -405,7 +405,7 @@
 
     iget-object v5, p0, Lcom/android/camera/ui/IndicatorButton;->mOverrideValue:Ljava/lang/String;
 
-    invoke-virtual {v4, v5}, Lcom/android/camera/IconListPreference;->findIndexOfValue(Ljava/lang/String;)I
+    invoke-virtual {v4, v5}, Lcom/android/camera/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
 
     move-result v1
 
@@ -422,7 +422,7 @@
     :cond_5
     aget v4, v0, v1
 
-    invoke-virtual {p0, v4}, Lcom/android/camera/ui/IndicatorButton;->setImageResource(I)V
+    invoke-virtual {p0, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
     goto :goto_1
 .end method

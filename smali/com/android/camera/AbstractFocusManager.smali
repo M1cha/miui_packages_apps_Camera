@@ -56,22 +56,22 @@
     .locals 2
 
     .prologue
-    .line 65
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
     .line 66
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 67
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, p0, Lcom/android/camera/AbstractFocusManager;->mMatrix:Landroid/graphics/Matrix;
 
-    .line 67
+    .line 68
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/camera/AbstractFocusManager;->mInitialized:Z
 
-    .line 76
+    .line 77
     invoke-static {}, Lcom/android/camera/CameraAppImpl;->sGetAndroidContext()Landroid/content/Context;
 
     move-result-object v0
@@ -88,7 +88,7 @@
 
     iput v0, p0, Lcom/android/camera/AbstractFocusManager;->FOCUS_AREA_WIDTH:I
 
-    .line 78
+    .line 79
     invoke-static {}, Lcom/android/camera/CameraAppImpl;->sGetAndroidContext()Landroid/content/Context;
 
     move-result-object v0
@@ -105,7 +105,7 @@
 
     iput v0, p0, Lcom/android/camera/AbstractFocusManager;->FOCUS_AREA_HEIGHT:I
 
-    .line 80
+    .line 81
     invoke-static {}, Lcom/android/camera/CameraAppImpl;->sGetAndroidContext()Landroid/content/Context;
 
     move-result-object v0
@@ -122,7 +122,7 @@
 
     iput v0, p0, Lcom/android/camera/AbstractFocusManager;->FOCUS_INDICATOR_WIDTH:I
 
-    .line 82
+    .line 83
     invoke-static {}, Lcom/android/camera/CameraAppImpl;->sGetAndroidContext()Landroid/content/Context;
 
     move-result-object v0
@@ -156,14 +156,14 @@
     .parameter "rect"
 
     .prologue
-    .line 108
+    .line 109
     int-to-float v6, p1
 
     mul-float/2addr v6, p3
 
     float-to-int v2, v6
 
-    .line 109
+    .line 110
     .local v2, areaWidth:I
     int-to-float v6, p2
 
@@ -171,7 +171,7 @@
 
     float-to-int v1, v6
 
-    .line 110
+    .line 111
     .local v1, areaHeight:I
     div-int/lit8 v6, v2, 0x2
 
@@ -185,7 +185,7 @@
 
     move-result v3
 
-    .line 111
+    .line 112
     .local v3, left:I
     div-int/lit8 v6, v1, 0x2
 
@@ -199,7 +199,7 @@
 
     move-result v5
 
-    .line 113
+    .line 114
     .local v5, top:I
     new-instance v4, Landroid/graphics/RectF;
 
@@ -217,18 +217,18 @@
 
     invoke-direct {v4, v6, v7, v8, v9}, Landroid/graphics/RectF;-><init>(FFFF)V
 
-    .line 114
+    .line 115
     .local v4, rectF:Landroid/graphics/RectF;
     iget-object v6, p0, Lcom/android/camera/AbstractFocusManager;->mMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v6, v4}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;)Z
 
-    .line 115
+    .line 116
     move-object/from16 v0, p8
 
     invoke-static {v4, v0}, Lcom/android/camera/Util;->rectFToRect(Landroid/graphics/RectF;Landroid/graphics/Rect;)V
 
-    .line 116
+    .line 117
     return-void
 .end method
 
@@ -237,13 +237,13 @@
     .parameter "displayOrientation"
 
     .prologue
-    .line 124
+    .line 125
     iput p1, p0, Lcom/android/camera/AbstractFocusManager;->mDisplayOrientation:I
 
-    .line 125
+    .line 126
     invoke-virtual {p0}, Lcom/android/camera/AbstractFocusManager;->setMatrix()V
 
-    .line 126
+    .line 127
     return-void
 .end method
 
@@ -251,7 +251,7 @@
     .locals 7
 
     .prologue
-    .line 86
+    .line 87
     iget v1, p0, Lcom/android/camera/AbstractFocusManager;->mPreviewWidth:I
 
     if-eqz v1, :cond_0
@@ -260,12 +260,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 87
+    .line 88
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 88
+    .line 89
     .local v0, matrix:Landroid/graphics/Matrix;
     iget-boolean v1, p0, Lcom/android/camera/AbstractFocusManager;->mMirror:Z
 
@@ -285,17 +285,17 @@
 
     invoke-static/range {v0 .. v6}, Lcom/android/camera/Util;->prepareMatrix(Landroid/graphics/Matrix;ZIIIII)V
 
-    .line 93
+    .line 94
     iget-object v1, p0, Lcom/android/camera/AbstractFocusManager;->mMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->invert(Landroid/graphics/Matrix;)Z
 
-    .line 94
+    .line 95
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Lcom/android/camera/AbstractFocusManager;->mInitialized:Z
 
-    .line 96
+    .line 97
     .end local v0           #matrix:Landroid/graphics/Matrix;
     :cond_0
     return-void
@@ -306,13 +306,13 @@
     .parameter "mirror"
 
     .prologue
-    .line 119
+    .line 120
     iput-boolean p1, p0, Lcom/android/camera/AbstractFocusManager;->mMirror:Z
 
-    .line 120
+    .line 121
     invoke-virtual {p0}, Lcom/android/camera/AbstractFocusManager;->setMatrix()V
 
-    .line 121
+    .line 122
     return-void
 .end method
 
@@ -322,7 +322,7 @@
     .parameter "height"
 
     .prologue
-    .line 99
+    .line 100
     iget v0, p0, Lcom/android/camera/AbstractFocusManager;->mRenderWidth:I
 
     if-ne p1, v0, :cond_0
@@ -331,17 +331,17 @@
 
     if-eq p2, v0, :cond_1
 
-    .line 100
+    .line 101
     :cond_0
     iput p1, p0, Lcom/android/camera/AbstractFocusManager;->mRenderWidth:I
 
-    .line 101
+    .line 102
     iput p2, p0, Lcom/android/camera/AbstractFocusManager;->mRenderHeight:I
 
-    .line 102
+    .line 103
     invoke-virtual {p0}, Lcom/android/camera/AbstractFocusManager;->setMatrix()V
 
-    .line 104
+    .line 105
     :cond_1
     return-void
 .end method

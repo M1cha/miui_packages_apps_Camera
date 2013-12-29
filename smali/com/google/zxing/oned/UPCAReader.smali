@@ -12,10 +12,10 @@
     .locals 1
 
     .prologue
-    .line 35
+    .line 36
     invoke-direct {p0}, Lcom/google/zxing/oned/UPCEANReader;-><init>()V
 
-    .line 37
+    .line 38
     new-instance v0, Lcom/google/zxing/oned/EAN13Reader;
 
     invoke-direct {v0}, Lcom/google/zxing/oned/EAN13Reader;-><init>()V
@@ -35,12 +35,12 @@
     .end annotation
 
     .prologue
-    .line 67
+    .line 78
     invoke-virtual {p0}, Lcom/google/zxing/Result;->getText()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 68
+    .line 79
     .local v0, text:Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -52,7 +52,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 69
+    .line 80
     new-instance v1, Lcom/google/zxing/Result;
 
     const/4 v2, 0x1
@@ -73,7 +73,7 @@
 
     return-object v1
 
-    .line 71
+    .line 82
     :cond_0
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
@@ -84,10 +84,21 @@
 
 
 # virtual methods
-.method public decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Hashtable;)Lcom/google/zxing/Result;
+.method public decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 1
     .parameter "image"
-    .parameter "hints"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/zxing/BinaryBitmap;",
+            "Ljava/util/Map",
+            "<",
+            "Lcom/google/zxing/DecodeHintType;",
+            "*>;)",
+            "Lcom/google/zxing/Result;"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;,
@@ -96,10 +107,11 @@
     .end annotation
 
     .prologue
-    .line 54
+    .line 63
+    .local p2, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     iget-object v0, p0, Lcom/google/zxing/oned/UPCAReader;->ean13Reader:Lcom/google/zxing/oned/UPCEANReader;
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/zxing/oned/UPCEANReader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Hashtable;)Lcom/google/zxing/Result;
+    invoke-virtual {v0, p1, p2}, Lcom/google/zxing/oned/OneDReader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
 
     move-result-object v0
 
@@ -110,7 +122,7 @@
     return-object v0
 .end method
 
-.method protected decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuffer;)I
+.method protected decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuilder;)I
     .locals 1
     .parameter "row"
     .parameter "startRange"
@@ -122,21 +134,32 @@
     .end annotation
 
     .prologue
-    .line 63
+    .line 74
     iget-object v0, p0, Lcom/google/zxing/oned/UPCAReader;->ean13Reader:Lcom/google/zxing/oned/UPCEANReader;
 
-    invoke-virtual {v0, p1, p2, p3}, Lcom/google/zxing/oned/UPCEANReader;->decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuffer;)I
+    invoke-virtual {v0, p1, p2, p3}, Lcom/google/zxing/oned/UPCEANReader;->decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuilder;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Hashtable;)Lcom/google/zxing/Result;
+.method public decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 1
     .parameter "rowNumber"
     .parameter "row"
-    .parameter "hints"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I",
+            "Lcom/google/zxing/common/BitArray;",
+            "Ljava/util/Map",
+            "<",
+            "Lcom/google/zxing/DecodeHintType;",
+            "*>;)",
+            "Lcom/google/zxing/Result;"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;,
@@ -146,10 +169,11 @@
     .end annotation
 
     .prologue
-    .line 46
+    .line 52
+    .local p3, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     iget-object v0, p0, Lcom/google/zxing/oned/UPCAReader;->ean13Reader:Lcom/google/zxing/oned/UPCEANReader;
 
-    invoke-virtual {v0, p1, p2, p3}, Lcom/google/zxing/oned/UPCEANReader;->decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Hashtable;)Lcom/google/zxing/Result;
+    invoke-virtual {v0, p1, p2, p3}, Lcom/google/zxing/oned/UPCEANReader;->decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
 
     move-result-object v0
 
@@ -160,12 +184,24 @@
     return-object v0
 .end method
 
-.method public decodeRow(ILcom/google/zxing/common/BitArray;[ILjava/util/Hashtable;)Lcom/google/zxing/Result;
+.method public decodeRow(ILcom/google/zxing/common/BitArray;[ILjava/util/Map;)Lcom/google/zxing/Result;
     .locals 1
     .parameter "rowNumber"
     .parameter "row"
     .parameter "startGuardRange"
-    .parameter "hints"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I",
+            "Lcom/google/zxing/common/BitArray;",
+            "[I",
+            "Ljava/util/Map",
+            "<",
+            "Lcom/google/zxing/DecodeHintType;",
+            "*>;)",
+            "Lcom/google/zxing/Result;"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;,
@@ -175,10 +211,11 @@
     .end annotation
 
     .prologue
-    .line 41
+    .line 46
+    .local p4, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     iget-object v0, p0, Lcom/google/zxing/oned/UPCAReader;->ean13Reader:Lcom/google/zxing/oned/UPCEANReader;
 
-    invoke-virtual {v0, p1, p2, p3, p4}, Lcom/google/zxing/oned/UPCEANReader;->decodeRow(ILcom/google/zxing/common/BitArray;[ILjava/util/Hashtable;)Lcom/google/zxing/Result;
+    invoke-virtual {v0, p1, p2, p3, p4}, Lcom/google/zxing/oned/UPCEANReader;->decodeRow(ILcom/google/zxing/common/BitArray;[ILjava/util/Map;)Lcom/google/zxing/Result;
 
     move-result-object v0
 
@@ -193,7 +230,7 @@
     .locals 1
 
     .prologue
-    .line 58
+    .line 68
     sget-object v0, Lcom/google/zxing/BarcodeFormat;->UPC_A:Lcom/google/zxing/BarcodeFormat;
 
     return-object v0

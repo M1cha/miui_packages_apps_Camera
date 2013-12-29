@@ -1,9 +1,10 @@
-.class Lcom/google/zxing/qrcode/detector/FinderPatternFinder$FurthestFromAverageComparator;
+.class final Lcom/google/zxing/qrcode/detector/FinderPatternFinder$FurthestFromAverageComparator;
 .super Ljava/lang/Object;
 .source "FinderPatternFinder.java"
 
 # interfaces
-.implements Lcom/google/zxing/common/Comparator;
+.implements Ljava/io/Serializable;
+.implements Ljava/util/Comparator;
 
 
 # annotations
@@ -12,8 +13,19 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x1a
     name = "FurthestFromAverageComparator"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/Comparator",
+        "<",
+        "Lcom/google/zxing/qrcode/detector/FinderPattern;",
+        ">;",
+        "Ljava/io/Serializable;"
+    }
 .end annotation
 
 
@@ -22,33 +34,42 @@
 
 
 # direct methods
-.method public constructor <init>(F)V
+.method private constructor <init>(F)V
     .locals 0
     .parameter "f"
 
     .prologue
-    .line 556
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 554
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 557
+    .line 555
     iput p1, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$FurthestFromAverageComparator;->average:F
 
-    .line 558
+    .line 556
+    return-void
+.end method
+
+.method synthetic constructor <init>(FLcom/google/zxing/qrcode/detector/FinderPatternFinder$1;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 552
+    invoke-direct {p0, p1}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$FurthestFromAverageComparator;-><init>(F)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public compare(Lcom/google/zxing/qrcode/detector/FinderPattern;Lcom/google/zxing/qrcode/detector/FinderPattern;)I
     .locals 4
     .parameter "center1"
     .parameter "center2"
 
     .prologue
-    .line 560
-    check-cast p2, Lcom/google/zxing/qrcode/detector/FinderPattern;
-
-    .end local p2
+    .line 559
     invoke-virtual {p2}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
 
     move-result v2
@@ -61,11 +82,8 @@
 
     move-result v0
 
-    .line 561
+    .line 560
     .local v0, dA:F
-    check-cast p1, Lcom/google/zxing/qrcode/detector/FinderPattern;
-
-    .end local p1
     invoke-virtual {p1}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
 
     move-result v2
@@ -78,7 +96,7 @@
 
     move-result v1
 
-    .line 562
+    .line 561
     .local v1, dB:F
     cmpg-float v2, v0, v1
 
@@ -102,4 +120,24 @@
     const/4 v2, 0x1
 
     goto :goto_0
+.end method
+
+.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 552
+    check-cast p1, Lcom/google/zxing/qrcode/detector/FinderPattern;
+
+    .end local p1
+    check-cast p2, Lcom/google/zxing/qrcode/detector/FinderPattern;
+
+    .end local p2
+    invoke-virtual {p0, p1, p2}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$FurthestFromAverageComparator;->compare(Lcom/google/zxing/qrcode/detector/FinderPattern;Lcom/google/zxing/qrcode/detector/FinderPattern;)I
+
+    move-result v0
+
+    return v0
 .end method

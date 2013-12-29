@@ -114,7 +114,7 @@
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     .line 71
-    invoke-virtual {p0}, Lcom/android/gallery3d/data/SnailAlbum;->notifyContentChanged()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/data/MediaSet;->notifyContentChanged()V
 
     .line 72
     return-void

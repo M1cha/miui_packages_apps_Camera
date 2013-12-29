@@ -67,7 +67,7 @@
     const/4 v6, 0x0
 
     .line 116
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 74
     new-instance v2, Landroid/os/Handler;
@@ -110,7 +110,7 @@
     iput-object v2, p0, Lcom/android/gallery3d/app/MoviePlayer;->mProgressChecker:Ljava/lang/Runnable;
 
     .line 117
-    invoke-virtual {p2}, Lcom/android/gallery3d/app/MovieActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {p2}, Landroid/content/ContextWrapper;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -195,7 +195,7 @@
 
     invoke-direct {v3, p0}, Lcom/android/gallery3d/app/MoviePlayer$4;-><init>(Lcom/android/gallery3d/app/MoviePlayer;)V
 
-    invoke-virtual {v2, v3}, Landroid/widget/VideoView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v2, v3}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 144
     iget-object v2, p0, Lcom/android/gallery3d/app/MoviePlayer;->mVideoView:Landroid/widget/VideoView;
@@ -206,7 +206,7 @@
 
     const-wide/16 v4, 0x1f4
 
-    invoke-virtual {v2, v3, v4, v5}, Landroid/widget/VideoView;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v2, v3, v4, v5}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 154
     iget-object v2, p0, Lcom/android/gallery3d/app/MoviePlayer;->mVideoView:Landroid/widget/VideoView;
@@ -215,7 +215,7 @@
 
     invoke-direct {v3, p0}, Lcom/android/gallery3d/app/MoviePlayer$6;-><init>(Lcom/android/gallery3d/app/MoviePlayer;)V
 
-    invoke-virtual {v2, v3}, Landroid/widget/VideoView;->setOnSystemUiVisibilityChangeListener(Landroid/view/View$OnSystemUiVisibilityChangeListener;)V
+    invoke-virtual {v2, v3}, Landroid/view/View;->setOnSystemUiVisibilityChangeListener(Landroid/view/View$OnSystemUiVisibilityChangeListener;)V
 
     .line 181
     invoke-direct {p0, v6}, Lcom/android/gallery3d/app/MoviePlayer;->showSystemUi(Z)V
@@ -250,7 +250,7 @@
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 188
-    invoke-virtual {p2, v1}, Lcom/android/gallery3d/app/MovieActivity;->sendBroadcast(Landroid/content/Intent;)V
+    invoke-virtual {p2, v1}, Landroid/content/ContextWrapper;->sendBroadcast(Landroid/content/Intent;)V
 
     .line 190
     if-eqz p4, :cond_0
@@ -608,12 +608,12 @@
 
     .line 224
     .local v0, builder:Landroid/app/AlertDialog$Builder;
-    const v1, 0x7f0d01c9
+    const v1, 0x7f0d01df
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     .line 225
-    const v1, 0x7f0d01c6
+    const v1, 0x7f0d01dc
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -647,7 +647,7 @@
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
 
     .line 234
-    const v1, 0x7f0d01c8
+    const v1, 0x7f0d01de
 
     new-instance v2, Lcom/android/gallery3d/app/MoviePlayer$8;
 
@@ -656,7 +656,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     .line 242
-    const v1, 0x7f0d01c7
+    const v1, 0x7f0d01dd
 
     new-instance v2, Lcom/android/gallery3d/app/MoviePlayer$9;
 
@@ -690,7 +690,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/gallery3d/app/MoviePlayer;->mVideoView:Landroid/widget/VideoView;
 
-    invoke-virtual {v1, v0}, Landroid/widget/VideoView;->setSystemUiVisibility(I)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
 
     .line 215
     return-void

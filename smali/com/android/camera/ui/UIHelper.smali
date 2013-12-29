@@ -17,7 +17,7 @@
 
     .prologue
     .line 12
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 51
     return-void
@@ -149,137 +149,6 @@
     invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v2
-.end method
-
-.method public static updateColorEffectIndicator(Landroid/widget/ImageView;Ljava/lang/String;)V
-    .locals 1
-    .parameter "iv"
-    .parameter "value"
-
-    .prologue
-    .line 72
-    if-nez p0, :cond_0
-
-    .line 82
-    :goto_0
-    return-void
-
-    .line 76
-    :cond_0
-    const-string v0, "none"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 77
-    const/16 v0, 0x8
-
-    invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    goto :goto_0
-
-    .line 79
-    :cond_1
-    const v0, 0x7f0200c1
-
-    invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 80
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    goto :goto_0
-.end method
-
-.method public static updateGpsIndicator(Landroid/widget/ImageView;ZZ)V
-    .locals 1
-    .parameter "iv"
-    .parameter "visible"
-    .parameter "hasSignal"
-
-    .prologue
-    .line 97
-    if-eqz p1, :cond_2
-
-    .line 98
-    if-nez p0, :cond_1
-
-    .line 109
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 101
-    :cond_1
-    const v0, 0x7f0200c3
-
-    invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 102
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    goto :goto_0
-
-    .line 104
-    :cond_2
-    if-eqz p0, :cond_0
-
-    .line 107
-    const/16 v0, 0x8
-
-    invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    goto :goto_0
-.end method
-
-.method public static updateVideoSpeedIndicator(Landroid/widget/ImageView;Ljava/lang/String;)V
-    .locals 1
-    .parameter "iv"
-    .parameter "value"
-
-    .prologue
-    .line 85
-    if-nez p0, :cond_0
-
-    .line 94
-    :goto_0
-    return-void
-
-    .line 88
-    :cond_0
-    const-string v0, "normal"
-
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 89
-    const/16 v0, 0x8
-
-    invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    goto :goto_0
-
-    .line 91
-    :cond_1
-    const v0, 0x7f0200bf
-
-    invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 92
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    goto :goto_0
 .end method
 
 .method public static visitAllChildViews(Landroid/view/View;Lcom/android/camera/ui/UIHelper$ViewVisitAction;)V

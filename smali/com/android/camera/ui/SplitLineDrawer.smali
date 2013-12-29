@@ -84,12 +84,12 @@
     invoke-virtual {v5, v0}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 36
-    invoke-virtual {p0}, Lcom/android/camera/ui/SplitLineDrawer;->getWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v8
 
     .local v8, w:I
-    invoke-virtual {p0}, Lcom/android/camera/ui/SplitLineDrawer;->getHeight()I
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v6
 

@@ -59,7 +59,7 @@
 
     .prologue
     .line 29
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 33
     new-instance v0, Ljava/util/TreeMap;
@@ -184,7 +184,7 @@
     .line 139
     const/16 v4, 0x67
 
-    const v5, 0x7f0d0184
+    const v5, 0x7f0d019a
 
     invoke-virtual {p0, v4, v5}, Lcom/android/gallery3d/data/MediaDetails;->setUnit(II)V
     :try_end_0

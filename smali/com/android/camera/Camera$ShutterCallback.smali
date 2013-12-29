@@ -24,13 +24,12 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 839
+    .line 700
     iput-object p1, p0, Lcom/android/camera/Camera$ShutterCallback;->this$0:Lcom/android/camera/Camera;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,7 +40,7 @@
     .parameter "x1"
 
     .prologue
-    .line 839
+    .line 700
     invoke-direct {p0, p1}, Lcom/android/camera/Camera$ShutterCallback;-><init>(Lcom/android/camera/Camera;)V
 
     return-void
@@ -53,7 +52,7 @@
     .locals 5
 
     .prologue
-    .line 843
+    .line 704
     iget-object v0, p0, Lcom/android/camera/Camera$ShutterCallback;->this$0:Lcom/android/camera/Camera;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -63,7 +62,7 @@
     #setter for: Lcom/android/camera/Camera;->mShutterCallbackTime:J
     invoke-static {v0, v1, v2}, Lcom/android/camera/Camera;->access$3502(Lcom/android/camera/Camera;J)J
 
-    .line 844
+    .line 705
     iget-object v0, p0, Lcom/android/camera/Camera$ShutterCallback;->this$0:Lcom/android/camera/Camera;
 
     iget-object v1, p0, Lcom/android/camera/Camera$ShutterCallback;->this$0:Lcom/android/camera/Camera;
@@ -81,7 +80,7 @@
 
     iput-wide v1, v0, Lcom/android/camera/Camera;->mShutterLag:J
 
-    .line 845
+    .line 706
     const-string v0, "camera"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -114,6 +113,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 846
+    .line 707
     return-void
 .end method

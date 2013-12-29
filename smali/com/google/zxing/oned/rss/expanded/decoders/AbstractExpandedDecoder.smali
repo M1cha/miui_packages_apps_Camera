@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field protected final generalDecoder:Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
+.field private final generalDecoder:Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
 
-.field protected final information:Lcom/google/zxing/common/BitArray;
+.field private final information:Lcom/google/zxing/common/BitArray;
 
 
 # direct methods
@@ -16,7 +16,7 @@
 
     .prologue
     .line 41
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 42
     iput-object p1, p0, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->information:Lcom/google/zxing/common/BitArray;
@@ -39,23 +39,23 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 49
+    .line 57
     invoke-virtual {p0, v4}, Lcom/google/zxing/common/BitArray;->get(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 50
+    .line 58
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI01AndOtherAIs;
 
     invoke-direct {v3, p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01AndOtherAIs;-><init>(Lcom/google/zxing/common/BitArray;)V
 
-    .line 77
+    .line 86
     :goto_0
     return-object v3
 
-    .line 51
+    .line 60
     :cond_0
     const/4 v3, 0x2
 
@@ -65,14 +65,14 @@
 
     if-nez v3, :cond_1
 
-    .line 52
+    .line 61
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AnyAIDecoder;
 
     invoke-direct {v3, p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AnyAIDecoder;-><init>(Lcom/google/zxing/common/BitArray;)V
 
     goto :goto_0
 
-    .line 55
+    .line 64
     :cond_1
     const/4 v3, 0x4
 
@@ -80,50 +80,50 @@
 
     move-result v1
 
-    .line 57
+    .line 66
     .local v1, fourBitEncodationMethod:I
     packed-switch v1, :pswitch_data_0
 
-    .line 62
+    .line 71
     const/4 v3, 0x5
 
     invoke-static {p0, v4, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(Lcom/google/zxing/common/BitArray;II)I
 
     move-result v0
 
-    .line 63
+    .line 72
     .local v0, fiveBitEncodationMethod:I
     packed-switch v0, :pswitch_data_1
 
-    .line 68
+    .line 77
     const/4 v3, 0x7
 
     invoke-static {p0, v4, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;->extractNumericValueFromBitArray(Lcom/google/zxing/common/BitArray;II)I
 
     move-result v2
 
-    .line 69
+    .line 78
     .local v2, sevenBitEncodationMethod:I
     packed-switch v2, :pswitch_data_2
 
-    .line 80
+    .line 89
     new-instance v3, Ljava/lang/IllegalStateException;
 
-    new-instance v4, Ljava/lang/StringBuffer;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuffer;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v5, "unknown decoder: "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
+    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
@@ -131,7 +131,7 @@
 
     throw v3
 
-    .line 58
+    .line 67
     .end local v0           #fiveBitEncodationMethod:I
     .end local v2           #sevenBitEncodationMethod:I
     :pswitch_0
@@ -141,7 +141,7 @@
 
     goto :goto_0
 
-    .line 59
+    .line 68
     :pswitch_1
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI01320xDecoder;
 
@@ -149,7 +149,7 @@
 
     goto :goto_0
 
-    .line 64
+    .line 73
     .restart local v0       #fiveBitEncodationMethod:I
     :pswitch_2
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI01392xDecoder;
@@ -158,7 +158,7 @@
 
     goto :goto_0
 
-    .line 65
+    .line 74
     :pswitch_3
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI01393xDecoder;
 
@@ -166,7 +166,7 @@
 
     goto :goto_0
 
-    .line 70
+    .line 79
     .restart local v2       #sevenBitEncodationMethod:I
     :pswitch_4
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
@@ -179,7 +179,7 @@
 
     goto :goto_0
 
-    .line 71
+    .line 80
     :pswitch_5
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 
@@ -191,7 +191,7 @@
 
     goto :goto_0
 
-    .line 72
+    .line 81
     :pswitch_6
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 
@@ -203,7 +203,7 @@
 
     goto :goto_0
 
-    .line 73
+    .line 82
     :pswitch_7
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 
@@ -215,7 +215,7 @@
 
     goto :goto_0
 
-    .line 74
+    .line 83
     :pswitch_8
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 
@@ -227,7 +227,7 @@
 
     goto/16 :goto_0
 
-    .line 75
+    .line 84
     :pswitch_9
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 
@@ -239,7 +239,7 @@
 
     goto/16 :goto_0
 
-    .line 76
+    .line 85
     :pswitch_a
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 
@@ -251,7 +251,7 @@
 
     goto/16 :goto_0
 
-    .line 77
+    .line 86
     :pswitch_b
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 
@@ -263,7 +263,7 @@
 
     goto/16 :goto_0
 
-    .line 57
+    .line 66
     nop
 
     :pswitch_data_0
@@ -272,14 +272,14 @@
         :pswitch_1
     .end packed-switch
 
-    .line 63
+    .line 72
     :pswitch_data_1
     .packed-switch 0xc
         :pswitch_2
         :pswitch_3
     .end packed-switch
 
-    .line 69
+    .line 78
     :pswitch_data_2
     .packed-switch 0x38
         :pswitch_4
@@ -295,6 +295,26 @@
 
 
 # virtual methods
+.method protected final getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
+    .locals 1
+
+    .prologue
+    .line 51
+    iget-object v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->generalDecoder:Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
+
+    return-object v0
+.end method
+
+.method protected final getInformation()Lcom/google/zxing/common/BitArray;
+    .locals 1
+
+    .prologue
+    .line 47
+    iget-object v0, p0, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->information:Lcom/google/zxing/common/BitArray;
+
+    return-object v0
+.end method
+
 .method public abstract parseInformation()Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {

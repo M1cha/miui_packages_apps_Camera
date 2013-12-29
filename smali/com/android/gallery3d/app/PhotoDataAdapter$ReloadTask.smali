@@ -27,7 +27,6 @@
 # direct methods
 .method private constructor <init>(Lcom/android/gallery3d/app/PhotoDataAdapter;)V
     .locals 1
-    .parameter
 
     .prologue
     const/4 v0, 0x1
@@ -134,7 +133,7 @@
 
     check-cast v3, Lcom/android/gallery3d/data/MediaItem;
 
-    invoke-virtual {v3}, Lcom/android/gallery3d/data/MediaItem;->getPath()Lcom/android/gallery3d/data/Path;
+    invoke-virtual {v3}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v3
 
@@ -514,7 +513,7 @@
     .local v2, item:Lcom/android/gallery3d/data/MediaItem;
     if-eqz v2, :cond_8
 
-    invoke-virtual {v2}, Lcom/android/gallery3d/data/MediaItem;->getPath()Lcom/android/gallery3d/data/Path;
+    invoke-virtual {v2}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v5
 
@@ -551,31 +550,16 @@
 
     .line 1054
     :cond_5
-    iget-object v5, p0, Lcom/android/gallery3d/app/PhotoDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/PhotoDataAdapter;
-
-    #getter for: Lcom/android/gallery3d/app/PhotoDataAdapter;->mSize:I
-    invoke-static {v5}, Lcom/android/gallery3d/app/PhotoDataAdapter;->access$1800(Lcom/android/gallery3d/app/PhotoDataAdapter;)I
-
-    move-result v5
+    iget v5, v1, Lcom/android/gallery3d/app/PhotoDataAdapter$UpdateInfo;->size:I
 
     if-lez v5, :cond_7
 
     .line 1055
-    iget-object v5, p0, Lcom/android/gallery3d/app/PhotoDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/PhotoDataAdapter;
-
-    #getter for: Lcom/android/gallery3d/app/PhotoDataAdapter;->mSize:I
-    invoke-static {v5}, Lcom/android/gallery3d/app/PhotoDataAdapter;->access$1800(Lcom/android/gallery3d/app/PhotoDataAdapter;)I
-
-    move-result v5
+    iget v5, v1, Lcom/android/gallery3d/app/PhotoDataAdapter$UpdateInfo;->size:I
 
     if-lt v0, v5, :cond_6
 
-    iget-object v5, p0, Lcom/android/gallery3d/app/PhotoDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/PhotoDataAdapter;
-
-    #getter for: Lcom/android/gallery3d/app/PhotoDataAdapter;->mSize:I
-    invoke-static {v5}, Lcom/android/gallery3d/app/PhotoDataAdapter;->access$1800(Lcom/android/gallery3d/app/PhotoDataAdapter;)I
-
-    move-result v5
+    iget v5, v1, Lcom/android/gallery3d/app/PhotoDataAdapter$UpdateInfo;->size:I
 
     add-int/lit8 v0, v5, -0x1
 

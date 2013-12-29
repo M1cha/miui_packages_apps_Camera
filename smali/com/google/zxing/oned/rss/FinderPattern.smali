@@ -22,7 +22,7 @@
 
     .prologue
     .line 27
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 28
     iput p1, p0, Lcom/google/zxing/oned/rss/FinderPattern;->value:I
@@ -67,6 +67,42 @@
 
 
 # virtual methods
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
+    .parameter "o"
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 50
+    instance-of v2, p1, Lcom/google/zxing/oned/rss/FinderPattern;
+
+    if-nez v2, :cond_1
+
+    .line 54
+    :cond_0
+    :goto_0
+    return v1
+
+    :cond_1
+    move-object v0, p1
+
+    .line 53
+    check-cast v0, Lcom/google/zxing/oned/rss/FinderPattern;
+
+    .line 54
+    .local v0, that:Lcom/google/zxing/oned/rss/FinderPattern;
+    iget v2, p0, Lcom/google/zxing/oned/rss/FinderPattern;->value:I
+
+    iget v3, v0, Lcom/google/zxing/oned/rss/FinderPattern;->value:I
+
+    if-ne v2, v3, :cond_0
+
+    const/4 v1, 0x1
+
+    goto :goto_0
+.end method
+
 .method public getResultPoints()[Lcom/google/zxing/ResultPoint;
     .locals 1
 
@@ -92,6 +128,16 @@
 
     .prologue
     .line 37
+    iget v0, p0, Lcom/google/zxing/oned/rss/FinderPattern;->value:I
+
+    return v0
+.end method
+
+.method public hashCode()I
+    .locals 1
+
+    .prologue
+    .line 59
     iget v0, p0, Lcom/google/zxing/oned/rss/FinderPattern;->value:I
 
     return v0

@@ -64,7 +64,7 @@
     const/4 v1, 0x0
 
     .line 43
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 57
     new-instance v0, Landroid/graphics/Rect;
@@ -1175,7 +1175,7 @@
 
     move-result-wide v3
 
-    invoke-virtual {v0, v3, v4}, Lcom/android/gallery3d/anim/CanvasAnimation;->calculate(J)Z
+    invoke-virtual {v0, v3, v4}, Lcom/android/gallery3d/anim/Animation;->calculate(J)Z
 
     move-result v3
 

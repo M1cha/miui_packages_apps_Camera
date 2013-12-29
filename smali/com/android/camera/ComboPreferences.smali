@@ -3,8 +3,8 @@
 .source "ComboPreferences.java"
 
 # interfaces
-.implements Landroid/content/SharedPreferences;
 .implements Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
+.implements Landroid/content/SharedPreferences;
 
 
 # annotations
@@ -45,7 +45,7 @@
 
     .prologue
     .line 31
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 32
     new-instance v1, Ljava/lang/StringBuilder;
@@ -155,32 +155,6 @@
     return v0
 .end method
 
-.method private getCameraId()I
-    .locals 3
-
-    .prologue
-    .line 55
-    sget-object v0, Lcom/android/camera/ComboPreferences;->sPreferences:Lcom/android/camera/ComboPreferences;
-
-    invoke-virtual {v0}, Lcom/android/camera/ComboPreferences;->getGlobal()Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v1, "pref_camera_id_key"
-
-    const-string v2, "0"
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public static declared-synchronized instance()Lcom/android/camera/ComboPreferences;
     .locals 4
 
@@ -211,13 +185,13 @@
 
     sget-object v2, Lcom/android/camera/ComboPreferences;->sPreferences:Lcom/android/camera/ComboPreferences;
 
-    invoke-direct {v2}, Lcom/android/camera/ComboPreferences;->getCameraId()I
+    invoke-virtual {v2}, Lcom/android/camera/ComboPreferences;->getCameraId()I
 
     move-result v2
 
     sget-object v3, Lcom/android/camera/ComboPreferences;->sPreferences:Lcom/android/camera/ComboPreferences;
 
-    invoke-direct {v3}, Lcom/android/camera/ComboPreferences;->isSimpleMode()Z
+    invoke-virtual {v3}, Lcom/android/camera/ComboPreferences;->isSimpleMode()Z
 
     move-result v3
 
@@ -360,6 +334,14 @@
 
     move-result v0
 
+    if-nez v0, :cond_0
+
+    const-string v0, "pref_camera_watermark_key"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
     if-eqz v0, :cond_1
 
     :cond_0
@@ -374,31 +356,6 @@
     goto :goto_0
 .end method
 
-.method private isSimpleMode()Z
-    .locals 3
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 50
-    invoke-virtual {p0}, Lcom/android/camera/ComboPreferences;->getGlobal()Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    const-string v2, "pref_layout_mode_key"
-
-    invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :cond_0
-    return v0
-.end method
-
 
 # virtual methods
 .method public contains(Ljava/lang/String;)Z
@@ -408,7 +365,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 195
+    .line 196
     iget-object v1, p0, Lcom/android/camera/ComboPreferences;->mPrefLocal:Landroid/content/SharedPreferences;
 
     invoke-interface {v1, p1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
@@ -417,12 +374,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 198
+    .line 199
     :cond_0
     :goto_0
     return v0
 
-    .line 196
+    .line 197
     :cond_1
     iget-object v1, p0, Lcom/android/camera/ComboPreferences;->mPrefModeGlobal:Landroid/content/SharedPreferences;
 
@@ -432,7 +389,7 @@
 
     if-nez v1, :cond_0
 
-    .line 197
+    .line 198
     iget-object v1, p0, Lcom/android/camera/ComboPreferences;->mPrefGlobal:Landroid/content/SharedPreferences;
 
     invoke-interface {v1, p1}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
@@ -441,7 +398,7 @@
 
     if-nez v1, :cond_0
 
-    .line 198
+    .line 199
     const/4 v0, 0x0
 
     goto :goto_0
@@ -451,7 +408,7 @@
     .locals 1
 
     .prologue
-    .line 315
+    .line 316
     new-instance v0, Lcom/android/camera/ComboPreferences$MyEditor;
 
     invoke-direct {v0, p0}, Lcom/android/camera/ComboPreferences$MyEditor;-><init>(Lcom/android/camera/ComboPreferences;)V
@@ -486,25 +443,25 @@
     .parameter "defValue"
 
     .prologue
-    .line 178
+    .line 179
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 179
+    .line 180
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefGlobal:Landroid/content/SharedPreferences;
 
     invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    .line 183
+    .line 184
     :goto_0
     return v0
 
-    .line 180
+    .line 181
     :cond_0
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->isModeGlobal(Ljava/lang/String;)Z
 
@@ -512,7 +469,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 181
+    .line 182
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefModeGlobal:Landroid/content/SharedPreferences;
 
     invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -521,7 +478,7 @@
 
     goto :goto_0
 
-    .line 183
+    .line 184
     :cond_1
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefLocal:Landroid/content/SharedPreferences;
 
@@ -532,31 +489,57 @@
     goto :goto_0
 .end method
 
+.method public getCameraId()I
+    .locals 3
+
+    .prologue
+    .line 55
+    sget-object v0, Lcom/android/camera/ComboPreferences;->sPreferences:Lcom/android/camera/ComboPreferences;
+
+    invoke-virtual {v0}, Lcom/android/camera/ComboPreferences;->getGlobal()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "pref_camera_id_key"
+
+    const-string v2, "0"
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getFloat(Ljava/lang/String;F)F
     .locals 1
     .parameter "key"
     .parameter "defValue"
 
     .prologue
-    .line 167
+    .line 168
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 168
+    .line 169
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefGlobal:Landroid/content/SharedPreferences;
 
     invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences;->getFloat(Ljava/lang/String;F)F
 
     move-result v0
 
-    .line 172
+    .line 173
     :goto_0
     return v0
 
-    .line 169
+    .line 170
     :cond_0
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->isModeGlobal(Ljava/lang/String;)Z
 
@@ -564,7 +547,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 170
+    .line 171
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefModeGlobal:Landroid/content/SharedPreferences;
 
     invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences;->getFloat(Ljava/lang/String;F)F
@@ -573,7 +556,7 @@
 
     goto :goto_0
 
-    .line 172
+    .line 173
     :cond_1
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefLocal:Landroid/content/SharedPreferences;
 
@@ -600,25 +583,25 @@
     .parameter "defValue"
 
     .prologue
-    .line 145
+    .line 146
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 146
+    .line 147
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefGlobal:Landroid/content/SharedPreferences;
 
     invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
-    .line 150
+    .line 151
     :goto_0
     return v0
 
-    .line 147
+    .line 148
     :cond_0
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->isModeGlobal(Ljava/lang/String;)Z
 
@@ -626,7 +609,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 148
+    .line 149
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefModeGlobal:Landroid/content/SharedPreferences;
 
     invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
@@ -635,7 +618,7 @@
 
     goto :goto_0
 
-    .line 150
+    .line 151
     :cond_1
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefLocal:Landroid/content/SharedPreferences;
 
@@ -652,25 +635,25 @@
     .parameter "defValue"
 
     .prologue
-    .line 156
+    .line 157
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 157
+    .line 158
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefGlobal:Landroid/content/SharedPreferences;
 
     invoke-interface {v0, p1, p2, p3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
     move-result-wide v0
 
-    .line 161
+    .line 162
     :goto_0
     return-wide v0
 
-    .line 158
+    .line 159
     :cond_0
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->isModeGlobal(Ljava/lang/String;)Z
 
@@ -678,7 +661,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 159
+    .line 160
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefModeGlobal:Landroid/content/SharedPreferences;
 
     invoke-interface {v0, p1, p2, p3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
@@ -687,7 +670,7 @@
 
     goto :goto_0
 
-    .line 161
+    .line 162
     :cond_1
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefLocal:Landroid/content/SharedPreferences;
 
@@ -704,25 +687,25 @@
     .parameter "defValue"
 
     .prologue
-    .line 134
+    .line 135
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 135
+    .line 136
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefGlobal:Landroid/content/SharedPreferences;
 
     invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 139
+    .line 140
     :goto_0
     return-object v0
 
-    .line 136
+    .line 137
     :cond_0
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->isModeGlobal(Ljava/lang/String;)Z
 
@@ -730,7 +713,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 137
+    .line 138
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefModeGlobal:Landroid/content/SharedPreferences;
 
     invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -739,7 +722,7 @@
 
     goto :goto_0
 
-    .line 139
+    .line 140
     :cond_1
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mPrefLocal:Landroid/content/SharedPreferences;
 
@@ -753,7 +736,6 @@
 .method public getStringSet(Ljava/lang/String;Ljava/util/Set;)Ljava/util/Set;
     .locals 1
     .parameter "key"
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -770,7 +752,7 @@
     .end annotation
 
     .prologue
-    .line 190
+    .line 191
     .local p2, defValues:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -779,13 +761,38 @@
     throw v0
 .end method
 
+.method public isSimpleMode()Z
+    .locals 3
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 50
+    invoke-virtual {p0}, Lcom/android/camera/ComboPreferences;->getGlobal()Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    const-string v2, "pref_layout_mode_key"
+
+    invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+.end method
+
 .method public onSharedPreferenceChanged(Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 3
     .parameter "sharedPreferences"
     .parameter "key"
 
     .prologue
-    .line 333
+    .line 334
     iget-object v2, p0, Lcom/android/camera/ComboPreferences;->mListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v2}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;
@@ -806,13 +813,13 @@
 
     check-cast v1, Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
 
-    .line 334
+    .line 335
     .local v1, listener:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
     invoke-interface {v1, p0, p2}, Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;->onSharedPreferenceChanged(Landroid/content/SharedPreferences;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 336
+    .line 337
     .end local v1           #listener:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
     :cond_0
     return-void
@@ -823,12 +830,12 @@
     .parameter "listener"
 
     .prologue
-    .line 321
+    .line 322
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 322
+    .line 323
     return-void
 .end method
 
@@ -838,7 +845,7 @@
 
     .prologue
     .line 64
-    invoke-direct {p0}, Lcom/android/camera/ComboPreferences;->getCameraId()I
+    invoke-virtual {p0}, Lcom/android/camera/ComboPreferences;->getCameraId()I
 
     move-result v0
 
@@ -855,7 +862,7 @@
 
     .prologue
     .line 60
-    invoke-direct {p0}, Lcom/android/camera/ComboPreferences;->isSimpleMode()Z
+    invoke-virtual {p0}, Lcom/android/camera/ComboPreferences;->isSimpleMode()Z
 
     move-result v0
 
@@ -1075,11 +1082,11 @@
     .parameter "listener"
 
     .prologue
-    .line 327
+    .line 328
     iget-object v0, p0, Lcom/android/camera/ComboPreferences;->mListeners:Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/CopyOnWriteArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 328
+    .line 329
     return-void
 .end method

@@ -4,9 +4,25 @@
 
 
 # instance fields
-.field private final countryIdentifiers:Ljava/util/Vector;
+.field private final countryIdentifiers:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
-.field private final ranges:Ljava/util/Vector;
+.field private final ranges:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<[I>;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -14,22 +30,22 @@
     .locals 1
 
     .prologue
-    .line 30
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    .line 32
-    new-instance v0, Ljava/util/Vector;
-
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
-
-    iput-object v0, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->ranges:Ljava/util/Vector;
+    .line 31
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 33
-    new-instance v0, Ljava/util/Vector;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->countryIdentifiers:Ljava/util/Vector;
+    iput-object v0, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->ranges:Ljava/util/List;
+
+    .line 34
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->countryIdentifiers:Ljava/util/List;
 
     return-void
 .end method
@@ -40,17 +56,17 @@
     .parameter "id"
 
     .prologue
-    .line 54
-    iget-object v0, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->ranges:Ljava/util/Vector;
-
-    invoke-virtual {v0, p1}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
-
     .line 55
-    iget-object v0, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->countryIdentifiers:Ljava/util/Vector;
+    iget-object v0, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->ranges:Ljava/util/List;
 
-    invoke-virtual {v0, p2}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 56
+    iget-object v0, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->countryIdentifiers:Ljava/util/List;
+
+    invoke-interface {v0, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 57
     return-void
 .end method
 
@@ -58,13 +74,13 @@
     .locals 3
 
     .prologue
-    .line 59
+    .line 60
     monitor-enter p0
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->ranges:Ljava/util/Vector;
+    iget-object v0, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->ranges:Ljava/util/List;
 
-    invoke-virtual {v0}, Ljava/util/Vector;->isEmpty()Z
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -72,13 +88,13 @@
 
     if-nez v0, :cond_0
 
-    .line 168
+    .line 169
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 62
+    .line 63
     :cond_0
     const/4 v0, 0x2
 
@@ -91,7 +107,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 63
+    .line 64
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -102,7 +118,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 64
+    .line 65
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -113,7 +129,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 65
+    .line 66
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -124,7 +140,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 66
+    .line 67
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -139,7 +155,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 67
+    .line 68
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -154,7 +170,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 68
+    .line 69
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -169,7 +185,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 69
+    .line 70
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -184,7 +200,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 70
+    .line 71
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -195,7 +211,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 71
+    .line 72
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -206,7 +222,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 72
+    .line 73
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -217,7 +233,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 73
+    .line 74
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -232,7 +248,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 74
+    .line 75
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -247,7 +263,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 75
+    .line 76
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -262,7 +278,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 76
+    .line 77
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -277,7 +293,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 77
+    .line 78
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -292,7 +308,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 78
+    .line 79
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -307,7 +323,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 79
+    .line 80
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -322,7 +338,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 80
+    .line 81
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -337,7 +353,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 81
+    .line 82
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -352,7 +368,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 82
+    .line 83
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -367,7 +383,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 83
+    .line 84
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -382,7 +398,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 84
+    .line 85
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -397,7 +413,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 85
+    .line 86
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -412,7 +428,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 86
+    .line 87
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -427,7 +443,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 87
+    .line 88
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -442,7 +458,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 88
+    .line 89
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -453,7 +469,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 89
+    .line 90
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -464,7 +480,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 90
+    .line 91
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -479,7 +495,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 91
+    .line 92
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -494,7 +510,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 92
+    .line 93
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -509,7 +525,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 93
+    .line 94
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -524,7 +540,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 94
+    .line 95
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -539,7 +555,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 95
+    .line 96
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -554,7 +570,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 96
+    .line 97
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -565,7 +581,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 97
+    .line 98
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -580,7 +596,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 98
+    .line 99
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -595,7 +611,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 99
+    .line 100
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -606,7 +622,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 100
+    .line 101
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -621,7 +637,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 101
+    .line 102
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -636,7 +652,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 102
+    .line 103
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -651,7 +667,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 103
+    .line 104
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -662,7 +678,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 104
+    .line 105
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -677,7 +693,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 105
+    .line 106
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -692,7 +708,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 106
+    .line 107
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -707,7 +723,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 107
+    .line 108
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -722,7 +738,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 108
+    .line 109
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -737,7 +753,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 109
+    .line 110
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -752,7 +768,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 110
+    .line 111
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -767,7 +783,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 111
+    .line 112
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -782,7 +798,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 112
+    .line 113
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -797,7 +813,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 113
+    .line 114
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -812,7 +828,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 114
+    .line 115
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -827,7 +843,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 115
+    .line 116
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -842,7 +858,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 116
+    .line 117
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -857,7 +873,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 117
+    .line 118
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -872,7 +888,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 118
+    .line 119
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -887,7 +903,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 119
+    .line 120
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -902,7 +918,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 120
+    .line 121
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -913,7 +929,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 121
+    .line 122
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -924,7 +940,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 122
+    .line 123
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -935,7 +951,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 123
+    .line 124
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -950,7 +966,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 124
+    .line 125
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -961,7 +977,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 125
+    .line 126
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -976,7 +992,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 126
+    .line 127
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -991,7 +1007,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 127
+    .line 128
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1006,7 +1022,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 128
+    .line 129
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1021,7 +1037,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 129
+    .line 130
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1036,7 +1052,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 130
+    .line 131
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1051,7 +1067,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 131
+    .line 132
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1066,7 +1082,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 132
+    .line 133
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1081,7 +1097,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 133
+    .line 134
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -1092,7 +1108,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 134
+    .line 135
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1107,7 +1123,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 135
+    .line 136
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -1118,7 +1134,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 136
+    .line 137
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1133,7 +1149,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 137
+    .line 138
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1148,7 +1164,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 138
+    .line 139
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1163,7 +1179,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 139
+    .line 140
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1178,7 +1194,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 140
+    .line 141
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1193,7 +1209,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 141
+    .line 142
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1208,7 +1224,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 142
+    .line 143
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1223,7 +1239,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 143
+    .line 144
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1238,7 +1254,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 144
+    .line 145
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1253,7 +1269,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 145
+    .line 146
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -1264,7 +1280,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 146
+    .line 147
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -1275,7 +1291,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 147
+    .line 148
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -1286,7 +1302,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 148
+    .line 149
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1301,7 +1317,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 149
+    .line 150
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1316,7 +1332,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 150
+    .line 151
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1331,7 +1347,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 151
+    .line 152
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1346,7 +1362,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 152
+    .line 153
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1361,7 +1377,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 153
+    .line 154
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1376,7 +1392,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 154
+    .line 155
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -1387,7 +1403,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 155
+    .line 156
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -1398,7 +1414,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 156
+    .line 157
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1413,7 +1429,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 157
+    .line 158
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1428,7 +1444,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 158
+    .line 159
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1443,7 +1459,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 159
+    .line 160
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1458,7 +1474,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 160
+    .line 161
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1473,7 +1489,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 161
+    .line 162
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1488,7 +1504,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 162
+    .line 163
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1503,7 +1519,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 163
+    .line 164
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -1514,7 +1530,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 164
+    .line 165
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -1525,7 +1541,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 165
+    .line 166
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -1536,7 +1552,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 166
+    .line 167
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1551,7 +1567,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->add([ILjava/lang/String;)V
 
-    .line 167
+    .line 168
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -1570,7 +1586,7 @@
 
     goto/16 :goto_0
 
-    .line 59
+    .line 60
     :catchall_0
     move-exception v0
 
@@ -1578,182 +1594,182 @@
 
     throw v0
 
-    .line 62
+    .line 63
     :array_0
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
         0x13t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 63
+    .line 64
     :array_1
     .array-data 0x4
         0x1et 0x0t 0x0t 0x0t
         0x27t 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 64
+    .line 65
     :array_2
     .array-data 0x4
         0x3ct 0x0t 0x0t 0x0t
         0x8bt 0x0t 0x0t 0x0t
     .end array-data
 
-    .line 65
+    .line 66
     :array_3
     .array-data 0x4
         0x2ct 0x1t 0x0t 0x0t
         0x7bt 0x1t 0x0t 0x0t
     .end array-data
 
-    .line 70
+    .line 71
     :array_4
     .array-data 0x4
         0x90t 0x1t 0x0t 0x0t
         0xb8t 0x1t 0x0t 0x0t
     .end array-data
 
-    .line 71
+    .line 72
     :array_5
     .array-data 0x4
         0xc2t 0x1t 0x0t 0x0t
         0xcbt 0x1t 0x0t 0x0t
     .end array-data
 
-    .line 72
+    .line 73
     :array_6
     .array-data 0x4
         0xcct 0x1t 0x0t 0x0t
         0xd5t 0x1t 0x0t 0x0t
     .end array-data
 
-    .line 88
+    .line 89
     :array_7
     .array-data 0x4
         0xeat 0x1t 0x0t 0x0t
         0xf3t 0x1t 0x0t 0x0t
     .end array-data
 
-    .line 89
+    .line 90
     :array_8
     .array-data 0x4
         0xf4t 0x1t 0x0t 0x0t
         0xfdt 0x1t 0x0t 0x0t
     .end array-data
 
-    .line 96
+    .line 97
     :array_9
     .array-data 0x4
         0x1ct 0x2t 0x0t 0x0t
         0x25t 0x2t 0x0t 0x0t
     .end array-data
 
-    .line 99
+    .line 100
     :array_a
     .array-data 0x4
         0x3at 0x2t 0x0t 0x0t
         0x43t 0x2t 0x0t 0x0t
     .end array-data
 
-    .line 103
+    .line 104
     :array_b
     .array-data 0x4
         0x58t 0x2t 0x0t 0x0t
         0x59t 0x2t 0x0t 0x0t
     .end array-data
 
-    .line 120
+    .line 121
     :array_c
     .array-data 0x4
         0x80t 0x2t 0x0t 0x0t
         0x89t 0x2t 0x0t 0x0t
     .end array-data
 
-    .line 121
+    .line 122
     :array_d
     .array-data 0x4
         0xb2t 0x2t 0x0t 0x0t
         0xb7t 0x2t 0x0t 0x0t
     .end array-data
 
-    .line 122
+    .line 123
     :array_e
     .array-data 0x4
         0xbct 0x2t 0x0t 0x0t
         0xc5t 0x2t 0x0t 0x0t
     .end array-data
 
-    .line 124
+    .line 125
     :array_f
     .array-data 0x4
         0xdat 0x2t 0x0t 0x0t
         0xe3t 0x2t 0x0t 0x0t
     .end array-data
 
-    .line 133
+    .line 134
     :array_10
     .array-data 0x4
         0xf2t 0x2t 0x0t 0x0t
         0xf3t 0x2t 0x0t 0x0t
     .end array-data
 
-    .line 135
+    .line 136
     :array_11
     .array-data 0x4
         0xf8t 0x2t 0x0t 0x0t
         0x1t 0x3t 0x0t 0x0t
     .end array-data
 
-    .line 145
+    .line 146
     :array_12
     .array-data 0x4
         0x15t 0x3t 0x0t 0x0t
         0x16t 0x3t 0x0t 0x0t
     .end array-data
 
-    .line 146
+    .line 147
     :array_13
     .array-data 0x4
         0x20t 0x3t 0x0t 0x0t
         0x47t 0x3t 0x0t 0x0t
     .end array-data
 
-    .line 147
+    .line 148
     :array_14
     .array-data 0x4
         0x48t 0x3t 0x0t 0x0t
         0x51t 0x3t 0x0t 0x0t
     .end array-data
 
-    .line 154
+    .line 155
     :array_15
     .array-data 0x4
         0x64t 0x3t 0x0t 0x0t
         0x65t 0x3t 0x0t 0x0t
     .end array-data
 
-    .line 155
+    .line 156
     :array_16
     .array-data 0x4
         0x66t 0x3t 0x0t 0x0t
         0x6ft 0x3t 0x0t 0x0t
     .end array-data
 
-    .line 163
+    .line 164
     :array_17
     .array-data 0x4
         0x84t 0x3t 0x0t 0x0t
         0x97t 0x3t 0x0t 0x0t
     .end array-data
 
-    .line 164
+    .line 165
     :array_18
     .array-data 0x4
         0xa2t 0x3t 0x0t 0x0t
         0xabt 0x3t 0x0t 0x0t
     .end array-data
 
-    .line 165
+    .line 166
     :array_19
     .array-data 0x4
         0xact 0x3t 0x0t 0x0t
@@ -1768,90 +1784,85 @@
     .parameter "productCode"
 
     .prologue
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     const/4 v9, 0x1
 
     const/4 v8, 0x0
 
-    .line 36
+    .line 37
     invoke-direct {p0}, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->initIfNeeded()V
 
-    .line 37
-    const/4 v6, 0x3
+    .line 38
+    const/4 v7, 0x3
 
-    invoke-virtual {p1, v8, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {p1, v8, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-static {v6}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v3
 
-    .line 38
+    .line 39
     .local v3, prefix:I
-    iget-object v6, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->ranges:Ljava/util/Vector;
+    iget-object v7, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->ranges:Ljava/util/List;
 
-    invoke-virtual {v6}, Ljava/util/Vector;->size()I
+    invoke-interface {v7}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .line 39
+    .line 40
     .local v2, max:I
     const/4 v1, 0x0
 
     .local v1, i:I
     :goto_0
-    if-ge v1, v2, :cond_3
+    if-ge v1, v2, :cond_0
 
-    .line 40
-    iget-object v6, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->ranges:Ljava/util/Vector;
+    .line 41
+    iget-object v7, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->ranges:Ljava/util/List;
 
-    invoke-virtual {v6, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    invoke-interface {v7, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v6
-
-    check-cast v6, [I
-
-    move-object v4, v6
+    move-result-object v4
 
     check-cast v4, [I
 
-    .line 41
+    .line 42
     .local v4, range:[I
     aget v5, v4, v8
 
-    .line 42
+    .line 43
     .local v5, start:I
-    if-ge v3, v5, :cond_0
+    if-ge v3, v5, :cond_1
 
-    move-object v6, v7
-
-    .line 50
+    .line 51
     .end local v4           #range:[I
     .end local v5           #start:I
+    :cond_0
     :goto_1
     return-object v6
 
-    .line 45
+    .line 46
     .restart local v4       #range:[I
     .restart local v5       #start:I
-    :cond_0
-    array-length v6, v4
+    :cond_1
+    array-length v7, v4
 
-    if-ne v6, v9, :cond_1
+    if-ne v7, v9, :cond_2
 
     move v0, v5
 
-    .line 46
+    .line 47
     .local v0, end:I
     :goto_2
-    if-gt v3, v0, :cond_2
+    if-gt v3, v0, :cond_3
 
-    .line 47
-    iget-object v6, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->countryIdentifiers:Ljava/util/Vector;
+    .line 48
+    iget-object v6, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->countryIdentifiers:Ljava/util/List;
 
-    invoke-virtual {v6, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    invoke-interface {v6, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
@@ -1859,26 +1870,17 @@
 
     goto :goto_1
 
-    .line 45
+    .line 46
     .end local v0           #end:I
-    :cond_1
+    :cond_2
     aget v0, v4, v9
 
     goto :goto_2
 
-    .line 39
+    .line 40
     .restart local v0       #end:I
-    :cond_2
+    :cond_3
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
-
-    .end local v0           #end:I
-    .end local v4           #range:[I
-    .end local v5           #start:I
-    :cond_3
-    move-object v6, v7
-
-    .line 50
-    goto :goto_1
 .end method

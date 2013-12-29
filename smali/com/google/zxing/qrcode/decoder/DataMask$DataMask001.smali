@@ -1,4 +1,4 @@
-.class Lcom/google/zxing/qrcode/decoder/DataMask$DataMask001;
+.class final Lcom/google/zxing/qrcode/decoder/DataMask$DataMask001;
 .super Lcom/google/zxing/qrcode/decoder/DataMask;
 .source "DataMask.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x1a
     name = "DataMask001"
 .end annotation
 
@@ -19,7 +19,7 @@
     .locals 1
 
     .prologue
-    .line 94
+    .line 95
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/zxing/qrcode/decoder/DataMask;-><init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
@@ -27,12 +27,12 @@
     return-void
 .end method
 
-.method constructor <init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
+.method synthetic constructor <init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
     .locals 0
     .parameter "x0"
 
     .prologue
-    .line 94
+    .line 95
     invoke-direct {p0}, Lcom/google/zxing/qrcode/decoder/DataMask$DataMask001;-><init>()V
 
     return-void
@@ -46,7 +46,7 @@
     .parameter "j"
 
     .prologue
-    .line 96
+    .line 98
     and-int/lit8 v0, p1, 0x1
 
     if-nez v0, :cond_0

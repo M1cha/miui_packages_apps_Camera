@@ -80,7 +80,7 @@
     invoke-static {p0, v0}, Lcom/android/camera/ui/UIHelper;->visitAllChildViews(Landroid/view/View;Lcom/android/camera/ui/UIHelper$ViewVisitAction;)V
 
     .line 32
-    invoke-virtual {p0}, Lcom/android/camera/ui/RestrictRotateLayout;->requestLayout()V
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     goto :goto_0
 .end method

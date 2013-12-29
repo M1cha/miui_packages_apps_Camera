@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/PanoramaActivity;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 532
+    .line 527
     iput-object p1, p0, Lcom/android/camera/PanoramaActivity$3;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,18 +45,18 @@
     .parameter "progressY"
 
     .prologue
-    .line 536
+    .line 531
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 537
+    .line 532
     .local v0, message:Landroid/os/Message;
     const/4 v2, 0x6
 
     iput v2, v0, Landroid/os/Message;->what:I
 
-    .line 538
+    .line 533
     new-instance v1, Lcom/android/camera/PanoramaActivity$ProgressData;
 
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$3;->this$0:Lcom/android/camera/PanoramaActivity;
@@ -66,35 +65,35 @@
 
     invoke-direct {v1, v2, v3}, Lcom/android/camera/PanoramaActivity$ProgressData;-><init>(Lcom/android/camera/PanoramaActivity;Lcom/android/camera/PanoramaActivity$1;)V
 
-    .line 539
+    .line 534
     .local v1, pd:Lcom/android/camera/PanoramaActivity$ProgressData;
     iput-boolean p1, v1, Lcom/android/camera/PanoramaActivity$ProgressData;->isFinished:Z
 
-    .line 540
+    .line 535
     iput p2, v1, Lcom/android/camera/PanoramaActivity$ProgressData;->panningRateX:F
 
-    .line 541
+    .line 536
     iput p3, v1, Lcom/android/camera/PanoramaActivity$ProgressData;->panningRateY:F
 
-    .line 542
+    .line 537
     iput p4, v1, Lcom/android/camera/PanoramaActivity$ProgressData;->progressX:F
 
-    .line 543
+    .line 538
     iput p5, v1, Lcom/android/camera/PanoramaActivity$ProgressData;->progressY:F
 
-    .line 544
+    .line 539
     iput-object v1, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 545
+    .line 540
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$3;->this$0:Lcom/android/camera/PanoramaActivity;
 
     #getter for: Lcom/android/camera/PanoramaActivity;->mMainHandler:Landroid/os/Handler;
-    invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$500(Lcom/android/camera/PanoramaActivity;)Landroid/os/Handler;
+    invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$400(Lcom/android/camera/PanoramaActivity;)Landroid/os/Handler;
 
     move-result-object v2
 
     invoke-virtual {v2, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 546
+    .line 541
     return-void
 .end method

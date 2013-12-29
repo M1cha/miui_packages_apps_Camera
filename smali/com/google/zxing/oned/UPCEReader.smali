@@ -128,12 +128,12 @@
 
     const/4 v5, 0x0
 
-    .line 119
+    .line 123
     const/4 v3, 0x6
 
     new-array v2, v3, [C
 
-    .line 120
+    .line 124
     .local v2, upceChars:[C
     const/4 v3, 0x1
 
@@ -141,40 +141,40 @@
 
     invoke-virtual {p0, v3, v4, v2, v5}, Ljava/lang/String;->getChars(II[CI)V
 
-    .line 121
-    new-instance v1, Ljava/lang/StringBuffer;
+    .line 125
+    new-instance v1, Ljava/lang/StringBuilder;
 
     const/16 v3, 0xc
 
-    invoke-direct {v1, v3}, Ljava/lang/StringBuffer;-><init>(I)V
+    invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 122
-    .local v1, result:Ljava/lang/StringBuffer;
+    .line 126
+    .local v1, result:Ljava/lang/StringBuilder;
     invoke-virtual {p0, v5}, Ljava/lang/String;->charAt(I)C
 
     move-result v3
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 123
+    .line 127
     aget-char v0, v2, v9
 
-    .line 124
+    .line 128
     .local v0, lastChar:C
     packed-switch v0, :pswitch_data_0
 
-    .line 144
-    invoke-virtual {v1, v2, v5, v9}, Ljava/lang/StringBuffer;->append([CII)Ljava/lang/StringBuffer;
-
-    .line 145
-    const-string v3, "0000"
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    .line 146
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    .line 148
+    invoke-virtual {v1, v2, v5, v9}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
     .line 149
+    const-string v3, "0000"
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 150
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 153
     :goto_0
     const/4 v3, 0x7
 
@@ -182,63 +182,63 @@
 
     move-result v3
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 150
-    invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    .line 154
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     return-object v3
 
-    .line 128
+    .line 132
     :pswitch_0
-    invoke-virtual {v1, v2, v5, v6}, Ljava/lang/StringBuffer;->append([CII)Ljava/lang/StringBuffer;
+    invoke-virtual {v1, v2, v5, v6}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
-    .line 129
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
-
-    .line 130
-    const-string v3, "0000"
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    .line 131
-    invoke-virtual {v1, v2, v6, v7}, Ljava/lang/StringBuffer;->append([CII)Ljava/lang/StringBuffer;
-
-    goto :goto_0
+    .line 133
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 134
-    :pswitch_1
-    invoke-virtual {v1, v2, v5, v7}, Ljava/lang/StringBuffer;->append([CII)Ljava/lang/StringBuffer;
+    const-string v3, "0000"
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 135
-    const-string v3, "00000"
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
-
-    .line 136
-    invoke-virtual {v1, v2, v7, v6}, Ljava/lang/StringBuffer;->append([CII)Ljava/lang/StringBuffer;
+    invoke-virtual {v1, v2, v6, v7}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
     goto :goto_0
+
+    .line 138
+    :pswitch_1
+    invoke-virtual {v1, v2, v5, v7}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
     .line 139
-    :pswitch_2
-    invoke-virtual {v1, v2, v5, v8}, Ljava/lang/StringBuffer;->append([CII)Ljava/lang/StringBuffer;
-
-    .line 140
     const-string v3, "00000"
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 141
-    aget-char v3, v2, v8
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    .line 140
+    invoke-virtual {v1, v2, v7, v6}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 124
+    .line 143
+    :pswitch_2
+    invoke-virtual {v1, v2, v5, v8}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
+
+    .line 144
+    const-string v3, "00000"
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 145
+    aget-char v3, v2, v8
+
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_0
+
+    .line 128
     nop
 
     :pswitch_data_0
@@ -251,7 +251,7 @@
     .end packed-switch
 .end method
 
-.method private static determineNumSysAndCheckDigit(Ljava/lang/StringBuffer;I)V
+.method private static determineNumSysAndCheckDigit(Ljava/lang/StringBuilder;I)V
     .locals 4
     .parameter "resultString"
     .parameter "lgPatternFound"
@@ -262,7 +262,7 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 99
     const/4 v1, 0x0
 
     .local v1, numSys:I
@@ -271,7 +271,7 @@
 
     if-gt v1, v2, :cond_2
 
-    .line 97
+    .line 100
     const/4 v0, 0x0
 
     .local v0, d:I
@@ -280,7 +280,7 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 98
+    .line 101
     sget-object v2, Lcom/google/zxing/oned/UPCEReader;->NUMSYS_AND_CHECK_DIGIT_PATTERNS:[[I
 
     aget-object v2, v2, v1
@@ -289,38 +289,38 @@
 
     if-ne p1, v2, :cond_0
 
-    .line 99
+    .line 102
     const/4 v2, 0x0
 
     add-int/lit8 v3, v1, 0x30
 
     int-to-char v3, v3
 
-    invoke-virtual {p0, v2, v3}, Ljava/lang/StringBuffer;->insert(IC)Ljava/lang/StringBuffer;
+    invoke-virtual {p0, v2, v3}, Ljava/lang/StringBuilder;->insert(IC)Ljava/lang/StringBuilder;
 
-    .line 100
+    .line 103
     add-int/lit8 v2, v0, 0x30
 
     int-to-char v2, v2
 
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 101
+    .line 104
     return-void
 
-    .line 97
+    .line 100
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 96
+    .line 99
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 105
+    .line 108
     .end local v0           #d:I
     :cond_2
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
@@ -343,7 +343,7 @@
     .end annotation
 
     .prologue
-    .line 90
+    .line 93
     invoke-static {p1}, Lcom/google/zxing/oned/UPCEReader;->convertUPCEtoUPCA(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -366,7 +366,7 @@
     .end annotation
 
     .prologue
-    .line 86
+    .line 88
     const/4 v0, 0x1
 
     sget-object v1, Lcom/google/zxing/oned/UPCEReader;->MIDDLE_END_PATTERN:[I
@@ -378,8 +378,8 @@
     return-object v0
 .end method
 
-.method protected decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuffer;)I
-    .locals 10
+.method protected decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuilder;)I
+    .locals 12
     .parameter "row"
     .parameter "startRange"
     .parameter "result"
@@ -390,125 +390,145 @@
     .end annotation
 
     .prologue
-    const/4 v9, 0x1
-
-    const/4 v8, 0x0
-
-    .line 59
-    iget-object v1, p0, Lcom/google/zxing/oned/UPCEReader;->decodeMiddleCounters:[I
-
     .line 60
-    .local v1, counters:[I
-    aput v8, v1, v8
+    iget-object v3, p0, Lcom/google/zxing/oned/UPCEReader;->decodeMiddleCounters:[I
 
     .line 61
-    aput v8, v1, v9
+    .local v3, counters:[I
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    aput v11, v3, v10
 
     .line 62
-    const/4 v7, 0x2
+    const/4 v10, 0x1
 
-    aput v8, v1, v7
+    const/4 v11, 0x0
+
+    aput v11, v3, v10
 
     .line 63
-    const/4 v7, 0x3
+    const/4 v10, 0x2
 
-    aput v8, v1, v7
+    const/4 v11, 0x0
+
+    aput v11, v3, v10
 
     .line 64
-    invoke-virtual {p1}, Lcom/google/zxing/common/BitArray;->getSize()I
+    const/4 v10, 0x3
 
-    move-result v2
+    const/4 v11, 0x0
+
+    aput v11, v3, v10
 
     .line 65
-    .local v2, end:I
-    aget v5, p2, v9
+    invoke-virtual {p1}, Lcom/google/zxing/common/BitArray;->getSize()I
 
-    .line 67
-    .local v5, rowOffset:I
-    const/4 v4, 0x0
+    move-result v4
 
-    .line 69
-    .local v4, lgPatternFound:I
-    const/4 v6, 0x0
+    .line 66
+    .local v4, end:I
+    const/4 v10, 0x1
 
-    .local v6, x:I
-    :goto_0
-    const/4 v7, 0x6
+    aget v8, p2, v10
 
-    if-ge v6, v7, :cond_2
-
-    if-ge v5, v2, :cond_2
+    .line 68
+    .local v8, rowOffset:I
+    const/4 v7, 0x0
 
     .line 70
-    sget-object v7, Lcom/google/zxing/oned/UPCEReader;->L_AND_G_PATTERNS:[[I
+    .local v7, lgPatternFound:I
+    const/4 v9, 0x0
 
-    invoke-static {p1, v1, v5, v7}, Lcom/google/zxing/oned/UPCEReader;->decodeDigit(Lcom/google/zxing/common/BitArray;[II[[I)I
+    .local v9, x:I
+    :goto_0
+    const/4 v10, 0x6
 
-    move-result v0
+    if-ge v9, v10, :cond_2
+
+    if-ge v8, v4, :cond_2
 
     .line 71
-    .local v0, bestMatch:I
-    rem-int/lit8 v7, v0, 0xa
+    sget-object v10, Lcom/google/zxing/oned/UPCEReader;->L_AND_G_PATTERNS:[[I
 
-    add-int/lit8 v7, v7, 0x30
+    invoke-static {p1, v3, v8, v10}, Lcom/google/zxing/oned/UPCEReader;->decodeDigit(Lcom/google/zxing/common/BitArray;[II[[I)I
 
-    int-to-char v7, v7
-
-    invoke-virtual {p3, v7}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    move-result v1
 
     .line 72
-    const/4 v3, 0x0
+    .local v1, bestMatch:I
+    rem-int/lit8 v10, v1, 0xa
 
-    .local v3, i:I
-    :goto_1
-    array-length v7, v1
+    add-int/lit8 v10, v10, 0x30
 
-    if-ge v3, v7, :cond_0
+    int-to-char v10, v10
+
+    invoke-virtual {p3, v10}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 73
-    aget v7, v1, v3
+    move-object v0, v3
 
-    add-int/2addr v5, v7
+    .local v0, arr$:[I
+    array-length v6, v0
 
-    .line 72
-    add-int/lit8 v3, v3, 0x1
+    .local v6, len$:I
+    const/4 v5, 0x0
+
+    .local v5, i$:I
+    :goto_1
+    if-ge v5, v6, :cond_0
+
+    aget v2, v0, v5
+
+    .line 74
+    .local v2, counter:I
+    add-int/2addr v8, v2
+
+    .line 73
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 75
-    :cond_0
-    const/16 v7, 0xa
-
-    if-lt v0, v7, :cond_1
-
     .line 76
-    rsub-int/lit8 v7, v6, 0x5
+    .end local v2           #counter:I
+    :cond_0
+    const/16 v10, 0xa
 
-    shl-int v7, v9, v7
+    if-lt v1, v10, :cond_1
 
-    or-int/2addr v4, v7
+    .line 77
+    const/4 v10, 0x1
 
-    .line 69
+    rsub-int/lit8 v11, v9, 0x5
+
+    shl-int/2addr v10, v11
+
+    or-int/2addr v7, v10
+
+    .line 70
     :cond_1
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v9, v9, 0x1
 
     goto :goto_0
 
-    .line 80
-    .end local v0           #bestMatch:I
-    .end local v3           #i:I
+    .line 81
+    .end local v0           #arr$:[I
+    .end local v1           #bestMatch:I
+    .end local v5           #i$:I
+    .end local v6           #len$:I
     :cond_2
-    invoke-static {p3, v4}, Lcom/google/zxing/oned/UPCEReader;->determineNumSysAndCheckDigit(Ljava/lang/StringBuffer;I)V
+    invoke-static {p3, v7}, Lcom/google/zxing/oned/UPCEReader;->determineNumSysAndCheckDigit(Ljava/lang/StringBuilder;I)V
 
-    .line 82
-    return v5
+    .line 83
+    return v8
 .end method
 
 .method getBarcodeFormat()Lcom/google/zxing/BarcodeFormat;
     .locals 1
 
     .prologue
-    .line 109
+    .line 113
     sget-object v0, Lcom/google/zxing/BarcodeFormat;->UPC_E:Lcom/google/zxing/BarcodeFormat;
 
     return-object v0

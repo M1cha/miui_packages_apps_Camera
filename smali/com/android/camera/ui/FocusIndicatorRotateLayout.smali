@@ -85,7 +85,7 @@
     .line 44
     iget-object v0, p0, Lcom/android/camera/ui/RotateLayout;->mChild:Landroid/view/View;
 
-    invoke-virtual {p0}, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -108,7 +108,7 @@
     const/high16 v1, 0x3f80
 
     .line 75
-    invoke-virtual {p0}, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
@@ -117,7 +117,7 @@
     .line 76
     iget-object v0, p0, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->mDisappear:Ljava/lang/Runnable;
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
+    invoke-virtual {p0, v0}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     .line 77
     iget-object v0, p0, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->mDisappear:Ljava/lang/Runnable;
@@ -125,10 +125,10 @@
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     .line 78
-    invoke-virtual {p0, v1}, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->setScaleX(F)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->setScaleX(F)V
 
     .line 79
-    invoke-virtual {p0, v1}, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->setScaleY(F)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->setScaleY(F)V
 
     .line 80
     return-void
@@ -147,7 +147,7 @@
     if-ne v0, v1, :cond_0
 
     .line 68
-    const v0, 0x7f0200b0
+    const v0, 0x7f0200a2
 
     invoke-direct {p0, v0}, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->setDrawable(I)V
 
@@ -173,12 +173,12 @@
     if-nez v0, :cond_0
 
     .line 50
-    const v0, 0x7f0200b2
+    const v0, 0x7f0200a4
 
     invoke-direct {p0, v0}, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->setDrawable(I)V
 
     .line 51
-    invoke-virtual {p0}, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
@@ -221,7 +221,7 @@
     if-ne v0, v1, :cond_0
 
     .line 60
-    const v0, 0x7f0200b1
+    const v0, 0x7f0200a3
 
     invoke-direct {p0, v0}, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->setDrawable(I)V
 

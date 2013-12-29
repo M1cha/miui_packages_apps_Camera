@@ -32,7 +32,7 @@
 
     .prologue
     .line 502
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     .line 503
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView$SlideBar;->mSlidePoint:Landroid/graphics/NinePatch;
@@ -57,18 +57,18 @@
 
     .prologue
     .line 529
-    iget v0, p0, Lcom/android/camera/ui/ScreenView$SlideBar;->mRight:I
+    iget v0, p0, Landroid/view/View;->mRight:I
 
     add-int/2addr v0, p1
 
-    iget v1, p0, Lcom/android/camera/ui/ScreenView$SlideBar;->mLeft:I
+    iget v1, p0, Landroid/view/View;->mLeft:I
 
     sub-int/2addr v0, v1
 
-    iput v0, p0, Lcom/android/camera/ui/ScreenView$SlideBar;->mRight:I
+    iput v0, p0, Landroid/view/View;->mRight:I
 
     .line 530
-    iput p1, p0, Lcom/android/camera/ui/ScreenView$SlideBar;->mLeft:I
+    iput p1, p0, Landroid/view/View;->mLeft:I
 
     .line 531
     return-void
@@ -79,7 +79,7 @@
 
     .prologue
     .line 524
-    invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView$SlideBar;->getMeasuredWidth()I
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
 
@@ -107,7 +107,7 @@
 
     .prologue
     .line 510
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->setFrame(IIII)Z
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->setFrame(IIII)Z
 
     move-result v0
 

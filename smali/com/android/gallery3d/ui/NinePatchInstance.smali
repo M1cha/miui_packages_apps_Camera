@@ -28,7 +28,7 @@
     const/4 v7, 0x4
 
     .line 206
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 207
     invoke-virtual {p1}, Lcom/android/gallery3d/ui/NinePatchTexture;->getNinePatchChunk()Lcom/android/gallery3d/ui/NinePatchChunk;
@@ -95,7 +95,7 @@
     .local v4, divV:[F
     iget-object v0, v8, Lcom/android/gallery3d/ui/NinePatchChunk;->mDivX:[I
 
-    invoke-virtual {p1}, Lcom/android/gallery3d/ui/NinePatchTexture;->getWidth()I
+    invoke-virtual {p1}, Lcom/android/gallery3d/ui/ResourceTexture;->getWidth()I
 
     move-result v7
 
@@ -107,7 +107,7 @@
     .local v5, nx:I
     iget-object v0, v8, Lcom/android/gallery3d/ui/NinePatchChunk;->mDivY:[I
 
-    invoke-virtual {p1}, Lcom/android/gallery3d/ui/NinePatchTexture;->getHeight()I
+    invoke-virtual {p1}, Lcom/android/gallery3d/ui/ResourceTexture;->getHeight()I
 
     move-result v7
 
@@ -189,7 +189,7 @@
     .line 404
     iget-object v1, p0, Lcom/android/gallery3d/ui/NinePatchInstance;->mXyBuffer:Ljava/nio/FloatBuffer;
 
-    invoke-virtual {v1}, Ljava/nio/FloatBuffer;->capacity()I
+    invoke-virtual {v1}, Ljava/nio/Buffer;->capacity()I
 
     move-result v1
 
@@ -211,7 +211,7 @@
     .line 409
     iget-object v1, p0, Lcom/android/gallery3d/ui/NinePatchInstance;->mUvBuffer:Ljava/nio/FloatBuffer;
 
-    invoke-virtual {v1}, Ljava/nio/FloatBuffer;->capacity()I
+    invoke-virtual {v1}, Ljava/nio/Buffer;->capacity()I
 
     move-result v1
 
@@ -237,7 +237,7 @@
 
     iget-object v2, p0, Lcom/android/gallery3d/ui/NinePatchInstance;->mIndexBuffer:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v2}, Ljava/nio/ByteBuffer;->capacity()I
+    invoke-virtual {v2}, Ljava/nio/Buffer;->capacity()I
 
     move-result v2
 
@@ -640,7 +640,7 @@
 
     const/16 v25, 0x0
 
-    invoke-virtual/range {v24 .. v25}, Ljava/nio/FloatBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual/range {v24 .. v25}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
     .line 390
     move-object/from16 v0, p0
@@ -667,7 +667,7 @@
 
     const/16 v25, 0x0
 
-    invoke-virtual/range {v24 .. v25}, Ljava/nio/FloatBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual/range {v24 .. v25}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
     .line 391
     move-object/from16 v0, p0
@@ -688,7 +688,7 @@
 
     const/16 v25, 0x0
 
-    invoke-virtual/range {v24 .. v25}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual/range {v24 .. v25}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
     .line 392
     return-void

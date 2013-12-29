@@ -29,31 +29,30 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/PanoramaActivity;)V
     .locals 2
-    .parameter
 
     .prologue
     const/4 v1, 0x0
 
-    .line 176
+    .line 173
     iput-object p1, p0, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 177
+    .line 174
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->data:[B
 
-    .line 178
+    .line 175
     iput v1, p0, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->width:I
 
-    .line 179
+    .line 176
     iput v1, p0, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->height:I
 
-    .line 180
+    .line 177
     iput-boolean v1, p0, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->isValid:Z
 
-    .line 181
+    .line 178
     return-void
 .end method
 
@@ -65,25 +64,25 @@
     .parameter "height"
 
     .prologue
-    .line 169
+    .line 166
     iput-object p1, p0, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 170
+    .line 167
     iput-object p2, p0, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->data:[B
 
-    .line 171
+    .line 168
     iput p3, p0, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->width:I
 
-    .line 172
+    .line 169
     iput p4, p0, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->height:I
 
-    .line 173
+    .line 170
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->isValid:Z
 
-    .line 174
+    .line 171
     return-void
 .end method

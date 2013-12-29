@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 3067
+    .line 2969
     iput-object p1, p0, Lcom/android/camera/Camera$7;->this$0:Lcom/android/camera/Camera;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,11 +40,11 @@
     .locals 1
 
     .prologue
-    .line 3069
+    .line 2971
     iget-object v0, p0, Lcom/android/camera/Camera$7;->this$0:Lcom/android/camera/Camera;
 
-    invoke-virtual {v0}, Lcom/android/camera/Camera;->openSettingActivity()V
+    invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->openSettingActivity()V
 
-    .line 3070
+    .line 2972
     return-void
 .end method

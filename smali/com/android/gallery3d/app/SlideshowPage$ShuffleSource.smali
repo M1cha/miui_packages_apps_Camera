@@ -38,34 +38,34 @@
     .parameter "repeat"
 
     .prologue
-    .line 240
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 248
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 234
+    .line 242
     new-instance v0, Ljava/util/Random;
 
     invoke-direct {v0}, Ljava/util/Random;-><init>()V
 
     iput-object v0, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mRandom:Ljava/util/Random;
 
-    .line 235
+    .line 243
     const/4 v0, 0x0
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mOrder:[I
 
-    .line 237
+    .line 245
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mSourceVersion:J
 
-    .line 238
+    .line 246
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mLastIndex:I
 
-    .line 241
+    .line 249
     invoke-static {p1}, Lcom/android/gallery3d/common/Utils;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -74,10 +74,10 @@
 
     iput-object v0, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mMediaSet:Lcom/android/gallery3d/data/MediaSet;
 
-    .line 242
+    .line 250
     iput-boolean p2, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mRepeat:Z
 
-    .line 243
+    .line 251
     return-void
 .end method
 
@@ -88,36 +88,36 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 273
+    .line 281
     iget-object v1, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mOrder:[I
 
     array-length v1, v1
 
     if-eq v1, p1, :cond_0
 
-    .line 274
+    .line 282
     new-array v1, p1, [I
 
     iput-object v1, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mOrder:[I
 
-    .line 275
+    .line 283
     const/4 v0, 0x0
 
     .local v0, i:I
     :goto_0
     if-ge v0, p1, :cond_0
 
-    .line 276
+    .line 284
     iget-object v1, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mOrder:[I
 
     aput v0, v1, v0
 
-    .line 275
+    .line 283
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 279
+    .line 287
     .end local v0           #i:I
     :cond_0
     add-int/lit8 v0, p1, -0x1
@@ -126,7 +126,7 @@
     :goto_1
     if-lez v0, :cond_1
 
-    .line 280
+    .line 288
     iget-object v1, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mOrder:[I
 
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mRandom:Ljava/util/Random;
@@ -139,12 +139,12 @@
 
     invoke-static {v1, v0, v2}, Lcom/android/gallery3d/common/Utils;->swap([III)V
 
-    .line 279
+    .line 287
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_1
 
-    .line 282
+    .line 290
     :cond_1
     iget-object v1, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mOrder:[I
 
@@ -158,7 +158,7 @@
 
     if-le p1, v1, :cond_2
 
-    .line 283
+    .line 291
     iget-object v1, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mOrder:[I
 
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mRandom:Ljava/util/Random;
@@ -173,7 +173,7 @@
 
     invoke-static {v1, v4, v2}, Lcom/android/gallery3d/common/Utils;->swap([III)V
 
-    .line 285
+    .line 293
     :cond_2
     return-void
 .end method
@@ -185,12 +185,12 @@
     .parameter "listener"
 
     .prologue
-    .line 288
+    .line 296
     iget-object v0, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mMediaSet:Lcom/android/gallery3d/data/MediaSet;
 
     invoke-virtual {v0, p1}, Lcom/android/gallery3d/data/MediaSet;->addContentListener(Lcom/android/gallery3d/data/ContentListener;)V
 
-    .line 289
+    .line 297
     return-void
 .end method
 
@@ -200,7 +200,7 @@
     .parameter "hint"
 
     .prologue
-    .line 246
+    .line 254
     return p2
 .end method
 
@@ -211,7 +211,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 250
+    .line 258
     iget-boolean v2, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mRepeat:Z
 
     if-nez v2, :cond_1
@@ -222,11 +222,11 @@
 
     if-lt p1, v2, :cond_1
 
-    .line 259
+    .line 267
     :cond_0
     return-object v1
 
-    .line 251
+    .line 259
     :cond_1
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mOrder:[I
 
@@ -234,7 +234,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 252
+    .line 260
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mOrder:[I
 
     iget-object v3, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mOrder:[I
@@ -247,7 +247,7 @@
 
     iput v2, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mLastIndex:I
 
-    .line 253
+    .line 261
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mMediaSet:Lcom/android/gallery3d/data/MediaSet;
 
     iget v3, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mLastIndex:I
@@ -257,7 +257,7 @@
 
     move-result-object v1
 
-    .line 254
+    .line 262
     .local v1, item:Lcom/android/gallery3d/data/MediaItem;
     const/4 v0, 0x0
 
@@ -269,7 +269,7 @@
 
     if-nez v1, :cond_0
 
-    .line 255
+    .line 263
     const-string v2, "SlideshowPage"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -294,7 +294,7 @@
 
     invoke-static {v2, v3}, Lcom/android/gallery3d/app/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 256
+    .line 264
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mRandom:Ljava/util/Random;
 
     iget-object v3, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mOrder:[I
@@ -307,7 +307,7 @@
 
     iput v2, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mLastIndex:I
 
-    .line 257
+    .line 265
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mMediaSet:Lcom/android/gallery3d/data/MediaSet;
 
     iget v3, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mLastIndex:I
@@ -317,7 +317,7 @@
 
     move-result-object v1
 
-    .line 254
+    .line 262
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
@@ -327,14 +327,14 @@
     .locals 5
 
     .prologue
-    .line 263
+    .line 271
     iget-object v3, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mMediaSet:Lcom/android/gallery3d/data/MediaSet;
 
     invoke-virtual {v3}, Lcom/android/gallery3d/data/MediaSet;->reload()J
 
     move-result-wide v1
 
-    .line 264
+    .line 272
     .local v1, version:J
     iget-wide v3, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mSourceVersion:J
 
@@ -342,17 +342,17 @@
 
     if-eqz v3, :cond_0
 
-    .line 265
+    .line 273
     iput-wide v1, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mSourceVersion:J
 
-    .line 266
+    .line 274
     iget-object v3, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mMediaSet:Lcom/android/gallery3d/data/MediaSet;
 
     invoke-virtual {v3}, Lcom/android/gallery3d/data/MediaSet;->getTotalMediaItemCount()I
 
     move-result v0
 
-    .line 267
+    .line 275
     .local v0, count:I
     iget-object v3, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mOrder:[I
 
@@ -362,7 +362,7 @@
 
     invoke-direct {p0, v0}, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->generateOrderArray(I)V
 
-    .line 269
+    .line 277
     .end local v0           #count:I
     :cond_0
     return-wide v1
@@ -373,11 +373,11 @@
     .parameter "listener"
 
     .prologue
-    .line 292
+    .line 300
     iget-object v0, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mMediaSet:Lcom/android/gallery3d/data/MediaSet;
 
     invoke-virtual {v0, p1}, Lcom/android/gallery3d/data/MediaSet;->removeContentListener(Lcom/android/gallery3d/data/ContentListener;)V
 
-    .line 293
+    .line 301
     return-void
 .end method

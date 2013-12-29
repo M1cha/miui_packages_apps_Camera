@@ -47,7 +47,7 @@
     .line 45
     const v0, 0x7f0c0064
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/PreviewFrameLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -99,7 +99,7 @@
 
     .line 51
     :cond_0
-    invoke-virtual {p0}, Lcom/android/camera/PreviewFrameLayout;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -130,7 +130,7 @@
     iput-wide p1, p0, Lcom/android/camera/PreviewFrameLayout;->mAspectRatio:D
 
     .line 57
-    invoke-virtual {p0}, Lcom/android/camera/PreviewFrameLayout;->requestLayout()V
+    invoke-virtual {p0}, Landroid/widget/RelativeLayout;->requestLayout()V
 
     .line 59
     :cond_2

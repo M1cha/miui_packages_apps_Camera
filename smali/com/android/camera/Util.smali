@@ -46,7 +46,7 @@
 
     .prologue
     .line 91
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 92
     return-void
@@ -102,7 +102,6 @@
 
 .method public static checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -466,7 +465,7 @@
     .local v0, animation:Landroid/view/animation/Animation;
     const-wide/16 v1, 0x190
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
+    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 621
     invoke-virtual {p0, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
@@ -507,7 +506,7 @@
     .local v0, animation:Landroid/view/animation/Animation;
     const-wide/16 v1, 0x190
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;->setDuration(J)V
+    invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 629
     invoke-virtual {p0, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
@@ -1259,7 +1258,7 @@
     .line 100
     new-instance v2, Lcom/android/camera/Util$ImageFileNamer;
 
-    const v3, 0x7f0d00e5
+    const v3, 0x7f0d00ec
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1307,44 +1306,6 @@
 
     :cond_0
     const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public static isSupported(Ljava/lang/String;Ljava/util/List;)Z
-    .locals 2
-    .parameter "value"
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/String;",
-            ">;)Z"
-        }
-    .end annotation
-
-    .prologue
-    .local p1, supported:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
-    const/4 v0, 0x0
-
-    .line 710
-    if-nez p1, :cond_1
-
-    :cond_0
-    :goto_0
-    return v0
-
-    :cond_1
-    invoke-interface {p1, p0}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
-
-    move-result v1
-
-    if-ltz v1, :cond_0
-
-    const/4 v0, 0x1
 
     goto :goto_0
 .end method
@@ -2393,7 +2354,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d00e3
+    const v2, 0x7f0d00ea
 
     invoke-virtual {v1, v2, v0}, Landroid/app/AlertDialog$Builder;->setNeutralButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

@@ -32,12 +32,12 @@
     .line 21
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/PopupGridView;->setDrawingCacheEnabled(Z)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setDrawingCacheEnabled(Z)V
 
     .line 22
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/PopupGridView;->setWillNotDraw(Z)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setWillNotDraw(Z)V
 
     .line 23
     return-void
@@ -85,7 +85,7 @@
 
     .local v0, i:I
     :goto_0
-    invoke-virtual {p0}, Lcom/android/camera/ui/PopupGridView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v1
 
@@ -122,7 +122,7 @@
 
     .line 66
     .local v0, columnIndex:I
-    invoke-virtual {p0, p1}, Lcom/android/camera/ui/PopupGridView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -258,7 +258,7 @@
 
     move-result v1
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/camera/ui/PopupGridView;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v0, v1}, Landroid/view/View;->setMeasuredDimension(II)V
 
     .line 46
     iget v0, p0, Lcom/android/camera/ui/PopupGridView;->mChildWidth:I
@@ -273,7 +273,7 @@
 
     move-result v1
 
-    invoke-virtual {p0, v0, v1}, Lcom/android/camera/ui/PopupGridView;->measureChildren(II)V
+    invoke-virtual {p0, v0, v1}, Landroid/view/ViewGroup;->measureChildren(II)V
 
     .line 49
     return-void

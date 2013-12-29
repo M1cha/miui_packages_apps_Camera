@@ -29,7 +29,7 @@
     const/4 v2, 0x0
 
     .line 41
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 42
     iput-object p1, p0, Lcom/android/camera/CameraPreference;->mContext:Landroid/content/Context;

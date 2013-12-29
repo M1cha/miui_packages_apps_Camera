@@ -52,22 +52,22 @@
 
     .line 47
     .local v0, paint:Landroid/text/TextPaint;
-    invoke-virtual {v0, p0}, Landroid/text/TextPaint;->setTextSize(F)V
+    invoke-virtual {v0, p0}, Landroid/graphics/Paint;->setTextSize(F)V
 
     .line 48
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setAntiAlias(Z)V
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
     .line 49
-    invoke-virtual {v0, p1}, Landroid/text/TextPaint;->setColor(I)V
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 50
     const/high16 v1, 0x4000
 
     const/high16 v2, -0x100
 
-    invoke-virtual {v0, v1, v3, v3, v2}, Landroid/text/TextPaint;->setShadowLayer(FFFI)V
+    invoke-virtual {v0, v1, v3, v3, v2}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
 
     .line 51
     return-object v0
@@ -117,7 +117,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
     .line 66
     :cond_0
@@ -154,13 +154,13 @@
 
     .prologue
     .line 74
-    invoke-virtual {p1}, Landroid/text/TextPaint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
+    invoke-virtual {p1}, Landroid/graphics/Paint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
 
     move-result-object v3
 
     .line 75
     .local v3, metrics:Landroid/graphics/Paint$FontMetricsInt;
-    invoke-virtual {p1, p0}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->measureText(Ljava/lang/String;)F
 
     move-result v0
 

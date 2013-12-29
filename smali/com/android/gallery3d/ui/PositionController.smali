@@ -242,7 +242,7 @@
     const/4 v2, -0x3
 
     .line 210
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 87
     iput-boolean v5, p0, Lcom/android/gallery3d/ui/PositionController;->mExtraScalingRange:Z
@@ -1196,7 +1196,7 @@
 
     .line 1295
     :cond_1
-    const/high16 v0, 0x4080
+    const/high16 v0, 0x4040
 
     goto :goto_0
 .end method
@@ -1305,7 +1305,7 @@
 
     .line 1289
     .local v1, s:F
-    const/high16 v5, 0x4080
+    const/high16 v5, 0x4040
 
     invoke-static {v5, v1}, Ljava/lang/Math;->min(FF)F
 
@@ -2384,7 +2384,7 @@
     .local v0, changed:Z
     iget-object v2, p0, Lcom/android/gallery3d/ui/PositionController;->mPlatform:Lcom/android/gallery3d/ui/PositionController$Platform;
 
-    invoke-virtual {v2}, Lcom/android/gallery3d/ui/PositionController$Platform;->advanceAnimation()Z
+    invoke-virtual {v2}, Lcom/android/gallery3d/ui/PositionController$Animatable;->advanceAnimation()Z
 
     move-result v2
 
@@ -2406,7 +2406,7 @@
 
     check-cast v2, Lcom/android/gallery3d/ui/PositionController$Box;
 
-    invoke-virtual {v2}, Lcom/android/gallery3d/ui/PositionController$Box;->advanceAnimation()Z
+    invoke-virtual {v2}, Lcom/android/gallery3d/ui/PositionController$Animatable;->advanceAnimation()Z
 
     move-result v2
 
@@ -2433,7 +2433,7 @@
 
     check-cast v2, Lcom/android/gallery3d/ui/PositionController$Gap;
 
-    invoke-virtual {v2}, Lcom/android/gallery3d/ui/PositionController$Gap;->advanceAnimation()Z
+    invoke-virtual {v2}, Lcom/android/gallery3d/ui/PositionController$Animatable;->advanceAnimation()Z
 
     move-result v2
 
@@ -2448,7 +2448,7 @@
     :cond_1
     iget-object v2, p0, Lcom/android/gallery3d/ui/PositionController;->mFilmRatio:Lcom/android/gallery3d/ui/PositionController$FilmRatio;
 
-    invoke-virtual {v2}, Lcom/android/gallery3d/ui/PositionController$FilmRatio;->advanceAnimation()Z
+    invoke-virtual {v2}, Lcom/android/gallery3d/ui/PositionController$Animatable;->advanceAnimation()Z
 
     move-result v2
 

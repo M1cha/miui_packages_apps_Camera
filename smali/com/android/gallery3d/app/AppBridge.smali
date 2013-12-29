@@ -20,7 +20,7 @@
 
     .prologue
     .line 26
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 58
     return-void
@@ -29,6 +29,9 @@
 
 # virtual methods
 .method public abstract attachScreenNail()Lcom/android/gallery3d/ui/ScreenNail;
+.end method
+
+.method public abstract createCameraScreenNail()Z
 .end method
 
 .method public describeContents()I

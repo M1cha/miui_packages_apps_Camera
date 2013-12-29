@@ -9,7 +9,7 @@
 
     .prologue
     .line 38
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -214,7 +214,6 @@
 
 .method public static createVideoThumbnail(Ljava/lang/String;)Landroid/graphics/Bitmap;
     .locals 7
-    .parameter
 
     .prologue
     const/4 v1, 0x0

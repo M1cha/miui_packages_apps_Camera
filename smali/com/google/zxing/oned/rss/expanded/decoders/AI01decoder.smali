@@ -16,7 +16,7 @@
     return-void
 .end method
 
-.method private static appendCheckDigit(Ljava/lang/StringBuffer;I)V
+.method private static appendCheckDigit(Ljava/lang/StringBuilder;I)V
     .locals 4
     .parameter "buf"
     .parameter "currentPos"
@@ -38,7 +38,7 @@
     .line 69
     add-int v3, v2, p1
 
-    invoke-virtual {p0, v3}, Ljava/lang/StringBuffer;->charAt(I)C
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->charAt(I)C
 
     move-result v3
 
@@ -77,7 +77,7 @@
 
     .line 78
     :cond_2
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 79
     return-void
@@ -85,7 +85,7 @@
 
 
 # virtual methods
-.method protected encodeCompressedGtin(Ljava/lang/StringBuffer;I)V
+.method protected final encodeCompressedGtin(Ljava/lang/StringBuilder;I)V
     .locals 2
     .parameter "buf"
     .parameter "currentPos"
@@ -94,10 +94,10 @@
     .line 44
     const-string v1, "(01)"
 
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 45
-    invoke-virtual {p1}, Ljava/lang/StringBuffer;->length()I
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v0
 
@@ -105,16 +105,16 @@
     .local v0, initialPosition:I
     const/16 v1, 0x39
 
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 48
-    invoke-virtual {p0, p1, p2, v0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01decoder;->encodeCompressedGtinWithoutAI(Ljava/lang/StringBuffer;II)V
+    invoke-virtual {p0, p1, p2, v0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01decoder;->encodeCompressedGtinWithoutAI(Ljava/lang/StringBuilder;II)V
 
     .line 49
     return-void
 .end method
 
-.method protected encodeCompressedGtinWithoutAI(Ljava/lang/StringBuffer;II)V
+.method protected final encodeCompressedGtinWithoutAI(Ljava/lang/StringBuilder;II)V
     .locals 6
     .parameter "buf"
     .parameter "currentPos"
@@ -133,7 +133,9 @@
     if-ge v1, v2, :cond_2
 
     .line 53
-    iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->generalDecoder:Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
+    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
+
+    move-result-object v2
 
     mul-int/lit8 v3, v1, 0xa
 
@@ -152,7 +154,7 @@
     if-nez v2, :cond_0
 
     .line 55
-    invoke-virtual {p1, v5}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 57
     :cond_0
@@ -161,11 +163,11 @@
     if-nez v2, :cond_1
 
     .line 58
-    invoke-virtual {p1, v5}, Ljava/lang/StringBuffer;->append(C)Ljava/lang/StringBuffer;
+    invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 60
     :cond_1
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuffer;->append(I)Ljava/lang/StringBuffer;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 52
     add-int/lit8 v1, v1, 0x1
@@ -175,7 +177,7 @@
     .line 63
     .end local v0           #currentBlock:I
     :cond_2
-    invoke-static {p1, p3}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01decoder;->appendCheckDigit(Ljava/lang/StringBuffer;I)V
+    invoke-static {p1, p3}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01decoder;->appendCheckDigit(Ljava/lang/StringBuilder;I)V
 
     .line 64
     return-void

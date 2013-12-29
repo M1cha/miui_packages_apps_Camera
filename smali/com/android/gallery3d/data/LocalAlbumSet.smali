@@ -199,7 +199,7 @@
     .line 111
     new-instance v0, Landroid/os/Handler;
 
-    invoke-virtual {p2}, Lcom/android/camera/CameraAppImpl;->getMainLooper()Landroid/os/Looper;
+    invoke-virtual {p2}, Landroid/content/ContextWrapper;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v1
 
@@ -233,11 +233,11 @@
     iput-object v0, p0, Lcom/android/gallery3d/data/LocalAlbumSet;->mNotifierVideo:Lcom/android/gallery3d/data/ChangeNotifier;
 
     .line 115
-    invoke-virtual {p2}, Lcom/android/camera/CameraAppImpl;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p2}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    const v1, 0x7f0d019d
+    const v1, 0x7f0d01b3
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -793,7 +793,7 @@
     .line 146
     iget-object v0, p0, Lcom/android/gallery3d/data/LocalAlbumSet;->mApplication:Lcom/android/camera/CameraAppImpl;
 
-    invoke-virtual {v0}, Lcom/android/camera/CameraAppImpl;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v0}, Landroid/content/ContextWrapper;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
@@ -1050,7 +1050,6 @@
 
 .method public declared-synchronized onFutureDone(Lcom/android/gallery3d/util/Future;)V
     .locals 2
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

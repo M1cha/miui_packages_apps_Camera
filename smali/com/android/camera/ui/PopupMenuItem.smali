@@ -80,7 +80,7 @@
     .line 76
     iget-object v0, p0, Lcom/android/camera/ui/PopupMenuItem;->mText:Landroid/widget/TextView;
 
-    invoke-virtual {p0}, Lcom/android/camera/ui/PopupMenuItem;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -132,12 +132,12 @@
 
     .prologue
     .line 28
-    invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
+    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
 
     .line 29
     const v0, 0x7f0c0039
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/PopupMenuItem;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -155,7 +155,7 @@
 
     .prologue
     .line 64
-    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->setActivated(Z)V
+    invoke-super {p0, p1}, Landroid/view/View;->setActivated(Z)V
 
     .line 65
     invoke-direct {p0, p1}, Lcom/android/camera/ui/PopupMenuItem;->setTextShadow(Z)V
@@ -170,7 +170,7 @@
 
     .prologue
     .line 54
-    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->setEnabled(Z)V
+    invoke-super {p0, p1}, Landroid/view/View;->setEnabled(Z)V
 
     .line 55
     if-eqz p1, :cond_0
@@ -178,7 +178,7 @@
     .line 56
     const/high16 v0, 0x3f80
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/PopupMenuItem;->setAlpha(F)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
 
     .line 60
     :goto_0
@@ -188,7 +188,7 @@
     :cond_0
     const v0, 0x3ecccccd
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/PopupMenuItem;->setAlpha(F)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
 
     goto :goto_0
 .end method
@@ -200,7 +200,7 @@
 
     .prologue
     .line 34
-    invoke-virtual {p0}, Lcom/android/camera/ui/PopupMenuItem;->getRotation()F
+    invoke-virtual {p0}, Landroid/view/View;->getRotation()F
 
     move-result v3
 
@@ -259,7 +259,7 @@
     if-eqz p2, :cond_4
 
     .line 46
-    invoke-virtual {p0}, Lcom/android/camera/ui/PopupMenuItem;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v3
 
@@ -297,7 +297,7 @@
 
     .line 48
     :cond_4
-    invoke-virtual {p0}, Lcom/android/camera/ui/PopupMenuItem;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v3
 
@@ -326,7 +326,7 @@
 
     .prologue
     .line 70
-    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->setPressed(Z)V
+    invoke-super {p0, p1}, Landroid/view/View;->setPressed(Z)V
 
     .line 71
     invoke-direct {p0, p1}, Lcom/android/camera/ui/PopupMenuItem;->setTextShadow(Z)V

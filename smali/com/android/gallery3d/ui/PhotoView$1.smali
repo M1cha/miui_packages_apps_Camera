@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/ui/PhotoView;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 246
+    .line 247
     iput-object p1, p0, Lcom/android/gallery3d/ui/PhotoView$1;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -42,7 +41,7 @@
     .parameter "v"
 
     .prologue
-    .line 249
+    .line 250
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$1;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
     #getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
@@ -52,12 +51,12 @@
 
     invoke-interface {v0}, Lcom/android/gallery3d/ui/PhotoView$Listener;->onUndoDeleteImage()V
 
-    .line 250
+    .line 251
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$1;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
     #calls: Lcom/android/gallery3d/ui/PhotoView;->hideUndoBar()V
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$100(Lcom/android/gallery3d/ui/PhotoView;)V
 
-    .line 251
+    .line 252
     return-void
 .end method

@@ -43,7 +43,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/PreviewListPreference;->setDefaultValue(Ljava/lang/Object;)V
+    invoke-virtual {p0, v0}, Landroid/preference/Preference;->setDefaultValue(Ljava/lang/Object;)V
 
     .line 24
     :cond_0
@@ -58,7 +58,7 @@
     const/4 v9, 0x0
 
     .line 55
-    invoke-virtual {p0}, Lcom/android/camera/ui/PreviewListPreference;->getEntryValues()[Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Landroid/preference/ListPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
     move-result-object v6
 
@@ -153,7 +153,6 @@
 # virtual methods
 .method public filterUnsupported(Ljava/util/List;)V
     .locals 8
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -167,13 +166,13 @@
     .prologue
     .line 72
     .local p1, supported:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
-    invoke-virtual {p0}, Lcom/android/camera/ui/PreviewListPreference;->getEntries()[Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v4
 
     .line 73
     .local v4, oldEntries:[Ljava/lang/CharSequence;
-    invoke-virtual {p0}, Lcom/android/camera/ui/PreviewListPreference;->getEntryValues()[Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Landroid/preference/ListPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
     move-result-object v5
 
@@ -245,7 +244,7 @@
 
     check-cast v7, [Ljava/lang/CharSequence;
 
-    invoke-virtual {p0, v7}, Lcom/android/camera/ui/PreviewListPreference;->setEntries([Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v7}, Landroid/preference/ListPreference;->setEntries([Ljava/lang/CharSequence;)V
 
     .line 84
     new-array v7, v6, [Ljava/lang/CharSequence;
@@ -333,7 +332,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/PreviewListPreference;->setDefaultValue(Ljava/lang/Object;)V
+    invoke-virtual {p0, v0}, Landroid/preference/Preference;->setDefaultValue(Ljava/lang/Object;)V
 
     .line 52
     :cond_0
@@ -349,11 +348,11 @@
     invoke-super {p0, p1}, Landroid/preference/ListPreference;->setValue(Ljava/lang/String;)V
 
     .line 33
-    invoke-virtual {p0}, Lcom/android/camera/ui/PreviewListPreference;->getEntry()Ljava/lang/CharSequence;
+    invoke-virtual {p0}, Landroid/preference/ListPreference;->getEntry()Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/PreviewListPreference;->setSummary(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v0}, Landroid/preference/ListPreference;->setSummary(Ljava/lang/CharSequence;)V
 
     .line 34
     return-void

@@ -36,9 +36,9 @@
 
     :array_0
     .array-data 0x4
-        0x4et 0x0t 0x2t 0x7ft
-        0x4ft 0x0t 0x2t 0x7ft
-        0x50t 0x0t 0x2t 0x7ft
+        0x45t 0x0t 0x2t 0x7ft
+        0x46t 0x0t 0x2t 0x7ft
+        0x47t 0x0t 0x2t 0x7ft
     .end array-data
 .end method
 
@@ -73,7 +73,7 @@
 
     const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Lcom/android/camera/ui/RotateImageView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 71
     return-void
@@ -94,7 +94,7 @@
 .end method
 
 .method public onBackPressed()V
-    .locals 1
+    .locals 2
 
     .prologue
     .line 52
@@ -116,9 +116,13 @@
     invoke-virtual {v0}, Lcom/android/camera/AudioCapture;->pause()V
 
     .line 54
-    const/4 v0, 0x0
+    iget-object v0, p0, Lcom/android/camera/ActivityBase;->mSettingsStatusBar:Lcom/android/camera/ui/SettingsStatusBar;
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ActivityWithAudioCapture;->updateAudioOnScreenIndicator(Z)V
+    check-cast v0, Lcom/android/camera/ui/CameraSettingsStatusBar;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/CameraSettingsStatusBar;->updateAudioOnScreenIndicator(Z)V
 
     .line 58
     :goto_0
@@ -126,7 +130,7 @@
 
     .line 56
     :cond_0
-    invoke-super {p0}, Lcom/android/camera/ActivityBase;->onBackPressed()V
+    invoke-super {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->onBackPressed()V
 
     goto :goto_0
 .end method
@@ -182,7 +186,11 @@
     invoke-virtual {v0}, Lcom/android/camera/AudioCapture;->pause()V
 
     .line 106
-    invoke-virtual {p0, v1}, Lcom/android/camera/ActivityWithAudioCapture;->updateAudioOnScreenIndicator(Z)V
+    iget-object v0, p0, Lcom/android/camera/ActivityBase;->mSettingsStatusBar:Lcom/android/camera/ui/SettingsStatusBar;
+
+    check-cast v0, Lcom/android/camera/ui/CameraSettingsStatusBar;
+
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/CameraSettingsStatusBar;->updateAudioOnScreenIndicator(Z)V
 
     .line 117
     :cond_0
@@ -208,15 +216,19 @@
 
     .line 114
     :goto_1
-    const/4 v0, 0x1
+    iget-object v0, p0, Lcom/android/camera/ActivityBase;->mSettingsStatusBar:Lcom/android/camera/ui/SettingsStatusBar;
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ActivityWithAudioCapture;->updateAudioOnScreenIndicator(Z)V
+    check-cast v0, Lcom/android/camera/ui/CameraSettingsStatusBar;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/CameraSettingsStatusBar;->updateAudioOnScreenIndicator(Z)V
 
     goto :goto_0
 
     .line 112
     :cond_2
-    const v0, 0x7f0d0174
+    const v0, 0x7f0d018a
 
     invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -299,10 +311,10 @@
 .end method
 
 .method protected resetAudioCapture()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 124
+    .line 121
     iget-object v0, p0, Lcom/android/camera/ActivityWithAudioCapture;->mAudioCapture:Lcom/android/camera/AudioCapture;
 
     invoke-virtual {v0}, Lcom/android/camera/AudioCapture;->isRunning()Z
@@ -311,21 +323,25 @@
 
     if-eqz v0, :cond_0
 
-    .line 125
+    .line 122
     iget-object v0, p0, Lcom/android/camera/ActivityWithAudioCapture;->mAudioCapture:Lcom/android/camera/AudioCapture;
 
     invoke-virtual {v0}, Lcom/android/camera/AudioCapture;->pause()V
 
-    .line 126
+    .line 123
     invoke-virtual {p0}, Lcom/android/camera/ActivityWithAudioCapture;->hideDelayNumber()V
 
-    .line 128
+    .line 125
     :cond_0
-    const/4 v0, 0x0
+    iget-object v0, p0, Lcom/android/camera/ActivityBase;->mSettingsStatusBar:Lcom/android/camera/ui/SettingsStatusBar;
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ActivityWithAudioCapture;->updateAudioOnScreenIndicator(Z)V
+    check-cast v0, Lcom/android/camera/ui/CameraSettingsStatusBar;
 
-    .line 129
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/CameraSettingsStatusBar;->updateAudioOnScreenIndicator(Z)V
+
+    .line 126
     return-void
 .end method
 
@@ -348,7 +364,7 @@
 
     if-eqz p1, :cond_0
 
-    const v0, 0x7f020052
+    const v0, 0x7f020049
 
     :goto_0
     invoke-virtual {v1, v2, v0}, Lcom/android/camera/ui/SettingView;->setIndicatorImage(Ljava/lang/String;I)V
@@ -358,7 +374,7 @@
 
     .line 97
     :cond_0
-    const v0, 0x7f020051
+    const v0, 0x7f020048
 
     goto :goto_0
 .end method
@@ -380,7 +396,7 @@
     .line 62
     iget-object v0, p0, Lcom/android/camera/ActivityWithAudioCapture;->mCaptrueDelayView:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v0}, Lcom/android/camera/ui/RotateImageView;->getVisibility()I
+    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
 
@@ -391,7 +407,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/android/camera/ui/RotateImageView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 65
     :cond_0
@@ -401,18 +417,9 @@
 
     aget v1, v1, p1
 
-    invoke-virtual {v0, v1}, Lcom/android/camera/ui/RotateImageView;->setImageResource(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 67
     :cond_1
-    return-void
-.end method
-
-.method protected updateAudioOnScreenIndicator(Z)V
-    .locals 0
-    .parameter "visible"
-
-    .prologue
-    .line 121
     return-void
 .end method

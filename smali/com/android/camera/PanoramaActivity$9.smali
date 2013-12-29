@@ -21,10 +21,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/PanoramaActivity;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 917
+    .line 911
     iput-object p1, p0, Lcom/android/camera/PanoramaActivity$9;->this$0:Lcom/android/camera/PanoramaActivity;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -38,22 +37,22 @@
     .locals 6
 
     .prologue
-    .line 920
+    .line 914
     :goto_0
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$9;->this$0:Lcom/android/camera/PanoramaActivity;
 
     #getter for: Lcom/android/camera/PanoramaActivity;->mThreadRunning:Z
-    invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$2400(Lcom/android/camera/PanoramaActivity;)Z
+    invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$2300(Lcom/android/camera/PanoramaActivity;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 921
+    .line 915
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$9;->this$0:Lcom/android/camera/PanoramaActivity;
 
     #getter for: Lcom/android/camera/PanoramaActivity;->mMosaicFrameProcessor:Lcom/android/camera/MosaicFrameProcessor;
-    invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$700(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/MosaicFrameProcessor;
+    invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$600(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/MosaicFrameProcessor;
 
     move-result-object v2
 
@@ -62,7 +61,7 @@
     iget-object v4, p0, Lcom/android/camera/PanoramaActivity$9;->this$0:Lcom/android/camera/PanoramaActivity;
 
     #getter for: Lcom/android/camera/PanoramaActivity;->mCancelComputation:Z
-    invoke-static {v4}, Lcom/android/camera/PanoramaActivity;->access$2500(Lcom/android/camera/PanoramaActivity;)Z
+    invoke-static {v4}, Lcom/android/camera/PanoramaActivity;->access$2400(Lcom/android/camera/PanoramaActivity;)Z
 
     move-result v4
 
@@ -70,13 +69,13 @@
 
     move-result v1
 
-    .line 925
+    .line 919
     .local v1, progress:I
     :try_start_0
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$9;->this$0:Lcom/android/camera/PanoramaActivity;
 
     #getter for: Lcom/android/camera/PanoramaActivity;->mWaitObject:Ljava/lang/Object;
-    invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$2600(Lcom/android/camera/PanoramaActivity;)Ljava/lang/Object;
+    invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$2500(Lcom/android/camera/PanoramaActivity;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -84,12 +83,12 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 926
+    .line 920
     :try_start_1
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$9;->this$0:Lcom/android/camera/PanoramaActivity;
 
     #getter for: Lcom/android/camera/PanoramaActivity;->mWaitObject:Ljava/lang/Object;
-    invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$2600(Lcom/android/camera/PanoramaActivity;)Ljava/lang/Object;
+    invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$2500(Lcom/android/camera/PanoramaActivity;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -97,23 +96,23 @@
 
     invoke-virtual {v2, v4, v5}, Ljava/lang/Object;->wait(J)V
 
-    .line 927
+    .line 921
     monitor-exit v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 932
+    .line 926
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$9;->this$0:Lcom/android/camera/PanoramaActivity;
 
     new-instance v3, Lcom/android/camera/PanoramaActivity$9$1;
 
     invoke-direct {v3, p0, v1}, Lcom/android/camera/PanoramaActivity$9$1;-><init>(Lcom/android/camera/PanoramaActivity$9;I)V
 
-    invoke-virtual {v2, v3}, Lcom/android/camera/PanoramaActivity;->runOnUiThread(Ljava/lang/Runnable;)V
+    invoke-virtual {v2, v3}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
 
     goto :goto_0
 
-    .line 927
+    .line 921
     :catchall_0
     move-exception v2
 
@@ -127,11 +126,11 @@
     :try_end_3
     .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_0
 
-    .line 928
+    .line 922
     :catch_0
     move-exception v0
 
-    .line 929
+    .line 923
     .local v0, e:Ljava/lang/InterruptedException;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -141,7 +140,7 @@
 
     throw v2
 
-    .line 939
+    .line 933
     .end local v0           #e:Ljava/lang/InterruptedException;
     .end local v1           #progress:I
     :cond_0

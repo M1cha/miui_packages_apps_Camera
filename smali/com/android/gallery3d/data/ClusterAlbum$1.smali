@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>([Lcom/android/gallery3d/data/MediaItem;)V
     .locals 0
-    .parameter
 
     .prologue
     .line 82
     iput-object p1, p0, Lcom/android/gallery3d/data/ClusterAlbum$1;->val$buf:[Lcom/android/gallery3d/data/MediaItem;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

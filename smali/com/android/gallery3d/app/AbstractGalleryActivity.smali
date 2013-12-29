@@ -87,24 +87,24 @@
     .prologue
     const/16 v3, 0x400
 
-    .line 313
+    .line 289
     iget-boolean v1, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mDisableToggleStatusBar:Z
 
     if-eqz v1, :cond_0
 
-    .line 321
+    .line 297
     :goto_0
     return-void
 
-    .line 315
+    .line 291
     :cond_0
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
-    .line 316
+    .line 292
     .local v0, win:Landroid/view/Window;
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -118,12 +118,12 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 317
+    .line 293
     invoke-virtual {v0, v3}, Landroid/view/Window;->clearFlags(I)V
 
     goto :goto_0
 
-    .line 319
+    .line 295
     :cond_1
     invoke-virtual {v0, v3}, Landroid/view/Window;->addFlags(I)V
 
@@ -136,12 +136,12 @@
     .locals 1
 
     .prologue
-    .line 308
+    .line 284
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mDisableToggleStatusBar:Z
 
-    .line 309
+    .line 285
     return-void
 .end method
 
@@ -149,7 +149,7 @@
     .locals 0
 
     .prologue
-    .line 109
+    .line 110
     return-object p0
 .end method
 
@@ -157,8 +157,8 @@
     .locals 1
 
     .prologue
-    .line 113
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getApplication()Landroid/app/Application;
+    .line 114
+    invoke-virtual {p0}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
 
     move-result-object v0
 
@@ -175,7 +175,7 @@
     .locals 1
 
     .prologue
-    .line 128
+    .line 129
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
     return-object v0
@@ -185,19 +185,19 @@
     .locals 1
 
     .prologue
-    .line 290
+    .line 266
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mActionBar:Lcom/android/gallery3d/app/GalleryActionBar;
 
     if-nez v0, :cond_0
 
-    .line 291
+    .line 267
     new-instance v0, Lcom/android/gallery3d/app/GalleryActionBar;
 
     invoke-direct {v0, p0}, Lcom/android/gallery3d/app/GalleryActionBar;-><init>(Lcom/android/gallery3d/app/GalleryActivity;)V
 
     iput-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mActionBar:Lcom/android/gallery3d/app/GalleryActionBar;
 
-    .line 293
+    .line 269
     :cond_0
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mActionBar:Lcom/android/gallery3d/app/GalleryActionBar;
 
@@ -208,7 +208,7 @@
     .locals 1
 
     .prologue
-    .line 160
+    .line 161
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mOrientationManager:Lcom/android/gallery3d/app/OrientationManager;
 
     return-object v0
@@ -218,7 +218,7 @@
     .locals 1
 
     .prologue
-    .line 121
+    .line 122
     monitor-enter p0
 
     :try_start_0
@@ -226,14 +226,14 @@
 
     if-nez v0, :cond_0
 
-    .line 122
+    .line 123
     new-instance v0, Lcom/android/gallery3d/app/StateManager;
 
     invoke-direct {v0, p0}, Lcom/android/gallery3d/app/StateManager;-><init>(Lcom/android/gallery3d/app/GalleryActivity;)V
 
     iput-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mStateManager:Lcom/android/gallery3d/app/StateManager;
 
-    .line 124
+    .line 125
     :cond_0
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mStateManager:Lcom/android/gallery3d/app/StateManager;
     :try_end_0
@@ -243,7 +243,7 @@
 
     return-object v0
 
-    .line 121
+    .line 122
     :catchall_0
     move-exception v0
 
@@ -256,8 +256,8 @@
     .locals 1
 
     .prologue
-    .line 117
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getApplication()Landroid/app/Application;
+    .line 118
+    invoke-virtual {p0}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
 
     move-result-object v0
 
@@ -274,7 +274,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 301
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mTransitionStore:Lcom/android/gallery3d/app/TransitionStore;
 
     return-object v0
@@ -286,26 +286,26 @@
     .prologue
     const/4 v3, -0x1
 
-    .line 132
+    .line 133
     iget-boolean v2, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootViewInitilized:Z
 
     if-eqz v2, :cond_0
 
-    .line 148
+    .line 149
     :goto_0
     return-void
 
-    .line 135
+    .line 136
     :cond_0
     const v2, 0x7f0c0044
 
-    invoke-virtual {p0, v2}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/ViewGroup;
 
-    .line 136
+    .line 137
     .local v1, parent:Landroid/view/ViewGroup;
     new-instance v2, Lcom/android/gallery3d/ui/GLRootView;
 
@@ -313,52 +313,52 @@
 
     iput-object v2, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
-    .line 137
+    .line 138
     iget-object v2, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
     invoke-virtual {v2}, Lcom/android/gallery3d/ui/GLRootView;->lockRenderThread()V
 
-    .line 138
+    .line 139
     iget-object v2, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
-    invoke-virtual {v2}, Lcom/android/gallery3d/ui/GLRootView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 139
+    .line 140
     .local v0, params:Landroid/view/ViewGroup$LayoutParams;
     if-nez v0, :cond_1
 
-    .line 140
+    .line 141
     new-instance v0, Landroid/view/ViewGroup$LayoutParams;
 
     .end local v0           #params:Landroid/view/ViewGroup$LayoutParams;
     invoke-direct {v0, v3, v3}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    .line 145
+    .line 146
     .restart local v0       #params:Landroid/view/ViewGroup$LayoutParams;
     :goto_1
     iget-object v2, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
     invoke-virtual {v1, v2, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 146
+    .line 147
     iget-object v2, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
     invoke-virtual {v2}, Lcom/android/gallery3d/ui/GLRootView;->unlockRenderThread()V
 
-    .line 147
+    .line 148
     const/4 v2, 0x1
 
     iput-boolean v2, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootViewInitilized:Z
 
     goto :goto_0
 
-    .line 142
+    .line 143
     :cond_1
     iput v3, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 143
+    .line 144
     iput v3, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     goto :goto_1
@@ -371,12 +371,12 @@
     .parameter "data"
 
     .prologue
-    .line 267
+    .line 243
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
     invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->lockRenderThread()V
 
-    .line 269
+    .line 245
     :try_start_0
     invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getStateManager()Lcom/android/gallery3d/app/StateManager;
 
@@ -386,15 +386,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 272
+    .line 248
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
     invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->unlockRenderThread()V
 
-    .line 274
+    .line 250
     return-void
 
-    .line 272
+    .line 248
     :catchall_0
     move-exception v0
 
@@ -409,16 +409,16 @@
     .locals 2
 
     .prologue
-    .line 279
+    .line 255
     invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
 
     move-result-object v0
 
-    .line 280
+    .line 256
     .local v0, root:Lcom/android/gallery3d/ui/GLRoot;
     invoke-interface {v0}, Lcom/android/gallery3d/ui/GLRoot;->lockRenderThread()V
 
-    .line 282
+    .line 258
     :try_start_0
     invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getStateManager()Lcom/android/gallery3d/app/StateManager;
 
@@ -428,13 +428,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 284
+    .line 260
     invoke-interface {v0}, Lcom/android/gallery3d/ui/GLRoot;->unlockRenderThread()V
 
-    .line 286
+    .line 262
     return-void
 
-    .line 284
+    .line 260
     :catchall_0
     move-exception v1
 
@@ -448,21 +448,21 @@
     .parameter "config"
 
     .prologue
-    .line 102
+    .line 103
     invoke-super {p0, p1}, Landroid/app/Activity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 103
+    .line 104
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mStateManager:Lcom/android/gallery3d/app/StateManager;
 
     invoke-virtual {v0, p1}, Lcom/android/gallery3d/app/StateManager;->onConfigurationChange(Landroid/content/res/Configuration;)V
 
-    .line 104
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->invalidateOptionsMenu()V
-
     .line 105
-    invoke-direct {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->toggleStatusBarByOrientation()V
+    invoke-virtual {p0}, Landroid/app/Activity;->invalidateOptionsMenu()V
 
     .line 106
+    invoke-direct {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->toggleStatusBarByOrientation()V
+
+    .line 107
     return-void
 .end method
 
@@ -471,21 +471,21 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 83
+    .line 84
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 84
+    .line 85
     new-instance v0, Lcom/android/gallery3d/app/OrientationManager;
 
     invoke-direct {v0, p0}, Lcom/android/gallery3d/app/OrientationManager;-><init>(Landroid/app/Activity;)V
 
     iput-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mOrientationManager:Lcom/android/gallery3d/app/OrientationManager;
 
-    .line 85
+    .line 86
     invoke-direct {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->toggleStatusBarByOrientation()V
 
-    .line 86
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getWindow()Landroid/view/Window;
+    .line 87
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -493,7 +493,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 87
+    .line 88
     return-void
 .end method
 
@@ -501,15 +501,15 @@
     .locals 2
 
     .prologue
-    .line 256
+    .line 232
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
-    .line 257
+    .line 233
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
     invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->lockRenderThread()V
 
-    .line 259
+    .line 235
     :try_start_0
     invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getStateManager()Lcom/android/gallery3d/app/StateManager;
 
@@ -519,15 +519,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 261
+    .line 237
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
     invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->unlockRenderThread()V
 
-    .line 263
+    .line 239
     return-void
 
-    .line 261
+    .line 237
     :catchall_0
     move-exception v0
 
@@ -543,16 +543,16 @@
     .parameter "item"
 
     .prologue
-    .line 298
+    .line 274
     invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
 
     move-result-object v0
 
-    .line 299
+    .line 275
     .local v0, root:Lcom/android/gallery3d/ui/GLRoot;
     invoke-interface {v0}, Lcom/android/gallery3d/ui/GLRoot;->lockRenderThread()V
 
-    .line 301
+    .line 277
     :try_start_0
     invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getStateManager()Lcom/android/gallery3d/app/StateManager;
 
@@ -564,7 +564,7 @@
 
     move-result v1
 
-    .line 303
+    .line 279
     invoke-interface {v0}, Lcom/android/gallery3d/ui/GLRoot;->unlockRenderThread()V
 
     return v1
@@ -578,172 +578,31 @@
 .end method
 
 .method protected onPause()V
-    .locals 4
+    .locals 0
 
     .prologue
-    .line 236
+    .line 226
     invoke-super {p0}, Landroid/app/Activity;->onPause()V
 
-    .line 237
-    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mOrientationManager:Lcom/android/gallery3d/app/OrientationManager;
+    .line 227
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->pause()V
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/app/OrientationManager;->pause()V
-
-    .line 238
-    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
-
-    invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->onPause()V
-
-    .line 239
-    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
-
-    invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->lockRenderThread()V
-
-    .line 241
-    :try_start_0
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getStateManager()Lcom/android/gallery3d/app/StateManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/gallery3d/app/StateManager;->pause()V
-
-    .line 242
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getDataManager()Lcom/android/gallery3d/data/DataManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/DataManager;->pause()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 244
-    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
-
-    invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->unlockRenderThread()V
-
-    .line 246
-    invoke-static {}, Lcom/android/gallery3d/data/MediaItem;->getMicroThumbPool()Lcom/android/gallery3d/data/BitmapPool;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/BitmapPool;->clear()V
-
-    .line 247
-    invoke-static {}, Lcom/android/gallery3d/data/MediaItem;->getThumbPool()Lcom/android/gallery3d/data/BitmapPool;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/BitmapPool;->clear()V
-
-    .line 248
-    invoke-static {}, Lcom/android/gallery3d/data/MediaItem;->getBytesBufferPool()Lcom/android/gallery3d/data/BytesBufferPool;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/BytesBufferPool;->clear()V
-
-    .line 250
-    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGalleryActivityHandler:Landroid/os/Handler;
-
-    const/4 v1, 0x0
-
-    const-wide/16 v2, 0x320
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
-
-    .line 252
+    .line 228
     return-void
-
-    .line 244
-    :catchall_0
-    move-exception v0
-
-    iget-object v1, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
-
-    invoke-virtual {v1}, Lcom/android/gallery3d/ui/GLRootView;->unlockRenderThread()V
-
-    throw v0
 .end method
 
 .method protected onResume()V
-    .locals 2
+    .locals 0
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 217
+    .line 220
     invoke-super {p0}, Landroid/app/Activity;->onResume()V
 
-    .line 218
-    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGalleryActivityHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->hasMessages(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 219
-    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGalleryActivityHandler:Landroid/os/Handler;
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
-
-    .line 220
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->releaseGLRootView()V
+    .line 221
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->resume()V
 
     .line 222
-    :cond_0
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->injectGLRootView()V
-
-    .line 223
-    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
-
-    invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->lockRenderThread()V
-
-    .line 225
-    :try_start_0
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getStateManager()Lcom/android/gallery3d/app/StateManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/gallery3d/app/StateManager;->resume()V
-
-    .line 226
-    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getDataManager()Lcom/android/gallery3d/data/DataManager;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/DataManager;->resume()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 228
-    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
-
-    invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->unlockRenderThread()V
-
-    .line 230
-    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
-
-    invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->onResume()V
-
-    .line 231
-    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mOrientationManager:Lcom/android/gallery3d/app/OrientationManager;
-
-    invoke-virtual {v0}, Lcom/android/gallery3d/app/OrientationManager;->resume()V
-
-    .line 232
     return-void
-
-    .line 228
-    :catchall_0
-    move-exception v0
-
-    iget-object v1, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
-
-    invoke-virtual {v1}, Lcom/android/gallery3d/ui/GLRootView;->unlockRenderThread()V
-
-    throw v0
 .end method
 
 .method protected onSaveInstanceState(Landroid/os/Bundle;)V
@@ -751,16 +610,16 @@
     .parameter "outState"
 
     .prologue
-    .line 91
+    .line 92
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
     invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->lockRenderThread()V
 
-    .line 93
+    .line 94
     :try_start_0
     invoke-super {p0, p1}, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 94
+    .line 95
     invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getStateManager()Lcom/android/gallery3d/app/StateManager;
 
     move-result-object v0
@@ -769,15 +628,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 96
+    .line 97
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
     invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->unlockRenderThread()V
 
-    .line 98
+    .line 99
     return-void
 
-    .line 96
+    .line 97
     :catchall_0
     move-exception v0
 
@@ -794,17 +653,17 @@
     .prologue
     const/4 v4, -0x1
 
-    .line 180
+    .line 181
     invoke-super {p0}, Landroid/app/Activity;->onStart()V
 
-    .line 181
+    .line 182
     const/4 v3, 0x0
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v0
 
-    .line 183
+    .line 184
     .local v0, externalFilesDir:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -820,18 +679,18 @@
 
     if-nez v3, :cond_0
 
-    .line 184
+    .line 185
     new-instance v1, Lcom/android/gallery3d/app/AbstractGalleryActivity$3;
 
     invoke-direct {v1, p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity$3;-><init>(Lcom/android/gallery3d/app/AbstractGalleryActivity;)V
 
-    .line 190
+    .line 191
     .local v1, onCancel:Landroid/content/DialogInterface$OnCancelListener;
     new-instance v2, Lcom/android/gallery3d/app/AbstractGalleryActivity$4;
 
     invoke-direct {v2, p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity$4;-><init>(Lcom/android/gallery3d/app/AbstractGalleryActivity;)V
 
-    .line 196
+    .line 197
     .local v2, onClick:Landroid/content/DialogInterface$OnClickListener;
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
@@ -839,7 +698,7 @@
 
     const v4, 0x7f0d0007
 
-    invoke-virtual {p0, v4}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -847,9 +706,9 @@
 
     move-result-object v3
 
-    const v4, 0x7f0d01a4
+    const v4, 0x7f0d01ba
 
-    invoke-virtual {p0, v4}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
@@ -867,17 +726,20 @@
 
     iput-object v3, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
-    .line 201
+    .line 202
     iget-object v3, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mMountReceiver:Landroid/content/BroadcastReceiver;
 
     iget-object v4, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mMountFilter:Landroid/content/IntentFilter;
 
-    invoke-virtual {p0, v3, v4}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-virtual {p0, v3, v4}, Landroid/content/ContextWrapper;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 203
+    .line 204
     .end local v1           #onCancel:Landroid/content/DialogInterface$OnCancelListener;
     .end local v2           #onClick:Landroid/content/DialogInterface$OnClickListener;
     :cond_0
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->start()V
+
+    .line 205
     return-void
 .end method
 
@@ -885,31 +747,34 @@
     .locals 1
 
     .prologue
-    .line 207
-    invoke-super {p0}, Landroid/app/Activity;->onStop()V
-
-    .line 208
-    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mAlertDialog:Landroid/app/AlertDialog;
-
-    if-eqz v0, :cond_0
-
     .line 209
-    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mMountReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    invoke-super {p0}, Landroid/app/Activity;->onStop()V
 
     .line 210
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
+    if-eqz v0, :cond_0
 
     .line 211
+    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mMountReceiver:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {p0, v0}, Landroid/content/ContextWrapper;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+
+    .line 212
+    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mAlertDialog:Landroid/app/AlertDialog;
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+
+    .line 213
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
-    .line 213
+    .line 215
     :cond_0
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->stop()V
+
+    .line 216
     return-void
 .end method
 
@@ -917,71 +782,234 @@
     .locals 1
 
     .prologue
-    .line 171
+    .line 172
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
     if-eqz v0, :cond_0
 
-    .line 172
+    .line 173
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
-    invoke-virtual {v0}, Landroid/app/AlertDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 173
+    .line 174
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mAlertDialog:Landroid/app/AlertDialog;
 
-    .line 174
+    .line 175
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mMountReceiver:Landroid/content/BroadcastReceiver;
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    invoke-virtual {p0, v0}, Landroid/content/ContextWrapper;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 176
+    .line 177
     :cond_0
     return-void
+.end method
+
+.method public pause()V
+    .locals 4
+
+    .prologue
+    .line 332
+    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mOrientationManager:Lcom/android/gallery3d/app/OrientationManager;
+
+    invoke-virtual {v0}, Lcom/android/gallery3d/app/OrientationManager;->pause()V
+
+    .line 333
+    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
+
+    invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->onPause()V
+
+    .line 334
+    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
+
+    invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->lockRenderThread()V
+
+    .line 336
+    :try_start_0
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getStateManager()Lcom/android/gallery3d/app/StateManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/gallery3d/app/StateManager;->pause()V
+
+    .line 337
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getDataManager()Lcom/android/gallery3d/data/DataManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/DataManager;->pause()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 339
+    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
+
+    invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->unlockRenderThread()V
+
+    .line 341
+    invoke-static {}, Lcom/android/gallery3d/data/MediaItem;->getMicroThumbPool()Lcom/android/gallery3d/data/BitmapPool;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/BitmapPool;->clear()V
+
+    .line 342
+    invoke-static {}, Lcom/android/gallery3d/data/MediaItem;->getThumbPool()Lcom/android/gallery3d/data/BitmapPool;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/BitmapPool;->clear()V
+
+    .line 343
+    invoke-static {}, Lcom/android/gallery3d/data/MediaItem;->getBytesBufferPool()Lcom/android/gallery3d/data/BytesBufferPool;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/BytesBufferPool;->clear()V
+
+    .line 345
+    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGalleryActivityHandler:Landroid/os/Handler;
+
+    const/4 v1, 0x0
+
+    const-wide/16 v2, 0x320
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+
+    .line 347
+    return-void
+
+    .line 339
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
+
+    invoke-virtual {v1}, Lcom/android/gallery3d/ui/GLRootView;->unlockRenderThread()V
+
+    throw v0
 .end method
 
 .method public releaseGLRootView()V
     .locals 3
 
     .prologue
-    .line 151
+    .line 152
     iget-boolean v1, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootViewInitilized:Z
 
     if-eqz v1, :cond_0
 
-    .line 152
+    .line 153
     const v1, 0x7f0c0044
 
-    invoke-virtual {p0, v1}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/ViewGroup;
 
-    .line 153
+    .line 154
     .local v0, parent:Landroid/view/ViewGroup;
     iget-object v1, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 154
+    .line 155
     iget-object v1, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/android/gallery3d/ui/GLRootView;->setContentPane(Lcom/android/gallery3d/ui/GLView;)V
 
-    .line 155
+    .line 156
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootViewInitilized:Z
 
-    .line 157
+    .line 158
     .end local v0           #parent:Landroid/view/ViewGroup;
     :cond_0
     return-void
+.end method
+
+.method public resume()V
+    .locals 2
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 314
+    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGalleryActivityHandler:Landroid/os/Handler;
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->hasMessages(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 315
+    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGalleryActivityHandler:Landroid/os/Handler;
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
+
+    .line 316
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->releaseGLRootView()V
+
+    .line 318
+    :cond_0
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->injectGLRootView()V
+
+    .line 319
+    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
+
+    invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->lockRenderThread()V
+
+    .line 321
+    :try_start_0
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getStateManager()Lcom/android/gallery3d/app/StateManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/gallery3d/app/StateManager;->resume()V
+
+    .line 322
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getDataManager()Lcom/android/gallery3d/data/DataManager;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/DataManager;->resume()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 324
+    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
+
+    invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->unlockRenderThread()V
+
+    .line 326
+    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
+
+    invoke-virtual {v0}, Landroid/opengl/GLSurfaceView;->onResume()V
+
+    .line 327
+    iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mOrientationManager:Lcom/android/gallery3d/app/OrientationManager;
+
+    invoke-virtual {v0}, Lcom/android/gallery3d/app/OrientationManager;->resume()V
+
+    .line 328
+    return-void
+
+    .line 324
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
+
+    invoke-virtual {v1}, Lcom/android/gallery3d/ui/GLRootView;->unlockRenderThread()V
+
+    throw v0
 .end method
 
 .method public setContentView(I)V
@@ -989,13 +1017,13 @@
     .parameter "resId"
 
     .prologue
-    .line 165
+    .line 166
     invoke-super {p0, p1}, Landroid/app/Activity;->setContentView(I)V
 
-    .line 166
+    .line 167
     const v0, 0x7f0c0045
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1003,11 +1031,27 @@
 
     iput-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
-    .line 167
+    .line 168
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootViewInitilized:Z
 
-    .line 168
+    .line 169
+    return-void
+.end method
+
+.method public start()V
+    .locals 0
+
+    .prologue
+    .line 306
+    return-void
+.end method
+
+.method public stop()V
+    .locals 0
+
+    .prologue
+    .line 310
     return-void
 .end method

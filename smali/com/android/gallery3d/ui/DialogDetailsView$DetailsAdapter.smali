@@ -305,7 +305,7 @@
 
     move-object/from16 v0, p1
 
-    invoke-static {v0, v11, v12}, Landroid/text/format/Formatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
+    invoke-static {v0, v11, v12}, Lmiui/text/util/MiuiFormatter;->formatFileSize(Landroid/content/Context;J)Ljava/lang/String;
 
     move-result-object v9
 
@@ -328,7 +328,7 @@
 
     if-eqz v11, :cond_2
 
-    const v11, 0x7f0d019a
+    const v11, 0x7f0d01b0
 
     move-object/from16 v0, p1
 
@@ -344,7 +344,7 @@
     .line 142
     .end local v9           #value:Ljava/lang/String;
     :cond_2
-    const v11, 0x7f0d0197
+    const v11, 0x7f0d01ad
 
     move-object/from16 v0, p1
 
@@ -371,7 +371,7 @@
     if-eqz v11, :cond_3
 
     .line 153
-    const v11, 0x7f0d0198
+    const v11, 0x7f0d01ae
 
     move-object/from16 v0, p1
 
@@ -385,7 +385,7 @@
     .line 155
     .end local v9           #value:Ljava/lang/String;
     :cond_3
-    const v11, 0x7f0d0199
+    const v11, 0x7f0d01af
 
     move-object/from16 v0, p1
 
@@ -723,7 +723,7 @@
     invoke-virtual {v0, v1, p1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     .line 231
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/DialogDetailsView$DetailsAdapter;->notifyDataSetChanged()V
+    invoke-virtual {p0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
     .line 232
     return-void

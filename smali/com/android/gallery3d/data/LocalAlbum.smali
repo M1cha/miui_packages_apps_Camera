@@ -63,7 +63,7 @@
 
     .prologue
     .line 88
-    invoke-virtual {p2}, Lcom/android/camera/CameraAppImpl;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {p2}, Landroid/content/ContextWrapper;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
@@ -112,7 +112,7 @@
     iput-object p2, p0, Lcom/android/gallery3d/data/LocalAlbum;->mApplication:Lcom/android/camera/CameraAppImpl;
 
     .line 62
-    invoke-virtual {p2}, Lcom/android/camera/CameraAppImpl;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {p2}, Landroid/content/ContextWrapper;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
@@ -122,7 +122,7 @@
     iput p3, p0, Lcom/android/gallery3d/data/LocalAlbum;->mBucketId:I
 
     .line 64
-    invoke-virtual {p2}, Lcom/android/camera/CameraAppImpl;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p2}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -256,7 +256,7 @@
     if-ne p1, v0, :cond_1
 
     .line 274
-    const v0, 0x7f0d019e
+    const v0, 0x7f0d01b4
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -276,7 +276,7 @@
     if-ne p1, v0, :cond_2
 
     .line 276
-    const v0, 0x7f0d019f
+    const v0, 0x7f0d01b5
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -291,7 +291,7 @@
     if-ne p1, v0, :cond_3
 
     .line 278
-    const v0, 0x7f0d01a0
+    const v0, 0x7f0d01b6
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -306,7 +306,7 @@
     if-ne p1, v0, :cond_0
 
     .line 280
-    const v0, 0x7f0d01a1
+    const v0, 0x7f0d01b7
 
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -319,7 +319,6 @@
     .locals 20
     .parameter "application"
     .parameter "isImage"
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -410,7 +409,7 @@
     .line 174
     .local v16, itemPath:Lcom/android/gallery3d/data/Path;
     :goto_1
-    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/CameraAppImpl;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual/range {p0 .. p0}, Landroid/content/ContextWrapper;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 

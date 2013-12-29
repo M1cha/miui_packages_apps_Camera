@@ -876,7 +876,7 @@
     invoke-virtual {v0}, Landroid/os/ConditionVariable;->close()V
 
     .line 176
-    invoke-virtual {p0, p1}, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->sendEmptyMessage(I)Z
+    invoke-virtual {p0, p1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
     .line 177
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;

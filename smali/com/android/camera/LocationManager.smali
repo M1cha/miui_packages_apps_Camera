@@ -32,7 +32,7 @@
 
     .prologue
     .line 45
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 35
     const/4 v0, 0x2
@@ -240,7 +240,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v6}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v2
 
@@ -290,7 +290,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v6}, Ljava/lang/IllegalArgumentException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v2
 
@@ -478,36 +478,4 @@
     invoke-direct {p0}, Lcom/android/camera/LocationManager;->stopReceivingLocationUpdates()V
 
     goto :goto_0
-.end method
-
-.method public setListener(Lcom/android/camera/LocationManager$Listener;)V
-    .locals 0
-    .parameter "listener"
-
-    .prologue
-    .line 56
-    iput-object p1, p0, Lcom/android/camera/LocationManager;->mListener:Lcom/android/camera/LocationManager$Listener;
-
-    .line 57
-    return-void
-.end method
-
-.method public unSetListener(Lcom/android/camera/LocationManager$Listener;)V
-    .locals 1
-    .parameter "listener"
-
-    .prologue
-    .line 60
-    iget-object v0, p0, Lcom/android/camera/LocationManager;->mListener:Lcom/android/camera/LocationManager$Listener;
-
-    if-ne v0, p1, :cond_0
-
-    .line 61
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/android/camera/LocationManager;->mListener:Lcom/android/camera/LocationManager$Listener;
-
-    .line 63
-    :cond_0
-    return-void
 .end method

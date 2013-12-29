@@ -104,20 +104,15 @@
     <item type="id" name="review_image">false</item>
     <item type="id" name="btn_play">false</item>
     <item type="id" name="on_screen_indicators_view">false</item>
-    <item type="id" name="onscreen_gps_indicator">false</item>
-    <item type="id" name="onscreen_panorama_indicator">false</item>
     <item type="id" name="onscreen_audio_indicator">false</item>
-    <item type="id" name="onscreen_hdr_indicator">false</item>
     <item type="id" name="onscreen_coloreffect_indicator">false</item>
     <item type="id" name="onscreen_white_balance_indicator">false</item>
     <item type="id" name="onscreen_exposure_indicator">false</item>
     <item type="id" name="onscreen_focus_indicator">false</item>
-    <item type="id" name="onscreen_scene_indicator">false</item>
     <item type="id" name="onscreen_iso_indicator">false</item>
     <item type="id" name="onscreen_referenceline_indicator">false</item>
     <item type="id" name="multi_snap_number">false</item>
     <item type="id" name="onscreen_video_speed_indicator">false</item>
-    <item type="id" name="onscreen_color_effect_indicator">false</item>
     <item type="id" name="recording_time">false</item>
     <item type="id" name="type_background">false</item>
     <item type="id" name="type_symbol">false</item>

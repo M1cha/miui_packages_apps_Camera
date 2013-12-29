@@ -50,7 +50,7 @@
 
     .prologue
     .line 24
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 16
     const-wide/16 v0, 0x3a98
@@ -158,7 +158,7 @@
 
     .line 74
     .local v0, handlerThread:Landroid/os/HandlerThread;
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     .line 75
     new-instance v1, Lcom/android/camera/AutoLockManager$1;

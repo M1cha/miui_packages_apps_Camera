@@ -129,8 +129,6 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
-    .parameter
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -146,7 +144,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/android/gallery3d/app/MovieControllerOverlay$State;
     .locals 1
-    .parameter
 
     .prologue
     .line 49
@@ -168,7 +165,7 @@
     .line 49
     sget-object v0, Lcom/android/gallery3d/app/MovieControllerOverlay$State;->$VALUES:[Lcom/android/gallery3d/app/MovieControllerOverlay$State;
 
-    invoke-virtual {v0}, [Lcom/android/gallery3d/app/MovieControllerOverlay$State;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

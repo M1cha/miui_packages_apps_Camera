@@ -39,7 +39,6 @@
 # direct methods
 .method private constructor <init>(Lcom/android/gallery3d/ui/PositionController;)V
     .locals 1
-    .parameter
 
     .prologue
     .line 1438
@@ -142,7 +141,7 @@
     iput v0, p0, Lcom/android/gallery3d/ui/PositionController$Platform;->mFlingOffset:I
 
     .line 1514
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/PositionController$Platform;->advanceAnimation()Z
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/PositionController$Animatable;->advanceAnimation()Z
 
     .line 1515
     const/4 v0, 0x1

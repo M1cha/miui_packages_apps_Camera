@@ -21,7 +21,6 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/ui/AbstractIndicatorButton;)V
     .locals 0
-    .parameter
 
     .prologue
     .line 201

@@ -4,6 +4,8 @@
 
 
 # instance fields
+.field private final mContext:Landroid/content/Context;
+
 .field private mHandler:Landroid/os/Handler;
 
 .field private final mHandlerInitLatch:Ljava/util/concurrent/CountDownLatch;
@@ -22,57 +24,63 @@
 
 
 # direct methods
-.method public constructor <init>(Z)V
+.method public constructor <init>(Landroid/content/Context;Z)V
     .locals 5
+    .parameter "context"
     .parameter "all"
 
     .prologue
     const/4 v3, 0x1
 
-    .line 22
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    .line 25
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 23
+    .line 26
+    iput-object p1, p0, Lcom/android/zxing/DecodeHandlerFactory;->mContext:Landroid/content/Context;
+
+    .line 27
     new-instance v2, Ljava/util/concurrent/CountDownLatch;
 
     invoke-direct {v2, v3}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
     iput-object v2, p0, Lcom/android/zxing/DecodeHandlerFactory;->mHandlerInitLatch:Ljava/util/concurrent/CountDownLatch;
 
-    .line 24
+    .line 28
     new-instance v2, Ljava/util/Hashtable;
 
     invoke-direct {v2, v3}, Ljava/util/Hashtable;-><init>(I)V
 
     iput-object v2, p0, Lcom/android/zxing/DecodeHandlerFactory;->mHints:Ljava/util/Hashtable;
 
-    .line 26
+    .line 30
     new-instance v0, Ljava/util/Vector;
 
     invoke-direct {v0}, Ljava/util/Vector;-><init>()V
 
-    .line 27
+    .line 31
     .local v0, decodeFormats:Ljava/util/Vector;,"Ljava/util/Vector<Lcom/google/zxing/BarcodeFormat;>;"
     sget-object v2, Lcom/android/zxing/DecodeFormats;->QR_CODE_FORMATS:Ljava/util/Vector;
 
     invoke-virtual {v0, v2}, Ljava/util/Vector;->addAll(Ljava/util/Collection;)Z
 
-    .line 28
-    if-eqz p1, :cond_0
+    .line 32
+    if-eqz p2, :cond_0
 
-    .line 29
+    .line 33
     sget-object v2, Lcom/android/zxing/DecodeFormats;->ONE_D_FORMATS:Ljava/util/Vector;
 
     invoke-virtual {v0, v2}, Ljava/util/Vector;->addAll(Ljava/util/Collection;)Z
 
-    .line 30
+    .line 34
     sget-object v2, Lcom/android/zxing/DecodeFormats;->DATA_MATRIX_FORMATS:Ljava/util/Vector;
 
     invoke-virtual {v0, v2}, Ljava/util/Vector;->addAll(Ljava/util/Collection;)Z
 
-    .line 32
+    .line 36
     :cond_0
-    invoke-static {}, Lcom/android/zxing/QRCodeManager;->instance()Lcom/android/zxing/QRCodeManager;
+    iget-object v2, p0, Lcom/android/zxing/DecodeHandlerFactory;->mContext:Landroid/content/Context;
+
+    invoke-static {v2}, Lcom/android/zxing/QRCodeManager;->instance(Landroid/content/Context;)Lcom/android/zxing/QRCodeManager;
 
     move-result-object v2
 
@@ -80,11 +88,11 @@
 
     move-result-object v1
 
-    .line 33
+    .line 37
     .local v1, viewFinder:Lcom/android/zxing/ui/ViewFinderView;
     if-eqz v1, :cond_1
 
-    .line 34
+    .line 38
     iget-object v2, p0, Lcom/android/zxing/DecodeHandlerFactory;->mHints:Ljava/util/Hashtable;
 
     sget-object v3, Lcom/google/zxing/DecodeHintType;->NEED_RESULT_POINT_CALLBACK:Lcom/google/zxing/DecodeHintType;
@@ -95,7 +103,7 @@
 
     invoke-virtual {v2, v3, v4}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 37
+    .line 41
     :cond_1
     iget-object v2, p0, Lcom/android/zxing/DecodeHandlerFactory;->mHints:Ljava/util/Hashtable;
 
@@ -103,7 +111,7 @@
 
     invoke-virtual {v2, v3, v0}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 38
+    .line 42
     return-void
 .end method
 
@@ -113,7 +121,7 @@
     .locals 1
 
     .prologue
-    .line 42
+    .line 46
     :try_start_0
     iget-object v0, p0, Lcom/android/zxing/DecodeHandlerFactory;->mHandlerInitLatch:Ljava/util/concurrent/CountDownLatch;
 
@@ -121,13 +129,13 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 45
+    .line 49
     :goto_0
     iget-object v0, p0, Lcom/android/zxing/DecodeHandlerFactory;->mHandler:Landroid/os/Handler;
 
     return-object v0
 
-    .line 43
+    .line 47
     :catch_0
     move-exception v0
 
@@ -135,10 +143,19 @@
 .end method
 
 .method public quit()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 56
+    .line 60
+    invoke-virtual {p0}, Lcom/android/zxing/DecodeHandlerFactory;->getHandler()Landroid/os/Handler;
+
+    move-result-object v0
+
+    const v1, 0x7f0c0004
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
+
+    .line 61
     invoke-virtual {p0}, Lcom/android/zxing/DecodeHandlerFactory;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
@@ -149,43 +166,45 @@
 
     invoke-virtual {v0}, Landroid/os/Looper;->quit()V
 
-    .line 57
+    .line 62
     return-void
 .end method
 
 .method public start()V
-    .locals 4
+    .locals 5
 
     .prologue
-    .line 49
+    .line 53
     new-instance v0, Landroid/os/HandlerThread;
 
     const-string v1, "DecodeThread"
 
     invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    .line 50
+    .line 54
     .local v0, handlerThread:Landroid/os/HandlerThread;
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 51
+    .line 55
     new-instance v1, Lcom/android/zxing/DecodeHandler;
+
+    iget-object v2, p0, Lcom/android/zxing/DecodeHandlerFactory;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
-    move-result-object v2
+    move-result-object v3
 
-    iget-object v3, p0, Lcom/android/zxing/DecodeHandlerFactory;->mHints:Ljava/util/Hashtable;
+    iget-object v4, p0, Lcom/android/zxing/DecodeHandlerFactory;->mHints:Ljava/util/Hashtable;
 
-    invoke-direct {v1, v2, v3}, Lcom/android/zxing/DecodeHandler;-><init>(Landroid/os/Looper;Ljava/util/Hashtable;)V
+    invoke-direct {v1, v2, v3, v4}, Lcom/android/zxing/DecodeHandler;-><init>(Landroid/content/Context;Landroid/os/Looper;Ljava/util/Hashtable;)V
 
     iput-object v1, p0, Lcom/android/zxing/DecodeHandlerFactory;->mHandler:Landroid/os/Handler;
 
-    .line 52
+    .line 56
     iget-object v1, p0, Lcom/android/zxing/DecodeHandlerFactory;->mHandlerInitLatch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v1}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 53
+    .line 57
     return-void
 .end method

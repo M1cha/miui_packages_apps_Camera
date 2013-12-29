@@ -25,13 +25,13 @@
     .parameter "looper"
 
     .prologue
-    .line 205
+    .line 215
     iput-object p1, p0, Lcom/android/camera/MotionFocusManager$MainHandler;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    .line 206
+    .line 216
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 207
+    .line 217
     return-void
 .end method
 
@@ -42,16 +42,16 @@
     .parameter "msg"
 
     .prologue
-    .line 210
+    .line 220
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 215
+    .line 225
     :goto_0
     return-void
 
-    .line 212
+    .line 222
     :pswitch_0
     iget-object v0, p0, Lcom/android/camera/MotionFocusManager$MainHandler;->this$0:Lcom/android/camera/MotionFocusManager;
 
@@ -60,7 +60,7 @@
 
     goto :goto_0
 
-    .line 210
+    .line 220
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

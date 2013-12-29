@@ -24,13 +24,12 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ui/SettingPopupView;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 262
+    .line 264
     iput-object p1, p0, Lcom/android/camera/ui/SettingPopupView$3;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,20 +40,20 @@
     .locals 1
 
     .prologue
-    .line 265
+    .line 267
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView$3;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
     iget-object v0, v0, Lcom/android/camera/ui/SettingView;->mListener:Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
 
     invoke-interface {v0}, Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;->onSharedPreferenceChanged()V
 
-    .line 266
+    .line 268
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView$3;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
     iget-object v0, v0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
 
     invoke-virtual {v0}, Lcom/android/camera/ui/HorizontalSettingPopup;->reloadPreference()V
 
-    .line 267
+    .line 269
     return-void
 .end method

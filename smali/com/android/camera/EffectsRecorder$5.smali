@@ -28,9 +28,6 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/EffectsRecorder;II)V
     .locals 0
-    .parameter
-    .parameter
-    .parameter
 
     .prologue
     .line 929
@@ -40,7 +37,7 @@
 
     iput p3, p0, Lcom/android/camera/EffectsRecorder$5;->val$msg:I
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method

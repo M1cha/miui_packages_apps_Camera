@@ -4,8 +4,8 @@
     <include layout="@layout/review_thumbnail" />
     <include layout="@layout/review_control" />
     <com.android.camera.ShutterButton android:id="@id/shutter_button" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:layout_centerVertical="true">
-        <com.android.camera.ui.RotateImageView android:gravity="center_vertical" android:id="@id/shutter_button_background" android:focusable="false" android:clickable="false" android:src="@drawable/btn_shutter_bg" android:contentDescription="@string/accessibility_shutter_button" style="@style/ReviewThumbnailMask" />
+        <com.android.camera.ui.RotateImageView android:gravity="center_vertical" android:id="@id/shutter_button_background" android:focusable="false" android:clickable="false" android:src="@drawable/btn_shutter_bg" style="@style/ReviewThumbnailMask" />
         <com.android.camera.ui.RotateImageView android:gravity="center_vertical" android:id="@id/shutter_button_imagesource" android:focusable="false" android:clickable="false" android:src="@drawable/btn_shutter" android:contentDescription="@string/accessibility_shutter_button" style="@style/ReviewThumbnailMask" />
     </com.android.camera.ShutterButton>
-    <com.android.camera.ui.SettingButton android:id="@id/show_setting_panel_button" android:src="@drawable/btn_setting_button_bg_holo_16_9" android:layout_alignParentRight="true" style="@style/RotateImageViewStyle" />
+    <com.android.camera.ui.SettingButton android:id="@id/show_setting_panel_button" android:src="@drawable/btn_setting_button_bg_holo" android:layout_alignParentRight="true" style="@style/RotateImageViewStyle" />
 </RelativeLayout>

@@ -37,7 +37,7 @@
     .line 456
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/ScreenView$SeekBarIndicator;->setDrawingCacheEnabled(Z)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->setDrawingCacheEnabled(Z)V
 
     .line 457
     return-void
@@ -51,18 +51,18 @@
 
     .prologue
     .line 461
-    iget v0, p0, Lcom/android/camera/ui/ScreenView$SeekBarIndicator;->mRight:I
+    iget v0, p0, Landroid/view/View;->mRight:I
 
     add-int/2addr v0, p1
 
-    iget v1, p0, Lcom/android/camera/ui/ScreenView$SeekBarIndicator;->mLeft:I
+    iget v1, p0, Landroid/view/View;->mLeft:I
 
     sub-int/2addr v0, v1
 
-    iput v0, p0, Lcom/android/camera/ui/ScreenView$SeekBarIndicator;->mRight:I
+    iput v0, p0, Landroid/view/View;->mRight:I
 
     .line 462
-    iput p1, p0, Lcom/android/camera/ui/ScreenView$SeekBarIndicator;->mLeft:I
+    iput p1, p0, Landroid/view/View;->mLeft:I
 
     .line 463
     return-void

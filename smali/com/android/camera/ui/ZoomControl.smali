@@ -61,46 +61,46 @@
 
     .line 64
     .local v0, image:Landroid/widget/ImageView;
-    invoke-virtual {v0, p2}, Lcom/android/camera/ui/RotateImageView;->setImageResource(I)V
+    invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 65
-    const v1, 0x7f020139
+    const v1, 0x7f020130
 
     if-ne p2, v1, :cond_0
 
     .line 66
-    invoke-virtual {p0}, Lcom/android/camera/ui/ZoomControl;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v2, 0x7f0d011e
+    const v2, 0x7f0d0129
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
     .line 72
     :goto_0
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/ZoomControl;->addView(Landroid/view/View;)V
+    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 73
     return-object v0
 
     .line 69
     :cond_0
-    invoke-virtual {p0}, Lcom/android/camera/ui/ZoomControl;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v2, 0x7f0d011f
+    const v2, 0x7f0d0135
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
     goto :goto_0
 .end method
@@ -114,7 +114,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setPressed(Z)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setPressed(Z)V
 
     .line 78
     iget-object v0, p0, Lcom/android/camera/ui/ZoomControl;->mOnIndicatorEventListener:Lcom/android/camera/ui/OnIndicatorEventListener;
@@ -234,7 +234,7 @@
     invoke-virtual {p0, v1, v2}, Lcom/android/camera/ui/ZoomControl;->performZoom(D)V
 
     .line 154
-    invoke-virtual {p0}, Lcom/android/camera/ui/ZoomControl;->requestLayout()V
+    invoke-virtual {p0}, Landroid/widget/RelativeLayout;->requestLayout()V
 
     .line 155
     const/4 v1, 0x1
@@ -271,17 +271,17 @@
 
     .prologue
     .line 133
-    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->setActivated(Z)V
+    invoke-super {p0, p1}, Landroid/view/View;->setActivated(Z)V
 
     .line 134
     iget-object v0, p0, Lcom/android/camera/ui/ZoomControl;->mZoomIn:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setActivated(Z)V
+    invoke-virtual {v0, p1}, Landroid/view/View;->setActivated(Z)V
 
     .line 135
     iget-object v0, p0, Lcom/android/camera/ui/ZoomControl;->mZoomOut:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setActivated(Z)V
+    invoke-virtual {v0, p1}, Landroid/view/View;->setActivated(Z)V
 
     .line 136
     return-void
@@ -309,7 +309,7 @@
     iput p1, p0, Lcom/android/camera/ui/ZoomControl;->mOrientation:I
 
     .line 122
-    invoke-virtual {p0}, Lcom/android/camera/ui/ZoomControl;->getChildCount()I
+    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
@@ -322,7 +322,7 @@
     if-ge v1, v0, :cond_1
 
     .line 124
-    invoke-virtual {p0, v1}, Lcom/android/camera/ui/ZoomControl;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -392,7 +392,7 @@
     iput p1, p0, Lcom/android/camera/ui/ZoomControl;->mZoomIndex:I
 
     .line 105
-    invoke-virtual {p0}, Lcom/android/camera/ui/ZoomControl;->requestLayout()V
+    invoke-virtual {p0}, Landroid/widget/RelativeLayout;->requestLayout()V
 
     .line 106
     return-void
@@ -407,7 +407,7 @@
     iput p1, p0, Lcom/android/camera/ui/ZoomControl;->mZoomMax:I
 
     .line 89
-    invoke-virtual {p0}, Lcom/android/camera/ui/ZoomControl;->requestLayout()V
+    invoke-virtual {p0}, Landroid/widget/RelativeLayout;->requestLayout()V
 
     .line 90
     return-void

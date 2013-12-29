@@ -15,6 +15,9 @@
 
 
 # virtual methods
+.method public abstract createCameraScreenNail()Z
+.end method
+
 .method public abstract lockOrientation()V
 .end method
 

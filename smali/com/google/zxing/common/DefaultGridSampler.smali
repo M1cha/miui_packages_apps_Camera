@@ -16,10 +16,11 @@
 
 
 # virtual methods
-.method public sampleGrid(Lcom/google/zxing/common/BitMatrix;IFFFFFFFFFFFFFFFF)Lcom/google/zxing/common/BitMatrix;
+.method public sampleGrid(Lcom/google/zxing/common/BitMatrix;IIFFFFFFFFFFFFFFFF)Lcom/google/zxing/common/BitMatrix;
     .locals 2
     .parameter "image"
-    .parameter "dimension"
+    .parameter "dimensionX"
+    .parameter "dimensionY"
     .parameter "p1ToX"
     .parameter "p1ToY"
     .parameter "p2ToX"
@@ -43,24 +44,25 @@
     .end annotation
 
     .prologue
-    .line 37
-    invoke-static/range {p3 .. p18}, Lcom/google/zxing/common/PerspectiveTransform;->quadrilateralToQuadrilateral(FFFFFFFFFFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
+    .line 39
+    invoke-static/range {p4 .. p19}, Lcom/google/zxing/common/PerspectiveTransform;->quadrilateralToQuadrilateral(FFFFFFFFFFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
 
     move-result-object v0
 
-    .line 41
+    .line 43
     .local v0, transform:Lcom/google/zxing/common/PerspectiveTransform;
-    invoke-virtual {p0, p1, p2, v0}, Lcom/google/zxing/common/DefaultGridSampler;->sampleGrid(Lcom/google/zxing/common/BitMatrix;ILcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/BitMatrix;
+    invoke-virtual {p0, p1, p2, p3, v0}, Lcom/google/zxing/common/DefaultGridSampler;->sampleGrid(Lcom/google/zxing/common/BitMatrix;IILcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/BitMatrix;
 
     move-result-object v1
 
     return-object v1
 .end method
 
-.method public sampleGrid(Lcom/google/zxing/common/BitMatrix;ILcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/BitMatrix;
+.method public sampleGrid(Lcom/google/zxing/common/BitMatrix;IILcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/BitMatrix;
     .locals 10
     .parameter "image"
-    .parameter "dimension"
+    .parameter "dimensionX"
+    .parameter "dimensionY"
     .parameter "transform"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -71,43 +73,57 @@
     .prologue
     const/high16 v9, 0x3f00
 
-    .line 47
+    .line 51
+    if-lez p2, :cond_0
+
+    if-gtz p3, :cond_1
+
+    .line 52
+    :cond_0
+    invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
+
+    move-result-object v7
+
+    throw v7
+
+    .line 54
+    :cond_1
     new-instance v1, Lcom/google/zxing/common/BitMatrix;
 
-    invoke-direct {v1, p2}, Lcom/google/zxing/common/BitMatrix;-><init>(I)V
+    invoke-direct {v1, p2, p3}, Lcom/google/zxing/common/BitMatrix;-><init>(II)V
 
-    .line 48
+    .line 55
     .local v1, bits:Lcom/google/zxing/common/BitMatrix;
     shl-int/lit8 v7, p2, 0x1
 
     new-array v4, v7, [F
 
-    .line 49
+    .line 56
     .local v4, points:[F
     const/4 v6, 0x0
 
     .local v6, y:I
     :goto_0
-    if-ge v6, p2, :cond_3
+    if-ge v6, p3, :cond_5
 
-    .line 50
+    .line 57
     array-length v3, v4
 
-    .line 51
+    .line 58
     .local v3, max:I
     int-to-float v7, v6
 
     add-float v2, v7, v9
 
-    .line 52
+    .line 59
     .local v2, iValue:F
     const/4 v5, 0x0
 
     .local v5, x:I
     :goto_1
-    if-ge v5, v3, :cond_0
+    if-ge v5, v3, :cond_2
 
-    .line 53
+    .line 60
     shr-int/lit8 v7, v5, 0x1
 
     int-to-float v7, v7
@@ -116,30 +132,30 @@
 
     aput v7, v4, v5
 
-    .line 54
+    .line 61
     add-int/lit8 v7, v5, 0x1
 
     aput v2, v4, v7
 
-    .line 52
+    .line 59
     add-int/lit8 v5, v5, 0x2
 
     goto :goto_1
 
-    .line 56
-    :cond_0
-    invoke-virtual {p3, v4}, Lcom/google/zxing/common/PerspectiveTransform;->transformPoints([F)V
+    .line 63
+    :cond_2
+    invoke-virtual {p4, v4}, Lcom/google/zxing/common/PerspectiveTransform;->transformPoints([F)V
 
-    .line 59
+    .line 66
     invoke-static {p1, v4}, Lcom/google/zxing/common/DefaultGridSampler;->checkAndNudgePoints(Lcom/google/zxing/common/BitMatrix;[F)V
 
-    .line 61
+    .line 68
     const/4 v5, 0x0
 
     :goto_2
-    if-ge v5, v3, :cond_2
+    if-ge v5, v3, :cond_4
 
-    .line 62
+    .line 69
     :try_start_0
     aget v7, v4, v5
 
@@ -155,26 +171,26 @@
 
     move-result v7
 
-    if-eqz v7, :cond_1
+    if-eqz v7, :cond_3
 
-    .line 64
+    .line 71
     shr-int/lit8 v7, v5, 0x1
 
     invoke-virtual {v1, v7, v6}, Lcom/google/zxing/common/BitMatrix;->set(II)V
     :try_end_0
     .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 61
-    :cond_1
+    .line 68
+    :cond_3
     add-int/lit8 v5, v5, 0x2
 
     goto :goto_2
 
-    .line 67
+    .line 74
     :catch_0
     move-exception v0
 
-    .line 75
+    .line 82
     .local v0, aioobe:Ljava/lang/ArrayIndexOutOfBoundsException;
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
@@ -182,17 +198,17 @@
 
     throw v7
 
-    .line 49
+    .line 56
     .end local v0           #aioobe:Ljava/lang/ArrayIndexOutOfBoundsException;
-    :cond_2
+    :cond_4
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 78
+    .line 85
     .end local v2           #iValue:F
     .end local v3           #max:I
     .end local v5           #x:I
-    :cond_3
+    :cond_5
     return-object v1
 .end method

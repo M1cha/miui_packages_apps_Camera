@@ -380,7 +380,7 @@
 
     .line 612
     :goto_0
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/TileImageView$Tile;->isContentValid()Z
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->isContentValid()Z
 
     move-result v1
 
@@ -536,7 +536,7 @@
 
     .line 293
     .local v9, radians:D
-    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/TileImageView;->getWidth()I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/GLView;->getWidth()I
 
     move-result v19
 
@@ -548,7 +548,7 @@
 
     .line 294
     .local v16, w:D
-    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/TileImageView;->getHeight()I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/GLView;->getHeight()I
 
     move-result v19
 
@@ -910,13 +910,13 @@
 
     .prologue
     .line 196
-    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/TileImageView;->getWidth()I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/GLView;->getWidth()I
 
     move-result v21
 
     .line 197
     .local v21, width:I
-    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/TileImageView;->getHeight()I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/GLView;->getHeight()I
 
     move-result v14
 
@@ -1442,7 +1442,7 @@
     .end local v19           #size:I
     .end local v23           #y:I
     :cond_9
-    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/TileImageView;->invalidate()V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/GLView;->invalidate()V
 
     goto/16 :goto_2
 .end method
@@ -1573,7 +1573,7 @@
 
     .line 460
     .local v2, tile:Lcom/android/gallery3d/ui/TileImageView$Tile;
-    invoke-virtual {v2}, Lcom/android/gallery3d/ui/TileImageView$Tile;->isContentValid()Z
+    invoke-virtual {v2}, Lcom/android/gallery3d/ui/UploadedTexture;->isContentValid()Z
 
     move-result v3
 
@@ -1784,7 +1784,7 @@
     if-eqz v7, :cond_4
 
     .line 583
-    invoke-virtual {v7}, Lcom/android/gallery3d/ui/TileImageView$Tile;->isContentValid()Z
+    invoke-virtual {v7}, Lcom/android/gallery3d/ui/UploadedTexture;->isContentValid()Z
 
     move-result v8
 
@@ -1810,7 +1810,7 @@
     iput v8, p0, Lcom/android/gallery3d/ui/TileImageView;->mUploadQuota:I
 
     .line 587
-    invoke-virtual {v7, p1}, Lcom/android/gallery3d/ui/TileImageView$Tile;->updateContent(Lcom/android/gallery3d/ui/GLCanvas;)V
+    invoke-virtual {v7, p1}, Lcom/android/gallery3d/ui/UploadedTexture;->updateContent(Lcom/android/gallery3d/ui/GLCanvas;)V
 
     .line 596
     :cond_0
@@ -1985,7 +1985,7 @@
 
     .line 366
     .local v2, texture:Lcom/android/gallery3d/ui/TileImageView$Tile;
-    invoke-virtual {v2}, Lcom/android/gallery3d/ui/TileImageView$Tile;->recycle()V
+    invoke-virtual {v2}, Lcom/android/gallery3d/ui/UploadedTexture;->recycle()V
 
     .line 364
     add-int/lit8 v0, v0, 0x1
@@ -2031,7 +2031,7 @@
     if-eqz v3, :cond_2
 
     .line 376
-    invoke-virtual {v3}, Lcom/android/gallery3d/ui/TileImageView$Tile;->recycle()V
+    invoke-virtual {v3}, Lcom/android/gallery3d/ui/UploadedTexture;->recycle()V
 
     .line 377
     iget-object v4, p0, Lcom/android/gallery3d/ui/TileImageView;->mRecycledQueue:Lcom/android/gallery3d/ui/TileImageView$TileQueue;
@@ -2188,7 +2188,7 @@
     invoke-direct {p0, v0, v1, v2, v3}, Lcom/android/gallery3d/ui/TileImageView;->layoutTiles(IIFI)V
 
     .line 177
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/TileImageView;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->invalidate()V
 
     .line 178
     return-void
@@ -2415,7 +2415,7 @@
     if-eqz v0, :cond_0
 
     .line 469
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/TileImageView;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
 
     move-result-object v0
 
@@ -2567,14 +2567,14 @@
     if-eqz v22, :cond_1
 
     .line 408
-    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/TileImageView;->getWidth()I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/GLView;->getWidth()I
 
     move-result v2
 
     div-int/lit8 v16, v2, 0x2
 
     .local v16, centerX:I
-    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/TileImageView;->getHeight()I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/GLView;->getHeight()I
 
     move-result v2
 
@@ -2844,7 +2844,7 @@
     if-eqz v2, :cond_5
 
     .line 436
-    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/TileImageView;->invalidate()V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/GLView;->invalidate()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -2889,7 +2889,7 @@
 
     .line 446
     :cond_9
-    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/TileImageView;->invalidate()V
+    invoke-virtual/range {p0 .. p0}, Lcom/android/gallery3d/ui/GLView;->invalidate()V
 
     goto :goto_2
 .end method
@@ -2963,7 +2963,7 @@
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/android/gallery3d/ui/TileImageView;->layoutTiles(IIFI)V
 
     .line 350
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/TileImageView;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->invalidate()V
 
     .line 351
     const/4 v0, 0x1

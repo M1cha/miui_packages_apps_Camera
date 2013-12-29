@@ -26,13 +26,12 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/ui/ScreenView;)V
     .locals 1
-    .parameter
 
     .prologue
     .line 283
     iput-object p1, p0, Lcom/android/camera/ui/ScreenView$ScreenViewOvershootInterpolator;->this$0:Lcom/android/camera/ui/ScreenView;
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 284
     #getter for: Lcom/android/camera/ui/ScreenView;->mOvershootTension:F

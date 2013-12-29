@@ -88,7 +88,7 @@
     .line 137
     const/16 v0, 0xdac
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;->setDuration(I)V
+    invoke-virtual {p0, v0}, Lcom/android/gallery3d/anim/Animation;->setDuration(I)V
 
     .line 138
     return-void
@@ -104,7 +104,7 @@
     .line 142
     iget-object v6, p0, Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;->this$0:Lcom/android/gallery3d/ui/SlideshowView;
 
-    invoke-virtual {v6}, Lcom/android/gallery3d/ui/SlideshowView;->getWidth()I
+    invoke-virtual {v6}, Lcom/android/gallery3d/ui/GLView;->getWidth()I
 
     move-result v5
 
@@ -112,7 +112,7 @@
     .local v5, viewWidth:I
     iget-object v6, p0, Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;->this$0:Lcom/android/gallery3d/ui/SlideshowView;
 
-    invoke-virtual {v6}, Lcom/android/gallery3d/ui/SlideshowView;->getHeight()I
+    invoke-virtual {v6}, Lcom/android/gallery3d/ui/GLView;->getHeight()I
 
     move-result v4
 

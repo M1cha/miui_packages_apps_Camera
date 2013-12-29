@@ -74,7 +74,7 @@
 
     .prologue
     .line 138
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 122
     const/16 v0, 0x20
@@ -239,7 +239,7 @@
     .local v2, zero:[B
     iget-object v3, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexBuffer:Ljava/nio/MappedByteBuffer;
 
-    invoke-virtual {v3, p1}, Ljava/nio/MappedByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v3, p1}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
     .line 353
     iget v3, p0, Lcom/android/gallery3d/common/BlobCache;->mMaxEntries:I
@@ -261,7 +261,7 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v3, v2, v4, v1}, Ljava/nio/MappedByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
+    invoke-virtual {v3, v2, v4, v1}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
 
     .line 356
     sub-int/2addr v0, v1
@@ -938,7 +938,7 @@
 
     iget v3, p0, Lcom/android/gallery3d/common/BlobCache;->mSlotOffset:I
 
-    invoke-virtual {v2, v3, p1, p2}, Ljava/nio/MappedByteBuffer;->putLong(IJ)Ljava/nio/ByteBuffer;
+    invoke-virtual {v2, v3, p1, p2}, Ljava/nio/ByteBuffer;->putLong(IJ)Ljava/nio/ByteBuffer;
 
     .line 397
     iget-object v2, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexBuffer:Ljava/nio/MappedByteBuffer;
@@ -949,7 +949,7 @@
 
     iget v4, p0, Lcom/android/gallery3d/common/BlobCache;->mActiveBytes:I
 
-    invoke-virtual {v2, v3, v4}, Ljava/nio/MappedByteBuffer;->putInt(II)Ljava/nio/ByteBuffer;
+    invoke-virtual {v2, v3, v4}, Ljava/nio/ByteBuffer;->putInt(II)Ljava/nio/ByteBuffer;
 
     .line 398
     iget v2, p0, Lcom/android/gallery3d/common/BlobCache;->mActiveBytes:I
@@ -1432,7 +1432,7 @@
 
     sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
-    invoke-virtual {v0, v1}, Ljava/nio/MappedByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
     .line 275
     invoke-direct {p0}, Lcom/android/gallery3d/common/BlobCache;->setActiveVariables()V
@@ -1506,7 +1506,7 @@
     .local v3, offset:I
     iget-object v7, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexBuffer:Ljava/nio/MappedByteBuffer;
 
-    invoke-virtual {v7, v3}, Ljava/nio/MappedByteBuffer;->getLong(I)J
+    invoke-virtual {v7, v3}, Ljava/nio/ByteBuffer;->getLong(I)J
 
     move-result-wide v0
 
@@ -1516,7 +1516,7 @@
 
     add-int/lit8 v8, v3, 0x8
 
-    invoke-virtual {v7, v8}, Ljava/nio/MappedByteBuffer;->getInt(I)I
+    invoke-virtual {v7, v8}, Ljava/nio/ByteBuffer;->getInt(I)I
 
     move-result v2
 
@@ -1579,7 +1579,7 @@
 
     add-int/lit8 v8, v8, 0x8
 
-    invoke-virtual {v7, v8, v6}, Ljava/nio/MappedByteBuffer;->putInt(II)Ljava/nio/ByteBuffer;
+    invoke-virtual {v7, v8, v6}, Ljava/nio/ByteBuffer;->putInt(II)Ljava/nio/ByteBuffer;
 
     goto :goto_0
 .end method
@@ -1934,14 +1934,14 @@
     .line 345
     iget-object v0, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexBuffer:Ljava/nio/MappedByteBuffer;
 
-    invoke-virtual {v0, v2}, Ljava/nio/MappedByteBuffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v0, v2}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
     .line 346
     iget-object v0, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexBuffer:Ljava/nio/MappedByteBuffer;
 
     iget-object v1, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexHeader:[B
 
-    invoke-virtual {v0, v1}, Ljava/nio/MappedByteBuffer;->put([B)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
     .line 347
     return-void

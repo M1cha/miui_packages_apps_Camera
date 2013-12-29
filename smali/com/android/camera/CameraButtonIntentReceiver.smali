@@ -18,8 +18,6 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
-    .parameter
-    .parameter
 
     .prologue
     .line 38

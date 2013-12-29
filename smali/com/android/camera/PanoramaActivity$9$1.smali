@@ -26,16 +26,14 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/PanoramaActivity$9;I)V
     .locals 0
-    .parameter
-    .parameter
 
     .prologue
-    .line 932
+    .line 926
     iput-object p1, p0, Lcom/android/camera/PanoramaActivity$9$1;->this$1:Lcom/android/camera/PanoramaActivity$9;
 
     iput p2, p0, Lcom/android/camera/PanoramaActivity$9$1;->val$progress:I
 
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -46,13 +44,13 @@
     .locals 2
 
     .prologue
-    .line 935
+    .line 929
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$9$1;->this$1:Lcom/android/camera/PanoramaActivity$9;
 
     iget-object v0, v0, Lcom/android/camera/PanoramaActivity$9;->this$0:Lcom/android/camera/PanoramaActivity;
 
     #getter for: Lcom/android/camera/PanoramaActivity;->mSavingProgressBar:Lcom/android/camera/PanoProgressBar;
-    invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$2700(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/PanoProgressBar;
+    invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$2600(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/PanoProgressBar;
 
     move-result-object v0
 
@@ -60,6 +58,6 @@
 
     invoke-virtual {v0, v1}, Lcom/android/camera/PanoProgressBar;->setProgress(I)V
 
-    .line 936
+    .line 930
     return-void
 .end method

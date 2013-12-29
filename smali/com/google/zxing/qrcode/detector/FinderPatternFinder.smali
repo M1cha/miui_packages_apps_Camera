@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/zxing/qrcode/detector/FinderPatternFinder$1;,
         Lcom/google/zxing/qrcode/detector/FinderPatternFinder$CenterComparator;,
         Lcom/google/zxing/qrcode/detector/FinderPatternFinder$FurthestFromAverageComparator;
     }
@@ -19,7 +20,16 @@
 
 .field private final image:Lcom/google/zxing/common/BitMatrix;
 
-.field private final possibleCenters:Ljava/util/Vector;
+.field private final possibleCenters:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/zxing/qrcode/detector/FinderPattern;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private final resultPointCallback:Lcom/google/zxing/ResultPointCallback;
 
@@ -31,30 +41,30 @@
     .parameter "resultPointCallback"
 
     .prologue
-    .line 60
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
-
-    .line 61
-    iput-object p1, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->image:Lcom/google/zxing/common/BitMatrix;
-
     .line 62
-    new-instance v0, Ljava/util/Vector;
-
-    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
-
-    iput-object v0, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 63
+    iput-object p1, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->image:Lcom/google/zxing/common/BitMatrix;
+
+    .line 64
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
+
+    .line 65
     const/4 v0, 0x5
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->crossCheckStateCount:[I
 
-    .line 64
+    .line 66
     iput-object p2, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->resultPointCallback:Lcom/google/zxing/ResultPointCallback;
 
-    .line 65
+    .line 67
     return-void
 .end method
 
@@ -64,7 +74,7 @@
     .parameter "end"
 
     .prologue
-    .line 189
+    .line 191
     const/4 v0, 0x4
 
     aget v0, p0, v0
@@ -102,26 +112,26 @@
     .parameter "originalStateCountTotal"
 
     .prologue
-    .line 313
+    .line 315
     iget-object v0, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->image:Lcom/google/zxing/common/BitMatrix;
 
-    .line 315
+    .line 317
     .local v0, image:Lcom/google/zxing/common/BitMatrix;
     invoke-virtual {v0}, Lcom/google/zxing/common/BitMatrix;->getWidth()I
 
     move-result v2
 
-    .line 316
+    .line 318
     .local v2, maxJ:I
     invoke-direct {p0}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->getCrossCheckStateCount()[I
 
     move-result-object v3
 
-    .line 318
+    .line 320
     .local v3, stateCount:[I
     move v1, p1
 
-    .line 319
+    .line 321
     .local v1, j:I
     :goto_0
     if-ltz v1, :cond_0
@@ -132,7 +142,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 320
+    .line 322
     const/4 v5, 0x2
 
     aget v6, v3, v5
@@ -141,23 +151,23 @@
 
     aput v6, v3, v5
 
-    .line 321
+    .line 323
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_0
 
-    .line 323
+    .line 325
     :cond_0
     if-gez v1, :cond_1
 
-    .line 324
+    .line 326
     const/high16 v5, 0x7fc0
 
-    .line 372
+    .line 374
     :goto_1
     return v5
 
-    .line 326
+    .line 328
     :cond_1
     :goto_2
     if-ltz v1, :cond_2
@@ -174,7 +184,7 @@
 
     if-gt v5, p3, :cond_2
 
-    .line 327
+    .line 329
     const/4 v5, 0x1
 
     aget v6, v3, v5
@@ -183,12 +193,12 @@
 
     aput v6, v3, v5
 
-    .line 328
+    .line 330
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_2
 
-    .line 330
+    .line 332
     :cond_2
     if-ltz v1, :cond_3
 
@@ -198,13 +208,13 @@
 
     if-le v5, p3, :cond_4
 
-    .line 331
+    .line 333
     :cond_3
     const/high16 v5, 0x7fc0
 
     goto :goto_1
 
-    .line 333
+    .line 335
     :cond_4
     :goto_3
     if-ltz v1, :cond_5
@@ -221,7 +231,7 @@
 
     if-gt v5, p3, :cond_5
 
-    .line 334
+    .line 336
     const/4 v5, 0x0
 
     aget v6, v3, v5
@@ -230,12 +240,12 @@
 
     aput v6, v3, v5
 
-    .line 335
+    .line 337
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_3
 
-    .line 337
+    .line 339
     :cond_5
     const/4 v5, 0x0
 
@@ -243,16 +253,16 @@
 
     if-le v5, p3, :cond_6
 
-    .line 338
+    .line 340
     const/high16 v5, 0x7fc0
 
     goto :goto_1
 
-    .line 341
+    .line 343
     :cond_6
     add-int/lit8 v1, p1, 0x1
 
-    .line 342
+    .line 344
     :goto_4
     if-ge v1, v2, :cond_7
 
@@ -262,7 +272,7 @@
 
     if-eqz v5, :cond_7
 
-    .line 343
+    .line 345
     const/4 v5, 0x2
 
     aget v6, v3, v5
@@ -271,21 +281,21 @@
 
     aput v6, v3, v5
 
-    .line 344
+    .line 346
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_4
 
-    .line 346
+    .line 348
     :cond_7
     if-ne v1, v2, :cond_8
 
-    .line 347
+    .line 349
     const/high16 v5, 0x7fc0
 
     goto :goto_1
 
-    .line 349
+    .line 351
     :cond_8
     :goto_5
     if-ge v1, v2, :cond_9
@@ -302,7 +312,7 @@
 
     if-ge v5, p3, :cond_9
 
-    .line 350
+    .line 352
     const/4 v5, 0x3
 
     aget v6, v3, v5
@@ -311,12 +321,12 @@
 
     aput v6, v3, v5
 
-    .line 351
+    .line 353
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_5
 
-    .line 353
+    .line 355
     :cond_9
     if-eq v1, v2, :cond_a
 
@@ -326,13 +336,13 @@
 
     if-lt v5, p3, :cond_b
 
-    .line 354
+    .line 356
     :cond_a
     const/high16 v5, 0x7fc0
 
     goto :goto_1
 
-    .line 356
+    .line 358
     :cond_b
     :goto_6
     if-ge v1, v2, :cond_c
@@ -349,7 +359,7 @@
 
     if-ge v5, p3, :cond_c
 
-    .line 357
+    .line 359
     const/4 v5, 0x4
 
     aget v6, v3, v5
@@ -358,12 +368,12 @@
 
     aput v6, v3, v5
 
-    .line 358
+    .line 360
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_6
 
-    .line 360
+    .line 362
     :cond_c
     const/4 v5, 0x4
 
@@ -371,12 +381,12 @@
 
     if-lt v5, p3, :cond_d
 
-    .line 361
+    .line 363
     const/high16 v5, 0x7fc0
 
     goto/16 :goto_1
 
-    .line 366
+    .line 368
     :cond_d
     const/4 v5, 0x0
 
@@ -406,7 +416,7 @@
 
     add-int v4, v5, v6
 
-    .line 368
+    .line 370
     .local v4, stateCountTotal:I
     sub-int v5, v4, p4
 
@@ -418,12 +428,12 @@
 
     if-lt v5, p4, :cond_e
 
-    .line 369
+    .line 371
     const/high16 v5, 0x7fc0
 
     goto/16 :goto_1
 
-    .line 372
+    .line 374
     :cond_e
     invoke-static {v3}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->foundPatternCross([I)Z
 
@@ -451,26 +461,26 @@
     .parameter "originalStateCountTotal"
 
     .prologue
-    .line 241
+    .line 243
     iget-object v1, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->image:Lcom/google/zxing/common/BitMatrix;
 
-    .line 243
+    .line 245
     .local v1, image:Lcom/google/zxing/common/BitMatrix;
     invoke-virtual {v1}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
 
     move-result v2
 
-    .line 244
+    .line 246
     .local v2, maxI:I
     invoke-direct {p0}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->getCrossCheckStateCount()[I
 
     move-result-object v3
 
-    .line 247
+    .line 249
     .local v3, stateCount:[I
     move v0, p1
 
-    .line 248
+    .line 250
     .local v0, i:I
     :goto_0
     if-ltz v0, :cond_0
@@ -481,7 +491,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 249
+    .line 251
     const/4 v5, 0x2
 
     aget v6, v3, v5
@@ -490,23 +500,23 @@
 
     aput v6, v3, v5
 
-    .line 250
+    .line 252
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 252
+    .line 254
     :cond_0
     if-gez v0, :cond_1
 
-    .line 253
+    .line 255
     const/high16 v5, 0x7fc0
 
-    .line 303
+    .line 305
     :goto_1
     return v5
 
-    .line 255
+    .line 257
     :cond_1
     :goto_2
     if-ltz v0, :cond_2
@@ -523,7 +533,7 @@
 
     if-gt v5, p3, :cond_2
 
-    .line 256
+    .line 258
     const/4 v5, 0x1
 
     aget v6, v3, v5
@@ -532,12 +542,12 @@
 
     aput v6, v3, v5
 
-    .line 257
+    .line 259
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_2
 
-    .line 260
+    .line 262
     :cond_2
     if-ltz v0, :cond_3
 
@@ -547,13 +557,13 @@
 
     if-le v5, p3, :cond_4
 
-    .line 261
+    .line 263
     :cond_3
     const/high16 v5, 0x7fc0
 
     goto :goto_1
 
-    .line 263
+    .line 265
     :cond_4
     :goto_3
     if-ltz v0, :cond_5
@@ -570,7 +580,7 @@
 
     if-gt v5, p3, :cond_5
 
-    .line 264
+    .line 266
     const/4 v5, 0x0
 
     aget v6, v3, v5
@@ -579,12 +589,12 @@
 
     aput v6, v3, v5
 
-    .line 265
+    .line 267
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_3
 
-    .line 267
+    .line 269
     :cond_5
     const/4 v5, 0x0
 
@@ -592,16 +602,16 @@
 
     if-le v5, p3, :cond_6
 
-    .line 268
+    .line 270
     const/high16 v5, 0x7fc0
 
     goto :goto_1
 
-    .line 272
+    .line 274
     :cond_6
     add-int/lit8 v0, p1, 0x1
 
-    .line 273
+    .line 275
     :goto_4
     if-ge v0, v2, :cond_7
 
@@ -611,7 +621,7 @@
 
     if-eqz v5, :cond_7
 
-    .line 274
+    .line 276
     const/4 v5, 0x2
 
     aget v6, v3, v5
@@ -620,21 +630,21 @@
 
     aput v6, v3, v5
 
-    .line 275
+    .line 277
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_4
 
-    .line 277
+    .line 279
     :cond_7
     if-ne v0, v2, :cond_8
 
-    .line 278
+    .line 280
     const/high16 v5, 0x7fc0
 
     goto :goto_1
 
-    .line 280
+    .line 282
     :cond_8
     :goto_5
     if-ge v0, v2, :cond_9
@@ -651,7 +661,7 @@
 
     if-ge v5, p3, :cond_9
 
-    .line 281
+    .line 283
     const/4 v5, 0x3
 
     aget v6, v3, v5
@@ -660,12 +670,12 @@
 
     aput v6, v3, v5
 
-    .line 282
+    .line 284
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_5
 
-    .line 284
+    .line 286
     :cond_9
     if-eq v0, v2, :cond_a
 
@@ -675,13 +685,13 @@
 
     if-lt v5, p3, :cond_b
 
-    .line 285
+    .line 287
     :cond_a
     const/high16 v5, 0x7fc0
 
     goto :goto_1
 
-    .line 287
+    .line 289
     :cond_b
     :goto_6
     if-ge v0, v2, :cond_c
@@ -698,7 +708,7 @@
 
     if-ge v5, p3, :cond_c
 
-    .line 288
+    .line 290
     const/4 v5, 0x4
 
     aget v6, v3, v5
@@ -707,12 +717,12 @@
 
     aput v6, v3, v5
 
-    .line 289
+    .line 291
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_6
 
-    .line 291
+    .line 293
     :cond_c
     const/4 v5, 0x4
 
@@ -720,12 +730,12 @@
 
     if-lt v5, p3, :cond_d
 
-    .line 292
+    .line 294
     const/high16 v5, 0x7fc0
 
     goto/16 :goto_1
 
-    .line 297
+    .line 299
     :cond_d
     const/4 v5, 0x0
 
@@ -755,7 +765,7 @@
 
     add-int v4, v5, v6
 
-    .line 299
+    .line 301
     .local v4, stateCountTotal:I
     sub-int v5, v4, p4
 
@@ -769,12 +779,12 @@
 
     if-lt v5, v6, :cond_e
 
-    .line 300
+    .line 302
     const/high16 v5, 0x7fc0
 
     goto/16 :goto_1
 
-    .line 303
+    .line 305
     :cond_e
     invoke-static {v3}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->foundPatternCross([I)Z
 
@@ -802,14 +812,14 @@
 
     const/4 v4, 0x0
 
-    .line 432
-    iget-object v5, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    .line 433
+    iget-object v5, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    invoke-virtual {v5}, Ljava/util/Vector;->size()I
+    invoke-interface {v5}, Ljava/util/List;->size()I
 
     move-result v3
 
-    .line 433
+    .line 434
     .local v3, max:I
     if-gt v3, v7, :cond_1
 
@@ -818,22 +828,28 @@
     :goto_0
     return v4
 
-    .line 436
+    .line 437
     :cond_1
     const/4 v1, 0x0
 
-    .line 437
-    .local v1, firstConfirmedCenter:Lcom/google/zxing/qrcode/detector/FinderPattern;
-    const/4 v2, 0x0
-
-    .local v2, i:I
-    :goto_1
-    if-ge v2, v3, :cond_0
-
     .line 438
-    iget-object v5, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    .local v1, firstConfirmedCenter:Lcom/google/zxing/qrcode/detector/FinderPattern;
+    iget-object v5, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    invoke-virtual {v5, v2}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    .local v2, i$:Ljava/util/Iterator;
+    :cond_2
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -855,10 +871,6 @@
     .line 441
     move-object v1, v0
 
-    .line 437
-    :cond_2
-    add-int/lit8 v2, v2, 0x1
-
     goto :goto_1
 
     .line 448
@@ -866,11 +878,11 @@
     iput-boolean v7, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->hasSkipped:Z
 
     .line 449
-    invoke-virtual {v1}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getX()F
+    invoke-virtual {v1}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v4
 
-    invoke-virtual {v0}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getX()F
+    invoke-virtual {v0}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v5
 
@@ -880,11 +892,11 @@
 
     move-result v4
 
-    invoke-virtual {v1}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getY()F
+    invoke-virtual {v1}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v5
 
-    invoke-virtual {v0}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getY()F
+    invoke-virtual {v0}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v6
 
@@ -912,10 +924,10 @@
 
     const/4 v6, 0x0
 
-    .line 198
+    .line 200
     const/4 v4, 0x0
 
-    .line 199
+    .line 201
     .local v4, totalModuleSize:I
     const/4 v1, 0x0
 
@@ -925,46 +937,46 @@
 
     if-ge v1, v7, :cond_2
 
-    .line 200
+    .line 202
     aget v0, p0, v1
 
-    .line 201
+    .line 203
     .local v0, count:I
     if-nez v0, :cond_1
 
-    .line 212
+    .line 214
     .end local v0           #count:I
     :cond_0
     :goto_1
     return v6
 
-    .line 204
+    .line 206
     .restart local v0       #count:I
     :cond_1
     add-int/2addr v4, v0
 
-    .line 199
+    .line 201
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 206
+    .line 208
     .end local v0           #count:I
     :cond_2
     const/4 v7, 0x7
 
     if-lt v4, v7, :cond_0
 
-    .line 209
+    .line 211
     shl-int/lit8 v7, v4, 0x8
 
     div-int/lit8 v3, v7, 0x7
 
-    .line 210
+    .line 212
     .local v3, moduleSize:I
     div-int/lit8 v2, v3, 0x2
 
-    .line 212
+    .line 214
     .local v2, maxVariance:I
     aget v7, p0, v6
 
@@ -1053,40 +1065,40 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 220
+    .line 222
     iget-object v0, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->crossCheckStateCount:[I
 
     aput v2, v0, v2
 
-    .line 221
+    .line 223
     iget-object v0, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->crossCheckStateCount:[I
 
     const/4 v1, 0x1
 
     aput v2, v0, v1
 
-    .line 222
+    .line 224
     iget-object v0, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->crossCheckStateCount:[I
 
     const/4 v1, 0x2
 
     aput v2, v0, v1
 
-    .line 223
+    .line 225
     iget-object v0, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->crossCheckStateCount:[I
 
     const/4 v1, 0x3
 
     aput v2, v0, v1
 
-    .line 224
+    .line 226
     iget-object v0, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->crossCheckStateCount:[I
 
     const/4 v1, 0x4
 
     aput v2, v0, v1
 
-    .line 225
+    .line 227
     iget-object v0, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->crossCheckStateCount:[I
 
     return-object v0
@@ -1107,30 +1119,36 @@
 
     .line 465
     .local v6, totalModuleSize:F
-    iget-object v8, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    iget-object v8, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    invoke-virtual {v8}, Ljava/util/Vector;->size()I
+    invoke-interface {v8}, Ljava/util/List;->size()I
 
     move-result v3
 
     .line 466
     .local v3, max:I
-    const/4 v2, 0x0
+    iget-object v8, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    .local v2, i:I
+    invoke-interface {v8}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    .local v2, i$:Ljava/util/Iterator;
+    :cond_0
     :goto_0
-    if-ge v2, v3, :cond_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 467
-    iget-object v8, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    move-result v8
 
-    invoke-virtual {v8, v2}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    if-eqz v8, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/google/zxing/qrcode/detector/FinderPattern;
 
-    .line 468
+    .line 467
     .local v4, pattern:Lcom/google/zxing/qrcode/detector/FinderPattern;
     invoke-virtual {v4}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getCount()I
 
@@ -1140,61 +1158,62 @@
 
     if-lt v8, v9, :cond_0
 
-    .line 469
+    .line 468
     add-int/lit8 v1, v1, 0x1
 
-    .line 470
+    .line 469
     invoke-virtual {v4}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
 
     move-result v8
 
     add-float/2addr v6, v8
 
-    .line 466
-    :cond_0
-    add-int/lit8 v2, v2, 0x1
-
     goto :goto_0
 
-    .line 473
+    .line 472
     .end local v4           #pattern:Lcom/google/zxing/qrcode/detector/FinderPattern;
     :cond_1
     const/4 v8, 0x3
 
     if-ge v1, v8, :cond_3
 
-    .line 486
+    .line 484
     :cond_2
     :goto_1
     return v7
 
-    .line 480
+    .line 479
     :cond_3
     int-to-float v8, v3
 
     div-float v0, v6, v8
 
-    .line 481
+    .line 480
     .local v0, average:F
     const/4 v5, 0x0
 
-    .line 482
+    .line 481
     .local v5, totalDeviation:F
-    const/4 v2, 0x0
+    iget-object v8, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
+
+    invoke-interface {v8}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
 
     :goto_2
-    if-ge v2, v3, :cond_4
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 483
-    iget-object v8, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    move-result v8
 
-    invoke-virtual {v8, v2}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    if-eqz v8, :cond_4
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/google/zxing/qrcode/detector/FinderPattern;
 
-    .line 484
+    .line 482
     .restart local v4       #pattern:Lcom/google/zxing/qrcode/detector/FinderPattern;
     invoke-virtual {v4}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
 
@@ -1208,12 +1227,9 @@
 
     add-float/2addr v5, v8
 
-    .line 482
-    add-int/lit8 v2, v2, 0x1
-
     goto :goto_2
 
-    .line 486
+    .line 484
     .end local v4           #pattern:Lcom/google/zxing/qrcode/detector/FinderPattern;
     :cond_4
     const v8, 0x3d4ccccd
@@ -1230,7 +1246,7 @@
 .end method
 
 .method private selectBestPatterns()[Lcom/google/zxing/qrcode/detector/FinderPattern;
-    .locals 15
+    .locals 17
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -1238,308 +1254,393 @@
     .end annotation
 
     .prologue
-    const/4 v14, 0x2
+    .line 495
+    move-object/from16 v0, p0
 
-    const/4 v13, 0x1
+    iget-object v13, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    const/4 v12, 0x0
+    invoke-interface {v13}, Ljava/util/List;->size()I
 
-    const/4 v11, 0x3
+    move-result v10
 
-    .line 497
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    .line 496
+    .local v10, startSize:I
+    const/4 v13, 0x3
 
-    invoke-virtual {v9}, Ljava/util/Vector;->size()I
-
-    move-result v6
+    if-ge v10, v13, :cond_0
 
     .line 498
-    .local v6, startSize:I
-    if-ge v6, v11, :cond_0
-
-    .line 500
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
-    move-result-object v9
+    move-result-object v13
 
-    throw v9
+    throw v13
+
+    .line 502
+    :cond_0
+    const/4 v13, 0x3
+
+    if-le v10, v13, :cond_3
 
     .line 504
-    :cond_0
-    if-le v6, v11, :cond_3
+    const/4 v12, 0x0
+
+    .line 505
+    .local v12, totalModuleSize:F
+    const/4 v9, 0x0
 
     .line 506
-    const/4 v8, 0x0
+    .local v9, square:F
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
+
+    invoke-interface {v13}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    .local v4, i$:Ljava/util/Iterator;
+    :goto_0
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v13
+
+    if-eqz v13, :cond_1
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/zxing/qrcode/detector/FinderPattern;
 
     .line 507
-    .local v8, totalModuleSize:F
-    const/4 v5, 0x0
+    .local v2, center:Lcom/google/zxing/qrcode/detector/FinderPattern;
+    invoke-virtual {v2}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
+
+    move-result v8
 
     .line 508
-    .local v5, square:F
-    const/4 v1, 0x0
-
-    .local v1, i:I
-    :goto_0
-    if-ge v1, v6, :cond_1
+    .local v8, size:F
+    add-float/2addr v12, v8
 
     .line 509
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    mul-float v13, v8, v8
 
-    invoke-virtual {v9, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lcom/google/zxing/qrcode/detector/FinderPattern;
-
-    invoke-virtual {v9}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
-
-    move-result v4
+    add-float/2addr v9, v13
 
     .line 510
-    .local v4, size:F
-    add-float/2addr v8, v4
-
-    .line 511
-    mul-float v9, v4, v4
-
-    add-float/2addr v5, v9
-
-    .line 508
-    add-int/lit8 v1, v1, 0x1
-
     goto :goto_0
 
-    .line 513
-    .end local v4           #size:F
+    .line 511
+    .end local v2           #center:Lcom/google/zxing/qrcode/detector/FinderPattern;
+    .end local v8           #size:F
     :cond_1
-    int-to-float v9, v6
+    int-to-float v13, v10
 
-    div-float v0, v8, v9
+    div-float v1, v12, v13
+
+    .line 512
+    .local v1, average:F
+    int-to-float v13, v10
+
+    div-float v13, v9, v13
+
+    mul-float v14, v1, v1
+
+    sub-float/2addr v13, v14
+
+    float-to-double v13, v13
+
+    invoke-static {v13, v14}, Ljava/lang/Math;->sqrt(D)D
+
+    move-result-wide v13
+
+    double-to-float v11, v13
 
     .line 514
-    .local v0, average:F
-    int-to-float v9, v6
+    .local v11, stdDev:F
+    move-object/from16 v0, p0
 
-    div-float v9, v5, v9
+    iget-object v13, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    mul-float v10, v0, v0
+    new-instance v14, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$FurthestFromAverageComparator;
 
-    sub-float/2addr v9, v10
+    const/4 v15, 0x0
 
-    float-to-double v9, v9
+    invoke-direct {v14, v1, v15}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$FurthestFromAverageComparator;-><init>(FLcom/google/zxing/qrcode/detector/FinderPatternFinder$1;)V
 
-    invoke-static {v9, v10}, Ljava/lang/Math;->sqrt(D)D
-
-    move-result-wide v9
-
-    double-to-float v7, v9
+    invoke-static {v13, v14}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     .line 516
-    .local v7, stdDev:F
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    const v13, 0x3e4ccccd
 
-    new-instance v10, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$FurthestFromAverageComparator;
+    mul-float/2addr v13, v1
 
-    invoke-direct {v10, v0}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$FurthestFromAverageComparator;-><init>(F)V
+    invoke-static {v13, v11}, Ljava/lang/Math;->max(FF)F
 
-    invoke-static {v9, v10}, Lcom/google/zxing/common/Collections;->insertionSort(Ljava/util/Vector;Lcom/google/zxing/common/Comparator;)V
+    move-result v5
 
     .line 518
-    const v9, 0x3e4ccccd
+    .local v5, limit:F
+    const/4 v3, 0x0
 
-    mul-float/2addr v9, v0
+    .local v3, i:I
+    :goto_1
+    move-object/from16 v0, p0
 
-    invoke-static {v9, v7}, Ljava/lang/Math;->max(FF)F
+    iget-object v13, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    move-result v2
+    invoke-interface {v13}, Ljava/util/List;->size()I
+
+    move-result v13
+
+    if-ge v3, v13, :cond_3
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
+
+    invoke-interface {v13}, Ljava/util/List;->size()I
+
+    move-result v13
+
+    const/4 v14, 0x3
+
+    if-le v13, v14, :cond_3
+
+    .line 519
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
+
+    invoke-interface {v13, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Lcom/google/zxing/qrcode/detector/FinderPattern;
 
     .line 520
-    .local v2, limit:F
-    const/4 v1, 0x0
+    .local v6, pattern:Lcom/google/zxing/qrcode/detector/FinderPattern;
+    invoke-virtual {v6}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
 
-    :goto_1
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    move-result v13
 
-    invoke-virtual {v9}, Ljava/util/Vector;->size()I
+    sub-float/2addr v13, v1
 
-    move-result v9
+    invoke-static {v13}, Ljava/lang/Math;->abs(F)F
 
-    if-ge v1, v9, :cond_3
+    move-result v13
 
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    cmpl-float v13, v13, v5
 
-    invoke-virtual {v9}, Ljava/util/Vector;->size()I
-
-    move-result v9
-
-    if-le v9, v11, :cond_3
+    if-lez v13, :cond_2
 
     .line 521
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v9, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    iget-object v13, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    move-result-object v3
-
-    check-cast v3, Lcom/google/zxing/qrcode/detector/FinderPattern;
+    invoke-interface {v13, v3}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
     .line 522
-    .local v3, pattern:Lcom/google/zxing/qrcode/detector/FinderPattern;
-    invoke-virtual {v3}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
+    add-int/lit8 v3, v3, -0x1
 
-    move-result v9
-
-    sub-float/2addr v9, v0
-
-    invoke-static {v9}, Ljava/lang/Math;->abs(F)F
-
-    move-result v9
-
-    cmpl-float v9, v9, v2
-
-    if-lez v9, :cond_2
-
-    .line 523
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
-
-    invoke-virtual {v9, v1}, Ljava/util/Vector;->removeElementAt(I)V
-
-    .line 524
-    add-int/lit8 v1, v1, -0x1
-
-    .line 520
+    .line 518
     :cond_2
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 529
-    .end local v0           #average:F
-    .end local v1           #i:I
-    .end local v2           #limit:F
-    .end local v3           #pattern:Lcom/google/zxing/qrcode/detector/FinderPattern;
-    .end local v5           #square:F
-    .end local v7           #stdDev:F
-    .end local v8           #totalModuleSize:F
+    .line 527
+    .end local v1           #average:F
+    .end local v3           #i:I
+    .end local v4           #i$:Ljava/util/Iterator;
+    .end local v5           #limit:F
+    .end local v6           #pattern:Lcom/google/zxing/qrcode/detector/FinderPattern;
+    .end local v9           #square:F
+    .end local v11           #stdDev:F
+    .end local v12           #totalModuleSize:F
     :cond_3
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v9}, Ljava/util/Vector;->size()I
+    iget-object v13, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    move-result v9
+    invoke-interface {v13}, Ljava/util/List;->size()I
 
-    if-le v9, v11, :cond_5
+    move-result v13
+
+    const/4 v14, 0x3
+
+    if-le v13, v14, :cond_5
+
+    .line 530
+    const/4 v12, 0x0
+
+    .line 531
+    .restart local v12       #totalModuleSize:F
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
+
+    invoke-interface {v13}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    .restart local v4       #i$:Ljava/util/Iterator;
+    :goto_2
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v13
+
+    if-eqz v13, :cond_4
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lcom/google/zxing/qrcode/detector/FinderPattern;
 
     .line 532
-    const/4 v8, 0x0
+    .local v7, possibleCenter:Lcom/google/zxing/qrcode/detector/FinderPattern;
+    invoke-virtual {v7}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
 
-    .line 533
-    .restart local v8       #totalModuleSize:F
-    const/4 v1, 0x0
+    move-result v13
 
-    .restart local v1       #i:I
-    :goto_2
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
-
-    invoke-virtual {v9}, Ljava/util/Vector;->size()I
-
-    move-result v9
-
-    if-ge v1, v9, :cond_4
-
-    .line 534
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
-
-    invoke-virtual {v9, v1}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
-
-    move-result-object v9
-
-    check-cast v9, Lcom/google/zxing/qrcode/detector/FinderPattern;
-
-    invoke-virtual {v9}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
-
-    move-result v9
-
-    add-float/2addr v8, v9
-
-    .line 533
-    add-int/lit8 v1, v1, 0x1
+    add-float/2addr v12, v13
 
     goto :goto_2
 
-    .line 537
+    .line 535
+    .end local v7           #possibleCenter:Lcom/google/zxing/qrcode/detector/FinderPattern;
     :cond_4
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    move-object/from16 v0, p0
 
-    invoke-virtual {v9}, Ljava/util/Vector;->size()I
+    iget-object v13, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    move-result v9
+    invoke-interface {v13}, Ljava/util/List;->size()I
 
-    int-to-float v9, v9
+    move-result v13
 
-    div-float v0, v8, v9
+    int-to-float v13, v13
+
+    div-float v1, v12, v13
+
+    .line 537
+    .restart local v1       #average:F
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
+
+    new-instance v14, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$CenterComparator;
+
+    const/4 v15, 0x0
+
+    invoke-direct {v14, v1, v15}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$CenterComparator;-><init>(FLcom/google/zxing/qrcode/detector/FinderPatternFinder$1;)V
+
+    invoke-static {v13, v14}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     .line 539
-    .restart local v0       #average:F
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    move-object/from16 v0, p0
 
-    new-instance v10, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$CenterComparator;
+    iget-object v13, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    invoke-direct {v10, v0}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$CenterComparator;-><init>(F)V
+    const/4 v14, 0x3
 
-    invoke-static {v9, v10}, Lcom/google/zxing/common/Collections;->insertionSort(Ljava/util/Vector;Lcom/google/zxing/common/Comparator;)V
+    move-object/from16 v0, p0
 
-    .line 541
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    iget-object v15, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    invoke-virtual {v9, v11}, Ljava/util/Vector;->setSize(I)V
+    invoke-interface {v15}, Ljava/util/List;->size()I
 
-    .line 544
-    .end local v0           #average:F
-    .end local v1           #i:I
-    .end local v8           #totalModuleSize:F
+    move-result v15
+
+    invoke-interface {v13, v14, v15}, Ljava/util/List;->subList(II)Ljava/util/List;
+
+    move-result-object v13
+
+    invoke-interface {v13}, Ljava/util/List;->clear()V
+
+    .line 542
+    .end local v1           #average:F
+    .end local v4           #i$:Ljava/util/Iterator;
+    .end local v12           #totalModuleSize:F
     :cond_5
-    new-array v10, v11, [Lcom/google/zxing/qrcode/detector/FinderPattern;
+    const/4 v13, 0x3
 
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    new-array v14, v13, [Lcom/google/zxing/qrcode/detector/FinderPattern;
 
-    invoke-virtual {v9, v12}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    const/4 v15, 0x0
 
-    move-result-object v9
+    move-object/from16 v0, p0
 
-    check-cast v9, Lcom/google/zxing/qrcode/detector/FinderPattern;
+    iget-object v13, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    aput-object v9, v10, v12
+    const/16 v16, 0x0
 
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    move/from16 v0, v16
 
-    invoke-virtual {v9, v13}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    invoke-interface {v13, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v13
 
-    check-cast v9, Lcom/google/zxing/qrcode/detector/FinderPattern;
+    check-cast v13, Lcom/google/zxing/qrcode/detector/FinderPattern;
 
-    aput-object v9, v10, v13
+    aput-object v13, v14, v15
 
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    const/4 v15, 0x1
 
-    invoke-virtual {v9, v14}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    move-object/from16 v0, p0
 
-    move-result-object v9
+    iget-object v13, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    check-cast v9, Lcom/google/zxing/qrcode/detector/FinderPattern;
+    const/16 v16, 0x1
 
-    aput-object v9, v10, v14
+    move/from16 v0, v16
 
-    return-object v10
+    invoke-interface {v13, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Lcom/google/zxing/qrcode/detector/FinderPattern;
+
+    aput-object v13, v14, v15
+
+    const/4 v15, 0x2
+
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
+
+    const/16 v16, 0x2
+
+    move/from16 v0, v16
+
+    invoke-interface {v13, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Lcom/google/zxing/qrcode/detector/FinderPattern;
+
+    aput-object v13, v14, v15
+
+    return-object v14
 .end method
 
 
 # virtual methods
-.method find(Ljava/util/Hashtable;)Lcom/google/zxing/qrcode/detector/FinderPatternInfo;
+.method final find(Ljava/util/Map;)Lcom/google/zxing/qrcode/detector/FinderPatternInfo;
     .locals 14
-    .parameter "hints"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map",
+            "<",
+            "Lcom/google/zxing/DecodeHintType;",
+            "*>;)",
+            "Lcom/google/zxing/qrcode/detector/FinderPatternInfo;"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -1547,12 +1648,13 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 78
+    .local p1, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     if-eqz p1, :cond_3
 
     sget-object v12, Lcom/google/zxing/DecodeHintType;->TRY_HARDER:Lcom/google/zxing/DecodeHintType;
 
-    invoke-virtual {p1, v12}, Ljava/util/Hashtable;->containsKey(Ljava/lang/Object;)Z
+    invoke-interface {p1, v12}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
     move-result v12
 
@@ -1560,7 +1662,7 @@
 
     const/4 v11, 0x1
 
-    .line 77
+    .line 79
     .local v11, tryHarder:Z
     :goto_0
     iget-object v12, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->image:Lcom/google/zxing/common/BitMatrix;
@@ -1569,7 +1671,7 @@
 
     move-result v6
 
-    .line 78
+    .line 80
     .local v6, maxI:I
     iget-object v12, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->image:Lcom/google/zxing/common/BitMatrix;
 
@@ -1577,13 +1679,13 @@
 
     move-result v7
 
-    .line 86
+    .line 88
     .local v7, maxJ:I
     mul-int/lit8 v12, v6, 0x3
 
     div-int/lit16 v4, v12, 0xe4
 
-    .line 87
+    .line 89
     .local v4, iSkip:I
     const/4 v12, 0x3
 
@@ -1591,21 +1693,21 @@
 
     if-eqz v11, :cond_1
 
-    .line 88
+    .line 90
     :cond_0
     const/4 v4, 0x3
 
-    .line 91
+    .line 93
     :cond_1
     const/4 v2, 0x0
 
-    .line 92
+    .line 94
     .local v2, done:Z
     const/4 v12, 0x5
 
     new-array v10, v12, [I
 
-    .line 93
+    .line 95
     .local v10, stateCount:[I
     add-int/lit8 v3, v4, -0x1
 
@@ -1615,45 +1717,45 @@
 
     if-nez v2, :cond_d
 
-    .line 95
+    .line 97
     const/4 v12, 0x0
 
     const/4 v13, 0x0
 
     aput v13, v10, v12
 
-    .line 96
+    .line 98
     const/4 v12, 0x1
 
     const/4 v13, 0x0
 
     aput v13, v10, v12
 
-    .line 97
+    .line 99
     const/4 v12, 0x2
 
     const/4 v13, 0x0
 
     aput v13, v10, v12
 
-    .line 98
+    .line 100
     const/4 v12, 0x3
 
     const/4 v13, 0x0
 
     aput v13, v10, v12
 
-    .line 99
+    .line 101
     const/4 v12, 0x4
 
     const/4 v13, 0x0
 
     aput v13, v10, v12
 
-    .line 100
+    .line 102
     const/4 v1, 0x0
 
-    .line 101
+    .line 103
     .local v1, currentState:I
     const/4 v5, 0x0
 
@@ -1661,7 +1763,7 @@
     :goto_2
     if-ge v5, v7, :cond_b
 
-    .line 102
+    .line 104
     iget-object v12, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->image:Lcom/google/zxing/common/BitMatrix;
 
     invoke-virtual {v12, v5, v3}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
@@ -1670,17 +1772,17 @@
 
     if-eqz v12, :cond_4
 
-    .line 104
+    .line 106
     and-int/lit8 v12, v1, 0x1
 
     const/4 v13, 0x1
 
     if-ne v12, v13, :cond_2
 
-    .line 105
+    .line 107
     add-int/lit8 v1, v1, 0x1
 
-    .line 107
+    .line 109
     :cond_2
     aget v12, v10, v1
 
@@ -1688,13 +1790,13 @@
 
     aput v12, v10, v1
 
-    .line 101
+    .line 103
     :goto_3
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_2
 
-    .line 76
+    .line 78
     .end local v1           #currentState:I
     .end local v2           #done:Z
     .end local v3           #i:I
@@ -1709,7 +1811,7 @@
 
     goto :goto_0
 
-    .line 109
+    .line 111
     .restart local v1       #currentState:I
     .restart local v2       #done:Z
     .restart local v3       #i:I
@@ -1724,74 +1826,74 @@
 
     if-nez v12, :cond_a
 
-    .line 110
+    .line 112
     const/4 v12, 0x4
 
     if-ne v1, v12, :cond_9
 
-    .line 111
+    .line 113
     invoke-static {v10}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->foundPatternCross([I)Z
 
     move-result v12
 
     if-eqz v12, :cond_8
 
-    .line 112
+    .line 114
     invoke-virtual {p0, v10, v3, v5}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->handlePossibleCenter([III)Z
 
     move-result v0
 
-    .line 113
+    .line 115
     .local v0, confirmed:Z
     if-eqz v0, :cond_7
 
-    .line 116
+    .line 118
     const/4 v4, 0x2
 
-    .line 117
+    .line 119
     iget-boolean v12, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->hasSkipped:Z
 
     if-eqz v12, :cond_6
 
-    .line 118
+    .line 120
     invoke-direct {p0}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->haveMultiplyConfirmedCenters()Z
 
     move-result v2
 
-    .line 144
+    .line 146
     :cond_5
     :goto_4
     const/4 v1, 0x0
 
-    .line 145
+    .line 147
     const/4 v12, 0x0
 
     const/4 v13, 0x0
 
     aput v13, v10, v12
 
-    .line 146
+    .line 148
     const/4 v12, 0x1
 
     const/4 v13, 0x0
 
     aput v13, v10, v12
 
-    .line 147
+    .line 149
     const/4 v12, 0x2
 
     const/4 v13, 0x0
 
     aput v13, v10, v12
 
-    .line 148
+    .line 150
     const/4 v12, 0x3
 
     const/4 v13, 0x0
 
     aput v13, v10, v12
 
-    .line 149
+    .line 151
     const/4 v12, 0x4
 
     const/4 v13, 0x0
@@ -1800,13 +1902,13 @@
 
     goto :goto_3
 
-    .line 120
+    .line 122
     :cond_6
     invoke-direct {p0}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->findRowSkip()I
 
     move-result v9
 
-    .line 121
+    .line 123
     .local v9, rowSkip:I
     const/4 v12, 0x2
 
@@ -1814,7 +1916,7 @@
 
     if-le v9, v12, :cond_5
 
-    .line 130
+    .line 132
     const/4 v12, 0x2
 
     aget v12, v10, v12
@@ -1825,12 +1927,12 @@
 
     add-int/2addr v3, v12
 
-    .line 131
+    .line 133
     add-int/lit8 v5, v7, -0x1
 
     goto :goto_4
 
-    .line 135
+    .line 137
     .end local v9           #rowSkip:I
     :cond_7
     const/4 v12, 0x0
@@ -1841,7 +1943,7 @@
 
     aput v13, v10, v12
 
-    .line 136
+    .line 138
     const/4 v12, 0x1
 
     const/4 v13, 0x3
@@ -1850,7 +1952,7 @@
 
     aput v13, v10, v12
 
-    .line 137
+    .line 139
     const/4 v12, 0x2
 
     const/4 v13, 0x4
@@ -1859,27 +1961,27 @@
 
     aput v13, v10, v12
 
-    .line 138
+    .line 140
     const/4 v12, 0x3
 
     const/4 v13, 0x1
 
     aput v13, v10, v12
 
-    .line 139
+    .line 141
     const/4 v12, 0x4
 
     const/4 v13, 0x0
 
     aput v13, v10, v12
 
-    .line 140
+    .line 142
     const/4 v1, 0x3
 
-    .line 141
+    .line 143
     goto :goto_3
 
-    .line 151
+    .line 153
     .end local v0           #confirmed:Z
     :cond_8
     const/4 v12, 0x0
@@ -1890,7 +1992,7 @@
 
     aput v13, v10, v12
 
-    .line 152
+    .line 154
     const/4 v12, 0x1
 
     const/4 v13, 0x3
@@ -1899,7 +2001,7 @@
 
     aput v13, v10, v12
 
-    .line 153
+    .line 155
     const/4 v12, 0x2
 
     const/4 v13, 0x4
@@ -1908,26 +2010,26 @@
 
     aput v13, v10, v12
 
-    .line 154
+    .line 156
     const/4 v12, 0x3
 
     const/4 v13, 0x1
 
     aput v13, v10, v12
 
-    .line 155
+    .line 157
     const/4 v12, 0x4
 
     const/4 v13, 0x0
 
     aput v13, v10, v12
 
-    .line 156
+    .line 158
     const/4 v1, 0x3
 
     goto/16 :goto_3
 
-    .line 159
+    .line 161
     :cond_9
     add-int/lit8 v1, v1, 0x1
 
@@ -1939,7 +2041,7 @@
 
     goto/16 :goto_3
 
-    .line 162
+    .line 164
     :cond_a
     aget v12, v10, v1
 
@@ -1949,7 +2051,7 @@
 
     goto/16 :goto_3
 
-    .line 166
+    .line 168
     :cond_b
     invoke-static {v10}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->foundPatternCross([I)Z
 
@@ -1957,38 +2059,38 @@
 
     if-eqz v12, :cond_c
 
-    .line 167
+    .line 169
     invoke-virtual {p0, v10, v3, v7}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->handlePossibleCenter([III)Z
 
     move-result v0
 
-    .line 168
+    .line 170
     .restart local v0       #confirmed:Z
     if-eqz v0, :cond_c
 
-    .line 169
+    .line 171
     const/4 v12, 0x0
 
     aget v4, v10, v12
 
-    .line 170
+    .line 172
     iget-boolean v12, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->hasSkipped:Z
 
     if-eqz v12, :cond_c
 
-    .line 172
+    .line 174
     invoke-direct {p0}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->haveMultiplyConfirmedCenters()Z
 
     move-result v2
 
-    .line 93
+    .line 95
     .end local v0           #confirmed:Z
     :cond_c
     add-int/2addr v3, v4
 
     goto/16 :goto_1
 
-    .line 178
+    .line 180
     .end local v1           #currentState:I
     .end local v5           #j:I
     :cond_d
@@ -1996,11 +2098,11 @@
 
     move-result-object v8
 
-    .line 179
+    .line 181
     .local v8, patternInfo:[Lcom/google/zxing/qrcode/detector/FinderPattern;
     invoke-static {v8}, Lcom/google/zxing/ResultPoint;->orderBestPatterns([Lcom/google/zxing/ResultPoint;)V
 
-    .line 181
+    .line 183
     new-instance v12, Lcom/google/zxing/qrcode/detector/FinderPatternInfo;
 
     invoke-direct {v12, v8}, Lcom/google/zxing/qrcode/detector/FinderPatternInfo;-><init>([Lcom/google/zxing/qrcode/detector/FinderPattern;)V
@@ -2008,196 +2110,197 @@
     return-object v12
 .end method
 
-.method protected handlePossibleCenter([III)Z
-    .locals 12
+.method protected final handlePossibleCenter([III)Z
+    .locals 11
     .parameter "stateCount"
     .parameter "i"
     .parameter "j"
 
     .prologue
-    .line 392
-    const/4 v9, 0x0
+    .line 394
+    const/4 v8, 0x0
+
+    aget v8, p1, v8
+
+    const/4 v9, 0x1
 
     aget v9, p1, v9
 
-    const/4 v10, 0x1
+    add-int/2addr v8, v9
 
-    aget v10, p1, v10
+    const/4 v9, 0x2
 
-    add-int/2addr v9, v10
+    aget v9, p1, v9
 
-    const/4 v10, 0x2
+    add-int/2addr v8, v9
 
-    aget v10, p1, v10
+    const/4 v9, 0x3
 
-    add-int/2addr v9, v10
+    aget v9, p1, v9
 
-    const/4 v10, 0x3
+    add-int/2addr v8, v9
 
-    aget v10, p1, v10
+    const/4 v9, 0x4
 
-    add-int/2addr v9, v10
+    aget v9, p1, v9
 
-    const/4 v10, 0x4
+    add-int v7, v8, v9
 
-    aget v10, p1, v10
-
-    add-int v8, v9, v10
-
-    .line 394
-    .local v8, stateCountTotal:I
+    .line 396
+    .local v7, stateCountTotal:I
     invoke-static {p1, p3}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->centerFromEnd([II)F
 
     move-result v2
 
-    .line 395
+    .line 397
     .local v2, centerJ:F
-    float-to-int v9, v2
+    float-to-int v8, v2
+
+    const/4 v9, 0x2
+
+    aget v9, p1, v9
+
+    invoke-direct {p0, p2, v8, v9, v7}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->crossCheckVertical(IIII)F
+
+    move-result v1
+
+    .line 398
+    .local v1, centerI:F
+    invoke-static {v1}, Ljava/lang/Float;->isNaN(F)Z
+
+    move-result v8
+
+    if-nez v8, :cond_3
+
+    .line 400
+    float-to-int v8, v2
+
+    float-to-int v9, v1
 
     const/4 v10, 0x2
 
     aget v10, p1, v10
 
-    invoke-direct {p0, p2, v9, v10, v8}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->crossCheckVertical(IIII)F
-
-    move-result v1
-
-    .line 396
-    .local v1, centerI:F
-    invoke-static {v1}, Ljava/lang/Float;->isNaN(F)Z
-
-    move-result v9
-
-    if-nez v9, :cond_3
-
-    .line 398
-    float-to-int v9, v2
-
-    float-to-int v10, v1
-
-    const/4 v11, 0x2
-
-    aget v11, p1, v11
-
-    invoke-direct {p0, v9, v10, v11, v8}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->crossCheckHorizontal(IIII)F
+    invoke-direct {p0, v8, v9, v10, v7}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->crossCheckHorizontal(IIII)F
 
     move-result v2
 
-    .line 399
+    .line 401
     invoke-static {v2}, Ljava/lang/Float;->isNaN(F)Z
 
-    move-result v9
+    move-result v8
 
-    if-nez v9, :cond_3
+    if-nez v8, :cond_3
 
-    .line 400
-    int-to-float v9, v8
+    .line 402
+    int-to-float v8, v7
 
-    const/high16 v10, 0x40e0
+    const/high16 v9, 0x40e0
 
-    div-float v3, v9, v10
+    div-float v3, v8, v9
 
-    .line 401
+    .line 403
     .local v3, estimatedModuleSize:F
     const/4 v4, 0x0
 
-    .line 402
+    .line 404
     .local v4, found:Z
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
-
-    invoke-virtual {v9}, Ljava/util/Vector;->size()I
-
-    move-result v6
-
-    .line 403
-    .local v6, max:I
     const/4 v5, 0x0
 
     .local v5, index:I
     :goto_0
-    if-ge v5, v6, :cond_0
+    iget-object v8, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    .line 404
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    invoke-interface {v8}, Ljava/util/List;->size()I
 
-    invoke-virtual {v9, v5}, Ljava/util/Vector;->elementAt(I)Ljava/lang/Object;
+    move-result v8
+
+    if-ge v5, v8, :cond_0
+
+    .line 405
+    iget-object v8, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
+
+    invoke-interface {v8, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/zxing/qrcode/detector/FinderPattern;
 
-    .line 406
+    .line 407
     .local v0, center:Lcom/google/zxing/qrcode/detector/FinderPattern;
     invoke-virtual {v0, v3, v1, v2}, Lcom/google/zxing/qrcode/detector/FinderPattern;->aboutEquals(FFF)Z
 
-    move-result v9
+    move-result v8
 
-    if-eqz v9, :cond_2
-
-    .line 407
-    invoke-virtual {v0}, Lcom/google/zxing/qrcode/detector/FinderPattern;->incrementCount()V
+    if-eqz v8, :cond_2
 
     .line 408
+    iget-object v8, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/zxing/qrcode/detector/FinderPattern;->combineEstimate(FFF)Lcom/google/zxing/qrcode/detector/FinderPattern;
+
+    move-result-object v9
+
+    invoke-interface {v8, v5, v9}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    .line 409
     const/4 v4, 0x1
 
-    .line 412
+    .line 413
     .end local v0           #center:Lcom/google/zxing/qrcode/detector/FinderPattern;
     :cond_0
     if-nez v4, :cond_1
 
-    .line 413
-    new-instance v7, Lcom/google/zxing/qrcode/detector/FinderPattern;
-
-    invoke-direct {v7, v2, v1, v3}, Lcom/google/zxing/qrcode/detector/FinderPattern;-><init>(FFF)V
-
     .line 414
-    .local v7, point:Lcom/google/zxing/ResultPoint;
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/Vector;
+    new-instance v6, Lcom/google/zxing/qrcode/detector/FinderPattern;
 
-    invoke-virtual {v9, v7}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
+    invoke-direct {v6, v2, v1, v3}, Lcom/google/zxing/qrcode/detector/FinderPattern;-><init>(FFF)V
 
     .line 415
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->resultPointCallback:Lcom/google/zxing/ResultPointCallback;
+    .local v6, point:Lcom/google/zxing/qrcode/detector/FinderPattern;
+    iget-object v8, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->possibleCenters:Ljava/util/List;
 
-    if-eqz v9, :cond_1
+    invoke-interface {v8, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 416
-    iget-object v9, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->resultPointCallback:Lcom/google/zxing/ResultPointCallback;
+    iget-object v8, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->resultPointCallback:Lcom/google/zxing/ResultPointCallback;
 
-    invoke-interface {v9, v7}, Lcom/google/zxing/ResultPointCallback;->foundPossibleResultPoint(Lcom/google/zxing/ResultPoint;)V
+    if-eqz v8, :cond_1
 
-    .line 419
-    .end local v7           #point:Lcom/google/zxing/ResultPoint;
+    .line 417
+    iget-object v8, p0, Lcom/google/zxing/qrcode/detector/FinderPatternFinder;->resultPointCallback:Lcom/google/zxing/ResultPointCallback;
+
+    invoke-interface {v8, v6}, Lcom/google/zxing/ResultPointCallback;->foundPossibleResultPoint(Lcom/google/zxing/ResultPoint;)V
+
+    .line 420
+    .end local v6           #point:Lcom/google/zxing/qrcode/detector/FinderPattern;
     :cond_1
-    const/4 v9, 0x1
+    const/4 v8, 0x1
 
-    .line 422
+    .line 423
     .end local v3           #estimatedModuleSize:F
     .end local v4           #found:Z
     .end local v5           #index:I
-    .end local v6           #max:I
     :goto_1
-    return v9
+    return v8
 
-    .line 403
+    .line 404
     .restart local v0       #center:Lcom/google/zxing/qrcode/detector/FinderPattern;
     .restart local v3       #estimatedModuleSize:F
     .restart local v4       #found:Z
     .restart local v5       #index:I
-    .restart local v6       #max:I
     :cond_2
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 422
+    .line 423
     .end local v0           #center:Lcom/google/zxing/qrcode/detector/FinderPattern;
     .end local v3           #estimatedModuleSize:F
     .end local v4           #found:Z
     .end local v5           #index:I
-    .end local v6           #max:I
     :cond_3
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
     goto :goto_1
 .end method

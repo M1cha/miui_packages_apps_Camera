@@ -1065,7 +1065,7 @@
     .line 266
     iget-object v0, p0, Lcom/android/gallery3d/data/LocalSource;->mApplication:Lcom/android/camera/CameraAppImpl;
 
-    invoke-virtual {v0}, Lcom/android/camera/CameraAppImpl;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v0}, Landroid/content/ContextWrapper;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 

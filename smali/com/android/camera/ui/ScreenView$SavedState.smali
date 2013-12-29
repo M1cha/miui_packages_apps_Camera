@@ -36,7 +36,7 @@
     .locals 1
 
     .prologue
-    .line 1706
+    .line 1709
     new-instance v0, Lcom/android/camera/ui/ScreenView$SavedState$1;
 
     invoke-direct {v0}, Lcom/android/camera/ui/ScreenView$SavedState$1;-><init>()V
@@ -51,22 +51,22 @@
     .parameter "in"
 
     .prologue
-    .line 1696
+    .line 1699
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 1689
+    .line 1692
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/camera/ui/ScreenView$SavedState;->currentScreen:I
 
-    .line 1697
+    .line 1700
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/camera/ui/ScreenView$SavedState;->currentScreen:I
 
-    .line 1698
+    .line 1701
     return-void
 .end method
 
@@ -76,7 +76,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1688
+    .line 1691
     invoke-direct {p0, p1}, Lcom/android/camera/ui/ScreenView$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -87,15 +87,15 @@
     .parameter "superState"
 
     .prologue
-    .line 1692
+    .line 1695
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 1689
+    .line 1692
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/camera/ui/ScreenView$SavedState;->currentScreen:I
 
-    .line 1693
+    .line 1696
     return-void
 .end method
 
@@ -107,14 +107,14 @@
     .parameter "flags"
 
     .prologue
-    .line 1702
-    invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
+    .line 1705
+    invoke-super {p0, p1, p2}, Landroid/view/AbsSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1703
+    .line 1706
     iget v0, p0, Lcom/android/camera/ui/ScreenView$SavedState;->currentScreen:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1704
+    .line 1707
     return-void
 .end method

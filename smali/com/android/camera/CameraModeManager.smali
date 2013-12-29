@@ -141,11 +141,11 @@
     .line 42
     .local v0, indicatorKeys:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     :goto_0
-    invoke-virtual {p0}, Lcom/android/camera/CameraModeManager;->getSettingView()Lcom/android/camera/ui/SettingView;
+    invoke-virtual {p0}, Lcom/android/camera/ModeManager;->getSettingView()Lcom/android/camera/ui/SettingView;
 
     move-result-object v1
 
-    invoke-virtual {p0}, Lcom/android/camera/CameraModeManager;->getPreferenceGroup()Lcom/android/camera/PreferenceGroup;
+    invoke-virtual {p0}, Lcom/android/camera/ModeManager;->getPreferenceGroup()Lcom/android/camera/PreferenceGroup;
 
     move-result-object v2
 

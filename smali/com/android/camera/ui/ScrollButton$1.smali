@@ -21,10 +21,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ui/ScrollButton;)V
     .locals 0
-    .parameter
 
     .prologue
-    .line 53
+    .line 56
     iput-object p1, p0, Lcom/android/camera/ui/ScrollButton$1;->this$0:Lcom/android/camera/ui/ScrollButton;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,16 +38,16 @@
     .parameter "m"
 
     .prologue
-    .line 55
+    .line 58
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 60
+    .line 63
     :goto_0
     return-void
 
-    .line 57
+    .line 60
     :pswitch_0
     iget-object v0, p0, Lcom/android/camera/ui/ScrollButton$1;->this$0:Lcom/android/camera/ui/ScrollButton;
 
@@ -57,7 +56,7 @@
 
     goto :goto_0
 
-    .line 55
+    .line 58
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
