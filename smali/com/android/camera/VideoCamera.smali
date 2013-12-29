@@ -2596,7 +2596,7 @@
     :cond_3
     iget-object v0, p0, Lcom/android/camera/ActivityBase;->mParameters:Landroid/hardware/Camera$Parameters;
 
-    invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->isSingleOutputEnabled()Z
+    invoke-static {v0}, Lcom/android/camera/CameraParameters;->isSingleOutputEnabled(Landroid/hardware/Camera$Parameters;)Z
 
     move-result v0
 
