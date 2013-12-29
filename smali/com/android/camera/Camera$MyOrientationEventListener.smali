@@ -110,7 +110,7 @@
 
     iget v3, v3, Lcom/android/camera/ActivityBase;->mOrientation:I
 
-    invoke-virtual {v2, v3}, Landroid/hardware/Camera$Parameters;->setOrientation(I)V
+    invoke-static {v2, v3}, Lcom/android/camera/CameraParameters;->setOrientation(Landroid/hardware/Camera$Parameters;I)V
 
     .line 1568
     iget-object v2, p0, Lcom/android/camera/Camera$MyOrientationEventListener;->this$0:Lcom/android/camera/Camera;

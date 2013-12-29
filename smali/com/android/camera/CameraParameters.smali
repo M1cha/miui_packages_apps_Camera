@@ -37,3 +37,18 @@
 
     return v1
 .end method
+
+.method public static setOrientation(Landroid/hardware/Camera$Parameters;I)V
+    .locals 1
+    .parameter "orientation"
+
+    .prologue
+    .line 2922
+    const-string/jumbo v0, "orientation"
+
+    invoke-virtual {p0, v0, p1}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;I)V
+
+    .line 2923
+    return-void
+.end method
+
