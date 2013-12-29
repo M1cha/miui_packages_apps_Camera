@@ -25,13 +25,13 @@
     .parameter "context"
 
     .prologue
-    .line 532
+    .line 546
     iput-object p1, p0, Lcom/android/camera/VideoCamera$MyOrientationEventListener;->this$0:Lcom/android/camera/VideoCamera;
 
-    .line 533
+    .line 547
     invoke-direct {p0, p2}, Landroid/view/OrientationEventListener;-><init>(Landroid/content/Context;)V
 
-    .line 534
+    .line 548
     return-void
 .end method
 
@@ -42,17 +42,17 @@
     .parameter "orientation"
 
     .prologue
-    .line 541
+    .line 555
     const/4 v2, -0x1
 
     if-ne p1, v2, :cond_1
 
-    .line 565
+    .line 579
     :cond_0
     :goto_0
     return-void
 
-    .line 542
+    .line 556
     :cond_1
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyOrientationEventListener;->this$0:Lcom/android/camera/VideoCamera;
 
@@ -62,7 +62,7 @@
 
     move-result v0
 
-    .line 544
+    .line 558
     .local v0, newOrientation:I
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyOrientationEventListener;->this$0:Lcom/android/camera/VideoCamera;
 
@@ -70,12 +70,12 @@
 
     if-eq v2, v0, :cond_2
 
-    .line 545
+    .line 559
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyOrientationEventListener;->this$0:Lcom/android/camera/VideoCamera;
 
     iput v0, v2, Lcom/android/camera/ActivityBase;->mOrientation:I
 
-    .line 551
+    .line 565
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyOrientationEventListener;->this$0:Lcom/android/camera/VideoCamera;
 
     #calls: Lcom/android/camera/VideoCamera;->effectsActive()Z
@@ -85,7 +85,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 552
+    .line 566
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyOrientationEventListener;->this$0:Lcom/android/camera/VideoCamera;
 
     #getter for: Lcom/android/camera/VideoCamera;->mEffectsRecorder:Lcom/android/camera/EffectsRecorder;
@@ -99,7 +99,7 @@
 
     invoke-virtual {v2, v3}, Lcom/android/camera/EffectsRecorder;->setOrientationHint(I)V
 
-    .line 558
+    .line 572
     :cond_2
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyOrientationEventListener;->this$0:Lcom/android/camera/VideoCamera;
 
@@ -115,7 +115,7 @@
 
     rem-int/lit16 v1, v2, 0x168
 
-    .line 561
+    .line 575
     .local v1, orientationCompensation:I
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyOrientationEventListener;->this$0:Lcom/android/camera/VideoCamera;
 
@@ -123,12 +123,12 @@
 
     if-eq v2, v1, :cond_0
 
-    .line 562
+    .line 576
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyOrientationEventListener;->this$0:Lcom/android/camera/VideoCamera;
 
     iput v1, v2, Lcom/android/camera/ActivityBase;->mOrientationCompensation:I
 
-    .line 563
+    .line 577
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyOrientationEventListener;->this$0:Lcom/android/camera/VideoCamera;
 
     iget-object v3, p0, Lcom/android/camera/VideoCamera$MyOrientationEventListener;->this$0:Lcom/android/camera/VideoCamera;

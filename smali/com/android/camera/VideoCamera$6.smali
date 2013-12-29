@@ -1,4 +1,4 @@
-.class Lcom/android/camera/VideoCamera$5;
+.class Lcom/android/camera/VideoCamera$6;
 .super Ljava/lang/Object;
 .source "VideoCamera.java"
 
@@ -26,8 +26,8 @@
     .locals 0
 
     .prologue
-    .line 2899
-    iput-object p1, p0, Lcom/android/camera/VideoCamera$5;->this$0:Lcom/android/camera/VideoCamera;
+    .line 3071
+    iput-object p1, p0, Lcom/android/camera/VideoCamera$6;->this$0:Lcom/android/camera/VideoCamera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,11 +40,11 @@
     .locals 1
 
     .prologue
-    .line 2901
-    iget-object v0, p0, Lcom/android/camera/VideoCamera$5;->this$0:Lcom/android/camera/VideoCamera;
+    .line 3073
+    iget-object v0, p0, Lcom/android/camera/VideoCamera$6;->this$0:Lcom/android/camera/VideoCamera;
 
     invoke-virtual {v0}, Lcom/android/camera/VideoCamera;->openSettingActivity()V
 
-    .line 2902
+    .line 3074
     return-void
 .end method

@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 940
+    .line 941
     iput-object p1, p0, Lcom/android/camera/Camera$AutoFocusMoveCallback;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .parameter "x1"
 
     .prologue
-    .line 940
+    .line 941
     invoke-direct {p0, p1}, Lcom/android/camera/Camera$AutoFocusMoveCallback;-><init>(Lcom/android/camera/Camera;)V
 
     return-void
@@ -54,7 +54,7 @@
     .parameter "camera"
 
     .prologue
-    .line 945
+    .line 946
     iget-object v0, p0, Lcom/android/camera/Camera$AutoFocusMoveCallback;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
@@ -64,6 +64,6 @@
 
     invoke-virtual {v0, p1}, Lcom/android/camera/FocusManager;->onAutoFocusMoving(Z)V
 
-    .line 946
+    .line 947
     return-void
 .end method

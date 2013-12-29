@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 681
+    .line 682
     iput-object p1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -39,12 +39,12 @@
     .parameter "intent"
 
     .prologue
-    .line 684
+    .line 685
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 685
+    .line 686
     .local v0, action:Ljava/lang/String;
     const-string v1, "camera"
 
@@ -68,7 +68,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 686
+    .line 687
     const-string v1, "android.intent.action.MEDIA_MOUNTED"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -93,7 +93,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 689
+    .line 690
     :cond_0
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
@@ -101,12 +101,12 @@
 
     invoke-virtual {v1}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
 
-    .line 696
+    .line 697
     :cond_1
     :goto_0
     return-void
 
-    .line 690
+    .line 691
     :cond_2
     const-string v1, "android.intent.action.MEDIA_SCANNER_FINISHED"
 
@@ -116,14 +116,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 691
+    .line 692
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
     iget-object v1, v1, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
 
     invoke-virtual {v1}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
 
-    .line 692
+    .line 693
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
     #getter for: Lcom/android/camera/Camera;->mIsImageCaptureIntent:Z
@@ -133,7 +133,7 @@
 
     if-nez v1, :cond_1
 
-    .line 693
+    .line 694
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
     invoke-virtual {v1}, Lcom/android/camera/ActivityBase;->getLastThumbnail()V

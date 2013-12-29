@@ -1,4 +1,4 @@
-.class Lcom/android/camera/VideoCamera$2;
+.class Lcom/android/camera/VideoCamera$4;
 .super Ljava/lang/Object;
 .source "VideoCamera.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/camera/VideoCamera;->onCreate(Landroid/os/Bundle;)V
+    value = Lcom/android/camera/VideoCamera;->initializeMiscControls()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,8 +26,8 @@
     .locals 0
 
     .prologue
-    .line 511
-    iput-object p1, p0, Lcom/android/camera/VideoCamera$2;->this$0:Lcom/android/camera/VideoCamera;
+    .line 2809
+    iput-object p1, p0, Lcom/android/camera/VideoCamera$4;->this$0:Lcom/android/camera/VideoCamera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,11 +41,12 @@
     .parameter "v"
 
     .prologue
-    .line 514
-    iget-object v0, p0, Lcom/android/camera/VideoCamera$2;->this$0:Lcom/android/camera/VideoCamera;
+    .line 2813
+    iget-object v0, p0, Lcom/android/camera/VideoCamera$4;->this$0:Lcom/android/camera/VideoCamera;
 
-    invoke-virtual {v0}, Lcom/android/camera/VideoCamera;->switchHDR()V
+    #calls: Lcom/android/camera/VideoCamera;->capture()Z
+    invoke-static {v0}, Lcom/android/camera/VideoCamera;->access$3000(Lcom/android/camera/VideoCamera;)Z
 
-    .line 515
+    .line 2814
     return-void
 .end method

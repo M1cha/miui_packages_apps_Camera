@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 915
+    .line 916
     iput-object p1, p0, Lcom/android/camera/Camera$4;->this$0:Lcom/android/camera/Camera;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "fromtouch"
 
     .prologue
-    .line 920
+    .line 921
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .parameter "bar"
 
     .prologue
-    .line 918
+    .line 919
     return-void
 .end method
 
@@ -61,6 +61,6 @@
     .parameter "bar"
 
     .prologue
-    .line 922
+    .line 923
     return-void
 .end method
