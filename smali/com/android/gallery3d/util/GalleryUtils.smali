@@ -150,7 +150,7 @@
     if-nez v1, :cond_0
 
     .line 288
-    const v4, 0x7f0d01a9
+    const v4, 0x7f0d01ac
 
     invoke-virtual {p0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -182,7 +182,7 @@
     .line 290
     .end local v0           #durationValue:Ljava/lang/String;
     :cond_0
-    const v4, 0x7f0d01aa
+    const v4, 0x7f0d01ad
 
     invoke-virtual {p0, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

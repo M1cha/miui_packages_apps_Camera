@@ -389,10 +389,12 @@
     <string name="wifi_open_fail">无法打开WLAN</string>
     <string name="wifi_connect_fail">WLAN连接失败或超时</string>
     <string name="wifi_connect_success">WLAN连接成功</string>
+    <string name="wifi_connect_not_found">无法扫描到该WLAN</string>
+    <string name="wifi_connect_current_connetion">您已经连接上了该WLAN</string>
     <string name="pref_camera_watermark_title">时间水印</string>
     <string name="pref_camera_watermark_entry_off">关</string>
     <string name="pref_camera_watermark_entry_on">开</string>
+    <string name="pref_camera_picturesize_entry_1024x768">80万</string>
     <string name="pref_camera_id_entry_back">背面相机</string>
     <string name="pref_camera_id_entry_front">正面相机</string>
-    <string name="pref_camera_picturesize_entry_1024x768">80万</string>
 </resources>

@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 1040
+    .line 1042
     iput-object p1, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-direct {p0}, Lcom/android/gallery3d/app/AppBridge;-><init>()V
@@ -46,7 +46,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1040
+    .line 1042
     invoke-direct {p0, p1}, Lcom/android/camera/ActivityBase$MyAppBridge;->switchWithCaptureAnimation(I)V
 
     return-void
@@ -58,7 +58,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1040
+    .line 1042
     invoke-direct {p0, p1}, Lcom/android/camera/ActivityBase$MyAppBridge;->setCameraRelativeFrame(Landroid/graphics/Rect;)V
 
     return-void
@@ -70,7 +70,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1040
+    .line 1042
     invoke-direct {p0, p1}, Lcom/android/camera/ActivityBase$MyAppBridge;->setSwipingEnabled(Z)V
 
     return-void
@@ -81,7 +81,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1040
+    .line 1042
     invoke-direct {p0}, Lcom/android/camera/ActivityBase$MyAppBridge;->notifyScreenNailChanged()V
 
     return-void
@@ -91,7 +91,7 @@
     .locals 1
 
     .prologue
-    .line 1135
+    .line 1137
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mServer:Lcom/android/gallery3d/app/AppBridge$Server;
 
     if-eqz v0, :cond_0
@@ -100,7 +100,7 @@
 
     invoke-interface {v0}, Lcom/android/gallery3d/app/AppBridge$Server;->notifyScreenNailChanged()V
 
-    .line 1136
+    .line 1138
     :cond_0
     return-void
 .end method
@@ -110,7 +110,7 @@
     .parameter "frame"
 
     .prologue
-    .line 1123
+    .line 1125
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mServer:Lcom/android/gallery3d/app/AppBridge$Server;
 
     if-eqz v0, :cond_0
@@ -119,7 +119,7 @@
 
     invoke-interface {v0, p1}, Lcom/android/gallery3d/app/AppBridge$Server;->setCameraRelativeFrame(Landroid/graphics/Rect;)V
 
-    .line 1124
+    .line 1126
     :cond_0
     return-void
 .end method
@@ -129,7 +129,7 @@
     .parameter "enabled"
 
     .prologue
-    .line 1131
+    .line 1133
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mServer:Lcom/android/gallery3d/app/AppBridge$Server;
 
     if-eqz v0, :cond_0
@@ -138,7 +138,7 @@
 
     invoke-interface {v0, p1}, Lcom/android/gallery3d/app/AppBridge$Server;->setSwipingEnabled(Z)V
 
-    .line 1132
+    .line 1134
     :cond_0
     return-void
 .end method
@@ -148,7 +148,7 @@
     .parameter "offset"
 
     .prologue
-    .line 1127
+    .line 1129
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mServer:Lcom/android/gallery3d/app/AppBridge$Server;
 
     if-eqz v0, :cond_0
@@ -157,7 +157,7 @@
 
     invoke-interface {v0, p1}, Lcom/android/gallery3d/app/AppBridge$Server;->switchWithCaptureAnimation(I)Z
 
-    .line 1128
+    .line 1130
     :cond_0
     return-void
 .end method
@@ -168,19 +168,19 @@
     .locals 1
 
     .prologue
-    .line 1047
+    .line 1049
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mCameraScreenNail:Lcom/android/camera/CameraScreenNail;
 
     if-nez v0, :cond_0
 
-    .line 1048
+    .line 1050
     new-instance v0, Lcom/android/camera/CameraScreenNail;
 
     invoke-direct {v0, p0}, Lcom/android/camera/CameraScreenNail;-><init>(Lcom/android/camera/CameraScreenNail$Listener;)V
 
     iput-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mCameraScreenNail:Lcom/android/camera/CameraScreenNail;
 
-    .line 1050
+    .line 1052
     :cond_0
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mCameraScreenNail:Lcom/android/camera/CameraScreenNail;
 
@@ -191,7 +191,7 @@
     .locals 1
 
     .prologue
-    .line 1061
+    .line 1063
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->recreateCameraScreenNail()Z
@@ -205,12 +205,12 @@
     .locals 1
 
     .prologue
-    .line 1055
+    .line 1057
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mCameraScreenNail:Lcom/android/camera/CameraScreenNail;
 
-    .line 1056
+    .line 1058
     return-void
 .end method
 
@@ -218,7 +218,7 @@
     .locals 1
 
     .prologue
-    .line 1065
+    .line 1067
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mCameraScreenNail:Lcom/android/camera/CameraScreenNail;
 
     return-object v0
@@ -228,7 +228,7 @@
     .locals 1
 
     .prologue
-    .line 1157
+    .line 1159
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->this$0:Lcom/android/camera/ActivityBase;
 
     iget v0, v0, Lcom/android/camera/ActivityBase;->mOrientation:I
@@ -240,7 +240,7 @@
     .locals 1
 
     .prologue
-    .line 1146
+    .line 1148
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mServer:Lcom/android/gallery3d/app/AppBridge$Server;
 
     if-eqz v0, :cond_0
@@ -251,7 +251,7 @@
 
     move-result v0
 
-    .line 1147
+    .line 1149
     :goto_0
     return v0
 
@@ -265,7 +265,7 @@
     .locals 1
 
     .prologue
-    .line 1119
+    .line 1121
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->isPanoramaActivity()Z
@@ -281,12 +281,12 @@
     .parameter "y"
 
     .prologue
-    .line 1167
+    .line 1169
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->tryRemoveCountDownMessage()V
 
-    .line 1168
+    .line 1170
     return-void
 .end method
 
@@ -295,13 +295,13 @@
     .parameter "full"
 
     .prologue
-    .line 1099
+    .line 1101
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->this$0:Lcom/android/camera/ActivityBase;
 
     #calls: Lcom/android/camera/ActivityBase;->onFullScreenChanged(Z)V
     invoke-static {v0, p1}, Lcom/android/camera/ActivityBase;->access$800(Lcom/android/camera/ActivityBase;Z)V
 
-    .line 1100
+    .line 1102
     return-void
 .end method
 
@@ -310,12 +310,12 @@
     .parameter "e"
 
     .prologue
-    .line 1152
+    .line 1154
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-virtual {v0, p1}, Lcom/android/camera/ActivityBase;->onLongPress(Landroid/view/MotionEvent;)V
 
-    .line 1153
+    .line 1155
     return-void
 .end method
 
@@ -323,12 +323,12 @@
     .locals 1
 
     .prologue
-    .line 1109
+    .line 1111
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->onPreviewTextureCopied()V
 
-    .line 1110
+    .line 1112
     return-void
 .end method
 
@@ -339,14 +339,14 @@
     .parameter "scale"
 
     .prologue
-    .line 1082
+    .line 1084
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->this$0:Lcom/android/camera/ActivityBase;
 
     iget-object v0, v0, Lcom/android/camera/ActivityBase;->mZoomControl:Lcom/android/camera/ui/ZoomControl;
 
     if-eqz v0, :cond_0
 
-    .line 1083
+    .line 1085
     iget v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mZoomScaled:F
 
     const/high16 v1, 0x3f80
@@ -357,7 +357,7 @@
 
     iput v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mZoomScaled:F
 
-    .line 1084
+    .line 1086
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->this$0:Lcom/android/camera/ActivityBase;
 
     iget-object v0, v0, Lcom/android/camera/ActivityBase;->mZoomControl:Lcom/android/camera/ui/ZoomControl;
@@ -370,12 +370,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 1085
+    .line 1087
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mZoomScaled:F
 
-    .line 1088
+    .line 1090
     :cond_0
     const/4 v0, 0x0
 
@@ -388,12 +388,12 @@
     .parameter "focusY"
 
     .prologue
-    .line 1076
+    .line 1078
     const/4 v0, 0x1
 
     iput v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mZoomScaled:F
 
-    .line 1077
+    .line 1079
     const/4 v0, 0x1
 
     return v0
@@ -405,7 +405,7 @@
     .parameter "y"
 
     .prologue
-    .line 1071
+    .line 1073
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/camera/ActivityBase;->onSingleTapUp(II)Z
@@ -419,7 +419,7 @@
     .locals 1
 
     .prologue
-    .line 1104
+    .line 1106
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-virtual {v0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
@@ -428,7 +428,7 @@
 
     invoke-interface {v0}, Lcom/android/gallery3d/ui/GLRoot;->requestRender()V
 
-    .line 1105
+    .line 1107
     return-void
 .end method
 
@@ -437,7 +437,7 @@
     .parameter "isSecure"
 
     .prologue
-    .line 1139
+    .line 1141
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mServer:Lcom/android/gallery3d/app/AppBridge$Server;
 
     if-eqz v0, :cond_0
@@ -446,7 +446,7 @@
 
     invoke-interface {v0, p1}, Lcom/android/gallery3d/app/AppBridge$Server;->setSecure(Z)V
 
-    .line 1140
+    .line 1142
     :cond_0
     return-void
 .end method
@@ -456,7 +456,7 @@
     .parameter "size"
 
     .prologue
-    .line 1142
+    .line 1144
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mServer:Lcom/android/gallery3d/app/AppBridge$Server;
 
     if-eqz v0, :cond_0
@@ -465,7 +465,7 @@
 
     invoke-interface {v0, p1}, Lcom/android/gallery3d/app/AppBridge$Server;->setSecureSize(I)V
 
-    .line 1143
+    .line 1145
     :cond_0
     return-void
 .end method
@@ -475,10 +475,10 @@
     .parameter "s"
 
     .prologue
-    .line 1114
+    .line 1116
     iput-object p1, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mServer:Lcom/android/gallery3d/app/AppBridge$Server;
 
-    .line 1115
+    .line 1117
     return-void
 .end method
 
@@ -486,11 +486,11 @@
     .locals 1
 
     .prologue
-    .line 1162
+    .line 1164
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->switchModeLayout()V
 
-    .line 1163
+    .line 1165
     return-void
 .end method

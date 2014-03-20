@@ -1106,7 +1106,7 @@
 
     .line 223
     .local v6, activity:Landroid/app/Activity;
-    const v0, 0x7f0d01bc
+    const v0, 0x7f0d01bf
 
     invoke-virtual {v6, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1124,7 +1124,7 @@
     .end local v6           #activity:Landroid/app/Activity;
     .end local v7           #intent:Landroid/content/Intent;
     :pswitch_4
-    const v2, 0x7f0d019e
+    const v2, 0x7f0d01a1
 
     .local v2, title:I
     :goto_1
@@ -1146,7 +1146,7 @@
     .line 231
     .end local v2           #title:I
     :pswitch_5
-    const v2, 0x7f0d01a2
+    const v2, 0x7f0d01a5
 
     .line 232
     .restart local v2       #title:I
@@ -1155,7 +1155,7 @@
     .line 234
     .end local v2           #title:I
     :pswitch_6
-    const v2, 0x7f0d01a1
+    const v2, 0x7f0d01a4
 
     .line 235
     .restart local v2       #title:I
@@ -1164,7 +1164,7 @@
     .line 237
     .end local v2           #title:I
     :pswitch_7
-    const v2, 0x7f0d01a5
+    const v2, 0x7f0d01a8
 
     .line 238
     .restart local v2       #title:I
@@ -1173,7 +1173,7 @@
     .line 240
     .end local v2           #title:I
     :pswitch_8
-    const v2, 0x7f0d019d
+    const v2, 0x7f0d01a0
 
     .line 241
     .restart local v2       #title:I
@@ -1238,7 +1238,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d019e
+    const v3, 0x7f0d01a1
 
     invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -1248,13 +1248,13 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d01ba
+    const v3, 0x7f0d01bd
 
     invoke-virtual {v2, v3, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v2
 
-    const v3, 0x7f0d01bb
+    const v3, 0x7f0d01be
 
     invoke-virtual {v2, v3, v1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 

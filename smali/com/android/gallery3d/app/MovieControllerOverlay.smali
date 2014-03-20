@@ -166,7 +166,7 @@
 
     .line 103
     .local v0, loadingText:Landroid/widget/TextView;
-    const v5, 0x7f0d01cb
+    const v5, 0x7f0d01ce
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(I)V
 

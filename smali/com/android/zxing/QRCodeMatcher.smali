@@ -823,6 +823,10 @@
 
     move-result-object v7
 
+    invoke-static {v7}, Lcom/android/zxing/WiFiUtil;->removeDoubleQuotes(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
     invoke-virtual {v3, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0

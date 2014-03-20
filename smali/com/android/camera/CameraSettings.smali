@@ -1066,7 +1066,7 @@
     if-eqz v0, :cond_0
 
     .line 972
-    const v0, 0x7f0d01ed
+    const v0, 0x7f0d01f0
 
     .line 985
     :goto_0
@@ -1092,7 +1092,7 @@
 
     .line 975
     :cond_1
-    const v0, 0x7f0d01ea
+    const v0, 0x7f0d01ed
 
     goto :goto_0
 
@@ -1107,7 +1107,7 @@
     if-eqz v0, :cond_3
 
     .line 977
-    const v0, 0x7f0d01eb
+    const v0, 0x7f0d01ee
 
     goto :goto_0
 
@@ -1122,7 +1122,7 @@
     if-eqz v0, :cond_4
 
     .line 979
-    const v0, 0x7f0d01ee
+    const v0, 0x7f0d01f1
 
     goto :goto_0
 
@@ -1137,7 +1137,7 @@
     if-eqz v0, :cond_5
 
     .line 981
-    const v0, 0x7f0d01ec
+    const v0, 0x7f0d01ef
 
     goto :goto_0
 
@@ -1152,7 +1152,7 @@
     if-eqz v0, :cond_6
 
     .line 983
-    const v0, 0x7f0d01ef
+    const v0, 0x7f0d01f2
 
     goto :goto_0
 
@@ -1941,7 +1941,7 @@
 
     const-string v1, "pref_camera_burst_shooting_key"
 
-    const v2, 0x7f0d0188
+    const v2, 0x7f0d018b
 
     invoke-static {v2}, Lcom/android/camera/CameraSettings;->getString(I)Ljava/lang/String;
 
@@ -1998,7 +1998,7 @@
     if-nez v2, :cond_0
 
     .line 1034
-    const v2, 0x7f0d0192
+    const v2, 0x7f0d0195
 
     invoke-static {p1, v2, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
 
@@ -2137,7 +2137,7 @@
     .line 292
     const-string v1, "pref_camera_movie_solid_key"
 
-    const v2, 0x7f0d0194
+    const v2, 0x7f0d0197
 
     invoke-static {v2}, Lcom/android/camera/CameraSettings;->getString(I)Ljava/lang/String;
 
@@ -2149,7 +2149,7 @@
 
     .line 295
     .local v0, movieSolid:Ljava/lang/String;
-    const v1, 0x7f0d0199
+    const v1, 0x7f0d019c
 
     invoke-static {v1}, Lcom/android/camera/CameraSettings;->getString(I)Ljava/lang/String;
 

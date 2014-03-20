@@ -56,9 +56,9 @@
 
     new-instance v0, Lcom/android/gallery3d/app/GalleryActionBar$ActionItem;
 
-    const v4, 0x7f0d01e6
+    const v4, 0x7f0d01e9
 
-    const v5, 0x7f0d01d5
+    const v5, 0x7f0d01d8
 
     move v2, v1
 
@@ -68,11 +68,11 @@
 
     new-instance v4, Lcom/android/gallery3d/app/GalleryActionBar$ActionItem;
 
-    const v8, 0x7f0d01da
+    const v8, 0x7f0d01dd
 
-    const v9, 0x7f0d01cc
+    const v9, 0x7f0d01cf
 
-    const v10, 0x7f0d01d7
+    const v10, 0x7f0d01da
 
     move v5, v13
 
@@ -86,11 +86,11 @@
 
     new-instance v4, Lcom/android/gallery3d/app/GalleryActionBar$ActionItem;
 
-    const v8, 0x7f0d01e4
+    const v8, 0x7f0d01e7
 
-    const v9, 0x7f0d01d2
+    const v9, 0x7f0d01d5
 
-    const v10, 0x7f0d01d9
+    const v10, 0x7f0d01dc
 
     move v5, v12
 
@@ -108,9 +108,9 @@
 
     const/16 v5, 0x20
 
-    const v8, 0x7f0d01db
+    const v8, 0x7f0d01de
 
-    const v9, 0x7f0d01d6
+    const v9, 0x7f0d01d9
 
     move v6, v1
 
@@ -124,9 +124,9 @@
 
     const/16 v5, 0x8
 
-    const v8, 0x7f0d01e3
+    const v8, 0x7f0d01e6
 
-    const v9, 0x7f0d01d8
+    const v9, 0x7f0d01db
 
     move v6, v1
 

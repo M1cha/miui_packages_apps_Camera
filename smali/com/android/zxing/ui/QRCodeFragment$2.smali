@@ -177,7 +177,7 @@
     .line 285
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    #calls: Lcom/android/zxing/ui/QRCodeFragment;->connectToWifi()V
+    #calls: Lcom/android/zxing/ui/QRCodeFragment;->connectWiFi()V
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$800(Lcom/android/zxing/ui/QRCodeFragment;)V
 
     goto :goto_0

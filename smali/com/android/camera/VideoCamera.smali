@@ -6333,7 +6333,7 @@
     .line 876
     new-instance v0, Lcom/android/camera/ui/RotateTextToast;
 
-    const v1, 0x7f0d0193
+    const v1, 0x7f0d0196
 
     iget v2, p0, Lcom/android/camera/ActivityBase;->mOrientation:I
 
@@ -10344,7 +10344,7 @@
     iput-wide v0, p0, Lcom/android/camera/VideoCamera;->mLastBackPressedTime:J
 
     .line 1225
-    const v0, 0x7f0d018c
+    const v0, 0x7f0d018f
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -12424,13 +12424,11 @@
 .end method
 
 .method protected performShutterClick()V
-    .locals 1
+    .locals 0
 
     .prologue
     .line 1296
-    iget-object v0, p0, Lcom/android/camera/ActivityBase;->mShutterButton:Lcom/android/camera/ShutterButton;
-
-    invoke-virtual {v0}, Landroid/view/View;->performClick()Z
+    invoke-virtual {p0}, Lcom/android/camera/VideoCamera;->onShutterButtonClick()V
 
     .line 1297
     return-void

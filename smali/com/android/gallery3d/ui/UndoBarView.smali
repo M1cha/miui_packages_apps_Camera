@@ -173,7 +173,7 @@
     iput-object v0, p0, Lcom/android/gallery3d/ui/UndoBarView;->mPanel:Lcom/android/gallery3d/ui/NinePatchTexture;
 
     .line 70
-    const v0, 0x7f0d01b9
+    const v0, 0x7f0d01bc
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -196,7 +196,7 @@
     iput-object v0, p0, Lcom/android/gallery3d/ui/UndoBarView;->mUndoText:Lcom/android/gallery3d/ui/StringTexture;
 
     .line 72
-    const v0, 0x7f0d01b8
+    const v0, 0x7f0d01bb
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
