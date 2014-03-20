@@ -115,7 +115,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d01b2
+    const v3, 0x7f0d01b5
 
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -198,7 +198,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0d01b1
+    const v3, 0x7f0d01b4
 
     new-instance v4, Lcom/android/gallery3d/ui/DialogDetailsView$1;
 

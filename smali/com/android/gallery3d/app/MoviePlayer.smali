@@ -608,12 +608,12 @@
 
     .line 224
     .local v0, builder:Landroid/app/AlertDialog$Builder;
-    const v1, 0x7f0d01df
+    const v1, 0x7f0d01e2
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     .line 225
-    const v1, 0x7f0d01dc
+    const v1, 0x7f0d01df
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -647,7 +647,7 @@
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Landroid/app/AlertDialog$Builder;
 
     .line 234
-    const v1, 0x7f0d01de
+    const v1, 0x7f0d01e1
 
     new-instance v2, Lcom/android/gallery3d/app/MoviePlayer$8;
 
@@ -656,7 +656,7 @@
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     .line 242
-    const v1, 0x7f0d01dd
+    const v1, 0x7f0d01e0
 
     new-instance v2, Lcom/android/gallery3d/app/MoviePlayer$9;
 

@@ -127,7 +127,7 @@
 
     iput-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mConfirmDialogListener:Lcom/android/gallery3d/ui/MenuExecutor$ProgressListener;
 
-    .line 1064
+    .line 1070
     return-void
 .end method
 
@@ -683,28 +683,44 @@
     if-eqz v1, :cond_0
 
     .line 911
+    sget-boolean v1, Lmiui/os/Build;->IS_INTERNATIONAL_BUILD:Z
+
+    if-eqz v1, :cond_1
+
+    .line 912
     const-string v1, "com.miui.videoplayer"
 
     const-string v2, "com.miui.videoplayer.VideoPlayerActivity"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 913
+    .line 919
     :cond_0
+    :goto_0
     invoke-virtual {p0, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+
+    .line 924
+    :goto_1
+    return-void
+
+    .line 915
+    :cond_1
+    const-string v1, "com.miui.video"
+
+    const-string v2, "com.miui.videoplayer.VideoPlayerActivity"
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 918
-    :goto_0
-    return-void
+    goto :goto_0
 
-    .line 914
+    .line 920
     :catch_0
     move-exception v0
 
-    .line 915
-    const v0, 0x7f0d01c0
+    .line 921
+    const v0, 0x7f0d01c3
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -718,45 +734,45 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method private preparePhotoFallbackView()V
     .locals 3
 
     .prologue
-    .line 985
+    .line 991
     iget-object v0, p0, Lcom/android/gallery3d/app/ActivityState;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
 
     invoke-interface {v0}, Lcom/android/gallery3d/app/GalleryActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
 
     move-result-object v1
 
-    .line 986
+    .line 992
     new-instance v0, Lcom/android/gallery3d/app/PhotoPage$PreparePhotoFallback;
 
     const/4 v2, 0x0
 
     invoke-direct {v0, p0, v2}, Lcom/android/gallery3d/app/PhotoPage$PreparePhotoFallback;-><init>(Lcom/android/gallery3d/app/PhotoPage;Lcom/android/gallery3d/app/PhotoPage$1;)V
 
-    .line 987
+    .line 993
     invoke-interface {v1}, Lcom/android/gallery3d/ui/GLRoot;->unlockRenderThread()V
 
-    .line 990
+    .line 996
     :try_start_0
     invoke-interface {v1, v0}, Lcom/android/gallery3d/ui/GLRoot;->addOnGLIdleListener(Lcom/android/gallery3d/ui/GLRoot$OnGLIdleListener;)V
 
-    .line 991
+    .line 997
     invoke-virtual {v0}, Lcom/android/gallery3d/app/PhotoPage$PreparePhotoFallback;->get()Lcom/android/gallery3d/ui/PhotoFallbackEffect;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v0
 
-    .line 993
+    .line 999
     invoke-interface {v1}, Lcom/android/gallery3d/ui/GLRoot;->lockRenderThread()V
 
-    .line 995
+    .line 1001
     iget-object v1, p0, Lcom/android/gallery3d/app/ActivityState;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
 
     invoke-interface {v1}, Lcom/android/gallery3d/app/GalleryActivity;->getTransitionStore()Lcom/android/gallery3d/app/TransitionStore;
@@ -767,10 +783,10 @@
 
     invoke-virtual {v1, v2, v0}, Lcom/android/gallery3d/app/TransitionStore;->put(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 997
+    .line 1003
     return-void
 
-    .line 993
+    .line 999
     :catchall_0
     move-exception v0
 
@@ -957,7 +973,7 @@
     invoke-virtual {v2, v3}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
     .line 716
-    const v12, 0x7f0d01e9
+    const v12, 0x7f0d01ec
 
     const/4 v13, 0x1
 
@@ -1036,15 +1052,15 @@
     .parameter "intent"
 
     .prologue
-    .line 921
+    .line 927
     if-nez p1, :cond_1
 
-    .line 927
+    .line 933
     :cond_0
     :goto_0
     return-void
 
-    .line 922
+    .line 928
     :cond_1
     iget-object v1, p0, Lcom/android/gallery3d/app/PhotoPage;->mApplication:Lcom/android/camera/CameraAppImpl;
 
@@ -1064,11 +1080,11 @@
 
     move-result-object v0
 
-    .line 924
+    .line 930
     .local v0, path:Lcom/android/gallery3d/data/Path;
     if-eqz v0, :cond_0
 
-    .line 925
+    .line 931
     iget-object v1, p0, Lcom/android/gallery3d/app/PhotoPage;->mModel:Lcom/android/gallery3d/app/PhotoPage$Model;
 
     iget v2, p0, Lcom/android/gallery3d/app/PhotoPage;->mCurrentIndex:I
@@ -2417,7 +2433,7 @@
     .locals 1
 
     .prologue
-    .line 1021
+    .line 1027
     iget-object v0, p0, Lcom/android/gallery3d/app/ActivityState;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
 
     invoke-interface {v0}, Lcom/android/gallery3d/app/GalleryActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
@@ -2426,7 +2442,7 @@
 
     invoke-interface {v0}, Lcom/android/gallery3d/ui/GLRoot;->unfreeze()V
 
-    .line 1022
+    .line 1028
     return-void
 .end method
 
@@ -2488,42 +2504,42 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1048
+    .line 1054
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mAppBridge:Lcom/android/gallery3d/app/AppBridge;
 
     if-eqz v0, :cond_0
 
-    .line 1049
+    .line 1055
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mAppBridge:Lcom/android/gallery3d/app/AppBridge;
 
     invoke-virtual {v0, v1}, Lcom/android/gallery3d/app/AppBridge;->setServer(Lcom/android/gallery3d/app/AppBridge$Server;)V
 
-    .line 1050
+    .line 1056
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mScreenNailItem:Lcom/android/gallery3d/data/SnailItem;
 
     invoke-virtual {v0, v1}, Lcom/android/gallery3d/data/SnailItem;->setScreenNail(Lcom/android/gallery3d/ui/ScreenNail;)V
 
-    .line 1051
+    .line 1057
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mAppBridge:Lcom/android/gallery3d/app/AppBridge;
 
     invoke-virtual {v0}, Lcom/android/gallery3d/app/AppBridge;->detachScreenNail()V
 
-    .line 1052
+    .line 1058
     iput-object v1, p0, Lcom/android/gallery3d/app/PhotoPage;->mAppBridge:Lcom/android/gallery3d/app/AppBridge;
 
-    .line 1053
+    .line 1059
     iput-object v1, p0, Lcom/android/gallery3d/app/PhotoPage;->mScreenNailSet:Lcom/android/gallery3d/data/SnailAlbum;
 
-    .line 1054
+    .line 1060
     iput-object v1, p0, Lcom/android/gallery3d/app/PhotoPage;->mScreenNailItem:Lcom/android/gallery3d/data/SnailItem;
 
-    .line 1056
+    .line 1062
     :cond_0
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mOrientationManager:Lcom/android/gallery3d/app/OrientationManager;
 
     invoke-virtual {v0, p0}, Lcom/android/gallery3d/app/OrientationManager;->removeListener(Lcom/android/gallery3d/app/OrientationManager$Listener;)V
 
-    .line 1057
+    .line 1063
     iget-object v0, p0, Lcom/android/gallery3d/app/ActivityState;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
 
     invoke-interface {v0}, Lcom/android/gallery3d/app/GalleryActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
@@ -2532,15 +2548,15 @@
 
     invoke-interface {v0, v1}, Lcom/android/gallery3d/ui/GLRoot;->setOrientationSource(Lcom/android/gallery3d/ui/OrientationSource;)V
 
-    .line 1060
+    .line 1066
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mHandler:Landroid/os/Handler;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
 
-    .line 1061
+    .line 1067
     invoke-super {p0}, Lcom/android/gallery3d/app/ActivityState;->onDestroy()V
 
-    .line 1062
+    .line 1068
     return-void
 .end method
 
@@ -2938,15 +2954,15 @@
     .locals 2
 
     .prologue
-    .line 1001
+    .line 1007
     invoke-super {p0}, Lcom/android/gallery3d/app/ActivityState;->onPause()V
 
-    .line 1002
+    .line 1008
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mIsActive:Z
 
-    .line 1004
+    .line 1010
     iget-object v0, p0, Lcom/android/gallery3d/app/ActivityState;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
 
     invoke-interface {v0}, Lcom/android/gallery3d/app/GalleryActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
@@ -2955,14 +2971,14 @@
 
     invoke-interface {v0}, Lcom/android/gallery3d/ui/GLRoot;->unfreeze()V
 
-    .line 1005
+    .line 1011
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x6
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1006
+    .line 1012
     invoke-virtual {p0}, Lcom/android/gallery3d/app/ActivityState;->isFinishing()Z
 
     move-result v0
@@ -2971,43 +2987,43 @@
 
     invoke-direct {p0}, Lcom/android/gallery3d/app/PhotoPage;->preparePhotoFallbackView()V
 
-    .line 1008
+    .line 1014
     :cond_0
     invoke-static {}, Lcom/android/gallery3d/ui/DetailsHelper;->pause()V
 
-    .line 1009
+    .line 1015
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mPhotoView:Lcom/android/gallery3d/ui/PhotoView;
 
     invoke-virtual {v0}, Lcom/android/gallery3d/ui/PhotoView;->pause()V
 
-    .line 1010
+    .line 1016
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mModel:Lcom/android/gallery3d/app/PhotoPage$Model;
 
     invoke-interface {v0}, Lcom/android/gallery3d/app/PhotoPage$Model;->pause()V
 
-    .line 1011
+    .line 1017
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1012
+    .line 1018
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mActionBar:Lcom/android/gallery3d/app/GalleryActionBar;
 
     iget-object v1, p0, Lcom/android/gallery3d/app/PhotoPage;->mMenuVisibilityListener:Lcom/android/gallery3d/app/PhotoPage$MyMenuVisibilityListener;
 
     invoke-virtual {v0, v1}, Lcom/android/gallery3d/app/GalleryActionBar;->removeOnMenuVisibilityListener(Landroid/app/ActionBar$OnMenuVisibilityListener;)V
 
-    .line 1014
+    .line 1020
     invoke-virtual {p0}, Lcom/android/gallery3d/app/PhotoPage;->onCommitDeleteImage()V
 
-    .line 1015
+    .line 1021
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mMenuExecutor:Lcom/android/gallery3d/ui/MenuExecutor;
 
     invoke-virtual {v0}, Lcom/android/gallery3d/ui/MenuExecutor;->pause()V
 
-    .line 1016
+    .line 1022
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mMediaSet:Lcom/android/gallery3d/data/FilterDeleteSet;
 
     if-eqz v0, :cond_1
@@ -3016,7 +3032,7 @@
 
     invoke-virtual {v0}, Lcom/android/gallery3d/data/FilterDeleteSet;->clearDeletion()V
 
-    .line 1017
+    .line 1023
     :cond_1
     return-void
 .end method
@@ -3029,10 +3045,10 @@
 
     const/4 v1, 0x1
 
-    .line 1026
+    .line 1032
     invoke-super {p0}, Lcom/android/gallery3d/app/ActivityState;->onResume()V
 
-    .line 1027
+    .line 1033
     iget-object v0, p0, Lcom/android/gallery3d/app/ActivityState;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
 
     invoke-interface {v0}, Lcom/android/gallery3d/app/GalleryActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
@@ -3041,15 +3057,15 @@
 
     invoke-interface {v0}, Lcom/android/gallery3d/ui/GLRoot;->freeze()V
 
-    .line 1028
+    .line 1034
     iput-boolean v1, p0, Lcom/android/gallery3d/app/PhotoPage;->mIsActive:Z
 
-    .line 1029
+    .line 1035
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mRootPane:Lcom/android/gallery3d/ui/GLView;
 
     invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/ActivityState;->setContentPane(Lcom/android/gallery3d/ui/GLView;)V
 
-    .line 1030
+    .line 1036
     iget-object v0, p0, Lcom/android/gallery3d/app/ActivityState;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
 
     invoke-interface {v0}, Lcom/android/gallery3d/app/GalleryActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
@@ -3060,22 +3076,22 @@
 
     invoke-interface {v0, v3}, Lcom/android/gallery3d/ui/GLRoot;->setOrientationSource(Lcom/android/gallery3d/ui/OrientationSource;)V
 
-    .line 1031
+    .line 1037
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mModel:Lcom/android/gallery3d/app/PhotoPage$Model;
 
     invoke-interface {v0}, Lcom/android/gallery3d/app/PhotoPage$Model;->resume()V
 
-    .line 1032
+    .line 1038
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mPhotoView:Lcom/android/gallery3d/ui/PhotoView;
 
     invoke-virtual {v0}, Lcom/android/gallery3d/ui/PhotoView;->resume()V
 
-    .line 1033
+    .line 1039
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mMenuVisibilityListener:Lcom/android/gallery3d/app/PhotoPage$MyMenuVisibilityListener;
 
     if-nez v0, :cond_0
 
-    .line 1034
+    .line 1040
     new-instance v0, Lcom/android/gallery3d/app/PhotoPage$MyMenuVisibilityListener;
 
     const/4 v3, 0x0
@@ -3084,7 +3100,7 @@
 
     iput-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mMenuVisibilityListener:Lcom/android/gallery3d/app/PhotoPage$MyMenuVisibilityListener;
 
-    .line 1036
+    .line 1042
     :cond_0
     iget-object v3, p0, Lcom/android/gallery3d/app/PhotoPage;->mActionBar:Lcom/android/gallery3d/app/GalleryActionBar;
 
@@ -3105,17 +3121,17 @@
     :goto_0
     invoke-virtual {v3, v0, v1}, Lcom/android/gallery3d/app/GalleryActionBar;->setDisplayOptions(ZZ)V
 
-    .line 1037
+    .line 1043
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mActionBar:Lcom/android/gallery3d/app/GalleryActionBar;
 
     iget-object v1, p0, Lcom/android/gallery3d/app/PhotoPage;->mMenuVisibilityListener:Lcom/android/gallery3d/app/PhotoPage$MyMenuVisibilityListener;
 
     invoke-virtual {v0, v1}, Lcom/android/gallery3d/app/GalleryActionBar;->addOnMenuVisibilityListener(Landroid/app/ActionBar$OnMenuVisibilityListener;)V
 
-    .line 1042
+    .line 1048
     iput-boolean v2, p0, Lcom/android/gallery3d/app/PhotoPage;->mHasActivityResult:Z
 
-    .line 1043
+    .line 1049
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage;->mHandler:Landroid/os/Handler;
 
     const/4 v1, 0x6
@@ -3124,13 +3140,13 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 1044
+    .line 1050
     return-void
 
     :cond_1
     move v0, v2
 
-    .line 1036
+    .line 1042
     goto :goto_0
 .end method
 
@@ -3384,7 +3400,7 @@
 
     check-cast v1, Landroid/app/Activity;
 
-    const v2, 0x7f0d018d
+    const v2, 0x7f0d0190
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -3420,49 +3436,49 @@
 
     const/4 v4, 0x0
 
-    .line 931
+    .line 937
     iput-boolean v2, p0, Lcom/android/gallery3d/app/PhotoPage;->mHasActivityResult:Z
 
-    .line 932
+    .line 938
     packed-switch p1, :pswitch_data_0
 
-    .line 959
+    .line 965
     :cond_0
     :goto_0
     return-void
 
-    .line 934
+    .line 940
     :pswitch_0
     invoke-direct {p0, p3}, Lcom/android/gallery3d/app/PhotoPage;->setCurrentPhotoByIntent(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 937
+    .line 943
     :pswitch_1
     if-ne p2, v0, :cond_0
 
-    .line 938
+    .line 944
     invoke-direct {p0, p3}, Lcom/android/gallery3d/app/PhotoPage;->setCurrentPhotoByIntent(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 942
+    .line 948
     :pswitch_2
     if-ne p2, v0, :cond_0
 
-    .line 943
+    .line 949
     iget-object v0, p0, Lcom/android/gallery3d/app/ActivityState;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
 
     invoke-interface {v0}, Lcom/android/gallery3d/app/GalleryActivity;->getAndroidContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 944
-    const v1, 0x7f0d01bf
+    .line 950
+    const v1, 0x7f0d01c2
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    const v3, 0x7f0d01b5
+    const v3, 0x7f0d01b8
 
     invoke-virtual {v0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -3474,7 +3490,7 @@
 
     move-result-object v1
 
-    .line 946
+    .line 952
     invoke-static {v0, v1, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     move-result-object v0
@@ -3483,28 +3499,28 @@
 
     goto :goto_0
 
-    .line 951
+    .line 957
     :pswitch_3
     if-eqz p3, :cond_0
 
-    .line 952
+    .line 958
     const-string v0, "media-item-path"
 
     invoke-virtual {p3, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 953
+    .line 959
     const-string v1, "photo-index"
 
     invoke-virtual {p3, v1, v4}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v1
 
-    .line 954
+    .line 960
     if-eqz v0, :cond_0
 
-    .line 955
+    .line 961
     iget-object v2, p0, Lcom/android/gallery3d/app/PhotoPage;->mModel:Lcom/android/gallery3d/app/PhotoPage$Model;
 
     invoke-static {v0}, Lcom/android/gallery3d/data/Path;->fromString(Ljava/lang/String;)Lcom/android/gallery3d/data/Path;
@@ -3515,7 +3531,7 @@
 
     goto :goto_0
 
-    .line 932
+    .line 938
     nop
 
     :pswitch_data_0

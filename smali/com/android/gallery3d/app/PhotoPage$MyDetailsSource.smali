@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 1064
+    .line 1070
     iput-object p1, p0, Lcom/android/gallery3d/app/PhotoPage$MyDetailsSource;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1064
+    .line 1070
     invoke-direct {p0, p1}, Lcom/android/gallery3d/app/PhotoPage$MyDetailsSource;-><init>(Lcom/android/gallery3d/app/PhotoPage;)V
 
     return-void
@@ -55,10 +55,10 @@
     .parameter "indexHint"
 
     .prologue
-    .line 1079
+    .line 1085
     iput p1, p0, Lcom/android/gallery3d/app/PhotoPage$MyDetailsSource;->mIndex:I
 
-    .line 1080
+    .line 1086
     return p1
 .end method
 
@@ -66,7 +66,7 @@
     .locals 2
 
     .prologue
-    .line 1069
+    .line 1075
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$MyDetailsSource;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
     #getter for: Lcom/android/gallery3d/app/PhotoPage;->mModel:Lcom/android/gallery3d/app/PhotoPage$Model;
@@ -91,7 +91,7 @@
     .locals 1
 
     .prologue
-    .line 1085
+    .line 1091
     iget v0, p0, Lcom/android/gallery3d/app/PhotoPage$MyDetailsSource;->mIndex:I
 
     return v0
@@ -101,7 +101,7 @@
     .locals 1
 
     .prologue
-    .line 1074
+    .line 1080
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$MyDetailsSource;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
     #getter for: Lcom/android/gallery3d/app/PhotoPage;->mMediaSet:Lcom/android/gallery3d/data/FilterDeleteSet;

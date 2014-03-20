@@ -350,7 +350,7 @@
 
     .prologue
     .line 49
-    invoke-direct {p0}, Lcom/android/zxing/ui/QRCodeFragment;->connectToWifi()V
+    invoke-direct {p0}, Lcom/android/zxing/ui/QRCodeFragment;->connectWiFi()V
 
     return-void
 .end method
@@ -366,7 +366,7 @@
     return v0
 .end method
 
-.method private connectToWifi()V
+.method private connectWiFi()V
     .locals 7
 
     .prologue
@@ -430,7 +430,7 @@
     :goto_0
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment;->mWifiConManager:Lcom/android/zxing/WiFiConManager;
 
-    invoke-virtual {v0}, Lcom/android/zxing/WiFiConManager;->connectInBackground()V
+    invoke-virtual {v0}, Lcom/android/zxing/WiFiConManager;->openAndConnectWiFi()V
 
     .line 550
     return-void
@@ -472,7 +472,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0d020a
+    const v2, 0x7f0d020d
 
     const/4 v3, 0x0
 
@@ -1695,14 +1695,14 @@
     .line 106
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonCenter:Landroid/widget/Button;
 
-    const v11, 0x7f0d0202
+    const v11, 0x7f0d0205
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
     .line 107
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mContentTitle:Landroid/widget/TextView;
 
-    const v11, 0x7f0d01ff
+    const v11, 0x7f0d0202
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
@@ -1771,21 +1771,21 @@
     .line 118
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonCenter:Landroid/widget/Button;
 
-    const v11, 0x7f0d0203
+    const v11, 0x7f0d0206
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
     .line 119
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mContentTitle:Landroid/widget/TextView;
 
-    const v11, 0x7f0d01fe
+    const v11, 0x7f0d0201
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
     .line 120
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mWarningText:Landroid/widget/TextView;
 
-    const v11, 0x7f0d0216
+    const v11, 0x7f0d0219
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
@@ -1858,28 +1858,28 @@
     .line 129
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mContentTitle:Landroid/widget/TextView;
 
-    const v11, 0x7f0d01fe
+    const v11, 0x7f0d0201
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
     .line 130
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mWarningText:Landroid/widget/TextView;
 
-    const v11, 0x7f0d0217
+    const v11, 0x7f0d021a
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
     .line 131
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonLeft:Landroid/widget/Button;
 
-    const v11, 0x7f0d0204
+    const v11, 0x7f0d0207
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
     .line 132
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonRight:Landroid/widget/Button;
 
-    const v11, 0x7f0d0205
+    const v11, 0x7f0d0208
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
@@ -1936,7 +1936,7 @@
     .line 141
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mContentTitle:Landroid/widget/TextView;
 
-    const v11, 0x7f0d01fd
+    const v11, 0x7f0d0200
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
@@ -1950,7 +1950,7 @@
     .line 143
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonCenter:Landroid/widget/Button;
 
-    const v11, 0x7f0d0208
+    const v11, 0x7f0d020b
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
@@ -2021,7 +2021,7 @@
     .line 155
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonCenter:Landroid/widget/Button;
 
-    const v11, 0x7f0d0206
+    const v11, 0x7f0d0209
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
@@ -2029,7 +2029,7 @@
     :goto_3
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mContentTitle:Landroid/widget/TextView;
 
-    const v11, 0x7f0d0200
+    const v11, 0x7f0d0203
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
@@ -2067,7 +2067,7 @@
     :cond_9
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonCenter:Landroid/widget/Button;
 
-    const v11, 0x7f0d0207
+    const v11, 0x7f0d020a
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
@@ -2096,7 +2096,7 @@
     .line 169
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mContentTitle:Landroid/widget/TextView;
 
-    const v11, 0x7f0d0201
+    const v11, 0x7f0d0204
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
@@ -2110,7 +2110,7 @@
     .line 171
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonCenter:Landroid/widget/Button;
 
-    const v11, 0x7f0d0209
+    const v11, 0x7f0d020c
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
@@ -2167,21 +2167,21 @@
     .line 180
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mContentTitle:Landroid/widget/TextView;
 
-    const v11, 0x7f0d021b
+    const v11, 0x7f0d021e
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
     .line 181
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mWarningText:Landroid/widget/TextView;
 
-    const v11, 0x7f0d0220
+    const v11, 0x7f0d0223
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
     .line 182
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonCenter:Landroid/widget/Button;
 
-    const v11, 0x7f0d021c
+    const v11, 0x7f0d021f
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
@@ -2236,7 +2236,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f0d0218
+    const v12, 0x7f0d021b
 
     invoke-virtual {v11, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2272,7 +2272,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f0d021a
+    const v12, 0x7f0d021d
 
     invoke-virtual {v11, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2308,7 +2308,7 @@
 
     move-result-object v11
 
-    const v12, 0x7f0d0219
+    const v12, 0x7f0d021c
 
     invoke-virtual {v11, v12}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2408,7 +2408,7 @@
     .line 206
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonCenter:Landroid/widget/Button;
 
-    const v11, 0x7f0d021e
+    const v11, 0x7f0d0221
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
@@ -2416,7 +2416,7 @@
     :goto_4
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mContentTitle:Landroid/widget/TextView;
 
-    const v11, 0x7f0d021d
+    const v11, 0x7f0d0220
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
@@ -2454,7 +2454,7 @@
     :cond_d
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonCenter:Landroid/widget/Button;
 
-    const v11, 0x7f0d021f
+    const v11, 0x7f0d0222
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
@@ -2483,14 +2483,14 @@
     .line 220
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonCenter:Landroid/widget/Button;
 
-    const v11, 0x7f0d0222
+    const v11, 0x7f0d0225
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
     .line 221
     iget-object v10, p0, Lcom/android/zxing/ui/QRCodeFragment;->mContentTitle:Landroid/widget/TextView;
 
-    const v11, 0x7f0d0221
+    const v11, 0x7f0d0224
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(I)V
 
@@ -2735,7 +2735,7 @@
     .line 309
     iget-object v2, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonCenter:Landroid/widget/Button;
 
-    const v3, 0x7f0d0206
+    const v3, 0x7f0d0209
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(I)V
 
@@ -2750,7 +2750,7 @@
     :cond_1
     iget-object v2, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonCenter:Landroid/widget/Button;
 
-    const v3, 0x7f0d0207
+    const v3, 0x7f0d020a
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(I)V
 
@@ -2789,7 +2789,7 @@
     .line 319
     iget-object v2, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonCenter:Landroid/widget/Button;
 
-    const v3, 0x7f0d021e
+    const v3, 0x7f0d0221
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(I)V
 
@@ -2799,7 +2799,7 @@
     :cond_3
     iget-object v2, p0, Lcom/android/zxing/ui/QRCodeFragment;->mButtonCenter:Landroid/widget/Button;
 
-    const v3, 0x7f0d021f
+    const v3, 0x7f0d0222
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(I)V
 

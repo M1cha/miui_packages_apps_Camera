@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="delete_selection">
+        <item quantity="other">Vymazať zvolené položky?</item>
+        <item quantity="one">Vymazať zvolenú položku?</item>
+    </plurals>
+</resources>

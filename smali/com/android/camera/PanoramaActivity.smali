@@ -1129,7 +1129,7 @@
     .line 708
     iget-object v0, p0, Lcom/android/camera/ActivityBase;->mSimpleExitButton:Landroid/widget/TextView;
 
-    const v1, 0x7f0d01ec
+    const v1, 0x7f0d01ef
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
@@ -4356,13 +4356,11 @@
 .end method
 
 .method protected performShutterClick()V
-    .locals 1
+    .locals 0
 
     .prologue
     .line 764
-    iget-object v0, p0, Lcom/android/camera/PanoramaActivity;->mShutterButton:Lcom/android/camera/ShutterButton;
-
-    invoke-virtual {v0}, Landroid/view/View;->performClick()Z
+    invoke-virtual {p0}, Lcom/android/camera/PanoramaActivity;->onShutterButtonClick()V
 
     .line 765
     return-void

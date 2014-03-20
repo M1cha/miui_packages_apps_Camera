@@ -265,7 +265,7 @@
     .line 254
     iget-object v1, p0, Lcom/android/gallery3d/ui/PhotoView;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0d01be
+    const v2, 0x7f0d01c1
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -280,7 +280,7 @@
     .line 257
     iget-object v1, p0, Lcom/android/gallery3d/ui/PhotoView;->mContext:Landroid/content/Context;
 
-    const v2, 0x7f0d01bd
+    const v2, 0x7f0d01c0
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
