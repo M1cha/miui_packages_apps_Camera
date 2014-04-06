@@ -705,9 +705,9 @@
 
     .line 915
     :cond_1
-    const-string v1, "com.miui.video"
+    const-string v1, "com.android.gallery3d"
 
-    const-string v2, "com.miui.videoplayer.VideoPlayerActivity"
+    const-string v2, "com.android.gallery3d.app.MovieActivity"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
     :try_end_0
