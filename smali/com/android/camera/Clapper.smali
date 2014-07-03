@@ -67,7 +67,7 @@
 
 .method public constructor <init>(Lcom/android/camera/Clapper$ClapperListener;)V
     .locals 0
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/camera/Clapper$ClapperListener;
 
     .prologue
     .line 48
@@ -82,7 +82,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/Clapper;)V
     .locals 0
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/Clapper;
 
     .prologue
     .line 9
@@ -194,7 +194,7 @@
     move-result-object v1
 
     .line 61
-    .local v1, outputFilePath:Ljava/lang/String;
+    .local v1, "outputFilePath":Ljava/lang/String;
     iget-object v3, p0, Lcom/android/camera/Clapper;->mRecorder:Landroid/media/MediaRecorder;
 
     invoke-virtual {v3, v1}, Landroid/media/MediaRecorder;->setOutputFile(Ljava/lang/String;)V
@@ -212,7 +212,7 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 70
-    .end local v1           #outputFilePath:Ljava/lang/String;
+    .end local v1    # "outputFilePath":Ljava/lang/String;
     :goto_0
     return v2
 
@@ -221,7 +221,7 @@
     move-exception v0
 
     .line 65
-    .local v0, e:Ljava/lang/Exception;
+    .local v0, "e":Ljava/lang/Exception;
     const-string v2, "Clapper"
 
     const-string v3, "Failed to start media recorder. Maybe it is used by other app."
@@ -229,7 +229,7 @@
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 66
-    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     .line 67
     const/4 v2, 0x0
@@ -241,13 +241,13 @@
     .locals 14
 
     .prologue
-    const-wide/high16 v12, 0x3fe0
+    const-wide/high16 v12, 0x3fe0000000000000L
 
     .line 127
     sget v1, Lcom/android/camera/Clapper;->AMPLITUDE_INIT:I
 
     .line 135
-    .local v1, averageAmplitude:I
+    .local v1, "averageAmplitude":I
     :cond_0
     const-wide/16 v6, 0xc8
 
@@ -265,7 +265,7 @@
     move-result v3
 
     .line 142
-    .local v3, finishAmplitude:I
+    .local v3, "finishAmplitude":I
     if-le v3, v1, :cond_3
 
     .line 143
@@ -290,7 +290,7 @@
     sub-int v0, v3, v1
 
     .line 151
-    .local v0, ampDifference:I
+    .local v0, "ampDifference":I
     sget v6, Lcom/android/camera/Clapper;->AMPLITUDE_INIT:I
 
     if-le v1, v6, :cond_4
@@ -316,7 +316,7 @@
     double-to-int v5, v6
 
     .line 160
-    .local v5, threshold:I
+    .local v5, "threshold":I
     :goto_2
     iget-object v6, p0, Lcom/android/camera/Clapper;->mListener:Lcom/android/camera/Clapper$ClapperListener;
 
@@ -356,14 +356,14 @@
     return-void
 
     .line 136
-    .end local v0           #ampDifference:I
-    .end local v3           #finishAmplitude:I
-    .end local v5           #threshold:I
+    .end local v0    # "ampDifference":I
+    .end local v3    # "finishAmplitude":I
+    .end local v5    # "threshold":I
     :catch_0
     move-exception v2
 
     .line 137
-    .local v2, e:Ljava/lang/InterruptedException;
+    .local v2, "e":Ljava/lang/InterruptedException;
     const-string v6, "Clapper"
 
     const-string v7, "Thread.sleep() interrupted"
@@ -373,8 +373,8 @@
     goto :goto_0
 
     .line 146
-    .end local v2           #e:Ljava/lang/InterruptedException;
-    .restart local v3       #finishAmplitude:I
+    .end local v2    # "e":Ljava/lang/InterruptedException;
+    .restart local v3    # "finishAmplitude":I
     :cond_3
     int-to-double v6, v1
 
@@ -395,14 +395,14 @@
     goto :goto_1
 
     .line 151
-    .restart local v0       #ampDifference:I
+    .restart local v0    # "ampDifference":I
     :cond_4
     sget v5, Lcom/android/camera/Clapper;->DEFAULT_AMPLITUDE_DIFF:I
 
     goto :goto_2
 
     .line 168
-    .restart local v5       #threshold:I
+    .restart local v5    # "threshold":I
     :cond_5
     int-to-float v6, v3
 
@@ -431,7 +431,7 @@
     move-result v4
 
     .line 171
-    .local v4, progress:F
+    .local v4, "progress":F
     iget-object v6, p0, Lcom/android/camera/Clapper;->mListener:Lcom/android/camera/Clapper$ClapperListener;
 
     sget v7, Lcom/android/camera/AudioCapture;->SHUTTER_BUTTON_DRAWABLE_LENGHT:I
@@ -459,7 +459,7 @@
     move-result v0
 
     .line 75
-    .local v0, result:Z
+    .local v0, "result":Z
     if-eqz v0, :cond_0
 
     .line 76
@@ -540,7 +540,7 @@
     move-exception v0
 
     .line 115
-    .local v0, e:Ljava/lang/Exception;
+    .local v0, "e":Ljava/lang/Exception;
     const-string v1, "Clapper"
 
     const-string v2, "Failed to stop media recorder."
@@ -548,7 +548,7 @@
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 116
-    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0
 .end method

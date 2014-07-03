@@ -38,14 +38,14 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
-    .parameter "dialog"
-    .parameter "which"
+    .param p1, "dialog"    # Landroid/content/DialogInterface;
+    .param p2, "which"    # I
 
     .prologue
     .line 246
     iget-object v0, p0, Lcom/android/gallery3d/app/MoviePlayer$9;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    #calls: Lcom/android/gallery3d/app/MoviePlayer;->startVideo()V
+    # invokes: Lcom/android/gallery3d/app/MoviePlayer;->startVideo()V
     invoke-static {v0}, Lcom/android/gallery3d/app/MoviePlayer;->access$1000(Lcom/android/gallery3d/app/MoviePlayer;)V
 
     .line 247

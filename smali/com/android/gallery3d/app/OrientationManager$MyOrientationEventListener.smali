@@ -21,8 +21,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/app/OrientationManager;Landroid/content/Context;)V
     .locals 0
-    .parameter
-    .parameter "context"
+    .param p2, "context"    # Landroid/content/Context;
 
     .prologue
     .line 157
@@ -39,7 +38,7 @@
 # virtual methods
 .method public onOrientationChanged(I)V
     .locals 2
-    .parameter "orientation"
+    .param p1, "orientation"    # I
 
     .prologue
     .line 166
@@ -58,23 +57,23 @@
 
     iget-object v1, p0, Lcom/android/gallery3d/app/OrientationManager$MyOrientationEventListener;->this$0:Lcom/android/gallery3d/app/OrientationManager;
 
-    #getter for: Lcom/android/gallery3d/app/OrientationManager;->mOrientation:I
+    # getter for: Lcom/android/gallery3d/app/OrientationManager;->mOrientation:I
     invoke-static {v1}, Lcom/android/gallery3d/app/OrientationManager;->access$000(Lcom/android/gallery3d/app/OrientationManager;)I
 
     move-result v1
 
-    #calls: Lcom/android/gallery3d/app/OrientationManager;->roundOrientation(II)I
+    # invokes: Lcom/android/gallery3d/app/OrientationManager;->roundOrientation(II)I
     invoke-static {p1, v1}, Lcom/android/gallery3d/app/OrientationManager;->access$100(II)I
 
     move-result v1
 
-    #setter for: Lcom/android/gallery3d/app/OrientationManager;->mOrientation:I
+    # setter for: Lcom/android/gallery3d/app/OrientationManager;->mOrientation:I
     invoke-static {v0, v1}, Lcom/android/gallery3d/app/OrientationManager;->access$002(Lcom/android/gallery3d/app/OrientationManager;I)I
 
     .line 170
     iget-object v0, p0, Lcom/android/gallery3d/app/OrientationManager$MyOrientationEventListener;->this$0:Lcom/android/gallery3d/app/OrientationManager;
 
-    #getter for: Lcom/android/gallery3d/app/OrientationManager;->mOrientationLocked:Z
+    # getter for: Lcom/android/gallery3d/app/OrientationManager;->mOrientationLocked:Z
     invoke-static {v0}, Lcom/android/gallery3d/app/OrientationManager;->access$200(Lcom/android/gallery3d/app/OrientationManager;)Z
 
     move-result v0
@@ -83,7 +82,7 @@
 
     iget-object v0, p0, Lcom/android/gallery3d/app/OrientationManager$MyOrientationEventListener;->this$0:Lcom/android/gallery3d/app/OrientationManager;
 
-    #calls: Lcom/android/gallery3d/app/OrientationManager;->updateCompensation()V
+    # invokes: Lcom/android/gallery3d/app/OrientationManager;->updateCompensation()V
     invoke-static {v0}, Lcom/android/gallery3d/app/OrientationManager;->access$300(Lcom/android/gallery3d/app/OrientationManager;)V
 
     goto :goto_0

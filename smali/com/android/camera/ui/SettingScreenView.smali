@@ -40,7 +40,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .parameter "context"
+    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 42
@@ -59,8 +59,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 50
@@ -79,9 +79,9 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
-    .parameter "defStyle"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .param p3, "defStyle"    # I
 
     .prologue
     .line 46
@@ -103,13 +103,13 @@
 
     .prologue
     .line 168
-    iget-object v2, p0, Lcom/android/camera/ui/SettingView;->mIndicators:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/camera/ui/SettingScreenView;->mIndicators:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .local v0, i$:Ljava/util/Iterator;
+    .local v0, "i$":Ljava/util/Iterator;
     :cond_0
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -125,7 +125,7 @@
     check-cast v1, Lcom/android/camera/ui/AbstractIndicatorButton;
 
     .line 169
-    .local v1, indicator:Lcom/android/camera/ui/AbstractIndicatorButton;
+    .local v1, "indicator":Lcom/android/camera/ui/AbstractIndicatorButton;
     invoke-virtual {v1}, Lcom/android/camera/ui/AbstractIndicatorButton;->getPopupWindow()Lcom/android/camera/ui/AbstractSettingPopup;
 
     move-result-object v2
@@ -138,7 +138,7 @@
     goto :goto_0
 
     .line 173
-    .end local v1           #indicator:Lcom/android/camera/ui/AbstractIndicatorButton;
+    .end local v1    # "indicator":Lcom/android/camera/ui/AbstractIndicatorButton;
     :cond_1
     return-void
 .end method
@@ -158,7 +158,7 @@
     iput v0, p0, Lcom/android/camera/ui/SettingScreenView;->mRowCount:I
 
     .line 88
-    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/camera/ui/SettingScreenView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -171,7 +171,7 @@
     iput v0, p0, Lcom/android/camera/ui/SettingScreenView;->mRowHeight:I
 
     .line 89
-    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/camera/ui/SettingScreenView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -218,7 +218,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 197
-    iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mSettingButton:Lcom/android/camera/ui/SettingButton;
+    iget-object v0, p0, Lcom/android/camera/ui/SettingScreenView;->mSettingButton:Lcom/android/camera/ui/SettingButton;
 
     invoke-virtual {v0}, Lcom/android/camera/ui/SettingButton;->updateImageResource()V
 
@@ -229,8 +229,8 @@
 
 .method public enableIndicator(Ljava/lang/String;Z)V
     .locals 3
-    .parameter "key"
-    .parameter "enable"
+    .param p1, "key"    # Ljava/lang/String;
+    .param p2, "enable"    # Z
 
     .prologue
     .line 241
@@ -252,13 +252,13 @@
 
     .line 249
     :goto_1
-    iget-object v2, p0, Lcom/android/camera/ui/SettingView;->mIndicators:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/camera/ui/SettingScreenView;->mIndicators:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .local v1, i$:Ljava/util/Iterator;
+    .local v1, "i$":Ljava/util/Iterator;
     :cond_2
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -273,7 +273,7 @@
     check-cast v0, Lcom/android/camera/ui/AbstractIndicatorButton;
 
     .line 250
-    .local v0, b:Lcom/android/camera/ui/AbstractIndicatorButton;
+    .local v0, "b":Lcom/android/camera/ui/AbstractIndicatorButton;
     invoke-virtual {v0}, Lcom/android/camera/ui/AbstractIndicatorButton;->getKey()Ljava/lang/String;
 
     move-result-object v2
@@ -287,7 +287,7 @@
     .line 251
     const/4 v2, 0x1
 
-    invoke-virtual {v0, v2}, Lcom/android/camera/ui/TwoStateImageView;->enableFilter(Z)V
+    invoke-virtual {v0, v2}, Lcom/android/camera/ui/AbstractIndicatorButton;->enableFilter(Z)V
 
     .line 252
     invoke-virtual {v0, p2}, Lcom/android/camera/ui/AbstractIndicatorButton;->setEnabled(Z)V
@@ -295,8 +295,8 @@
     goto :goto_0
 
     .line 247
-    .end local v0           #b:Lcom/android/camera/ui/AbstractIndicatorButton;
-    .end local v1           #i$:Ljava/util/Iterator;
+    .end local v0    # "b":Lcom/android/camera/ui/AbstractIndicatorButton;
+    .end local v1    # "i$":Ljava/util/Iterator;
     :cond_3
     iget-object v2, p0, Lcom/android/camera/ui/SettingScreenView;->mDisabledIndicator:Ljava/util/Set;
 
@@ -345,7 +345,7 @@
 
     .prologue
     .line 93
-    .local p1, keys:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
+    .local p1, "keys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/camera/ui/SettingScreenView;->mColumnCount:I
@@ -357,7 +357,7 @@
     mul-int v14, v2, v3
 
     .line 94
-    .local v14, screenGridCount:I
+    .local v14, "screenGridCount":I
     invoke-interface/range {p1 .. p1}, Ljava/util/List;->size()I
 
     move-result v2
@@ -369,8 +369,8 @@
     add-int/lit8 v13, v2, 0x1
 
     .line 95
-    .local v13, screenCount:I
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    .local v13, "screenCount":I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingScreenView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -402,19 +402,19 @@
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Landroid/view/View;->mPaddingLeft:I
+    iget v3, v0, Lcom/android/camera/ui/SettingScreenView;->mPaddingLeft:I
 
     sub-int/2addr v2, v3
 
     move-object/from16 v0, p0
 
-    iget v3, v0, Landroid/view/View;->mPaddingRight:I
+    iget v3, v0, Lcom/android/camera/ui/SettingScreenView;->mPaddingRight:I
 
     sub-int v16, v2, v3
 
     .line 98
-    .local v16, w:I
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    .local v16, "w":I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingScreenView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -425,12 +425,12 @@
     iget v9, v2, Landroid/util/DisplayMetrics;->heightPixels:I
 
     .line 99
-    .local v9, h:I
+    .local v9, "h":I
     move/from16 v0, v16
 
     if-ge v0, v9, :cond_1
 
-    .end local v16           #w:I
+    .end local v16    # "w":I
     :goto_0
     move/from16 v0, v16
 
@@ -444,24 +444,24 @@
 
     div-float/2addr v2, v3
 
-    const/high16 v3, 0x3f00
+    const/high16 v3, 0x3f000000
 
     add-float/2addr v2, v3
 
     float-to-int v5, v2
 
     .line 101
-    .local v5, viewWidth:I
+    .local v5, "viewWidth":I
     const/4 v15, 0x0
 
-    .local v15, screenIndex:I
+    .local v15, "screenIndex":I
     :goto_1
     if-ge v15, v13, :cond_5
 
     .line 102
     new-instance v1, Lcom/android/camera/ui/StaticGridView;
 
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingScreenView;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -480,10 +480,10 @@
     invoke-direct/range {v1 .. v6}, Lcom/android/camera/ui/StaticGridView;-><init>(Landroid/content/Context;IIII)V
 
     .line 105
-    .local v1, gridView:Lcom/android/camera/ui/StaticGridView;
+    .local v1, "gridView":Lcom/android/camera/ui/StaticGridView;
     const/4 v8, 0x0
 
-    .local v8, gridIndex:I
+    .local v8, "gridIndex":I
     :goto_2
     if-ge v8, v14, :cond_0
 
@@ -503,7 +503,7 @@
     add-int v11, v8, v2
 
     .line 107
-    .local v11, listIndex:I
+    .local v11, "listIndex":I
     invoke-interface/range {p1 .. p1}, Ljava/util/List;->size()I
 
     move-result v2
@@ -511,24 +511,24 @@
     if-lt v11, v2, :cond_2
 
     .line 131
-    .end local v11           #listIndex:I
+    .end local v11    # "listIndex":I
     :cond_0
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/ui/SettingScreenView;->mSettingScreen:Lcom/android/camera/ui/ScreenView;
 
-    invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {v2, v1}, Lcom/android/camera/ui/ScreenView;->addView(Landroid/view/View;)V
 
     .line 101
     add-int/lit8 v15, v15, 0x1
 
     goto :goto_1
 
-    .end local v1           #gridView:Lcom/android/camera/ui/StaticGridView;
-    .end local v5           #viewWidth:I
-    .end local v8           #gridIndex:I
-    .end local v15           #screenIndex:I
-    .restart local v16       #w:I
+    .end local v1    # "gridView":Lcom/android/camera/ui/StaticGridView;
+    .end local v5    # "viewWidth":I
+    .end local v8    # "gridIndex":I
+    .end local v15    # "screenIndex":I
+    .restart local v16    # "w":I
     :cond_1
     move/from16 v16, v9
 
@@ -536,16 +536,16 @@
     goto :goto_0
 
     .line 110
-    .end local v16           #w:I
-    .restart local v1       #gridView:Lcom/android/camera/ui/StaticGridView;
-    .restart local v5       #viewWidth:I
-    .restart local v8       #gridIndex:I
-    .restart local v11       #listIndex:I
-    .restart local v15       #screenIndex:I
+    .end local v16    # "w":I
+    .restart local v1    # "gridView":Lcom/android/camera/ui/StaticGridView;
+    .restart local v5    # "viewWidth":I
+    .restart local v8    # "gridIndex":I
+    .restart local v11    # "listIndex":I
+    .restart local v15    # "screenIndex":I
     :cond_2
     move-object/from16 v0, p0
 
-    iget-object v3, v0, Lcom/android/camera/ui/SettingView;->mPreferenceGroup:Lcom/android/camera/PreferenceGroup;
+    iget-object v3, v0, Lcom/android/camera/ui/SettingScreenView;->mPreferenceGroup:Lcom/android/camera/PreferenceGroup;
 
     move-object/from16 v0, p1
 
@@ -562,11 +562,11 @@
     check-cast v12, Lcom/android/camera/IconListPreference;
 
     .line 112
-    .local v12, pref:Lcom/android/camera/IconListPreference;
+    .local v12, "pref":Lcom/android/camera/IconListPreference;
     if-eqz v12, :cond_3
 
     .line 115
-    invoke-virtual {v12}, Lcom/android/camera/ListPreference;->getKey()Ljava/lang/String;
+    invoke-virtual {v12}, Lcom/android/camera/IconListPreference;->getKey()Ljava/lang/String;
 
     move-result-object v2
 
@@ -581,14 +581,14 @@
     .line 116
     new-instance v7, Lcom/android/camera/ui/IndicatorButtonWhiteBalance;
 
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingScreenView;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
     invoke-direct {v7, v2, v12}, Lcom/android/camera/ui/IndicatorButtonWhiteBalance;-><init>(Landroid/content/Context;Lcom/android/camera/IconListPreference;)V
 
     .line 121
-    .local v7, b:Lcom/android/camera/ui/IndicatorButton;
+    .local v7, "b":Lcom/android/camera/ui/IndicatorButton;
     :goto_3
     move-object/from16 v0, p0
 
@@ -597,14 +597,14 @@
     .line 122
     move-object/from16 v0, p0
 
-    invoke-virtual {v7, v0}, Lcom/android/camera/ui/AbstractIndicatorButton;->setIndicatorClickListener(Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;)V
+    invoke-virtual {v7, v0}, Lcom/android/camera/ui/IndicatorButton;->setIndicatorClickListener(Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;)V
 
     .line 123
-    invoke-virtual {v12}, Lcom/android/camera/CameraPreference;->getTitle()Ljava/lang/String;
+    invoke-virtual {v12}, Lcom/android/camera/IconListPreference;->getTitle()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v7, v2}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v7, v2}, Lcom/android/camera/ui/IndicatorButton;->setContentDescription(Ljava/lang/CharSequence;)V
 
     .line 124
     new-instance v10, Landroid/view/ViewGroup$LayoutParams;
@@ -616,22 +616,22 @@
     invoke-direct {v10, v2, v3}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     .line 126
-    .local v10, layout:Landroid/view/ViewGroup$LayoutParams;
-    invoke-virtual {v7, v10}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    .local v10, "layout":Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v7, v10}, Lcom/android/camera/ui/IndicatorButton;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 127
-    invoke-virtual {v1, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {v1, v7}, Lcom/android/camera/ui/StaticGridView;->addView(Landroid/view/View;)V
 
     .line 128
     move-object/from16 v0, p0
 
-    iget-object v2, v0, Lcom/android/camera/ui/SettingView;->mIndicators:Ljava/util/ArrayList;
+    iget-object v2, v0, Lcom/android/camera/ui/SettingScreenView;->mIndicators:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 105
-    .end local v7           #b:Lcom/android/camera/ui/IndicatorButton;
-    .end local v10           #layout:Landroid/view/ViewGroup$LayoutParams;
+    .end local v7    # "b":Lcom/android/camera/ui/IndicatorButton;
+    .end local v10    # "layout":Landroid/view/ViewGroup$LayoutParams;
     :cond_3
     add-int/lit8 v8, v8, 0x1
 
@@ -641,31 +641,30 @@
     :cond_4
     new-instance v7, Lcom/android/camera/ui/IndicatorButton;
 
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingScreenView;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
     invoke-direct {v7, v2, v12}, Lcom/android/camera/ui/IndicatorButton;-><init>(Landroid/content/Context;Lcom/android/camera/IconListPreference;)V
 
-    .restart local v7       #b:Lcom/android/camera/ui/IndicatorButton;
+    .restart local v7    # "b":Lcom/android/camera/ui/IndicatorButton;
     goto :goto_3
 
     .line 133
-    .end local v1           #gridView:Lcom/android/camera/ui/StaticGridView;
-    .end local v7           #b:Lcom/android/camera/ui/IndicatorButton;
-    .end local v8           #gridIndex:I
-    .end local v11           #listIndex:I
-    .end local v12           #pref:Lcom/android/camera/IconListPreference;
+    .end local v1    # "gridView":Lcom/android/camera/ui/StaticGridView;
+    .end local v7    # "b":Lcom/android/camera/ui/IndicatorButton;
+    .end local v8    # "gridIndex":I
+    .end local v11    # "listIndex":I
+    .end local v12    # "pref":Lcom/android/camera/IconListPreference;
     :cond_5
     return-void
 .end method
 
 .method public initializeSettingScreen(Lcom/android/camera/PreferenceGroup;Ljava/util/List;Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;I)V
     .locals 7
-    .parameter "preferenceGroup"
-    .parameter
-    .parameter "indicatorClickListener"
-    .parameter "columns"
+    .param p1, "preferenceGroup"    # Lcom/android/camera/PreferenceGroup;
+    .param p3, "indicatorClickListener"    # Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
+    .param p4, "columns"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -680,13 +679,13 @@
     .end annotation
 
     .prologue
-    .local p2, keys:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
+    .local p2, "keys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const/4 v6, -0x2
 
     const/4 v5, 0x0
 
     .line 55
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/camera/ui/SettingScreenView;->mContext:Landroid/content/Context;
 
     const v2, 0x7f050006
 
@@ -697,7 +696,7 @@
     iput-object v1, p0, Lcom/android/camera/ui/SettingScreenView;->mFadeIn:Landroid/view/animation/Animation;
 
     .line 56
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/camera/ui/SettingScreenView;->mContext:Landroid/content/Context;
 
     const v2, 0x7f050007
 
@@ -718,7 +717,7 @@
     invoke-virtual {v1, p0}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
     .line 59
-    invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
+    invoke-virtual {p0}, Lcom/android/camera/ui/SettingScreenView;->getRootView()Landroid/view/View;
 
     move-result-object v1
 
@@ -731,7 +730,7 @@
     iput-object v1, p0, Lcom/android/camera/ui/SettingScreenView;->mParent:Landroid/view/View;
 
     .line 60
-    invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
+    invoke-virtual {p0}, Lcom/android/camera/ui/SettingScreenView;->getRootView()Landroid/view/View;
 
     move-result-object v1
 
@@ -743,13 +742,13 @@
 
     check-cast v1, Lcom/android/camera/ui/SettingButton;
 
-    iput-object v1, p0, Lcom/android/camera/ui/SettingView;->mSettingButton:Lcom/android/camera/ui/SettingButton;
+    iput-object v1, p0, Lcom/android/camera/ui/SettingScreenView;->mSettingButton:Lcom/android/camera/ui/SettingButton;
 
     .line 62
-    iput-object p1, p0, Lcom/android/camera/ui/SettingView;->mPreferenceGroup:Lcom/android/camera/PreferenceGroup;
+    iput-object p1, p0, Lcom/android/camera/ui/SettingScreenView;->mPreferenceGroup:Lcom/android/camera/PreferenceGroup;
 
     .line 63
-    iput-object p3, p0, Lcom/android/camera/ui/SettingView;->mIndicatorClickListener:Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
+    iput-object p3, p0, Lcom/android/camera/ui/SettingScreenView;->mIndicatorClickListener:Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
 
     .line 64
     invoke-direct {p0}, Lcom/android/camera/ui/SettingScreenView;->initScreenView()V
@@ -757,7 +756,7 @@
     .line 66
     const v1, 0x7f0c0033
 
-    invoke-virtual {p0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Lcom/android/camera/ui/SettingScreenView;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -783,7 +782,7 @@
 
     invoke-direct {v2, v3, v4}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v1, v2}, Lcom/android/camera/ui/ScreenView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 71
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
@@ -793,14 +792,14 @@
     invoke-direct {v0, v6, v6, v1}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
     .line 74
-    .local v0, seekbarParams:Landroid/widget/FrameLayout$LayoutParams;
+    .local v0, "seekbarParams":Landroid/widget/FrameLayout$LayoutParams;
     iget v1, p0, Lcom/android/camera/ui/SettingScreenView;->mRowHeight:I
 
     iget v2, p0, Lcom/android/camera/ui/SettingScreenView;->mRowCount:I
 
     mul-int/2addr v1, v2
 
-    invoke-virtual {v0, v5, v1, v5, v5}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
+    invoke-virtual {v0, v5, v1, v5, v5}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
 
     .line 75
     iget-object v1, p0, Lcom/android/camera/ui/SettingScreenView;->mSettingScreen:Lcom/android/camera/ui/ScreenView;
@@ -821,7 +820,7 @@
     invoke-direct {p0}, Lcom/android/camera/ui/SettingScreenView;->dissmissAllPopup()V
 
     .line 79
-    invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
+    invoke-virtual {p0}, Lcom/android/camera/ui/SettingScreenView;->getRootView()Landroid/view/View;
 
     move-result-object v1
 
@@ -836,7 +835,7 @@
     invoke-virtual {v1}, Landroid/view/ViewGroup;->removeAllViews()V
 
     .line 80
-    iget-object v1, p0, Lcom/android/camera/ui/SettingView;->mIndicators:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/android/camera/ui/SettingScreenView;->mIndicators:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
@@ -854,7 +853,7 @@
 
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .locals 1
-    .parameter "animation"
+    .param p1, "animation"    # Landroid/view/animation/Animation;
 
     .prologue
     .line 152
@@ -872,7 +871,7 @@
 
 .method public onAnimationRepeat(Landroid/view/animation/Animation;)V
     .locals 0
-    .parameter "animation"
+    .param p1, "animation"    # Landroid/view/animation/Animation;
 
     .prologue
     .line 179
@@ -881,7 +880,7 @@
 
 .method public onAnimationStart(Landroid/view/animation/Animation;)V
     .locals 0
-    .parameter "animation"
+    .param p1, "animation"    # Landroid/view/animation/Animation;
 
     .prologue
     .line 148
@@ -890,17 +889,17 @@
 
 .method public onIndicatorClick(Landroid/view/View;Ljava/lang/String;)V
     .locals 1
-    .parameter "view"
-    .parameter "key"
+    .param p1, "view"    # Landroid/view/View;
+    .param p2, "key"    # Ljava/lang/String;
 
     .prologue
     .line 227
-    iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mIndicatorClickListener:Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
+    iget-object v0, p0, Lcom/android/camera/ui/SettingScreenView;->mIndicatorClickListener:Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
 
     if-eqz v0, :cond_0
 
     .line 228
-    iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mIndicatorClickListener:Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
+    iget-object v0, p0, Lcom/android/camera/ui/SettingScreenView;->mIndicatorClickListener:Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
 
     invoke-interface {v0, p1, p2}, Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;->onIndicatorClick(Landroid/view/View;Ljava/lang/String;)V
 
@@ -914,12 +913,12 @@
 
     .prologue
     .line 220
-    iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mListener:Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
+    iget-object v0, p0, Lcom/android/camera/ui/SettingScreenView;->mListener:Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
 
     if-eqz v0, :cond_0
 
     .line 221
-    iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mListener:Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
+    iget-object v0, p0, Lcom/android/camera/ui/SettingScreenView;->mListener:Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
 
     invoke-interface {v0}, Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;->onSharedPreferenceChanged()V
 
@@ -930,17 +929,17 @@
 
 .method public setEnabled(Z)V
     .locals 4
-    .parameter "enabled"
+    .param p1, "enabled"    # Z
 
     .prologue
     .line 137
-    iget-object v2, p0, Lcom/android/camera/ui/SettingView;->mIndicators:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/camera/ui/SettingScreenView;->mIndicators:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .local v1, i$:Ljava/util/Iterator;
+    .local v1, "i$":Ljava/util/Iterator;
     :cond_0
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -956,7 +955,7 @@
     check-cast v0, Lcom/android/camera/ui/AbstractIndicatorButton;
 
     .line 138
-    .local v0, i:Lcom/android/camera/ui/AbstractIndicatorButton;
+    .local v0, "i":Lcom/android/camera/ui/AbstractIndicatorButton;
     iget-object v2, p0, Lcom/android/camera/ui/SettingScreenView;->mDisabledIndicator:Ljava/util/Set;
 
     invoke-virtual {v0}, Lcom/android/camera/ui/AbstractIndicatorButton;->getKey()Ljava/lang/String;
@@ -975,9 +974,9 @@
     goto :goto_0
 
     .line 142
-    .end local v0           #i:Lcom/android/camera/ui/AbstractIndicatorButton;
+    .end local v0    # "i":Lcom/android/camera/ui/AbstractIndicatorButton;
     :cond_1
-    invoke-super {p0, p1}, Landroid/view/View;->setEnabled(Z)V
+    invoke-super {p0, p1}, Lcom/android/camera/ui/SettingView;->setEnabled(Z)V
 
     .line 143
     return-void
@@ -985,12 +984,12 @@
 
 .method public setOrientation(IZ)V
     .locals 3
-    .parameter "orientation"
-    .parameter "animation"
+    .param p1, "orientation"    # I
+    .param p2, "animation"    # Z
 
     .prologue
     .line 233
-    iget-object v2, p0, Lcom/android/camera/ui/SettingView;->mIndicators:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/camera/ui/SettingScreenView;->mIndicators:Ljava/util/ArrayList;
 
     if-nez v2, :cond_1
 
@@ -1002,9 +1001,9 @@
     :cond_1
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
-    iget-object v2, p0, Lcom/android/camera/ui/SettingView;->mIndicators:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/camera/ui/SettingScreenView;->mIndicators:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -1013,7 +1012,7 @@
     if-ge v0, v2, :cond_0
 
     .line 235
-    iget-object v2, p0, Lcom/android/camera/ui/SettingView;->mIndicators:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/camera/ui/SettingScreenView;->mIndicators:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -1022,7 +1021,7 @@
     check-cast v1, Lcom/android/camera/ui/AbstractIndicatorButton;
 
     .line 236
-    .local v1, view:Lcom/android/camera/ui/AbstractIndicatorButton;
+    .local v1, "view":Lcom/android/camera/ui/AbstractIndicatorButton;
     invoke-virtual {v1, p1}, Lcom/android/camera/ui/AbstractIndicatorButton;->setOrientation(I)V
 
     .line 234
@@ -1033,7 +1032,7 @@
 
 .method public setVisibility(I)V
     .locals 0
-    .parameter "visibility"
+    .param p1, "visibility"    # I
 
     .prologue
     .line 211
@@ -1082,7 +1081,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
     .line 187
-    iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mSettingButton:Lcom/android/camera/ui/SettingButton;
+    iget-object v0, p0, Lcom/android/camera/ui/SettingScreenView;->mSettingButton:Lcom/android/camera/ui/SettingButton;
 
     invoke-virtual {v0}, Lcom/android/camera/ui/SettingButton;->updateImageResource()V
 
@@ -1093,7 +1092,7 @@
 
 .method public showPopup(Ljava/lang/String;)V
     .locals 3
-    .parameter "key"
+    .param p1, "key"    # Ljava/lang/String;
 
     .prologue
     .line 159
@@ -1105,13 +1104,13 @@
 
     .line 160
     :cond_1
-    iget-object v2, p0, Lcom/android/camera/ui/SettingView;->mIndicators:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/android/camera/ui/SettingScreenView;->mIndicators:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .local v1, i$:Ljava/util/Iterator;
+    .local v1, "i$":Ljava/util/Iterator;
     :cond_2
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -1127,7 +1126,7 @@
     check-cast v0, Lcom/android/camera/ui/AbstractIndicatorButton;
 
     .line 161
-    .local v0, i:Lcom/android/camera/ui/AbstractIndicatorButton;
+    .local v0, "i":Lcom/android/camera/ui/AbstractIndicatorButton;
     invoke-virtual {v0}, Lcom/android/camera/ui/AbstractIndicatorButton;->getKey()Ljava/lang/String;
 
     move-result-object v2

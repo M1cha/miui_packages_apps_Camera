@@ -35,11 +35,11 @@
 # virtual methods
 .method protected onLayout(ZIIII)V
     .locals 4
-    .parameter "changed"
-    .parameter "left"
-    .parameter "top"
-    .parameter "right"
-    .parameter "bottom"
+    .param p1, "changed"    # Z
+    .param p2, "left"    # I
+    .param p3, "top"    # I
+    .param p4, "right"    # I
+    .param p5, "bottom"    # I
 
     .prologue
     const/4 v3, 0x0
@@ -47,7 +47,7 @@
     .line 89
     iget-object v0, p0, Lcom/android/gallery3d/app/SlideshowPage$1;->this$0:Lcom/android/gallery3d/app/SlideshowPage;
 
-    #getter for: Lcom/android/gallery3d/app/SlideshowPage;->mSlideshowView:Lcom/android/gallery3d/ui/SlideshowView;
+    # getter for: Lcom/android/gallery3d/app/SlideshowPage;->mSlideshowView:Lcom/android/gallery3d/ui/SlideshowView;
     invoke-static {v0}, Lcom/android/gallery3d/app/SlideshowPage;->access$000(Lcom/android/gallery3d/app/SlideshowPage;)Lcom/android/gallery3d/ui/SlideshowView;
 
     move-result-object v0
@@ -56,7 +56,7 @@
 
     sub-int v2, p5, p3
 
-    invoke-virtual {v0, v3, v3, v1, v2}, Lcom/android/gallery3d/ui/GLView;->layout(IIII)V
+    invoke-virtual {v0, v3, v3, v1, v2}, Lcom/android/gallery3d/ui/SlideshowView;->layout(IIII)V
 
     .line 90
     return-void
@@ -64,7 +64,7 @@
 
 .method protected onTouch(Landroid/view/MotionEvent;)Z
     .locals 2
-    .parameter "event"
+    .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
     const/4 v1, 0x1
@@ -79,7 +79,7 @@
     .line 95
     iget-object v0, p0, Lcom/android/gallery3d/app/SlideshowPage$1;->this$0:Lcom/android/gallery3d/app/SlideshowPage;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/app/ActivityState;->onBackPressed()V
+    invoke-virtual {v0}, Lcom/android/gallery3d/app/SlideshowPage;->onBackPressed()V
 
     .line 97
     :cond_0
@@ -88,7 +88,7 @@
 
 .method protected renderBackground(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 0
-    .parameter "canvas"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
 
     .prologue
     .line 102

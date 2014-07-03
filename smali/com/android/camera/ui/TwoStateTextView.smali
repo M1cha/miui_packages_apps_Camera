@@ -12,7 +12,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .parameter "context"
+    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 16
@@ -26,8 +26,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 12
@@ -51,7 +51,7 @@
 # virtual methods
 .method public setEnabled(Z)V
     .locals 1
-    .parameter "enabled"
+    .param p1, "enabled"    # Z
 
     .prologue
     .line 21
@@ -66,9 +66,9 @@
     if-eqz p1, :cond_1
 
     .line 24
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/TwoStateTextView;->setAlpha(F)V
 
     .line 29
     :cond_0
@@ -79,7 +79,7 @@
     :cond_1
     const v0, 0x3ecccccd
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/TwoStateTextView;->setAlpha(F)V
 
     goto :goto_0
 .end method

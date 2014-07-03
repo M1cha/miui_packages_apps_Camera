@@ -251,7 +251,7 @@
     <string name="pref_camera_autoexposure_entry_frameaverage">Средно по кадри</string>
     <string name="pref_camera_autoexposure_entry_centerweighted">Центрирана</string>
     <string name="pref_camera_autoexposure_entry_spotmetering">Точка</string>
-    <string name="pref_camera_audio_capture_title">Звукозапис</string>
+    <string name="pref_camera_audio_capture_title">Снимане чрез звук</string>
     <string name="pref_camera_video_duration_title">Продължителност на видео</string>
     <string name="pref_camera_video_duration_entry_mms">30 секунди(MMS)</string>
     <string name="pref_camera_video_duration_entry_10">10 минути</string>
@@ -401,13 +401,14 @@
     <string name="simple_mode_button_text_hand_night">Спри нощен режим</string>
     <string name="simple_mode_button_text_panorama">Спри панорама</string>
     <string name="simple_mode_button_text_color_effect">Спри филтъра</string>
-    <string name="simple_mode_button_text_audio_capture">Спри звукозаписа</string>
+    <string name="simple_mode_button_text_audio_capture">Спри снимането чрез звук</string>
     <string name="simple_mode_button_text_slow_video">Спри бавно видео</string>
     <string name="pref_video_slow_speed_title_simple_mode">Бавно видео</string>
     <string name="simple_mode_title">Обикновен режим</string>
     <string name="pref_settings_mode">Режим на камерата</string>
     <string name="pref_video_captrue_ability_title">Снимка по време на запис</string>
     <string name="find_mecard_qrcode">Открит QR код на визитка</string>
+    <string name="find_wechat_qrcode">Открит е WeChat QR код</string>
     <string name="find_market_qrcode">Открит търговски QR код</string>
     <string name="find_web_qrcode">Открит QR код на уебсайт</string>
     <string name="find_other_qrcode">Открит QR код</string>
@@ -418,6 +419,7 @@
     <string name="app_details">За програмата:</string>
     <string name="website_details">"Интернет страница: "</string>
     <string name="contact_details">Контакт:</string>
+    <string name="wechat_details">WeChat:</string>
     <string name="qr_code_details">"QR код: "</string>
     <string name="import_contact">Импортиране на контакт</string>
     <string name="secure_access_web_url">Безопасен достъп</string>
@@ -462,10 +464,9 @@
     <string name="pref_camera_watermark_title">Дата на снимката</string>
     <string name="pref_camera_watermark_entry_off">Изкл.</string>
     <string name="pref_camera_watermark_entry_on">Вкл.</string>
-    <string name="find_weixin_qrcode">Търсене в WeiXin по QR код</string>
-    <string name="weixin_details">"Weixin: "</string>
+    <string name="pref_camera_referenceline_title">Базова линия</string>
+    <string name="pref_camera_multiple_face_beauty_title">Разкрасяване на лица</string>
     <string name="pref_camera_multiple_face_beauty_entry_off">Изкл.</string>
     <string name="pref_camera_multiple_face_beauty_entry_on">Вкл.</string>
-    <string name="pref_camera_multiple_face_beauty_title">Разкрасяване на лица</string>
-    <string name="pref_camera_referenceline_title">Базова линия</string>
+    <string name="toast_cannot_preview_image_when_screen_locked">Не може да преглеждате снимка или клип, когато екрана е заключен.</string>
 </resources>

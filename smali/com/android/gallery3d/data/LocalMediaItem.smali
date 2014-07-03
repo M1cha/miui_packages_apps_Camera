@@ -34,8 +34,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;J)V
     .locals 2
-    .parameter "path"
-    .parameter "version"
+    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .param p2, "version"    # J
 
     .prologue
     const-wide/16 v0, 0x0
@@ -82,12 +82,12 @@
     const/4 v7, 0x1
 
     .line 84
-    invoke-super {p0}, Lcom/android/gallery3d/data/MediaObject;->getDetails()Lcom/android/gallery3d/data/MediaDetails;
+    invoke-super {p0}, Lcom/android/gallery3d/data/MediaItem;->getDetails()Lcom/android/gallery3d/data/MediaDetails;
 
     move-result-object v0
 
     .line 85
-    .local v0, details:Lcom/android/gallery3d/data/MediaDetails;
+    .local v0, "details":Lcom/android/gallery3d/data/MediaDetails;
     const/16 v2, 0xc8
 
     iget-object v3, p0, Lcom/android/gallery3d/data/LocalMediaItem;->filePath:Ljava/lang/String;
@@ -105,7 +105,7 @@
     move-result-object v1
 
     .line 88
-    .local v1, formater:Ljava/text/DateFormat;
+    .local v1, "formater":Ljava/text/DateFormat;
     const/4 v2, 0x3
 
     new-instance v3, Ljava/util/Date;
@@ -177,7 +177,7 @@
 
 .method public getLatLong([D)V
     .locals 3
-    .parameter "latLong"
+    .param p1, "latLong"    # [D
 
     .prologue
     .line 66
@@ -220,7 +220,7 @@
 
 .method protected updateContent(Landroid/database/Cursor;)V
     .locals 2
-    .parameter "cursor"
+    .param p1, "cursor"    # Landroid/database/Cursor;
 
     .prologue
     .line 77
@@ -235,7 +235,7 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/android/gallery3d/data/MediaObject;->mDataVersion:J
+    iput-wide v0, p0, Lcom/android/gallery3d/data/LocalMediaItem;->mDataVersion:J
 
     .line 80
     :cond_0

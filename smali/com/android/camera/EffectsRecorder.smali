@@ -82,7 +82,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 5
-    .parameter "context"
+    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     const/4 v4, 0x0
@@ -238,7 +238,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/EffectsRecorder;)Z
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
 
     .prologue
     .line 50
@@ -249,7 +249,7 @@
 
 .method static synthetic access$100(Lcom/android/camera/EffectsRecorder;)Landroid/graphics/SurfaceTexture;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
 
     .prologue
     .line 50
@@ -260,7 +260,7 @@
 
 .method static synthetic access$1000(Lcom/android/camera/EffectsRecorder;)Lcom/android/camera/EffectsRecorder$EffectsListener;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
 
     .prologue
     .line 50
@@ -271,8 +271,8 @@
 
 .method static synthetic access$102(Lcom/android/camera/EffectsRecorder;Landroid/graphics/SurfaceTexture;)Landroid/graphics/SurfaceTexture;
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
+    .param p1, "x1"    # Landroid/graphics/SurfaceTexture;
 
     .prologue
     .line 50
@@ -283,7 +283,7 @@
 
 .method static synthetic access$1100(Lcom/android/camera/EffectsRecorder;)Ljava/io/FileDescriptor;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
 
     .prologue
     .line 50
@@ -294,7 +294,7 @@
 
 .method static synthetic access$1200(Lcom/android/camera/EffectsRecorder;)Ljava/lang/String;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
 
     .prologue
     .line 50
@@ -305,7 +305,7 @@
 
 .method static synthetic access$200(Lcom/android/camera/EffectsRecorder;)I
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
 
     .prologue
     .line 50
@@ -316,8 +316,8 @@
 
 .method static synthetic access$202(Lcom/android/camera/EffectsRecorder;I)I
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
+    .param p1, "x1"    # I
 
     .prologue
     .line 50
@@ -328,7 +328,7 @@
 
 .method static synthetic access$300(Lcom/android/camera/EffectsRecorder;)Landroid/hardware/Camera;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
 
     .prologue
     .line 50
@@ -339,7 +339,7 @@
 
 .method static synthetic access$400(Lcom/android/camera/EffectsRecorder;)I
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
 
     .prologue
     .line 50
@@ -350,9 +350,9 @@
 
 .method static synthetic access$500(Lcom/android/camera/EffectsRecorder;II)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
+    .param p1, "x1"    # I
+    .param p2, "x2"    # I
 
     .prologue
     .line 50
@@ -363,7 +363,7 @@
 
 .method static synthetic access$600(Lcom/android/camera/EffectsRecorder;)Landroid/filterfw/core/GraphRunner;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
 
     .prologue
     .line 50
@@ -374,7 +374,7 @@
 
 .method static synthetic access$700(Lcom/android/camera/EffectsRecorder;)Landroid/filterfw/core/GraphRunner;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
 
     .prologue
     .line 50
@@ -385,8 +385,8 @@
 
 .method static synthetic access$702(Lcom/android/camera/EffectsRecorder;Landroid/filterfw/core/GraphRunner;)Landroid/filterfw/core/GraphRunner;
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
+    .param p1, "x1"    # Landroid/filterfw/core/GraphRunner;
 
     .prologue
     .line 50
@@ -397,8 +397,8 @@
 
 .method static synthetic access$800(Lcom/android/camera/EffectsRecorder;Ljava/lang/Exception;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
+    .param p1, "x1"    # Ljava/lang/Exception;
 
     .prologue
     .line 50
@@ -409,7 +409,7 @@
 
 .method static synthetic access$900(Lcom/android/camera/EffectsRecorder;)Landroid/filterfw/GraphEnvironment;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/EffectsRecorder;
 
     .prologue
     .line 50
@@ -420,7 +420,7 @@
 
 .method private declared-synchronized initializeEffect(Z)V
     .locals 11
-    .parameter "forceReset"
+    .param p1, "forceReset"    # Z
 
     .prologue
     const/4 v10, 0x3
@@ -695,8 +695,8 @@
 
     invoke-virtual {v4, v5}, Landroid/hardware/Camera;->setPreviewTexture(Landroid/graphics/SurfaceTexture;)V
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 473
     :try_start_3
@@ -739,7 +739,7 @@
 
     iget-object v5, p0, Lcom/android/camera/EffectsRecorder;->mContext:Landroid/content/Context;
 
-    const/high16 v6, 0x7f07
+    const/high16 v6, 0x7f070000
 
     invoke-virtual {v4, v5, v6}, Landroid/filterfw/GraphEnvironment;->loadGraph(Landroid/content/Context;I)I
 
@@ -754,7 +754,7 @@
     move-exception v1
 
     .line 471
-    .local v1, e:Ljava/io/IOException;
+    .local v1, "e":Ljava/io/IOException;
     new-instance v4, Ljava/lang/RuntimeException;
 
     const-string v5, "Unable to connect camera to effect input"
@@ -764,7 +764,7 @@
     throw v4
 
     .line 479
-    .end local v1           #e:Ljava/io/IOException;
+    .end local v1    # "e":Ljava/io/IOException;
     :pswitch_2
     const/4 v4, 0x1
 
@@ -784,7 +784,7 @@
     move-result-object v2
 
     .line 481
-    .local v2, goofyFilter:Landroid/filterfw/core/Filter;
+    .local v2, "goofyFilter":Landroid/filterfw/core/Filter;
     const-string v5, "currentEffect"
 
     iget-object v4, p0, Lcom/android/camera/EffectsRecorder;->mEffectParameter:Ljava/lang/Object;
@@ -804,7 +804,7 @@
     goto :goto_1
 
     .line 485
-    .end local v2           #goofyFilter:Landroid/filterfw/core/Filter;
+    .end local v2    # "goofyFilter":Landroid/filterfw/core/Filter;
     :pswitch_3
     const/4 v4, 0x0
 
@@ -824,7 +824,7 @@
     move-result-object v0
 
     .line 487
-    .local v0, backgroundSrc:Landroid/filterfw/core/Filter;
+    .local v0, "backgroundSrc":Landroid/filterfw/core/Filter;
     const-string v4, "sourceUrl"
 
     iget-object v5, p0, Lcom/android/camera/EffectsRecorder;->mEffectParameter:Ljava/lang/Object;
@@ -850,7 +850,7 @@
     move-result-object v3
 
     .line 492
-    .local v3, replacer:Landroid/filterfw/core/Filter;
+    .local v3, "replacer":Landroid/filterfw/core/Filter;
     const-string v4, "mirrorBg"
 
     const/4 v5, 0x1
@@ -909,7 +909,7 @@
     .line 405
     iget-object v3, p0, Lcom/android/camera/EffectsRecorder;->mGraphEnv:Landroid/filterfw/GraphEnvironment;
 
-    invoke-virtual {v3}, Landroid/filterfw/MffEnvironment;->createGLEnvironment()V
+    invoke-virtual {v3}, Landroid/filterfw/GraphEnvironment;->createGLEnvironment()V
 
     .line 407
     iget-object v3, p0, Lcom/android/camera/EffectsRecorder;->mProfile:Landroid/media/CamcorderProfile;
@@ -917,13 +917,13 @@
     iget v2, v3, Landroid/media/CamcorderProfile;->videoFrameWidth:I
 
     .line 408
-    .local v2, videoFrameWidth:I
+    .local v2, "videoFrameWidth":I
     iget-object v3, p0, Lcom/android/camera/EffectsRecorder;->mProfile:Landroid/media/CamcorderProfile;
 
     iget v1, v3, Landroid/media/CamcorderProfile;->videoFrameHeight:I
 
     .line 409
-    .local v1, videoFrameHeight:I
+    .local v1, "videoFrameHeight":I
     iget v3, p0, Lcom/android/camera/EffectsRecorder;->mCameraDisplayOrientation:I
 
     const/16 v4, 0x5a
@@ -941,14 +941,14 @@
     move v0, v2
 
     .line 411
-    .local v0, tmp:I
+    .local v0, "tmp":I
     move v2, v1
 
     .line 412
     move v1, v0
 
     .line 415
-    .end local v0           #tmp:I
+    .end local v0    # "tmp":I
     :cond_1
     iget-object v3, p0, Lcom/android/camera/EffectsRecorder;->mGraphEnv:Landroid/filterfw/GraphEnvironment;
 
@@ -1051,7 +1051,7 @@
 
 .method public static isEffectSupported(I)Z
     .locals 1
-    .parameter "effectId"
+    .param p0, "effectId"    # I
 
     .prologue
     .line 120
@@ -1095,7 +1095,7 @@
 
 .method private raiseError(Ljava/lang/Exception;)V
     .locals 2
-    .parameter "exception"
+    .param p1, "exception"    # Ljava/lang/Exception;
 
     .prologue
     .line 939
@@ -1119,8 +1119,8 @@
 
 .method private sendMessage(II)V
     .locals 2
-    .parameter "effect"
-    .parameter "msg"
+    .param p1, "effect"    # I
+    .param p2, "msg"    # I
 
     .prologue
     .line 928
@@ -1167,7 +1167,7 @@
     move-result-object v2
 
     .line 311
-    .local v2, rotateFilter:Landroid/filterfw/core/Filter;
+    .local v2, "rotateFilter":Landroid/filterfw/core/Filter;
     iget-object v3, p0, Lcom/android/camera/EffectsRecorder;->mRunner:Landroid/filterfw/core/GraphRunner;
 
     invoke-virtual {v3}, Landroid/filterfw/core/GraphRunner;->getGraph()Landroid/filterfw/core/FilterGraph;
@@ -1181,7 +1181,7 @@
     move-result-object v0
 
     .line 312
-    .local v0, metaRotateFilter:Landroid/filterfw/core/Filter;
+    .local v0, "metaRotateFilter":Landroid/filterfw/core/Filter;
     const-string v3, "rotation"
 
     iget v4, p0, Lcom/android/camera/EffectsRecorder;->mOrientationHint:I
@@ -1200,7 +1200,7 @@
     rem-int/lit16 v1, v3, 0x168
 
     .line 314
-    .local v1, reverseDegrees:I
+    .local v1, "reverseDegrees":I
     const-string v3, "rotation"
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1210,9 +1210,9 @@
     invoke-virtual {v0, v3, v4}, Landroid/filterfw/core/Filter;->setInputValue(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 316
-    .end local v0           #metaRotateFilter:Landroid/filterfw/core/Filter;
-    .end local v1           #reverseDegrees:I
-    .end local v2           #rotateFilter:Landroid/filterfw/core/Filter;
+    .end local v0    # "metaRotateFilter":Landroid/filterfw/core/Filter;
+    .end local v1    # "reverseDegrees":I
+    .end local v2    # "rotateFilter":Landroid/filterfw/core/Filter;
     :cond_0
     return-void
 .end method
@@ -1221,7 +1221,7 @@
     .locals 10
 
     .prologue
-    const/high16 v9, 0x3f80
+    const/high16 v9, 0x3f800000
 
     const/4 v8, 0x0
 
@@ -1242,25 +1242,25 @@
     invoke-direct {v0, v8, v8}, Landroid/filterfw/geometry/Point;-><init>(FF)V
 
     .line 321
-    .local v0, bl:Landroid/filterfw/geometry/Point;
+    .local v0, "bl":Landroid/filterfw/geometry/Point;
     new-instance v1, Landroid/filterfw/geometry/Point;
 
     invoke-direct {v1, v9, v8}, Landroid/filterfw/geometry/Point;-><init>(FF)V
 
     .line 322
-    .local v1, br:Landroid/filterfw/geometry/Point;
+    .local v1, "br":Landroid/filterfw/geometry/Point;
     new-instance v4, Landroid/filterfw/geometry/Point;
 
     invoke-direct {v4, v8, v9}, Landroid/filterfw/geometry/Point;-><init>(FF)V
 
     .line 323
-    .local v4, tl:Landroid/filterfw/geometry/Point;
+    .local v4, "tl":Landroid/filterfw/geometry/Point;
     new-instance v5, Landroid/filterfw/geometry/Point;
 
     invoke-direct {v5, v9, v9}, Landroid/filterfw/geometry/Point;-><init>(FF)V
 
     .line 325
-    .local v5, tr:Landroid/filterfw/geometry/Point;
+    .local v5, "tr":Landroid/filterfw/geometry/Point;
     iget v6, p0, Lcom/android/camera/EffectsRecorder;->mCameraFacing:I
 
     if-nez v6, :cond_1
@@ -1271,7 +1271,7 @@
     invoke-direct {v3, v0, v1, v4, v5}, Landroid/filterfw/geometry/Quad;-><init>(Landroid/filterfw/geometry/Point;Landroid/filterfw/geometry/Point;Landroid/filterfw/geometry/Point;Landroid/filterfw/geometry/Point;)V
 
     .line 339
-    .local v3, recordingRegion:Landroid/filterfw/geometry/Quad;
+    .local v3, "recordingRegion":Landroid/filterfw/geometry/Quad;
     :goto_0
     iget-object v6, p0, Lcom/android/camera/EffectsRecorder;->mRunner:Landroid/filterfw/core/GraphRunner;
 
@@ -1286,26 +1286,26 @@
     move-result-object v2
 
     .line 340
-    .local v2, recorder:Landroid/filterfw/core/Filter;
+    .local v2, "recorder":Landroid/filterfw/core/Filter;
     const-string v6, "inputRegion"
 
     invoke-virtual {v2, v6, v3}, Landroid/filterfw/core/Filter;->setInputValue(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 342
-    .end local v0           #bl:Landroid/filterfw/geometry/Point;
-    .end local v1           #br:Landroid/filterfw/geometry/Point;
-    .end local v2           #recorder:Landroid/filterfw/core/Filter;
-    .end local v3           #recordingRegion:Landroid/filterfw/geometry/Quad;
-    .end local v4           #tl:Landroid/filterfw/geometry/Point;
-    .end local v5           #tr:Landroid/filterfw/geometry/Point;
+    .end local v0    # "bl":Landroid/filterfw/geometry/Point;
+    .end local v1    # "br":Landroid/filterfw/geometry/Point;
+    .end local v2    # "recorder":Landroid/filterfw/core/Filter;
+    .end local v3    # "recordingRegion":Landroid/filterfw/geometry/Quad;
+    .end local v4    # "tl":Landroid/filterfw/geometry/Point;
+    .end local v5    # "tr":Landroid/filterfw/geometry/Point;
     :cond_0
     return-void
 
     .line 331
-    .restart local v0       #bl:Landroid/filterfw/geometry/Point;
-    .restart local v1       #br:Landroid/filterfw/geometry/Point;
-    .restart local v4       #tl:Landroid/filterfw/geometry/Point;
-    .restart local v5       #tr:Landroid/filterfw/geometry/Point;
+    .restart local v0    # "bl":Landroid/filterfw/geometry/Point;
+    .restart local v1    # "br":Landroid/filterfw/geometry/Point;
+    .restart local v4    # "tl":Landroid/filterfw/geometry/Point;
+    .restart local v5    # "tr":Landroid/filterfw/geometry/Point;
     :cond_1
     iget v6, p0, Lcom/android/camera/EffectsRecorder;->mOrientationHint:I
 
@@ -1323,17 +1323,17 @@
 
     invoke-direct {v3, v1, v0, v5, v4}, Landroid/filterfw/geometry/Quad;-><init>(Landroid/filterfw/geometry/Point;Landroid/filterfw/geometry/Point;Landroid/filterfw/geometry/Point;Landroid/filterfw/geometry/Point;)V
 
-    .restart local v3       #recordingRegion:Landroid/filterfw/geometry/Quad;
+    .restart local v3    # "recordingRegion":Landroid/filterfw/geometry/Quad;
     goto :goto_0
 
     .line 336
-    .end local v3           #recordingRegion:Landroid/filterfw/geometry/Quad;
+    .end local v3    # "recordingRegion":Landroid/filterfw/geometry/Quad;
     :cond_3
     new-instance v3, Landroid/filterfw/geometry/Quad;
 
     invoke-direct {v3, v4, v5, v0, v1}, Landroid/filterfw/geometry/Quad;-><init>(Landroid/filterfw/geometry/Point;Landroid/filterfw/geometry/Point;Landroid/filterfw/geometry/Point;Landroid/filterfw/geometry/Point;)V
 
-    .restart local v3       #recordingRegion:Landroid/filterfw/geometry/Quad;
+    .restart local v3    # "recordingRegion":Landroid/filterfw/geometry/Quad;
     goto :goto_0
 .end method
 
@@ -1417,10 +1417,10 @@
     check-cast v0, Landroid/filterpacks/videosrc/SurfaceTextureTarget;
 
     .line 723
-    .local v0, display:Landroid/filterpacks/videosrc/SurfaceTextureTarget;
+    .local v0, "display":Landroid/filterpacks/videosrc/SurfaceTextureTarget;
     iget-object v1, p0, Lcom/android/camera/EffectsRecorder;->mGraphEnv:Landroid/filterfw/GraphEnvironment;
 
-    invoke-virtual {v1}, Landroid/filterfw/MffEnvironment;->getContext()Landroid/filterfw/core/FilterContext;
+    invoke-virtual {v1}, Landroid/filterfw/GraphEnvironment;->getContext()Landroid/filterfw/core/FilterContext;
 
     move-result-object v1
 
@@ -1434,7 +1434,7 @@
     return-void
 
     .line 719
-    .end local v0           #display:Landroid/filterpacks/videosrc/SurfaceTextureTarget;
+    .end local v0    # "display":Landroid/filterpacks/videosrc/SurfaceTextureTarget;
     :catchall_0
     move-exception v1
 
@@ -1445,7 +1445,7 @@
 
 .method declared-synchronized enable3ALocks(Z)V
     .locals 3
-    .parameter "toggle"
+    .param p1, "toggle"    # Z
 
     .prologue
     .line 826
@@ -1493,7 +1493,7 @@
     move-result-object v0
 
     .line 832
-    .local v0, params:Landroid/hardware/Camera$Parameters;
+    .local v0, "params":Landroid/hardware/Camera$Parameters;
     invoke-virtual {p0, p1}, Lcom/android/camera/EffectsRecorder;->tryEnable3ALocks(Z)Z
 
     move-result v1
@@ -1512,7 +1512,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 826
-    .end local v0           #params:Landroid/hardware/Camera$Parameters;
+    .end local v0    # "params":Landroid/hardware/Camera$Parameters;
     :catchall_0
     move-exception v1
 
@@ -1624,7 +1624,7 @@
 
 .method public declared-synchronized setCamera(Landroid/hardware/Camera;)V
     .locals 2
-    .parameter "cameraDevice"
+    .param p1, "cameraDevice"    # Landroid/hardware/Camera;
 
     .prologue
     .line 141
@@ -1702,7 +1702,7 @@
 
 .method public setCameraDisplayOrientation(I)V
     .locals 2
-    .parameter "orientation"
+    .param p1, "orientation"    # I
 
     .prologue
     .line 358
@@ -1729,7 +1729,7 @@
 
 .method public setCameraFacing(I)V
     .locals 2
-    .parameter "facing"
+    .param p1, "facing"    # I
 
     .prologue
     .line 366
@@ -1767,7 +1767,7 @@
 
 .method public setCaptureRate(D)V
     .locals 3
-    .parameter "fps"
+    .param p1, "fps"    # D
 
     .prologue
     .line 233
@@ -1845,8 +1845,8 @@
 
 .method public setEffect(ILjava/lang/Object;)V
     .locals 3
-    .parameter "effect"
-    .parameter "effectParameter"
+    .param p1, "effect"    # I
+    .param p2, "effectParameter"    # Ljava/lang/Object;
 
     .prologue
     .line 278
@@ -1955,7 +1955,7 @@
 
 .method public setEffectsListener(Lcom/android/camera/EffectsRecorder$EffectsListener;)V
     .locals 0
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/camera/EffectsRecorder$EffectsListener;
 
     .prologue
     .line 305
@@ -1967,7 +1967,7 @@
 
 .method public declared-synchronized setMaxDuration(I)V
     .locals 2
-    .parameter "maxDurationMs"
+    .param p1, "maxDurationMs"    # I
 
     .prologue
     .line 219
@@ -2034,7 +2034,7 @@
 
 .method public declared-synchronized setMaxFileSize(J)V
     .locals 2
-    .parameter "maxFileSize"
+    .param p1, "maxFileSize"    # J
 
     .prologue
     .line 202
@@ -2101,7 +2101,7 @@
 
 .method public setOnErrorListener(Landroid/media/MediaRecorder$OnErrorListener;)V
     .locals 2
-    .parameter "errorListener"
+    .param p1, "errorListener"    # Landroid/media/MediaRecorder$OnErrorListener;
 
     .prologue
     .line 391
@@ -2145,7 +2145,7 @@
 
 .method public setOnInfoListener(Landroid/media/MediaRecorder$OnInfoListener;)V
     .locals 2
-    .parameter "infoListener"
+    .param p1, "infoListener"    # Landroid/media/MediaRecorder$OnInfoListener;
 
     .prologue
     .line 378
@@ -2189,7 +2189,7 @@
 
 .method public setOrientationHint(I)V
     .locals 3
-    .parameter "degrees"
+    .param p1, "degrees"    # I
 
     .prologue
     .line 344
@@ -2256,7 +2256,7 @@
 
 .method public setOutputFile(Ljava/io/FileDescriptor;)V
     .locals 2
-    .parameter "fd"
+    .param p1, "fd"    # Ljava/io/FileDescriptor;
 
     .prologue
     .line 182
@@ -2307,7 +2307,7 @@
 
 .method public setOutputFile(Ljava/lang/String;)V
     .locals 2
-    .parameter "outputFile"
+    .param p1, "outputFile"    # Ljava/lang/String;
 
     .prologue
     .line 168
@@ -2358,9 +2358,9 @@
 
 .method public setPreviewSurfaceTexture(Landroid/graphics/SurfaceTexture;II)V
     .locals 3
-    .parameter "previewSurfaceTexture"
-    .parameter "previewWidth"
-    .parameter "previewHeight"
+    .param p1, "previewSurfaceTexture"    # Landroid/graphics/SurfaceTexture;
+    .param p2, "previewWidth"    # I
+    .param p3, "previewHeight"    # I
 
     .prologue
     .line 250
@@ -2472,7 +2472,7 @@
 
 .method public setProfile(Landroid/media/CamcorderProfile;)V
     .locals 2
-    .parameter "profile"
+    .param p1, "profile"    # Landroid/media/CamcorderProfile;
 
     .prologue
     .line 156
@@ -2858,7 +2858,7 @@
     move-result-object v1
 
     .line 659
-    .local v1, recorder:Landroid/filterfw/core/Filter;
+    .local v1, "recorder":Landroid/filterfw/core/Filter;
     iget-object v4, p0, Lcom/android/camera/EffectsRecorder;->mFd:Ljava/io/FileDescriptor;
 
     if-eqz v4, :cond_5
@@ -2910,19 +2910,19 @@
     if-lez v4, :cond_6
 
     .line 675
-    .local v0, captureTimeLapse:Z
+    .local v0, "captureTimeLapse":Z
     :goto_1
     if-eqz v0, :cond_7
 
     .line 676
-    const-wide/high16 v4, 0x3ff0
+    const-wide/high16 v4, 0x3ff0000000000000L
 
     iget-wide v6, p0, Lcom/android/camera/EffectsRecorder;->mCaptureRate:D
 
     div-double v2, v4, v6
 
     .line 677
-    .local v2, timeBetweenFrameCapture:D
+    .local v2, "timeBetweenFrameCapture":D
     const-string v4, "timelapseRecordingIntervalUs"
 
     const-wide v5, 0x412e848000000000L
@@ -2938,7 +2938,7 @@
     invoke-virtual {v1, v4, v5}, Landroid/filterfw/core/Filter;->setInputValue(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 683
-    .end local v2           #timeBetweenFrameCapture:D
+    .end local v2    # "timeBetweenFrameCapture":D
     :goto_2
     iget-object v4, p0, Lcom/android/camera/EffectsRecorder;->mInfoListener:Landroid/media/MediaRecorder$OnInfoListener;
 
@@ -3018,7 +3018,7 @@
     return-void
 
     .line 662
-    .end local v0           #captureTimeLapse:Z
+    .end local v0    # "captureTimeLapse":Z
     :cond_5
     :try_start_2
     const-string v4, "outputFile"
@@ -3036,7 +3036,7 @@
     goto :goto_1
 
     .line 680
-    .restart local v0       #captureTimeLapse:Z
+    .restart local v0    # "captureTimeLapse":Z
     :cond_7
     const-string v4, "timelapseRecordingIntervalUs"
 
@@ -3116,8 +3116,8 @@
 
     invoke-virtual {v1, v2}, Landroid/hardware/Camera;->setPreviewTexture(Landroid/graphics/SurfaceTexture;)V
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_0
 
@@ -3126,7 +3126,7 @@
     move-exception v0
 
     .line 751
-    .local v0, e:Ljava/io/IOException;
+    .local v0, "e":Ljava/io/IOException;
     :try_start_3
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -3139,7 +3139,7 @@
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 742
-    .end local v0           #e:Ljava/io/IOException;
+    .end local v0    # "e":Ljava/io/IOException;
     :catchall_0
     move-exception v1
 
@@ -3344,7 +3344,7 @@
     move-result-object v0
 
     .line 711
-    .local v0, recorder:Landroid/filterfw/core/Filter;
+    .local v0, "recorder":Landroid/filterfw/core/Filter;
     const-string v1, "recording"
 
     const/4 v2, 0x0
@@ -3370,7 +3370,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 714
-    .end local v0           #recorder:Landroid/filterfw/core/Filter;
+    .end local v0    # "recorder":Landroid/filterfw/core/Filter;
     :goto_0
     monitor-exit p0
 
@@ -3424,7 +3424,7 @@
 
 .method declared-synchronized tryEnable3ALocks(Z)Z
     .locals 4
-    .parameter "toggle"
+    .param p1, "toggle"    # Z
 
     .prologue
     const/4 v1, 0x0
@@ -3475,7 +3475,7 @@
     move-result-object v0
 
     .line 813
-    .local v0, params:Landroid/hardware/Camera$Parameters;
+    .local v0, "params":Landroid/hardware/Camera$Parameters;
     invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->isAutoExposureLockSupported()Z
 
     move-result v2
@@ -3507,7 +3507,7 @@
     goto :goto_0
 
     .line 807
-    .end local v0           #params:Landroid/hardware/Camera$Parameters;
+    .end local v0    # "params":Landroid/hardware/Camera$Parameters;
     :catchall_0
     move-exception v1
 
@@ -3518,7 +3518,7 @@
 
 .method tryEnableVideoStabilization(Z)Z
     .locals 5
-    .parameter "toggle"
+    .param p1, "toggle"    # Z
 
     .prologue
     const/4 v2, 0x0
@@ -3561,7 +3561,7 @@
     move-result-object v0
 
     .line 794
-    .local v0, params:Landroid/hardware/Camera$Parameters;
+    .local v0, "params":Landroid/hardware/Camera$Parameters;
     const-string v3, "video-stabilization-supported"
 
     invoke-virtual {v0, v3}, Landroid/hardware/Camera$Parameters;->get(Ljava/lang/String;)Ljava/lang/String;
@@ -3569,7 +3569,7 @@
     move-result-object v1
 
     .line 795
-    .local v1, vstabSupported:Ljava/lang/String;
+    .local v1, "vstabSupported":Ljava/lang/String;
     const-string v3, "true"
 
     invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

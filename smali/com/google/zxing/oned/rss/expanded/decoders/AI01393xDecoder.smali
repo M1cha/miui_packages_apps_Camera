@@ -6,7 +6,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/zxing/common/BitArray;)V
     .locals 0
-    .parameter "information"
+    .param p1, "information"    # Lcom/google/zxing/common/BitArray;
 
     .prologue
     .line 41
@@ -30,7 +30,7 @@
     const/16 v7, 0x30
 
     .line 46
-    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->getInformation()Lcom/google/zxing/common/BitArray;
+    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01393xDecoder;->getInformation()Lcom/google/zxing/common/BitArray;
 
     move-result-object v4
 
@@ -54,13 +54,13 @@
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 52
-    .local v0, buf:Ljava/lang/StringBuilder;
+    .local v0, "buf":Ljava/lang/StringBuilder;
     const/16 v4, 0x8
 
-    invoke-virtual {p0, v0, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01decoder;->encodeCompressedGtin(Ljava/lang/StringBuilder;I)V
+    invoke-virtual {p0, v0, v4}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01393xDecoder;->encodeCompressedGtin(Ljava/lang/StringBuilder;I)V
 
     .line 54
-    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
+    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01393xDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
 
     move-result-object v4
 
@@ -71,7 +71,7 @@
     move-result v3
 
     .line 57
-    .local v3, lastAIdigit:I
+    .local v3, "lastAIdigit":I
     const-string v4, "(393"
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -85,7 +85,7 @@
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 61
-    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
+    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01393xDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
 
     move-result-object v4
 
@@ -98,7 +98,7 @@
     move-result v1
 
     .line 63
-    .local v1, firstThreeDigits:I
+    .local v1, "firstThreeDigits":I
     div-int/lit8 v4, v1, 0x64
 
     if-nez v4, :cond_1
@@ -120,7 +120,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 71
-    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
+    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01393xDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
 
     move-result-object v4
 
@@ -133,7 +133,7 @@
     move-result-object v2
 
     .line 73
-    .local v2, generalInformation:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
+    .local v2, "generalInformation":Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
     invoke-virtual {v2}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;->getNewString()Ljava/lang/String;
 
     move-result-object v4

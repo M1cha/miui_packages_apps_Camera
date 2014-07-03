@@ -399,6 +399,10 @@
     <string name="wifi_connect_fail">หมดเวลาการเชื่อมต่อ Wi-Fi หรือการเชื่อมต่อล้มเหลว</string>
     <string name="wifi_connect_success">เชื่อมต่อ Wi-Fi แล้ว</string>
     <string name="cannot_connect_camera">ไม่สามารถเชื่อมต่อกับกล้อง</string>
+    <string name="pref_camera_picturesize_entry_standard">มาตรฐาน 4:3</string>
+    <string name="pref_scan_qrcode_title">สแกนรหัส QR</string>
+    <string name="pref_scan_qrcode_entry_off">ปิด</string>
+    <string name="pref_scan_qrcode_entry_on">เปิด</string>
     <string name="open">บันทึก</string>
     <string name="pref_camera_coloreffect_title_simple_mode">ตัวกรอง</string>
     <string name="pref_video_continuous_focus">โฟกัสต่อเนื่อง</string>
@@ -414,7 +418,6 @@
     <string name="pref_camera_contrast_entry_low">ต่ำ</string>
     <string name="pref_camera_contrast_entry_middle">กลาง(ค่าเริ่มต้น)</string>
     <string name="pref_camera_picturesize_entry_full_screen">เต็มหน้าจอ 16:9</string>
-    <string name="pref_camera_picturesize_entry_standard">มาตรฐาน 4:3</string>
     <string name="pref_camera_picturesize_professional_entry_1280x960">1.3M(1280x960)</string>
     <string name="pref_camera_picturesize_professional_entry_2560x1440">4M(2560x1440)</string>
     <string name="pref_camera_picturesize_professional_entry_2560x1920">5M(2560x1920)</string>
@@ -429,7 +432,4 @@
     <string name="pref_camera_storage_external_entry_off">ที่เก็บข้อมูลโทรศัพท์</string>
     <string name="pref_camera_storage_external_entry_on">การ์ดความจำ</string>
     <string name="pref_camera_storage_external_title">อุปกรณ์จัดเก็บข้อมูล</string>
-    <string name="pref_scan_qrcode_entry_off">ปิด</string>
-    <string name="pref_scan_qrcode_entry_on">เปิด</string>
-    <string name="pref_scan_qrcode_title">สแกนรหัส QR</string>
 </resources>

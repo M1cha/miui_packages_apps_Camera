@@ -42,8 +42,8 @@
 # virtual methods
 .method public compare(Lcom/android/gallery3d/data/MediaSet;Lcom/android/gallery3d/data/MediaSet;)I
     .locals 3
-    .parameter "set1"
-    .parameter "set2"
+    .param p1, "set1"    # Lcom/android/gallery3d/data/MediaSet;
+    .param p2, "set2"    # Lcom/android/gallery3d/data/MediaSet;
 
     .prologue
     .line 54
@@ -60,17 +60,17 @@
     move-result v0
 
     .line 55
-    .local v0, result:I
+    .local v0, "result":I
     if-eqz v0, :cond_0
 
     .line 56
-    .end local v0           #result:I
+    .end local v0    # "result":I
     :goto_0
     return v0
 
-    .restart local v0       #result:I
+    .restart local v0    # "result":I
     :cond_0
-    invoke-virtual {p1}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
+    invoke-virtual {p1}, Lcom/android/gallery3d/data/MediaSet;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v1
 
@@ -78,7 +78,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p2}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
+    invoke-virtual {p2}, Lcom/android/gallery3d/data/MediaSet;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v2
 
@@ -95,17 +95,17 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Ljava/lang/Object;
+    .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
     .line 52
     check-cast p1, Lcom/android/gallery3d/data/MediaSet;
 
-    .end local p1
+    .end local p1    # "x0":Ljava/lang/Object;
     check-cast p2, Lcom/android/gallery3d/data/MediaSet;
 
-    .end local p2
+    .end local p2    # "x1":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2}, Lcom/android/gallery3d/util/MediaSetUtils$NameComparator;->compare(Lcom/android/gallery3d/data/MediaSet;Lcom/android/gallery3d/data/MediaSet;)I
 
     move-result v0

@@ -38,11 +38,11 @@
 # virtual methods
 .method public onProgress(ZFFFF)V
     .locals 4
-    .parameter "isFinished"
-    .parameter "panningRateX"
-    .parameter "panningRateY"
-    .parameter "progressX"
-    .parameter "progressY"
+    .param p1, "isFinished"    # Z
+    .param p2, "panningRateX"    # F
+    .param p3, "panningRateY"    # F
+    .param p4, "progressX"    # F
+    .param p5, "progressY"    # F
 
     .prologue
     .line 531
@@ -51,7 +51,7 @@
     move-result-object v0
 
     .line 532
-    .local v0, message:Landroid/os/Message;
+    .local v0, "message":Landroid/os/Message;
     const/4 v2, 0x6
 
     iput v2, v0, Landroid/os/Message;->what:I
@@ -66,7 +66,7 @@
     invoke-direct {v1, v2, v3}, Lcom/android/camera/PanoramaActivity$ProgressData;-><init>(Lcom/android/camera/PanoramaActivity;Lcom/android/camera/PanoramaActivity$1;)V
 
     .line 534
-    .local v1, pd:Lcom/android/camera/PanoramaActivity$ProgressData;
+    .local v1, "pd":Lcom/android/camera/PanoramaActivity$ProgressData;
     iput-boolean p1, v1, Lcom/android/camera/PanoramaActivity$ProgressData;->isFinished:Z
 
     .line 535
@@ -87,7 +87,7 @@
     .line 540
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$3;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mMainHandler:Landroid/os/Handler;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mMainHandler:Landroid/os/Handler;
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$400(Lcom/android/camera/PanoramaActivity;)Landroid/os/Handler;
 
     move-result-object v2

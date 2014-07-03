@@ -43,7 +43,7 @@
     .line 92
     iget-object v0, p0, Lcom/android/gallery3d/app/MoviePlayer$1;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    #getter for: Lcom/android/gallery3d/app/MoviePlayer;->mVideoView:Landroid/widget/VideoView;
+    # getter for: Lcom/android/gallery3d/app/MoviePlayer;->mVideoView:Landroid/widget/VideoView;
     invoke-static {v0}, Lcom/android/gallery3d/app/MoviePlayer;->access$000(Lcom/android/gallery3d/app/MoviePlayer;)Landroid/widget/VideoView;
 
     move-result-object v0
@@ -57,7 +57,7 @@
     .line 93
     iget-object v0, p0, Lcom/android/gallery3d/app/MoviePlayer$1;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    #getter for: Lcom/android/gallery3d/app/MoviePlayer;->mController:Lcom/android/gallery3d/app/MovieControllerOverlay;
+    # getter for: Lcom/android/gallery3d/app/MoviePlayer;->mController:Lcom/android/gallery3d/app/MovieControllerOverlay;
     invoke-static {v0}, Lcom/android/gallery3d/app/MoviePlayer;->access$100(Lcom/android/gallery3d/app/MoviePlayer;)Lcom/android/gallery3d/app/MovieControllerOverlay;
 
     move-result-object v0
@@ -72,14 +72,14 @@
     :cond_0
     iget-object v0, p0, Lcom/android/gallery3d/app/MoviePlayer$1;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    #getter for: Lcom/android/gallery3d/app/MoviePlayer;->mHandler:Landroid/os/Handler;
+    # getter for: Lcom/android/gallery3d/app/MoviePlayer;->mHandler:Landroid/os/Handler;
     invoke-static {v0}, Lcom/android/gallery3d/app/MoviePlayer;->access$300(Lcom/android/gallery3d/app/MoviePlayer;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/gallery3d/app/MoviePlayer$1;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    #getter for: Lcom/android/gallery3d/app/MoviePlayer;->mPlayingChecker:Ljava/lang/Runnable;
+    # getter for: Lcom/android/gallery3d/app/MoviePlayer;->mPlayingChecker:Ljava/lang/Runnable;
     invoke-static {v1}, Lcom/android/gallery3d/app/MoviePlayer;->access$200(Lcom/android/gallery3d/app/MoviePlayer;)Ljava/lang/Runnable;
 
     move-result-object v1

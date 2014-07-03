@@ -43,26 +43,26 @@
     .line 317
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView$4;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    #calls: Lcom/android/camera/ui/SettingPopupView;->popupColorEffectView()V
+    # invokes: Lcom/android/camera/ui/SettingPopupView;->popupColorEffectView()V
     invoke-static {v0}, Lcom/android/camera/ui/SettingPopupView;->access$100(Lcom/android/camera/ui/SettingPopupView;)V
 
     .line 318
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView$4;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-object v0, v0, Lcom/android/camera/ui/SettingView;->mExitView:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/camera/ui/SettingPopupView;->mExitView:Landroid/widget/TextView;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 319
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView$4;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-object v0, v0, Lcom/android/camera/ui/SettingView;->mExitView:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/camera/ui/SettingPopupView;->mExitView:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$4;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-object v1, v1, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
+    iget-object v1, v1, Lcom/android/camera/ui/SettingPopupView;->mCurrentMode:Ljava/lang/String;
 
     invoke-static {v1}, Lcom/android/camera/CameraSettings;->getExitText(Ljava/lang/String;)I
 
@@ -73,15 +73,15 @@
     .line 320
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView$4;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-object v0, v0, Lcom/android/camera/ui/SettingView;->mExitArea:Landroid/view/View;
+    iget-object v0, v0, Lcom/android/camera/ui/SettingPopupView;->mExitArea:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView$4;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-object v0, v0, Lcom/android/camera/ui/SettingView;->mExitView:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/android/camera/ui/SettingPopupView;->mExitView:Landroid/widget/TextView;
 
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+    invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
 
     move-result v0
 
@@ -90,7 +90,7 @@
     .line 321
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView$4;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-object v0, v0, Lcom/android/camera/ui/SettingView;->mExitArea:Landroid/view/View;
+    iget-object v0, v0, Lcom/android/camera/ui/SettingPopupView;->mExitArea:Landroid/view/View;
 
     const/4 v1, 0x0
 

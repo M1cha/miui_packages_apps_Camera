@@ -38,7 +38,7 @@
 # virtual methods
 .method public visit(Landroid/view/View;)V
     .locals 2
-    .parameter "view"
+    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 38
@@ -53,7 +53,7 @@
     .line 39
     check-cast p1, Lcom/android/camera/ui/Rotatable;
 
-    .end local p1
+    .end local p1    # "view":Landroid/view/View;
     iget-object v0, p0, Lcom/android/camera/ui/RestrictRotateLayout$1;->this$0:Lcom/android/camera/ui/RestrictRotateLayout;
 
     iget v0, v0, Lcom/android/camera/ui/RestrictRotateLayout;->mOrientation:I

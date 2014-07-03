@@ -57,7 +57,7 @@
 
     check-cast v0, Landroid/location/Address;
 
-    #calls: Lcom/android/gallery3d/ui/DetailsAddressResolver;->updateLocation(Landroid/location/Address;)V
+    # invokes: Lcom/android/gallery3d/ui/DetailsAddressResolver;->updateLocation(Landroid/location/Address;)V
     invoke-static {v1, v0}, Lcom/android/gallery3d/ui/DetailsAddressResolver;->access$200(Lcom/android/gallery3d/ui/DetailsAddressResolver;Landroid/location/Address;)V
 
     .line 72

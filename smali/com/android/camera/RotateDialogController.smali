@@ -37,8 +37,8 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;I)V
     .locals 0
-    .parameter "a"
-    .parameter "layoutResource"
+    .param p1, "a"    # Landroid/app/Activity;
+    .param p2, "layoutResource"    # I
 
     .prologue
     .line 55
@@ -123,7 +123,7 @@
     check-cast v1, Landroid/view/ViewGroup;
 
     .line 63
-    .local v1, layoutRoot:Landroid/view/ViewGroup;
+    .local v1, "layoutRoot":Landroid/view/ViewGroup;
     iget-object v3, p0, Lcom/android/camera/RotateDialogController;->mActivity:Landroid/app/Activity;
 
     invoke-virtual {v3}, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
@@ -131,7 +131,7 @@
     move-result-object v0
 
     .line 64
-    .local v0, inflater:Landroid/view/LayoutInflater;
+    .local v0, "inflater":Landroid/view/LayoutInflater;
     iget v3, p0, Lcom/android/camera/RotateDialogController;->mLayoutResourceID:I
 
     invoke-virtual {v0, v3, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
@@ -139,7 +139,7 @@
     move-result-object v2
 
     .line 65
-    .local v2, v:Landroid/view/View;
+    .local v2, "v":Landroid/view/View;
     const v3, 0x7f0c0088
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -235,7 +235,7 @@
     .line 75
     iget-object v3, p0, Lcom/android/camera/RotateDialogController;->mActivity:Landroid/app/Activity;
 
-    const/high16 v4, 0x10a
+    const/high16 v4, 0x10a0000
 
     invoke-static {v3, v4}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -265,22 +265,22 @@
     invoke-virtual {v3, v5, v6}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 82
-    .end local v0           #inflater:Landroid/view/LayoutInflater;
-    .end local v1           #layoutRoot:Landroid/view/ViewGroup;
-    .end local v2           #v:Landroid/view/View;
+    .end local v0    # "inflater":Landroid/view/LayoutInflater;
+    .end local v1    # "layoutRoot":Landroid/view/ViewGroup;
+    .end local v2    # "v":Landroid/view/View;
     :cond_0
     return-void
 .end method
 
 .method public static showSystemAlertDialog(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/String;Ljava/lang/Runnable;)V
     .locals 3
-    .parameter "context"
-    .parameter "title"
-    .parameter "msg"
-    .parameter "button1Text"
-    .parameter "r1"
-    .parameter "button2Text"
-    .parameter "r2"
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "title"    # Ljava/lang/String;
+    .param p2, "msg"    # Ljava/lang/String;
+    .param p3, "button1Text"    # Ljava/lang/String;
+    .param p4, "r1"    # Ljava/lang/Runnable;
+    .param p5, "button2Text"    # Ljava/lang/String;
+    .param p6, "r2"    # Ljava/lang/Runnable;
 
     .prologue
     .line 158
@@ -289,7 +289,7 @@
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     .line 160
-    .local v1, builder:Landroid/app/AlertDialog$Builder;
+    .local v1, "builder":Landroid/app/AlertDialog$Builder;
     invoke-virtual {v1, p1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     .line 161
@@ -328,8 +328,8 @@
     move-result-object v0
 
     .line 186
-    .local v0, ad:Landroid/app/AlertDialog;
-    invoke-virtual {v0}, Landroid/app/Dialog;->show()V
+    .local v0, "ad":Landroid/app/AlertDialog;
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
     .line 187
     return-void
@@ -386,12 +386,12 @@
     .line 94
     iget-object v0, p0, Lcom/android/camera/RotateDialogController;->mRotateDialogButton1:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 95
     iget-object v0, p0, Lcom/android/camera/RotateDialogController;->mRotateDialogButton2:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 96
     iget-object v0, p0, Lcom/android/camera/RotateDialogController;->mRotateDialogButtonLayout:Landroid/view/View;
@@ -404,8 +404,8 @@
 
 .method public setOrientation(IZ)V
     .locals 1
-    .parameter "orientation"
-    .parameter "animation"
+    .param p1, "orientation"    # I
+    .param p2, "animation"    # Z
 
     .prologue
     .line 86
@@ -422,12 +422,12 @@
 
 .method public showAlertDialog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/String;Ljava/lang/Runnable;)V
     .locals 3
-    .parameter "title"
-    .parameter "msg"
-    .parameter "button1Text"
-    .parameter "r1"
-    .parameter "button2Text"
-    .parameter "r2"
+    .param p1, "title"    # Ljava/lang/String;
+    .param p2, "msg"    # Ljava/lang/String;
+    .param p3, "button1Text"    # Ljava/lang/String;
+    .param p4, "r1"    # Ljava/lang/Runnable;
+    .param p5, "button2Text"    # Ljava/lang/String;
+    .param p6, "r2"    # Ljava/lang/Runnable;
 
     .prologue
     const/4 v2, 0x0
@@ -465,12 +465,12 @@
     .line 128
     iget-object v0, p0, Lcom/android/camera/RotateDialogController;->mRotateDialogButton1:Landroid/widget/TextView;
 
-    invoke-virtual {v0, p3}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p3}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
 
     .line 129
     iget-object v0, p0, Lcom/android/camera/RotateDialogController;->mRotateDialogButton1:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 130
     iget-object v0, p0, Lcom/android/camera/RotateDialogController;->mRotateDialogButton1:Landroid/widget/TextView;
@@ -479,7 +479,7 @@
 
     invoke-direct {v1, p0, p4}, Lcom/android/camera/RotateDialogController$1;-><init>(Lcom/android/camera/RotateDialogController;Ljava/lang/Runnable;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 137
     iget-object v0, p0, Lcom/android/camera/RotateDialogController;->mRotateDialogButtonLayout:Landroid/view/View;
@@ -498,12 +498,12 @@
     .line 141
     iget-object v0, p0, Lcom/android/camera/RotateDialogController;->mRotateDialogButton2:Landroid/widget/TextView;
 
-    invoke-virtual {v0, p5}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p5}, Landroid/widget/TextView;->setContentDescription(Ljava/lang/CharSequence;)V
 
     .line 142
     iget-object v0, p0, Lcom/android/camera/RotateDialogController;->mRotateDialogButton2:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 143
     iget-object v0, p0, Lcom/android/camera/RotateDialogController;->mRotateDialogButton2:Landroid/widget/TextView;
@@ -512,7 +512,7 @@
 
     invoke-direct {v1, p0, p6}, Lcom/android/camera/RotateDialogController$2;-><init>(Lcom/android/camera/RotateDialogController;Ljava/lang/Runnable;)V
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 150
     iget-object v0, p0, Lcom/android/camera/RotateDialogController;->mRotateDialogButtonLayout:Landroid/view/View;
@@ -529,7 +529,7 @@
 
 .method public showWaitingDialog(Ljava/lang/String;)V
     .locals 2
-    .parameter "msg"
+    .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
     .line 190

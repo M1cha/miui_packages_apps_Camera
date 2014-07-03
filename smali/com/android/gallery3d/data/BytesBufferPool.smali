@@ -32,8 +32,8 @@
 # direct methods
 .method public constructor <init>(II)V
     .locals 1
-    .parameter "poolSize"
-    .parameter "bufferSize"
+    .param p1, "poolSize"    # I
+    .param p2, "bufferSize"    # I
 
     .prologue
     .line 68
@@ -101,7 +101,7 @@
     move-result v0
 
     .line 76
-    .local v0, n:I
+    .local v0, "n":I
     if-lez v0, :cond_0
 
     iget-object v1, p0, Lcom/android/gallery3d/data/BytesBufferPool;->mList:Ljava/util/ArrayList;
@@ -136,7 +136,7 @@
     goto :goto_0
 
     .line 75
-    .end local v0           #n:I
+    .end local v0    # "n":I
     :catchall_0
     move-exception v1
 
@@ -147,7 +147,7 @@
 
 .method public declared-synchronized recycle(Lcom/android/gallery3d/data/BytesBufferPool$BytesBuffer;)V
     .locals 2
-    .parameter "buffer"
+    .param p1, "buffer"    # Lcom/android/gallery3d/data/BytesBufferPool$BytesBuffer;
 
     .prologue
     .line 80

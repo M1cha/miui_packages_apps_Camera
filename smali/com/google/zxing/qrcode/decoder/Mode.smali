@@ -270,91 +270,89 @@
 
     .line 27
     :array_0
-    .array-data 0x4
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x0
+        0x0
+        0x0
     .end array-data
 
     .line 28
     :array_1
-    .array-data 0x4
-        0xat 0x0t 0x0t 0x0t
-        0xct 0x0t 0x0t 0x0t
-        0xet 0x0t 0x0t 0x0t
+    .array-data 4
+        0xa
+        0xc
+        0xe
     .end array-data
 
     .line 29
     :array_2
-    .array-data 0x4
-        0x9t 0x0t 0x0t 0x0t
-        0xbt 0x0t 0x0t 0x0t
-        0xdt 0x0t 0x0t 0x0t
+    .array-data 4
+        0x9
+        0xb
+        0xd
     .end array-data
 
     .line 30
     :array_3
-    .array-data 0x4
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x0
+        0x0
+        0x0
     .end array-data
 
     .line 31
     :array_4
-    .array-data 0x4
-        0x8t 0x0t 0x0t 0x0t
-        0x10t 0x0t 0x0t 0x0t
-        0x10t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x8
+        0x10
+        0x10
     .end array-data
 
     .line 32
     :array_5
-    .array-data 0x4
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x0
+        0x0
+        0x0
     .end array-data
 
     .line 33
     :array_6
-    .array-data 0x4
-        0x8t 0x0t 0x0t 0x0t
-        0xat 0x0t 0x0t 0x0t
-        0xct 0x0t 0x0t 0x0t
+    .array-data 4
+        0x8
+        0xa
+        0xc
     .end array-data
 
     .line 34
     :array_7
-    .array-data 0x4
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x0
+        0x0
+        0x0
     .end array-data
 
     .line 35
     :array_8
-    .array-data 0x4
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x0
+        0x0
+        0x0
     .end array-data
 
     .line 37
     :array_9
-    .array-data 0x4
-        0x8t 0x0t 0x0t 0x0t
-        0xat 0x0t 0x0t 0x0t
-        0xct 0x0t 0x0t 0x0t
+    .array-data 4
+        0x8
+        0xa
+        0xc
     .end array-data
 .end method
 
 .method private constructor <init>(Ljava/lang/String;I[II)V
     .locals 0
-    .parameter
-    .parameter
-    .parameter "characterCountBitsForVersions"
-    .parameter "bits"
+    .param p3, "characterCountBitsForVersions"    # [I
+    .param p4, "bits"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([II)V"
@@ -377,7 +375,7 @@
 
 .method public static forBits(I)Lcom/google/zxing/qrcode/decoder/Mode;
     .locals 1
-    .parameter "bits"
+    .param p0, "bits"    # I
 
     .prologue
     .line 53
@@ -498,7 +496,7 @@
     .line 25
     sget-object v0, Lcom/google/zxing/qrcode/decoder/Mode;->$VALUES:[Lcom/google/zxing/qrcode/decoder/Mode;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Lcom/google/zxing/qrcode/decoder/Mode;->clone()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -511,7 +509,7 @@
 # virtual methods
 .method public getCharacterCountBits(Lcom/google/zxing/qrcode/decoder/Version;)I
     .locals 3
-    .parameter "version"
+    .param p1, "version"    # Lcom/google/zxing/qrcode/decoder/Version;
 
     .prologue
     .line 86
@@ -520,7 +518,7 @@
     move-result v0
 
     .line 88
-    .local v0, number:I
+    .local v0, "number":I
     const/16 v2, 0x9
 
     if-gt v0, v2, :cond_0
@@ -529,7 +527,7 @@
     const/4 v1, 0x0
 
     .line 95
-    .local v1, offset:I
+    .local v1, "offset":I
     :goto_0
     iget-object v2, p0, Lcom/google/zxing/qrcode/decoder/Mode;->characterCountBitsForVersions:[I
 
@@ -538,7 +536,7 @@
     return v2
 
     .line 90
-    .end local v1           #offset:I
+    .end local v1    # "offset":I
     :cond_0
     const/16 v2, 0x1a
 
@@ -547,14 +545,14 @@
     .line 91
     const/4 v1, 0x1
 
-    .restart local v1       #offset:I
+    .restart local v1    # "offset":I
     goto :goto_0
 
     .line 93
-    .end local v1           #offset:I
+    .end local v1    # "offset":I
     :cond_1
     const/4 v1, 0x2
 
-    .restart local v1       #offset:I
+    .restart local v1    # "offset":I
     goto :goto_0
 .end method

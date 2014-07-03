@@ -43,14 +43,14 @@
     .line 283
     iget-object v1, p0, Lcom/android/camera/BasePreferenceActivity$2;->this$0:Lcom/android/camera/BasePreferenceActivity;
 
-    #getter for: Lcom/android/camera/BasePreferenceActivity;->mPreferences:Lcom/android/camera/ComboPreferences;
+    # getter for: Lcom/android/camera/BasePreferenceActivity;->mPreferences:Lcom/android/camera/ComboPreferences;
     invoke-static {v1}, Lcom/android/camera/BasePreferenceActivity;->access$200(Lcom/android/camera/BasePreferenceActivity;)Lcom/android/camera/ComboPreferences;
 
     move-result-object v2
 
     iget-object v1, p0, Lcom/android/camera/BasePreferenceActivity$2;->this$0:Lcom/android/camera/BasePreferenceActivity;
 
-    #getter for: Lcom/android/camera/BasePreferenceActivity;->mIsSimpleMode:Z
+    # getter for: Lcom/android/camera/BasePreferenceActivity;->mIsSimpleMode:Z
     invoke-static {v1}, Lcom/android/camera/BasePreferenceActivity;->access$100(Lcom/android/camera/BasePreferenceActivity;)Z
 
     move-result v1
@@ -65,7 +65,7 @@
     .line 284
     iget-object v1, p0, Lcom/android/camera/BasePreferenceActivity$2;->this$0:Lcom/android/camera/BasePreferenceActivity;
 
-    #getter for: Lcom/android/camera/BasePreferenceActivity;->mPreferences:Lcom/android/camera/ComboPreferences;
+    # getter for: Lcom/android/camera/BasePreferenceActivity;->mPreferences:Lcom/android/camera/ComboPreferences;
     invoke-static {v1}, Lcom/android/camera/BasePreferenceActivity;->access$200(Lcom/android/camera/BasePreferenceActivity;)Lcom/android/camera/ComboPreferences;
 
     move-result-object v1
@@ -75,12 +75,12 @@
     move-result-object v0
 
     .line 285
-    .local v0, editor:Landroid/content/SharedPreferences$Editor;
+    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string v1, "pref_layout_mode_key"
 
     iget-object v2, p0, Lcom/android/camera/BasePreferenceActivity$2;->this$0:Lcom/android/camera/BasePreferenceActivity;
 
-    #getter for: Lcom/android/camera/BasePreferenceActivity;->mIsSimpleMode:Z
+    # getter for: Lcom/android/camera/BasePreferenceActivity;->mIsSimpleMode:Z
     invoke-static {v2}, Lcom/android/camera/BasePreferenceActivity;->access$100(Lcom/android/camera/BasePreferenceActivity;)Z
 
     move-result v2
@@ -100,13 +100,13 @@
     .line 288
     iget-object v1, p0, Lcom/android/camera/BasePreferenceActivity$2;->this$0:Lcom/android/camera/BasePreferenceActivity;
 
-    invoke-virtual {v1}, Landroid/app/Activity;->finish()V
+    invoke-virtual {v1}, Lcom/android/camera/BasePreferenceActivity;->finish()V
 
     .line 289
     return-void
 
     .line 283
-    .end local v0           #editor:Landroid/content/SharedPreferences$Editor;
+    .end local v0    # "editor":Landroid/content/SharedPreferences$Editor;
     :cond_0
     const/4 v1, 0x0
 

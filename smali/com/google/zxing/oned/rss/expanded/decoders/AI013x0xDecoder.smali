@@ -6,7 +6,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/zxing/common/BitArray;)V
     .locals 0
-    .parameter "information"
+    .param p1, "information"    # Lcom/google/zxing/common/BitArray;
 
     .prologue
     .line 41
@@ -28,7 +28,7 @@
 
     .prologue
     .line 46
-    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->getInformation()Lcom/google/zxing/common/BitArray;
+    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0xDecoder;->getInformation()Lcom/google/zxing/common/BitArray;
 
     move-result-object v1
 
@@ -54,17 +54,17 @@
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 52
-    .local v0, buf:Ljava/lang/StringBuilder;
+    .local v0, "buf":Ljava/lang/StringBuilder;
     const/4 v1, 0x5
 
-    invoke-virtual {p0, v0, v1}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01decoder;->encodeCompressedGtin(Ljava/lang/StringBuilder;I)V
+    invoke-virtual {p0, v0, v1}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0xDecoder;->encodeCompressedGtin(Ljava/lang/StringBuilder;I)V
 
     .line 53
     const/16 v1, 0x2d
 
     const/16 v2, 0xf
 
-    invoke-virtual {p0, v0, v1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01weightDecoder;->encodeCompressedWeight(Ljava/lang/StringBuilder;II)V
+    invoke-virtual {p0, v0, v1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0xDecoder;->encodeCompressedWeight(Ljava/lang/StringBuilder;II)V
 
     .line 55
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;

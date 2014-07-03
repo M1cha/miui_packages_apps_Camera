@@ -38,13 +38,13 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .parameter "v"
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 231
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView$2;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-object v0, v0, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
+    iget-object v0, v0, Lcom/android/camera/ui/SettingPopupView;->mCurrentMode:Ljava/lang/String;
 
     const-string v1, "pref_camera_coloreffect_key"
 
@@ -59,7 +59,7 @@
 
     const/4 v1, 0x1
 
-    #setter for: Lcom/android/camera/ui/SettingPopupView;->mNeedReinstall:Z
+    # setter for: Lcom/android/camera/ui/SettingPopupView;->mNeedReinstall:Z
     invoke-static {v0, v1}, Lcom/android/camera/ui/SettingPopupView;->access$002(Lcom/android/camera/ui/SettingPopupView;Z)Z
 
     .line 234
@@ -68,12 +68,12 @@
 
     const-string v1, "mode_none"
 
-    iput-object v1, v0, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
+    iput-object v1, v0, Lcom/android/camera/ui/SettingPopupView;->mCurrentMode:Ljava/lang/String;
 
     .line 235
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView$2;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-object v0, v0, Lcom/android/camera/ui/SettingView;->mIndicatorClickListener:Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
+    iget-object v0, v0, Lcom/android/camera/ui/SettingPopupView;->mIndicatorClickListener:Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
 
     const-string v1, "mode_none"
 
@@ -82,12 +82,12 @@
     .line 236
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView$2;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    invoke-virtual {v0}, Lcom/android/camera/ui/SettingView;->reloadPreferences()V
+    invoke-virtual {v0}, Lcom/android/camera/ui/SettingPopupView;->reloadPreferences()V
 
     .line 237
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView$2;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    invoke-virtual {v0}, Lcom/android/camera/ui/SettingView;->dismiss()V
+    invoke-virtual {v0}, Lcom/android/camera/ui/SettingPopupView;->dismiss()V
 
     .line 238
     const/16 v0, 0x8

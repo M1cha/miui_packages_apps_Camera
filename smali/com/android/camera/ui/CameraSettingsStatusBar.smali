@@ -18,7 +18,7 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
     .locals 1
-    .parameter "activity"
+    .param p1, "activity"    # Landroid/app/Activity;
 
     .prologue
     .line 21
@@ -122,7 +122,7 @@
 
     const v3, 0x7f0d017e
 
-    invoke-virtual {p0, v3}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v3}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -131,10 +131,10 @@
     move-result-object v0
 
     .line 155
-    .local v0, value:Ljava/lang/String;
+    .local v0, "value":Ljava/lang/String;
     const v1, 0x7f0d017f
 
-    invoke-virtual {p0, v1}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -147,7 +147,7 @@
 
 .method private updateExposureOnScreenIndicator(I)V
     .locals 2
-    .parameter "value"
+    .param p1, "value"    # I
 
     .prologue
     .line 62
@@ -192,7 +192,7 @@
 
 .method private updateFocusOnScreenIndicator(Ljava/lang/String;)V
     .locals 3
-    .parameter "value"
+    .param p1, "value"    # Ljava/lang/String;
 
     .prologue
     const/16 v1, 0x8
@@ -282,7 +282,7 @@
 
 .method private updateISOOnScreenIndicator(Ljava/lang/String;)V
     .locals 3
-    .parameter "value"
+    .param p1, "value"    # Ljava/lang/String;
 
     .prologue
     const/4 v2, 0x0
@@ -303,7 +303,7 @@
     :cond_1
     const v0, 0x7f0d00d6
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -331,7 +331,7 @@
     :cond_2
     const v0, 0x7f0d00d7
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -359,7 +359,7 @@
     :cond_3
     const v0, 0x7f0d00d8
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -387,7 +387,7 @@
     :cond_4
     const v0, 0x7f0d00d9
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -415,7 +415,7 @@
     :cond_5
     const v0, 0x7f0d00da
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -443,7 +443,7 @@
     :cond_6
     const v0, 0x7f0d00db
 
-    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingsStatusBar;->getString(I)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -536,7 +536,7 @@
 # virtual methods
 .method public updateAudioOnScreenIndicator(Z)V
     .locals 2
-    .parameter "visible"
+    .param p1, "visible"    # Z
 
     .prologue
     .line 102
@@ -581,14 +581,14 @@
 
 .method public updateOnScreenIndicators(Landroid/hardware/Camera$Parameters;Z)V
     .locals 4
-    .parameter "parameters"
-    .parameter "isHDR"
+    .param p1, "parameters"    # Landroid/hardware/Camera$Parameters;
+    .param p2, "isHDR"    # Z
 
     .prologue
     const/16 v3, 0x8
 
     .line 31
-    invoke-virtual {p0}, Lcom/android/camera/ui/SettingsStatusBar;->isSimpleLayoutMode()Z
+    invoke-virtual {p0}, Lcom/android/camera/ui/CameraSettingsStatusBar;->isSimpleLayoutMode()Z
 
     move-result v1
 
@@ -605,7 +605,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lcom/android/camera/ui/SettingsStatusBar;->updateColorEffectIndicator(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Lcom/android/camera/ui/CameraSettingsStatusBar;->updateColorEffectIndicator(Ljava/lang/String;)V
 
     .line 35
     invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getISOValue()Ljava/lang/String;
@@ -633,7 +633,7 @@
     const/4 v0, 0x1
 
     .line 42
-    .local v0, isSceneOn:Z
+    .local v0, "isSceneOn":Z
     :goto_1
     if-nez v0, :cond_3
 
@@ -653,7 +653,7 @@
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lcom/android/camera/ui/SettingsStatusBar;->updateWhiteBalanceOnScreenIndicator(Ljava/lang/String;)V
+    invoke-virtual {p0, v1}, Lcom/android/camera/ui/CameraSettingsStatusBar;->updateWhiteBalanceOnScreenIndicator(Ljava/lang/String;)V
 
     .line 46
     invoke-virtual {p1}, Landroid/hardware/Camera$Parameters;->getFocusMode()Ljava/lang/String;
@@ -665,21 +665,21 @@
     goto :goto_0
 
     .line 37
-    .end local v0           #isSceneOn:Z
+    .end local v0    # "isSceneOn":Z
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_1
 
     .line 48
-    .restart local v0       #isSceneOn:Z
+    .restart local v0    # "isSceneOn":Z
     :cond_3
-    iget-object v1, p0, Lcom/android/camera/ui/SettingsStatusBar;->mWhiteBalanceIndicator:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/android/camera/ui/CameraSettingsStatusBar;->mWhiteBalanceIndicator:Landroid/widget/ImageView;
 
     if-eqz v1, :cond_4
 
     .line 49
-    iget-object v1, p0, Lcom/android/camera/ui/SettingsStatusBar;->mWhiteBalanceIndicator:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/android/camera/ui/CameraSettingsStatusBar;->mWhiteBalanceIndicator:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 

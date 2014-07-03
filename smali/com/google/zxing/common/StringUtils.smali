@@ -70,7 +70,7 @@
 
 .method public static guessEncoding([BLjava/util/Map;)Ljava/lang/String;
     .locals 23
-    .parameter "bytes"
+    .param p0, "bytes"    # [B
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B",
@@ -84,7 +84,7 @@
 
     .prologue
     .line 52
-    .local p1, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p1, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     if-eqz p1, :cond_0
 
     .line 53
@@ -101,11 +101,11 @@
     check-cast v5, Ljava/lang/String;
 
     .line 54
-    .local v5, characterSet:Ljava/lang/String;
+    .local v5, "characterSet":Ljava/lang/String;
     if-eqz v5, :cond_0
 
     .line 210
-    .end local v5           #characterSet:Ljava/lang/String;
+    .end local v5    # "characterSet":Ljava/lang/String;
     :goto_0
     return-object v5
 
@@ -116,63 +116,63 @@
     array-length v8, v0
 
     .line 61
-    .local v8, length:I
+    .local v8, "length":I
     const/4 v2, 0x1
 
     .line 62
-    .local v2, canBeISO88591:Z
+    .local v2, "canBeISO88591":Z
     const/4 v3, 0x1
 
     .line 63
-    .local v3, canBeShiftJIS:Z
+    .local v3, "canBeShiftJIS":Z
     const/4 v4, 0x1
 
     .line 64
-    .local v4, canBeUTF8:Z
+    .local v4, "canBeUTF8":Z
     const/16 v18, 0x0
 
     .line 66
-    .local v18, utf8BytesLeft:I
+    .local v18, "utf8BytesLeft":I
     const/4 v15, 0x0
 
     .line 67
-    .local v15, utf2BytesChars:I
+    .local v15, "utf2BytesChars":I
     const/16 v16, 0x0
 
     .line 68
-    .local v16, utf3BytesChars:I
+    .local v16, "utf3BytesChars":I
     const/16 v17, 0x0
 
     .line 69
-    .local v17, utf4BytesChars:I
+    .local v17, "utf4BytesChars":I
     const/4 v9, 0x0
 
     .line 71
-    .local v9, sjisBytesLeft:I
+    .local v9, "sjisBytesLeft":I
     const/4 v12, 0x0
 
     .line 73
-    .local v12, sjisKatakanaChars:I
+    .local v12, "sjisKatakanaChars":I
     const/4 v11, 0x0
 
     .line 74
-    .local v11, sjisCurKatakanaWordLength:I
+    .local v11, "sjisCurKatakanaWordLength":I
     const/4 v10, 0x0
 
     .line 75
-    .local v10, sjisCurDoubleBytesWordLength:I
+    .local v10, "sjisCurDoubleBytesWordLength":I
     const/4 v14, 0x0
 
     .line 76
-    .local v14, sjisMaxKatakanaWordLength:I
+    .local v14, "sjisMaxKatakanaWordLength":I
     const/4 v13, 0x0
 
     .line 79
-    .local v13, sjisMaxDoubleBytesWordLength:I
+    .local v13, "sjisMaxDoubleBytesWordLength":I
     const/4 v7, 0x0
 
     .line 81
-    .local v7, isoHighOther:I
+    .local v7, "isoHighOther":I
     move-object/from16 v0, p0
 
     array-length v0, v0
@@ -226,12 +226,12 @@
     const/16 v19, 0x1
 
     .line 86
-    .local v19, utf8bom:Z
+    .local v19, "utf8bom":Z
     :goto_1
     const/4 v6, 0x0
 
     .line 87
-    .local v6, i:I
+    .local v6, "i":I
     :goto_2
     if-ge v6, v8, :cond_15
 
@@ -252,7 +252,7 @@
     move/from16 v20, v0
 
     .line 93
-    .local v20, value:I
+    .local v20, "value":I
     if-eqz v4, :cond_2
 
     .line 94
@@ -340,18 +340,18 @@
     goto :goto_2
 
     .line 81
-    .end local v6           #i:I
-    .end local v19           #utf8bom:Z
-    .end local v20           #value:I
+    .end local v6    # "i":I
+    .end local v19    # "utf8bom":Z
+    .end local v20    # "value":I
     :cond_6
     const/16 v19, 0x0
 
     goto :goto_1
 
     .line 98
-    .restart local v6       #i:I
-    .restart local v19       #utf8bom:Z
-    .restart local v20       #value:I
+    .restart local v6    # "i":I
+    .restart local v19    # "utf8bom":Z
+    .restart local v20    # "value":I
     :cond_7
     add-int/lit8 v18, v18, -0x1
 
@@ -576,7 +576,7 @@
     goto/16 :goto_5
 
     .line 174
-    .end local v20           #value:I
+    .end local v20    # "value":I
     :cond_15
     if-eqz v4, :cond_16
 

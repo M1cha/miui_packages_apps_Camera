@@ -77,30 +77,30 @@
 
 .method protected static count([I)I
     .locals 5
-    .parameter "array"
+    .param p0, "array"    # [I
 
     .prologue
     .line 82
     const/4 v2, 0x0
 
     .line 83
-    .local v2, count:I
+    .local v2, "count":I
     move-object v1, p0
 
-    .local v1, arr$:[I
+    .local v1, "arr$":[I
     array-length v4, v1
 
-    .local v4, len$:I
+    .local v4, "len$":I
     const/4 v3, 0x0
 
-    .local v3, i$:I
+    .local v3, "i$":I
     :goto_0
     if-ge v3, v4, :cond_0
 
     aget v0, v1, v3
 
     .line 84
-    .local v0, a:I
+    .local v0, "a":I
     add-int/2addr v2, v0
 
     .line 83
@@ -109,31 +109,31 @@
     goto :goto_0
 
     .line 86
-    .end local v0           #a:I
+    .end local v0    # "a":I
     :cond_0
     return v2
 .end method
 
 .method protected static decrement([I[F)V
     .locals 4
-    .parameter "array"
-    .parameter "errors"
+    .param p0, "array"    # [I
+    .param p1, "errors"    # [F
 
     .prologue
     .line 102
     const/4 v2, 0x0
 
     .line 103
-    .local v2, index:I
+    .local v2, "index":I
     const/4 v3, 0x0
 
     aget v0, p1, v3
 
     .line 104
-    .local v0, biggestError:F
+    .local v0, "biggestError":F
     const/4 v1, 0x1
 
-    .local v1, i:I
+    .local v1, "i":I
     :goto_0
     array-length v3, p0
 
@@ -172,24 +172,24 @@
 
 .method protected static increment([I[F)V
     .locals 4
-    .parameter "array"
-    .parameter "errors"
+    .param p0, "array"    # [I
+    .param p1, "errors"    # [F
 
     .prologue
     .line 90
     const/4 v2, 0x0
 
     .line 91
-    .local v2, index:I
+    .local v2, "index":I
     const/4 v3, 0x0
 
     aget v0, p1, v3
 
     .line 92
-    .local v0, biggestError:F
+    .local v0, "biggestError":F
     const/4 v1, 0x1
 
-    .local v1, i:I
+    .local v1, "i":I
     :goto_0
     array-length v3, p0
 
@@ -228,7 +228,7 @@
 
 .method protected static isFinderPattern([I)Z
     .locals 13
-    .parameter "counters"
+    .param p0, "counters"    # [I
 
     .prologue
     const/4 v9, 0x1
@@ -243,7 +243,7 @@
     add-int v2, v11, v12
 
     .line 115
-    .local v2, firstTwoSum:I
+    .local v2, "firstTwoSum":I
     const/4 v11, 0x2
 
     aget v11, p0, v11
@@ -257,7 +257,7 @@
     add-int v8, v11, v12
 
     .line 116
-    .local v8, sum:I
+    .local v8, "sum":I
     int-to-float v11, v2
 
     int-to-float v12, v8
@@ -265,7 +265,7 @@
     div-float v7, v11, v12
 
     .line 117
-    .local v7, ratio:F
+    .local v7, "ratio":F
     const v11, 0x3f4aaaab
 
     cmpl-float v11, v7, v11
@@ -282,27 +282,27 @@
     const v6, 0x7fffffff
 
     .line 120
-    .local v6, minCounter:I
-    const/high16 v5, -0x8000
+    .local v6, "minCounter":I
+    const/high16 v5, -0x80000000
 
     .line 121
-    .local v5, maxCounter:I
+    .local v5, "maxCounter":I
     move-object v0, p0
 
-    .local v0, arr$:[I
+    .local v0, "arr$":[I
     array-length v4, v0
 
-    .local v4, len$:I
+    .local v4, "len$":I
     const/4 v3, 0x0
 
-    .local v3, i$:I
+    .local v3, "i$":I
     :goto_0
     if-ge v3, v4, :cond_2
 
     aget v1, v0, v3
 
     .line 122
-    .local v1, counter:I
+    .local v1, "counter":I
     if-le v1, v5, :cond_0
 
     .line 123
@@ -322,37 +322,37 @@
     goto :goto_0
 
     .line 129
-    .end local v1           #counter:I
+    .end local v1    # "counter":I
     :cond_2
     mul-int/lit8 v11, v6, 0xa
 
     if-ge v5, v11, :cond_3
 
     .line 131
-    .end local v0           #arr$:[I
-    .end local v3           #i$:I
-    .end local v4           #len$:I
-    .end local v5           #maxCounter:I
-    .end local v6           #minCounter:I
+    .end local v0    # "arr$":[I
+    .end local v3    # "i$":I
+    .end local v4    # "len$":I
+    .end local v5    # "maxCounter":I
+    .end local v6    # "minCounter":I
     :goto_1
     return v9
 
-    .restart local v0       #arr$:[I
-    .restart local v3       #i$:I
-    .restart local v4       #len$:I
-    .restart local v5       #maxCounter:I
-    .restart local v6       #minCounter:I
+    .restart local v0    # "arr$":[I
+    .restart local v3    # "i$":I
+    .restart local v4    # "len$":I
+    .restart local v5    # "maxCounter":I
+    .restart local v6    # "minCounter":I
     :cond_3
     move v9, v10
 
     .line 129
     goto :goto_1
 
-    .end local v0           #arr$:[I
-    .end local v3           #i$:I
-    .end local v4           #len$:I
-    .end local v5           #maxCounter:I
-    .end local v6           #minCounter:I
+    .end local v0    # "arr$":[I
+    .end local v3    # "i$":I
+    .end local v4    # "len$":I
+    .end local v5    # "maxCounter":I
+    .end local v6    # "minCounter":I
     :cond_4
     move v9, v10
 
@@ -362,8 +362,8 @@
 
 .method protected static parseFinderValue([I[[I)I
     .locals 3
-    .parameter "counters"
-    .parameter "finderPatterns"
+    .param p0, "counters"    # [I
+    .param p1, "finderPatterns"    # [[I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -374,7 +374,7 @@
     .line 72
     const/4 v0, 0x0
 
-    .local v0, value:I
+    .local v0, "value":I
     :goto_0
     array-length v1, p1
 

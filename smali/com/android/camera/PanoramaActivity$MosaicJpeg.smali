@@ -58,10 +58,9 @@
 
 .method public constructor <init>(Lcom/android/camera/PanoramaActivity;[BII)V
     .locals 1
-    .parameter
-    .parameter "data"
-    .parameter "width"
-    .parameter "height"
+    .param p2, "data"    # [B
+    .param p3, "width"    # I
+    .param p4, "height"    # I
 
     .prologue
     .line 166

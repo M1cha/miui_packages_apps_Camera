@@ -47,7 +47,7 @@
 
     const v1, 0x7f0c0037
 
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Lcom/android/camera/Camera;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -61,7 +61,7 @@
     .line 2973
     iget-object v0, p0, Lcom/android/camera/Camera$6;->this$0:Lcom/android/camera/Camera;
 
-    #calls: Lcom/android/camera/Camera;->switchToOtherMode(I)V
+    # invokes: Lcom/android/camera/Camera;->switchToOtherMode(I)V
     invoke-static {v0, v2}, Lcom/android/camera/Camera;->access$6300(Lcom/android/camera/Camera;I)V
 
     .line 2974

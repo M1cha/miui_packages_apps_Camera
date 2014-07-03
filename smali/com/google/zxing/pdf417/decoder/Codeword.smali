@@ -18,10 +18,10 @@
 # direct methods
 .method constructor <init>(IIII)V
     .locals 1
-    .parameter "startX"
-    .parameter "endX"
-    .parameter "bucket"
-    .parameter "value"
+    .param p1, "startX"    # I
+    .param p2, "endX"    # I
+    .param p3, "bucket"    # I
+    .param p4, "value"    # I
 
     .prologue
     .line 32
@@ -130,7 +130,7 @@
 
 .method isValidRowNumber(I)Z
     .locals 2
-    .parameter "rowNumber"
+    .param p1, "rowNumber"    # I
 
     .prologue
     .line 44
@@ -159,7 +159,7 @@
 
 .method setRowNumber(I)V
     .locals 0
-    .parameter "rowNumber"
+    .param p1, "rowNumber"    # I
 
     .prologue
     .line 76

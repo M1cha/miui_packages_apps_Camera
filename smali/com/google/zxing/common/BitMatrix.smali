@@ -16,7 +16,7 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 0
-    .parameter "dimension"
+    .param p1, "dimension"    # I
 
     .prologue
     .line 43
@@ -28,8 +28,8 @@
 
 .method public constructor <init>(II)V
     .locals 2
-    .parameter "width"
-    .parameter "height"
+    .param p1, "width"    # I
+    .param p2, "height"    # I
 
     .prologue
     const/4 v0, 0x1
@@ -83,7 +83,7 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
-    .parameter "o"
+    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     const/4 v2, 0x0
@@ -105,7 +105,7 @@
     check-cast v1, Lcom/google/zxing/common/BitMatrix;
 
     .line 275
-    .local v1, other:Lcom/google/zxing/common/BitMatrix;
+    .local v1, "other":Lcom/google/zxing/common/BitMatrix;
     iget v3, p0, Lcom/google/zxing/common/BitMatrix;->width:I
 
     iget v4, v1, Lcom/google/zxing/common/BitMatrix;->width:I
@@ -137,7 +137,7 @@
     .line 279
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_1
     iget-object v3, p0, Lcom/google/zxing/common/BitMatrix;->bits:[I
 
@@ -170,8 +170,8 @@
 
 .method public flip(II)V
     .locals 5
-    .parameter "x"
-    .parameter "y"
+    .param p1, "x"    # I
+    .param p2, "y"    # I
 
     .prologue
     .line 86
@@ -184,7 +184,7 @@
     add-int v0, v1, v2
 
     .line 87
-    .local v0, offset:I
+    .local v0, "offset":I
     iget-object v1, p0, Lcom/google/zxing/common/BitMatrix;->bits:[I
 
     aget v2, v1, v0
@@ -205,8 +205,8 @@
 
 .method public get(II)Z
     .locals 3
-    .parameter "x"
-    .parameter "y"
+    .param p1, "x"    # I
+    .param p2, "y"    # I
 
     .prologue
     .line 64
@@ -219,7 +219,7 @@
     add-int v0, v1, v2
 
     .line 65
-    .local v0, offset:I
+    .local v0, "offset":I
     iget-object v1, p0, Lcom/google/zxing/common/BitMatrix;->bits:[I
 
     aget v1, v1, v0
@@ -255,7 +255,7 @@
     add-int/lit8 v1, v5, -0x1
 
     .line 235
-    .local v1, bitsOffset:I
+    .local v1, "bitsOffset":I
     :goto_0
     if-ltz v1, :cond_0
 
@@ -288,7 +288,7 @@
     div-int v4, v1, v5
 
     .line 243
-    .local v4, y:I
+    .local v4, "y":I
     iget v5, p0, Lcom/google/zxing/common/BitMatrix;->rowSize:I
 
     rem-int v5, v1, v5
@@ -296,17 +296,17 @@
     shl-int/lit8 v3, v5, 0x5
 
     .line 245
-    .local v3, x:I
+    .local v3, "x":I
     iget-object v5, p0, Lcom/google/zxing/common/BitMatrix;->bits:[I
 
     aget v2, v5, v1
 
     .line 246
-    .local v2, theBits:I
+    .local v2, "theBits":I
     const/16 v0, 0x1f
 
     .line 247
-    .local v0, bit:I
+    .local v0, "bit":I
     :goto_2
     ushr-int v5, v2, v0
 
@@ -345,22 +345,22 @@
     iget v3, p0, Lcom/google/zxing/common/BitMatrix;->width:I
 
     .line 162
-    .local v3, left:I
+    .local v3, "left":I
     iget v6, p0, Lcom/google/zxing/common/BitMatrix;->height:I
 
     .line 163
-    .local v6, top:I
+    .local v6, "top":I
     const/4 v4, -0x1
 
     .line 164
-    .local v4, right:I
+    .local v4, "right":I
     const/4 v1, -0x1
 
     .line 166
-    .local v1, bottom:I
+    .local v1, "bottom":I
     const/4 v9, 0x0
 
-    .local v9, y:I
+    .local v9, "y":I
     :goto_0
     iget v10, p0, Lcom/google/zxing/common/BitMatrix;->height:I
 
@@ -369,7 +369,7 @@
     .line 167
     const/4 v8, 0x0
 
-    .local v8, x32:I
+    .local v8, "x32":I
     :goto_1
     iget v10, p0, Lcom/google/zxing/common/BitMatrix;->rowSize:I
 
@@ -387,7 +387,7 @@
     aget v5, v10, v11
 
     .line 169
-    .local v5, theBits:I
+    .local v5, "theBits":I
     if-eqz v5, :cond_5
 
     .line 170
@@ -413,7 +413,7 @@
     const/4 v0, 0x0
 
     .line 178
-    .local v0, bit:I
+    .local v0, "bit":I
     :goto_2
     rsub-int/lit8 v10, v0, 0x1f
 
@@ -440,7 +440,7 @@
     add-int v3, v10, v0
 
     .line 185
-    .end local v0           #bit:I
+    .end local v0    # "bit":I
     :cond_3
     mul-int/lit8 v10, v8, 0x20
 
@@ -452,7 +452,7 @@
     const/16 v0, 0x1f
 
     .line 187
-    .restart local v0       #bit:I
+    .restart local v0    # "bit":I
     :goto_3
     ushr-int v10, v5, v0
 
@@ -477,30 +477,30 @@
     add-int v4, v10, v0
 
     .line 167
-    .end local v0           #bit:I
+    .end local v0    # "bit":I
     :cond_5
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_1
 
     .line 166
-    .end local v5           #theBits:I
+    .end local v5    # "theBits":I
     :cond_6
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_0
 
     .line 198
-    .end local v8           #x32:I
+    .end local v8    # "x32":I
     :cond_7
     sub-int v7, v4, v3
 
     .line 199
-    .local v7, width:I
+    .local v7, "width":I
     sub-int v2, v1, v6
 
     .line 201
-    .local v2, height:I
+    .local v2, "height":I
     if-ltz v7, :cond_8
 
     if-gez v2, :cond_9
@@ -549,8 +549,8 @@
 
 .method public getRow(ILcom/google/zxing/common/BitArray;)Lcom/google/zxing/common/BitArray;
     .locals 5
-    .parameter "y"
-    .parameter "row"
+    .param p1, "y"    # I
+    .param p2, "row"    # Lcom/google/zxing/common/BitArray;
 
     .prologue
     .line 137
@@ -568,23 +568,23 @@
     :cond_0
     new-instance p2, Lcom/google/zxing/common/BitArray;
 
-    .end local p2
+    .end local p2    # "row":Lcom/google/zxing/common/BitArray;
     iget v2, p0, Lcom/google/zxing/common/BitMatrix;->width:I
 
     invoke-direct {p2, v2}, Lcom/google/zxing/common/BitArray;-><init>(I)V
 
     .line 140
-    .restart local p2
+    .restart local p2    # "row":Lcom/google/zxing/common/BitArray;
     :cond_1
     iget v2, p0, Lcom/google/zxing/common/BitMatrix;->rowSize:I
 
     mul-int v0, p1, v2
 
     .line 141
-    .local v0, offset:I
+    .local v0, "offset":I
     const/4 v1, 0x0
 
-    .local v1, x:I
+    .local v1, "x":I
     :goto_0
     iget v2, p0, Lcom/google/zxing/common/BitMatrix;->rowSize:I
 
@@ -619,7 +619,7 @@
     const/4 v1, 0x0
 
     .line 215
-    .local v1, bitsOffset:I
+    .local v1, "bitsOffset":I
     :goto_0
     iget-object v5, p0, Lcom/google/zxing/common/BitMatrix;->bits:[I
 
@@ -660,7 +660,7 @@
     div-int v4, v1, v5
 
     .line 222
-    .local v4, y:I
+    .local v4, "y":I
     iget v5, p0, Lcom/google/zxing/common/BitMatrix;->rowSize:I
 
     rem-int v5, v1, v5
@@ -668,17 +668,17 @@
     shl-int/lit8 v3, v5, 0x5
 
     .line 224
-    .local v3, x:I
+    .local v3, "x":I
     iget-object v5, p0, Lcom/google/zxing/common/BitMatrix;->bits:[I
 
     aget v2, v5, v1
 
     .line 225
-    .local v2, theBits:I
+    .local v2, "theBits":I
     const/4 v0, 0x0
 
     .line 226
-    .local v0, bit:I
+    .local v0, "bit":I
     :goto_2
     rsub-int/lit8 v5, v0, 0x1f
 
@@ -729,7 +729,7 @@
     iget v2, p0, Lcom/google/zxing/common/BitMatrix;->width:I
 
     .line 290
-    .local v2, hash:I
+    .local v2, "hash":I
     mul-int/lit8 v5, v2, 0x1f
 
     iget v6, p0, Lcom/google/zxing/common/BitMatrix;->width:I
@@ -753,20 +753,20 @@
     .line 293
     iget-object v0, p0, Lcom/google/zxing/common/BitMatrix;->bits:[I
 
-    .local v0, arr$:[I
+    .local v0, "arr$":[I
     array-length v4, v0
 
-    .local v4, len$:I
+    .local v4, "len$":I
     const/4 v3, 0x0
 
-    .local v3, i$:I
+    .local v3, "i$":I
     :goto_0
     if-ge v3, v4, :cond_0
 
     aget v1, v0, v3
 
     .line 294
-    .local v1, bit:I
+    .local v1, "bit":I
     mul-int/lit8 v5, v2, 0x1f
 
     add-int v2, v5, v1
@@ -777,15 +777,15 @@
     goto :goto_0
 
     .line 296
-    .end local v1           #bit:I
+    .end local v1    # "bit":I
     :cond_0
     return v2
 .end method
 
 .method public set(II)V
     .locals 5
-    .parameter "x"
-    .parameter "y"
+    .param p1, "x"    # I
+    .param p2, "y"    # I
 
     .prologue
     .line 75
@@ -798,7 +798,7 @@
     add-int v0, v1, v2
 
     .line 76
-    .local v0, offset:I
+    .local v0, "offset":I
     iget-object v1, p0, Lcom/google/zxing/common/BitMatrix;->bits:[I
 
     aget v2, v1, v0
@@ -819,10 +819,10 @@
 
 .method public setRegion(IIII)V
     .locals 10
-    .parameter "left"
-    .parameter "top"
-    .parameter "width"
-    .parameter "height"
+    .param p1, "left"    # I
+    .param p2, "top"    # I
+    .param p3, "width"    # I
+    .param p4, "height"    # I
 
     .prologue
     const/4 v9, 0x1
@@ -863,11 +863,11 @@
     add-int v2, p1, p3
 
     .line 116
-    .local v2, right:I
+    .local v2, "right":I
     add-int v0, p2, p4
 
     .line 117
-    .local v0, bottom:I
+    .local v0, "bottom":I
     iget v5, p0, Lcom/google/zxing/common/BitMatrix;->height:I
 
     if-gt v0, v5, :cond_4
@@ -890,7 +890,7 @@
     :cond_5
     move v4, p2
 
-    .local v4, y:I
+    .local v4, "y":I
     :goto_0
     if-ge v4, v0, :cond_7
 
@@ -900,10 +900,10 @@
     mul-int v1, v4, v5
 
     .line 122
-    .local v1, offset:I
+    .local v1, "offset":I
     move v3, p1
 
-    .local v3, x:I
+    .local v3, "x":I
     :goto_1
     if-ge v3, v2, :cond_6
 
@@ -936,16 +936,16 @@
     goto :goto_0
 
     .line 126
-    .end local v1           #offset:I
-    .end local v3           #x:I
+    .end local v1    # "offset":I
+    .end local v3    # "x":I
     :cond_7
     return-void
 .end method
 
 .method public setRow(ILcom/google/zxing/common/BitArray;)V
     .locals 5
-    .parameter "y"
-    .parameter "row"
+    .param p1, "y"    # I
+    .param p2, "row"    # Lcom/google/zxing/common/BitArray;
 
     .prologue
     .line 152
@@ -987,10 +987,10 @@
     invoke-direct {v0, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 302
-    .local v0, result:Ljava/lang/StringBuilder;
+    .local v0, "result":Ljava/lang/StringBuilder;
     const/4 v2, 0x0
 
-    .local v2, y:I
+    .local v2, "y":I
     :goto_0
     iget v3, p0, Lcom/google/zxing/common/BitMatrix;->height:I
 
@@ -999,7 +999,7 @@
     .line 303
     const/4 v1, 0x0
 
-    .local v1, x:I
+    .local v1, "x":I
     :goto_1
     iget v3, p0, Lcom/google/zxing/common/BitMatrix;->width:I
 
@@ -1040,7 +1040,7 @@
     goto :goto_0
 
     .line 308
-    .end local v1           #x:I
+    .end local v1    # "x":I
     :cond_2
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

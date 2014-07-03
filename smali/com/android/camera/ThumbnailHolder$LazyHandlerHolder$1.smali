@@ -32,7 +32,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)Z
     .locals 1
-    .parameter "msg"
+    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
     .line 38
@@ -48,7 +48,7 @@
 
     .line 40
     :pswitch_0
-    #calls: Lcom/android/camera/ThumbnailHolder;->cleanLastThumbnail()V
+    # invokes: Lcom/android/camera/ThumbnailHolder;->cleanLastThumbnail()V
     invoke-static {}, Lcom/android/camera/ThumbnailHolder;->access$000()V
 
     goto :goto_0

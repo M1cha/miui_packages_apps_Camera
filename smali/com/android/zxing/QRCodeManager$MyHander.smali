@@ -21,8 +21,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/zxing/QRCodeManager;Landroid/os/Looper;)V
     .locals 0
-    .parameter
-    .parameter "loop"
+    .param p2, "loop"    # Landroid/os/Looper;
 
     .prologue
     .line 152
@@ -39,7 +38,7 @@
 # virtual methods
 .method public dispatchMessage(Landroid/os/Message;)V
     .locals 4
-    .parameter "msg"
+    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
     .line 157
@@ -56,7 +55,7 @@
     :pswitch_0
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mIsScanQRCodeIntent:Z
+    # getter for: Lcom/android/zxing/QRCodeManager;->mIsScanQRCodeIntent:Z
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$300(Lcom/android/zxing/QRCodeManager;)Z
 
     move-result v1
@@ -66,7 +65,7 @@
     .line 160
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mListener:Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mListener:Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$400(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;
 
     move-result-object v1
@@ -87,13 +86,13 @@
 
     move-result-object v1
 
-    #setter for: Lcom/android/zxing/QRCodeManager;->mResult:Ljava/lang/String;
+    # setter for: Lcom/android/zxing/QRCodeManager;->mResult:Ljava/lang/String;
     invoke-static {v2, v1}, Lcom/android/zxing/QRCodeManager;->access$502(Lcom/android/zxing/QRCodeManager;Ljava/lang/String;)Ljava/lang/String;
 
     .line 165
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mIsScanQRCodeIntent:Z
+    # getter for: Lcom/android/zxing/QRCodeManager;->mIsScanQRCodeIntent:Z
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$300(Lcom/android/zxing/QRCodeManager;)Z
 
     move-result v1
@@ -106,12 +105,12 @@
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
     .line 167
-    .local v0, intent:Landroid/content/Intent;
+    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "result"
 
     iget-object v2, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mResult:Ljava/lang/String;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mResult:Ljava/lang/String;
     invoke-static {v2}, Lcom/android/zxing/QRCodeManager;->access$500(Lcom/android/zxing/QRCodeManager;)Ljava/lang/String;
 
     move-result-object v2
@@ -121,7 +120,7 @@
     .line 168
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$600(Lcom/android/zxing/QRCodeManager;)Landroid/app/Activity;
 
     move-result-object v1
@@ -133,7 +132,7 @@
     .line 169
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$600(Lcom/android/zxing/QRCodeManager;)Landroid/app/Activity;
 
     move-result-object v1
@@ -143,11 +142,11 @@
     goto :goto_0
 
     .line 171
-    .end local v0           #intent:Landroid/content/Intent;
+    .end local v0    # "intent":Landroid/content/Intent;
     :cond_1
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$700(Lcom/android/zxing/QRCodeManager;)Landroid/view/ViewGroup;
 
     move-result-object v1
@@ -156,7 +155,7 @@
 
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$600(Lcom/android/zxing/QRCodeManager;)Landroid/app/Activity;
 
     move-result-object v1
@@ -165,7 +164,7 @@
 
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #calls: Lcom/android/zxing/QRCodeManager;->scanQRCodeEnabled()Z
+    # invokes: Lcom/android/zxing/QRCodeManager;->scanQRCodeEnabled()Z
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$800(Lcom/android/zxing/QRCodeManager;)Z
 
     move-result v1
@@ -177,7 +176,7 @@
 
     iget-object v2, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mResult:Ljava/lang/String;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mResult:Ljava/lang/String;
     invoke-static {v2}, Lcom/android/zxing/QRCodeManager;->access$500(Lcom/android/zxing/QRCodeManager;)Ljava/lang/String;
 
     move-result-object v2
@@ -186,13 +185,13 @@
 
     move-result-object v2
 
-    #setter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
+    # setter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v1, v2}, Lcom/android/zxing/QRCodeManager;->access$902(Lcom/android/zxing/QRCodeManager;Lcom/android/zxing/QRCodeType;)Lcom/android/zxing/QRCodeType;
 
     .line 173
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$900(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v1
@@ -203,7 +202,7 @@
 
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$900(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v1
@@ -216,21 +215,21 @@
     :cond_2
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$1000(Lcom/android/zxing/QRCodeManager;)Landroid/widget/TextView;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
     invoke-static {v2}, Lcom/android/zxing/QRCodeManager;->access$600(Lcom/android/zxing/QRCodeManager;)Landroid/app/Activity;
 
     move-result-object v2
 
     const v3, 0x7f0d01f7
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -240,19 +239,19 @@
     :goto_1
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$700(Lcom/android/zxing/QRCodeManager;)Landroid/view/ViewGroup;
 
     move-result-object v1
 
     const/4 v2, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     .line 193
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mListener:Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mListener:Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$400(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;
 
     move-result-object v1
@@ -265,7 +264,7 @@
 
     const/16 v2, 0xfa0
 
-    #calls: Lcom/android/zxing/QRCodeManager;->sendDecodeMessageSafe(I)V
+    # invokes: Lcom/android/zxing/QRCodeManager;->sendDecodeMessageSafe(I)V
     invoke-static {v1, v2}, Lcom/android/zxing/QRCodeManager;->access$1100(Lcom/android/zxing/QRCodeManager;I)V
 
     goto/16 :goto_0
@@ -274,7 +273,7 @@
     :cond_4
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$900(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v1
@@ -286,21 +285,21 @@
     .line 177
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$1000(Lcom/android/zxing/QRCodeManager;)Landroid/widget/TextView;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
     invoke-static {v2}, Lcom/android/zxing/QRCodeManager;->access$600(Lcom/android/zxing/QRCodeManager;)Landroid/app/Activity;
 
     move-result-object v2
 
     const v3, 0x7f0d01f9
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -312,7 +311,7 @@
     :cond_5
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$900(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v1
@@ -324,21 +323,21 @@
     .line 179
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$1000(Lcom/android/zxing/QRCodeManager;)Landroid/widget/TextView;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
     invoke-static {v2}, Lcom/android/zxing/QRCodeManager;->access$600(Lcom/android/zxing/QRCodeManager;)Landroid/app/Activity;
 
     move-result-object v2
 
     const v3, 0x7f0d01f8
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -350,7 +349,7 @@
     :cond_6
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$900(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v1
@@ -361,7 +360,7 @@
 
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$900(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v1
@@ -374,21 +373,21 @@
     :cond_7
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$1000(Lcom/android/zxing/QRCodeManager;)Landroid/widget/TextView;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
     invoke-static {v2}, Lcom/android/zxing/QRCodeManager;->access$600(Lcom/android/zxing/QRCodeManager;)Landroid/app/Activity;
 
     move-result-object v2
 
     const v3, 0x7f0d01fa
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -400,7 +399,7 @@
     :cond_8
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$900(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v1
@@ -412,21 +411,21 @@
     .line 184
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$1000(Lcom/android/zxing/QRCodeManager;)Landroid/widget/TextView;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
     invoke-static {v2}, Lcom/android/zxing/QRCodeManager;->access$600(Lcom/android/zxing/QRCodeManager;)Landroid/app/Activity;
 
     move-result-object v2
 
     const v3, 0x7f0d01fc
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -438,7 +437,7 @@
     :cond_9
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$900(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v1
@@ -450,21 +449,21 @@
     .line 186
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$1000(Lcom/android/zxing/QRCodeManager;)Landroid/widget/TextView;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
     invoke-static {v2}, Lcom/android/zxing/QRCodeManager;->access$600(Lcom/android/zxing/QRCodeManager;)Landroid/app/Activity;
 
     move-result-object v2
 
     const v3, 0x7f0d01fd
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -476,7 +475,7 @@
     :cond_a
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$900(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v1
@@ -488,21 +487,21 @@
     .line 188
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$1000(Lcom/android/zxing/QRCodeManager;)Landroid/widget/TextView;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
     invoke-static {v2}, Lcom/android/zxing/QRCodeManager;->access$600(Lcom/android/zxing/QRCodeManager;)Landroid/app/Activity;
 
     move-result-object v2
 
     const v3, 0x7f0d0226
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -514,21 +513,21 @@
     :cond_b
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderText:Landroid/widget/TextView;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$1000(Lcom/android/zxing/QRCodeManager;)Landroid/widget/TextView;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mActivity:Landroid/app/Activity;
     invoke-static {v2}, Lcom/android/zxing/QRCodeManager;->access$600(Lcom/android/zxing/QRCodeManager;)Landroid/app/Activity;
 
     move-result-object v2
 
     const v3, 0x7f0d01fb
 
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -540,7 +539,7 @@
     :pswitch_2
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$700(Lcom/android/zxing/QRCodeManager;)Landroid/view/ViewGroup;
 
     move-result-object v1
@@ -550,14 +549,14 @@
     .line 201
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderFrame:Landroid/view/ViewGroup;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$700(Lcom/android/zxing/QRCodeManager;)Landroid/view/ViewGroup;
 
     move-result-object v1
 
     const/16 v2, 0x8
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     goto/16 :goto_0
 
@@ -565,7 +564,7 @@
     :pswitch_3
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #calls: Lcom/android/zxing/QRCodeManager;->scanQRCodeEnabled()Z
+    # invokes: Lcom/android/zxing/QRCodeManager;->scanQRCodeEnabled()Z
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$800(Lcom/android/zxing/QRCodeManager;)Z
 
     move-result v1
@@ -575,14 +574,14 @@
     .line 206
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mCameraDevice:Lcom/android/camera/CameraManager$CameraProxy;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mCameraDevice:Lcom/android/camera/CameraManager$CameraProxy;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$1300(Lcom/android/zxing/QRCodeManager;)Lcom/android/camera/CameraManager$CameraProxy;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mPreviewCallback:Landroid/hardware/Camera$PreviewCallback;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mPreviewCallback:Landroid/hardware/Camera$PreviewCallback;
     invoke-static {v2}, Lcom/android/zxing/QRCodeManager;->access$1200(Lcom/android/zxing/QRCodeManager;)Landroid/hardware/Camera$PreviewCallback;
 
     move-result-object v2
@@ -592,7 +591,7 @@
     .line 207
     iget-object v1, p0, Lcom/android/zxing/QRCodeManager$MyHander;->this$0:Lcom/android/zxing/QRCodeManager;
 
-    #getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderView:Lcom/android/zxing/ui/ViewFinderView;
+    # getter for: Lcom/android/zxing/QRCodeManager;->mViewFinderView:Lcom/android/zxing/ui/ViewFinderView;
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->access$1400(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/ui/ViewFinderView;
 
     move-result-object v1
@@ -605,7 +604,7 @@
 
     const/16 v2, 0x7d0
 
-    #calls: Lcom/android/zxing/QRCodeManager;->sendDecodeMessageSafe(I)V
+    # invokes: Lcom/android/zxing/QRCodeManager;->sendDecodeMessageSafe(I)V
     invoke-static {v1, v2}, Lcom/android/zxing/QRCodeManager;->access$1100(Lcom/android/zxing/QRCodeManager;I)V
 
     goto/16 :goto_0

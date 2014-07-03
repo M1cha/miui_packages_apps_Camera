@@ -43,8 +43,8 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/ui/GLRootView;Lcom/android/gallery3d/ui/GLRootView$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Lcom/android/gallery3d/ui/GLRootView;
+    .param p2, "x1"    # Lcom/android/gallery3d/ui/GLRootView$1;
 
     .prologue
     .line 433
@@ -77,7 +77,7 @@
     .line 461
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;->this$0:Lcom/android/gallery3d/ui/GLRootView;
 
-    invoke-virtual {v0, p0}, Landroid/opengl/GLSurfaceView;->queueEvent(Ljava/lang/Runnable;)V
+    invoke-virtual {v0, p0}, Lcom/android/gallery3d/ui/GLRootView;->queueEvent(Ljava/lang/Runnable;)V
 
     goto :goto_0
 .end method
@@ -89,7 +89,7 @@
     .line 440
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;->this$0:Lcom/android/gallery3d/ui/GLRootView;
 
-    #getter for: Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
+    # getter for: Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
     invoke-static {v1}, Lcom/android/gallery3d/ui/GLRootView;->access$100(Lcom/android/gallery3d/ui/GLRootView;)Ljava/util/ArrayDeque;
 
     move-result-object v2
@@ -105,7 +105,7 @@
     .line 442
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;->this$0:Lcom/android/gallery3d/ui/GLRootView;
 
-    #getter for: Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
+    # getter for: Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
     invoke-static {v1}, Lcom/android/gallery3d/ui/GLRootView;->access$100(Lcom/android/gallery3d/ui/GLRootView;)Ljava/util/ArrayDeque;
 
     move-result-object v1
@@ -126,7 +126,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;->this$0:Lcom/android/gallery3d/ui/GLRootView;
 
-    #getter for: Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
+    # getter for: Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
     invoke-static {v1}, Lcom/android/gallery3d/ui/GLRootView;->access$100(Lcom/android/gallery3d/ui/GLRootView;)Ljava/util/ArrayDeque;
 
     move-result-object v1
@@ -138,7 +138,7 @@
     check-cast v0, Lcom/android/gallery3d/ui/GLRoot$OnGLIdleListener;
 
     .line 444
-    .local v0, listener:Lcom/android/gallery3d/ui/GLRoot$OnGLIdleListener;
+    .local v0, "listener":Lcom/android/gallery3d/ui/GLRoot$OnGLIdleListener;
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -146,7 +146,7 @@
     .line 445
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;->this$0:Lcom/android/gallery3d/ui/GLRootView;
 
-    #getter for: Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
+    # getter for: Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
     invoke-static {v1}, Lcom/android/gallery3d/ui/GLRootView;->access$200(Lcom/android/gallery3d/ui/GLRootView;)Ljava/util/concurrent/locks/ReentrantLock;
 
     move-result-object v1
@@ -157,14 +157,14 @@
     :try_start_1
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;->this$0:Lcom/android/gallery3d/ui/GLRootView;
 
-    #getter for: Lcom/android/gallery3d/ui/GLRootView;->mCanvas:Lcom/android/gallery3d/ui/GLCanvas;
+    # getter for: Lcom/android/gallery3d/ui/GLRootView;->mCanvas:Lcom/android/gallery3d/ui/GLCanvas;
     invoke-static {v1}, Lcom/android/gallery3d/ui/GLRootView;->access$300(Lcom/android/gallery3d/ui/GLRootView;)Lcom/android/gallery3d/ui/GLCanvas;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;->this$0:Lcom/android/gallery3d/ui/GLRootView;
 
-    #getter for: Lcom/android/gallery3d/ui/GLRootView;->mRenderRequested:Z
+    # getter for: Lcom/android/gallery3d/ui/GLRootView;->mRenderRequested:Z
     invoke-static {v2}, Lcom/android/gallery3d/ui/GLRootView;->access$400(Lcom/android/gallery3d/ui/GLRootView;)Z
 
     move-result v2
@@ -180,7 +180,7 @@
     .line 449
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;->this$0:Lcom/android/gallery3d/ui/GLRootView;
 
-    #getter for: Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
+    # getter for: Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
     invoke-static {v1}, Lcom/android/gallery3d/ui/GLRootView;->access$200(Lcom/android/gallery3d/ui/GLRootView;)Ljava/util/concurrent/locks/ReentrantLock;
 
     move-result-object v1
@@ -190,7 +190,7 @@
     goto :goto_0
 
     .line 444
-    .end local v0           #listener:Lcom/android/gallery3d/ui/GLRoot$OnGLIdleListener;
+    .end local v0    # "listener":Lcom/android/gallery3d/ui/GLRoot$OnGLIdleListener;
     :catchall_0
     move-exception v1
 
@@ -202,11 +202,11 @@
     throw v1
 
     .line 449
-    .restart local v0       #listener:Lcom/android/gallery3d/ui/GLRoot$OnGLIdleListener;
+    .restart local v0    # "listener":Lcom/android/gallery3d/ui/GLRoot$OnGLIdleListener;
     :cond_1
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;->this$0:Lcom/android/gallery3d/ui/GLRootView;
 
-    #getter for: Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
+    # getter for: Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
     invoke-static {v1}, Lcom/android/gallery3d/ui/GLRootView;->access$200(Lcom/android/gallery3d/ui/GLRootView;)Ljava/util/concurrent/locks/ReentrantLock;
 
     move-result-object v1
@@ -216,7 +216,7 @@
     .line 451
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;->this$0:Lcom/android/gallery3d/ui/GLRootView;
 
-    #getter for: Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
+    # getter for: Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
     invoke-static {v1}, Lcom/android/gallery3d/ui/GLRootView;->access$100(Lcom/android/gallery3d/ui/GLRootView;)Ljava/util/ArrayDeque;
 
     move-result-object v2
@@ -227,7 +227,7 @@
     :try_start_3
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;->this$0:Lcom/android/gallery3d/ui/GLRootView;
 
-    #getter for: Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
+    # getter for: Lcom/android/gallery3d/ui/GLRootView;->mIdleListeners:Ljava/util/ArrayDeque;
     invoke-static {v1}, Lcom/android/gallery3d/ui/GLRootView;->access$100(Lcom/android/gallery3d/ui/GLRootView;)Ljava/util/ArrayDeque;
 
     move-result-object v1
@@ -237,7 +237,7 @@
     .line 453
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;->this$0:Lcom/android/gallery3d/ui/GLRootView;
 
-    #getter for: Lcom/android/gallery3d/ui/GLRootView;->mRenderRequested:Z
+    # getter for: Lcom/android/gallery3d/ui/GLRootView;->mRenderRequested:Z
     invoke-static {v1}, Lcom/android/gallery3d/ui/GLRootView;->access$400(Lcom/android/gallery3d/ui/GLRootView;)Z
 
     move-result v1
@@ -267,7 +267,7 @@
 
     iget-object v2, p0, Lcom/android/gallery3d/ui/GLRootView$IdleRunner;->this$0:Lcom/android/gallery3d/ui/GLRootView;
 
-    #getter for: Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
+    # getter for: Lcom/android/gallery3d/ui/GLRootView;->mRenderLock:Ljava/util/concurrent/locks/ReentrantLock;
     invoke-static {v2}, Lcom/android/gallery3d/ui/GLRootView;->access$200(Lcom/android/gallery3d/ui/GLRootView;)Ljava/util/concurrent/locks/ReentrantLock;
 
     move-result-object v2

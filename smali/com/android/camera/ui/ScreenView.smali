@@ -148,7 +148,7 @@
     .line 45
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     invoke-direct {v0, v2, v2, v1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
@@ -157,7 +157,7 @@
     .line 126
     const-wide v0, 0x3f90624dd2f1a9fcL
 
-    const-wide/high16 v2, 0x3fe8
+    const-wide/high16 v2, 0x3fe8000000000000L
 
     invoke-static {v2, v3}, Ljava/lang/Math;->log(D)D
 
@@ -174,7 +174,7 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 4
-    .parameter "context"
+    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     const/4 v3, -0x1
@@ -244,7 +244,7 @@
     iput v3, p0, Lcom/android/camera/ui/ScreenView;->mActivePointerId:I
 
     .line 129
-    const/high16 v0, 0x3f00
+    const/high16 v0, 0x3f000000
 
     iput v0, p0, Lcom/android/camera/ui/ScreenView;->mConfirmHorizontalScrollRatio:F
 
@@ -281,7 +281,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v1, 0x44a0
+    const/high16 v1, 0x44a00000
 
     mul-float/2addr v0, v1
 
@@ -296,8 +296,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 320
@@ -311,9 +311,9 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 4
-    .parameter "context"
-    .parameter "attrs"
-    .parameter "defStyle"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .param p3, "defStyle"    # I
 
     .prologue
     const/4 v3, -0x1
@@ -383,7 +383,7 @@
     iput v3, p0, Lcom/android/camera/ui/ScreenView;->mActivePointerId:I
 
     .line 129
-    const/high16 v0, 0x3f00
+    const/high16 v0, 0x3f000000
 
     iput v0, p0, Lcom/android/camera/ui/ScreenView;->mConfirmHorizontalScrollRatio:F
 
@@ -420,7 +420,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v1, 0x44a0
+    const/high16 v1, 0x44a00000
 
     mul-float/2addr v0, v1
 
@@ -435,29 +435,29 @@
 
 .method static synthetic access$100(Lcom/android/camera/ui/ScreenView;)I
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/ui/ScreenView;
 
     .prologue
     .line 36
-    iget v0, p0, Landroid/view/View;->mScrollX:I
+    iget v0, p0, Lcom/android/camera/ui/ScreenView;->mScrollX:I
 
     return v0
 .end method
 
 .method static synthetic access$200(Lcom/android/camera/ui/ScreenView;)I
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/ui/ScreenView;
 
     .prologue
     .line 36
-    iget v0, p0, Landroid/view/View;->mScrollX:I
+    iget v0, p0, Lcom/android/camera/ui/ScreenView;->mScrollX:I
 
     return v0
 .end method
 
 .method static synthetic access$400(Lcom/android/camera/ui/ScreenView;)F
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/ui/ScreenView;
 
     .prologue
     .line 36
@@ -468,7 +468,7 @@
 
 .method static synthetic access$800(Lcom/android/camera/ui/ScreenView;)I
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/ui/ScreenView;
 
     .prologue
     .line 36
@@ -484,12 +484,12 @@
     .line 1378
     new-instance v0, Landroid/widget/ImageView;
 
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/camera/ui/ScreenView;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     .line 1379
-    .local v0, seekPoint:Landroid/widget/ImageView;
+    .local v0, "seekPoint":Landroid/widget/ImageView;
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
@@ -510,10 +510,10 @@
     const/4 v1, 0x1
 
     .line 339
-    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->setAlwaysDrawnWithCacheEnabled(Z)V
+    invoke-virtual {p0, v1}, Lcom/android/camera/ui/ScreenView;->setAlwaysDrawnWithCacheEnabled(Z)V
 
     .line 340
-    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->setClipToPadding(Z)V
+    invoke-virtual {p0, v1}, Lcom/android/camera/ui/ScreenView;->setClipToPadding(Z)V
 
     .line 341
     new-instance v1, Lcom/android/camera/ui/ScreenView$ScreenViewOvershootInterpolator;
@@ -525,7 +525,7 @@
     .line 342
     new-instance v1, Landroid/widget/Scroller;
 
-    iget-object v2, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/camera/ui/ScreenView;->mContext:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/android/camera/ui/ScreenView;->mScrollInterpolator:Lcom/android/camera/ui/ScreenView$ScreenViewOvershootInterpolator;
 
@@ -539,14 +539,14 @@
     invoke-virtual {p0, v1}, Lcom/android/camera/ui/ScreenView;->setCurrentScreenInner(I)V
 
     .line 345
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/camera/ui/ScreenView;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
 
     .line 346
-    .local v0, configuration:Landroid/view/ViewConfiguration;
+    .local v0, "configuration":Landroid/view/ViewConfiguration;
     invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
 
     move-result v1
@@ -563,7 +563,7 @@
     .line 349
     new-instance v1, Landroid/view/ScaleGestureDetector;
 
-    iget-object v2, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lcom/android/camera/ui/ScreenView;->mContext:Landroid/content/Context;
 
     new-instance v3, Lcom/android/camera/ui/ScreenView$ScaleDetectorListener;
 
@@ -581,7 +581,7 @@
 
 .method private onTouchEventUnique(Landroid/view/MotionEvent;)V
     .locals 2
-    .parameter "ev"
+    .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
     .line 1012
@@ -711,7 +711,7 @@
 
 .method private scrolledFarEnough(Landroid/view/MotionEvent;)Z
     .locals 5
-    .parameter "ev"
+    .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
     const/4 v2, 0x0
@@ -730,7 +730,7 @@
     move-result v0
 
     .line 1007
-    .local v0, dx:F
+    .local v0, "dx":F
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v3
@@ -744,7 +744,7 @@
     move-result v1
 
     .line 1008
-    .local v1, dy:F
+    .local v1, "dy":F
     iget v3, p0, Lcom/android/camera/ui/ScreenView;->mConfirmHorizontalScrollRatio:F
 
     mul-float/2addr v3, v1
@@ -775,7 +775,7 @@
 
 .method private snapByVelocity(I)V
     .locals 8
-    .parameter "pointerId"
+    .param p1, "pointerId"    # I
 
     .prologue
     const/4 v5, 0x1
@@ -811,7 +811,7 @@
     float-to-int v2, v4
 
     .line 1116
-    .local v2, velocityX:I
+    .local v2, "velocityX":I
     iget-object v4, p0, Lcom/android/camera/ui/ScreenView;->mGestureVelocityTracker:Lcom/android/camera/ui/ScreenView$GestureVelocityTracker;
 
     invoke-static {v2}, Ljava/lang/Math;->abs(I)I
@@ -825,7 +825,7 @@
     move-result v0
 
     .line 1117
-    .local v0, flingDirection:I
+    .local v0, "flingDirection":I
     if-ne v0, v5, :cond_2
 
     iget v4, p0, Lcom/android/camera/ui/ScreenView;->mCurrentScreen:I
@@ -897,8 +897,8 @@
     mul-int v1, v6, v4
 
     .line 1125
-    .local v1, snapUnit:I
-    iget v4, p0, Landroid/view/View;->mScrollX:I
+    .local v1, "snapUnit":I
+    iget v4, p0, Lcom/android/camera/ui/ScreenView;->mScrollX:I
 
     shr-int/lit8 v6, v1, 0x1
 
@@ -909,15 +909,15 @@
     div-int v3, v4, v6
 
     .line 1126
-    .local v3, whichScreen:I
+    .local v3, "whichScreen":I
     const/4 v4, 0x0
 
     invoke-virtual {p0, v3, v4, v5}, Lcom/android/camera/ui/ScreenView;->snapToScreen(IIZ)V
 
     goto :goto_0
 
-    .end local v1           #snapUnit:I
-    .end local v3           #whichScreen:I
+    .end local v1    # "snapUnit":I
+    .end local v3    # "whichScreen":I
     :cond_5
     move v4, v5
 
@@ -927,7 +927,7 @@
 
 .method private updateArrowIndicatorResource(I)V
     .locals 3
-    .parameter "x"
+    .param p1, "x"    # I
 
     .prologue
     .line 701
@@ -943,7 +943,7 @@
     iget v0, p0, Lcom/android/camera/ui/ScreenView;->mArrowLeftOffResId:I
 
     :goto_0
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v1, v0}, Lcom/android/camera/ui/ScreenView$ArrowIndicator;->setImageResource(I)V
 
     .line 706
     iget-object v1, p0, Lcom/android/camera/ui/ScreenView;->mArrowRight:Lcom/android/camera/ui/ScreenView$ArrowIndicator;
@@ -969,7 +969,7 @@
     iget v0, p0, Lcom/android/camera/ui/ScreenView;->mArrowRightOffResId:I
 
     :goto_1
-    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v1, v0}, Lcom/android/camera/ui/ScreenView$ArrowIndicator;->setImageResource(I)V
 
     .line 711
     :cond_0
@@ -990,11 +990,11 @@
 
 .method private updateIndicatorPositions(I)V
     .locals 17
-    .parameter "scrollX"
+    .param p1, "scrollX"    # I
 
     .prologue
     .line 612
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/ScreenView;->getWidth()I
 
     move-result v14
 
@@ -1006,22 +1006,22 @@
     move-result v4
 
     .line 614
-    .local v4, indexOffset:I
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getWidth()I
+    .local v4, "indexOffset":I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/ScreenView;->getWidth()I
 
     move-result v12
 
     .line 615
-    .local v12, screenWidth:I
-    invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getHeight()I
+    .local v12, "screenWidth":I
+    invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/ScreenView;->getHeight()I
 
     move-result v11
 
     .line 617
-    .local v11, screenHeight:I
+    .local v11, "screenHeight":I
     const/4 v3, 0x0
 
-    .local v3, i:I
+    .local v3, "i":I
     :goto_0
     move-object/from16 v0, p0
 
@@ -1034,12 +1034,12 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v14}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v14}, Lcom/android/camera/ui/ScreenView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
     .line 619
-    .local v5, indicator:Landroid/view/View;
+    .local v5, "indicator":Landroid/view/View;
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v10
@@ -1047,31 +1047,31 @@
     check-cast v10, Landroid/widget/FrameLayout$LayoutParams;
 
     .line 621
-    .local v10, lp:Landroid/widget/FrameLayout$LayoutParams;
+    .local v10, "lp":Landroid/widget/FrameLayout$LayoutParams;
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v9
 
     .line 622
-    .local v9, indicatorWidth:I
+    .local v9, "indicatorWidth":I
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v6
 
     .line 624
-    .local v6, indicatorHeight:I
+    .local v6, "indicatorHeight":I
     const/4 v7, 0x0
 
     .line 625
-    .local v7, indicatorLeft:I
+    .local v7, "indicatorLeft":I
     const/4 v8, 0x0
 
     .line 627
-    .local v8, indicatorTop:I
+    .local v8, "indicatorTop":I
     iget v1, v10, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     .line 629
-    .local v1, gravity:I
+    .local v1, "gravity":I
     const/4 v14, -0x1
 
     if-eq v1, v14, :cond_0
@@ -1080,27 +1080,27 @@
     and-int/lit8 v2, v1, 0x7
 
     .line 631
-    .local v2, horizontalGravity:I
+    .local v2, "horizontalGravity":I
     and-int/lit8 v13, v1, 0x70
 
     .line 633
-    .local v13, verticalGravity:I
+    .local v13, "verticalGravity":I
     packed-switch v2, :pswitch_data_0
 
     .line 645
     :pswitch_0
-    iget v7, v10, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v7, v10, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     .line 648
     :goto_1
     sparse-switch v13, :sswitch_data_0
 
     .line 660
-    iget v8, v10, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v8, v10, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     .line 663
-    .end local v2           #horizontalGravity:I
-    .end local v13           #verticalGravity:I
+    .end local v2    # "horizontalGravity":I
+    .end local v13    # "verticalGravity":I
     :cond_0
     :goto_2
     invoke-virtual {v5}, Landroid/view/View;->isLayoutRequested()Z
@@ -1148,10 +1148,10 @@
     goto :goto_0
 
     .line 635
-    .restart local v2       #horizontalGravity:I
-    .restart local v13       #verticalGravity:I
+    .restart local v2    # "horizontalGravity":I
+    .restart local v13    # "verticalGravity":I
     :pswitch_1
-    iget v7, v10, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v7, v10, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     .line 636
     goto :goto_1
@@ -1162,11 +1162,11 @@
 
     div-int/lit8 v14, v14, 0x2
 
-    iget v15, v10, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    iget v15, v10, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     add-int/2addr v14, v15
 
-    iget v15, v10, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v15, v10, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     sub-int v7, v14, v15
 
@@ -1177,7 +1177,7 @@
     :pswitch_3
     sub-int v14, v12, v9
 
-    iget v15, v10, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    iget v15, v10, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     sub-int v7, v14, v15
 
@@ -1186,7 +1186,7 @@
 
     .line 650
     :sswitch_0
-    iget v8, v10, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v8, v10, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     .line 651
     goto :goto_2
@@ -1197,11 +1197,11 @@
 
     div-int/lit8 v14, v14, 0x2
 
-    iget v15, v10, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+    iget v15, v10, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     add-int/2addr v14, v15
 
-    iget v15, v10, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v15, v10, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     sub-int v8, v14, v15
 
@@ -1212,7 +1212,7 @@
     :sswitch_2
     sub-int v14, v11, v6
 
-    iget v15, v10, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+    iget v15, v10, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     sub-int v8, v14, v15
 
@@ -1220,8 +1220,8 @@
     goto :goto_2
 
     .line 668
-    .end local v2           #horizontalGravity:I
-    .end local v13           #verticalGravity:I
+    .end local v2    # "horizontalGravity":I
+    .end local v13    # "verticalGravity":I
     :cond_3
     add-int v14, p1, v7
 
@@ -1238,17 +1238,17 @@
     goto :goto_3
 
     .line 676
-    .end local v1           #gravity:I
-    .end local v3           #i:I
-    .end local v4           #indexOffset:I
-    .end local v5           #indicator:Landroid/view/View;
-    .end local v6           #indicatorHeight:I
-    .end local v7           #indicatorLeft:I
-    .end local v8           #indicatorTop:I
-    .end local v9           #indicatorWidth:I
-    .end local v10           #lp:Landroid/widget/FrameLayout$LayoutParams;
-    .end local v11           #screenHeight:I
-    .end local v12           #screenWidth:I
+    .end local v1    # "gravity":I
+    .end local v3    # "i":I
+    .end local v4    # "indexOffset":I
+    .end local v5    # "indicator":Landroid/view/View;
+    .end local v6    # "indicatorHeight":I
+    .end local v7    # "indicatorLeft":I
+    .end local v8    # "indicatorTop":I
+    .end local v9    # "indicatorWidth":I
+    .end local v10    # "lp":Landroid/widget/FrameLayout$LayoutParams;
+    .end local v11    # "screenHeight":I
+    .end local v12    # "screenWidth":I
     :cond_4
     return-void
 
@@ -1284,7 +1284,7 @@
     :goto_0
     iget v0, p0, Lcom/android/camera/ui/ScreenView;->mScrollOffset:I
 
-    iget v1, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v1, p0, Lcom/android/camera/ui/ScreenView;->mPaddingLeft:I
 
     add-int/2addr v0, v1
 
@@ -1347,8 +1347,8 @@
 
 .method private updateSeekPoints(II)V
     .locals 5
-    .parameter "fromIndex"
-    .parameter "toIndex"
+    .param p1, "fromIndex"    # I
+    .param p2, "toIndex"    # I
 
     .prologue
     const/4 v4, 0x1
@@ -1364,7 +1364,7 @@
     move-result v0
 
     .line 1387
-    .local v0, count:I
+    .local v0, "count":I
     if-gt v0, v4, :cond_1
 
     .line 1388
@@ -1372,19 +1372,19 @@
 
     const/16 v3, 0x8
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Lcom/android/camera/ui/ScreenView$SeekBarIndicator;->setVisibility(I)V
 
     .line 1401
-    .end local v0           #count:I
+    .end local v0    # "count":I
     :cond_0
     return-void
 
     .line 1391
-    .restart local v0       #count:I
+    .restart local v0    # "count":I
     :cond_1
     const/4 v1, 0x0
 
-    .local v1, i:I
+    .local v1, "i":I
     :goto_0
     iget v2, p0, Lcom/android/camera/ui/ScreenView;->mVisibleRange:I
 
@@ -1399,7 +1399,7 @@
 
     add-int v3, p1, v1
 
-    invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v2, v3}, Lcom/android/camera/ui/ScreenView$SeekBarIndicator;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -1430,7 +1430,7 @@
 
     add-int v3, p2, v1
 
-    invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v2, v3}, Lcom/android/camera/ui/ScreenView$SeekBarIndicator;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -1444,7 +1444,7 @@
 
 .method private updateSlidePointPosition(I)V
     .locals 7
-    .parameter "scrollX"
+    .param p1, "scrollX"    # I
 
     .prologue
     .line 680
@@ -1453,7 +1453,7 @@
     move-result v0
 
     .line 681
-    .local v0, screenCount:I
+    .local v0, "screenCount":I
     iget-object v5, p0, Lcom/android/camera/ui/ScreenView;->mSlideBar:Lcom/android/camera/ui/ScreenView$SlideBar;
 
     if-eqz v5, :cond_0
@@ -1468,7 +1468,7 @@
     move-result v2
 
     .line 683
-    .local v2, slideBarWidth:I
+    .local v2, "slideBarWidth":I
     div-int v5, v2, v0
 
     iget v6, p0, Lcom/android/camera/ui/ScreenView;->mVisibleRange:I
@@ -1482,19 +1482,19 @@
     move-result v3
 
     .line 687
-    .local v3, slidePointWidth:I
+    .local v3, "slidePointWidth":I
     iget v5, p0, Lcom/android/camera/ui/ScreenView;->mChildScreenWidth:I
 
     mul-int v1, v5, v0
 
     .line 688
-    .local v1, screenViewContentWidth:I
+    .local v1, "screenViewContentWidth":I
     if-gt v1, v2, :cond_1
 
     const/4 v4, 0x0
 
     .line 693
-    .local v4, slidePointX:I
+    .local v4, "slidePointX":I
     :goto_0
     iget-object v5, p0, Lcom/android/camera/ui/ScreenView;->mSlideBar:Lcom/android/camera/ui/ScreenView$SlideBar;
 
@@ -1503,7 +1503,7 @@
     invoke-virtual {v5, v4, v6}, Lcom/android/camera/ui/ScreenView$SlideBar;->setPosition(II)V
 
     .line 694
-    invoke-virtual {p0}, Landroid/view/View;->isHardwareAccelerated()Z
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView;->isHardwareAccelerated()Z
 
     move-result v5
 
@@ -1512,20 +1512,20 @@
     .line 695
     iget-object v5, p0, Lcom/android/camera/ui/ScreenView;->mSlideBar:Lcom/android/camera/ui/ScreenView$SlideBar;
 
-    invoke-virtual {v5}, Landroid/view/View;->invalidate()V
+    invoke-virtual {v5}, Lcom/android/camera/ui/ScreenView$SlideBar;->invalidate()V
 
     .line 698
-    .end local v1           #screenViewContentWidth:I
-    .end local v2           #slideBarWidth:I
-    .end local v3           #slidePointWidth:I
-    .end local v4           #slidePointX:I
+    .end local v1    # "screenViewContentWidth":I
+    .end local v2    # "slideBarWidth":I
+    .end local v3    # "slidePointWidth":I
+    .end local v4    # "slidePointX":I
     :cond_0
     return-void
 
     .line 688
-    .restart local v1       #screenViewContentWidth:I
-    .restart local v2       #slideBarWidth:I
-    .restart local v3       #slidePointWidth:I
+    .restart local v1    # "screenViewContentWidth":I
+    .restart local v2    # "slideBarWidth":I
+    .restart local v3    # "slidePointWidth":I
     :cond_1
     sub-int v5, v2, v3
 
@@ -1542,8 +1542,8 @@
 # virtual methods
 .method public addIndicator(Landroid/view/View;Landroid/widget/FrameLayout$LayoutParams;)V
     .locals 1
-    .parameter "indicator"
-    .parameter "params"
+    .param p1, "indicator"    # Landroid/view/View;
+    .param p2, "params"    # Landroid/widget/FrameLayout$LayoutParams;
 
     .prologue
     .line 1284
@@ -1564,9 +1564,9 @@
 
 .method public addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
     .locals 4
-    .parameter "child"
-    .parameter "index"
-    .parameter "params"
+    .param p1, "child"    # Landroid/view/View;
+    .param p2, "index"    # I
+    .param p3, "params"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
     .line 1240
@@ -1575,7 +1575,7 @@
     move-result v0
 
     .line 1241
-    .local v0, currentCount:I
+    .local v0, "currentCount":I
     if-gez p2, :cond_1
 
     .line 1242
@@ -1596,7 +1596,7 @@
 
     sget-object v3, Lcom/android/camera/ui/ScreenView;->SEEK_POINT_LAYOUT_PARAMS:Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-virtual {v1, v2, p2, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v1, v2, p2, v3}, Lcom/android/camera/ui/ScreenView$SeekBarIndicator;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     .line 1252
     :cond_0
@@ -1655,7 +1655,7 @@
 
     move-result v3
 
-    iput v3, p0, Landroid/view/View;->mScrollX:I
+    iput v3, p0, Lcom/android/camera/ui/ScreenView;->mScrollX:I
 
     int-to-float v3, v3
 
@@ -1679,25 +1679,25 @@
 
     move-result v3
 
-    iput v3, p0, Landroid/view/View;->mScrollY:I
+    iput v3, p0, Lcom/android/camera/ui/ScreenView;->mScrollY:I
 
     .line 752
-    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView;->postInvalidate()V
 
     .line 768
     :cond_0
     :goto_0
-    iget v3, p0, Landroid/view/View;->mScrollX:I
+    iget v3, p0, Lcom/android/camera/ui/ScreenView;->mScrollX:I
 
     invoke-direct {p0, v3}, Lcom/android/camera/ui/ScreenView;->updateIndicatorPositions(I)V
 
     .line 769
-    iget v3, p0, Landroid/view/View;->mScrollX:I
+    iget v3, p0, Lcom/android/camera/ui/ScreenView;->mScrollX:I
 
     invoke-direct {p0, v3}, Lcom/android/camera/ui/ScreenView;->updateSlidePointPosition(I)V
 
     .line 770
-    iget v3, p0, Landroid/view/View;->mScrollX:I
+    iget v3, p0, Lcom/android/camera/ui/ScreenView;->mScrollX:I
 
     invoke-direct {p0, v3}, Lcom/android/camera/ui/ScreenView;->updateArrowIndicatorResource(I)V
 
@@ -1753,7 +1753,7 @@
     div-float v2, v3, v5
 
     .line 758
-    .local v2, now:F
+    .local v2, "now":F
     iget v3, p0, Lcom/android/camera/ui/ScreenView;->mSmoothingTime:F
 
     sub-float v3, v2, v3
@@ -1771,18 +1771,18 @@
     double-to-float v1, v3
 
     .line 759
-    .local v1, e:F
+    .local v1, "e":F
     iget v3, p0, Lcom/android/camera/ui/ScreenView;->mTouchX:F
 
-    iget v4, p0, Landroid/view/View;->mScrollX:I
+    iget v4, p0, Lcom/android/camera/ui/ScreenView;->mScrollX:I
 
     int-to-float v4, v4
 
     sub-float v0, v3, v4
 
     .line 760
-    .local v0, dx:F
-    iget v3, p0, Landroid/view/View;->mScrollX:I
+    .local v0, "dx":F
+    iget v3, p0, Lcom/android/camera/ui/ScreenView;->mScrollX:I
 
     int-to-float v3, v3
 
@@ -1792,19 +1792,19 @@
 
     float-to-int v3, v3
 
-    iput v3, p0, Landroid/view/View;->mScrollX:I
+    iput v3, p0, Lcom/android/camera/ui/ScreenView;->mScrollX:I
 
     .line 761
     iput v2, p0, Lcom/android/camera/ui/ScreenView;->mSmoothingTime:F
 
     .line 763
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     cmpl-float v3, v0, v3
 
     if-gtz v3, :cond_3
 
-    const/high16 v3, -0x4080
+    const/high16 v3, -0x40800000
 
     cmpg-float v3, v0, v3
 
@@ -1812,15 +1812,15 @@
 
     .line 764
     :cond_3
-    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView;->postInvalidate()V
 
     goto :goto_0
 .end method
 
 .method public dispatchUnhandledMove(Landroid/view/View;I)Z
     .locals 3
-    .parameter "focused"
-    .parameter "direction"
+    .param p1, "focused"    # Landroid/view/View;
+    .param p2, "direction"    # I
 
     .prologue
     const/4 v0, 0x1
@@ -1883,9 +1883,9 @@
 
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 1
-    .parameter "canvas"
-    .parameter "child"
-    .parameter "drawingTime"
+    .param p1, "canvas"    # Landroid/graphics/Canvas;
+    .param p2, "child"    # Landroid/view/View;
+    .param p3, "drawingTime"    # J
 
     .prologue
     .line 885
@@ -1935,7 +1935,7 @@
 
 .method public getScreen(I)Landroid/view/View;
     .locals 1
-    .parameter "screenIndex"
+    .param p1, "screenIndex"    # I
 
     .prologue
     .line 1229
@@ -1956,7 +1956,7 @@
     return-object v0
 
     :cond_1
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, p1}, Lcom/android/camera/ui/ScreenView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -1978,7 +1978,7 @@
 
     .prologue
     .line 775
-    invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
 
     .line 776
     invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView;->computeScroll()V
@@ -1989,7 +1989,7 @@
 
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 5
-    .parameter "ev"
+    .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
     const/4 v4, 0x3
@@ -2138,28 +2138,28 @@
 
 .method protected onLayout(ZIIII)V
     .locals 8
-    .parameter "changed"
-    .parameter "left"
-    .parameter "top"
-    .parameter "right"
-    .parameter "bottom"
+    .param p1, "changed"    # Z
+    .param p2, "left"    # I
+    .param p3, "top"    # I
+    .param p4, "right"    # I
+    .param p5, "bottom"    # I
 
     .prologue
     .line 856
-    invoke-virtual {p0, p2, p3, p4, p5}, Landroid/view/View;->setFrame(IIII)Z
+    invoke-virtual {p0, p2, p3, p4, p5}, Lcom/android/camera/ui/ScreenView;->setFrame(IIII)Z
 
     .line 858
-    iget v4, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v4, p0, Lcom/android/camera/ui/ScreenView;->mPaddingLeft:I
 
     add-int/2addr p2, v4
 
     .line 859
-    iget v4, p0, Landroid/view/View;->mPaddingRight:I
+    iget v4, p0, Lcom/android/camera/ui/ScreenView;->mPaddingRight:I
 
     sub-int/2addr p4, v4
 
     .line 861
-    iget v4, p0, Landroid/view/View;->mScrollX:I
+    iget v4, p0, Lcom/android/camera/ui/ScreenView;->mScrollX:I
 
     invoke-direct {p0, v4}, Lcom/android/camera/ui/ScreenView;->updateIndicatorPositions(I)V
 
@@ -2169,24 +2169,24 @@
     move-result v2
 
     .line 865
-    .local v2, count:I
+    .local v2, "count":I
     const/4 v1, 0x0
 
     .line 866
-    .local v1, childLeft:I
+    .local v1, "childLeft":I
     const/4 v3, 0x0
 
-    .local v3, i:I
+    .local v3, "i":I
     :goto_0
     if-ge v3, v2, :cond_1
 
     .line 867
-    invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v3}, Lcom/android/camera/ui/ScreenView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     .line 868
-    .local v0, child:Landroid/view/View;
+    .local v0, "child":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v4
@@ -2196,7 +2196,7 @@
     if-eq v4, v5, :cond_0
 
     .line 869
-    iget v4, p0, Landroid/view/View;->mPaddingTop:I
+    iget v4, p0, Lcom/android/camera/ui/ScreenView;->mPaddingTop:I
 
     iget v5, p0, Lcom/android/camera/ui/ScreenView;->mScreenPaddingTop:I
 
@@ -2208,7 +2208,7 @@
 
     add-int/2addr v5, v1
 
-    iget v6, p0, Landroid/view/View;->mPaddingTop:I
+    iget v6, p0, Lcom/android/camera/ui/ScreenView;->mPaddingTop:I
 
     iget v7, p0, Lcom/android/camera/ui/ScreenView;->mScreenPaddingTop:I
 
@@ -2236,7 +2236,7 @@
     goto :goto_0
 
     .line 878
-    .end local v0           #child:Landroid/view/View;
+    .end local v0    # "child":Landroid/view/View;
     :cond_1
     iget-boolean v4, p0, Lcom/android/camera/ui/ScreenView;->mScrollWholeScreen:Z
 
@@ -2270,8 +2270,8 @@
 
 .method protected onMeasure(II)V
     .locals 13
-    .parameter "widthMeasureSpec"
-    .parameter "heightMeasureSpec"
+    .param p1, "widthMeasureSpec"    # I
+    .param p2, "heightMeasureSpec"    # I
 
     .prologue
     .line 781
@@ -2284,20 +2284,20 @@
     const/4 v8, 0x0
 
     .line 784
-    .local v8, maxHeight:I
+    .local v8, "maxHeight":I
     const/4 v9, 0x0
 
     .line 786
-    .local v9, maxWidth:I
+    .local v9, "maxWidth":I
     invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView;->getScreenCount()I
 
     move-result v3
 
     .line 789
-    .local v3, count:I
+    .local v3, "count":I
     const/4 v4, 0x0
 
-    .local v4, i:I
+    .local v4, "i":I
     :goto_0
     iget v10, p0, Lcom/android/camera/ui/ScreenView;->mIndicatorCount:I
 
@@ -2306,21 +2306,21 @@
     .line 790
     add-int v10, v4, v3
 
-    invoke-virtual {p0, v10}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v10}, Lcom/android/camera/ui/ScreenView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     .line 792
-    .local v0, child:Landroid/view/View;
+    .local v0, "child":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v5
 
     .line 794
-    .local v5, lp:Landroid/view/ViewGroup$LayoutParams;
-    iget v10, p0, Landroid/view/View;->mPaddingLeft:I
+    .local v5, "lp":Landroid/view/ViewGroup$LayoutParams;
+    iget v10, p0, Lcom/android/camera/ui/ScreenView;->mPaddingLeft:I
 
-    iget v11, p0, Landroid/view/View;->mPaddingRight:I
+    iget v11, p0, Lcom/android/camera/ui/ScreenView;->mPaddingRight:I
 
     add-int/2addr v10, v11
 
@@ -2331,14 +2331,14 @@
     move-result v2
 
     .line 796
-    .local v2, childWidthMeasureSpec:I
-    iget v10, p0, Landroid/view/View;->mPaddingTop:I
+    .local v2, "childWidthMeasureSpec":I
+    iget v10, p0, Lcom/android/camera/ui/ScreenView;->mPaddingTop:I
 
     iget v11, p0, Lcom/android/camera/ui/ScreenView;->mScreenPaddingTop:I
 
     add-int/2addr v10, v11
 
-    iget v11, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v11, p0, Lcom/android/camera/ui/ScreenView;->mPaddingBottom:I
 
     add-int/2addr v10, v11
 
@@ -2353,7 +2353,7 @@
     move-result v1
 
     .line 801
-    .local v1, childHeightMeasureSpec:I
+    .local v1, "childHeightMeasureSpec":I
     invoke-virtual {v0, v2, v1}, Landroid/view/View;->measure(II)V
 
     .line 802
@@ -2380,40 +2380,40 @@
     goto :goto_0
 
     .line 807
-    .end local v0           #child:Landroid/view/View;
-    .end local v1           #childHeightMeasureSpec:I
-    .end local v2           #childWidthMeasureSpec:I
-    .end local v5           #lp:Landroid/view/ViewGroup$LayoutParams;
+    .end local v0    # "child":Landroid/view/View;
+    .end local v1    # "childHeightMeasureSpec":I
+    .end local v2    # "childWidthMeasureSpec":I
+    .end local v5    # "lp":Landroid/view/ViewGroup$LayoutParams;
     :cond_0
     const/4 v6, 0x0
 
     .line 808
-    .local v6, maxChildHeight:I
+    .local v6, "maxChildHeight":I
     const/4 v7, 0x0
 
     .line 809
-    .local v7, maxChildWidth:I
+    .local v7, "maxChildWidth":I
     const/4 v4, 0x0
 
     :goto_1
     if-ge v4, v3, :cond_1
 
     .line 810
-    invoke-virtual {p0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v4}, Lcom/android/camera/ui/ScreenView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     .line 812
-    .restart local v0       #child:Landroid/view/View;
+    .restart local v0    # "child":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v5
 
     .line 814
-    .restart local v5       #lp:Landroid/view/ViewGroup$LayoutParams;
-    iget v10, p0, Landroid/view/View;->mPaddingLeft:I
+    .restart local v5    # "lp":Landroid/view/ViewGroup$LayoutParams;
+    iget v10, p0, Lcom/android/camera/ui/ScreenView;->mPaddingLeft:I
 
-    iget v11, p0, Landroid/view/View;->mPaddingRight:I
+    iget v11, p0, Lcom/android/camera/ui/ScreenView;->mPaddingRight:I
 
     add-int/2addr v10, v11
 
@@ -2424,14 +2424,14 @@
     move-result v2
 
     .line 816
-    .restart local v2       #childWidthMeasureSpec:I
-    iget v10, p0, Landroid/view/View;->mPaddingTop:I
+    .restart local v2    # "childWidthMeasureSpec":I
+    iget v10, p0, Lcom/android/camera/ui/ScreenView;->mPaddingTop:I
 
     iget v11, p0, Lcom/android/camera/ui/ScreenView;->mScreenPaddingTop:I
 
     add-int/2addr v10, v11
 
-    iget v11, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v11, p0, Lcom/android/camera/ui/ScreenView;->mPaddingBottom:I
 
     add-int/2addr v10, v11
 
@@ -2446,7 +2446,7 @@
     move-result v1
 
     .line 821
-    .restart local v1       #childHeightMeasureSpec:I
+    .restart local v1    # "childHeightMeasureSpec":I
     invoke-virtual {v0, v2, v1}, Landroid/view/View;->measure(II)V
 
     .line 822
@@ -2473,10 +2473,10 @@
     goto :goto_1
 
     .line 825
-    .end local v0           #child:Landroid/view/View;
-    .end local v1           #childHeightMeasureSpec:I
-    .end local v2           #childWidthMeasureSpec:I
-    .end local v5           #lp:Landroid/view/ViewGroup$LayoutParams;
+    .end local v0    # "child":Landroid/view/View;
+    .end local v1    # "childHeightMeasureSpec":I
+    .end local v2    # "childWidthMeasureSpec":I
+    .end local v5    # "lp":Landroid/view/ViewGroup$LayoutParams;
     :cond_1
     invoke-static {v7, v9}, Ljava/lang/Math;->max(II)I
 
@@ -2488,22 +2488,22 @@
     move-result v8
 
     .line 829
-    iget v10, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v10, p0, Lcom/android/camera/ui/ScreenView;->mPaddingLeft:I
 
-    iget v11, p0, Landroid/view/View;->mPaddingRight:I
+    iget v11, p0, Lcom/android/camera/ui/ScreenView;->mPaddingRight:I
 
     add-int/2addr v10, v11
 
     add-int/2addr v9, v10
 
     .line 830
-    iget v10, p0, Landroid/view/View;->mPaddingTop:I
+    iget v10, p0, Lcom/android/camera/ui/ScreenView;->mPaddingTop:I
 
     iget v11, p0, Lcom/android/camera/ui/ScreenView;->mScreenPaddingTop:I
 
     add-int/2addr v10, v11
 
-    iget v11, p0, Landroid/view/View;->mPaddingBottom:I
+    iget v11, p0, Lcom/android/camera/ui/ScreenView;->mPaddingBottom:I
 
     add-int/2addr v10, v11
 
@@ -2522,7 +2522,7 @@
 
     move-result v11
 
-    invoke-virtual {p0, v10, v11}, Landroid/view/View;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v10, v11}, Lcom/android/camera/ui/ScreenView;->setMeasuredDimension(II)V
 
     .line 836
     if-lez v3, :cond_2
@@ -2535,11 +2535,11 @@
 
     move-result v10
 
-    iget v11, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v11, p0, Lcom/android/camera/ui/ScreenView;->mPaddingLeft:I
 
     sub-int/2addr v10, v11
 
-    iget v11, p0, Landroid/view/View;->mPaddingRight:I
+    iget v11, p0, Lcom/android/camera/ui/ScreenView;->mPaddingRight:I
 
     sub-int/2addr v10, v11
 
@@ -2597,7 +2597,7 @@
     .line 848
     const/4 v10, 0x0
 
-    invoke-virtual {p0, v10}, Landroid/view/View;->setHorizontalScrollBarEnabled(Z)V
+    invoke-virtual {p0, v10}, Lcom/android/camera/ui/ScreenView;->setHorizontalScrollBarEnabled(Z)V
 
     .line 849
     iget v10, p0, Lcom/android/camera/ui/ScreenView;->mCurrentScreen:I
@@ -2607,7 +2607,7 @@
     .line 850
     const/4 v10, 0x1
 
-    invoke-virtual {p0, v10}, Landroid/view/View;->setHorizontalScrollBarEnabled(Z)V
+    invoke-virtual {p0, v10}, Lcom/android/camera/ui/ScreenView;->setHorizontalScrollBarEnabled(Z)V
 
     .line 852
     :cond_3
@@ -2616,7 +2616,7 @@
 
 .method protected onPinchIn(Landroid/view/ScaleGestureDetector;)V
     .locals 0
-    .parameter "detector"
+    .param p1, "detector"    # Landroid/view/ScaleGestureDetector;
 
     .prologue
     .line 1632
@@ -2625,7 +2625,7 @@
 
 .method protected onPinchOut(Landroid/view/ScaleGestureDetector;)V
     .locals 0
-    .parameter "detector"
+    .param p1, "detector"    # Landroid/view/ScaleGestureDetector;
 
     .prologue
     .line 1635
@@ -2634,7 +2634,7 @@
 
 .method protected onRestoreInstanceState(Landroid/os/Parcelable;)V
     .locals 3
-    .parameter "state"
+    .param p1, "state"    # Landroid/os/Parcelable;
 
     .prologue
     .line 1684
@@ -2643,12 +2643,12 @@
     check-cast v0, Lcom/android/camera/ui/ScreenView$SavedState;
 
     .line 1685
-    .local v0, savedState:Lcom/android/camera/ui/ScreenView$SavedState;
-    invoke-virtual {v0}, Landroid/view/AbsSavedState;->getSuperState()Landroid/os/Parcelable;
+    .local v0, "savedState":Lcom/android/camera/ui/ScreenView$SavedState;
+    invoke-virtual {v0}, Lcom/android/camera/ui/ScreenView$SavedState;->getSuperState()Landroid/os/Parcelable;
 
     move-result-object v1
 
-    invoke-super {p0, v1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, v1}, Landroid/view/ViewGroup;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     .line 1686
     iget v1, v0, Lcom/android/camera/ui/ScreenView$SavedState;->currentScreen:I
@@ -2674,14 +2674,14 @@
     .line 1677
     new-instance v0, Lcom/android/camera/ui/ScreenView$SavedState;
 
-    invoke-super {p0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
+    invoke-super {p0}, Landroid/view/ViewGroup;->onSaveInstanceState()Landroid/os/Parcelable;
 
     move-result-object v1
 
     invoke-direct {v0, v1}, Lcom/android/camera/ui/ScreenView$SavedState;-><init>(Landroid/os/Parcelable;)V
 
     .line 1678
-    .local v0, state:Lcom/android/camera/ui/ScreenView$SavedState;
+    .local v0, "state":Lcom/android/camera/ui/ScreenView$SavedState;
     iget v1, p0, Lcom/android/camera/ui/ScreenView;->mCurrentScreen:I
 
     iput v1, v0, Lcom/android/camera/ui/ScreenView$SavedState;->currentScreen:I
@@ -2692,7 +2692,7 @@
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 8
-    .parameter "ev"
+    .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
     const/4 v1, 0x0
@@ -2764,7 +2764,7 @@
     move-result v3
 
     .line 1039
-    .local v3, pointerIndex:I
+    .local v3, "pointerIndex":I
     const/4 v6, -0x1
 
     if-ne v3, v6, :cond_4
@@ -2786,13 +2786,13 @@
     move-result v4
 
     .line 1044
-    .local v4, x:F
+    .local v4, "x":F
     iget v6, p0, Lcom/android/camera/ui/ScreenView;->mLastMotionX:F
 
     sub-float v0, v6, v4
 
     .line 1045
-    .local v0, deltaX:F
+    .local v0, "deltaX":F
     iput v4, p0, Lcom/android/camera/ui/ScreenView;->mLastMotionX:F
 
     .line 1047
@@ -2817,14 +2817,14 @@
 
     .line 1050
     :cond_5
-    invoke-virtual {p0}, Landroid/view/View;->awakenScrollBars()Z
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView;->awakenScrollBars()Z
 
     goto :goto_1
 
     .line 1056
-    .end local v0           #deltaX:F
-    .end local v3           #pointerIndex:I
-    .end local v4           #x:F
+    .end local v0    # "deltaX":F
+    .end local v3    # "pointerIndex":I
+    .end local v4    # "x":F
     :pswitch_2
     iget v6, p0, Lcom/android/camera/ui/ScreenView;->mTouchState:I
 
@@ -2854,13 +2854,13 @@
     shr-int/lit8 v3, v6, 0x8
 
     .line 1064
-    .restart local v3       #pointerIndex:I
+    .restart local v3    # "pointerIndex":I
     invoke-virtual {p1, v3}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v2
 
     .line 1065
-    .local v2, pointerId:I
+    .local v2, "pointerId":I
     iget v6, p0, Lcom/android/camera/ui/ScreenView;->mActivePointerId:I
 
     if-ne v2, v6, :cond_2
@@ -2871,7 +2871,7 @@
     move v1, v5
 
     .line 1070
-    .local v1, newPointerIndex:I
+    .local v1, "newPointerIndex":I
     :cond_7
     invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getX(I)F
 
@@ -2924,10 +2924,10 @@
     invoke-virtual {p0, v0, v1}, Lcom/android/camera/ui/ScreenView;->removeScreensInLayout(II)V
 
     .line 1333
-    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView;->requestLayout()V
 
     .line 1334
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView;->invalidate()V
 
     .line 1335
     return-void
@@ -2953,16 +2953,16 @@
 
 .method public removeIndicator(Landroid/view/View;)V
     .locals 3
-    .parameter "indicator"
+    .param p1, "indicator"    # Landroid/view/View;
 
     .prologue
     .line 1299
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->indexOfChild(Landroid/view/View;)I
+    invoke-virtual {p0, p1}, Lcom/android/camera/ui/ScreenView;->indexOfChild(Landroid/view/View;)I
 
     move-result v0
 
     .line 1300
-    .local v0, index:I
+    .local v0, "index":I
     invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView;->getScreenCount()I
 
     move-result v1
@@ -2995,8 +2995,8 @@
 
 .method public removeScreensInLayout(II)V
     .locals 1
-    .parameter "start"
-    .parameter "count"
+    .param p1, "start"    # I
+    .param p2, "count"    # I
 
     .prologue
     .line 1338
@@ -3033,7 +3033,7 @@
     .line 1342
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView;->mScreenSeekBar:Lcom/android/camera/ui/ScreenView$SeekBarIndicator;
 
-    invoke-virtual {v0, p1, p2}, Landroid/view/ViewGroup;->removeViewsInLayout(II)V
+    invoke-virtual {v0, p1, p2}, Lcom/android/camera/ui/ScreenView$SeekBarIndicator;->removeViewsInLayout(II)V
 
     .line 1344
     :cond_2
@@ -3049,7 +3049,7 @@
 
 .method public removeView(Landroid/view/View;)V
     .locals 2
-    .parameter "view"
+    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 1264
@@ -3064,7 +3064,7 @@
 
 .method public removeViewAt(I)V
     .locals 2
-    .parameter "index"
+    .param p1, "index"    # I
 
     .prologue
     .line 1273
@@ -3079,7 +3079,7 @@
 
 .method public removeViewInLayout(Landroid/view/View;)V
     .locals 2
-    .parameter "view"
+    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 1267
@@ -3094,8 +3094,8 @@
 
 .method public removeViews(II)V
     .locals 2
-    .parameter "start"
-    .parameter "count"
+    .param p1, "start"    # I
+    .param p2, "count"    # I
 
     .prologue
     .line 1276
@@ -3110,8 +3110,8 @@
 
 .method public removeViewsInLayout(II)V
     .locals 2
-    .parameter "start"
-    .parameter "count"
+    .param p1, "start"    # I
+    .param p2, "count"    # I
 
     .prologue
     .line 1270
@@ -3126,18 +3126,18 @@
 
 .method public requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
     .locals 2
-    .parameter "child"
-    .parameter "rectangle"
-    .parameter "immediate"
+    .param p1, "child"    # Landroid/view/View;
+    .param p2, "rectangle"    # Landroid/graphics/Rect;
+    .param p3, "immediate"    # Z
 
     .prologue
     .line 891
-    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->indexOfChild(Landroid/view/View;)I
+    invoke-virtual {p0, p1}, Lcom/android/camera/ui/ScreenView;->indexOfChild(Landroid/view/View;)I
 
     move-result v0
 
     .line 892
-    .local v0, screen:I
+    .local v0, "screen":I
     invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView;->getScreenCount()I
 
     move-result v1
@@ -3185,10 +3185,10 @@
 
 .method protected resetTransformation(Landroid/view/View;)V
     .locals 2
-    .parameter "child"
+    .param p1, "child"    # Landroid/view/View;
 
     .prologue
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     const/4 v0, 0x0
 
@@ -3233,8 +3233,8 @@
 
 .method public scrollTo(II)V
     .locals 2
-    .parameter "x"
-    .parameter "y"
+    .param p1, "x"    # I
+    .param p2, "y"    # I
 
     .prologue
     .line 739
@@ -3273,7 +3273,7 @@
 
     float-to-int v0, v0
 
-    invoke-super {p0, v0, p2}, Landroid/view/View;->scrollTo(II)V
+    invoke-super {p0, v0, p2}, Landroid/view/ViewGroup;->scrollTo(II)V
 
     .line 743
     return-void
@@ -3281,7 +3281,7 @@
 
 .method public scrollToScreen(I)V
     .locals 2
-    .parameter "index"
+    .param p1, "index"    # I
 
     .prologue
     .line 730
@@ -3302,7 +3302,7 @@
 
     iget v1, p0, Lcom/android/camera/ui/ScreenView;->mHeightMeasureSpec:I
 
-    invoke-virtual {p0, v0, v1}, Landroid/view/View;->measure(II)V
+    invoke-virtual {p0, v0, v1}, Lcom/android/camera/ui/ScreenView;->measure(II)V
 
     .line 734
     iget v0, p0, Lcom/android/camera/ui/ScreenView;->mChildScreenWidth:I
@@ -3323,7 +3323,7 @@
 
 .method public setCurrentScreen(I)V
     .locals 3
-    .parameter "screenIndex"
+    .param p1, "screenIndex"    # I
 
     .prologue
     const/4 v2, 0x0
@@ -3384,7 +3384,7 @@
     invoke-virtual {p0, v0}, Lcom/android/camera/ui/ScreenView;->scrollToScreen(I)V
 
     .line 1218
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView;->invalidate()V
 
     .line 1220
     :cond_1
@@ -3413,7 +3413,7 @@
 
 .method protected setCurrentScreenInner(I)V
     .locals 1
-    .parameter "screenIndex"
+    .param p1, "screenIndex"    # I
 
     .prologue
     .line 1223
@@ -3435,7 +3435,7 @@
 
 .method public setMaximumSnapVelocity(I)V
     .locals 0
-    .parameter "velocity"
+    .param p1, "velocity"    # I
 
     .prologue
     .line 172
@@ -3447,7 +3447,7 @@
 
 .method public setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
     .locals 3
-    .parameter "l"
+    .param p1, "l"    # Landroid/view/View$OnLongClickListener;
 
     .prologue
     .line 1370
@@ -3459,15 +3459,15 @@
     move-result v0
 
     .line 1372
-    .local v0, count:I
+    .local v0, "count":I
     const/4 v1, 0x0
 
-    .local v1, i:I
+    .local v1, "i":I
     :goto_0
     if-ge v1, v0, :cond_0
 
     .line 1373
-    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Lcom/android/camera/ui/ScreenView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -3485,7 +3485,7 @@
 
 .method public setOverScrollRatio(F)V
     .locals 0
-    .parameter "ratio"
+    .param p1, "ratio"    # F
 
     .prologue
     .line 714
@@ -3500,7 +3500,7 @@
 
 .method public setSeekBarPosition(Landroid/widget/FrameLayout$LayoutParams;)V
     .locals 2
-    .parameter "params"
+    .param p1, "params"    # Landroid/widget/FrameLayout$LayoutParams;
 
     .prologue
     .line 419
@@ -3514,7 +3514,7 @@
     .line 421
     new-instance v0, Lcom/android/camera/ui/ScreenView$SeekBarIndicator;
 
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/camera/ui/ScreenView;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, p0, v1}, Lcom/android/camera/ui/ScreenView$SeekBarIndicator;-><init>(Lcom/android/camera/ui/ScreenView;Landroid/content/Context;)V
 
@@ -3525,14 +3525,14 @@
 
     const/16 v1, 0x10
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setGravity(I)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/ScreenView$SeekBarIndicator;->setGravity(I)V
 
     .line 423
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView;->mScreenSeekBar:Lcom/android/camera/ui/ScreenView$SeekBarIndicator;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setAnimationCacheEnabled(Z)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/ScreenView$SeekBarIndicator;->setAnimationCacheEnabled(Z)V
 
     .line 424
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView;->mScreenSeekBar:Lcom/android/camera/ui/ScreenView$SeekBarIndicator;
@@ -3548,7 +3548,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView;->mScreenSeekBar:Lcom/android/camera/ui/ScreenView$SeekBarIndicator;
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, p1}, Lcom/android/camera/ui/ScreenView$SeekBarIndicator;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_0
 
@@ -3573,7 +3573,7 @@
 
 .method public setSeekPointResource(I)V
     .locals 0
-    .parameter "seekPointResId"
+    .param p1, "seekPointResId"    # I
 
     .prologue
     .line 411
@@ -3585,8 +3585,8 @@
 
 .method protected setTouchState(Landroid/view/MotionEvent;I)V
     .locals 5
-    .parameter "ev"
-    .parameter "touchState"
+    .param p1, "ev"    # Landroid/view/MotionEvent;
+    .param p2, "touchState"    # I
 
     .prologue
     const/4 v2, 0x1
@@ -3597,7 +3597,7 @@
     iput p2, p0, Lcom/android/camera/ui/ScreenView;->mTouchState:I
 
     .line 925
-    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView;->getParent()Landroid/view/ViewParent;
 
     move-result-object v4
 
@@ -3662,18 +3662,18 @@
     .line 942
     iget v1, p0, Lcom/android/camera/ui/ScreenView;->mCurrentScreen:I
 
-    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Lcom/android/camera/ui/ScreenView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     .line 943
-    .local v0, currentScreen:Landroid/view/View;
+    .local v0, "currentScreen":Landroid/view/View;
     if-eqz v0, :cond_4
 
     invoke-virtual {v0}, Landroid/view/View;->cancelLongPress()V
 
     .line 946
-    .end local v0           #currentScreen:Landroid/view/View;
+    .end local v0    # "currentScreen":Landroid/view/View;
     :cond_4
     iget v1, p0, Lcom/android/camera/ui/ScreenView;->mTouchState:I
 
@@ -3693,7 +3693,7 @@
     iput v1, p0, Lcom/android/camera/ui/ScreenView;->mLastMotionX:F
 
     .line 948
-    iget v1, p0, Landroid/view/View;->mScrollX:I
+    iget v1, p0, Lcom/android/camera/ui/ScreenView;->mScrollX:I
 
     int-to-float v1, v1
 
@@ -3717,7 +3717,7 @@
 
 .method public snapToScreen(I)V
     .locals 1
-    .parameter "whichScreen"
+    .param p1, "whichScreen"    # I
 
     .prologue
     const/4 v0, 0x0
@@ -3731,9 +3731,9 @@
 
 .method protected snapToScreen(IIZ)V
     .locals 9
-    .parameter "whichScreen"
-    .parameter "velocity"
-    .parameter "settle"
+    .param p1, "whichScreen"    # I
+    .param p2, "velocity"    # I
+    .param p3, "settle"    # Z
 
     .prologue
     const/4 v8, 0x1
@@ -3802,7 +3802,7 @@
     move-result v7
 
     .line 1152
-    .local v7, screenDelta:I
+    .local v7, "screenDelta":I
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView;->mScroller:Landroid/widget/Scroller;
 
     invoke-virtual {v0}, Landroid/widget/Scroller;->isFinished()Z
@@ -3843,13 +3843,13 @@
     sub-int v6, v0, v1
 
     .line 1165
-    .local v6, newX:I
-    iget v0, p0, Landroid/view/View;->mScrollX:I
+    .local v6, "newX":I
+    iget v0, p0, Lcom/android/camera/ui/ScreenView;->mScrollX:I
 
     sub-int v3, v6, v0
 
     .line 1166
-    .local v3, delta:I
+    .local v3, "delta":I
     invoke-static {v3}, Ljava/lang/Math;->abs(I)I
 
     move-result v0
@@ -3863,7 +3863,7 @@
     div-int v5, v0, v1
 
     .line 1167
-    .local v5, duration:I
+    .local v5, "duration":I
     if-lez p2, :cond_2
 
     .line 1168
@@ -3909,22 +3909,22 @@
     :cond_3
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView;->mScroller:Landroid/widget/Scroller;
 
-    iget v1, p0, Landroid/view/View;->mScrollX:I
+    iget v1, p0, Lcom/android/camera/ui/ScreenView;->mScrollX:I
 
     move v4, v2
 
     invoke-virtual/range {v0 .. v5}, Landroid/widget/Scroller;->startScroll(IIIII)V
 
     .line 1177
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView;->invalidate()V
 
     goto/16 :goto_0
 
     .line 1148
-    .end local v3           #delta:I
-    .end local v5           #duration:I
-    .end local v6           #newX:I
-    .end local v7           #screenDelta:I
+    .end local v3    # "delta":I
+    .end local v5    # "duration":I
+    .end local v6    # "newX":I
+    .end local v7    # "screenDelta":I
     :cond_4
     invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView;->getScreenCount()I
 
@@ -3947,7 +3947,7 @@
     goto :goto_1
 
     .line 1161
-    .restart local v7       #screenDelta:I
+    .restart local v7    # "screenDelta":I
     :cond_5
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView;->mScrollInterpolator:Lcom/android/camera/ui/ScreenView$ScreenViewOvershootInterpolator;
 
@@ -3962,11 +3962,11 @@
     .prologue
     const v9, 0x459c4000
 
-    const/high16 v5, 0x4000
+    const/high16 v5, 0x40000000
 
     const v8, 0x3e99999a
 
-    const/high16 v7, 0x3f80
+    const/high16 v7, 0x3f800000
 
     const/4 v1, 0x0
 
@@ -3985,7 +3985,7 @@
     int-to-float v2, v2
 
     .line 1475
-    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView;->getMeasuredWidth()I
 
     move-result v3
 
@@ -4000,7 +4000,7 @@
     div-float v5, v2, v5
 
     .line 1478
-    iget v6, p0, Landroid/view/View;->mScrollX:I
+    iget v6, p0, Lcom/android/camera/ui/ScreenView;->mScrollX:I
 
     int-to-float v6, v6
 
@@ -4155,7 +4155,7 @@
     .line 1515
     neg-float v0, v3
 
-    const/high16 v2, 0x41f0
+    const/high16 v2, 0x41f00000
 
     mul-float/2addr v0, v2
 
@@ -4230,7 +4230,7 @@
     invoke-virtual {p1, v1}, Landroid/view/View;->setRotationX(F)V
 
     .line 1534
-    const/high16 v0, -0x3d4c
+    const/high16 v0, -0x3d4c0000
 
     mul-float/2addr v0, v3
 
@@ -4313,7 +4313,7 @@
     invoke-virtual {p1, v1}, Landroid/view/View;->setRotationX(F)V
 
     .line 1552
-    const/high16 v0, 0x4234
+    const/high16 v0, 0x42340000
 
     neg-float v1, v3
 
@@ -4359,7 +4359,7 @@
 
     mul-float/2addr v0, v4
 
-    const/high16 v4, 0x4040
+    const/high16 v4, 0x40400000
 
     mul-float/2addr v0, v4
 
@@ -4370,7 +4370,7 @@
 
     mul-float/2addr v0, v2
 
-    const/high16 v2, 0x3f00
+    const/high16 v2, 0x3f000000
 
     mul-float/2addr v0, v2
 
@@ -4461,7 +4461,7 @@
     invoke-virtual {p1, v1}, Landroid/view/View;->setRotationX(F)V
 
     .line 1589
-    const/high16 v0, 0x42b4
+    const/high16 v0, 0x42b40000
 
     neg-float v1, v3
 
@@ -4500,8 +4500,8 @@
 
 .method protected updateChildStaticTransformationByScreen(Landroid/view/View;F)V
     .locals 0
-    .parameter "child"
-    .parameter "interpolation"
+    .param p1, "child"    # Landroid/view/View;
+    .param p2, "interpolation"    # F
 
     .prologue
     .line 1599

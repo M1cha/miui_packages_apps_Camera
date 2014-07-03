@@ -52,8 +52,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/gallery3d/app/TimeBar$Listener;)V
     .locals 7
-    .parameter "context"
-    .parameter "listener"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "listener"    # Lcom/android/gallery3d/app/TimeBar$Listener;
 
     .prologue
     const/4 v4, 0x1
@@ -128,15 +128,15 @@
     move-result-object v0
 
     .line 95
-    .local v0, metrics:Landroid/util/DisplayMetrics;
+    .local v0, "metrics":Landroid/util/DisplayMetrics;
     iget v2, v0, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v3, 0x4160
+    const/high16 v3, 0x41600000
 
     mul-float v1, v2, v3
 
     .line 96
-    .local v1, textSizeInPx:F
+    .local v1, "textSizeInPx":F
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2, v4}, Landroid/graphics/Paint;-><init>(I)V
@@ -183,7 +183,7 @@
     invoke-virtual {v2, v3, v4, v5, v6}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
     .line 104
-    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -198,7 +198,7 @@
     .line 105
     iget v2, v0, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v3, 0x4120
+    const/high16 v3, 0x41200000
 
     mul-float/2addr v2, v3
 
@@ -209,7 +209,7 @@
     .line 107
     iget v2, v0, Landroid/util/DisplayMetrics;->density:F
 
-    const/high16 v3, 0x41f0
+    const/high16 v3, 0x41f00000
 
     mul-float/2addr v2, v3
 
@@ -235,7 +235,7 @@
     div-int/lit8 v0, v3, 0x2
 
     .line 176
-    .local v0, half:I
+    .local v0, "half":I
     iget-object v3, p0, Lcom/android/gallery3d/app/TimeBar;->progressBar:Landroid/graphics/Rect;
 
     iget v3, v3, Landroid/graphics/Rect;->right:I
@@ -243,7 +243,7 @@
     sub-int v1, v3, v0
 
     .line 177
-    .local v1, max:I
+    .local v1, "max":I
     iget-object v3, p0, Lcom/android/gallery3d/app/TimeBar;->progressBar:Landroid/graphics/Rect;
 
     iget v3, v3, Landroid/graphics/Rect;->left:I
@@ -251,7 +251,7 @@
     sub-int v2, v3, v0
 
     .line 178
-    .local v2, min:I
+    .local v2, "min":I
     iget v3, p0, Lcom/android/gallery3d/app/TimeBar;->scrubberLeft:I
 
     invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
@@ -316,8 +316,8 @@
 
 .method private inScrubber(FF)Z
     .locals 4
-    .parameter "x"
-    .parameter "y"
+    .param p1, "x"    # F
+    .param p2, "y"    # F
 
     .prologue
     .line 168
@@ -332,7 +332,7 @@
     add-int v1, v2, v3
 
     .line 169
-    .local v1, scrubberRight:I
+    .local v1, "scrubberRight":I
     iget v2, p0, Lcom/android/gallery3d/app/TimeBar;->scrubberTop:I
 
     iget-object v3, p0, Lcom/android/gallery3d/app/TimeBar;->scrubber:Landroid/graphics/Bitmap;
@@ -344,7 +344,7 @@
     add-int v0, v2, v3
 
     .line 170
-    .local v0, scrubberBottom:I
+    .local v0, "scrubberBottom":I
     iget v2, p0, Lcom/android/gallery3d/app/TimeBar;->scrubberLeft:I
 
     iget v3, p0, Lcom/android/gallery3d/app/TimeBar;->scrubberPadding:I
@@ -402,7 +402,7 @@
 
 .method private stringForTime(J)Ljava/lang/String;
     .locals 10
-    .parameter "millis"
+    .param p1, "millis"    # J
 
     .prologue
     const/4 v9, 0x2
@@ -417,21 +417,21 @@
     div-int/lit16 v3, v4, 0x3e8
 
     .line 273
-    .local v3, totalSeconds:I
+    .local v3, "totalSeconds":I
     rem-int/lit8 v2, v3, 0x3c
 
     .line 274
-    .local v2, seconds:I
+    .local v2, "seconds":I
     div-int/lit8 v4, v3, 0x3c
 
     rem-int/lit8 v1, v4, 0x3c
 
     .line 275
-    .local v1, minutes:I
+    .local v1, "minutes":I
     div-int/lit16 v0, v3, 0xe10
 
     .line 276
-    .local v0, hours:I
+    .local v0, "hours":I
     if-lez v0, :cond_0
 
     .line 277
@@ -573,7 +573,7 @@
 
     .line 123
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->invalidate()V
 
     .line 124
     return-void
@@ -595,7 +595,7 @@
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 4
-    .parameter "canvas"
+    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
     .line 208
@@ -658,7 +658,7 @@
 
     div-int/lit8 v1, v1, 0x2
 
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->getPaddingLeft()I
 
     move-result v2
 
@@ -699,11 +699,11 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->getWidth()I
 
     move-result v1
 
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->getPaddingRight()I
 
     move-result v2
 
@@ -792,11 +792,11 @@
 
 .method protected onLayout(ZIIII)V
     .locals 8
-    .parameter "changed"
-    .parameter "l"
-    .parameter "t"
-    .parameter "r"
-    .parameter "b"
+    .param p1, "changed"    # Z
+    .param p2, "l"    # I
+    .param p3, "t"    # I
+    .param p4, "r"    # I
+    .param p5, "b"    # I
 
     .prologue
     const/4 v5, 0x0
@@ -805,11 +805,11 @@
     sub-int v3, p4, p2
 
     .line 189
-    .local v3, w:I
+    .local v3, "w":I
     sub-int v0, p5, p3
 
     .line 190
-    .local v0, h:I
+    .local v0, "h":I
     iget-boolean v4, p0, Lcom/android/gallery3d/app/TimeBar;->showTimes:Z
 
     if-nez v4, :cond_0
@@ -841,7 +841,7 @@
     div-int/lit8 v1, v4, 0x3
 
     .line 194
-    .local v1, margin:I
+    .local v1, "margin":I
     iget-boolean v4, p0, Lcom/android/gallery3d/app/TimeBar;->showTimes:Z
 
     if-eqz v4, :cond_1
@@ -864,7 +864,7 @@
     div-int/lit8 v2, v4, 0x2
 
     .line 198
-    .local v2, progressY:I
+    .local v2, "progressY":I
     iget-object v4, p0, Lcom/android/gallery3d/app/TimeBar;->scrubber:Landroid/graphics/Bitmap;
 
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getHeight()I
@@ -882,13 +882,13 @@
     .line 199
     iget-object v4, p0, Lcom/android/gallery3d/app/TimeBar;->progressBar:Landroid/graphics/Rect;
 
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->getPaddingLeft()I
 
     move-result v5
 
     add-int/2addr v5, v1
 
-    invoke-virtual {p0}, Landroid/view/View;->getPaddingRight()I
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->getPaddingRight()I
 
     move-result v6
 
@@ -905,7 +905,7 @@
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 6
-    .parameter "event"
+    .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
     const/4 v3, 0x0
@@ -925,7 +925,7 @@
     float-to-int v0, v4
 
     .line 237
-    .local v0, x:I
+    .local v0, "x":I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v4
@@ -933,15 +933,15 @@
     float-to-int v1, v4
 
     .line 239
-    .local v1, y:I
+    .local v1, "y":I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v4
 
     packed-switch v4, :pswitch_data_0
 
-    .end local v0           #x:I
-    .end local v1           #y:I
+    .end local v0    # "x":I
+    .end local v1    # "y":I
     :cond_0
     move v2, v3
 
@@ -950,8 +950,8 @@
     return v2
 
     .line 241
-    .restart local v0       #x:I
-    .restart local v1       #y:I
+    .restart local v0    # "x":I
+    .restart local v1    # "y":I
     :pswitch_0
     int-to-float v4, v0
 
@@ -1011,7 +1011,7 @@
     invoke-interface {v3, v4}, Lcom/android/gallery3d/app/TimeBar$Listener;->onScrubbingMove(I)V
 
     .line 254
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/TimeBar;->invalidate()V
 
     goto :goto_0
 
@@ -1049,8 +1049,8 @@
 
 .method public setTime(II)V
     .locals 1
-    .parameter "currentTime"
-    .parameter "totalTime"
+    .param p1, "currentTime"    # I
+    .param p2, "totalTime"    # I
 
     .prologue
     .line 141

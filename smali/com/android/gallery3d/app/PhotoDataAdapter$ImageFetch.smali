@@ -23,8 +23,8 @@
 # direct methods
 .method public constructor <init>(II)V
     .locals 0
-    .parameter "offset"
-    .parameter "bit"
+    .param p1, "offset"    # I
+    .param p2, "bit"    # I
 
     .prologue
     .line 84

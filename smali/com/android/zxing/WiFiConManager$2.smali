@@ -38,7 +38,7 @@
 # virtual methods
 .method public onFailure(I)V
     .locals 2
-    .parameter "reason"
+    .param p1, "reason"    # I
 
     .prologue
     .line 81
@@ -46,7 +46,7 @@
 
     const/4 v1, 0x1
 
-    #setter for: Lcom/android/zxing/WiFiConManager;->mFinish:Z
+    # setter for: Lcom/android/zxing/WiFiConManager;->mFinish:Z
     invoke-static {v0, v1}, Lcom/android/zxing/WiFiConManager;->access$502(Lcom/android/zxing/WiFiConManager;Z)Z
 
     .line 82
@@ -54,7 +54,7 @@
 
     const/4 v1, 0x0
 
-    #setter for: Lcom/android/zxing/WiFiConManager;->mConnectResult:Z
+    # setter for: Lcom/android/zxing/WiFiConManager;->mConnectResult:Z
     invoke-static {v0, v1}, Lcom/android/zxing/WiFiConManager;->access$402(Lcom/android/zxing/WiFiConManager;Z)Z
 
     .line 83
@@ -79,21 +79,21 @@
     :goto_0
     iget-object v0, p0, Lcom/android/zxing/WiFiConManager$2;->this$0:Lcom/android/zxing/WiFiConManager;
 
-    #getter for: Lcom/android/zxing/WiFiConManager;->mWiFiManager:Landroid/net/wifi/WifiManager;
+    # getter for: Lcom/android/zxing/WiFiConManager;->mWiFiManager:Landroid/net/wifi/WifiManager;
     invoke-static {v0}, Lcom/android/zxing/WiFiConManager;->access$100(Lcom/android/zxing/WiFiConManager;)Landroid/net/wifi/WifiManager;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/zxing/WiFiConManager$2;->this$0:Lcom/android/zxing/WiFiConManager;
 
-    #getter for: Lcom/android/zxing/WiFiConManager;->mSSID:Ljava/lang/String;
+    # getter for: Lcom/android/zxing/WiFiConManager;->mSSID:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/zxing/WiFiConManager;->access$200(Lcom/android/zxing/WiFiConManager;)Ljava/lang/String;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/zxing/WiFiConManager$2;->this$0:Lcom/android/zxing/WiFiConManager;
 
-    #getter for: Lcom/android/zxing/WiFiConManager;->mSecurity:Ljava/lang/String;
+    # getter for: Lcom/android/zxing/WiFiConManager;->mSecurity:Ljava/lang/String;
     invoke-static {v2}, Lcom/android/zxing/WiFiConManager;->access$300(Lcom/android/zxing/WiFiConManager;)Ljava/lang/String;
 
     move-result-object v2
@@ -111,14 +111,14 @@
     .line 72
     iget-object v0, p0, Lcom/android/zxing/WiFiConManager$2;->this$0:Lcom/android/zxing/WiFiConManager;
 
-    #setter for: Lcom/android/zxing/WiFiConManager;->mConnectResult:Z
+    # setter for: Lcom/android/zxing/WiFiConManager;->mConnectResult:Z
     invoke-static {v0, v3}, Lcom/android/zxing/WiFiConManager;->access$402(Lcom/android/zxing/WiFiConManager;Z)Z
 
     .line 76
     :goto_1
     iget-object v0, p0, Lcom/android/zxing/WiFiConManager$2;->this$0:Lcom/android/zxing/WiFiConManager;
 
-    #setter for: Lcom/android/zxing/WiFiConManager;->mFinish:Z
+    # setter for: Lcom/android/zxing/WiFiConManager;->mFinish:Z
     invoke-static {v0, v3}, Lcom/android/zxing/WiFiConManager;->access$502(Lcom/android/zxing/WiFiConManager;Z)Z
 
     .line 77
@@ -130,7 +130,7 @@
 
     const/4 v1, 0x0
 
-    #setter for: Lcom/android/zxing/WiFiConManager;->mConnectResult:Z
+    # setter for: Lcom/android/zxing/WiFiConManager;->mConnectResult:Z
     invoke-static {v0, v1}, Lcom/android/zxing/WiFiConManager;->access$402(Lcom/android/zxing/WiFiConManager;Z)Z
 
     goto :goto_1

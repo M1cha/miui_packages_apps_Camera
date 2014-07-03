@@ -19,9 +19,8 @@
 
 .method private static decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;Z)[Lcom/google/zxing/Result;
     .locals 14
-    .parameter "image"
-    .parameter
-    .parameter "multiple"
+    .param p0, "image"    # Lcom/google/zxing/BinaryBitmap;
+    .param p2, "multiple"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -44,19 +43,19 @@
 
     .prologue
     .line 86
-    .local p1, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p1, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     new-instance v13, Ljava/util/ArrayList;
 
     invoke-direct {v13}, Ljava/util/ArrayList;-><init>()V
 
     .line 87
-    .local v13, results:Ljava/util/List;,"Ljava/util/List<Lcom/google/zxing/Result;>;"
+    .local v13, "results":Ljava/util/List;, "Ljava/util/List<Lcom/google/zxing/Result;>;"
     invoke-static/range {p0 .. p2}, Lcom/google/zxing/pdf417/detector/Detector;->detect(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;Z)Lcom/google/zxing/pdf417/detector/PDF417DetectorResult;
 
     move-result-object v8
 
     .line 88
-    .local v8, detectorResult:Lcom/google/zxing/pdf417/detector/PDF417DetectorResult;
+    .local v8, "detectorResult":Lcom/google/zxing/pdf417/detector/PDF417DetectorResult;
     invoke-virtual {v8}, Lcom/google/zxing/pdf417/detector/PDF417DetectorResult;->getPoints()Ljava/util/List;
 
     move-result-object v0
@@ -65,7 +64,7 @@
 
     move-result-object v9
 
-    .local v9, i$:Ljava/util/Iterator;
+    .local v9, "i$":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
 
@@ -80,7 +79,7 @@
     check-cast v11, [Lcom/google/zxing/ResultPoint;
 
     .line 89
-    .local v11, points:[Lcom/google/zxing/ResultPoint;
+    .local v11, "points":[Lcom/google/zxing/ResultPoint;
     invoke-virtual {v8}, Lcom/google/zxing/pdf417/detector/PDF417DetectorResult;->getBits()Lcom/google/zxing/common/BitMatrix;
 
     move-result-object v0
@@ -114,7 +113,7 @@
     move-result-object v7
 
     .line 91
-    .local v7, decoderResult:Lcom/google/zxing/common/DecoderResult;
+    .local v7, "decoderResult":Lcom/google/zxing/common/DecoderResult;
     if-nez v7, :cond_0
 
     .line 92
@@ -141,7 +140,7 @@
     invoke-direct {v12, v0, v1, v11, v2}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
 
     .line 95
-    .local v12, result:Lcom/google/zxing/Result;
+    .local v12, "result":Lcom/google/zxing/Result;
     sget-object v0, Lcom/google/zxing/ResultMetadataType;->ERROR_CORRECTION_LEVEL:Lcom/google/zxing/ResultMetadataType;
 
     invoke-virtual {v7}, Lcom/google/zxing/common/DecoderResult;->getECLevel()Ljava/lang/String;
@@ -158,7 +157,7 @@
     check-cast v10, Lcom/google/zxing/pdf417/PDF417ResultMetadata;
 
     .line 97
-    .local v10, pdf417ResultMetadata:Lcom/google/zxing/pdf417/PDF417ResultMetadata;
+    .local v10, "pdf417ResultMetadata":Lcom/google/zxing/pdf417/PDF417ResultMetadata;
     if-eqz v10, :cond_1
 
     .line 98
@@ -173,10 +172,10 @@
     goto :goto_0
 
     .line 102
-    .end local v7           #decoderResult:Lcom/google/zxing/common/DecoderResult;
-    .end local v10           #pdf417ResultMetadata:Lcom/google/zxing/pdf417/PDF417ResultMetadata;
-    .end local v11           #points:[Lcom/google/zxing/ResultPoint;
-    .end local v12           #result:Lcom/google/zxing/Result;
+    .end local v7    # "decoderResult":Lcom/google/zxing/common/DecoderResult;
+    .end local v10    # "pdf417ResultMetadata":Lcom/google/zxing/pdf417/PDF417ResultMetadata;
+    .end local v11    # "points":[Lcom/google/zxing/ResultPoint;
+    .end local v12    # "result":Lcom/google/zxing/Result;
     :cond_2
     invoke-interface {v13}, Ljava/util/List;->size()I
 
@@ -195,7 +194,7 @@
 
 .method private static getMaxCodewordWidth([Lcom/google/zxing/ResultPoint;)I
     .locals 4
-    .parameter "p"
+    .param p0, "p"    # [Lcom/google/zxing/ResultPoint;
 
     .prologue
     .line 120
@@ -272,8 +271,8 @@
 
 .method private static getMaxWidth(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)I
     .locals 2
-    .parameter "p1"
-    .parameter "p2"
+    .param p0, "p1"    # Lcom/google/zxing/ResultPoint;
+    .param p1, "p2"    # Lcom/google/zxing/ResultPoint;
 
     .prologue
     .line 106
@@ -311,7 +310,7 @@
 
 .method private static getMinCodewordWidth([Lcom/google/zxing/ResultPoint;)I
     .locals 4
-    .parameter "p"
+    .param p0, "p"    # [Lcom/google/zxing/ResultPoint;
 
     .prologue
     .line 128
@@ -388,8 +387,8 @@
 
 .method private static getMinWidth(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)I
     .locals 2
-    .parameter "p1"
-    .parameter "p2"
+    .param p0, "p1"    # Lcom/google/zxing/ResultPoint;
+    .param p1, "p2"    # Lcom/google/zxing/ResultPoint;
 
     .prologue
     .line 113
@@ -429,7 +428,7 @@
 # virtual methods
 .method public decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 3
-    .parameter "image"
+    .param p1, "image"    # Lcom/google/zxing/BinaryBitmap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -451,7 +450,7 @@
     .end annotation
 
     .prologue
-    .local p2, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p2, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     const/4 v2, 0x0
 
     .line 61
@@ -460,7 +459,7 @@
     move-result-object v0
 
     .line 62
-    .local v0, result:[Lcom/google/zxing/Result;
+    .local v0, "result":[Lcom/google/zxing/Result;
     if-eqz v0, :cond_0
 
     array-length v1, v0

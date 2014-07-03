@@ -56,7 +56,7 @@
 
     iget-object v6, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mMediaRecorderRecording:Z
+    # getter for: Lcom/android/camera/VideoCamera;->mMediaRecorderRecording:Z
     invoke-static {v6}, Lcom/android/camera/VideoCamera;->access$400(Lcom/android/camera/VideoCamera;)Z
 
     move-result v6
@@ -74,7 +74,7 @@
     .line 1801
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mMediaRecorderRecording:Z
+    # getter for: Lcom/android/camera/VideoCamera;->mMediaRecorderRecording:Z
     invoke-static {v4}, Lcom/android/camera/VideoCamera;->access$400(Lcom/android/camera/VideoCamera;)Z
 
     move-result v4
@@ -85,11 +85,11 @@
     const/4 v2, 0x0
 
     .line 1805
-    .local v2, shouldAddToMediaStoreNow:Z
+    .local v2, "shouldAddToMediaStoreNow":Z
     :try_start_0
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #calls: Lcom/android/camera/VideoCamera;->effectsActive()Z
+    # invokes: Lcom/android/camera/VideoCamera;->effectsActive()Z
     invoke-static {v4}, Lcom/android/camera/VideoCamera;->access$1300(Lcom/android/camera/VideoCamera;)Z
 
     move-result v4
@@ -99,7 +99,7 @@
     .line 1810
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mEffectsRecorder:Lcom/android/camera/EffectsRecorder;
+    # getter for: Lcom/android/camera/VideoCamera;->mEffectsRecorder:Lcom/android/camera/EffectsRecorder;
     invoke-static {v4}, Lcom/android/camera/VideoCamera;->access$1400(Lcom/android/camera/VideoCamera;)Lcom/android/camera/EffectsRecorder;
 
     move-result-object v4
@@ -112,12 +112,12 @@
 
     iget-object v5, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mVideoFilename:Ljava/lang/String;
+    # getter for: Lcom/android/camera/VideoCamera;->mVideoFilename:Ljava/lang/String;
     invoke-static {v5}, Lcom/android/camera/VideoCamera;->access$2200(Lcom/android/camera/VideoCamera;)Ljava/lang/String;
 
     move-result-object v5
 
-    #setter for: Lcom/android/camera/VideoCamera;->mCurrentVideoFilename:Ljava/lang/String;
+    # setter for: Lcom/android/camera/VideoCamera;->mCurrentVideoFilename:Ljava/lang/String;
     invoke-static {v4, v5}, Lcom/android/camera/VideoCamera;->access$2102(Lcom/android/camera/VideoCamera;Ljava/lang/String;)Ljava/lang/String;
 
     .line 1818
@@ -135,7 +135,7 @@
 
     iget-object v6, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mCurrentVideoFilename:Ljava/lang/String;
+    # getter for: Lcom/android/camera/VideoCamera;->mCurrentVideoFilename:Ljava/lang/String;
     invoke-static {v6}, Lcom/android/camera/VideoCamera;->access$2100(Lcom/android/camera/VideoCamera;)Ljava/lang/String;
 
     move-result-object v6
@@ -156,14 +156,14 @@
     :goto_1
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    iget-boolean v4, v4, Lcom/android/camera/ActivityBase;->mPaused:Z
+    iget-boolean v4, v4, Lcom/android/camera/VideoCamera;->mPaused:Z
 
     if-eqz v4, :cond_0
 
     .line 1839
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #calls: Lcom/android/camera/VideoCamera;->effectsActive()Z
+    # invokes: Lcom/android/camera/VideoCamera;->effectsActive()Z
     invoke-static {v4}, Lcom/android/camera/VideoCamera;->access$1300(Lcom/android/camera/VideoCamera;)Z
 
     move-result v4
@@ -173,30 +173,30 @@
     const/4 v0, 0x1
 
     .line 1840
-    .local v0, closeEffects:Z
+    .local v0, "closeEffects":Z
     :goto_2
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #calls: Lcom/android/camera/VideoCamera;->closeCamera(Z)V
+    # invokes: Lcom/android/camera/VideoCamera;->closeCamera(Z)V
     invoke-static {v4, v0}, Lcom/android/camera/VideoCamera;->access$2500(Lcom/android/camera/VideoCamera;Z)V
 
     .line 1843
-    .end local v0           #closeEffects:Z
+    .end local v0    # "closeEffects":Z
     :cond_0
     if-eqz v2, :cond_1
 
     .line 1844
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #calls: Lcom/android/camera/VideoCamera;->addVideoToMediaStore()Z
+    # invokes: Lcom/android/camera/VideoCamera;->addVideoToMediaStore()Z
     invoke-static {v4}, Lcom/android/camera/VideoCamera;->access$2600(Lcom/android/camera/VideoCamera;)Z
 
     .line 1849
-    .end local v2           #shouldAddToMediaStoreNow:Z
+    .end local v2    # "shouldAddToMediaStoreNow":Z
     :cond_1
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #calls: Lcom/android/camera/VideoCamera;->effectsActive()Z
+    # invokes: Lcom/android/camera/VideoCamera;->effectsActive()Z
     invoke-static {v4}, Lcom/android/camera/VideoCamera;->access$1300(Lcom/android/camera/VideoCamera;)Z
 
     move-result v4
@@ -206,21 +206,21 @@
     .line 1850
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #calls: Lcom/android/camera/VideoCamera;->releaseMediaRecorder()V
+    # invokes: Lcom/android/camera/VideoCamera;->releaseMediaRecorder()V
     invoke-static {v4}, Lcom/android/camera/VideoCamera;->access$2700(Lcom/android/camera/VideoCamera;)V
 
     .line 1853
     :cond_2
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    iget-object v4, v4, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
+    iget-object v4, v4, Lcom/android/camera/VideoCamera;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
 
     invoke-virtual {v4}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
 
     .line 1855
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mMediaRecorderRecording:Z
+    # getter for: Lcom/android/camera/VideoCamera;->mMediaRecorderRecording:Z
     invoke-static {v4}, Lcom/android/camera/VideoCamera;->access$400(Lcom/android/camera/VideoCamera;)Z
 
     move-result v4
@@ -229,13 +229,13 @@
 
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    iget-boolean v4, v4, Lcom/android/camera/ActivityBase;->mPaused:Z
+    iget-boolean v4, v4, Lcom/android/camera/VideoCamera;->mPaused:Z
 
     if-nez v4, :cond_3
 
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #calls: Lcom/android/camera/VideoCamera;->startRecordVideo()Z
+    # invokes: Lcom/android/camera/VideoCamera;->startRecordVideo()Z
     invoke-static {v4}, Lcom/android/camera/VideoCamera;->access$2800(Lcom/android/camera/VideoCamera;)Z
 
     move-result v4
@@ -245,20 +245,20 @@
     .line 1856
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #setter for: Lcom/android/camera/VideoCamera;->mMediaRecorderRecording:Z
+    # setter for: Lcom/android/camera/VideoCamera;->mMediaRecorderRecording:Z
     invoke-static {v4, v3}, Lcom/android/camera/VideoCamera;->access$402(Lcom/android/camera/VideoCamera;Z)Z
 
     .line 1857
     iget-object v3, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mHandler:Landroid/os/Handler;
+    # getter for: Lcom/android/camera/VideoCamera;->mHandler:Landroid/os/Handler;
     invoke-static {v3}, Lcom/android/camera/VideoCamera;->access$100(Lcom/android/camera/VideoCamera;)Landroid/os/Handler;
 
     move-result-object v3
 
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mUIRestoreRunnable:Ljava/lang/Runnable;
+    # getter for: Lcom/android/camera/VideoCamera;->mUIRestoreRunnable:Ljava/lang/Runnable;
     invoke-static {v4}, Lcom/android/camera/VideoCamera;->access$2400(Lcom/android/camera/VideoCamera;)Ljava/lang/Runnable;
 
     move-result-object v4
@@ -269,19 +269,19 @@
     :cond_3
     iget-object v3, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #setter for: Lcom/android/camera/VideoCamera;->mRestartVideoRecordingThread:Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;
+    # setter for: Lcom/android/camera/VideoCamera;->mRestartVideoRecordingThread:Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;
     invoke-static {v3, v7}, Lcom/android/camera/VideoCamera;->access$2902(Lcom/android/camera/VideoCamera;Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;)Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;
 
     .line 1860
     return-void
 
     .line 1812
-    .restart local v2       #shouldAddToMediaStoreNow:Z
+    .restart local v2    # "shouldAddToMediaStoreNow":Z
     :cond_4
     :try_start_1
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mMediaRecorder:Landroid/media/MediaRecorder;
+    # getter for: Lcom/android/camera/VideoCamera;->mMediaRecorder:Landroid/media/MediaRecorder;
     invoke-static {v4}, Lcom/android/camera/VideoCamera;->access$2000(Lcom/android/camera/VideoCamera;)Landroid/media/MediaRecorder;
 
     move-result-object v4
@@ -293,7 +293,7 @@
     .line 1813
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mMediaRecorder:Landroid/media/MediaRecorder;
+    # getter for: Lcom/android/camera/VideoCamera;->mMediaRecorder:Landroid/media/MediaRecorder;
     invoke-static {v4}, Lcom/android/camera/VideoCamera;->access$2000(Lcom/android/camera/VideoCamera;)Landroid/media/MediaRecorder;
 
     move-result-object v4
@@ -305,7 +305,7 @@
     .line 1814
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mMediaRecorder:Landroid/media/MediaRecorder;
+    # getter for: Lcom/android/camera/VideoCamera;->mMediaRecorder:Landroid/media/MediaRecorder;
     invoke-static {v4}, Lcom/android/camera/VideoCamera;->access$2000(Lcom/android/camera/VideoCamera;)Landroid/media/MediaRecorder;
 
     move-result-object v4
@@ -324,7 +324,7 @@
     move-exception v1
 
     .line 1821
-    .local v1, e:Ljava/lang/RuntimeException;
+    .local v1, "e":Ljava/lang/RuntimeException;
     const-string v4, "videocamera"
 
     const-string v5, "stop fail"
@@ -334,7 +334,7 @@
     .line 1822
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mVideoFilename:Ljava/lang/String;
+    # getter for: Lcom/android/camera/VideoCamera;->mVideoFilename:Ljava/lang/String;
     invoke-static {v4}, Lcom/android/camera/VideoCamera;->access$2200(Lcom/android/camera/VideoCamera;)Ljava/lang/String;
 
     move-result-object v4
@@ -345,32 +345,32 @@
 
     iget-object v5, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mVideoFilename:Ljava/lang/String;
+    # getter for: Lcom/android/camera/VideoCamera;->mVideoFilename:Ljava/lang/String;
     invoke-static {v5}, Lcom/android/camera/VideoCamera;->access$2200(Lcom/android/camera/VideoCamera;)Ljava/lang/String;
 
     move-result-object v5
 
-    #calls: Lcom/android/camera/VideoCamera;->deleteVideoFile(Ljava/lang/String;)V
+    # invokes: Lcom/android/camera/VideoCamera;->deleteVideoFile(Ljava/lang/String;)V
     invoke-static {v4, v5}, Lcom/android/camera/VideoCamera;->access$2300(Lcom/android/camera/VideoCamera;Ljava/lang/String;)V
 
     .line 1823
     :cond_5
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #setter for: Lcom/android/camera/VideoCamera;->mMediaRecorderRecording:Z
+    # setter for: Lcom/android/camera/VideoCamera;->mMediaRecorderRecording:Z
     invoke-static {v4, v3}, Lcom/android/camera/VideoCamera;->access$402(Lcom/android/camera/VideoCamera;Z)Z
 
     .line 1824
     iget-object v4, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mHandler:Landroid/os/Handler;
+    # getter for: Lcom/android/camera/VideoCamera;->mHandler:Landroid/os/Handler;
     invoke-static {v4}, Lcom/android/camera/VideoCamera;->access$100(Lcom/android/camera/VideoCamera;)Landroid/os/Handler;
 
     move-result-object v4
 
     iget-object v5, p0, Lcom/android/camera/VideoCamera$RestartVideoRecordingThread;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mUIRestoreRunnable:Ljava/lang/Runnable;
+    # getter for: Lcom/android/camera/VideoCamera;->mUIRestoreRunnable:Ljava/lang/Runnable;
     invoke-static {v5}, Lcom/android/camera/VideoCamera;->access$2400(Lcom/android/camera/VideoCamera;)Ljava/lang/Runnable;
 
     move-result-object v5
@@ -379,7 +379,7 @@
 
     goto/16 :goto_1
 
-    .end local v1           #e:Ljava/lang/RuntimeException;
+    .end local v1    # "e":Ljava/lang/RuntimeException;
     :cond_6
     move v0, v3
 

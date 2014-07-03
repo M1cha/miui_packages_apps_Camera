@@ -107,33 +107,33 @@
     return-void
 
     :array_0
-    .array-data 0x4
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x80t 0x3ft
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x80t 0x3ft
-        0x0t 0x0t 0x80t 0x3ft
-        0x0t 0x0t 0x80t 0x3ft
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x80t 0x3ft
-        0x0t 0x0t 0x80t 0x3ft
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
-        0x0t 0x0t 0x80t 0x3ft
-        0x0t 0x0t 0x80t 0x3ft
-        0x0t 0x0t 0x80t 0x3ft
-        0x0t 0x0t 0x80t 0x3ft
-        0x0t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x0
+        0x0
+        0x3f800000
+        0x0
+        0x0
+        0x3f800000
+        0x3f800000
+        0x3f800000
+        0x0
+        0x0
+        0x3f800000
+        0x3f800000
+        0x0
+        0x0
+        0x0
+        0x3f800000
+        0x3f800000
+        0x3f800000
+        0x3f800000
+        0x0
     .end array-data
 .end method
 
 .method constructor <init>(Ljavax/microedition/khronos/opengles/GL11;)V
     .locals 4
-    .parameter "gl"
+    .param p1, "gl"    # Ljavax/microedition/khronos/opengles/GL11;
 
     .prologue
     const/16 v3, 0x10
@@ -241,7 +241,7 @@
 
 .method static synthetic access$100(Lcom/android/gallery3d/ui/GLCanvasImpl;)[F
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/ui/GLCanvasImpl;
 
     .prologue
     .line 36
@@ -252,7 +252,7 @@
 
 .method private static allocateDirectNativeOrderBuffer(I)Ljava/nio/ByteBuffer;
     .locals 2
-    .parameter "size"
+    .param p0, "size"    # I
 
     .prologue
     .line 137
@@ -273,7 +273,7 @@
 
 .method private bindTexture(Lcom/android/gallery3d/ui/BasicTexture;)Z
     .locals 3
-    .parameter "texture"
+    .param p1, "texture"    # Lcom/android/gallery3d/ui/BasicTexture;
 
     .prologue
     .line 450
@@ -296,7 +296,7 @@
     move-result v0
 
     .line 452
-    .local v0, target:I
+    .local v0, "target":I
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mGLState:Lcom/android/gallery3d/ui/GLCanvasImpl$GLState;
 
     invoke-virtual {v1, v0}, Lcom/android/gallery3d/ui/GLCanvasImpl$GLState;->setTextureTarget(I)V
@@ -318,7 +318,7 @@
 
 .method private static checkFramebufferStatus(Ljavax/microedition/khronos/opengles/GL11ExtensionPack;)V
     .locals 5
-    .parameter "gl11ep"
+    .param p0, "gl11ep"    # Ljavax/microedition/khronos/opengles/GL11ExtensionPack;
 
     .prologue
     .line 829
@@ -329,7 +329,7 @@
     move-result v1
 
     .line 830
-    .local v1, status:I
+    .local v1, "status":I
     const v2, 0x8cd5
 
     if-eq v1, v2, :cond_0
@@ -338,7 +338,7 @@
     const-string v0, ""
 
     .line 832
-    .local v0, msg:Ljava/lang/String;
+    .local v0, "msg":Ljava/lang/String;
     packed-switch v1, :pswitch_data_0
 
     .line 855
@@ -425,7 +425,7 @@
     goto :goto_0
 
     .line 857
-    .end local v0           #msg:Ljava/lang/String;
+    .end local v0    # "msg":Ljava/lang/String;
     :cond_0
     return-void
 
@@ -445,9 +445,9 @@
 
 .method private convertCoordinate(Landroid/graphics/RectF;Landroid/graphics/RectF;Lcom/android/gallery3d/ui/BasicTexture;)V
     .locals 9
-    .parameter "source"
-    .parameter "target"
-    .parameter "texture"
+    .param p1, "source"    # Landroid/graphics/RectF;
+    .param p2, "target"    # Landroid/graphics/RectF;
+    .param p3, "texture"    # Lcom/android/gallery3d/ui/BasicTexture;
 
     .prologue
     .line 419
@@ -456,25 +456,25 @@
     move-result v3
 
     .line 420
-    .local v3, width:I
+    .local v3, "width":I
     invoke-virtual {p3}, Lcom/android/gallery3d/ui/BasicTexture;->getHeight()I
 
     move-result v0
 
     .line 421
-    .local v0, height:I
+    .local v0, "height":I
     invoke-virtual {p3}, Lcom/android/gallery3d/ui/BasicTexture;->getTextureWidth()I
 
     move-result v2
 
     .line 422
-    .local v2, texWidth:I
+    .local v2, "texWidth":I
     invoke-virtual {p3}, Lcom/android/gallery3d/ui/BasicTexture;->getTextureHeight()I
 
     move-result v1
 
     .line 424
-    .local v1, texHeight:I
+    .local v1, "texHeight":I
     iget v6, p1, Landroid/graphics/RectF;->left:F
 
     int-to-float v7, v2
@@ -518,7 +518,7 @@
     div-float v4, v6, v7
 
     .line 431
-    .local v4, xBound:F
+    .local v4, "xBound":F
     iget v6, p1, Landroid/graphics/RectF;->right:F
 
     cmpl-float v6, v6, v4
@@ -560,7 +560,7 @@
     div-float v5, v6, v7
 
     .line 437
-    .local v5, yBound:F
+    .local v5, "yBound":F
     iget v6, p1, Landroid/graphics/RectF;->bottom:F
 
     cmpl-float v6, v6, v5
@@ -600,20 +600,20 @@
 
 .method private drawBoundTexture(Lcom/android/gallery3d/ui/BasicTexture;IIII)V
     .locals 9
-    .parameter "texture"
-    .parameter "x"
-    .parameter "y"
-    .parameter "width"
-    .parameter "height"
+    .param p1, "texture"    # Lcom/android/gallery3d/ui/BasicTexture;
+    .param p2, "x"    # I
+    .param p3, "y"    # I
+    .param p4, "width"    # I
+    .param p5, "height"    # I
 
     .prologue
     const/4 v8, 0x0
 
     const/4 v3, 0x0
 
-    const/high16 v4, 0x3f80
+    const/high16 v4, 0x3f800000
 
-    const/high16 v7, 0x3f00
+    const/high16 v7, 0x3f000000
 
     .line 341
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mMatrixValues:[F
@@ -752,7 +752,7 @@
     move-result-object v6
 
     .line 358
-    .local v6, points:[F
+    .local v6, "points":[F
     aget v0, v6, v8
 
     add-float/2addr v0, v7
@@ -824,14 +824,14 @@
 
 .method private drawMixed(Lcom/android/gallery3d/ui/BasicTexture;IFIIIIF)V
     .locals 12
-    .parameter "from"
-    .parameter "toColor"
-    .parameter "ratio"
-    .parameter "x"
-    .parameter "y"
-    .parameter "width"
-    .parameter "height"
-    .parameter "alpha"
+    .param p1, "from"    # Lcom/android/gallery3d/ui/BasicTexture;
+    .param p2, "toColor"    # I
+    .param p3, "ratio"    # F
+    .param p4, "x"    # I
+    .param p5, "y"    # I
+    .param p6, "width"    # I
+    .param p7, "height"    # I
+    .param p8, "alpha"    # F
 
     .prologue
     .line 468
@@ -865,7 +865,7 @@
 
     .line 471
     :cond_1
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     cmpl-float v1, p3, v1
 
@@ -932,7 +932,7 @@
     iget-object v10, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mGL:Ljavax/microedition/khronos/opengles/GL11;
 
     .line 480
-    .local v10, gl:Ljavax/microedition/khronos/opengles/GL11;
+    .local v10, "gl":Ljavax/microedition/khronos/opengles/GL11;
     invoke-direct {p0, p1}, Lcom/android/gallery3d/ui/GLCanvasImpl;->bindTexture(Lcom/android/gallery3d/ui/BasicTexture;)Z
 
     move-result v1
@@ -940,24 +940,24 @@
     if-eqz v1, :cond_0
 
     .line 492
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     sub-float/2addr v1, p3
 
     mul-float v9, p8, v1
 
     .line 493
-    .local v9, combo:F
+    .local v9, "combo":F
     mul-float v1, p8, p3
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     sub-float/2addr v2, v9
 
     div-float v11, v1, v2
 
     .line 496
-    .local v11, scale:F
+    .local v11, "scale":F
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mGLState:Lcom/android/gallery3d/ui/GLCanvasImpl$GLState;
 
     const v2, 0x8570
@@ -976,7 +976,7 @@
     div-float v8, v1, v2
 
     .line 502
-    .local v8, colorScale:F
+    .local v8, "colorScale":F
     ushr-int/lit8 v1, p2, 0x10
 
     and-int/lit16 v1, v1, 0xff
@@ -1044,7 +1044,7 @@
 
     const v2, 0x8591
 
-    const/high16 v3, 0x4440
+    const/high16 v3, 0x44400000
 
     invoke-interface {v10, v1, v2, v3}, Ljavax/microedition/khronos/opengles/GL11;->glTexEnvf(IIF)V
 
@@ -1127,10 +1127,10 @@
     goto/16 :goto_0
 
     .line 476
-    .end local v8           #colorScale:F
-    .end local v9           #combo:F
-    .end local v10           #gl:Ljavax/microedition/khronos/opengles/GL11;
-    .end local v11           #scale:F
+    .end local v8    # "colorScale":F
+    .end local v9    # "combo":F
+    .end local v10    # "gl":Ljavax/microedition/khronos/opengles/GL11;
+    .end local v11    # "scale":F
     :cond_4
     const/4 v1, 0x0
 
@@ -1139,12 +1139,12 @@
 
 .method private drawTexture(Lcom/android/gallery3d/ui/BasicTexture;IIIIF)V
     .locals 2
-    .parameter "texture"
-    .parameter "x"
-    .parameter "y"
-    .parameter "width"
-    .parameter "height"
-    .parameter "alpha"
+    .param p1, "texture"    # Lcom/android/gallery3d/ui/BasicTexture;
+    .param p2, "x"    # I
+    .param p3, "y"    # I
+    .param p4, "width"    # I
+    .param p5, "height"    # I
+    .param p6, "alpha"    # F
 
     .prologue
     .line 376
@@ -1209,7 +1209,7 @@
 
 .method private freeRestoreConfig(Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;)V
     .locals 1
-    .parameter "action"
+    .param p1, "action"    # Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;
 
     .prologue
     .line 737
@@ -1242,7 +1242,7 @@
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mGL:Ljavax/microedition/khronos/opengles/GL11;
 
     .line 144
-    .local v0, gl:Ljavax/microedition/khronos/opengles/GL11;
+    .local v0, "gl":Ljavax/microedition/khronos/opengles/GL11;
     sget-object v4, Lcom/android/gallery3d/ui/GLCanvasImpl;->BOX_COORDINATES:[F
 
     array-length v4, v4
@@ -1252,7 +1252,7 @@
     div-int/lit8 v2, v4, 0x8
 
     .line 145
-    .local v2, size:I
+    .local v2, "size":I
     invoke-static {v2}, Lcom/android/gallery3d/ui/GLCanvasImpl;->allocateDirectNativeOrderBuffer(I)Ljava/nio/ByteBuffer;
 
     move-result-object v4
@@ -1262,7 +1262,7 @@
     move-result-object v3
 
     .line 146
-    .local v3, xyBuffer:Ljava/nio/FloatBuffer;
+    .local v3, "xyBuffer":Ljava/nio/FloatBuffer;
     sget-object v4, Lcom/android/gallery3d/ui/GLCanvasImpl;->BOX_COORDINATES:[F
 
     sget-object v5, Lcom/android/gallery3d/ui/GLCanvasImpl;->BOX_COORDINATES:[F
@@ -1273,13 +1273,13 @@
 
     move-result-object v4
 
-    invoke-virtual {v4, v6}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v4, v6}, Ljava/nio/FloatBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 148
     new-array v1, v9, [I
 
     .line 149
-    .local v1, name:[I
+    .local v1, "name":[I
     invoke-static {v9, v1, v6}, Lcom/android/gallery3d/ui/GLId;->glGenBuffers(I[II)V
 
     .line 150
@@ -1293,7 +1293,7 @@
     invoke-interface {v0, v10, v4}, Ljavax/microedition/khronos/opengles/GL11;->glBindBuffer(II)V
 
     .line 153
-    invoke-virtual {v3}, Ljava/nio/Buffer;->capacity()I
+    invoke-virtual {v3}, Ljava/nio/FloatBuffer;->capacity()I
 
     move-result v4
 
@@ -1333,7 +1333,7 @@
 
 .method private static isMatrixRotatedOrFlipped([F)Z
     .locals 6
-    .parameter "matrix"
+    .param p0, "matrix"    # [F
 
     .prologue
     const/4 v2, 0x1
@@ -1346,7 +1346,7 @@
     const v0, 0x3727c5ac
 
     .line 534
-    .local v0, eps:F
+    .local v0, "eps":F
     const/4 v3, 0x4
 
     aget v3, p0, v3
@@ -1394,18 +1394,18 @@
 
 .method private mapPoints([FIIII)[F
     .locals 10
-    .parameter "m"
-    .parameter "x1"
-    .parameter "y1"
-    .parameter "x2"
-    .parameter "y2"
+    .param p1, "m"    # [F
+    .param p2, "x1"    # I
+    .param p3, "y1"    # I
+    .param p4, "x2"    # I
+    .param p5, "y2"    # I
 
     .prologue
     .line 318
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mMapPointsBuffer:[F
 
     .line 321
-    .local v0, r:[F
+    .local v0, "r":[F
     const/4 v7, 0x0
 
     aget v7, p1, v7
@@ -1431,7 +1431,7 @@
     add-float v3, v7, v8
 
     .line 322
-    .local v3, x3:F
+    .local v3, "x3":F
     const/4 v7, 0x1
 
     aget v7, p1, v7
@@ -1457,7 +1457,7 @@
     add-float v5, v7, v8
 
     .line 323
-    .local v5, y3:F
+    .local v5, "y3":F
     const/4 v7, 0x3
 
     aget v7, p1, v7
@@ -1483,7 +1483,7 @@
     add-float v1, v7, v8
 
     .line 324
-    .local v1, w3:F
+    .local v1, "w3":F
     const/4 v7, 0x0
 
     div-float v8, v3, v1
@@ -1523,7 +1523,7 @@
     add-float v4, v7, v8
 
     .line 329
-    .local v4, x4:F
+    .local v4, "x4":F
     const/4 v7, 0x1
 
     aget v7, p1, v7
@@ -1549,7 +1549,7 @@
     add-float v6, v7, v8
 
     .line 330
-    .local v6, y4:F
+    .local v6, "y4":F
     const/4 v7, 0x3
 
     aget v7, p1, v7
@@ -1575,7 +1575,7 @@
     add-float v2, v7, v8
 
     .line 331
-    .local v2, w4:F
+    .local v2, "w4":F
     const/4 v7, 0x2
 
     div-float v8, v4, v2
@@ -1606,13 +1606,13 @@
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mRecycledRestoreAction:Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;
 
     .line 744
-    .local v0, result:Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;
+    .local v0, "result":Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;
     iget-object v1, v0, Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;->mNextFree:Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;
 
     iput-object v1, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mRecycledRestoreAction:Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;
 
     .line 747
-    .end local v0           #result:Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;
+    .end local v0    # "result":Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;
     :goto_0
     return-object v0
 
@@ -1666,7 +1666,7 @@
 
 .method private setRenderTarget(Lcom/android/gallery3d/ui/RawTexture;)V
     .locals 6
-    .parameter "texture"
+    .param p1, "texture"    # Lcom/android/gallery3d/ui/RawTexture;
 
     .prologue
     const/4 v3, 0x1
@@ -1681,7 +1681,7 @@
     check-cast v0, Ljavax/microedition/khronos/opengles/GL11ExtensionPack;
 
     .line 787
-    .local v0, gl11ep:Ljavax/microedition/khronos/opengles/GL11ExtensionPack;
+    .local v0, "gl11ep":Ljavax/microedition/khronos/opengles/GL11ExtensionPack;
     iget-object v2, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mTargetTexture:Lcom/android/gallery3d/ui/RawTexture;
 
     if-nez v2, :cond_0
@@ -1775,17 +1775,17 @@
 
 .method private setTextureColor(FFFF)V
     .locals 2
-    .parameter "r"
-    .parameter "g"
-    .parameter "b"
-    .parameter "alpha"
+    .param p1, "r"    # F
+    .param p2, "g"    # F
+    .param p3, "b"    # F
+    .param p4, "alpha"    # F
 
     .prologue
     .line 458
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mTextureColor:[F
 
     .line 459
-    .local v0, color:[F
+    .local v0, "color":[F
     const/4 v1, 0x0
 
     aput p1, v0, v1
@@ -1811,15 +1811,15 @@
 
 .method private setTextureCoords(FFFF)V
     .locals 5
-    .parameter "left"
-    .parameter "top"
-    .parameter "right"
-    .parameter "bottom"
+    .param p1, "left"    # F
+    .param p2, "top"    # F
+    .param p3, "right"    # F
+    .param p4, "bottom"    # F
 
     .prologue
     const/4 v4, 0x0
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     .line 657
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mGL:Ljavax/microedition/khronos/opengles/GL11;
@@ -1892,7 +1892,7 @@
 
 .method private setTextureCoords(Landroid/graphics/RectF;)V
     .locals 4
-    .parameter "source"
+    .param p1, "source"    # Landroid/graphics/RectF;
 
     .prologue
     .line 652
@@ -1912,7 +1912,7 @@
 
 .method private setTextureCoords([F)V
     .locals 2
-    .parameter "mTextureTransform"
+    .param p1, "mTextureTransform"    # [F
 
     .prologue
     .line 669
@@ -1942,10 +1942,10 @@
 
 .method private textureRect(FFFF)V
     .locals 4
-    .parameter "x"
-    .parameter "y"
-    .parameter "width"
-    .parameter "height"
+    .param p1, "x"    # F
+    .param p2, "y"    # F
+    .param p3, "width"    # F
+    .param p4, "height"    # F
 
     .prologue
     const/4 v3, 0x0
@@ -1954,14 +1954,14 @@
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mGL:Ljavax/microedition/khronos/opengles/GL11;
 
     .line 268
-    .local v0, gl:Ljavax/microedition/khronos/opengles/GL11;
+    .local v0, "gl":Ljavax/microedition/khronos/opengles/GL11;
     invoke-direct {p0}, Lcom/android/gallery3d/ui/GLCanvasImpl;->saveTransform()V
 
     .line 269
     invoke-virtual {p0, p1, p2}, Lcom/android/gallery3d/ui/GLCanvasImpl;->translate(FF)V
 
     .line 270
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     invoke-virtual {p0, p3, p4, v1}, Lcom/android/gallery3d/ui/GLCanvasImpl;->scale(FFF)V
 
@@ -1995,7 +1995,7 @@
 # virtual methods
 .method public beginRenderTarget(Lcom/android/gallery3d/ui/RawTexture;)V
     .locals 2
-    .parameter "texture"
+    .param p1, "texture"    # Lcom/android/gallery3d/ui/RawTexture;
 
     .prologue
     .line 823
@@ -2032,7 +2032,7 @@
 
 .method public deleteBuffer(I)V
     .locals 2
-    .parameter "bufferId"
+    .param p1, "bufferId"    # I
 
     .prologue
     .line 685
@@ -2077,7 +2077,7 @@
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mUnboundTextures:Lcom/android/gallery3d/util/IntArray;
 
     .line 693
-    .local v0, ids:Lcom/android/gallery3d/util/IntArray;
+    .local v0, "ids":Lcom/android/gallery3d/util/IntArray;
     invoke-virtual {v0}, Lcom/android/gallery3d/util/IntArray;->size()I
 
     move-result v1
@@ -2139,7 +2139,7 @@
     return-void
 
     .line 703
-    .end local v0           #ids:Lcom/android/gallery3d/util/IntArray;
+    .end local v0    # "ids":Lcom/android/gallery3d/util/IntArray;
     :catchall_0
     move-exception v1
 
@@ -2152,13 +2152,13 @@
 
 .method public drawMesh(Lcom/android/gallery3d/ui/BasicTexture;IIIIII)V
     .locals 8
-    .parameter "tex"
-    .parameter "x"
-    .parameter "y"
-    .parameter "xyBuffer"
-    .parameter "uvBuffer"
-    .parameter "indexBuffer"
-    .parameter "indexCount"
+    .param p1, "tex"    # Lcom/android/gallery3d/ui/BasicTexture;
+    .param p2, "x"    # I
+    .param p3, "y"    # I
+    .param p4, "xyBuffer"    # I
+    .param p5, "uvBuffer"    # I
+    .param p6, "indexBuffer"    # I
+    .param p7, "indexCount"    # I
 
     .prologue
     const/4 v4, 0x0
@@ -2175,7 +2175,7 @@
     iget v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mAlpha:F
 
     .line 282
-    .local v0, alpha:F
+    .local v0, "alpha":F
     invoke-direct {p0, p1}, Lcom/android/gallery3d/ui/GLCanvasImpl;->bindTexture(Lcom/android/gallery3d/ui/BasicTexture;)Z
 
     move-result v1
@@ -2218,9 +2218,9 @@
     invoke-virtual {v1, v0}, Lcom/android/gallery3d/ui/GLCanvasImpl$GLState;->setTextureAlpha(F)V
 
     .line 290
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     invoke-direct {p0, v4, v4, v1, v3}, Lcom/android/gallery3d/ui/GLCanvasImpl;->setTextureCoords(FFFF)V
 
@@ -2315,13 +2315,13 @@
 
 .method public drawMixed(Lcom/android/gallery3d/ui/BasicTexture;IFIIII)V
     .locals 9
-    .parameter "from"
-    .parameter "toColor"
-    .parameter "ratio"
-    .parameter "x"
-    .parameter "y"
-    .parameter "w"
-    .parameter "h"
+    .param p1, "from"    # Lcom/android/gallery3d/ui/BasicTexture;
+    .param p2, "toColor"    # I
+    .param p3, "ratio"    # F
+    .param p4, "x"    # I
+    .param p5, "y"    # I
+    .param p6, "w"    # I
+    .param p7, "h"    # I
 
     .prologue
     .line 446
@@ -2351,11 +2351,11 @@
 
 .method public drawTexture(Lcom/android/gallery3d/ui/BasicTexture;IIII)V
     .locals 7
-    .parameter "texture"
-    .parameter "x"
-    .parameter "y"
-    .parameter "width"
-    .parameter "height"
+    .param p1, "texture"    # Lcom/android/gallery3d/ui/BasicTexture;
+    .param p2, "x"    # I
+    .param p3, "y"    # I
+    .param p4, "width"    # I
+    .param p5, "height"    # I
 
     .prologue
     .line 371
@@ -2381,9 +2381,9 @@
 
 .method public drawTexture(Lcom/android/gallery3d/ui/BasicTexture;Landroid/graphics/RectF;Landroid/graphics/RectF;)V
     .locals 4
-    .parameter "texture"
-    .parameter "source"
-    .parameter "target"
+    .param p1, "texture"    # Lcom/android/gallery3d/ui/BasicTexture;
+    .param p2, "source"    # Landroid/graphics/RectF;
+    .param p3, "target"    # Landroid/graphics/RectF;
 
     .prologue
     const/4 v1, 0x0
@@ -2500,12 +2500,12 @@
 
 .method public drawTexture(Lcom/android/gallery3d/ui/BasicTexture;[FIIII)V
     .locals 4
-    .parameter "texture"
-    .parameter "mTextureTransform"
-    .parameter "x"
-    .parameter "y"
-    .parameter "w"
-    .parameter "h"
+    .param p1, "texture"    # Lcom/android/gallery3d/ui/BasicTexture;
+    .param p2, "mTextureTransform"    # [F
+    .param p3, "x"    # I
+    .param p4, "y"    # I
+    .param p5, "w"    # I
+    .param p6, "h"    # I
 
     .prologue
     .line 405
@@ -2599,7 +2599,7 @@
     check-cast v0, Lcom/android/gallery3d/ui/RawTexture;
 
     .line 817
-    .local v0, texture:Lcom/android/gallery3d/ui/RawTexture;
+    .local v0, "texture":Lcom/android/gallery3d/ui/RawTexture;
     invoke-direct {p0, v0}, Lcom/android/gallery3d/ui/GLCanvasImpl;->setRenderTarget(Lcom/android/gallery3d/ui/RawTexture;)V
 
     .line 818
@@ -2611,11 +2611,11 @@
 
 .method public fillRect(FFFFI)V
     .locals 4
-    .parameter "x"
-    .parameter "y"
-    .parameter "width"
-    .parameter "height"
-    .parameter "color"
+    .param p1, "x"    # F
+    .param p2, "y"    # F
+    .param p3, "width"    # F
+    .param p4, "height"    # F
+    .param p5, "color"    # I
 
     .prologue
     const/4 v3, 0x0
@@ -2631,14 +2631,14 @@
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mGL:Ljavax/microedition/khronos/opengles/GL11;
 
     .line 207
-    .local v0, gl:Ljavax/microedition/khronos/opengles/GL11;
+    .local v0, "gl":Ljavax/microedition/khronos/opengles/GL11;
     invoke-direct {p0}, Lcom/android/gallery3d/ui/GLCanvasImpl;->saveTransform()V
 
     .line 208
     invoke-virtual {p0, p1, p2}, Lcom/android/gallery3d/ui/GLCanvasImpl;->translate(FF)V
 
     .line 209
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     invoke-virtual {p0, p3, p4, v1}, Lcom/android/gallery3d/ui/GLCanvasImpl;->scale(FFF)V
 
@@ -2690,7 +2690,7 @@
 
 .method public multiplyAlpha(F)V
     .locals 1
-    .parameter "alpha"
+    .param p1, "alpha"    # F
 
     .prologue
     .line 132
@@ -2700,7 +2700,7 @@
 
     if-ltz v0, :cond_0
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     cmpg-float v0, p1, v0
 
@@ -2730,8 +2730,8 @@
 
 .method public multiplyMatrix([FI)V
     .locals 6
-    .parameter "matrix"
-    .parameter "offset"
+    .param p1, "matrix"    # [F
+    .param p2, "offset"    # I
 
     .prologue
     const/4 v1, 0x0
@@ -2740,7 +2740,7 @@
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mTempMatrix:[F
 
     .line 261
-    .local v0, temp:[F
+    .local v0, "temp":[F
     iget-object v2, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mMatrixValues:[F
 
     move v3, v1
@@ -2800,7 +2800,7 @@
     check-cast v0, Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;
 
     .line 732
-    .local v0, config:Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;
+    .local v0, "config":Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;
     invoke-virtual {v0, p0}, Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;->restore(Lcom/android/gallery3d/ui/GLCanvasImpl;)V
 
     .line 733
@@ -2812,10 +2812,10 @@
 
 .method public rotate(FFFF)V
     .locals 9
-    .parameter "angle"
-    .parameter "x"
-    .parameter "y"
-    .parameter "z"
+    .param p1, "angle"    # F
+    .param p2, "x"    # F
+    .param p3, "y"    # F
+    .param p4, "z"    # F
 
     .prologue
     const/16 v8, 0x10
@@ -2837,7 +2837,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mTempMatrix:[F
 
-    .local v0, temp:[F
+    .local v0, "temp":[F
     move v2, p1
 
     move v3, p2
@@ -2874,13 +2874,13 @@
 
 .method public rotateProjectionToXOY(FFFFFFF)V
     .locals 9
-    .parameter "angle"
-    .parameter "x"
-    .parameter "y"
-    .parameter "z"
-    .parameter "px"
-    .parameter "py"
-    .parameter "pz"
+    .param p1, "angle"    # F
+    .param p2, "x"    # F
+    .param p3, "y"    # F
+    .param p4, "z"    # F
+    .param p5, "px"    # F
+    .param p6, "py"    # F
+    .param p7, "pz"    # F
 
     .prologue
     .line 247
@@ -2910,7 +2910,7 @@
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mTempMatrix:[F
 
     .line 249
-    .local v0, temp:[F
+    .local v0, "temp":[F
     const/4 v1, 0x0
 
     move v2, p1
@@ -2930,7 +2930,7 @@
 
     const/4 v1, 0x0
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     aput v3, v2, v1
 
@@ -2960,7 +2960,7 @@
 
     const/4 v1, 0x5
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     aput v3, v2, v1
 
@@ -3000,7 +3000,7 @@
 
     const/16 v1, 0xb
 
-    const/high16 v3, -0x4080
+    const/high16 v3, -0x40800000
 
     div-float v3, v3, p7
 
@@ -3026,12 +3026,12 @@
 
     const/16 v1, 0xf
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     aput v3, v2, v1
 
     .line 254
-    .local v2, ppMatrix:[F
+    .local v2, "ppMatrix":[F
     const/16 v1, 0x10
 
     const/4 v3, 0x0
@@ -3086,7 +3086,7 @@
 
 .method public save(I)V
     .locals 5
-    .parameter "saveFlags"
+    .param p1, "saveFlags"    # I
 
     .prologue
     const/4 v4, 0x0
@@ -3097,7 +3097,7 @@
     move-result-object v0
 
     .line 713
-    .local v0, config:Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;
+    .local v0, "config":Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;
     and-int/lit8 v1, p1, 0x1
 
     if-eqz v1, :cond_0
@@ -3133,7 +3133,7 @@
 
     .line 716
     :cond_0
-    const/high16 v1, -0x4080
+    const/high16 v1, -0x40800000
 
     iput v1, v0, Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;->mAlpha:F
 
@@ -3143,7 +3143,7 @@
     :cond_1
     iget-object v1, v0, Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;->mMatrix:[F
 
-    const/high16 v2, -0x80
+    const/high16 v2, -0x800000
 
     aput v2, v1, v4
 
@@ -3152,9 +3152,9 @@
 
 .method public scale(FFF)V
     .locals 2
-    .parameter "sx"
-    .parameter "sy"
-    .parameter "sz"
+    .param p1, "sx"    # F
+    .param p2, "sy"    # F
+    .param p3, "sz"    # F
 
     .prologue
     .line 234
@@ -3170,7 +3170,7 @@
 
 .method public setAlpha(F)V
     .locals 1
-    .parameter "alpha"
+    .param p1, "alpha"    # F
 
     .prologue
     .line 123
@@ -3180,7 +3180,7 @@
 
     if-ltz v0, :cond_0
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     cmpg-float v0, p1, v0
 
@@ -3206,11 +3206,11 @@
 
 .method public setSize(II)V
     .locals 7
-    .parameter "width"
-    .parameter "height"
+    .param p1, "width"    # I
+    .param p2, "height"    # I
 
     .prologue
-    const/high16 v6, 0x3f80
+    const/high16 v6, 0x3f800000
 
     const/4 v5, 0x0
 
@@ -3245,7 +3245,7 @@
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mGL:Ljavax/microedition/khronos/opengles/GL11;
 
     .line 105
-    .local v0, gl:Ljavax/microedition/khronos/opengles/GL11;
+    .local v0, "gl":Ljavax/microedition/khronos/opengles/GL11;
     invoke-interface {v0, v3, v3, p1, p2}, Ljavax/microedition/khronos/opengles/GL11;->glViewport(IIII)V
 
     .line 106
@@ -3275,7 +3275,7 @@
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mMatrixValues:[F
 
     .line 114
-    .local v1, matrix:[F
+    .local v1, "matrix":[F
     invoke-static {v1, v3}, Landroid/opengl/Matrix;->setIdentityM([FI)V
 
     .line 116
@@ -3289,7 +3289,7 @@
     invoke-static {v1, v3, v5, v2, v5}, Landroid/opengl/Matrix;->translateM([FIFFF)V
 
     .line 118
-    const/high16 v2, -0x4080
+    const/high16 v2, -0x40800000
 
     invoke-static {v1, v3, v6, v2, v6}, Landroid/opengl/Matrix;->scaleM([FIFFF)V
 
@@ -3297,8 +3297,8 @@
     :cond_1
     return-void
 
-    .end local v0           #gl:Ljavax/microedition/khronos/opengles/GL11;
-    .end local v1           #matrix:[F
+    .end local v0    # "gl":Ljavax/microedition/khronos/opengles/GL11;
+    .end local v1    # "matrix":[F
     :cond_2
     move v2, v3
 
@@ -3308,15 +3308,15 @@
 
 .method public translate(FF)V
     .locals 5
-    .parameter "x"
-    .parameter "y"
+    .param p1, "x"    # F
+    .param p2, "y"    # F
 
     .prologue
     .line 226
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl;->mMatrixValues:[F
 
     .line 227
-    .local v0, m:[F
+    .local v0, "m":[F
     const/16 v1, 0xc
 
     aget v2, v0, v1
@@ -3414,7 +3414,7 @@
 
 .method public unloadTexture(Lcom/android/gallery3d/ui/BasicTexture;)Z
     .locals 3
-    .parameter "t"
+    .param p1, "t"    # Lcom/android/gallery3d/ui/BasicTexture;
 
     .prologue
     .line 677

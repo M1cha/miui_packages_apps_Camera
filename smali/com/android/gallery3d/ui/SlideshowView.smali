@@ -42,7 +42,7 @@
 
     const/4 v1, 0x0
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     const/16 v3, 0x3e8
 
@@ -65,14 +65,14 @@
 # virtual methods
 .method public next(Landroid/graphics/Bitmap;I)V
     .locals 4
-    .parameter "bitmap"
-    .parameter "rotation"
+    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
+    .param p2, "rotation"    # I
 
     .prologue
     .line 54
     iget-object v0, p0, Lcom/android/gallery3d/ui/SlideshowView;->mTransitionAnimation:Lcom/android/gallery3d/anim/FloatAnimation;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/anim/Animation;->start()V
+    invoke-virtual {v0}, Lcom/android/gallery3d/anim/FloatAnimation;->start()V
 
     .line 56
     iget-object v0, p0, Lcom/android/gallery3d/ui/SlideshowView;->mPrevTexture:Lcom/android/gallery3d/ui/BitmapTexture;
@@ -151,10 +151,10 @@
     :goto_0
     iget-object v0, p0, Lcom/android/gallery3d/ui/SlideshowView;->mCurrentAnimation:Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/anim/Animation;->start()V
+    invoke-virtual {v0}, Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;->start()V
 
     .line 78
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/SlideshowView;->invalidate()V
 
     .line 79
     return-void
@@ -224,7 +224,7 @@
 
 .method protected render(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 12
-    .parameter "canvas"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
 
     .prologue
     const/4 v11, 0x3
@@ -233,7 +233,7 @@
 
     const/4 v9, 0x0
 
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x3f800000
 
     .line 94
     invoke-static {}, Lcom/android/gallery3d/ui/AnimationTime;->get()J
@@ -241,21 +241,21 @@
     move-result-wide v1
 
     .line 95
-    .local v1, animTime:J
+    .local v1, "animTime":J
     iget-object v6, p0, Lcom/android/gallery3d/ui/SlideshowView;->mTransitionAnimation:Lcom/android/gallery3d/anim/FloatAnimation;
 
-    invoke-virtual {v6, v1, v2}, Lcom/android/gallery3d/anim/Animation;->calculate(J)Z
+    invoke-virtual {v6, v1, v2}, Lcom/android/gallery3d/anim/FloatAnimation;->calculate(J)Z
 
     move-result v4
 
     .line 96
-    .local v4, requestRender:Z
+    .local v4, "requestRender":Z
     invoke-interface {p1}, Lcom/android/gallery3d/ui/GLCanvas;->getGLInstance()Ljavax/microedition/khronos/opengles/GL11;
 
     move-result-object v3
 
     .line 97
-    .local v3, gl:Ljavax/microedition/khronos/opengles/GL11;
+    .local v3, "gl":Ljavax/microedition/khronos/opengles/GL11;
     invoke-interface {v3, v10, v10}, Ljavax/microedition/khronos/opengles/GL11;->glBlendFunc(II)V
 
     .line 98
@@ -266,7 +266,7 @@
     move v0, v5
 
     .line 100
-    .local v0, alpha:F
+    .local v0, "alpha":F
     :goto_0
     iget-object v6, p0, Lcom/android/gallery3d/ui/SlideshowView;->mPrevTexture:Lcom/android/gallery3d/ui/BitmapTexture;
 
@@ -279,7 +279,7 @@
     .line 101
     iget-object v6, p0, Lcom/android/gallery3d/ui/SlideshowView;->mPrevAnimation:Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;
 
-    invoke-virtual {v6, v1, v2}, Lcom/android/gallery3d/anim/Animation;->calculate(J)Z
+    invoke-virtual {v6, v1, v2}, Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;->calculate(J)Z
 
     move-result v6
 
@@ -342,7 +342,7 @@
     .line 111
     iget-object v6, p0, Lcom/android/gallery3d/ui/SlideshowView;->mCurrentAnimation:Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;
 
-    invoke-virtual {v6, v1, v2}, Lcom/android/gallery3d/anim/Animation;->calculate(J)Z
+    invoke-virtual {v6, v1, v2}, Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;->calculate(J)Z
 
     move-result v6
 
@@ -398,7 +398,7 @@
     :cond_1
     if-eqz v4, :cond_2
 
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/SlideshowView;->invalidate()V
 
     .line 121
     :cond_2
@@ -410,7 +410,7 @@
     return-void
 
     .line 98
-    .end local v0           #alpha:F
+    .end local v0    # "alpha":F
     :cond_3
     iget-object v6, p0, Lcom/android/gallery3d/ui/SlideshowView;->mTransitionAnimation:Lcom/android/gallery3d/anim/FloatAnimation;
 

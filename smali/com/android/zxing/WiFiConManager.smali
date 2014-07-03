@@ -36,11 +36,11 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;Landroid/widget/TextView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
-    .parameter "activity"
-    .parameter "textView"
-    .parameter "ssid"
-    .parameter "security"
-    .parameter "pwd"
+    .param p1, "activity"    # Landroid/app/Activity;
+    .param p2, "textView"    # Landroid/widget/TextView;
+    .param p3, "ssid"    # Ljava/lang/String;
+    .param p4, "security"    # Ljava/lang/String;
+    .param p5, "pwd"    # Ljava/lang/String;
 
     .prologue
     .line 47
@@ -113,7 +113,7 @@
 
     iget-object v2, p0, Lcom/android/zxing/WiFiConManager;->mActivity:Landroid/app/Activity;
 
-    invoke-virtual {v2}, Landroid/content/ContextWrapper;->getMainLooper()Landroid/os/Looper;
+    invoke-virtual {v2}, Landroid/app/Activity;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v2
 
@@ -131,8 +131,8 @@
 
 .method static synthetic access$000(Lcom/android/zxing/WiFiConManager;Landroid/content/Intent;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/zxing/WiFiConManager;
+    .param p1, "x1"    # Landroid/content/Intent;
 
     .prologue
     .line 20
@@ -143,7 +143,7 @@
 
 .method static synthetic access$100(Lcom/android/zxing/WiFiConManager;)Landroid/net/wifi/WifiManager;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/zxing/WiFiConManager;
 
     .prologue
     .line 20
@@ -154,7 +154,7 @@
 
 .method static synthetic access$200(Lcom/android/zxing/WiFiConManager;)Ljava/lang/String;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/zxing/WiFiConManager;
 
     .prologue
     .line 20
@@ -165,7 +165,7 @@
 
 .method static synthetic access$300(Lcom/android/zxing/WiFiConManager;)Ljava/lang/String;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/zxing/WiFiConManager;
 
     .prologue
     .line 20
@@ -176,8 +176,8 @@
 
 .method static synthetic access$402(Lcom/android/zxing/WiFiConManager;Z)Z
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/zxing/WiFiConManager;
+    .param p1, "x1"    # Z
 
     .prologue
     .line 20
@@ -188,8 +188,8 @@
 
 .method static synthetic access$502(Lcom/android/zxing/WiFiConManager;Z)Z
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/zxing/WiFiConManager;
+    .param p1, "x1"    # Z
 
     .prologue
     .line 20
@@ -200,7 +200,7 @@
 
 .method static synthetic access$600(Lcom/android/zxing/WiFiConManager;)I
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/zxing/WiFiConManager;
 
     .prologue
     .line 20
@@ -213,7 +213,7 @@
 
 .method static synthetic access$700(Lcom/android/zxing/WiFiConManager;)Landroid/app/ProgressDialog;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/zxing/WiFiConManager;
 
     .prologue
     .line 20
@@ -224,7 +224,7 @@
 
 .method static synthetic access$800(Lcom/android/zxing/WiFiConManager;)Landroid/app/Activity;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/zxing/WiFiConManager;
 
     .prologue
     .line 20
@@ -235,8 +235,8 @@
 
 .method static synthetic access$900(Lcom/android/zxing/WiFiConManager;I)Ljava/lang/String;
     .locals 1
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/zxing/WiFiConManager;
+    .param p1, "x1"    # I
 
     .prologue
     .line 20
@@ -289,7 +289,7 @@
     move-result-object v8
 
     .line 144
-    .local v8, scanList:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
+    .local v8, "scanList":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     iget-object v10, p0, Lcom/android/zxing/WiFiConManager;->mWiFiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v10}, Landroid/net/wifi/WifiManager;->getConfiguredNetworks()Ljava/util/List;
@@ -297,7 +297,7 @@
     move-result-object v1
 
     .line 146
-    .local v1, configList:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
+    .local v1, "configList":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
     if-eqz v1, :cond_3
 
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -311,7 +311,7 @@
 
     move-result-object v5
 
-    .local v5, i$:Ljava/util/Iterator;
+    .local v5, "i$":Ljava/util/Iterator;
     :cond_2
     :goto_1
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
@@ -327,7 +327,7 @@
     check-cast v0, Landroid/net/wifi/WifiConfiguration;
 
     .line 148
-    .local v0, config:Landroid/net/wifi/WifiConfiguration;
+    .local v0, "config":Landroid/net/wifi/WifiConfiguration;
     iget-object v10, v0, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
 
     if-eqz v10, :cond_2
@@ -375,13 +375,13 @@
     goto :goto_1
 
     .line 157
-    .end local v0           #config:Landroid/net/wifi/WifiConfiguration;
-    .end local v5           #i$:Ljava/util/Iterator;
+    .end local v0    # "config":Landroid/net/wifi/WifiConfiguration;
+    .end local v5    # "i$":Ljava/util/Iterator;
     :cond_3
     const/4 v3, 0x0
 
     .line 158
-    .local v3, found:Z
+    .local v3, "found":Z
     if-eqz v8, :cond_5
 
     invoke-interface {v8}, Ljava/util/List;->size()I
@@ -395,7 +395,7 @@
 
     move-result-object v5
 
-    .restart local v5       #i$:Ljava/util/Iterator;
+    .restart local v5    # "i$":Ljava/util/Iterator;
     :cond_4
     :goto_2
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
@@ -411,7 +411,7 @@
     check-cast v7, Landroid/net/wifi/ScanResult;
 
     .line 160
-    .local v7, result:Landroid/net/wifi/ScanResult;
+    .local v7, "result":Landroid/net/wifi/ScanResult;
     iget-object v10, v7, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
     if-eqz v10, :cond_4
@@ -449,8 +449,8 @@
     goto :goto_2
 
     .line 169
-    .end local v5           #i$:Ljava/util/Iterator;
-    .end local v7           #result:Landroid/net/wifi/ScanResult;
+    .end local v5    # "i$":Ljava/util/Iterator;
+    .end local v7    # "result":Landroid/net/wifi/ScanResult;
     :cond_5
     if-eqz v3, :cond_0
 
@@ -466,13 +466,13 @@
     move-result-object v2
 
     .line 175
-    .local v2, connectConfig:Landroid/net/wifi/WifiConfiguration;
+    .local v2, "connectConfig":Landroid/net/wifi/WifiConfiguration;
     if-eqz v2, :cond_0
 
     .line 179
     const/4 v6, 0x0
 
-    .local v6, k:I
+    .local v6, "k":I
     :goto_3
     if-ge v6, v9, :cond_7
 
@@ -495,7 +495,7 @@
     const/4 v4, 0x0
 
     .line 184
-    .local v4, i:I
+    .local v4, "i":I
     :goto_4
     iget-boolean v10, p0, Lcom/android/zxing/WiFiConManager;->mFinish:Z
 
@@ -525,7 +525,7 @@
     if-eqz v10, :cond_8
 
     .line 198
-    .end local v4           #i:I
+    .end local v4    # "i":I
     :cond_7
     iget-boolean v9, p0, Lcom/android/zxing/WiFiConManager;->mConnectResult:Z
 
@@ -537,21 +537,21 @@
     goto/16 :goto_0
 
     .line 179
-    .restart local v4       #i:I
+    .restart local v4    # "i":I
     :cond_8
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_3
 
     .line 201
-    .end local v4           #i:I
+    .end local v4    # "i":I
     :cond_9
     const/4 v9, 0x2
 
     goto/16 :goto_0
 
     .line 188
-    .restart local v4       #i:I
+    .restart local v4    # "i":I
     :catch_0
     move-exception v10
 
@@ -560,7 +560,7 @@
 
 .method private getResultMessage(I)Ljava/lang/String;
     .locals 2
-    .parameter "ret"
+    .param p1, "ret"    # I
 
     .prologue
     .line 205
@@ -578,7 +578,7 @@
 
     const v1, 0x7f0d0228
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -590,7 +590,7 @@
 
     const v1, 0x7f0d0229
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -602,7 +602,7 @@
 
     const v1, 0x7f0d022a
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -614,7 +614,7 @@
 
     const v1, 0x7f0d0227
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -626,7 +626,7 @@
 
     const v1, 0x7f0d022b
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -638,7 +638,7 @@
 
     const v1, 0x7f0d022c
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -660,7 +660,7 @@
 
 .method private handleEvent(Landroid/content/Intent;)V
     .locals 2
-    .parameter "intent"
+    .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
     .line 110
@@ -744,7 +744,7 @@
 
     check-cast v0, [Ljava/lang/Void;
 
-    invoke-virtual {v1, v2, v0}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
+    invoke-virtual {v1, v2, v0}, Lcom/android/zxing/WiFiConManager$3;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
     .line 136
     return-void
@@ -851,7 +851,7 @@
 
     iget-object v2, p0, Lcom/android/zxing/WiFiConManager;->mFilter:Landroid/content/IntentFilter;
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     .line 98
     const/4 v0, 0x1
@@ -877,7 +877,7 @@
 
     iget-object v1, p0, Lcom/android/zxing/WiFiConManager;->mReceiver:Landroid/content/BroadcastReceiver;
 
-    invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
     .line 105
     const/4 v0, 0x0
@@ -891,9 +891,9 @@
 
 .method public update(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
-    .parameter "ssid"
-    .parameter "security"
-    .parameter "pwd"
+    .param p1, "ssid"    # Ljava/lang/String;
+    .param p2, "security"    # Ljava/lang/String;
+    .param p3, "pwd"    # Ljava/lang/String;
 
     .prologue
     .line 89

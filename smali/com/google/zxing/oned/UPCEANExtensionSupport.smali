@@ -32,10 +32,10 @@
     nop
 
     :array_0
-    .array-data 0x4
-        0x1t 0x0t 0x0t 0x0t
-        0x1t 0x0t 0x0t 0x0t
-        0x2t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x1
+        0x1
+        0x2
     .end array-data
 .end method
 
@@ -67,9 +67,9 @@
 # virtual methods
 .method decodeRow(ILcom/google/zxing/common/BitArray;I)Lcom/google/zxing/Result;
     .locals 4
-    .parameter "rowNumber"
-    .parameter "row"
-    .parameter "rowOffset"
+    .param p1, "rowNumber"    # I
+    .param p2, "row"    # Lcom/google/zxing/common/BitArray;
+    .param p3, "rowOffset"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -87,7 +87,7 @@
     move-result-object v0
 
     .line 34
-    .local v0, extensionStartRange:[I
+    .local v0, "extensionStartRange":[I
     :try_start_0
     iget-object v2, p0, Lcom/google/zxing/oned/UPCEANExtensionSupport;->fiveSupport:Lcom/google/zxing/oned/UPCEANExtension5Support;
 
@@ -106,7 +106,7 @@
     move-exception v1
 
     .line 36
-    .local v1, ignored:Lcom/google/zxing/ReaderException;
+    .local v1, "ignored":Lcom/google/zxing/ReaderException;
     iget-object v2, p0, Lcom/google/zxing/oned/UPCEANExtensionSupport;->twoSupport:Lcom/google/zxing/oned/UPCEANExtension2Support;
 
     invoke-virtual {v2, p1, p2, v0}, Lcom/google/zxing/oned/UPCEANExtension2Support;->decodeRow(ILcom/google/zxing/common/BitArray;[I)Lcom/google/zxing/Result;

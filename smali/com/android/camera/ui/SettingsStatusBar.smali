@@ -17,7 +17,7 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
     .locals 1
-    .parameter "activity"
+    .param p1, "activity"    # Landroid/app/Activity;
 
     .prologue
     .line 16
@@ -64,7 +64,7 @@
 # virtual methods
 .method protected getString(I)Ljava/lang/String;
     .locals 1
-    .parameter "resId"
+    .param p1, "resId"    # I
 
     .prologue
     .line 73
@@ -93,7 +93,7 @@
 
     const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/RestrictRotateLayout;->setVisibility(I)V
 
     .line 32
     :cond_0
@@ -118,8 +118,8 @@
 
 .method public setOrientation(IZ)V
     .locals 1
-    .parameter "orientation"
-    .parameter "animation"
+    .param p1, "orientation"    # I
+    .param p2, "animation"    # Z
 
     .prologue
     .line 78
@@ -151,7 +151,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/RestrictRotateLayout;->setVisibility(I)V
 
     .line 26
     :cond_0
@@ -160,7 +160,7 @@
 
 .method protected updateColorEffectIndicator(Ljava/lang/String;)V
     .locals 2
-    .parameter "value"
+    .param p1, "value"    # Ljava/lang/String;
 
     .prologue
     .line 60
@@ -217,7 +217,7 @@
 
 .method protected updateWhiteBalanceOnScreenIndicator(Ljava/lang/String;)V
     .locals 3
-    .parameter "value"
+    .param p1, "value"    # Ljava/lang/String;
 
     .prologue
     const/4 v2, 0x0

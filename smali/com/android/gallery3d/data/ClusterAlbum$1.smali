@@ -38,8 +38,8 @@
 # virtual methods
 .method public consume(ILcom/android/gallery3d/data/MediaItem;)V
     .locals 1
-    .parameter "index"
-    .parameter "item"
+    .param p1, "index"    # I
+    .param p2, "item"    # Lcom/android/gallery3d/data/MediaItem;
 
     .prologue
     .line 84

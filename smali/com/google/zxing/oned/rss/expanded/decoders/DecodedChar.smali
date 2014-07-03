@@ -10,8 +10,8 @@
 # direct methods
 .method constructor <init>(IC)V
     .locals 0
-    .parameter "newPosition"
-    .parameter "value"
+    .param p1, "newPosition"    # I
+    .param p2, "value"    # C
 
     .prologue
     .line 40

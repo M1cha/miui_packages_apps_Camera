@@ -33,8 +33,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/VideoCamera;Lcom/android/camera/VideoCamera$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Lcom/android/camera/VideoCamera;
+    .param p2, "x1"    # Lcom/android/camera/VideoCamera$1;
 
     .prologue
     .line 383
@@ -47,8 +47,8 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .parameter "context"
-    .parameter "intent"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
     .line 386
@@ -57,7 +57,7 @@
     move-result-object v0
 
     .line 387
-    .local v0, action:Ljava/lang/String;
+    .local v0, "action":Ljava/lang/String;
     const-string v1, "android.intent.action.MEDIA_EJECT"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -69,14 +69,14 @@
     .line 388
     iget-object v1, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
-    iget-object v1, v1, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
+    iget-object v1, v1, Lcom/android/camera/VideoCamera;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
 
     invoke-virtual {v1}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
 
     .line 389
     iget-object v1, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
-    #calls: Lcom/android/camera/VideoCamera;->stopVideoRecording()Z
+    # invokes: Lcom/android/camera/VideoCamera;->stopVideoRecording()Z
     invoke-static {v1}, Lcom/android/camera/VideoCamera;->access$1000(Lcom/android/camera/VideoCamera;)Z
 
     .line 402
@@ -97,14 +97,14 @@
     .line 391
     iget-object v1, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
-    iget-object v1, v1, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
+    iget-object v1, v1, Lcom/android/camera/VideoCamera;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
 
     invoke-virtual {v1}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
 
     .line 392
     iget-object v1, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
-    invoke-virtual {v1}, Lcom/android/camera/ActivityBase;->getLastThumbnail()V
+    invoke-virtual {v1}, Lcom/android/camera/VideoCamera;->getLastThumbnail()V
 
     goto :goto_0
 
@@ -132,7 +132,7 @@
 
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
-    invoke-virtual {v2}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v2}, Lcom/android/camera/VideoCamera;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -165,7 +165,7 @@
     .line 400
     iget-object v1, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
-    iget-object v1, v1, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
+    iget-object v1, v1, Lcom/android/camera/VideoCamera;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
 
     invoke-virtual {v1}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
 

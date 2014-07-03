@@ -38,14 +38,14 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
-    .parameter "dialog"
-    .parameter "whichButton"
+    .param p1, "dialog"    # Landroid/content/DialogInterface;
+    .param p2, "whichButton"    # I
 
     .prologue
     .line 96
     iget-object v0, p0, Lcom/android/gallery3d/ui/DialogDetailsView$1;->this$0:Lcom/android/gallery3d/ui/DialogDetailsView;
 
-    #getter for: Lcom/android/gallery3d/ui/DialogDetailsView;->mDialog:Landroid/app/Dialog;
+    # getter for: Lcom/android/gallery3d/ui/DialogDetailsView;->mDialog:Landroid/app/Dialog;
     invoke-static {v0}, Lcom/android/gallery3d/ui/DialogDetailsView;->access$000(Lcom/android/gallery3d/ui/DialogDetailsView;)Landroid/app/Dialog;
 
     move-result-object v0

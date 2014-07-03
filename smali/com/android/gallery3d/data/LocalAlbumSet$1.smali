@@ -43,7 +43,7 @@
     .line 300
     iget-object v0, p0, Lcom/android/gallery3d/data/LocalAlbumSet$1;->this$0:Lcom/android/gallery3d/data/LocalAlbumSet;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaSet;->notifyContentChanged()V
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/LocalAlbumSet;->notifyContentChanged()V
 
     .line 301
     return-void

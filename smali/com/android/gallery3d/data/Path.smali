@@ -57,8 +57,8 @@
 
 .method private constructor <init>(Lcom/android/gallery3d/data/Path;Ljava/lang/String;)V
     .locals 0
-    .parameter "parent"
-    .parameter "segment"
+    .param p1, "parent"    # Lcom/android/gallery3d/data/Path;
+    .param p2, "segment"    # Ljava/lang/String;
 
     .prologue
     .line 34
@@ -131,7 +131,7 @@
 
 .method public static split(Ljava/lang/String;)[Ljava/lang/String;
     .locals 10
-    .parameter "s"
+    .param p0, "s"    # Ljava/lang/String;
 
     .prologue
     const/16 v8, 0x2f
@@ -144,7 +144,7 @@
     move-result v4
 
     .line 122
-    .local v4, n:I
+    .local v4, "n":I
     if-nez v4, :cond_0
 
     new-array v5, v7, [Ljava/lang/String;
@@ -193,11 +193,11 @@
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
     .line 127
-    .local v6, segments:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
+    .local v6, "segments":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const/4 v2, 0x1
 
     .line 128
-    .local v2, i:I
+    .local v2, "i":I
     :goto_1
     if-ge v2, v4, :cond_7
 
@@ -205,10 +205,10 @@
     const/4 v0, 0x0
 
     .line 131
-    .local v0, brace:I
+    .local v0, "brace":I
     move v3, v2
 
-    .local v3, j:I
+    .local v3, "j":I
     :goto_2
     if-ge v3, v4, :cond_5
 
@@ -218,7 +218,7 @@
     move-result v1
 
     .line 133
-    .local v1, c:C
+    .local v1, "c":C
     const/16 v7, 0x7b
 
     if-ne v1, v7, :cond_3
@@ -249,7 +249,7 @@
     if-ne v1, v8, :cond_2
 
     .line 137
-    .end local v1           #c:C
+    .end local v1    # "c":C
     :cond_5
     if-eqz v0, :cond_6
 
@@ -293,8 +293,8 @@
     goto :goto_1
 
     .line 143
-    .end local v0           #brace:I
-    .end local v3           #j:I
+    .end local v0    # "brace":I
+    .end local v3    # "j":I
     :cond_7
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
@@ -303,7 +303,7 @@
     new-array v5, v7, [Ljava/lang/String;
 
     .line 144
-    .local v5, result:[Ljava/lang/String;
+    .local v5, "result":[Ljava/lang/String;
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     goto :goto_0
@@ -311,7 +311,7 @@
 
 .method public static splitSequence(Ljava/lang/String;)[Ljava/lang/String;
     .locals 10
-    .parameter "s"
+    .param p0, "s"    # Ljava/lang/String;
 
     .prologue
     const/16 v9, 0x7d
@@ -324,7 +324,7 @@
     move-result v4
 
     .line 152
-    .local v4, n:I
+    .local v4, "n":I
     const/4 v7, 0x0
 
     invoke-virtual {p0, v7}, Ljava/lang/String;->charAt(I)C
@@ -374,11 +374,11 @@
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
     .line 156
-    .local v6, segments:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
+    .local v6, "segments":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
     const/4 v2, 0x1
 
     .line 157
-    .local v2, i:I
+    .local v2, "i":I
     :goto_0
     add-int/lit8 v7, v4, -0x1
 
@@ -388,10 +388,10 @@
     const/4 v0, 0x0
 
     .line 160
-    .local v0, brace:I
+    .local v0, "brace":I
     move v3, v2
 
-    .local v3, j:I
+    .local v3, "j":I
     :goto_1
     add-int/lit8 v7, v4, -0x1
 
@@ -403,7 +403,7 @@
     move-result v1
 
     .line 162
-    .local v1, c:C
+    .local v1, "c":C
     if-ne v1, v8, :cond_3
 
     add-int/lit8 v0, v0, 0x1
@@ -432,7 +432,7 @@
     if-ne v1, v7, :cond_2
 
     .line 166
-    .end local v1           #c:C
+    .end local v1    # "c":C
     :cond_5
     if-eqz v0, :cond_6
 
@@ -476,8 +476,8 @@
     goto :goto_0
 
     .line 172
-    .end local v0           #brace:I
-    .end local v3           #j:I
+    .end local v0    # "brace":I
+    .end local v3    # "j":I
     :cond_7
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
@@ -486,7 +486,7 @@
     new-array v5, v7, [Ljava/lang/String;
 
     .line 173
-    .local v5, result:[Ljava/lang/String;
+    .local v5, "result":[Ljava/lang/String;
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     .line 174
@@ -497,7 +497,7 @@
 # virtual methods
 .method public getChild(I)Lcom/android/gallery3d/data/Path;
     .locals 1
-    .parameter "segment"
+    .param p1, "segment"    # I
 
     .prologue
     .line 61
@@ -514,7 +514,7 @@
 
 .method public getChild(J)Lcom/android/gallery3d/data/Path;
     .locals 1
-    .parameter "segment"
+    .param p1, "segment"    # J
 
     .prologue
     .line 65
@@ -621,7 +621,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/gallery3d/data/Path;->mObject:Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -776,7 +776,7 @@
 
     iget-object v0, p0, Lcom/android/gallery3d/data/Path;->mObject:Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 

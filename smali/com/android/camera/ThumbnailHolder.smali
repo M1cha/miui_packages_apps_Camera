@@ -69,7 +69,7 @@
 
 .method public static declared-synchronized getLastThumbnail(Landroid/content/ContentResolver;)Lcom/android/camera/Thumbnail;
     .locals 5
-    .parameter "resolver"
+    .param p0, "resolver"    # Landroid/content/ContentResolver;
 
     .prologue
     const/4 v1, 0x0
@@ -95,7 +95,7 @@
     sget-object v0, Lcom/android/camera/ThumbnailHolder;->sLastThumbnail:Lcom/android/camera/Thumbnail;
 
     .line 55
-    .local v0, t:Lcom/android/camera/Thumbnail;
+    .local v0, "t":Lcom/android/camera/Thumbnail;
     const/4 v3, 0x0
 
     sput-object v3, Lcom/android/camera/ThumbnailHolder;->sLastThumbnail:Lcom/android/camera/Thumbnail;
@@ -114,7 +114,7 @@
     if-eqz v3, :cond_0
 
     .line 61
-    .end local v0           #t:Lcom/android/camera/Thumbnail;
+    .end local v0    # "t":Lcom/android/camera/Thumbnail;
     :goto_0
     monitor-exit v2
 
@@ -136,7 +136,7 @@
 
 .method public static declared-synchronized keep(Lcom/android/camera/Thumbnail;)V
     .locals 5
-    .parameter "t"
+    .param p0, "t"    # Lcom/android/camera/Thumbnail;
 
     .prologue
     .line 69

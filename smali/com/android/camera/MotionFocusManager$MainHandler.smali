@@ -21,8 +21,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/MotionFocusManager;Landroid/os/Looper;)V
     .locals 0
-    .parameter
-    .parameter "looper"
+    .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
     .line 215
@@ -39,7 +38,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .parameter "msg"
+    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
     .line 220
@@ -55,7 +54,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/camera/MotionFocusManager$MainHandler;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #calls: Lcom/android/camera/MotionFocusManager;->deviceBecomeStable()V
+    # invokes: Lcom/android/camera/MotionFocusManager;->deviceBecomeStable()V
     invoke-static {v0}, Lcom/android/camera/MotionFocusManager;->access$1000(Lcom/android/camera/MotionFocusManager;)V
 
     goto :goto_0

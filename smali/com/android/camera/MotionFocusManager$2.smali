@@ -38,8 +38,8 @@
 # virtual methods
 .method public onAccuracyChanged(Landroid/hardware/Sensor;I)V
     .locals 0
-    .parameter "sensor"
-    .parameter "accuracy"
+    .param p1, "sensor"    # Landroid/hardware/Sensor;
+    .param p2, "accuracy"    # I
 
     .prologue
     .line 192
@@ -48,7 +48,7 @@
 
 .method public onSensorChanged(Landroid/hardware/SensorEvent;)V
     .locals 11
-    .parameter "e"
+    .param p1, "e"    # Landroid/hardware/SensorEvent;
 
     .prologue
     const/4 v10, 0x2
@@ -62,7 +62,7 @@
 
     iget-object v6, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #getter for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTimeStamp:J
+    # getter for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTimeStamp:J
     invoke-static {v6}, Lcom/android/camera/MotionFocusManager;->access$400(Lcom/android/camera/MotionFocusManager;)J
 
     move-result-wide v6
@@ -74,10 +74,10 @@
     move-result-wide v2
 
     .line 150
-    .local v2, elapseTime:J
+    .local v2, "elapseTime":J
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #getter for: Lcom/android/camera/MotionFocusManager;->mMotionFocusListener:Lcom/android/camera/MotionFocusManager$MotionFocusListener;
+    # getter for: Lcom/android/camera/MotionFocusManager;->mMotionFocusListener:Lcom/android/camera/MotionFocusManager$MotionFocusListener;
     invoke-static {v4}, Lcom/android/camera/MotionFocusManager;->access$100(Lcom/android/camera/MotionFocusManager;)Lcom/android/camera/MotionFocusManager$MotionFocusListener;
 
     move-result-object v4
@@ -103,7 +103,7 @@
     :cond_1
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #getter for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTimeStamp:J
+    # getter for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTimeStamp:J
     invoke-static {v4}, Lcom/android/camera/MotionFocusManager;->access$400(Lcom/android/camera/MotionFocusManager;)J
 
     move-result-wide v4
@@ -126,7 +126,7 @@
 
     iget-wide v5, p1, Landroid/hardware/SensorEvent;->timestamp:J
 
-    #setter for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTimeStamp:J
+    # setter for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTimeStamp:J
     invoke-static {v4, v5, v6}, Lcom/android/camera/MotionFocusManager;->access$402(Lcom/android/camera/MotionFocusManager;J)J
 
     goto :goto_0
@@ -174,12 +174,12 @@
     move-result-wide v0
 
     .line 162
-    .local v0, a:D
+    .local v0, "a":D
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
     iget-wide v5, p1, Landroid/hardware/SensorEvent;->timestamp:J
 
-    #setter for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTimeStamp:J
+    # setter for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTimeStamp:J
     invoke-static {v4, v5, v6}, Lcom/android/camera/MotionFocusManager;->access$402(Lcom/android/camera/MotionFocusManager;J)J
 
     .line 164
@@ -192,7 +192,7 @@
     .line 165
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #getter for: Lcom/android/camera/MotionFocusManager;->mDeviceStable:Z
+    # getter for: Lcom/android/camera/MotionFocusManager;->mDeviceStable:Z
     invoke-static {v4}, Lcom/android/camera/MotionFocusManager;->access$500(Lcom/android/camera/MotionFocusManager;)Z
 
     move-result v4
@@ -202,19 +202,19 @@
     .line 166
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #setter for: Lcom/android/camera/MotionFocusManager;->mDeviceStable:Z
+    # setter for: Lcom/android/camera/MotionFocusManager;->mDeviceStable:Z
     invoke-static {v4, v9}, Lcom/android/camera/MotionFocusManager;->access$502(Lcom/android/camera/MotionFocusManager;Z)Z
 
     .line 167
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #setter for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTag:I
+    # setter for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTag:I
     invoke-static {v4, v9}, Lcom/android/camera/MotionFocusManager;->access$602(Lcom/android/camera/MotionFocusManager;I)I
 
     .line 168
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #getter for: Lcom/android/camera/MotionFocusManager;->mHandler:Landroid/os/Handler;
+    # getter for: Lcom/android/camera/MotionFocusManager;->mHandler:Landroid/os/Handler;
     invoke-static {v4}, Lcom/android/camera/MotionFocusManager;->access$300(Lcom/android/camera/MotionFocusManager;)Landroid/os/Handler;
 
     move-result-object v4
@@ -224,7 +224,7 @@
     .line 169
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #calls: Lcom/android/camera/MotionFocusManager;->deviceBeginMoving()V
+    # invokes: Lcom/android/camera/MotionFocusManager;->deviceBeginMoving()V
     invoke-static {v4}, Lcom/android/camera/MotionFocusManager;->access$700(Lcom/android/camera/MotionFocusManager;)V
 
     goto :goto_0
@@ -233,7 +233,7 @@
     :cond_4
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #calls: Lcom/android/camera/MotionFocusManager;->deviceKeepMoving(D)V
+    # invokes: Lcom/android/camera/MotionFocusManager;->deviceKeepMoving(D)V
     invoke-static {v4, v0, v1}, Lcom/android/camera/MotionFocusManager;->access$800(Lcom/android/camera/MotionFocusManager;D)V
 
     goto :goto_0
@@ -242,7 +242,7 @@
     :cond_5
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #getter for: Lcom/android/camera/MotionFocusManager;->mDeviceStable:Z
+    # getter for: Lcom/android/camera/MotionFocusManager;->mDeviceStable:Z
     invoke-static {v4}, Lcom/android/camera/MotionFocusManager;->access$500(Lcom/android/camera/MotionFocusManager;)Z
 
     move-result v4
@@ -252,12 +252,13 @@
     .line 175
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
+    # += operator for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTag:I
     invoke-static {v4, v8}, Lcom/android/camera/MotionFocusManager;->access$612(Lcom/android/camera/MotionFocusManager;I)I
 
     .line 176
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #getter for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTag:I
+    # getter for: Lcom/android/camera/MotionFocusManager;->mAccelerometerTag:I
     invoke-static {v4}, Lcom/android/camera/MotionFocusManager;->access$600(Lcom/android/camera/MotionFocusManager;)I
 
     move-result v4
@@ -269,13 +270,13 @@
     .line 177
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #setter for: Lcom/android/camera/MotionFocusManager;->mDeviceStable:Z
+    # setter for: Lcom/android/camera/MotionFocusManager;->mDeviceStable:Z
     invoke-static {v4, v8}, Lcom/android/camera/MotionFocusManager;->access$502(Lcom/android/camera/MotionFocusManager;Z)Z
 
     .line 178
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #getter for: Lcom/android/camera/MotionFocusManager;->mHandler:Landroid/os/Handler;
+    # getter for: Lcom/android/camera/MotionFocusManager;->mHandler:Landroid/os/Handler;
     invoke-static {v4}, Lcom/android/camera/MotionFocusManager;->access$300(Lcom/android/camera/MotionFocusManager;)Landroid/os/Handler;
 
     move-result-object v4
@@ -289,7 +290,7 @@
     .line 179
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #getter for: Lcom/android/camera/MotionFocusManager;->mHandler:Landroid/os/Handler;
+    # getter for: Lcom/android/camera/MotionFocusManager;->mHandler:Landroid/os/Handler;
     invoke-static {v4}, Lcom/android/camera/MotionFocusManager;->access$300(Lcom/android/camera/MotionFocusManager;)Landroid/os/Handler;
 
     move-result-object v4
@@ -302,7 +303,7 @@
     :cond_6
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #getter for: Lcom/android/camera/MotionFocusManager;->mHandler:Landroid/os/Handler;
+    # getter for: Lcom/android/camera/MotionFocusManager;->mHandler:Landroid/os/Handler;
     invoke-static {v4}, Lcom/android/camera/MotionFocusManager;->access$300(Lcom/android/camera/MotionFocusManager;)Landroid/os/Handler;
 
     move-result-object v4
@@ -316,7 +317,7 @@
     .line 184
     iget-object v4, p0, Lcom/android/camera/MotionFocusManager$2;->this$0:Lcom/android/camera/MotionFocusManager;
 
-    #calls: Lcom/android/camera/MotionFocusManager;->deviceKeepStable()V
+    # invokes: Lcom/android/camera/MotionFocusManager;->deviceKeepStable()V
     invoke-static {v4}, Lcom/android/camera/MotionFocusManager;->access$900(Lcom/android/camera/MotionFocusManager;)V
 
     goto/16 :goto_0

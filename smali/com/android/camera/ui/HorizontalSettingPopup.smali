@@ -21,8 +21,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 27
@@ -41,7 +41,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/ui/HorizontalSettingPopup;)I
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/ui/HorizontalSettingPopup;
 
     .prologue
     .line 18
@@ -52,8 +52,8 @@
 
 .method static synthetic access$002(Lcom/android/camera/ui/HorizontalSettingPopup;I)I
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/camera/ui/HorizontalSettingPopup;
+    .param p1, "x1"    # I
 
     .prologue
     .line 18
@@ -69,7 +69,7 @@
     .line 113
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     iget-object v1, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mViewList:[Landroid/view/View;
 
@@ -100,39 +100,39 @@
 # virtual methods
 .method public initialize(Lcom/android/camera/IconListPreference;)V
     .locals 11
-    .parameter "preference"
+    .param p1, "preference"    # Lcom/android/camera/IconListPreference;
 
     .prologue
     .line 32
-    iput-object p1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
+    iput-object p1, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
     .line 33
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/android/camera/ui/HorizontalSettingPopup;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     .line 34
-    .local v0, context:Landroid/content/Context;
-    iget-object v8, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
+    .local v0, "context":Landroid/content/Context;
+    iget-object v8, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v8}, Lcom/android/camera/ListPreference;->getEntries()[Ljava/lang/CharSequence;
+    invoke-virtual {v8}, Lcom/android/camera/IconListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v1
 
     .line 35
-    .local v1, entries:[Ljava/lang/CharSequence;
-    iget-object v8, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
+    .local v1, "entries":[Ljava/lang/CharSequence;
+    iget-object v8, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
     invoke-virtual {v8}, Lcom/android/camera/IconListPreference;->getImageIds()[I
 
     move-result-object v3
 
     .line 36
-    .local v3, iconIds:[I
+    .local v3, "iconIds":[I
     if-nez v3, :cond_0
 
     .line 37
-    iget-object v8, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
+    iget-object v8, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
     invoke-virtual {v8}, Lcom/android/camera/IconListPreference;->getLargeIconIds()[I
 
@@ -140,16 +140,16 @@
 
     .line 39
     :cond_0
-    iget-object v8, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mTitle:Landroid/widget/TextView;
+    iget-object v8, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mTitle:Landroid/widget/TextView;
 
     if-eqz v8, :cond_1
 
     .line 40
-    iget-object v8, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mTitle:Landroid/widget/TextView;
+    iget-object v8, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mTitle:Landroid/widget/TextView;
 
-    iget-object v9, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
+    iget-object v9, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v9}, Lcom/android/camera/CameraPreference;->getTitle()Ljava/lang/String;
+    invoke-virtual {v9}, Lcom/android/camera/IconListPreference;->getTitle()Ljava/lang/String;
 
     move-result-object v9
 
@@ -173,10 +173,10 @@
     check-cast v5, Landroid/view/LayoutInflater;
 
     .line 45
-    .local v5, inflater:Landroid/view/LayoutInflater;
+    .local v5, "inflater":Landroid/view/LayoutInflater;
     const/4 v2, 0x0
 
-    .local v2, i:I
+    .local v2, "i":I
     :goto_0
     array-length v8, v1
 
@@ -194,7 +194,7 @@
     move-result-object v7
 
     .line 47
-    .local v7, v:Landroid/view/View;
+    .local v7, "v":Landroid/view/View;
     const v8, 0x7f0c0038
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -204,7 +204,7 @@
     check-cast v4, Landroid/widget/ImageView;
 
     .line 48
-    .local v4, img:Landroid/widget/ImageView;
+    .local v4, "img":Landroid/widget/ImageView;
     const v8, 0x7f0c0039
 
     invoke-virtual {v7, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -214,7 +214,7 @@
     check-cast v6, Landroid/widget/TextView;
 
     .line 49
-    .local v6, text:Landroid/widget/TextView;
+    .local v6, "text":Landroid/widget/TextView;
     aget v8, v3, v2
 
     invoke-virtual {v4, v8}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -231,7 +231,7 @@
     .line 51
     iget-object v8, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mViewContainer:Landroid/widget/LinearLayout;
 
-    invoke-virtual {v8, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {v8, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     .line 52
     new-instance v8, Ljava/lang/Integer;
@@ -256,9 +256,9 @@
     goto :goto_0
 
     .line 57
-    .end local v4           #img:Landroid/widget/ImageView;
-    .end local v6           #text:Landroid/widget/TextView;
-    .end local v7           #v:Landroid/view/View;
+    .end local v4    # "img":Landroid/widget/ImageView;
+    .end local v6    # "text":Landroid/widget/TextView;
+    .end local v7    # "v":Landroid/view/View;
     :cond_2
     invoke-virtual {p0}, Lcom/android/camera/ui/HorizontalSettingPopup;->reloadPreference()V
 
@@ -276,7 +276,7 @@
     .line 73
     const v0, 0x7f0c000b
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/HorizontalSettingPopup;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -287,7 +287,7 @@
     .line 74
     const v0, 0x7f0c000a
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/HorizontalSettingPopup;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -301,10 +301,9 @@
 
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 1
-    .parameter
-    .parameter "view"
-    .parameter "position"
-    .parameter "id"
+    .param p2, "view"    # Landroid/view/View;
+    .param p3, "position"    # I
+    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -317,17 +316,17 @@
 
     .prologue
     .line 120
-    .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
-    iget-object v0, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
+    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
+    iget-object v0, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v0, p3}, Lcom/android/camera/ListPreference;->setValueIndex(I)V
+    invoke-virtual {v0, p3}, Lcom/android/camera/IconListPreference;->setValueIndex(I)V
 
     .line 121
-    iget-object v0, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mListener:Lcom/android/camera/ui/AbstractSettingPopup$Listener;
+    iget-object v0, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mListener:Lcom/android/camera/ui/AbstractSettingPopup$Listener;
 
     if-eqz v0, :cond_0
 
-    iget-object v0, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mListener:Lcom/android/camera/ui/AbstractSettingPopup$Listener;
+    iget-object v0, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mListener:Lcom/android/camera/ui/AbstractSettingPopup$Listener;
 
     invoke-interface {v0}, Lcom/android/camera/ui/AbstractSettingPopup$Listener;->onSettingChanged()V
 
@@ -341,14 +340,14 @@
 
     .prologue
     .line 86
-    iget-object v1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
+    iget-object v1, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
     .line 87
-    .local v0, value:Ljava/lang/String;
+    .local v0, "value":Ljava/lang/String;
     const-string v1, "lomo"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -371,9 +370,9 @@
 
     .line 91
     :cond_1
-    iget-object v1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
+    iget-object v1, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1, v0}, Lcom/android/camera/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
+    invoke-virtual {v1, v0}, Lcom/android/camera/IconListPreference;->findIndexOfValue(Ljava/lang/String;)I
 
     move-result v1
 
@@ -413,9 +412,9 @@
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 98
-    iget-object v1, p0, Lcom/android/camera/ui/AbstractSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
+    iget-object v1, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1}, Lcom/android/camera/ListPreference;->print()V
+    invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->print()V
 
     goto :goto_0
 .end method
@@ -442,10 +441,10 @@
     mul-int v0, v2, v3
 
     .line 79
-    .local v0, right:I
+    .local v0, "right":I
     iget-object v2, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mHorizontalScrollView:Landroid/widget/HorizontalScrollView;
 
-    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
+    invoke-virtual {v2}, Landroid/widget/HorizontalScrollView;->getWidth()I
 
     move-result v2
 
@@ -453,18 +452,18 @@
 
     iget-object v2, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mHorizontalScrollView:Landroid/widget/HorizontalScrollView;
 
-    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
+    invoke-virtual {v2}, Landroid/widget/HorizontalScrollView;->getWidth()I
 
     move-result v2
 
     sub-int v1, v0, v2
 
     .line 81
-    .local v1, scrollValue:I
+    .local v1, "scrollValue":I
     :cond_0
     iget-object v2, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mHorizontalScrollView:Landroid/widget/HorizontalScrollView;
 
-    invoke-virtual {v2, v1}, Landroid/view/View;->setScrollX(I)V
+    invoke-virtual {v2, v1}, Landroid/widget/HorizontalScrollView;->setScrollX(I)V
 
     .line 82
     return-void
@@ -472,7 +471,7 @@
 
 .method public setOrientation(I)V
     .locals 1
-    .parameter "orientation"
+    .param p1, "orientation"    # I
 
     .prologue
     .line 127
@@ -503,27 +502,27 @@
 
 .method public setOrientation(IZ)V
     .locals 5
-    .parameter "orientation"
-    .parameter "animation"
+    .param p1, "orientation"    # I
+    .param p2, "animation"    # Z
 
     .prologue
     .line 133
     iget-object v0, p0, Lcom/android/camera/ui/HorizontalSettingPopup;->mViewList:[Landroid/view/View;
 
-    .local v0, arr$:[Landroid/view/View;
+    .local v0, "arr$":[Landroid/view/View;
     array-length v2, v0
 
-    .local v2, len$:I
+    .local v2, "len$":I
     const/4 v1, 0x0
 
-    .local v1, i$:I
+    .local v1, "i$":I
     :goto_0
     if-ge v1, v2, :cond_1
 
     aget-object v3, v0, v1
 
     .line 134
-    .local v3, v:Landroid/view/View;
+    .local v3, "v":Landroid/view/View;
     instance-of v4, v3, Lcom/android/camera/ui/PopupMenuItem;
 
     if-eqz v4, :cond_0
@@ -531,7 +530,7 @@
     .line 135
     check-cast v3, Lcom/android/camera/ui/PopupMenuItem;
 
-    .end local v3           #v:Landroid/view/View;
+    .end local v3    # "v":Landroid/view/View;
     invoke-virtual {v3, p1, p2}, Lcom/android/camera/ui/PopupMenuItem;->setOrientation(IZ)V
 
     .line 133

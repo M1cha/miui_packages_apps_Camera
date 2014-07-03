@@ -25,7 +25,7 @@
 
 .method public static measureHeightByBackground(Landroid/view/View;)I
     .locals 4
-    .parameter "view"
+    .param p0, "view"    # Landroid/view/View;
 
     .prologue
     .line 20
@@ -34,7 +34,7 @@
     move-result-object v0
 
     .line 21
-    .local v0, dr:Landroid/graphics/drawable/Drawable;
+    .local v0, "dr":Landroid/graphics/drawable/Drawable;
     if-nez v0, :cond_0
 
     .line 22
@@ -45,7 +45,7 @@
     .line 23
     check-cast p0, Landroid/widget/ImageView;
 
-    .end local p0
+    .end local p0    # "view":Landroid/view/View;
     invoke-virtual {p0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -66,8 +66,8 @@
     move-result v1
 
     .line 29
-    .local v1, height:I
-    const/high16 v2, 0x4000
+    .local v1, "height":I
+    const/high16 v2, 0x40000000
 
     invoke-static {v1, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -76,7 +76,7 @@
     return v2
 
     .line 31
-    .end local v1           #height:I
+    .end local v1    # "height":I
     :cond_1
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -89,7 +89,7 @@
 
 .method public static measureWidthByBackground(Landroid/view/View;)I
     .locals 4
-    .parameter "view"
+    .param p0, "view"    # Landroid/view/View;
 
     .prologue
     .line 36
@@ -98,7 +98,7 @@
     move-result-object v0
 
     .line 37
-    .local v0, dr:Landroid/graphics/drawable/Drawable;
+    .local v0, "dr":Landroid/graphics/drawable/Drawable;
     if-nez v0, :cond_0
 
     .line 38
@@ -109,7 +109,7 @@
     .line 39
     check-cast p0, Landroid/widget/ImageView;
 
-    .end local p0
+    .end local p0    # "view":Landroid/view/View;
     invoke-virtual {p0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -130,8 +130,8 @@
     move-result v1
 
     .line 45
-    .local v1, width:I
-    const/high16 v2, 0x4000
+    .local v1, "width":I
+    const/high16 v2, 0x40000000
 
     invoke-static {v1, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -140,7 +140,7 @@
     return v2
 
     .line 47
-    .end local v1           #width:I
+    .end local v1    # "width":I
     :cond_1
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -153,8 +153,8 @@
 
 .method public static visitAllChildViews(Landroid/view/View;Lcom/android/camera/ui/UIHelper$ViewVisitAction;)V
     .locals 4
-    .parameter "root"
-    .parameter "action"
+    .param p0, "root"    # Landroid/view/View;
+    .param p1, "action"    # Lcom/android/camera/ui/UIHelper$ViewVisitAction;
 
     .prologue
     .line 60
@@ -168,16 +168,16 @@
     check-cast v1, Landroid/view/ViewGroup;
 
     .line 62
-    .local v1, group:Landroid/view/ViewGroup;
+    .local v1, "group":Landroid/view/ViewGroup;
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
 
     .line 63
-    .local v0, count:I
+    .local v0, "count":I
     const/4 v2, 0x0
 
-    .local v2, i:I
+    .local v2, "i":I
     :goto_0
     if-ge v2, v0, :cond_0
 
@@ -194,9 +194,9 @@
     goto :goto_0
 
     .line 68
-    .end local v0           #count:I
-    .end local v1           #group:Landroid/view/ViewGroup;
-    .end local v2           #i:I
+    .end local v0    # "count":I
+    .end local v1    # "group":Landroid/view/ViewGroup;
+    .end local v2    # "i":I
     :cond_0
     invoke-interface {p1, p0}, Lcom/android/camera/ui/UIHelper$ViewVisitAction;->visit(Landroid/view/View;)V
 

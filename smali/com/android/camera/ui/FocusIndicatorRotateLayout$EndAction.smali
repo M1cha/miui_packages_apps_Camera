@@ -36,8 +36,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/ui/FocusIndicatorRotateLayout;Lcom/android/camera/ui/FocusIndicatorRotateLayout$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Lcom/android/camera/ui/FocusIndicatorRotateLayout;
+    .param p2, "x1"    # Lcom/android/camera/ui/FocusIndicatorRotateLayout$1;
 
     .prologue
     .line 82
@@ -57,14 +57,14 @@
 
     iget-object v1, p0, Lcom/android/camera/ui/FocusIndicatorRotateLayout$EndAction;->this$0:Lcom/android/camera/ui/FocusIndicatorRotateLayout;
 
-    #getter for: Lcom/android/camera/ui/FocusIndicatorRotateLayout;->mDisappear:Ljava/lang/Runnable;
+    # getter for: Lcom/android/camera/ui/FocusIndicatorRotateLayout;->mDisappear:Ljava/lang/Runnable;
     invoke-static {v1}, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->access$200(Lcom/android/camera/ui/FocusIndicatorRotateLayout;)Ljava/lang/Runnable;
 
     move-result-object v1
 
     const-wide/16 v2, 0x64
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 87
     return-void

@@ -36,8 +36,8 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/ui/GestureRecognizer;Lcom/android/gallery3d/ui/GestureRecognizer$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Lcom/android/gallery3d/ui/GestureRecognizer;
+    .param p2, "x1"    # Lcom/android/gallery3d/ui/GestureRecognizer$1;
 
     .prologue
     .line 126
@@ -50,13 +50,13 @@
 # virtual methods
 .method public onDown(Landroid/view/MotionEvent;)V
     .locals 3
-    .parameter "e"
+    .param p1, "e"    # Landroid/view/MotionEvent;
 
     .prologue
     .line 129
     iget-object v0, p0, Lcom/android/gallery3d/ui/GestureRecognizer$MyDownUpListener;->this$0:Lcom/android/gallery3d/ui/GestureRecognizer;
 
-    #getter for: Lcom/android/gallery3d/ui/GestureRecognizer;->mListener:Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
+    # getter for: Lcom/android/gallery3d/ui/GestureRecognizer;->mListener:Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
     invoke-static {v0}, Lcom/android/gallery3d/ui/GestureRecognizer;->access$300(Lcom/android/gallery3d/ui/GestureRecognizer;)Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
 
     move-result-object v0
@@ -77,13 +77,13 @@
 
 .method public onUp(Landroid/view/MotionEvent;)V
     .locals 1
-    .parameter "e"
+    .param p1, "e"    # Landroid/view/MotionEvent;
 
     .prologue
     .line 134
     iget-object v0, p0, Lcom/android/gallery3d/ui/GestureRecognizer$MyDownUpListener;->this$0:Lcom/android/gallery3d/ui/GestureRecognizer;
 
-    #getter for: Lcom/android/gallery3d/ui/GestureRecognizer;->mListener:Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
+    # getter for: Lcom/android/gallery3d/ui/GestureRecognizer;->mListener:Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
     invoke-static {v0}, Lcom/android/gallery3d/ui/GestureRecognizer;->access$300(Lcom/android/gallery3d/ui/GestureRecognizer;)Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
 
     move-result-object v0

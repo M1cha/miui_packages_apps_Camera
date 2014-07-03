@@ -38,14 +38,14 @@
 # virtual methods
 .method public onLoadComplete(Landroid/media/SoundPool;II)V
     .locals 7
-    .parameter "soundPool"
-    .parameter "sampleId"
-    .parameter "status"
+    .param p1, "soundPool"    # Landroid/media/SoundPool;
+    .param p2, "sampleId"    # I
+    .param p3, "status"    # I
 
     .prologue
     const/4 v4, 0x0
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     .line 102
     if-nez p3, :cond_1
@@ -53,7 +53,7 @@
     .line 103
     iget-object v0, p0, Lcom/android/camera/MiuiCameraSound$1;->this$0:Lcom/android/camera/MiuiCameraSound;
 
-    #getter for: Lcom/android/camera/MiuiCameraSound;->mSoundIdToPlay:I
+    # getter for: Lcom/android/camera/MiuiCameraSound;->mSoundIdToPlay:I
     invoke-static {v0}, Lcom/android/camera/MiuiCameraSound;->access$000(Lcom/android/camera/MiuiCameraSound;)I
 
     move-result v0
@@ -78,7 +78,7 @@
 
     const/4 v1, -0x1
 
-    #setter for: Lcom/android/camera/MiuiCameraSound;->mSoundIdToPlay:I
+    # setter for: Lcom/android/camera/MiuiCameraSound;->mSoundIdToPlay:I
     invoke-static {v0, v1}, Lcom/android/camera/MiuiCameraSound;->access$002(Lcom/android/camera/MiuiCameraSound;I)I
 
     .line 111

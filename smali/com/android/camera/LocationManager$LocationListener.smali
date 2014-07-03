@@ -30,8 +30,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/LocationManager;Ljava/lang/String;)V
     .locals 2
-    .parameter
-    .parameter "provider"
+    .param p2, "provider"    # Ljava/lang/String;
 
     .prologue
     .line 140
@@ -84,7 +83,7 @@
 
 .method public onLocationChanged(Landroid/location/Location;)V
     .locals 5
-    .parameter "newLocation"
+    .param p1, "newLocation"    # Landroid/location/Location;
 
     .prologue
     const/4 v4, 0x1
@@ -116,7 +115,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/camera/LocationManager$LocationListener;->this$0:Lcom/android/camera/LocationManager;
 
-    #getter for: Lcom/android/camera/LocationManager;->mListener:Lcom/android/camera/LocationManager$Listener;
+    # getter for: Lcom/android/camera/LocationManager;->mListener:Lcom/android/camera/LocationManager$Listener;
     invoke-static {v0}, Lcom/android/camera/LocationManager;->access$000(Lcom/android/camera/LocationManager;)Lcom/android/camera/LocationManager$Listener;
 
     move-result-object v0
@@ -125,7 +124,7 @@
 
     iget-object v0, p0, Lcom/android/camera/LocationManager$LocationListener;->this$0:Lcom/android/camera/LocationManager;
 
-    #getter for: Lcom/android/camera/LocationManager;->mRecordLocation:Z
+    # getter for: Lcom/android/camera/LocationManager;->mRecordLocation:Z
     invoke-static {v0}, Lcom/android/camera/LocationManager;->access$100(Lcom/android/camera/LocationManager;)Z
 
     move-result v0
@@ -145,7 +144,7 @@
     .line 156
     iget-object v0, p0, Lcom/android/camera/LocationManager$LocationListener;->this$0:Lcom/android/camera/LocationManager;
 
-    #getter for: Lcom/android/camera/LocationManager;->mListener:Lcom/android/camera/LocationManager$Listener;
+    # getter for: Lcom/android/camera/LocationManager;->mListener:Lcom/android/camera/LocationManager$Listener;
     invoke-static {v0}, Lcom/android/camera/LocationManager;->access$000(Lcom/android/camera/LocationManager;)Lcom/android/camera/LocationManager$Listener;
 
     move-result-object v0
@@ -179,7 +178,7 @@
 
 .method public onProviderDisabled(Ljava/lang/String;)V
     .locals 1
-    .parameter "provider"
+    .param p1, "provider"    # Ljava/lang/String;
 
     .prologue
     .line 171
@@ -193,7 +192,7 @@
 
 .method public onProviderEnabled(Ljava/lang/String;)V
     .locals 0
-    .parameter "provider"
+    .param p1, "provider"    # Ljava/lang/String;
 
     .prologue
     .line 167
@@ -202,9 +201,9 @@
 
 .method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
     .locals 2
-    .parameter "provider"
-    .parameter "status"
-    .parameter "extras"
+    .param p1, "provider"    # Ljava/lang/String;
+    .param p2, "status"    # I
+    .param p3, "extras"    # Landroid/os/Bundle;
 
     .prologue
     const/4 v1, 0x0
@@ -224,7 +223,7 @@
     .line 181
     iget-object v0, p0, Lcom/android/camera/LocationManager$LocationListener;->this$0:Lcom/android/camera/LocationManager;
 
-    #getter for: Lcom/android/camera/LocationManager;->mListener:Lcom/android/camera/LocationManager$Listener;
+    # getter for: Lcom/android/camera/LocationManager;->mListener:Lcom/android/camera/LocationManager$Listener;
     invoke-static {v0}, Lcom/android/camera/LocationManager;->access$000(Lcom/android/camera/LocationManager;)Lcom/android/camera/LocationManager$Listener;
 
     move-result-object v0
@@ -233,7 +232,7 @@
 
     iget-object v0, p0, Lcom/android/camera/LocationManager$LocationListener;->this$0:Lcom/android/camera/LocationManager;
 
-    #getter for: Lcom/android/camera/LocationManager;->mRecordLocation:Z
+    # getter for: Lcom/android/camera/LocationManager;->mRecordLocation:Z
     invoke-static {v0}, Lcom/android/camera/LocationManager;->access$100(Lcom/android/camera/LocationManager;)Z
 
     move-result v0
@@ -251,7 +250,7 @@
     .line 183
     iget-object v0, p0, Lcom/android/camera/LocationManager$LocationListener;->this$0:Lcom/android/camera/LocationManager;
 
-    #getter for: Lcom/android/camera/LocationManager;->mListener:Lcom/android/camera/LocationManager$Listener;
+    # getter for: Lcom/android/camera/LocationManager;->mListener:Lcom/android/camera/LocationManager$Listener;
     invoke-static {v0}, Lcom/android/camera/LocationManager;->access$000(Lcom/android/camera/LocationManager;)Lcom/android/camera/LocationManager$Listener;
 
     move-result-object v0

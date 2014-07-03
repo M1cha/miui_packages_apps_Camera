@@ -63,24 +63,24 @@
     nop
 
     :array_0
-    .array-data 0x4
-        0x0t 0x0t 0x2t 0x7ft
-        0x1t 0x0t 0x2t 0x7ft
-        0x3t 0x0t 0x2t 0x7ft
-        0x4t 0x0t 0x2t 0x7ft
-        0x5t 0x0t 0x2t 0x7ft
-        0x6t 0x0t 0x2t 0x7ft
-        0x7t 0x0t 0x2t 0x7ft
-        0x8t 0x0t 0x2t 0x7ft
-        0x9t 0x0t 0x2t 0x7ft
-        0xat 0x0t 0x2t 0x7ft
-        0x2t 0x0t 0x2t 0x7ft
+    .array-data 4
+        0x7f020000
+        0x7f020001
+        0x7f020003
+        0x7f020004
+        0x7f020005
+        0x7f020006
+        0x7f020007
+        0x7f020008
+        0x7f020009
+        0x7f02000a
+        0x7f020002
     .end array-data
 .end method
 
 .method public constructor <init>(Lcom/android/camera/AudioCapture$Callback;)V
     .locals 1
-    .parameter "callback"
+    .param p1, "callback"    # Lcom/android/camera/AudioCapture$Callback;
 
     .prologue
     const/4 v0, 0x0
@@ -120,7 +120,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/AudioCapture;)Z
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/AudioCapture;
 
     .prologue
     .line 6
@@ -131,7 +131,7 @@
 
 .method static synthetic access$100(Lcom/android/camera/AudioCapture;)I
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/AudioCapture;
 
     .prologue
     .line 6
@@ -152,8 +152,8 @@
 
 .method static synthetic access$300(Lcom/android/camera/AudioCapture;I)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/camera/AudioCapture;
+    .param p1, "x1"    # I
 
     .prologue
     .line 6
@@ -164,7 +164,7 @@
 
 .method private updateShutterButton(I)V
     .locals 2
-    .parameter "resId"
+    .param p1, "resId"    # I
 
     .prologue
     .line 47
@@ -175,7 +175,7 @@
     move-result-object v0
 
     .line 48
-    .local v0, button:Lcom/android/camera/ShutterButton;
+    .local v0, "button":Lcom/android/camera/ShutterButton;
     if-eqz v0, :cond_0
 
     .line 49
@@ -190,7 +190,7 @@
 # virtual methods
 .method public heard(I)V
     .locals 2
-    .parameter "finishAmplitude"
+    .param p1, "finishAmplitude"    # I
 
     .prologue
     .line 101
@@ -318,7 +318,7 @@
     invoke-interface {v1, v0}, Lcom/android/camera/AudioCapture$Callback;->setAudioCaptureICPressed(Z)V
 
     .line 70
-    const/high16 v1, 0x7f02
+    const/high16 v1, 0x7f020000
 
     invoke-direct {p0, v1}, Lcom/android/camera/AudioCapture;->updateShutterButton(I)V
 

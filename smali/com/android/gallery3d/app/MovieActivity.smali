@@ -26,7 +26,7 @@
 
 .method static synthetic access$000(Lcom/android/gallery3d/app/MovieActivity;)Z
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/MovieActivity;
 
     .prologue
     .line 51
@@ -37,7 +37,7 @@
 
 .method private initializeActionBar(Landroid/content/Intent;)V
     .locals 11
-    .parameter "intent"
+    .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
     const/4 v5, 0x4
@@ -54,12 +54,12 @@
     iput-object v3, p0, Lcom/android/gallery3d/app/MovieActivity;->mUri:Landroid/net/Uri;
 
     .line 109
-    invoke-virtual {p0}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/MovieActivity;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object v8
 
     .line 110
-    .local v8, actionBar:Landroid/app/ActionBar;
+    .local v8, "actionBar":Landroid/app/ActionBar;
     const-string v3, "logo-bitmap"
 
     invoke-virtual {p1, v3}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -69,13 +69,13 @@
     check-cast v9, Landroid/graphics/Bitmap;
 
     .line 111
-    .local v9, logo:Landroid/graphics/Bitmap;
+    .local v9, "logo":Landroid/graphics/Bitmap;
     if-eqz v9, :cond_0
 
     .line 112
     new-instance v3, Landroid/graphics/drawable/BitmapDrawable;
 
-    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/MovieActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
@@ -95,7 +95,7 @@
     move-result-object v10
 
     .line 118
-    .local v10, title:Ljava/lang/String;
+    .local v10, "title":Ljava/lang/String;
     if-eqz v10, :cond_1
 
     .line 119
@@ -109,14 +109,14 @@
     :cond_1
     new-instance v0, Lcom/android/gallery3d/app/MovieActivity$2;
 
-    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/MovieActivity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v3
 
     invoke-direct {v0, p0, v3, v8}, Lcom/android/gallery3d/app/MovieActivity$2;-><init>(Lcom/android/gallery3d/app/MovieActivity;Landroid/content/ContentResolver;Landroid/app/ActionBar;)V
 
     .line 142
-    .local v0, queryHandler:Landroid/content/AsyncQueryHandler;
+    .local v0, "queryHandler":Landroid/content/AsyncQueryHandler;
     iget-object v3, p0, Lcom/android/gallery3d/app/MovieActivity;->mUri:Landroid/net/Uri;
 
     const/4 v4, 0x1
@@ -142,7 +142,7 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 11
-    .parameter "savedInstanceState"
+    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     const/4 v6, 0x1
@@ -155,38 +155,38 @@
     .line 66
     const/16 v0, 0x8
 
-    invoke-virtual {p0, v0}, Landroid/app/Activity;->requestWindowFeature(I)Z
+    invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/MovieActivity;->requestWindowFeature(I)Z
 
     .line 67
     const/16 v0, 0x9
 
-    invoke-virtual {p0, v0}, Landroid/app/Activity;->requestWindowFeature(I)Z
+    invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/MovieActivity;->requestWindowFeature(I)Z
 
     .line 69
     const v0, 0x7f040017
 
-    invoke-virtual {p0, v0}, Landroid/app/Activity;->setContentView(I)V
+    invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/MovieActivity;->setContentView(I)V
 
     .line 70
     const v0, 0x7f0c0047
 
-    invoke-virtual {p0, v0}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/MovieActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
     .line 71
-    .local v2, rootView:Landroid/view/View;
+    .local v2, "rootView":Landroid/view/View;
     const/16 v0, 0x700
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
 
     .line 74
-    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/MovieActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v7
 
     .line 75
-    .local v7, intent:Landroid/content/Intent;
+    .local v7, "intent":Landroid/content/Intent;
     invoke-direct {p0, v7}, Lcom/android/gallery3d/app/MovieActivity;->initializeActionBar(Landroid/content/Intent;)V
 
     .line 76
@@ -248,31 +248,31 @@
     move-result v8
 
     .line 92
-    .local v8, orientation:I
-    invoke-virtual {p0}, Landroid/app/Activity;->getRequestedOrientation()I
+    .local v8, "orientation":I
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/MovieActivity;->getRequestedOrientation()I
 
     move-result v0
 
     if-eq v8, v0, :cond_0
 
     .line 93
-    invoke-virtual {p0, v8}, Landroid/app/Activity;->setRequestedOrientation(I)V
+    invoke-virtual {p0, v8}, Lcom/android/gallery3d/app/MovieActivity;->setRequestedOrientation(I)V
 
     .line 96
-    .end local v8           #orientation:I
+    .end local v8    # "orientation":I
     :cond_0
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/MovieActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v9
 
     .line 97
-    .local v9, win:Landroid/view/Window;
+    .local v9, "win":Landroid/view/Window;
     invoke-virtual {v9}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v10
 
     .line 98
-    .local v10, winParams:Landroid/view/WindowManager$LayoutParams;
+    .local v10, "winParams":Landroid/view/WindowManager$LayoutParams;
     const/4 v0, 0x0
 
     iput v0, v10, Landroid/view/WindowManager$LayoutParams;->buttonBrightness:F
@@ -295,8 +295,8 @@
     .line 105
     return-void
 
-    .end local v9           #win:Landroid/view/Window;
-    .end local v10           #winParams:Landroid/view/WindowManager$LayoutParams;
+    .end local v9    # "win":Landroid/view/Window;
+    .end local v10    # "winParams":Landroid/view/WindowManager$LayoutParams;
     :cond_1
     move v6, v1
 
@@ -306,18 +306,18 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;)Z
     .locals 4
-    .parameter "menu"
+    .param p1, "menu"    # Landroid/view/Menu;
 
     .prologue
     .line 150
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreateOptionsMenu(Landroid/view/Menu;)Z
 
     .line 152
-    invoke-virtual {p0}, Landroid/app/Activity;->getMenuInflater()Landroid/view/MenuInflater;
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/MovieActivity;->getMenuInflater()Landroid/view/MenuInflater;
 
     move-result-object v2
 
-    const/high16 v3, 0x7f10
+    const/high16 v3, 0x7f100000
 
     invoke-virtual {v2, v3, p1}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
@@ -327,7 +327,7 @@
     move-result-object v1
 
     .line 157
-    .local v1, provider:Landroid/widget/ShareActionProvider;
+    .local v1, "provider":Landroid/widget/ShareActionProvider;
     if-eqz v1, :cond_0
 
     const-string v2, "content"
@@ -352,7 +352,7 @@
     invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 160
-    .local v0, intent:Landroid/content/Intent;
+    .local v0, "intent":Landroid/content/Intent;
     const-string v2, "video/*"
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
@@ -368,7 +368,7 @@
     invoke-virtual {v1, v0}, Landroid/widget/ShareActionProvider;->setShareIntent(Landroid/content/Intent;)V
 
     .line 165
-    .end local v0           #intent:Landroid/content/Intent;
+    .end local v0    # "intent":Landroid/content/Intent;
     :cond_0
     const/4 v2, 0x1
 
@@ -393,8 +393,8 @@
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z
     .locals 1
-    .parameter "keyCode"
-    .parameter "event"
+    .param p1, "keyCode"    # I
+    .param p2, "event"    # Landroid/view/KeyEvent;
 
     .prologue
     .line 225
@@ -426,8 +426,8 @@
 
 .method public onKeyUp(ILandroid/view/KeyEvent;)Z
     .locals 1
-    .parameter "keyCode"
-    .parameter "event"
+    .param p1, "keyCode"    # I
+    .param p2, "event"    # Landroid/view/KeyEvent;
 
     .prologue
     .line 231
@@ -459,7 +459,7 @@
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .locals 1
-    .parameter "item"
+    .param p1, "item"    # Landroid/view/MenuItem;
 
     .prologue
     .line 181
@@ -502,7 +502,7 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 1
-    .parameter "outState"
+    .param p1, "outState"    # Landroid/os/Bundle;
 
     .prologue
     .line 213
@@ -524,7 +524,7 @@
     .line 186
     const-string v0, "audio"
 
-    invoke-virtual {p0, v0}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/MovieActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -552,7 +552,7 @@
     .line 194
     const-string v0, "audio"
 
-    invoke-virtual {p0, v0}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lcom/android/gallery3d/app/MovieActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 

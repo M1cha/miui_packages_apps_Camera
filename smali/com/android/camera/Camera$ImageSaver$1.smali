@@ -45,7 +45,7 @@
 
     iget-object v0, v0, Lcom/android/camera/Camera$ImageSaver;->this$0:Lcom/android/camera/Camera;
 
-    iget-object v0, v0, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
+    iget-object v0, v0, Lcom/android/camera/Camera;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
 
     invoke-virtual {v0}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
 

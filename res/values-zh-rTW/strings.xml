@@ -16,9 +16,9 @@
     <string name="confirm_change_mode_title">切換模式</string>
     <string name="confirm_change_to_expert_mode_message">立即切換到專家模式？</string>
     <string name="confirm_change_to_simple_mode_message">立即切換到簡單模式？</string>
-    <string name="confirm_location_message">在照片中保存拍照時的地理位置訊息？</string>
-    <string name="save">儲存</string>
-    <string name="no_save">不儲存</string>
+    <string name="confirm_location_message">在照片中保存拍照時的地理位置資訊？</string>
+    <string name="save">保存</string>
+    <string name="no_save">不保存</string>
     <string name="review_cancel">取消</string>
     <string name="pref_camera_id_title">選擇相機</string>
     <string name="pref_camera_recordlocation_title">儲存地理位置資訊</string>
@@ -53,13 +53,13 @@
     <string name="pref_camera_settings_category">相機設定</string>
     <string name="pref_camcorder_settings_category">錄影機設定</string>
     <string name="pref_camera_picturesize_title">照片大小</string>
-    <string name="pref_camera_picturesize_title_simple_mode">照片比例</string>
-    <string name="pref_camera_picturesize_entry_4208x3120">標準 4:3</string>
-    <string name="pref_camera_picturesize_entry_4208x2368">全螢幕 16:9</string>
-    <string name="pref_camera_picturesize_entry_3200x2400">標準 4:3</string>
-    <string name="pref_camera_picturesize_entry_3200x1800">全螢幕 16:9</string>
-    <string name="pref_camera_picturesize_entry_1920x1080">200萬</string>
-    <string name="pref_camera_picturesize_entry_1280x720">90萬</string>
+    <string name="pref_camera_picturesize_title_simple_mode">拍照比例</string>
+    <string name="pref_camera_picturesize_entry_4208x3120">1300萬（4208x3120）</string>
+    <string name="pref_camera_picturesize_entry_4208x2368">1000萬（4208x2368）</string>
+    <string name="pref_camera_picturesize_entry_3200x2400">800萬（3200x2400）</string>
+    <string name="pref_camera_picturesize_entry_3200x1800">600萬（3200x1800）</string>
+    <string name="pref_camera_picturesize_entry_1920x1080">200萬（1920x1080）</string>
+    <string name="pref_camera_picturesize_entry_1280x720">90萬（1280x720）</string>
     <string name="pref_camera_picturesize_professional_entry_4208x3120">1300萬（4208x3120）</string>
     <string name="pref_camera_picturesize_professional_entry_4208x2368">1000萬（4208x2368）</string>
     <string name="pref_camera_picturesize_professional_entry_3200x2400">800萬（3264x2448）</string>
@@ -102,7 +102,7 @@
     <string name="pref_camera_coloreffect_entry_sepia">懷舊</string>
     <string name="pref_camera_coloreffect_entry_negative">負片</string>
     <string name="pref_camera_coloreffect_entry_posterize">色調分離</string>
-    <string name="pref_camera_coloreffect_entry_aqua">淺綠色</string>
+    <string name="pref_camera_coloreffect_entry_aqua">淺藍色</string>
     <string name="pref_camera_touchafaec_title">觸控對焦</string>
     <string name="pref_camera_touchafaec_entry_off">關</string>
     <string name="pref_camera_touchafaec_entry_on">開</string>
@@ -155,7 +155,7 @@
     <string name="pref_camera_scenemode_entry_flowers">花卉</string>
     <string name="pref_camera_scenedetect_title">場景檢測</string>
     <string name="not_selectable_in_scene_mode">無法在場景模式下選擇。</string>
-    <string name="pref_exposure_title">曝光</string>
+    <string name="pref_exposure_title">曝光補償</string>
     <string name="pref_camera_denoise_title">小波降噪</string>
     <string name="pref_camera_iso_title">感光度</string>
     <string name="pref_camera_iso_entry_auto">自動</string>
@@ -163,14 +163,14 @@
     <string name="pref_camera_preview_entry_1000">1秒</string>
     <string name="pref_camera_preview_entry_2000">2秒</string>
     <string name="pref_camera_preview_entry_5000">5秒</string>
-    <string name="pref_camera_antibanding_title">減少閃爍</string>
+    <string name="pref_camera_antibanding_title">防止閃爍</string>
     <string name="pref_camera_antibanding_entry_0">關閉</string>
     <string name="pref_camera_antibanding_entry_1">50 Hz</string>
     <string name="pref_camera_antibanding_entry_2">60 Hz</string>
     <string name="pref_camera_antibanding_entry_3">自動</string>
     <string name="dialog_ok">確定</string>
     <string name="spaceIsLow_content">USB 存放裝置空間不足，請刪除某些照片或者其他檔案。</string>
-    <string name="video_reach_size_limit">已達到大小上限。</string>
+    <string name="video_reach_size_limit">已達到大小上限</string>
     <string name="pref_camera_hfr_title">高速錄影（慢動作）</string>
     <string name="pref_camera_hfr_entry_off">關</string>
     <string name="pref_camera_hfr_entry_2x">2倍速慢動作</string>
@@ -185,7 +185,7 @@
     <string name="pano_how_to_use_prompt_to_move">拍攝中，請水準均速移動手機</string>
     <string name="pano_how_to_use_prompt_go_on_moving">繼續均速移動手機</string>
     <string name="pano_dialog_prepare_preview">正在產生全景圖</string>
-    <string name="pano_dialog_panorama_failed">無法儲存全景照片。</string>
+    <string name="pano_dialog_panorama_failed">無法儲存全景照片</string>
     <string name="pano_dialog_title">全景圖</string>
     <string name="pref_camera_panoramamode_title">全景</string>
     <string name="pano_review_saving_indication_str">正在儲存...</string>
@@ -219,6 +219,7 @@
     <string name="accessibility_switch_to_front_view">切換到前視相機</string>
     <string name="accessibility_switch_to_back_view">切換到後視相機</string>
     <string name="accessibility_zoom_control">縮放控制項</string>
+    <string name="accessibility_camera_picker">前置和後置相機開關</string>
     <string name="accessibilit_camera_video_switch_picker_and_state">相機和攝像機切換開關,當前處于%s</string>
     <string name="accessibility_camera_flashmode">總是閃光模式</string>
     <string name="accessibility_camera_auto_flashmode">自動閃光模式</string>
@@ -312,8 +313,10 @@
     <string name="cancel">取消</string>
     <string name="set_as">設定為</string>
     <string name="exposure_time">曝光時間</string>
+    <string name="white_balance">白平衡</string>
     <string name="focal_length">焦距</string>
     <string name="aperture">光圈</string>
+    <string name="flash">閃光燈</string>
     <string name="duration">時長</string>
     <string name="file_size">文件大小</string>
     <string name="height">高度</string>
@@ -344,15 +347,15 @@
     <string name="find_other_qrcode">發現二維碼</string>
     <string name="find_qq_qrcode">發現QQ二維碼</string>
     <string name="find_wifi_qrcode">發現WLAN二維碼</string>
-    <string name="see_qrcode_detals">查看詳情</string>
+    <string name="see_qrcode_detals">檢視資訊</string>
     <string name="scan_qrcode">掃描二維碼</string>
     <string name="app_details">應用詳情：</string>
-    <string name="website_details">網址詳情：</string>
+    <string name="website_details">網址詳細資訊：</string>
     <string name="contact_details">聯繫人詳情：</string>
     <string name="wechat_details">微信詳情：</string>
     <string name="qr_code_details">二維碼詳情：</string>
     <string name="import_contact">導入聯繫人</string>
-    <string name="secure_access_web_url">安全訪問</string>
+    <string name="secure_access_web_url">安全瀏覽</string>
     <string name="download_by_browser">用瀏覽器下載</string>
     <string name="launch_market">啟動應用商店</string>
     <string name="launch_wechat">啟動微信</string>
@@ -371,7 +374,7 @@
     <string name="contact_birthday">生日</string>
     <string name="contact_note">備註</string>
     <string name="success_message_import_from_account">導入完成</string>
-    <string name="web_url_warning">二維碼網址可能存在風險，MIUI瀏覽器會為您安全掃描，請放心訪問</string>
+    <string name="web_url_warning">二維碼網址可能存在風險，MIUI瀏覽器會為您安全掃描，請放心瀏覽</string>
     <string name="web_url_apk_warning">二維碼包含應用下載，可能存在風險，建議您使用應用商店尋找并安裝應用</string>
     <string name="wifi_ssid">接入點SSID：</string>
     <string name="wifi_pwd">密碼：</string>
@@ -394,7 +397,185 @@
     <string name="pref_camera_watermark_title">時間水印</string>
     <string name="pref_camera_watermark_entry_off">關</string>
     <string name="pref_camera_watermark_entry_on">開</string>
-    <string name="pref_camera_picturesize_entry_1024x768">80萬</string>
+    <string name="pref_camera_referenceline_title">參考線</string>
+    <string name="pref_camera_multiple_face_beauty_title">美顏模式</string>
+    <string name="pref_camera_multiple_face_beauty_entry_off">單人美顏</string>
+    <string name="pref_camera_multiple_face_beauty_entry_on">雙人美顏</string>
+    <string name="toast_cannot_preview_image_when_screen_locked">鎖屏狀態下不可查看照片或視頻</string>
+    <string name="pref_camera_picturesize_entry_standard">標準 4:3</string>
+    <string name="pref_scan_qrcode_title">掃描二維碼</string>
+    <string name="pref_scan_qrcode_entry_off">關</string>
+    <string name="pref_scan_qrcode_entry_on">開</string>
     <string name="pref_camera_id_entry_back">後置相機</string>
     <string name="pref_camera_id_entry_front">前置相機</string>
+    <string name="pref_camera_picturesize_entry_1024x768">80萬（1024x768）</string>
+    <string name="pref_camera_picturesize_entry_2592x1936">500萬（2592x1936）</string>
+    <string name="pref_camera_picturesize_entry_2048x1536">300萬（2048x1536）</string>
+    <string name="pref_camera_picturesize_entry_1600x1200">200萬（1600x1200）</string>
+    <string name="pref_camera_picturesize_entry_1280x960">130萬（1280x960）</string>
+    <string name="pref_camera_picturesize_entry_2592x1456">400萬（2592x1456）</string>
+    <string name="pref_camera_picturesize_entry_2592x1944">500萬（2592x1944）</string>
+    <string name="pref_camera_coloreffect_entry_sketch">素描</string>
+    <string name="pref_camera_coloreffect_entry_mosaic">馬賽克</string>
+    <item type="string" name="APKTOOL_DUMMY_0236">false</item>
+    <string name="pref_camera_picturesize_entry_fullscreen">全螢幕 16:9</string>
+    <item type="string" name="APKTOOL_DUMMY_0239">false</item>
+    <item type="string" name="APKTOOL_DUMMY_023a">false</item>
+    <item type="string" name="APKTOOL_DUMMY_023b">false</item>
+    <item type="string" name="APKTOOL_DUMMY_023c">false</item>
+    <item type="string" name="APKTOOL_DUMMY_023d">false</item>
+    <item type="string" name="APKTOOL_DUMMY_023e">false</item>
+    <item type="string" name="APKTOOL_DUMMY_023f">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0240">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0241">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0242">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0243">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0244">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0245">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0246">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0247">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0248">false</item>
+    <string name="pref_camera_jpegquality_entry_high">高</string>
+    <string name="pref_camera_jpegquality_entry_low">低</string>
+    <string name="pref_camera_focusmode_entry_manual">手動</string>
+    <string name="pref_camera_focusmode_entry_lock">鎖定</string>
+    <string name="pref_camera_whitebalance_entry_manual">手動</string>
+    <string name="pref_camera_whitebalance_entry_measure">測量</string>
+    <item type="string" name="APKTOOL_DUMMY_024f">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0250">false</item>
+    <string name="pref_camera_multilevel_entry_lowest">最低</string>
+    <string name="pref_camera_multilevel_entry_lower">更低</string>
+    <string name="pref_camera_multilevel_entry_low">低</string>
+    <string name="pref_camera_multilevel_entry_normal">標準</string>
+    <string name="pref_camera_multilevel_entry_high">高</string>
+    <string name="pref_camera_multilevel_entry_higher">更高</string>
+    <string name="pref_camera_multilevel_entry_highest">最高</string>
+    <string name="pref_camera_multilevel_entry_middle">中（預設）</string>
+    <item type="string" name="APKTOOL_DUMMY_0259">false</item>
+    <item type="string" name="APKTOOL_DUMMY_025a">false</item>
+    <item type="string" name="APKTOOL_DUMMY_025b">false</item>
+    <item type="string" name="APKTOOL_DUMMY_025c">false</item>
+    <item type="string" name="APKTOOL_DUMMY_025d">false</item>
+    <string name="raw_data_exit_button_text">退出RAW模式</string>
+    <item type="string" name="APKTOOL_DUMMY_0260">false</item>
+    <string name="pref_camera_volumekey_function_entry_zoom">變焦</string>
+    <string name="pref_camera_volumekey_function_entry_exposure">曝光補償</string>
+    <item type="string" name="APKTOOL_DUMMY_0263">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0264">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0265">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0266">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0267">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0268">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0269">false</item>
+    <item type="string" name="APKTOOL_DUMMY_026a">false</item>
+    <item type="string" name="APKTOOL_DUMMY_026e">false</item>
+    <item type="string" name="APKTOOL_DUMMY_026f">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0270">false</item>
+    <string name="pref_manual_exposure_title">手動曝光</string>
+    <string name="pref_camera_exposuretime_title">快門時間</string>
+    <item type="string" name="APKTOOL_DUMMY_0273">false</item>
+    <string name="pref_camera_exposuretime_entry_auto">自動</string>
+    <string name="pref_camera_exposuretime_entry_0.5">2秒</string>
+    <string name="pref_camera_exposuretime_entry_1">1秒</string>
+    <string name="pref_camera_exposuretime_entry_2">1/2秒</string>
+    <string name="pref_camera_exposuretime_entry_4">1/4秒</string>
+    <string name="pref_camera_exposuretime_entry_8">1/8秒</string>
+    <string name="pref_camera_exposuretime_entry_15">1/15秒</string>
+    <string name="pref_camera_exposuretime_entry_30">1/30秒</string>
+    <string name="pref_camera_exposuretime_entry_60">1/60秒</string>
+    <string name="pref_camera_exposuretime_entry_125">1/125秒</string>
+    <string name="pref_camera_exposuretime_entry_250">1/250秒</string>
+    <string name="pref_camera_exposuretime_entry_1000">1/1000秒</string>
+    <string name="pref_camera_exposuretime_entry_5000">1/5000秒</string>
+    <string name="face_analyze_info">%1$s %2$s歲</string>
+    <string name="face_analyze_info_male">男</string>
+    <string name="face_analyze_info_female">女</string>
+    <string name="face_beauty_intelligent_title">36段式智慧型美顏</string>
+    <string name="face_beauty_manual_title">7段式手動型美顏</string>
+    <string name="face_beauty_simple_mode_title">美顏</string>
+    <item type="string" name="APKTOOL_DUMMY_0287">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0288">false</item>
+    <item type="string" name="APKTOOL_DUMMY_0289">false</item>
+    <string name="face_beauty_intelligent_level_0">關</string>
+    <string name="face_beauty_intelligent_level_1">低</string>
+    <string name="face_beauty_intelligent_level_2">中</string>
+    <string name="face_beauty_intelligent_level_3">高</string>
+    <string name="pref_camera_show_gender_age_title">人臉資訊</string>
+    <item type="string" name="APKTOOL_DUMMY_028f">false</item>
+    <string name="pref_camera_show_gender_age_entry_off">關</string>
+    <string name="pref_camera_show_gender_age_entry_on">顯示年齡性別</string>
+    <string name="pref_camera_show_gender_age_entry_alias">顯示年齡級別暱稱</string>
+    <string name="toast_burst_snap_forbidden_when_face_beauty_open">美顏模式下，連拍不可用</string>
+    <string name="face_beauty_age_alias_male_0_7">男 0-7</string>
+    <string name="face_beauty_age_alias_male_8_17">男 8-17</string>
+    <string name="face_beauty_age_alias_male_18_30">男 18-30</string>
+    <string name="face_beauty_age_alias_male_31_44">男 31-44</string>
+    <string name="face_beauty_age_alias_male_45_60">男 45-60</string>
+    <string name="face_beauty_age_alias_male_60_m">男 60+</string>
+    <string name="face_beauty_age_alias_female_0_7">女 0-7</string>
+    <string name="face_beauty_age_alias_female_8_17">女 8-17</string>
+    <string name="face_beauty_age_alias_female_18_30">女 18-30</string>
+    <string name="face_beauty_age_alias_female_31_44">女 31-44</string>
+    <string name="face_beauty_age_alias_female_45_60">女 45-60</string>
+    <string name="face_beauty_age_alias_female_60_m">女 60+</string>
+    <string name="simple_mode_button_text_face_beauty">關閉智慧型美顏</string>
+    <item type="string" name="APKTOOL_DUMMY_02a4">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02a5">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02a6">false</item>
+    <string name="measure_whitebalance_button">測量</string>
+    <string name="measure_whitebalance_text">請在鏡頭面前放一張白紙或灰卡，然後點擊按鈕</string>
+    <string name="pref_camera_hdr_type_title">HDR類型</string>
+    <string name="pref_camera_hdr_type_entry_normal">標準</string>
+    <string name="pref_camera_hdr_type_entry_live">實時</string>
+    <item type="string" name="APKTOOL_DUMMY_02ac">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02ad">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02ae">false</item>
+    <string name="accessibility_ev_control">曝光補償控制項</string>
+    <string name="pref_camera_picturesize_entry_3264x2448">800萬（3264x2448）</string>
+    <string name="pref_camera_picturesize_entry_3328x1872">600萬（3328x1872）</string>
+    <string name="pref_camera_picturesize_entry_3264x1840">600萬（3264x1840）</string>
+    <string name="pref_camera_picturesize_entry_3264x1836">600萬（3264x1836）</string>
+    <string name="pref_camera_picturesize_entry_1920x1088">200萬（1920x1088）</string>
+    <string name="pref_camera_picturesize_entry_1472x1104">160萬（1472x1104）</string>
+    <string name="pref_camera_picturesize_entry_1440x1080">160萬（1440x1080）</string>
+    <string name="pref_camera_picturesize_entry_1440x816">120萬（1440x816）</string>
+    <string name="pref_camera_picturesize_entry_1472x832">120萬（1472x832）</string>
+    <string name="pref_camera_coloreffect_entry_vivid">生動</string>
+    <string name="pref_camera_coloreffect_entry_yesteryear">往昔</string>
+    <string name="pref_camera_coloreffect_entry_brannan">晨光</string>
+    <string name="pref_camera_coloreffect_entry_seventy">70年代</string>
+    <string name="pref_camera_coloreffect_entry_fisheye">魚眼</string>
+    <string name="pref_camera_coloreffect_entry_jstyle">日系</string>
+    <string name="pref_camera_coloreffect_entry_xproii">反轉片</string>
+    <string name="pref_camera_coloreffect_entry_earlybird">秋色</string>
+    <string name="pref_camera_coloreffect_entry_nashvile">靛青</string>
+    <string name="pref_camera_coloreffect_entry_planet">小世界</string>
+    <string name="pref_camera_coloreffect_entry_mirror">镜面</string>
+    <string name="pref_camera_coloreffect_entry_gaussianblur">高斯模糊</string>
+    <string name="simple_mode_button_text_fast_video">關閉快動作錄影</string>
+    <string name="pref_video_fast_speed_title_simple_mode">快動作錄影</string>
+    <string name="pref_camera_ubi_focus_title">Ubi Focus</string>
+    <string name="simple_mode_button_text_ubi_focus">關閉UbiFocus模式</string>
+    <string name="ubi_focus_exit_button_text">退出UbiFocus模式</string>
+    <string name="pref_camera_auto_chroma_flash_title">自動ChromaFlash</string>
+    <string name="pref_touch_down_capture_title">按下時拍照</string>
+    <item type="string" name="APKTOOL_DUMMY_02d4">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02d5">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02d6">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02d7">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02d8">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02d9">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02da">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02db">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02dc">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02dd">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02de">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02df">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02e0">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02e1">false</item>
+    <item type="string" name="APKTOOL_DUMMY_02e2">false</item>
+    <string name="pref_video_quality_entry_4kuhd">4K超高畫質</string>
+    <string name="face_analyze_info_gender">性别：</string>
+    <string name="face_analyze_info_age">年龄：</string>
+    <string name="face_analyze_info_years">岁</string>
 </resources>

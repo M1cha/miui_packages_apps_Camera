@@ -53,8 +53,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 53
@@ -82,34 +82,34 @@
     .line 56
     iget-object v0, p0, Lcom/android/camera/ui/ZoomControlBar;->mBar:Landroid/view/View;
 
-    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/ZoomControlBar;->addView(Landroid/view/View;)V
 
     .line 57
     const v0, 0x7f02012e
 
-    invoke-virtual {p0, p1, v0}, Lcom/android/camera/ui/ZoomControl;->addImageView(Landroid/content/Context;I)Landroid/widget/ImageView;
+    invoke-virtual {p0, p1, v0}, Lcom/android/camera/ui/ZoomControlBar;->addImageView(Landroid/content/Context;I)Landroid/widget/ImageView;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/camera/ui/ZoomControl;->mZoomIn:Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomIn:Landroid/widget/ImageView;
 
     .line 58
     const v0, 0x7f020130
 
-    invoke-virtual {p0, p1, v0}, Lcom/android/camera/ui/ZoomControl;->addImageView(Landroid/content/Context;I)Landroid/widget/ImageView;
+    invoke-virtual {p0, p1, v0}, Lcom/android/camera/ui/ZoomControlBar;->addImageView(Landroid/content/Context;I)Landroid/widget/ImageView;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/camera/ui/ZoomControl;->mZoomSlider:Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomSlider:Landroid/widget/ImageView;
 
     .line 59
     const v0, 0x7f02012f
 
-    invoke-virtual {p0, p1, v0}, Lcom/android/camera/ui/ZoomControl;->addImageView(Landroid/content/Context;I)Landroid/widget/ImageView;
+    invoke-virtual {p0, p1, v0}, Lcom/android/camera/ui/ZoomControlBar;->addImageView(Landroid/content/Context;I)Landroid/widget/ImageView;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/android/camera/ui/ZoomControl;->mZoomOut:Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomOut:Landroid/widget/ImageView;
 
     .line 60
     return-void
@@ -117,11 +117,11 @@
 
 .method private getSliderPosition(I)I
     .locals 3
-    .parameter "offset"
+    .param p1, "offset"    # I
 
     .prologue
     .line 81
-    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/camera/ui/ZoomControlBar;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -136,7 +136,7 @@
     if-ne v1, v2, :cond_3
 
     .line 83
-    iget v1, p0, Lcom/android/camera/ui/ZoomControl;->mOrientation:I
+    iget v1, p0, Lcom/android/camera/ui/ZoomControlBar;->mOrientation:I
 
     const/16 v2, 0xb4
 
@@ -147,12 +147,12 @@
 
     sub-int v1, p1, v1
 
-    iget v2, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v2, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     sub-int v0, v1, v2
 
     .line 95
-    .local v0, pos:I
+    .local v0, "pos":I
     :goto_0
     if-gez v0, :cond_0
 
@@ -171,7 +171,7 @@
     return v0
 
     .line 86
-    .end local v0           #pos:I
+    .end local v0    # "pos":I
     :cond_2
     iget v1, p0, Lcom/android/camera/ui/ZoomControlBar;->mSize:I
 
@@ -181,17 +181,17 @@
 
     sub-int/2addr v1, p1
 
-    iget v2, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v2, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     sub-int v0, v1, v2
 
-    .restart local v0       #pos:I
+    .restart local v0    # "pos":I
     goto :goto_0
 
     .line 89
-    .end local v0           #pos:I
+    .end local v0    # "pos":I
     :cond_3
-    iget v1, p0, Lcom/android/camera/ui/ZoomControl;->mOrientation:I
+    iget v1, p0, Lcom/android/camera/ui/ZoomControlBar;->mOrientation:I
 
     const/16 v2, 0x5a
 
@@ -206,25 +206,25 @@
 
     sub-int/2addr v1, p1
 
-    iget v2, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v2, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     sub-int v0, v1, v2
 
-    .restart local v0       #pos:I
+    .restart local v0    # "pos":I
     goto :goto_0
 
     .line 92
-    .end local v0           #pos:I
+    .end local v0    # "pos":I
     :cond_4
     iget v1, p0, Lcom/android/camera/ui/ZoomControlBar;->mTotalIconSize:I
 
     sub-int v1, p1, v1
 
-    iget v2, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v2, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     sub-int v0, v1, v2
 
-    .restart local v0       #pos:I
+    .restart local v0    # "pos":I
     goto :goto_0
 .end method
 
@@ -232,7 +232,7 @@
 # virtual methods
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 10
-    .parameter "event"
+    .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
     const/4 v5, 0x1
@@ -240,7 +240,7 @@
     const/4 v4, 0x0
 
     .line 116
-    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
+    invoke-virtual {p0}, Lcom/android/camera/ui/ZoomControlBar;->isEnabled()Z
 
     move-result v6
 
@@ -262,7 +262,7 @@
     move-result v0
 
     .line 119
-    .local v0, action:I
+    .local v0, "action":I
     packed-switch v0, :pswitch_data_0
 
     :goto_1
@@ -276,7 +276,7 @@
     invoke-virtual {p0, v4}, Lcom/android/camera/ui/ZoomControlBar;->setActivated(Z)V
 
     .line 124
-    invoke-virtual {p0}, Lcom/android/camera/ui/ZoomControl;->closeZoomControl()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/ZoomControlBar;->closeZoomControl()V
 
     goto :goto_1
 
@@ -289,7 +289,7 @@
 
     .line 131
     :pswitch_2
-    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/camera/ui/ZoomControlBar;->getResources()Landroid/content/res/Resources;
 
     move-result-object v6
 
@@ -306,7 +306,7 @@
     move v2, v5
 
     .line 133
-    .local v2, isLandscape:Z
+    .local v2, "isLandscape":Z
     :goto_2
     if-eqz v2, :cond_6
 
@@ -322,7 +322,7 @@
     move-result v3
 
     .line 135
-    .local v3, pos:I
+    .local v3, "pos":I
     iget-boolean v4, p0, Lcom/android/camera/ui/ZoomControlBar;->mStartChanging:Z
 
     if-nez v4, :cond_3
@@ -333,7 +333,7 @@
     sub-int v1, v4, v3
 
     .line 139
-    .local v1, delta:I
+    .local v1, "delta":I
     sget v4, Lcom/android/camera/ui/ZoomControlBar;->THRESHOLD_FIRST_MOVE:I
 
     if-gt v1, v4, :cond_2
@@ -349,14 +349,14 @@
     iput-boolean v5, p0, Lcom/android/camera/ui/ZoomControlBar;->mStartChanging:Z
 
     .line 144
-    .end local v1           #delta:I
+    .end local v1    # "delta":I
     :cond_3
     iget-boolean v4, p0, Lcom/android/camera/ui/ZoomControlBar;->mStartChanging:Z
 
     if-eqz v4, :cond_4
 
     .line 145
-    const-wide/high16 v6, 0x3ff0
+    const-wide/high16 v6, 0x3ff0000000000000L
 
     int-to-double v8, v3
 
@@ -368,19 +368,19 @@
 
     div-double/2addr v6, v8
 
-    invoke-virtual {p0, v6, v7}, Lcom/android/camera/ui/ZoomControl;->performZoom(D)V
+    invoke-virtual {p0, v6, v7}, Lcom/android/camera/ui/ZoomControlBar;->performZoom(D)V
 
     .line 146
     iput v3, p0, Lcom/android/camera/ui/ZoomControlBar;->mSliderPosition:I
 
     .line 148
     :cond_4
-    invoke-virtual {p0}, Landroid/widget/RelativeLayout;->requestLayout()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/ZoomControlBar;->requestLayout()V
 
     goto :goto_1
 
-    .end local v2           #isLandscape:Z
-    .end local v3           #pos:I
+    .end local v2    # "isLandscape":Z
+    .end local v3    # "pos":I
     :cond_5
     move v2, v4
 
@@ -388,7 +388,7 @@
     goto :goto_2
 
     .line 133
-    .restart local v2       #isLandscape:Z
+    .restart local v2    # "isLandscape":Z
     :cond_6
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -409,15 +409,15 @@
 
 .method protected onLayout(ZIIII)V
     .locals 11
-    .parameter "changed"
-    .parameter "left"
-    .parameter "top"
-    .parameter "right"
-    .parameter "bottom"
+    .param p1, "changed"    # Z
+    .param p2, "left"    # I
+    .param p3, "top"    # I
+    .param p4, "right"    # I
+    .param p5, "bottom"    # I
 
     .prologue
     .line 163
-    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/camera/ui/ZoomControlBar;->getResources()Landroid/content/res/Resources;
 
     move-result-object v6
 
@@ -434,9 +434,9 @@
     const/4 v0, 0x1
 
     .line 165
-    .local v0, isLandscape:Z
+    .local v0, "isLandscape":Z
     :goto_0
-    iget v6, p0, Lcom/android/camera/ui/ZoomControl;->mZoomMax:I
+    iget v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomMax:I
 
     if-nez v6, :cond_1
 
@@ -445,19 +445,19 @@
     return-void
 
     .line 163
-    .end local v0           #isLandscape:Z
+    .end local v0    # "isLandscape":Z
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
     .line 166
-    .restart local v0       #isLandscape:Z
+    .restart local v0    # "isLandscape":Z
     :cond_1
     const/4 v2, 0x0
 
     .line 167
-    .local v2, size:I
+    .local v2, "size":I
     if-eqz v0, :cond_2
 
     .line 168
@@ -470,7 +470,7 @@
 
     iget v8, p0, Lcom/android/camera/ui/ZoomControlBar;->mTotalIconSize:I
 
-    iget v9, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v9, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     add-int/2addr v8, v9
 
@@ -480,7 +480,7 @@
 
     sub-int/2addr v9, v10
 
-    iget v10, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v10, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     sub-int/2addr v9, v10
 
@@ -492,13 +492,13 @@
 
     int-to-double v6, v6
 
-    iget v8, p0, Lcom/android/camera/ui/ZoomControl;->mZoomIndex:I
+    iget v8, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomIndex:I
 
     int-to-double v8, v8
 
     mul-double/2addr v6, v8
 
-    iget v8, p0, Lcom/android/camera/ui/ZoomControl;->mZoomMax:I
+    iget v8, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomMax:I
 
     int-to-double v8, v8
 
@@ -507,33 +507,33 @@
     double-to-int v4, v6
 
     .line 180
-    .local v4, sliderPosition:I
+    .local v4, "sliderPosition":I
     if-eqz v0, :cond_4
 
     .line 181
-    iget v6, p0, Lcom/android/camera/ui/ZoomControl;->mOrientation:I
+    iget v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mOrientation:I
 
     const/16 v7, 0xb4
 
     if-ne v6, v7, :cond_3
 
     .line 182
-    iget-object v6, p0, Lcom/android/camera/ui/ZoomControl;->mZoomOut:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomOut:Landroid/widget/ImageView;
 
     const/4 v7, 0x0
 
-    iget v8, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v8, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     iget v9, p0, Lcom/android/camera/ui/ZoomControlBar;->mIconSize:I
 
-    iget v10, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v10, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     add-int/2addr v9, v10
 
-    invoke-virtual {v6, v7, v8, v2, v9}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v6, v7, v8, v2, v9}, Landroid/widget/ImageView;->layout(IIII)V
 
     .line 183
-    iget-object v6, p0, Lcom/android/camera/ui/ZoomControl;->mZoomIn:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomIn:Landroid/widget/ImageView;
 
     const/4 v7, 0x0
 
@@ -543,17 +543,17 @@
 
     sub-int/2addr v8, v9
 
-    iget v9, p0, Landroid/view/View;->mPaddingRight:I
+    iget v9, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingRight:I
 
     sub-int/2addr v8, v9
 
     iget v9, p0, Lcom/android/camera/ui/ZoomControlBar;->mSize:I
 
-    iget v10, p0, Landroid/view/View;->mPaddingRight:I
+    iget v10, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingRight:I
 
     sub-int/2addr v9, v10
 
-    invoke-virtual {v6, v7, v8, v2, v9}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v6, v7, v8, v2, v9}, Landroid/widget/ImageView;->layout(IIII)V
 
     .line 184
     iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mBar:Landroid/view/View;
@@ -565,17 +565,17 @@
     add-int v1, v6, v4
 
     .line 190
-    .local v1, pos:I
+    .local v1, "pos":I
     :goto_3
-    iget-object v6, p0, Lcom/android/camera/ui/ZoomControl;->mZoomSlider:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomSlider:Landroid/widget/ImageView;
 
-    invoke-virtual {v6}, Landroid/view/View;->getMeasuredHeight()I
+    invoke-virtual {v6}, Landroid/widget/ImageView;->getMeasuredHeight()I
 
     move-result v3
 
     .line 191
-    .local v3, sliderHeight:I
-    iget-object v6, p0, Lcom/android/camera/ui/ZoomControl;->mZoomSlider:Landroid/widget/ImageView;
+    .local v3, "sliderHeight":I
+    iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomSlider:Landroid/widget/ImageView;
 
     const/4 v7, 0x0
 
@@ -587,14 +587,14 @@
 
     add-int/2addr v9, v1
 
-    invoke-virtual {v6, v7, v8, v2, v9}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v6, v7, v8, v2, v9}, Landroid/widget/ImageView;->layout(IIII)V
 
     goto :goto_1
 
     .line 171
-    .end local v1           #pos:I
-    .end local v3           #sliderHeight:I
-    .end local v4           #sliderPosition:I
+    .end local v1    # "pos":I
+    .end local v3    # "sliderHeight":I
+    .end local v4    # "sliderPosition":I
     :cond_2
     sub-int v2, p5, p3
 
@@ -603,7 +603,7 @@
 
     iget v7, p0, Lcom/android/camera/ui/ZoomControlBar;->mTotalIconSize:I
 
-    iget v8, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v8, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     add-int/2addr v7, v8
 
@@ -615,7 +615,7 @@
 
     sub-int/2addr v9, v10
 
-    iget v10, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v10, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     sub-int/2addr v9, v10
 
@@ -624,24 +624,24 @@
     goto :goto_2
 
     .line 186
-    .restart local v4       #sliderPosition:I
+    .restart local v4    # "sliderPosition":I
     :cond_3
-    iget-object v6, p0, Lcom/android/camera/ui/ZoomControl;->mZoomIn:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomIn:Landroid/widget/ImageView;
 
     const/4 v7, 0x0
 
-    iget v8, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v8, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     iget v9, p0, Lcom/android/camera/ui/ZoomControlBar;->mIconSize:I
 
-    iget v10, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v10, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     add-int/2addr v9, v10
 
-    invoke-virtual {v6, v7, v8, v2, v9}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v6, v7, v8, v2, v9}, Landroid/widget/ImageView;->layout(IIII)V
 
     .line 187
-    iget-object v6, p0, Lcom/android/camera/ui/ZoomControl;->mZoomOut:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomOut:Landroid/widget/ImageView;
 
     const/4 v7, 0x0
 
@@ -651,17 +651,17 @@
 
     sub-int/2addr v8, v9
 
-    iget v9, p0, Landroid/view/View;->mPaddingRight:I
+    iget v9, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingRight:I
 
     sub-int/2addr v8, v9
 
     iget v9, p0, Lcom/android/camera/ui/ZoomControlBar;->mSize:I
 
-    iget v10, p0, Landroid/view/View;->mPaddingRight:I
+    iget v10, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingRight:I
 
     sub-int/2addr v9, v10
 
-    invoke-virtual {v6, v7, v8, v2, v9}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v6, v7, v8, v2, v9}, Landroid/widget/ImageView;->layout(IIII)V
 
     .line 188
     iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mBar:Landroid/view/View;
@@ -672,35 +672,35 @@
 
     sub-int v1, v6, v4
 
-    .restart local v1       #pos:I
+    .restart local v1    # "pos":I
     goto :goto_3
 
     .line 194
-    .end local v1           #pos:I
+    .end local v1    # "pos":I
     :cond_4
-    iget v6, p0, Lcom/android/camera/ui/ZoomControl;->mOrientation:I
+    iget v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mOrientation:I
 
     const/16 v7, 0x5a
 
     if-ne v6, v7, :cond_5
 
     .line 195
-    iget-object v6, p0, Lcom/android/camera/ui/ZoomControl;->mZoomIn:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomIn:Landroid/widget/ImageView;
 
-    iget v7, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v7, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     const/4 v8, 0x0
 
     iget v9, p0, Lcom/android/camera/ui/ZoomControlBar;->mIconSize:I
 
-    iget v10, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v10, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     add-int/2addr v9, v10
 
-    invoke-virtual {v6, v7, v8, v9, v2}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v6, v7, v8, v9, v2}, Landroid/widget/ImageView;->layout(IIII)V
 
     .line 196
-    iget-object v6, p0, Lcom/android/camera/ui/ZoomControl;->mZoomOut:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomOut:Landroid/widget/ImageView;
 
     iget v7, p0, Lcom/android/camera/ui/ZoomControlBar;->mSize:I
 
@@ -708,7 +708,7 @@
 
     sub-int/2addr v7, v8
 
-    iget v8, p0, Landroid/view/View;->mPaddingRight:I
+    iget v8, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingRight:I
 
     sub-int/2addr v7, v8
 
@@ -716,11 +716,11 @@
 
     iget v9, p0, Lcom/android/camera/ui/ZoomControlBar;->mSize:I
 
-    iget v10, p0, Landroid/view/View;->mPaddingRight:I
+    iget v10, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingRight:I
 
     sub-int/2addr v9, v10
 
-    invoke-virtual {v6, v7, v8, v9, v2}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v6, v7, v8, v9, v2}, Landroid/widget/ImageView;->layout(IIII)V
 
     .line 197
     iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mBar:Landroid/view/View;
@@ -732,17 +732,17 @@
     sub-int v1, v6, v4
 
     .line 203
-    .restart local v1       #pos:I
+    .restart local v1    # "pos":I
     :goto_4
-    iget-object v6, p0, Lcom/android/camera/ui/ZoomControl;->mZoomSlider:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomSlider:Landroid/widget/ImageView;
 
-    invoke-virtual {v6}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {v6}, Landroid/widget/ImageView;->getMeasuredWidth()I
 
     move-result v5
 
     .line 204
-    .local v5, sliderWidth:I
-    iget-object v6, p0, Lcom/android/camera/ui/ZoomControl;->mZoomSlider:Landroid/widget/ImageView;
+    .local v5, "sliderWidth":I
+    iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomSlider:Landroid/widget/ImageView;
 
     div-int/lit8 v7, v5, 0x2
 
@@ -754,30 +754,30 @@
 
     add-int/2addr v9, v1
 
-    invoke-virtual {v6, v7, v8, v9, v2}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v6, v7, v8, v9, v2}, Landroid/widget/ImageView;->layout(IIII)V
 
     goto/16 :goto_1
 
     .line 199
-    .end local v1           #pos:I
-    .end local v5           #sliderWidth:I
+    .end local v1    # "pos":I
+    .end local v5    # "sliderWidth":I
     :cond_5
-    iget-object v6, p0, Lcom/android/camera/ui/ZoomControl;->mZoomOut:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomOut:Landroid/widget/ImageView;
 
-    iget v7, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v7, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     const/4 v8, 0x0
 
     iget v9, p0, Lcom/android/camera/ui/ZoomControlBar;->mIconSize:I
 
-    iget v10, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v10, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
     add-int/2addr v9, v10
 
-    invoke-virtual {v6, v7, v8, v9, v2}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v6, v7, v8, v9, v2}, Landroid/widget/ImageView;->layout(IIII)V
 
     .line 200
-    iget-object v6, p0, Lcom/android/camera/ui/ZoomControl;->mZoomIn:Landroid/widget/ImageView;
+    iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomIn:Landroid/widget/ImageView;
 
     iget v7, p0, Lcom/android/camera/ui/ZoomControlBar;->mSize:I
 
@@ -785,7 +785,7 @@
 
     sub-int/2addr v7, v8
 
-    iget v8, p0, Landroid/view/View;->mPaddingRight:I
+    iget v8, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingRight:I
 
     sub-int/2addr v7, v8
 
@@ -793,11 +793,11 @@
 
     iget v9, p0, Lcom/android/camera/ui/ZoomControlBar;->mSize:I
 
-    iget v10, p0, Landroid/view/View;->mPaddingRight:I
+    iget v10, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingRight:I
 
     sub-int/2addr v9, v10
 
-    invoke-virtual {v6, v7, v8, v9, v2}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v6, v7, v8, v9, v2}, Landroid/widget/ImageView;->layout(IIII)V
 
     .line 201
     iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mBar:Landroid/view/View;
@@ -808,14 +808,14 @@
 
     add-int v1, v6, v4
 
-    .restart local v1       #pos:I
+    .restart local v1    # "pos":I
     goto :goto_4
 .end method
 
 .method protected onMeasure(II)V
     .locals 2
-    .parameter "widthMeasureSpec"
-    .parameter "heightMeasureSpec"
+    .param p1, "widthMeasureSpec"    # I
+    .param p2, "heightMeasureSpec"    # I
 
     .prologue
     .line 70
@@ -829,13 +829,13 @@
 
     move-result v0
 
-    const/high16 v1, 0x4000
+    const/high16 v1, 0x40000000
 
     invoke-static {v0, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0
 
-    invoke-super {p0, p1, v0}, Landroid/widget/RelativeLayout;->onMeasure(II)V
+    invoke-super {p0, p1, v0}, Lcom/android/camera/ui/ZoomControl;->onMeasure(II)V
 
     .line 73
     return-void
@@ -843,14 +843,14 @@
 
 .method protected onSizeChanged(IIII)V
     .locals 3
-    .parameter "w"
-    .parameter "h"
-    .parameter "oldw"
-    .parameter "oldh"
+    .param p1, "w"    # I
+    .param p2, "h"    # I
+    .param p3, "oldw"    # I
+    .param p4, "oldh"    # I
 
     .prologue
     .line 102
-    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/camera/ui/ZoomControlBar;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -868,9 +868,9 @@
     iput p2, p0, Lcom/android/camera/ui/ZoomControlBar;->mSize:I
 
     .line 105
-    iget-object v0, p0, Lcom/android/camera/ui/ZoomControl;->mZoomIn:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomIn:Landroid/widget/ImageView;
 
-    invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getMeasuredHeight()I
 
     move-result v0
 
@@ -895,9 +895,9 @@
 
     sub-int/2addr v0, v1
 
-    iget v1, p0, Landroid/view/View;->mPaddingLeft:I
+    iget v1, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingLeft:I
 
-    iget v2, p0, Landroid/view/View;->mPaddingRight:I
+    iget v2, p0, Lcom/android/camera/ui/ZoomControlBar;->mPaddingRight:I
 
     add-int/2addr v1, v2
 
@@ -913,9 +913,9 @@
     iput p1, p0, Lcom/android/camera/ui/ZoomControlBar;->mSize:I
 
     .line 108
-    iget-object v0, p0, Lcom/android/camera/ui/ZoomControl;->mZoomIn:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomIn:Landroid/widget/ImageView;
 
-    invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getMeasuredWidth()I
 
     move-result v0
 
@@ -926,7 +926,7 @@
 
 .method public setActivated(Z)V
     .locals 1
-    .parameter "activated"
+    .param p1, "activated"    # Z
 
     .prologue
     .line 64
@@ -943,8 +943,8 @@
 
 .method public setOrientation(IZ)V
     .locals 0
-    .parameter "orientation"
-    .parameter "animation"
+    .param p1, "orientation"    # I
+    .param p2, "animation"    # Z
 
     .prologue
     .line 158
@@ -953,7 +953,7 @@
 
 .method public setZoomIndex(I)V
     .locals 1
-    .parameter "index"
+    .param p1, "index"    # I
 
     .prologue
     .line 211

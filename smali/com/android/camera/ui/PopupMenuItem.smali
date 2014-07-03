@@ -15,7 +15,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .parameter "context"
+    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 15
@@ -32,8 +32,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 23
@@ -50,9 +50,9 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
-    .parameter "defStyle"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .param p3, "defStyle"    # I
 
     .prologue
     .line 19
@@ -69,7 +69,7 @@
 
 .method private setTextShadow(Z)V
     .locals 5
-    .parameter "selected"
+    .param p1, "selected"    # Z
 
     .prologue
     const/4 v4, 0x0
@@ -80,7 +80,7 @@
     .line 76
     iget-object v0, p0, Lcom/android/camera/ui/PopupMenuItem;->mText:Landroid/widget/TextView;
 
-    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/camera/ui/PopupMenuItem;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -95,9 +95,9 @@
     .line 77
     iget-object v0, p0, Lcom/android/camera/ui/PopupMenuItem;->mText:Landroid/widget/TextView;
 
-    const/high16 v1, 0x40a0
+    const/high16 v1, 0x40a00000
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     const v3, 0x75ffffff
 
@@ -132,12 +132,12 @@
 
     .prologue
     .line 28
-    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
+    invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
     .line 29
     const v0, 0x7f0c0039
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/PopupMenuItem;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -151,11 +151,11 @@
 
 .method public setActivated(Z)V
     .locals 0
-    .parameter "activated"
+    .param p1, "activated"    # Z
 
     .prologue
     .line 64
-    invoke-super {p0, p1}, Landroid/view/View;->setActivated(Z)V
+    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->setActivated(Z)V
 
     .line 65
     invoke-direct {p0, p1}, Lcom/android/camera/ui/PopupMenuItem;->setTextShadow(Z)V
@@ -166,19 +166,19 @@
 
 .method public setEnabled(Z)V
     .locals 1
-    .parameter "enabled"
+    .param p1, "enabled"    # Z
 
     .prologue
     .line 54
-    invoke-super {p0, p1}, Landroid/view/View;->setEnabled(Z)V
+    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->setEnabled(Z)V
 
     .line 55
     if-eqz p1, :cond_0
 
     .line 56
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/PopupMenuItem;->setAlpha(F)V
 
     .line 60
     :goto_0
@@ -188,37 +188,37 @@
     :cond_0
     const v0, 0x3ecccccd
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/PopupMenuItem;->setAlpha(F)V
 
     goto :goto_0
 .end method
 
 .method public setOrientation(IZ)V
     .locals 6
-    .parameter "orientation"
-    .parameter "animation"
+    .param p1, "orientation"    # I
+    .param p2, "animation"    # Z
 
     .prologue
     .line 34
-    invoke-virtual {p0}, Landroid/view/View;->getRotation()F
+    invoke-virtual {p0}, Lcom/android/camera/ui/PopupMenuItem;->getRotation()F
 
     move-result v3
 
     float-to-int v2, v3
 
     .line 35
-    .local v2, rotation:I
+    .local v2, "rotation":I
     if-ltz v2, :cond_0
 
     rem-int/lit16 v1, v2, 0x168
 
     .line 36
-    .local v1, r:I
+    .local v1, "r":I
     :goto_0
     sub-int v0, p1, v1
 
     .line 37
-    .local v0, deltaR:I
+    .local v0, "deltaR":I
     if-nez v0, :cond_1
 
     .line 50
@@ -226,8 +226,8 @@
     return-void
 
     .line 35
-    .end local v0           #deltaR:I
-    .end local v1           #r:I
+    .end local v0    # "deltaR":I
+    .end local v1    # "r":I
     :cond_0
     rem-int/lit16 v3, v2, 0x168
 
@@ -236,8 +236,8 @@
     goto :goto_0
 
     .line 38
-    .restart local v0       #deltaR:I
-    .restart local v1       #r:I
+    .restart local v0    # "deltaR":I
+    .restart local v1    # "r":I
     :cond_1
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
@@ -259,7 +259,7 @@
     if-eqz p2, :cond_4
 
     .line 46
-    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p0}, Lcom/android/camera/ui/PopupMenuItem;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v3
 
@@ -297,7 +297,7 @@
 
     .line 48
     :cond_4
-    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p0}, Lcom/android/camera/ui/PopupMenuItem;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v3
 
@@ -322,11 +322,11 @@
 
 .method public setPressed(Z)V
     .locals 0
-    .parameter "pressed"
+    .param p1, "pressed"    # Z
 
     .prologue
     .line 70
-    invoke-super {p0, p1}, Landroid/view/View;->setPressed(Z)V
+    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->setPressed(Z)V
 
     .line 71
     invoke-direct {p0, p1}, Lcom/android/camera/ui/PopupMenuItem;->setTextShadow(Z)V

@@ -29,8 +29,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 25
@@ -44,13 +44,13 @@
 # virtual methods
 .method public initialize(Lcom/android/camera/IconListPreference;)V
     .locals 1
-    .parameter "preference"
+    .param p1, "preference"    # Lcom/android/camera/IconListPreference;
 
     .prologue
     .line 34
     const v0, 0x7f0c0098
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingPopupK;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -61,7 +61,7 @@
     .line 35
     const v0, 0x7f0c0096
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingPopupK;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -72,7 +72,7 @@
     .line 36
     const v0, 0x7f0c0099
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingPopupK;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -83,7 +83,7 @@
     .line 37
     const v0, 0x7f0c0095
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/SettingPopupK;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -94,17 +94,17 @@
     .line 39
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupK;->mAdd:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 40
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupK;->mReduce:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 41
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupK;->mReturn:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, p0}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 42
     return-void
@@ -112,7 +112,7 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .parameter "v"
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 54
@@ -154,7 +154,7 @@
 
 .method public setSettingChangedListener(Lcom/android/camera/ui/AbstractSettingPopup$Listener;)V
     .locals 0
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/camera/ui/AbstractSettingPopup$Listener;
 
     .prologue
     .line 47

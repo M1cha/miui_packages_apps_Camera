@@ -10,7 +10,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .parameter "context"
+    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 467
@@ -27,7 +27,7 @@
 # virtual methods
 .method public getBookmark(Landroid/net/Uri;)Ljava/lang/Integer;
     .locals 13
-    .parameter "uri"
+    .param p1, "uri"    # Landroid/net/Uri;
 
     .prologue
     const/4 v7, 0x0
@@ -49,7 +49,7 @@
     move-result-object v1
 
     .line 495
-    .local v1, cache:Lcom/android/gallery3d/common/BlobCache;
+    .local v1, "cache":Lcom/android/gallery3d/common/BlobCache;
     invoke-virtual {p1}, Landroid/net/Uri;->hashCode()I
 
     move-result v8
@@ -61,19 +61,19 @@
     move-result-object v2
 
     .line 496
-    .local v2, data:[B
+    .local v2, "data":[B
     if-nez v2, :cond_1
 
     .line 517
-    .end local v1           #cache:Lcom/android/gallery3d/common/BlobCache;
-    .end local v2           #data:[B
+    .end local v1    # "cache":Lcom/android/gallery3d/common/BlobCache;
+    .end local v2    # "data":[B
     :cond_0
     :goto_0
     return-object v7
 
     .line 498
-    .restart local v1       #cache:Lcom/android/gallery3d/common/BlobCache;
-    .restart local v2       #data:[B
+    .restart local v1    # "cache":Lcom/android/gallery3d/common/BlobCache;
+    .restart local v2    # "data":[B
     :cond_1
     new-instance v3, Ljava/io/DataInputStream;
 
@@ -84,25 +84,25 @@
     invoke-direct {v3, v8}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
     .line 501
-    .local v3, dis:Ljava/io/DataInputStream;
+    .local v3, "dis":Ljava/io/DataInputStream;
     invoke-static {v3}, Ljava/io/DataInputStream;->readUTF(Ljava/io/DataInput;)Ljava/lang/String;
 
     move-result-object v6
 
     .line 502
-    .local v6, uriString:Ljava/lang/String;
+    .local v6, "uriString":Ljava/lang/String;
     invoke-virtual {v3}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v0
 
     .line 503
-    .local v0, bookmark:I
+    .local v0, "bookmark":I
     invoke-virtual {v3}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v4
 
     .line 505
-    .local v4, duration:I
+    .local v4, "duration":I
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v8
@@ -136,17 +136,17 @@
     goto :goto_0
 
     .line 514
-    .end local v0           #bookmark:I
-    .end local v1           #cache:Lcom/android/gallery3d/common/BlobCache;
-    .end local v2           #data:[B
-    .end local v3           #dis:Ljava/io/DataInputStream;
-    .end local v4           #duration:I
-    .end local v6           #uriString:Ljava/lang/String;
+    .end local v0    # "bookmark":I
+    .end local v1    # "cache":Lcom/android/gallery3d/common/BlobCache;
+    .end local v2    # "data":[B
+    .end local v3    # "dis":Ljava/io/DataInputStream;
+    .end local v4    # "duration":I
+    .end local v6    # "uriString":Ljava/lang/String;
     :catch_0
     move-exception v5
 
     .line 515
-    .local v5, t:Ljava/lang/Throwable;
+    .local v5, "t":Ljava/lang/Throwable;
     const-string v8, "Bookmarker"
 
     const-string v9, "getBookmark failed"
@@ -158,9 +158,9 @@
 
 .method public setBookmark(Landroid/net/Uri;II)V
     .locals 9
-    .parameter "uri"
-    .parameter "bookmark"
-    .parameter "duration"
+    .param p1, "uri"    # Landroid/net/Uri;
+    .param p2, "bookmark"    # I
+    .param p3, "duration"    # I
 
     .prologue
     .line 473
@@ -180,19 +180,19 @@
     move-result-object v1
 
     .line 477
-    .local v1, cache:Lcom/android/gallery3d/common/BlobCache;
+    .local v1, "cache":Lcom/android/gallery3d/common/BlobCache;
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
     .line 478
-    .local v0, bos:Ljava/io/ByteArrayOutputStream;
+    .local v0, "bos":Ljava/io/ByteArrayOutputStream;
     new-instance v2, Ljava/io/DataOutputStream;
 
     invoke-direct {v2, v0}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
 
     .line 479
-    .local v2, dos:Ljava/io/DataOutputStream;
+    .local v2, "dos":Ljava/io/DataOutputStream;
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
     move-result-object v4
@@ -224,9 +224,9 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 487
-    .end local v0           #bos:Ljava/io/ByteArrayOutputStream;
-    .end local v1           #cache:Lcom/android/gallery3d/common/BlobCache;
-    .end local v2           #dos:Ljava/io/DataOutputStream;
+    .end local v0    # "bos":Ljava/io/ByteArrayOutputStream;
+    .end local v1    # "cache":Lcom/android/gallery3d/common/BlobCache;
+    .end local v2    # "dos":Ljava/io/DataOutputStream;
     :goto_0
     return-void
 
@@ -235,7 +235,7 @@
     move-exception v3
 
     .line 485
-    .local v3, t:Ljava/lang/Throwable;
+    .local v3, "t":Ljava/lang/Throwable;
     const-string v4, "Bookmarker"
 
     const-string v5, "setBookmark failed"

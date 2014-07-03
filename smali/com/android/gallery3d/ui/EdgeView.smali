@@ -12,7 +12,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 4
-    .parameter "context"
+    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     const/4 v3, 0x4
@@ -35,7 +35,7 @@
     .line 44
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     if-ge v0, v3, :cond_0
 
@@ -62,8 +62,8 @@
 # virtual methods
 .method public onAbsorb(II)V
     .locals 1
-    .parameter "velocity"
-    .parameter "direction"
+    .param p1, "velocity"    # I
+    .param p2, "direction"    # I
 
     .prologue
     .line 124
@@ -85,7 +85,7 @@
     if-nez v0, :cond_0
 
     .line 126
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/EdgeView;->invalidate()V
 
     .line 128
     :cond_0
@@ -94,11 +94,11 @@
 
 .method protected onLayout(ZIIII)V
     .locals 9
-    .parameter "changeSize"
-    .parameter "left"
-    .parameter "top"
-    .parameter "right"
-    .parameter "bottom"
+    .param p1, "changeSize"    # Z
+    .param p2, "left"    # I
+    .param p3, "top"    # I
+    .param p4, "right"    # I
+    .param p5, "bottom"    # I
 
     .prologue
     .line 52
@@ -113,14 +113,14 @@
     sub-int v8, p4, p2
 
     .line 55
-    .local v8, w:I
+    .local v8, "w":I
     sub-int v6, p5, p3
 
     .line 56
-    .local v6, h:I
+    .local v6, "h":I
     const/4 v7, 0x0
 
-    .local v7, i:I
+    .local v7, "i":I
     :goto_1
     const/4 v0, 0x4
 
@@ -188,13 +188,13 @@
 
     const/16 v1, 0x10
 
-    const/high16 v2, 0x42b4
+    const/high16 v2, 0x42b40000
 
     const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x3f800000
 
     invoke-static/range {v0 .. v5}, Landroid/opengl/Matrix;->rotateM([FIFFFF)V
 
@@ -203,11 +203,11 @@
 
     const/16 v1, 0x10
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
-    const/high16 v3, -0x4080
+    const/high16 v3, -0x40800000
 
-    const/high16 v4, 0x3f80
+    const/high16 v4, 0x3f800000
 
     invoke-static {v0, v1, v2, v3, v4}, Landroid/opengl/Matrix;->scaleM([FIFFF)V
 
@@ -229,11 +229,11 @@
 
     const/16 v1, 0x20
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
-    const/high16 v3, -0x4080
+    const/high16 v3, -0x40800000
 
-    const/high16 v4, 0x3f80
+    const/high16 v4, 0x3f800000
 
     invoke-static {v0, v1, v2, v3, v4}, Landroid/opengl/Matrix;->scaleM([FIFFF)V
 
@@ -255,13 +255,13 @@
 
     const/16 v1, 0x30
 
-    const/high16 v2, 0x42b4
+    const/high16 v2, 0x42b40000
 
     const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x3f800000
 
     invoke-static/range {v0 .. v5}, Landroid/opengl/Matrix;->rotateM([FIFFFF)V
 
@@ -270,8 +270,8 @@
 
 .method public onPull(II)V
     .locals 4
-    .parameter "offset"
-    .parameter "direction"
+    .param p1, "offset"    # I
+    .param p2, "direction"    # I
 
     .prologue
     .line 101
@@ -279,12 +279,12 @@
 
     if-nez v1, :cond_1
 
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->getWidth()I
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/EdgeView;->getWidth()I
 
     move-result v0
 
     .line 102
-    .local v0, fullLength:I
+    .local v0, "fullLength":I
     :goto_0
     iget-object v1, p0, Lcom/android/gallery3d/ui/EdgeView;->mEffect:[Lcom/android/gallery3d/ui/EdgeEffect;
 
@@ -310,16 +310,16 @@
     if-nez v1, :cond_0
 
     .line 104
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/EdgeView;->invalidate()V
 
     .line 106
     :cond_0
     return-void
 
     .line 101
-    .end local v0           #fullLength:I
+    .end local v0    # "fullLength":I
     :cond_1
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->getHeight()I
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/EdgeView;->getHeight()I
 
     move-result v0
 
@@ -334,10 +334,10 @@
     const/4 v1, 0x0
 
     .line 111
-    .local v1, more:Z
+    .local v1, "more":Z
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     const/4 v2, 0x4
 
@@ -382,7 +382,7 @@
     if-eqz v1, :cond_2
 
     .line 116
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/EdgeView;->invalidate()V
 
     .line 118
     :cond_2
@@ -391,7 +391,7 @@
 
 .method protected render(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 4
-    .parameter "canvas"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
 
     .prologue
     .line 85
@@ -401,10 +401,10 @@
     const/4 v1, 0x0
 
     .line 87
-    .local v1, more:Z
+    .local v1, "more":Z
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     const/4 v2, 0x4
 
@@ -446,7 +446,7 @@
     if-eqz v1, :cond_1
 
     .line 94
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/EdgeView;->invalidate()V
 
     .line 96
     :cond_1

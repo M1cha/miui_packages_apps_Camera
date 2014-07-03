@@ -12,8 +12,8 @@
 # direct methods
 .method public constructor <init>(II)V
     .locals 1
-    .parameter "width"
-    .parameter "height"
+    .param p1, "width"    # I
+    .param p2, "height"    # I
 
     .prologue
     .line 30
@@ -25,12 +25,12 @@
     iput-object v0, p0, Lcom/android/gallery3d/ui/CanvasTexture;->mConfig:Landroid/graphics/Bitmap$Config;
 
     .line 32
-    invoke-virtual {p0, p1, p2}, Lcom/android/gallery3d/ui/BasicTexture;->setSize(II)V
+    invoke-virtual {p0, p1, p2}, Lcom/android/gallery3d/ui/CanvasTexture;->setSize(II)V
 
     .line 33
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/ui/UploadedTexture;->setOpaque(Z)V
+    invoke-virtual {p0, v0}, Lcom/android/gallery3d/ui/CanvasTexture;->setOpaque(Z)V
 
     .line 34
     return-void
@@ -43,7 +43,7 @@
 
 .method protected onFreeBitmap(Landroid/graphics/Bitmap;)V
     .locals 1
-    .parameter "bitmap"
+    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
     .line 46
@@ -66,9 +66,9 @@
 
     .prologue
     .line 38
-    iget v1, p0, Lcom/android/gallery3d/ui/BasicTexture;->mWidth:I
+    iget v1, p0, Lcom/android/gallery3d/ui/CanvasTexture;->mWidth:I
 
-    iget v2, p0, Lcom/android/gallery3d/ui/BasicTexture;->mHeight:I
+    iget v2, p0, Lcom/android/gallery3d/ui/CanvasTexture;->mHeight:I
 
     iget-object v3, p0, Lcom/android/gallery3d/ui/CanvasTexture;->mConfig:Landroid/graphics/Bitmap$Config;
 
@@ -77,7 +77,7 @@
     move-result-object v0
 
     .line 39
-    .local v0, bitmap:Landroid/graphics/Bitmap;
+    .local v0, "bitmap":Landroid/graphics/Bitmap;
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V

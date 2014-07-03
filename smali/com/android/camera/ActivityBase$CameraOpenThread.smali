@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 194
+    .line 204
     iput-object p1, p0, Lcom/android/camera/ActivityBase$CameraOpenThread;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
@@ -39,7 +39,7 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 198
+    .line 208
     :try_start_0
     iget-object v1, p0, Lcom/android/camera/ActivityBase$CameraOpenThread;->this$0:Lcom/android/camera/ActivityBase;
 
@@ -55,7 +55,7 @@
 
     iput-object v2, v1, Lcom/android/camera/ActivityBase;->mCameraDevice:Lcom/android/camera/CameraManager$CameraProxy;
 
-    .line 199
+    .line 209
     iget-object v1, p0, Lcom/android/camera/ActivityBase$CameraOpenThread;->this$0:Lcom/android/camera/ActivityBase;
 
     iget-object v2, p0, Lcom/android/camera/ActivityBase$CameraOpenThread;->this$0:Lcom/android/camera/ActivityBase;
@@ -68,7 +68,7 @@
 
     iput-object v2, v1, Lcom/android/camera/ActivityBase;->mParameters:Landroid/hardware/Camera$Parameters;
 
-    .line 200
+    .line 210
     iget-object v1, p0, Lcom/android/camera/ActivityBase$CameraOpenThread;->this$0:Lcom/android/camera/ActivityBase;
 
     iget-object v2, p0, Lcom/android/camera/ActivityBase$CameraOpenThread;->this$0:Lcom/android/camera/ActivityBase;
@@ -80,29 +80,29 @@
     .catch Lcom/android/camera/CameraHardwareException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Lcom/android/camera/CameraDisabledException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 206
+    .line 216
     :goto_0
     return-void
 
-    .line 201
+    .line 211
     :catch_0
     move-exception v0
 
-    .line 202
-    .local v0, e:Lcom/android/camera/CameraHardwareException;
+    .line 212
+    .local v0, "e":Lcom/android/camera/CameraHardwareException;
     iget-object v1, p0, Lcom/android/camera/ActivityBase$CameraOpenThread;->this$0:Lcom/android/camera/ActivityBase;
 
     iput-boolean v4, v1, Lcom/android/camera/ActivityBase;->mOpenCameraFail:Z
 
     goto :goto_0
 
-    .line 203
-    .end local v0           #e:Lcom/android/camera/CameraHardwareException;
+    .line 213
+    .end local v0    # "e":Lcom/android/camera/CameraHardwareException;
     :catch_1
     move-exception v0
 
-    .line 204
-    .local v0, e:Lcom/android/camera/CameraDisabledException;
+    .line 214
+    .local v0, "e":Lcom/android/camera/CameraDisabledException;
     iget-object v1, p0, Lcom/android/camera/ActivityBase$CameraOpenThread;->this$0:Lcom/android/camera/ActivityBase;
 
     iput-boolean v4, v1, Lcom/android/camera/ActivityBase;->mCameraDisabled:Z

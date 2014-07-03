@@ -47,16 +47,16 @@
     nop
 
     :array_0
-    .array-data 0x4
-        0xat 0x1t 0x2t 0x7ft
-        0xct 0x1t 0x2t 0x7ft
+    .array-data 4
+        0x7f02010a
+        0x7f02010c
     .end array-data
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 55
@@ -73,7 +73,7 @@
 
 .method private getCameraPickerState(Z)Ljava/lang/String;
     .locals 2
-    .parameter "isFocused"
+    .param p1, "isFocused"    # Z
 
     .prologue
     .line 146
@@ -87,9 +87,9 @@
     const v0, 0x7f0d0126
 
     .line 153
-    .local v0, resId:I
+    .local v0, "resId":I
     :goto_0
-    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/camera/ui/CameraPickerButton;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -100,7 +100,7 @@
     return-object v1
 
     .line 147
-    .end local v0           #resId:I
+    .end local v0    # "resId":I
     :cond_0
     const v0, 0x7f0d0127
 
@@ -112,11 +112,11 @@
 
     const v0, 0x7f0d0125
 
-    .restart local v0       #resId:I
+    .restart local v0    # "resId":I
     :goto_1
     goto :goto_0
 
-    .end local v0           #resId:I
+    .end local v0    # "resId":I
     :cond_2
     const v0, 0x7f0d0128
 
@@ -141,7 +141,7 @@
     move v0, v1
 
     .line 73
-    .local v0, bCameraMode:Z
+    .local v0, "bCameraMode":Z
     :goto_0
     iget-object v3, p0, Lcom/android/camera/ui/CameraPickerButton;->mCameraPickerButtonImage:Lcom/android/camera/ui/RotateImageView;
 
@@ -152,12 +152,12 @@
     aget v1, v1, v2
 
     :goto_1
-    invoke-virtual {v3, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v3, v1}, Lcom/android/camera/ui/RotateImageView;->setImageResource(I)V
 
     .line 76
     return-void
 
-    .end local v0           #bCameraMode:Z
+    .end local v0    # "bCameraMode":Z
     :cond_0
     move v0, v2
 
@@ -165,7 +165,7 @@
     goto :goto_0
 
     .line 73
-    .restart local v0       #bCameraMode:Z
+    .restart local v0    # "bCameraMode":Z
     :cond_1
     sget-object v2, Lcom/android/camera/ui/CameraPickerButton;->sButtonImageResource:[I
 
@@ -221,7 +221,7 @@
 
 .method public dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
     .locals 4
-    .parameter "event"
+    .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
     .prologue
     .line 164
@@ -230,7 +230,7 @@
     move-result v0
 
     .line 165
-    .local v0, ret:Z
+    .local v0, "ret":Z
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
 
     move-result v2
@@ -247,7 +247,7 @@
     move-result-object v1
 
     .line 167
-    .local v1, text:Ljava/lang/String;
+    .local v1, "text":Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -255,21 +255,21 @@
     if-nez v2, :cond_0
 
     .line 168
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getText()Ljava/util/List;
+    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
 
     move-result-object v2
 
     invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 171
-    .end local v1           #text:Ljava/lang/String;
+    .end local v1    # "text":Ljava/lang/String;
     :cond_0
     return v0
 .end method
 
 .method public initialize(Lcom/android/camera/PreferenceGroup;)V
     .locals 6
-    .parameter "group"
+    .param p1, "group"    # Lcom/android/camera/PreferenceGroup;
 
     .prologue
     const/16 v5, 0x8
@@ -286,11 +286,11 @@
     move-result-object v1
 
     .line 100
-    .local v1, pref:Lcom/android/camera/ListPreference;
+    .local v1, "pref":Lcom/android/camera/ListPreference;
     if-nez v1, :cond_0
 
     .line 101
-    invoke-virtual {p0, v5}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p0, v5}, Lcom/android/camera/ui/CameraPickerButton;->setVisibility(I)V
 
     .line 119
     :goto_0
@@ -313,16 +313,16 @@
     if-nez v2, :cond_1
 
     .line 107
-    invoke-virtual {p0, v5}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p0, v5}, Lcom/android/camera/ui/CameraPickerButton;->setVisibility(I)V
 
     goto :goto_0
 
     .line 110
     :cond_1
-    invoke-virtual {p0, v3}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p0, v3}, Lcom/android/camera/ui/CameraPickerButton;->setVisibility(I)V
 
     .line 111
-    invoke-virtual {p0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p0, p0}, Lcom/android/camera/ui/CameraPickerButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 112
     invoke-virtual {v1}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
@@ -330,7 +330,7 @@
     move-result-object v0
 
     .line 114
-    .local v0, cameraId:Ljava/lang/String;
+    .local v0, "cameraId":Ljava/lang/String;
     iget-object v2, p0, Lcom/android/camera/ui/CameraPickerButton;->mCameras:[Ljava/lang/CharSequence;
 
     aget-object v2, v2, v4
@@ -355,8 +355,8 @@
 
 .method public initializeForPanorama(Lcom/android/camera/PreferenceGroup;Landroid/view/View$OnClickListener;)V
     .locals 2
-    .parameter "group"
-    .parameter "listener"
+    .param p1, "group"    # Lcom/android/camera/PreferenceGroup;
+    .param p2, "listener"    # Landroid/view/View$OnClickListener;
 
     .prologue
     const/4 v1, 0x0
@@ -369,7 +369,7 @@
     .line 124
     const/16 v0, 0x8
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/CameraPickerButton;->setVisibility(I)V
 
     .line 130
     :goto_0
@@ -377,13 +377,13 @@
 
     .line 127
     :cond_0
-    invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p0, v1}, Lcom/android/camera/ui/CameraPickerButton;->setVisibility(I)V
 
     .line 128
     iput v1, p0, Lcom/android/camera/ui/CameraPickerButton;->mCameraFacing:I
 
     .line 129
-    invoke-virtual {p0, p2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p0, p2}, Lcom/android/camera/ui/CameraPickerButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto :goto_0
 .end method
@@ -410,7 +410,7 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 4
-    .parameter "v"
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 134
@@ -431,7 +431,7 @@
     const/4 v0, 0x1
 
     .line 138
-    .local v0, newCameraIndex:I
+    .local v0, "newCameraIndex":I
     :goto_1
     iput v0, p0, Lcom/android/camera/ui/CameraPickerButton;->mCameraFacing:I
 
@@ -449,7 +449,7 @@
     invoke-virtual {v2, v1}, Lcom/android/camera/ListPreference;->setValue(Ljava/lang/String;)V
 
     .line 140
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/camera/ui/CameraPickerButton;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/android/camera/AutoLockManager;->getInstance(Landroid/content/Context;)Lcom/android/camera/AutoLockManager;
 
@@ -465,7 +465,7 @@
     goto :goto_0
 
     .line 135
-    .end local v0           #newCameraIndex:I
+    .end local v0    # "newCameraIndex":I
     :cond_1
     const/4 v0, 0x0
 
@@ -477,12 +477,12 @@
 
     .prologue
     .line 60
-    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
+    invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
     .line 61
     const v0, 0x7f0c001b
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/CameraPickerButton;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -504,7 +504,7 @@
 
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
-    .parameter "info"
+    .param p1, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .prologue
     .line 158
@@ -525,16 +525,16 @@
 
 .method public setEnabled(Z)V
     .locals 1
-    .parameter "enabled"
+    .param p1, "enabled"    # Z
 
     .prologue
     .line 184
     iget-object v0, p0, Lcom/android/camera/ui/CameraPickerButton;->mCameraPickerButtonImage:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v0, p1}, Lcom/android/camera/ui/TwoStateImageView;->setEnabled(Z)V
+    invoke-virtual {v0, p1}, Lcom/android/camera/ui/RotateImageView;->setEnabled(Z)V
 
     .line 185
-    invoke-super {p0, p1}, Landroid/view/View;->setEnabled(Z)V
+    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->setEnabled(Z)V
 
     .line 186
     return-void
@@ -542,7 +542,7 @@
 
 .method public setListener(Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;)V
     .locals 0
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
 
     .prologue
     .line 94
@@ -554,8 +554,8 @@
 
 .method public setOrientation(IZ)V
     .locals 1
-    .parameter "orientation"
-    .parameter "animation"
+    .param p1, "orientation"    # I
+    .param p2, "animation"    # Z
 
     .prologue
     .line 68

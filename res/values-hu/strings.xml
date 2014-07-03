@@ -22,7 +22,6 @@
     <string name="review_cancel">MÉGSEM</string>
     <string name="pref_camera_id_title">Kamera választás</string>
     <string name="pref_camera_recordlocation_title">Helyszín mentése</string>
-    <string name="pref_camera_recordlocation_default">hibás</string>
     <string name="pref_camera_recordlocation_entry_off">Ki</string>
     <string name="pref_camera_recordlocation_entry_on">Be</string>
     <string name="pref_camera_sound_title">Zárhang</string>
@@ -76,7 +75,6 @@
     <string name="pref_camera_picturesize_professional_entry_1600x1200">2Mp(1600x1200)</string>
     <string name="pref_camera_picturesize_professional_entry_1280x720">0.9Mp(1280x720)</string>
     <string name="pref_camera_picturesize_professional_entry_1024x768">0.8Mp(1024x768)</string>
-    <string name="pref_camera_jpegquality_default">Finom</string>
     <string name="pref_camera_picture_format_title">Képformátum választás</string>
     <string name="pref_camera_picture_format_entry_jpeg">Jpeg</string>
     <string name="pref_camera_picture_format_entry_raw">Raw</string>
@@ -84,7 +82,6 @@
     <string name="pref_camera_jpegquality_entry_superfine">Kiváló</string>
     <string name="pref_camera_jpegquality_entry_fine">Jó</string>
     <string name="pref_camera_jpegquality_entry_normal">Normál</string>
-    <string name="pref_camera_histogram_default">letiltás</string>
     <string name="pref_camera_histogram_title">Histogram</string>
     <string name="pref_camera_histogram_entry_enable">Engedélyezés</string>
     <string name="pref_camera_histogram_entry_disable">Letiltás</string>
@@ -147,7 +144,6 @@
     <string name="pref_camera_default_suffix">(Alapért.)</string>
     <string name="pref_camera_sharpness_title">Élesség</string>
     <string name="pref_camera_contrast_title">Kontraszt</string>
-    <string name="pref_camera_saturation_default">5</string>
     <string name="pref_camera_saturation_title">Telítettség</string>
     <string name="pref_camera_scenemode_title">Kép jellege</string>
     <string name="pref_camera_scenemode_entry_off">Ki</string>
@@ -163,13 +159,10 @@
     <string name="pref_camera_scenemode_entry_sports">Sportesemény</string>
     <string name="pref_camera_scenemode_entry_backlight">Háttérvilágítás</string>
     <string name="pref_camera_scenemode_entry_flowers">Virágok</string>
-    <string name="pref_camera_scenedetect_default">Ki</string>
     <string name="pref_camera_scenedetect_title">Auto jelenet felismerés</string>
     <string name="not_selectable_in_scene_mode">Nem választható jelenetmódban.</string>
     <string name="pref_exposure_title">Megvilágítás</string>
     <string name="pref_camera_denoise_title">Zajszűrő</string>
-    <string name="pref_camera_denoise_default">Zajszűrés be</string>
-    <string name="pref_camera_iso_default">auto</string>
     <string name="pref_camera_iso_title">ISO választás</string>
     <string name="pref_camera_iso_entry_auto">Auto</string>
     <string name="pref_camera_iso_entry_iso100">ISO100</string>
@@ -253,12 +246,10 @@
     <string name="accessibility_skin_beautify_opened">Bőrszín javítás engedélyezve</string>
     <string name="accessibility_skin_beautify_closed">Bőrszín javítás letiltva</string>
     <string name="empty">" "</string>
-    <string name="pref_camera_autoexposure_default">Képkocka-átlag</string>
     <string name="pref_camera_autoexposure_title">Automata fénymérés</string>
     <string name="pref_camera_autoexposure_entry_frameaverage">Keret-átlag</string>
     <string name="pref_camera_autoexposure_entry_centerweighted">Középsúlyos fénymérés</string>
     <string name="pref_camera_autoexposure_entry_spotmetering">Pontszerű fénymérés</string>
-    <string name="pref_camera_audioencoder_default">aac</string>
     <string name="pref_camera_audio_capture_title">Hangrögzítés</string>
     <string name="pref_camera_video_duration_title">Videofelvétel hossza</string>
     <string name="pref_camera_video_duration_entry_mms">30 mp(MMS)</string>
@@ -270,7 +261,6 @@
     <string name="pref_camera_skinToneEnhancement_entry_enable">Engedélyez</string>
     <string name="pref_camera_skinToneEnhancement_entry_disable">Letilt</string>
     <string name="pref_camera_zsl_title">ZSL</string>
-    <string name="pref_camera_selectablezoneaf_default">auto</string>
     <string name="pref_camera_zsl_entry_off">Ki</string>
     <string name="pref_camera_zsl_entry_on">Be</string>
     <string name="pref_camera_facedetection_title">Arcfelismerés</string>
@@ -288,7 +278,6 @@
     <string name="pref_camera_hand_night_title">Éjszakai mód</string>
     <string name="pref_camera_ae_bracket_hdr_entry_off">Ki</string>
     <string name="pref_camera_ae_bracket_hdr_value_ae_bracket">AE-Bracket</string>
-    <string name="pref_camera_ae_bracket_hdr_default">Ki</string>
     <string name="hdr_exit_button_text">Kilépés a HDR módból</string>
     <string name="hand_night_exit_button_text">Kilépés az éjszakai módból</string>
     <string name="videocamera_settings_label">Videofelvétel beállítások</string>
@@ -310,7 +299,6 @@
     <string name="pref_camera_long_pressing_burst_shooting_title">Sorozatfelvétel</string>
     <string name="pref_camera_long_pressing_burst_shooting_entry_off">Ki</string>
     <string name="pref_camera_long_pressing_burst_shooting_entry_on">Be</string>
-    <string name="pref_camera_long_pressing_burst_shooting_default">be</string>
     <string name="pref_camera_current_k_value">Jelenlegi érték</string>
     <string name="error_fail_to_start_audio_capture">Hangrögzítés sikertelen: A mikrofon egy másik alkalmazás használja.</string>
     <string name="toast_start_audio_capture">Hangvezérlés bekapcsolva (cheese,capture,shoot parancsokkal vezérelheti)</string>
@@ -322,7 +310,6 @@
     <string name="toast_burst_snap_forbidden_when_audio_capture_open">sorozatfelvétel nem készíthető, ha a hangrögzítés be van kapcsolva.</string>
     <string name="toast_burst_snap_forbidden_when_iso_not_auto">"Sorozatfelvétel nem készíthető, ha az ISO nem 'auto'-ra van állítva."</string>
     <string name="time_lapse_error">Hibás felbontás a gyorsított felvételhez.</string>
-    <string name="pref_camera_movie_solid_default">be</string>
     <string name="pref_camera_movie_solid_title">Képstabilizátor</string>
     <string name="pref_camera_movie_solid_entry_off">Ki</string>
     <string name="pref_camera_movie_solid_entry_on">Be</string>
@@ -471,4 +458,5 @@
     <string name="pref_camera_watermark_title">Dátum feliratozás</string>
     <string name="pref_camera_watermark_entry_off">Ki</string>
     <string name="pref_camera_watermark_entry_on">Be</string>
+    <string name="toast_cannot_preview_image_when_screen_locked">Nem tekinthető meg a kép vagy a videó, ha a képernyő le van zárva.</string>
 </resources>

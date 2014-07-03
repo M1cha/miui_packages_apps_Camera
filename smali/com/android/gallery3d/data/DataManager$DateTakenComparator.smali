@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 89
+    .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +40,10 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/data/DataManager$1;)V
     .locals 0
-    .parameter "x0"
+    .param p1, "x0"    # Lcom/android/gallery3d/data/DataManager$1;
 
     .prologue
-    .line 89
+    .line 87
     invoke-direct {p0}, Lcom/android/gallery3d/data/DataManager$DateTakenComparator;-><init>()V
 
     return-void
@@ -53,11 +53,11 @@
 # virtual methods
 .method public compare(Lcom/android/gallery3d/data/MediaItem;Lcom/android/gallery3d/data/MediaItem;)I
     .locals 4
-    .parameter "item1"
-    .parameter "item2"
+    .param p1, "item1"    # Lcom/android/gallery3d/data/MediaItem;
+    .param p2, "item2"    # Lcom/android/gallery3d/data/MediaItem;
 
     .prologue
-    .line 91
+    .line 89
     invoke-virtual {p1}, Lcom/android/gallery3d/data/MediaItem;->getDateInMs()J
 
     move-result-wide v0
@@ -77,17 +77,17 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Ljava/lang/Object;
+    .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
-    .line 89
+    .line 87
     check-cast p1, Lcom/android/gallery3d/data/MediaItem;
 
-    .end local p1
+    .end local p1    # "x0":Ljava/lang/Object;
     check-cast p2, Lcom/android/gallery3d/data/MediaItem;
 
-    .end local p2
+    .end local p2    # "x1":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2}, Lcom/android/gallery3d/data/DataManager$DateTakenComparator;->compare(Lcom/android/gallery3d/data/MediaItem;Lcom/android/gallery3d/data/MediaItem;)I
 
     move-result v0

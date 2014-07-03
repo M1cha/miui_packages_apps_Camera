@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 182
+    .line 178
     iput-object p1, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -34,42 +34,80 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
-    .parameter "context"
-    .parameter "intent"
+    .locals 3
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
-    .line 185
-    iget-object v0, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
+    .line 181
+    iget-object v1, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
 
-    iget-boolean v0, v0, Lcom/android/camera/ActivityBase;->mShowCameraAppView:Z
+    iget-boolean v1, v1, Lcom/android/camera/ActivityBase;->mPaused:Z
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    .line 186
-    iget-object v0, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
-
-    invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->getLastThumbnailUncached()V
-
-    .line 190
+    .line 193
     :goto_0
-    iget-object v0, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
-
-    iget-object v0, v0, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
-
-    invoke-virtual {v0}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
-
-    .line 191
     return-void
 
-    .line 188
+    .line 182
     :cond_0
-    iget-object v0, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    const/4 v1, 0x1
+    move-result-object v0
 
-    #setter for: Lcom/android/camera/ActivityBase;->mUpdateThumbnailDelayed:Z
-    invoke-static {v0, v1}, Lcom/android/camera/ActivityBase;->access$002(Lcom/android/camera/ActivityBase;Z)Z
+    .line 183
+    .local v0, "action":Ljava/lang/String;
+    const-string v1, "com.android.camera.action.DELETE_PICTURE"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 184
+    iget-object v1, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
+
+    iget-boolean v1, v1, Lcom/android/camera/ActivityBase;->mShowCameraAppView:Z
+
+    if-eqz v1, :cond_1
+
+    .line 185
+    iget-object v1, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
+
+    invoke-virtual {v1}, Lcom/android/camera/ActivityBase;->getLastThumbnailUncached()V
+
+    .line 189
+    :goto_1
+    iget-object v1, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
+
+    iget-object v1, v1, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
+
+    invoke-virtual {v1}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
+
+    goto :goto_0
+
+    .line 187
+    :cond_1
+    iget-object v1, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
+
+    const/4 v2, 0x1
+
+    # setter for: Lcom/android/camera/ActivityBase;->mUpdateThumbnailDelayed:Z
+    invoke-static {v1, v2}, Lcom/android/camera/ActivityBase;->access$002(Lcom/android/camera/ActivityBase;Z)Z
+
+    goto :goto_1
+
+    .line 191
+    :cond_2
+    iget-object v1, p0, Lcom/android/camera/ActivityBase$1;->this$0:Lcom/android/camera/ActivityBase;
+
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcom/android/camera/ActivityBase;->handleControllerEvent(Ljava/lang/String;)V
 
     goto :goto_0
 .end method

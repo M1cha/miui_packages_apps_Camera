@@ -16,9 +16,9 @@
 
 .method public static createSettingPopup(Ljava/lang/String;Landroid/view/ViewGroup;Landroid/content/Context;)Lcom/android/camera/ui/AbstractSettingPopup;
     .locals 3
-    .parameter "key"
-    .parameter "root"
-    .parameter "context"
+    .param p0, "key"    # Ljava/lang/String;
+    .param p1, "root"    # Landroid/view/ViewGroup;
+    .param p2, "context"    # Landroid/content/Context;
 
     .prologue
     .line 13
@@ -31,7 +31,7 @@
     check-cast v1, Landroid/view/LayoutInflater;
 
     .line 17
-    .local v1, inflater:Landroid/view/LayoutInflater;
+    .local v1, "inflater":Landroid/view/LayoutInflater;
     const-string v2, "pref_video_effect_key"
 
     invoke-virtual {v2, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -44,7 +44,7 @@
     const v0, 0x7f040010
 
     .line 38
-    .local v0, inflateRes:I
+    .local v0, "inflateRes":I
     :goto_0
     const/4 v2, 0x0
 
@@ -57,7 +57,7 @@
     return-object v2
 
     .line 20
-    .end local v0           #inflateRes:I
+    .end local v0    # "inflateRes":I
     :cond_0
     const-string v2, "pref_camera_iso_key"
 
@@ -70,11 +70,11 @@
     .line 21
     const v0, 0x7f040015
 
-    .restart local v0       #inflateRes:I
+    .restart local v0    # "inflateRes":I
     goto :goto_0
 
     .line 23
-    .end local v0           #inflateRes:I
+    .end local v0    # "inflateRes":I
     :cond_1
     const-string v2, "pref_camera_whitebalance_key"
 
@@ -104,11 +104,11 @@
     :cond_2
     const v0, 0x7f040016
 
-    .restart local v0       #inflateRes:I
+    .restart local v0    # "inflateRes":I
     goto :goto_0
 
     .line 28
-    .end local v0           #inflateRes:I
+    .end local v0    # "inflateRes":I
     :cond_3
     const-string v2, "pref_camera_coloreffect_key"
 
@@ -121,11 +121,11 @@
     .line 29
     const v0, 0x7f040002
 
-    .restart local v0       #inflateRes:I
+    .restart local v0    # "inflateRes":I
     goto :goto_0
 
     .line 31
-    .end local v0           #inflateRes:I
+    .end local v0    # "inflateRes":I
     :cond_4
     const-string v2, "pref_camera_exposure_key"
 
@@ -138,14 +138,14 @@
     .line 32
     const v0, 0x7f04002a
 
-    .restart local v0       #inflateRes:I
+    .restart local v0    # "inflateRes":I
     goto :goto_0
 
     .line 35
-    .end local v0           #inflateRes:I
+    .end local v0    # "inflateRes":I
     :cond_5
     const v0, 0x7f040001
 
-    .restart local v0       #inflateRes:I
+    .restart local v0    # "inflateRes":I
     goto :goto_0
 .end method

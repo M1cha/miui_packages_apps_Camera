@@ -21,7 +21,7 @@
 # direct methods
 .method public constructor <init>(Lcom/google/zxing/common/BitMatrix;Ljava/util/List;)V
     .locals 0
-    .parameter "bits"
+    .param p1, "bits"    # Lcom/google/zxing/common/BitMatrix;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -35,7 +35,7 @@
 
     .prologue
     .line 32
-    .local p2, points:Ljava/util/List;,"Ljava/util/List<[Lcom/google/zxing/ResultPoint;>;"
+    .local p2, "points":Ljava/util/List;, "Ljava/util/List<[Lcom/google/zxing/ResultPoint;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 33

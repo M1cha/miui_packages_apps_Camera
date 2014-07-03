@@ -12,8 +12,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/os/Looper;Ljava/util/Hashtable;)V
     .locals 1
-    .parameter "context"
-    .parameter "looper"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "looper"    # Landroid/os/Looper;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -29,7 +29,7 @@
 
     .prologue
     .line 23
-    .local p3, hints:Ljava/util/Hashtable;,"Ljava/util/Hashtable<Lcom/google/zxing/DecodeHintType;Ljava/lang/Object;>;"
+    .local p3, "hints":Ljava/util/Hashtable;, "Ljava/util/Hashtable<Lcom/google/zxing/DecodeHintType;Ljava/lang/Object;>;"
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     .line 24
@@ -53,9 +53,9 @@
 
 .method private decode([BII)V
     .locals 11
-    .parameter "data"
-    .parameter "width"
-    .parameter "height"
+    .param p1, "data"    # [B
+    .param p2, "width"    # I
+    .param p3, "height"    # I
 
     .prologue
     .line 39
@@ -64,17 +64,17 @@
     new-array v4, v9, [B
 
     .line 40
-    .local v4, rotatedData:[B
+    .local v4, "rotatedData":[B
     const/4 v8, 0x0
 
-    .local v8, y:I
+    .local v8, "y":I
     :goto_0
     if-ge v8, p3, :cond_1
 
     .line 41
     const/4 v7, 0x0
 
-    .local v7, x:I
+    .local v7, "x":I
     :goto_1
     if-ge v7, p2, :cond_0
 
@@ -107,12 +107,12 @@
     goto :goto_0
 
     .line 45
-    .end local v7           #x:I
+    .end local v7    # "x":I
     :cond_1
     move v6, p2
 
     .line 46
-    .local v6, temp:I
+    .local v6, "temp":I
     move p2, p3
 
     .line 47
@@ -122,19 +122,19 @@
     const/4 v0, 0x0
 
     .line 50
-    .local v0, bitmap:Lcom/google/zxing/BinaryBitmap;
+    .local v0, "bitmap":Lcom/google/zxing/BinaryBitmap;
     const/4 v1, 0x2
 
     .line 51
-    .local v1, decodeTimeMost:I
+    .local v1, "decodeTimeMost":I
     const/4 v5, 0x0
 
     .line 52
-    .local v5, source:Lcom/android/zxing/YUVLuminanceSource;
+    .local v5, "source":Lcom/android/zxing/YUVLuminanceSource;
     const/4 v3, 0x0
 
     .line 56
-    .local v3, rawResult:Lcom/google/zxing/Result;
+    .local v3, "rawResult":Lcom/google/zxing/Result;
     :cond_2
     add-int/lit8 v1, v1, -0x1
 
@@ -162,7 +162,7 @@
     .line 62
     new-instance v0, Lcom/google/zxing/BinaryBitmap;
 
-    .end local v0           #bitmap:Lcom/google/zxing/BinaryBitmap;
+    .end local v0    # "bitmap":Lcom/google/zxing/BinaryBitmap;
     new-instance v9, Lcom/google/zxing/common/HybridBinarizer;
 
     invoke-direct {v9, v5}, Lcom/google/zxing/common/HybridBinarizer;-><init>(Lcom/google/zxing/LuminanceSource;)V
@@ -170,14 +170,14 @@
     invoke-direct {v0, v9}, Lcom/google/zxing/BinaryBitmap;-><init>(Lcom/google/zxing/Binarizer;)V
 
     .line 64
-    .restart local v0       #bitmap:Lcom/google/zxing/BinaryBitmap;
+    .restart local v0    # "bitmap":Lcom/google/zxing/BinaryBitmap;
     :try_start_0
     iget-object v9, p0, Lcom/android/zxing/DecodeHandler;->mMultiFormatReader:Lcom/google/zxing/MultiFormatReader;
 
     invoke-virtual {v9, v0}, Lcom/google/zxing/MultiFormatReader;->decodeWithState(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/zxing/ReaderException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v3
 
@@ -208,11 +208,11 @@
     move-result-object v2
 
     .line 73
-    .local v2, message:Landroid/os/Message;
+    .local v2, "message":Landroid/os/Message;
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
     .line 78
-    .end local v2           #message:Landroid/os/Message;
+    .end local v2    # "message":Landroid/os/Message;
     :goto_4
     return-void
 
@@ -265,7 +265,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .parameter "message"
+    .param p1, "message"    # Landroid/os/Message;
 
     .prologue
     .line 31

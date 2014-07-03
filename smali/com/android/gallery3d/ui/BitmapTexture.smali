@@ -10,7 +10,7 @@
 # direct methods
 .method public constructor <init>(Landroid/graphics/Bitmap;)V
     .locals 1
-    .parameter "bitmap"
+    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
     .line 32
@@ -24,8 +24,8 @@
 
 .method public constructor <init>(Landroid/graphics/Bitmap;Z)V
     .locals 1
-    .parameter "bitmap"
-    .parameter "hasBorder"
+    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
+    .param p2, "hasBorder"    # Z
 
     .prologue
     .line 36
@@ -62,28 +62,28 @@
 # virtual methods
 .method public bridge synthetic draw(Lcom/android/gallery3d/ui/GLCanvas;II)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
+    .param p1, "x0"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .param p2, "x1"    # I
+    .param p3, "x2"    # I
 
     .prologue
     .line 28
-    invoke-super {p0, p1, p2, p3}, Lcom/android/gallery3d/ui/BasicTexture;->draw(Lcom/android/gallery3d/ui/GLCanvas;II)V
+    invoke-super {p0, p1, p2, p3}, Lcom/android/gallery3d/ui/UploadedTexture;->draw(Lcom/android/gallery3d/ui/GLCanvas;II)V
 
     return-void
 .end method
 
 .method public bridge synthetic draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-    .parameter "x3"
-    .parameter "x4"
+    .param p1, "x0"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .param p2, "x1"    # I
+    .param p3, "x2"    # I
+    .param p4, "x3"    # I
+    .param p5, "x4"    # I
 
     .prologue
     .line 28
-    invoke-super/range {p0 .. p5}, Lcom/android/gallery3d/ui/BasicTexture;->draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
+    invoke-super/range {p0 .. p5}, Lcom/android/gallery3d/ui/UploadedTexture;->draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
 
     return-void
 .end method
@@ -115,7 +115,7 @@
 
     .prologue
     .line 28
-    invoke-super {p0}, Lcom/android/gallery3d/ui/BasicTexture;->getId()I
+    invoke-super {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->getId()I
 
     move-result v0
 
@@ -127,7 +127,7 @@
 
     .prologue
     .line 28
-    invoke-super {p0}, Lcom/android/gallery3d/ui/BasicTexture;->getTextureHeight()I
+    invoke-super {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->getTextureHeight()I
 
     move-result v0
 
@@ -139,7 +139,7 @@
 
     .prologue
     .line 28
-    invoke-super {p0}, Lcom/android/gallery3d/ui/BasicTexture;->getTextureWidth()I
+    invoke-super {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->getTextureWidth()I
 
     move-result v0
 
@@ -163,7 +163,7 @@
 
     .prologue
     .line 28
-    invoke-super {p0}, Lcom/android/gallery3d/ui/BasicTexture;->hasBorder()Z
+    invoke-super {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->hasBorder()Z
 
     move-result v0
 
@@ -187,7 +187,7 @@
 
     .prologue
     .line 28
-    invoke-super {p0}, Lcom/android/gallery3d/ui/BasicTexture;->isLoaded()Z
+    invoke-super {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->isLoaded()Z
 
     move-result v0
 
@@ -208,7 +208,7 @@
 
 .method protected onFreeBitmap(Landroid/graphics/Bitmap;)V
     .locals 0
-    .parameter "bitmap"
+    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
     .line 44
@@ -237,7 +237,7 @@
 
 .method public bridge synthetic setOpaque(Z)V
     .locals 0
-    .parameter "x0"
+    .param p1, "x0"    # Z
 
     .prologue
     .line 28
@@ -248,7 +248,7 @@
 
 .method public bridge synthetic updateContent(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 0
-    .parameter "x0"
+    .param p1, "x0"    # Lcom/android/gallery3d/ui/GLCanvas;
 
     .prologue
     .line 28
@@ -262,7 +262,7 @@
 
     .prologue
     .line 28
-    invoke-super {p0}, Lcom/android/gallery3d/ui/BasicTexture;->yield()V
+    invoke-super {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->yield()V
 
     return-void
 .end method

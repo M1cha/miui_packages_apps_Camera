@@ -41,7 +41,7 @@
     :goto_0
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$9;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mThreadRunning:Z
+    # getter for: Lcom/android/camera/PanoramaActivity;->mThreadRunning:Z
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$2300(Lcom/android/camera/PanoramaActivity;)Z
 
     move-result v2
@@ -51,7 +51,7 @@
     .line 915
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$9;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mMosaicFrameProcessor:Lcom/android/camera/MosaicFrameProcessor;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mMosaicFrameProcessor:Lcom/android/camera/MosaicFrameProcessor;
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$600(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/MosaicFrameProcessor;
 
     move-result-object v2
@@ -60,7 +60,7 @@
 
     iget-object v4, p0, Lcom/android/camera/PanoramaActivity$9;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mCancelComputation:Z
+    # getter for: Lcom/android/camera/PanoramaActivity;->mCancelComputation:Z
     invoke-static {v4}, Lcom/android/camera/PanoramaActivity;->access$2400(Lcom/android/camera/PanoramaActivity;)Z
 
     move-result v4
@@ -70,11 +70,11 @@
     move-result v1
 
     .line 919
-    .local v1, progress:I
+    .local v1, "progress":I
     :try_start_0
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$9;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mWaitObject:Ljava/lang/Object;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mWaitObject:Ljava/lang/Object;
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$2500(Lcom/android/camera/PanoramaActivity;)Ljava/lang/Object;
 
     move-result-object v3
@@ -87,7 +87,7 @@
     :try_start_1
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$9;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mWaitObject:Ljava/lang/Object;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mWaitObject:Ljava/lang/Object;
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$2500(Lcom/android/camera/PanoramaActivity;)Ljava/lang/Object;
 
     move-result-object v2
@@ -108,7 +108,7 @@
 
     invoke-direct {v3, p0, v1}, Lcom/android/camera/PanoramaActivity$9$1;-><init>(Lcom/android/camera/PanoramaActivity$9;I)V
 
-    invoke-virtual {v2, v3}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+    invoke-virtual {v2, v3}, Lcom/android/camera/PanoramaActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
     goto :goto_0
 
@@ -131,7 +131,7 @@
     move-exception v0
 
     .line 923
-    .local v0, e:Ljava/lang/InterruptedException;
+    .local v0, "e":Ljava/lang/InterruptedException;
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Panorama reportProgress failed"
@@ -141,8 +141,8 @@
     throw v2
 
     .line 933
-    .end local v0           #e:Ljava/lang/InterruptedException;
-    .end local v1           #progress:I
+    .end local v0    # "e":Ljava/lang/InterruptedException;
+    .end local v1    # "progress":I
     :cond_0
     return-void
 .end method

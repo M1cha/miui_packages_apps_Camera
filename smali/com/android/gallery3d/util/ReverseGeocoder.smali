@@ -16,7 +16,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 4
-    .parameter "context"
+    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 77
@@ -66,7 +66,7 @@
 
 .method public static final readUTF(Ljava/io/DataInputStream;)Ljava/lang/String;
     .locals 2
-    .parameter "dis"
+    .param p0, "dis"    # Ljava/io/DataInputStream;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -80,7 +80,7 @@
     move-result-object v0
 
     .line 413
-    .local v0, retVal:Ljava/lang/String;
+    .local v0, "retVal":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -91,15 +91,15 @@
     const/4 v0, 0x0
 
     .line 415
-    .end local v0           #retVal:Ljava/lang/String;
+    .end local v0    # "retVal":Ljava/lang/String;
     :cond_0
     return-object v0
 .end method
 
 .method public static final writeUTF(Ljava/io/DataOutputStream;Ljava/lang/String;)V
     .locals 1
-    .parameter "dos"
-    .parameter "string"
+    .param p0, "dos"    # Ljava/io/DataOutputStream;
+    .param p1, "string"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -130,9 +130,9 @@
 # virtual methods
 .method public lookupAddress(DDZ)Landroid/location/Address;
     .locals 24
-    .parameter "latitude"
-    .parameter "longitude"
-    .parameter "useCache"
+    .param p1, "latitude"    # D
+    .param p3, "longitude"    # D
+    .param p5, "useCache"    # Z
 
     .prologue
     .line 307
@@ -140,7 +140,7 @@
 
     add-double v3, v3, p1
 
-    const-wide/high16 v5, 0x4000
+    const-wide/high16 v5, 0x4000000000000000L
 
     mul-double/2addr v3, v5
 
@@ -163,11 +163,11 @@
     move-wide/from16 v19, v0
 
     .line 309
-    .local v19, locationKey:J
+    .local v19, "locationKey":J
     const/4 v12, 0x0
 
     .line 310
-    .local v12, cachedLocation:[B
+    .local v12, "cachedLocation":[B
     if-eqz p5, :cond_0
 
     :try_start_0
@@ -193,7 +193,7 @@
     const/4 v9, 0x0
 
     .line 314
-    .local v9, address:Landroid/location/Address;
+    .local v9, "address":Landroid/location/Address;
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/gallery3d/util/ReverseGeocoder;->mConnectivityManager:Landroid/net/ConnectivityManager;
@@ -203,7 +203,7 @@
     move-result-object v21
 
     .line 315
-    .local v21, networkInfo:Landroid/net/NetworkInfo;
+    .local v21, "networkInfo":Landroid/net/NetworkInfo;
     if-eqz v12, :cond_1
 
     array-length v3, v12
@@ -225,15 +225,15 @@
     const/4 v9, 0x0
 
     .line 396
-    .end local v9           #address:Landroid/location/Address;
-    .end local v21           #networkInfo:Landroid/net/NetworkInfo;
+    .end local v9    # "address":Landroid/location/Address;
+    .end local v21    # "networkInfo":Landroid/net/NetworkInfo;
     :cond_3
     :goto_0
     return-object v9
 
     .line 319
-    .restart local v9       #address:Landroid/location/Address;
-    .restart local v21       #networkInfo:Landroid/net/NetworkInfo;
+    .restart local v9    # "address":Landroid/location/Address;
+    .restart local v21    # "networkInfo":Landroid/net/NetworkInfo;
     :cond_4
     move-object/from16 v0, p0
 
@@ -250,7 +250,7 @@
     move-result-object v10
 
     .line 320
-    .local v10, addresses:Ljava/util/List;,"Ljava/util/List<Landroid/location/Address;>;"
+    .local v10, "addresses":Ljava/util/List;, "Ljava/util/List<Landroid/location/Address;>;"
     invoke-interface {v10}, Ljava/util/List;->isEmpty()Z
 
     move-result v3
@@ -264,29 +264,29 @@
 
     move-result-object v9
 
-    .end local v9           #address:Landroid/location/Address;
+    .end local v9    # "address":Landroid/location/Address;
     check-cast v9, Landroid/location/Address;
 
     .line 322
-    .restart local v9       #address:Landroid/location/Address;
+    .restart local v9    # "address":Landroid/location/Address;
     new-instance v11, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v11}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
     .line 323
-    .local v11, bos:Ljava/io/ByteArrayOutputStream;
+    .local v11, "bos":Ljava/io/ByteArrayOutputStream;
     new-instance v15, Ljava/io/DataOutputStream;
 
     invoke-direct {v15, v11}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
 
     .line 324
-    .local v15, dos:Ljava/io/DataOutputStream;
+    .local v15, "dos":Ljava/io/DataOutputStream;
     invoke-virtual {v9}, Landroid/location/Address;->getLocale()Ljava/util/Locale;
 
     move-result-object v18
 
     .line 325
-    .local v18, locale:Ljava/util/Locale;
+    .local v18, "locale":Ljava/util/Locale;
     invoke-virtual/range {v18 .. v18}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
 
     move-result-object v3
@@ -320,7 +320,7 @@
     move-result v22
 
     .line 331
-    .local v22, numAddressLines:I
+    .local v22, "numAddressLines":I
     move/from16 v0, v22
 
     invoke-virtual {v15, v0}, Ljava/io/DataOutputStream;->writeInt(I)V
@@ -328,7 +328,7 @@
     .line 332
     const/16 v16, 0x0
 
-    .local v16, i:I
+    .local v16, "i":I
     :goto_1
     move/from16 v0, v16
 
@@ -439,19 +439,19 @@
 
     .line 350
     :cond_6
-    invoke-virtual {v15}, Ljava/io/FilterOutputStream;->close()V
+    invoke-virtual {v15}, Ljava/io/DataOutputStream;->close()V
 
     goto/16 :goto_0
 
     .line 393
-    .end local v9           #address:Landroid/location/Address;
-    .end local v10           #addresses:Ljava/util/List;,"Ljava/util/List<Landroid/location/Address;>;"
-    .end local v11           #bos:Ljava/io/ByteArrayOutputStream;
-    .end local v15           #dos:Ljava/io/DataOutputStream;
-    .end local v16           #i:I
-    .end local v18           #locale:Ljava/util/Locale;
-    .end local v21           #networkInfo:Landroid/net/NetworkInfo;
-    .end local v22           #numAddressLines:I
+    .end local v9    # "address":Landroid/location/Address;
+    .end local v10    # "addresses":Ljava/util/List;, "Ljava/util/List<Landroid/location/Address;>;"
+    .end local v11    # "bos":Ljava/io/ByteArrayOutputStream;
+    .end local v15    # "dos":Ljava/io/DataOutputStream;
+    .end local v16    # "i":I
+    .end local v18    # "locale":Ljava/util/Locale;
+    .end local v21    # "networkInfo":Landroid/net/NetworkInfo;
+    .end local v22    # "numAddressLines":I
     :catch_0
     move-exception v3
 
@@ -461,8 +461,8 @@
     goto/16 :goto_0
 
     .line 354
-    .restart local v9       #address:Landroid/location/Address;
-    .restart local v21       #networkInfo:Landroid/net/NetworkInfo;
+    .restart local v9    # "address":Landroid/location/Address;
+    .restart local v21    # "networkInfo":Landroid/net/NetworkInfo;
     :cond_7
     new-instance v14, Ljava/io/DataInputStream;
 
@@ -473,29 +473,29 @@
     invoke-direct {v14, v3}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
     .line 356
-    .local v14, dis:Ljava/io/DataInputStream;
+    .local v14, "dis":Ljava/io/DataInputStream;
     invoke-static {v14}, Lcom/android/gallery3d/util/ReverseGeocoder;->readUTF(Ljava/io/DataInputStream;)Ljava/lang/String;
 
     move-result-object v17
 
     .line 357
-    .local v17, language:Ljava/lang/String;
+    .local v17, "language":Ljava/lang/String;
     invoke-static {v14}, Lcom/android/gallery3d/util/ReverseGeocoder;->readUTF(Ljava/io/DataInputStream;)Ljava/lang/String;
 
     move-result-object v13
 
     .line 358
-    .local v13, country:Ljava/lang/String;
+    .local v13, "country":Ljava/lang/String;
     invoke-static {v14}, Lcom/android/gallery3d/util/ReverseGeocoder;->readUTF(Ljava/io/DataInputStream;)Ljava/lang/String;
 
     move-result-object v23
 
     .line 359
-    .local v23, variant:Ljava/lang/String;
+    .local v23, "variant":Ljava/lang/String;
     const/16 v18, 0x0
 
     .line 360
-    .restart local v18       #locale:Ljava/util/Locale;
+    .restart local v18    # "locale":Ljava/util/Locale;
     if-eqz v17, :cond_8
 
     .line 361
@@ -504,7 +504,7 @@
     .line 362
     new-instance v18, Ljava/util/Locale;
 
-    .end local v18           #locale:Ljava/util/Locale;
+    .end local v18    # "locale":Ljava/util/Locale;
     move-object/from16 v0, v18
 
     move-object/from16 v1, v17
@@ -512,7 +512,7 @@
     invoke-direct {v0, v1}, Ljava/util/Locale;-><init>(Ljava/lang/String;)V
 
     .line 369
-    .restart local v18       #locale:Ljava/util/Locale;
+    .restart local v18    # "locale":Ljava/util/Locale;
     :cond_8
     :goto_2
     invoke-virtual/range {v18 .. v18}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
@@ -534,7 +534,7 @@
     if-nez v3, :cond_b
 
     .line 370
-    invoke-virtual {v14}, Ljava/io/FilterInputStream;->close()V
+    invoke-virtual {v14}, Ljava/io/DataInputStream;->close()V
 
     .line 371
     const/4 v8, 0x0
@@ -558,21 +558,21 @@
     .line 364
     new-instance v18, Ljava/util/Locale;
 
-    .end local v18           #locale:Ljava/util/Locale;
+    .end local v18    # "locale":Ljava/util/Locale;
     move-object/from16 v0, v18
 
     move-object/from16 v1, v17
 
     invoke-direct {v0, v1, v13}, Ljava/util/Locale;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .restart local v18       #locale:Ljava/util/Locale;
+    .restart local v18    # "locale":Ljava/util/Locale;
     goto :goto_2
 
     .line 366
     :cond_a
     new-instance v18, Ljava/util/Locale;
 
-    .end local v18           #locale:Ljava/util/Locale;
+    .end local v18    # "locale":Ljava/util/Locale;
     move-object/from16 v0, v18
 
     move-object/from16 v1, v17
@@ -581,20 +581,20 @@
 
     invoke-direct {v0, v1, v13, v2}, Ljava/util/Locale;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .restart local v18       #locale:Ljava/util/Locale;
+    .restart local v18    # "locale":Ljava/util/Locale;
     goto :goto_2
 
     .line 373
     :cond_b
     new-instance v9, Landroid/location/Address;
 
-    .end local v9           #address:Landroid/location/Address;
+    .end local v9    # "address":Landroid/location/Address;
     move-object/from16 v0, v18
 
     invoke-direct {v9, v0}, Landroid/location/Address;-><init>(Ljava/util/Locale;)V
 
     .line 375
-    .restart local v9       #address:Landroid/location/Address;
+    .restart local v9    # "address":Landroid/location/Address;
     invoke-static {v14}, Lcom/android/gallery3d/util/ReverseGeocoder;->readUTF(Ljava/io/DataInputStream;)Ljava/lang/String;
 
     move-result-object v3
@@ -607,10 +607,10 @@
     move-result v22
 
     .line 377
-    .restart local v22       #numAddressLines:I
+    .restart local v22    # "numAddressLines":I
     const/16 v16, 0x0
 
-    .restart local v16       #i:I
+    .restart local v16    # "i":I
     :goto_3
     move/from16 v0, v16
 
@@ -697,7 +697,7 @@
     invoke-virtual {v9, v3}, Landroid/location/Address;->setUrl(Ljava/lang/String;)V
 
     .line 390
-    invoke-virtual {v14}, Ljava/io/FilterInputStream;->close()V
+    invoke-virtual {v14}, Ljava/io/DataInputStream;->close()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

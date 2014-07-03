@@ -930,43 +930,43 @@
 
     move-result-object v0
 
-    .local v0, arr$:[Lcom/google/zxing/common/CharacterSetECI;
+    .local v0, "arr$":[Lcom/google/zxing/common/CharacterSetECI;
     array-length v5, v0
 
-    .local v5, len$:I
+    .local v5, "len$":I
     const/4 v3, 0x0
 
-    .local v3, i$:I
+    .local v3, "i$":I
     move v4, v3
 
-    .end local v0           #arr$:[Lcom/google/zxing/common/CharacterSetECI;
-    .end local v3           #i$:I
-    .end local v5           #len$:I
-    .local v4, i$:I
+    .end local v0    # "arr$":[Lcom/google/zxing/common/CharacterSetECI;
+    .end local v3    # "i$":I
+    .end local v5    # "len$":I
+    .local v4, "i$":I
     :goto_0
     if-ge v4, v5, :cond_2
 
     aget-object v2, v0, v4
 
     .line 65
-    .local v2, eci:Lcom/google/zxing/common/CharacterSetECI;
+    .local v2, "eci":Lcom/google/zxing/common/CharacterSetECI;
     iget-object v1, v2, Lcom/google/zxing/common/CharacterSetECI;->values:[I
 
-    .local v1, arr$:[I
+    .local v1, "arr$":[I
     array-length v6, v1
 
-    .local v6, len$:I
+    .local v6, "len$":I
     const/4 v3, 0x0
 
-    .end local v4           #i$:I
-    .restart local v3       #i$:I
+    .end local v4    # "i$":I
+    .restart local v3    # "i$":I
     :goto_1
     if-ge v3, v6, :cond_0
 
     aget v8, v1, v3
 
     .line 66
-    .local v8, value:I
+    .local v8, "value":I
     sget-object v9, Lcom/google/zxing/common/CharacterSetECI;->VALUE_TO_ECI:Ljava/util/Map;
 
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -981,11 +981,11 @@
     goto :goto_1
 
     .line 68
-    .end local v8           #value:I
+    .end local v8    # "value":I
     :cond_0
     sget-object v9, Lcom/google/zxing/common/CharacterSetECI;->NAME_TO_ECI:Ljava/util/Map;
 
-    invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/google/zxing/common/CharacterSetECI;->name()Ljava/lang/String;
 
     move-result-object v10
 
@@ -994,7 +994,7 @@
     .line 69
     iget-object v1, v2, Lcom/google/zxing/common/CharacterSetECI;->otherEncodingNames:[Ljava/lang/String;
 
-    .local v1, arr$:[Ljava/lang/String;
+    .local v1, "arr$":[Ljava/lang/String;
     array-length v6, v1
 
     const/4 v3, 0x0
@@ -1005,7 +1005,7 @@
     aget-object v7, v1, v3
 
     .line 70
-    .local v7, name:Ljava/lang/String;
+    .local v7, "name":Ljava/lang/String;
     sget-object v9, Lcom/google/zxing/common/CharacterSetECI;->NAME_TO_ECI:Ljava/util/Map;
 
     invoke-interface {v9, v7, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -1016,50 +1016,48 @@
     goto :goto_2
 
     .line 64
-    .end local v7           #name:Ljava/lang/String;
+    .end local v7    # "name":Ljava/lang/String;
     :cond_1
     add-int/lit8 v3, v4, 0x1
 
     move v4, v3
 
-    .end local v3           #i$:I
-    .restart local v4       #i$:I
+    .end local v3    # "i$":I
+    .restart local v4    # "i$":I
     goto :goto_0
 
     .line 73
-    .end local v1           #arr$:[Ljava/lang/String;
-    .end local v2           #eci:Lcom/google/zxing/common/CharacterSetECI;
-    .end local v6           #len$:I
+    .end local v1    # "arr$":[Ljava/lang/String;
+    .end local v2    # "eci":Lcom/google/zxing/common/CharacterSetECI;
+    .end local v6    # "len$":I
     :cond_2
     return-void
 
     .line 33
     :array_0
-    .array-data 0x4
-        0x0t 0x0t 0x0t 0x0t
-        0x2t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x0
+        0x2
     .end array-data
 
     .line 34
     :array_1
-    .array-data 0x4
-        0x1t 0x0t 0x0t 0x0t
-        0x3t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x1
+        0x3
     .end array-data
 
     .line 56
     :array_2
-    .array-data 0x4
-        0x1bt 0x0t 0x0t 0x0t
-        0xaat 0x0t 0x0t 0x0t
+    .array-data 4
+        0x1b
+        0xaa
     .end array-data
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 2
-    .parameter
-    .parameter
-    .parameter "value"
+    .param p3, "value"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
@@ -1086,10 +1084,8 @@
 
 .method private varargs constructor <init>(Ljava/lang/String;II[Ljava/lang/String;)V
     .locals 2
-    .parameter
-    .parameter
-    .parameter "value"
-    .parameter "otherEncodingNames"
+    .param p3, "value"    # I
+    .param p4, "otherEncodingNames"    # [Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[",
@@ -1122,10 +1118,8 @@
 
 .method private varargs constructor <init>(Ljava/lang/String;I[I[Ljava/lang/String;)V
     .locals 0
-    .parameter
-    .parameter
-    .parameter "values"
-    .parameter "otherEncodingNames"
+    .param p3, "values"    # [I
+    .param p4, "otherEncodingNames"    # [Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([I[",
@@ -1150,7 +1144,7 @@
 
 .method public static getCharacterSetECIByValue(I)Lcom/google/zxing/common/CharacterSetECI;
     .locals 2
-    .parameter "value"
+    .param p0, "value"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -1213,7 +1207,7 @@
     .line 30
     sget-object v0, Lcom/google/zxing/common/CharacterSetECI;->$VALUES:[Lcom/google/zxing/common/CharacterSetECI;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Lcom/google/zxing/common/CharacterSetECI;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

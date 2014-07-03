@@ -68,8 +68,8 @@
     invoke-direct {v0, v2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
     .line 107
-    .local v0, ht:Landroid/os/HandlerThread;
-    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+    .local v0, "ht":Landroid/os/HandlerThread;
+    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
     .line 108
     new-instance v2, Lcom/android/camera/CameraHolder$MyHandler;
@@ -103,7 +103,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .local v1, i:I
+    .local v1, "i":I
     :goto_0
     iget v2, p0, Lcom/android/camera/CameraHolder;->mNumberOfCameras:I
 
@@ -133,7 +133,7 @@
     goto :goto_0
 
     .line 113
-    .end local v1           #i:I
+    .end local v1    # "i":I
     :cond_2
     invoke-static {}, Landroid/hardware/Camera;->getNumberOfCameras()I
 
@@ -151,7 +151,7 @@
     .line 115
     const/4 v1, 0x0
 
-    .restart local v1       #i:I
+    .restart local v1    # "i":I
     :goto_2
     iget v2, p0, Lcom/android/camera/CameraHolder;->mNumberOfCameras:I
 
@@ -206,7 +206,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/CameraHolder;)Z
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/CameraHolder;
 
     .prologue
     .line 47
@@ -217,8 +217,8 @@
 
 .method public static injectMockCamera([Landroid/hardware/Camera$CameraInfo;[Lcom/android/camera/CameraManager$CameraProxy;)V
     .locals 1
-    .parameter "info"
-    .parameter "camera"
+    .param p0, "info"    # [Landroid/hardware/Camera$CameraInfo;
+    .param p1, "camera"    # [Lcom/android/camera/CameraManager$CameraProxy;
 
     .prologue
     .line 100
@@ -356,7 +356,7 @@
 
 .method public declared-synchronized open(I)Lcom/android/camera/CameraManager$CameraProxy;
     .locals 4
-    .parameter "cameraId"
+    .param p1, "cameraId"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/camera/CameraHardwareException;
@@ -453,8 +453,8 @@
     :goto_1
     iput p1, p0, Lcom/android/camera/CameraHolder;->mCameraId:I
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 162
     :try_start_2
@@ -516,15 +516,15 @@
 
     throw v1
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/lang/RuntimeException; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 158
     :catch_0
     move-exception v0
 
     .line 159
-    .local v0, e:Ljava/lang/RuntimeException;
+    .local v0, "e":Ljava/lang/RuntimeException;
     :try_start_4
     const-string v1, "CameraHolder"
 
@@ -542,7 +542,7 @@
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 141
-    .end local v0           #e:Ljava/lang/RuntimeException;
+    .end local v0    # "e":Ljava/lang/RuntimeException;
     :catchall_0
     move-exception v1
 
@@ -559,8 +559,8 @@
 
     iput-object v1, p0, Lcom/android/camera/CameraHolder;->mCameraDevice:Lcom/android/camera/CameraManager$CameraProxy;
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
     .catch Ljava/lang/RuntimeException; {:try_start_5 .. :try_end_5} :catch_0
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     goto :goto_1
 
@@ -571,8 +571,8 @@
 
     invoke-virtual {v1}, Lcom/android/camera/CameraManager$CameraProxy;->reconnect()V
     :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_1
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
     .line 170
     :try_start_7
@@ -589,7 +589,7 @@
     move-exception v0
 
     .line 167
-    .local v0, e:Ljava/io/IOException;
+    .local v0, "e":Ljava/io/IOException;
     const-string v1, "CameraHolder"
 
     const-string v2, "reconnect failed."
@@ -631,7 +631,7 @@
     move-result-wide v0
 
     .line 200
-    .local v0, now:J
+    .local v0, "now":J
     iget-wide v2, p0, Lcom/android/camera/CameraHolder;->mKeepBeforeTime:J
 
     cmp-long v2, v0, v2
@@ -673,7 +673,7 @@
 
     return-void
 
-    .end local v0           #now:J
+    .end local v0    # "now":J
     :cond_1
     move v2, v3
 
@@ -681,7 +681,7 @@
     goto :goto_0
 
     .line 209
-    .restart local v0       #now:J
+    .restart local v0    # "now":J
     :cond_2
     const/4 v2, 0x0
 
@@ -713,7 +713,7 @@
     goto :goto_1
 
     .line 197
-    .end local v0           #now:J
+    .end local v0    # "now":J
     :catchall_0
     move-exception v2
 
@@ -724,7 +724,7 @@
 
 .method public declared-synchronized tryOpen(I)Lcom/android/camera/CameraManager$CameraProxy;
     .locals 4
-    .parameter "cameraId"
+    .param p1, "cameraId"    # I
 
     .prologue
     const/4 v1, 0x0
@@ -739,8 +739,8 @@
 
     invoke-virtual {p0, p1}, Lcom/android/camera/CameraHolder;->open(I)Lcom/android/camera/CameraManager$CameraProxy;
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/android/camera/CameraHardwareException; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v1
 
@@ -755,7 +755,7 @@
     move-exception v0
 
     .line 189
-    .local v0, e:Lcom/android/camera/CameraHardwareException;
+    .local v0, "e":Lcom/android/camera/CameraHardwareException;
     :try_start_1
     const-string v2, "eng"
 
@@ -777,7 +777,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 185
-    .end local v0           #e:Lcom/android/camera/CameraHardwareException;
+    .end local v0    # "e":Lcom/android/camera/CameraHardwareException;
     :catchall_0
     move-exception v1
 

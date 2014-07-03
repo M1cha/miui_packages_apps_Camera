@@ -81,8 +81,8 @@
 
 .method public static extractExifInfo(Lcom/android/gallery3d/data/MediaDetails;Ljava/lang/String;)V
     .locals 9
-    .parameter "details"
-    .parameter "filePath"
+    .param p0, "details"    # Lcom/android/gallery3d/data/MediaDetails;
+    .param p1, "filePath"    # Ljava/lang/String;
 
     .prologue
     const-wide/16 v7, 0x0
@@ -94,7 +94,7 @@
     invoke-direct {v3, p1}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
 
     .line 123
-    .local v3, exif:Landroid/media/ExifInterface;
+    .local v3, "exif":Landroid/media/ExifInterface;
     const-string v4, "Flash"
 
     const/16 v5, 0x66
@@ -167,7 +167,7 @@
     move-result-wide v0
 
     .line 137
-    .local v0, data:D
+    .local v0, "data":D
     cmpl-double v4, v0, v7
 
     if-eqz v4, :cond_0
@@ -191,8 +191,8 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 145
-    .end local v0           #data:D
-    .end local v3           #exif:Landroid/media/ExifInterface;
+    .end local v0    # "data":D
+    .end local v3    # "exif":Landroid/media/ExifInterface;
     :cond_0
     :goto_0
     return-void
@@ -202,7 +202,7 @@
     move-exception v2
 
     .line 143
-    .local v2, ex:Ljava/io/IOException;
+    .local v2, "ex":Ljava/io/IOException;
     const-string v4, "MediaDetails"
 
     const-string v5, ""
@@ -214,10 +214,10 @@
 
 .method private static setExifData(Lcom/android/gallery3d/data/MediaDetails;Landroid/media/ExifInterface;Ljava/lang/String;I)V
     .locals 3
-    .parameter "details"
-    .parameter "exif"
-    .parameter "tag"
-    .parameter "key"
+    .param p0, "details"    # Lcom/android/gallery3d/data/MediaDetails;
+    .param p1, "exif"    # Landroid/media/ExifInterface;
+    .param p2, "tag"    # Ljava/lang/String;
+    .param p3, "key"    # I
 
     .prologue
     .line 108
@@ -226,7 +226,7 @@
     move-result-object v1
 
     .line 109
-    .local v1, value:Ljava/lang/String;
+    .local v1, "value":Ljava/lang/String;
     if-eqz v1, :cond_0
 
     .line 110
@@ -252,11 +252,11 @@
     invoke-direct {v0, v2}, Lcom/android/gallery3d/data/MediaDetails$FlashState;-><init>(I)V
 
     .line 113
-    .local v0, state:Lcom/android/gallery3d/data/MediaDetails$FlashState;
+    .local v0, "state":Lcom/android/gallery3d/data/MediaDetails$FlashState;
     invoke-virtual {p0, p3, v0}, Lcom/android/gallery3d/data/MediaDetails;->addDetail(ILjava/lang/Object;)V
 
     .line 118
-    .end local v0           #state:Lcom/android/gallery3d/data/MediaDetails$FlashState;
+    .end local v0    # "state":Lcom/android/gallery3d/data/MediaDetails$FlashState;
     :cond_0
     :goto_0
     return-void
@@ -272,8 +272,8 @@
 # virtual methods
 .method public addDetail(ILjava/lang/Object;)V
     .locals 2
-    .parameter "index"
-    .parameter "value"
+    .param p1, "index"    # I
+    .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 79
@@ -291,7 +291,7 @@
 
 .method public getDetail(I)Ljava/lang/Object;
     .locals 2
-    .parameter "index"
+    .param p1, "index"    # I
 
     .prologue
     .line 83
@@ -310,7 +310,7 @@
 
 .method public getUnit(I)I
     .locals 2
-    .parameter "index"
+    .param p1, "index"    # I
 
     .prologue
     .line 103
@@ -335,7 +335,7 @@
 
 .method public hasUnit(I)Z
     .locals 2
-    .parameter "index"
+    .param p1, "index"    # I
 
     .prologue
     .line 99
@@ -384,8 +384,8 @@
 
 .method public setUnit(II)V
     .locals 3
-    .parameter "index"
-    .parameter "unit"
+    .param p1, "index"    # I
+    .param p2, "unit"    # I
 
     .prologue
     .line 95

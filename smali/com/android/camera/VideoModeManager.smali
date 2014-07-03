@@ -10,10 +10,10 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;ZLcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;)V
     .locals 1
-    .parameter "activity"
-    .parameter "captureIntent"
-    .parameter "indicatorClickListener"
-    .parameter "preferenceChangedListener"
+    .param p1, "activity"    # Landroid/app/Activity;
+    .param p2, "captureIntent"    # Z
+    .param p3, "indicatorClickListener"    # Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
+    .param p4, "preferenceChangedListener"    # Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
 
     .prologue
     .line 24
@@ -30,18 +30,18 @@
 
 .method private filterPreferenceScreenByIntent(Lcom/android/camera/PreferenceGroup;)Lcom/android/camera/PreferenceGroup;
     .locals 2
-    .parameter "screen"
+    .param p1, "screen"    # Lcom/android/camera/PreferenceGroup;
 
     .prologue
     .line 59
-    iget-object v1, p0, Lcom/android/camera/ModeManager;->mActivity:Landroid/app/Activity;
+    iget-object v1, p0, Lcom/android/camera/VideoModeManager;->mActivity:Landroid/app/Activity;
 
     invoke-virtual {v1}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
     .line 60
-    .local v0, intent:Landroid/content/Intent;
+    .local v0, "intent":Landroid/content/Intent;
     const-string v1, "android.intent.extra.videoQuality"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
@@ -79,7 +79,7 @@
 # virtual methods
 .method protected loadCameraPreferences(Landroid/hardware/Camera$Parameters;)V
     .locals 8
-    .parameter "parameters"
+    .param p1, "parameters"    # Landroid/hardware/Camera$Parameters;
 
     .prologue
     const/4 v1, 0x1
@@ -87,16 +87,16 @@
     const/4 v6, 0x0
 
     .line 32
-    iget-boolean v7, p0, Lcom/android/camera/ModeManager;->mIsFrontCamera:Z
+    iget-boolean v7, p0, Lcom/android/camera/VideoModeManager;->mIsFrontCamera:Z
 
     if-eqz v7, :cond_1
 
     .line 33
-    .local v1, cameraId:I
+    .local v1, "cameraId":I
     :goto_0
     new-instance v4, Lcom/android/camera/CameraSettings;
 
-    iget-object v6, p0, Lcom/android/camera/ModeManager;->mActivity:Landroid/app/Activity;
+    iget-object v6, p0, Lcom/android/camera/VideoModeManager;->mActivity:Landroid/app/Activity;
 
     invoke-static {}, Lcom/android/camera/CameraHolder;->instance()Lcom/android/camera/CameraHolder;
 
@@ -109,14 +109,14 @@
     invoke-direct {v4, v6, p1, v1, v7}, Lcom/android/camera/CameraSettings;-><init>(Landroid/app/Activity;Landroid/hardware/Camera$Parameters;I[Landroid/hardware/Camera$CameraInfo;)V
 
     .line 36
-    .local v4, settings:Lcom/android/camera/CameraSettings;
+    .local v4, "settings":Lcom/android/camera/CameraSettings;
     :try_start_0
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
 
     .line 37
-    .local v2, clazz:Ljava/lang/Class;,"Ljava/lang/Class<+Landroid/hardware/Camera$Parameters;>;"
+    .local v2, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<+Landroid/hardware/Camera$Parameters;>;"
     const-string v6, "getSupportedVideoHDRModes"
 
     const/4 v7, 0x0
@@ -128,7 +128,7 @@
     move-result-object v5
 
     .line 38
-    .local v5, videoHDR:Ljava/lang/reflect/Method;
+    .local v5, "videoHDR":Ljava/lang/reflect/Method;
     if-eqz v5, :cond_0
 
     .line 39
@@ -149,7 +149,7 @@
     move-object v3, v0
 
     .line 40
-    .local v3, modes:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
+    .local v3, "modes":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     if-eqz v3, :cond_0
 
     .line 41
@@ -162,12 +162,12 @@
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 49
-    .end local v2           #clazz:Ljava/lang/Class;,"Ljava/lang/Class<+Landroid/hardware/Camera$Parameters;>;"
-    .end local v3           #modes:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
-    .end local v5           #videoHDR:Ljava/lang/reflect/Method;
+    .end local v2    # "clazz":Ljava/lang/Class;, "Ljava/lang/Class<+Landroid/hardware/Camera$Parameters;>;"
+    .end local v3    # "modes":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .end local v5    # "videoHDR":Ljava/lang/reflect/Method;
     :cond_0
     :goto_1
-    iget-boolean v6, p0, Lcom/android/camera/ModeManager;->mIsSimpleMode:Z
+    iget-boolean v6, p0, Lcom/android/camera/VideoModeManager;->mIsSimpleMode:Z
 
     if-eqz v6, :cond_2
 
@@ -182,13 +182,13 @@
 
     move-result-object v6
 
-    iput-object v6, p0, Lcom/android/camera/ModeManager;->mPreferenceGroup:Lcom/android/camera/PreferenceGroup;
+    iput-object v6, p0, Lcom/android/camera/VideoModeManager;->mPreferenceGroup:Lcom/android/camera/PreferenceGroup;
 
     .line 51
     return-void
 
-    .end local v1           #cameraId:I
-    .end local v4           #settings:Lcom/android/camera/CameraSettings;
+    .end local v1    # "cameraId":I
+    .end local v4    # "settings":Lcom/android/camera/CameraSettings;
     :cond_1
     move v1, v6
 
@@ -196,8 +196,8 @@
     goto :goto_0
 
     .line 49
-    .restart local v1       #cameraId:I
-    .restart local v4       #settings:Lcom/android/camera/CameraSettings;
+    .restart local v1    # "cameraId":I
+    .restart local v4    # "settings":Lcom/android/camera/CameraSettings;
     :cond_2
     const v6, 0x7f060009
 
@@ -234,30 +234,30 @@
 
 .method protected updateSettingScreen(Z)V
     .locals 5
-    .parameter "isSecure"
+    .param p1, "isSecure"    # Z
 
     .prologue
     .line 73
-    iget-boolean v1, p0, Lcom/android/camera/ModeManager;->mIsFrontCamera:Z
+    iget-boolean v1, p0, Lcom/android/camera/VideoModeManager;->mIsFrontCamera:Z
 
     if-eqz v1, :cond_0
 
-    iget-boolean v1, p0, Lcom/android/camera/ModeManager;->mIsSimpleMode:Z
+    iget-boolean v1, p0, Lcom/android/camera/VideoModeManager;->mIsSimpleMode:Z
 
     invoke-static {v1, p1}, Lcom/android/camera/CameraSettings;->getVideoFrontSettingKeys(ZZ)Ljava/util/List;
 
     move-result-object v0
 
     .line 76
-    .local v0, indicatorKeys:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
+    .local v0, "indicatorKeys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :goto_0
-    invoke-virtual {p0}, Lcom/android/camera/ModeManager;->getSettingView()Lcom/android/camera/ui/SettingView;
+    invoke-virtual {p0}, Lcom/android/camera/VideoModeManager;->getSettingView()Lcom/android/camera/ui/SettingView;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/android/camera/ModeManager;->mPreferenceGroup:Lcom/android/camera/PreferenceGroup;
+    iget-object v2, p0, Lcom/android/camera/VideoModeManager;->mPreferenceGroup:Lcom/android/camera/PreferenceGroup;
 
-    iget-object v3, p0, Lcom/android/camera/ModeManager;->mIndicatorClickListener:Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
+    iget-object v3, p0, Lcom/android/camera/VideoModeManager;->mIndicatorClickListener:Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
 
     const/4 v4, 0x3
 
@@ -267,9 +267,9 @@
     return-void
 
     .line 73
-    .end local v0           #indicatorKeys:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
+    .end local v0    # "indicatorKeys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     :cond_0
-    iget-boolean v1, p0, Lcom/android/camera/ModeManager;->mIsSimpleMode:Z
+    iget-boolean v1, p0, Lcom/android/camera/VideoModeManager;->mIsSimpleMode:Z
 
     iget-boolean v2, p0, Lcom/android/camera/VideoModeManager;->mSupportVideoHDR:Z
 

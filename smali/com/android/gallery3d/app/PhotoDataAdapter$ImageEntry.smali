@@ -74,7 +74,7 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/app/PhotoDataAdapter$1;)V
     .locals 0
-    .parameter "x0"
+    .param p1, "x0"    # Lcom/android/gallery3d/app/PhotoDataAdapter$1;
 
     .prologue
     .line 873

@@ -33,8 +33,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/PanoramaActivity;Lcom/android/camera/PanoramaActivity$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Lcom/android/camera/PanoramaActivity;
+    .param p2, "x1"    # Lcom/android/camera/PanoramaActivity$1;
 
     .prologue
     .line 152
@@ -55,7 +55,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$SetupCameraThread;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->setupCamera()V
+    # invokes: Lcom/android/camera/PanoramaActivity;->setupCamera()V
     invoke-static {v1}, Lcom/android/camera/PanoramaActivity;->access$000(Lcom/android/camera/PanoramaActivity;)V
     :try_end_0
     .catch Lcom/android/camera/CameraHardwareException; {:try_start_0 .. :try_end_0} :catch_0
@@ -70,23 +70,23 @@
     move-exception v0
 
     .line 158
-    .local v0, e:Lcom/android/camera/CameraHardwareException;
+    .local v0, "e":Lcom/android/camera/CameraHardwareException;
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$SetupCameraThread;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    iput-boolean v2, v1, Lcom/android/camera/ActivityBase;->mOpenCameraFail:Z
+    iput-boolean v2, v1, Lcom/android/camera/PanoramaActivity;->mOpenCameraFail:Z
 
     goto :goto_0
 
     .line 159
-    .end local v0           #e:Lcom/android/camera/CameraHardwareException;
+    .end local v0    # "e":Lcom/android/camera/CameraHardwareException;
     :catch_1
     move-exception v0
 
     .line 160
-    .local v0, e:Lcom/android/camera/CameraDisabledException;
+    .local v0, "e":Lcom/android/camera/CameraDisabledException;
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$SetupCameraThread;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    iput-boolean v2, v1, Lcom/android/camera/ActivityBase;->mCameraDisabled:Z
+    iput-boolean v2, v1, Lcom/android/camera/PanoramaActivity;->mCameraDisabled:Z
 
     goto :goto_0
 .end method

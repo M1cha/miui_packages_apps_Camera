@@ -52,12 +52,12 @@
 
 .method public static calculateScale(F)F
     .locals 6
-    .parameter "fraction"
+    .param p0, "fraction"    # F
 
     .prologue
-    const/high16 v5, 0x4000
+    const/high16 v5, 0x40000000
 
-    const/high16 v3, 0x3f00
+    const/high16 v3, 0x3f000000
 
     const v4, 0x3e4ccccd
 
@@ -67,7 +67,7 @@
     if-gtz v1, :cond_0
 
     .line 47
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     sget-object v2, Lcom/android/gallery3d/ui/CaptureAnimation;->sZoomOutInterpolator:Landroid/view/animation/Interpolator;
 
@@ -82,12 +82,12 @@
     sub-float v0, v1, v2
 
     .line 54
-    .local v0, value:F
+    .local v0, "value":F
     :goto_0
     return v0
 
     .line 51
-    .end local v0           #value:F
+    .end local v0    # "value":F
     :cond_0
     const v1, 0x3f4ccccd
 
@@ -105,13 +105,13 @@
 
     add-float v0, v1, v2
 
-    .restart local v0       #value:F
+    .restart local v0    # "value":F
     goto :goto_0
 .end method
 
 .method public static calculateSlide(F)F
     .locals 1
-    .parameter "fraction"
+    .param p0, "fraction"    # F
 
     .prologue
     .line 39

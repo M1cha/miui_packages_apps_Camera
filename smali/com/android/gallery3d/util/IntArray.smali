@@ -36,7 +36,7 @@
 # virtual methods
 .method public add(I)V
     .locals 4
-    .parameter "value"
+    .param p1, "value"    # I
 
     .prologue
     const/4 v3, 0x0
@@ -60,7 +60,7 @@
     new-array v0, v1, [I
 
     .line 28
-    .local v0, temp:[I
+    .local v0, "temp":[I
     iget-object v1, p0, Lcom/android/gallery3d/util/IntArray;->mData:[I
 
     iget v2, p0, Lcom/android/gallery3d/util/IntArray;->mSize:I
@@ -71,7 +71,7 @@
     iput-object v0, p0, Lcom/android/gallery3d/util/IntArray;->mData:[I
 
     .line 31
-    .end local v0           #temp:[I
+    .end local v0    # "temp":[I
     :cond_0
     iget-object v1, p0, Lcom/android/gallery3d/util/IntArray;->mData:[I
 

@@ -41,8 +41,8 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/ui/PositionController;Lcom/android/gallery3d/ui/PositionController$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Lcom/android/gallery3d/ui/PositionController;
+    .param p2, "x1"    # Lcom/android/gallery3d/ui/PositionController$1;
 
     .prologue
     .line 1788
@@ -53,12 +53,12 @@
 
 .method private doAnimation(FI)Z
     .locals 2
-    .parameter "targetRatio"
-    .parameter "kind"
+    .param p1, "targetRatio"    # F
+    .param p2, "kind"    # I
 
     .prologue
     .line 1802
-    iput p2, p0, Lcom/android/gallery3d/ui/PositionController$Animatable;->mAnimationKind:I
+    iput p2, p0, Lcom/android/gallery3d/ui/PositionController$FilmRatio;->mAnimationKind:I
 
     .line 1803
     iget v0, p0, Lcom/android/gallery3d/ui/PositionController$FilmRatio;->mCurrentRatio:F
@@ -73,21 +73,22 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/android/gallery3d/ui/PositionController$Animatable;->mAnimationStartTime:J
+    iput-wide v0, p0, Lcom/android/gallery3d/ui/PositionController$FilmRatio;->mAnimationStartTime:J
 
     .line 1806
+    # getter for: Lcom/android/gallery3d/ui/PositionController;->ANIM_TIME:[I
     invoke-static {}, Lcom/android/gallery3d/ui/PositionController;->access$2400()[I
 
     move-result-object v0
 
-    iget v1, p0, Lcom/android/gallery3d/ui/PositionController$Animatable;->mAnimationKind:I
+    iget v1, p0, Lcom/android/gallery3d/ui/PositionController$FilmRatio;->mAnimationKind:I
 
     aget v0, v0, v1
 
-    iput v0, p0, Lcom/android/gallery3d/ui/PositionController$Animatable;->mAnimationDuration:I
+    iput v0, p0, Lcom/android/gallery3d/ui/PositionController$FilmRatio;->mAnimationDuration:I
 
     .line 1807
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/PositionController$Animatable;->advanceAnimation()Z
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/PositionController$FilmRatio;->advanceAnimation()Z
 
     .line 1808
     const/4 v0, 0x1
@@ -99,13 +100,13 @@
 # virtual methods
 .method protected interpolate(F)Z
     .locals 4
-    .parameter "progress"
+    .param p1, "progress"    # F
 
     .prologue
     const/4 v0, 0x1
 
     .line 1813
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     cmpl-float v1, p1, v1
 
@@ -158,17 +159,17 @@
     .line 1795
     iget-object v1, p0, Lcom/android/gallery3d/ui/PositionController$FilmRatio;->this$0:Lcom/android/gallery3d/ui/PositionController;
 
-    #getter for: Lcom/android/gallery3d/ui/PositionController;->mFilmMode:Z
+    # getter for: Lcom/android/gallery3d/ui/PositionController;->mFilmMode:Z
     invoke-static {v1}, Lcom/android/gallery3d/ui/PositionController;->access$1100(Lcom/android/gallery3d/ui/PositionController;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     .line 1796
-    .local v0, target:F
+    .local v0, "target":F
     :goto_0
     iget v1, p0, Lcom/android/gallery3d/ui/PositionController$FilmRatio;->mToRatio:F
 
@@ -183,14 +184,14 @@
     return v1
 
     .line 1795
-    .end local v0           #target:F
+    .end local v0    # "target":F
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
     .line 1797
-    .restart local v0       #target:F
+    .restart local v0    # "target":F
     :cond_1
     const/4 v1, 0x2
 

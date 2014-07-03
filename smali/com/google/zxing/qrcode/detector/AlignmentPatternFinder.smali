@@ -35,13 +35,13 @@
 # direct methods
 .method constructor <init>(Lcom/google/zxing/common/BitMatrix;IIIIFLcom/google/zxing/ResultPointCallback;)V
     .locals 2
-    .parameter "image"
-    .parameter "startX"
-    .parameter "startY"
-    .parameter "width"
-    .parameter "height"
-    .parameter "moduleSize"
-    .parameter "resultPointCallback"
+    .param p1, "image"    # Lcom/google/zxing/common/BitMatrix;
+    .param p2, "startX"    # I
+    .param p3, "startY"    # I
+    .param p4, "width"    # I
+    .param p5, "height"    # I
+    .param p6, "moduleSize"    # F
+    .param p7, "resultPointCallback"    # Lcom/google/zxing/ResultPointCallback;
 
     .prologue
     .line 68
@@ -90,8 +90,8 @@
 
 .method private static centerFromEnd([II)F
     .locals 3
-    .parameter "stateCount"
-    .parameter "end"
+    .param p0, "stateCount"    # [I
+    .param p1, "end"    # I
 
     .prologue
     .line 161
@@ -109,7 +109,7 @@
 
     int-to-float v1, v1
 
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     div-float/2addr v1, v2
 
@@ -120,15 +120,15 @@
 
 .method private crossCheckVertical(IIII)F
     .locals 10
-    .parameter "startI"
-    .parameter "centerJ"
-    .parameter "maxCount"
-    .parameter "originalStateCountTotal"
+    .param p1, "startI"    # I
+    .param p2, "centerJ"    # I
+    .param p3, "maxCount"    # I
+    .param p4, "originalStateCountTotal"    # I
 
     .prologue
     const/4 v9, 0x2
 
-    const/high16 v5, 0x7fc0
+    const/high16 v5, 0x7fc00000
 
     const/4 v8, 0x1
 
@@ -138,17 +138,17 @@
     iget-object v1, p0, Lcom/google/zxing/qrcode/detector/AlignmentPatternFinder;->image:Lcom/google/zxing/common/BitMatrix;
 
     .line 195
-    .local v1, image:Lcom/google/zxing/common/BitMatrix;
+    .local v1, "image":Lcom/google/zxing/common/BitMatrix;
     invoke-virtual {v1}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
 
     move-result v2
 
     .line 196
-    .local v2, maxI:I
+    .local v2, "maxI":I
     iget-object v3, p0, Lcom/google/zxing/qrcode/detector/AlignmentPatternFinder;->crossCheckStateCount:[I
 
     .line 197
-    .local v3, stateCount:[I
+    .local v3, "stateCount":[I
     aput v7, v3, v7
 
     .line 198
@@ -161,7 +161,7 @@
     move v0, p1
 
     .line 203
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     if-ltz v0, :cond_0
 
@@ -314,7 +314,7 @@
     add-int v4, v6, v7
 
     .line 237
-    .local v4, stateCountTotal:I
+    .local v4, "stateCountTotal":I
     sub-int v6, v4, p4
 
     invoke-static {v6}, Ljava/lang/Math;->abs(I)I
@@ -343,23 +343,23 @@
 
 .method private foundPatternCross([I)Z
     .locals 4
-    .parameter "stateCount"
+    .param p1, "stateCount"    # [I
 
     .prologue
     .line 170
     iget v2, p0, Lcom/google/zxing/qrcode/detector/AlignmentPatternFinder;->moduleSize:F
 
     .line 171
-    .local v2, moduleSize:F
-    const/high16 v3, 0x4000
+    .local v2, "moduleSize":F
+    const/high16 v3, 0x40000000
 
     div-float v1, v2, v3
 
     .line 172
-    .local v1, maxVariance:F
+    .local v1, "maxVariance":F
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     const/4 v3, 0x3
 
@@ -402,9 +402,9 @@
 
 .method private handlePossibleCenter([III)Lcom/google/zxing/qrcode/detector/AlignmentPattern;
     .locals 12
-    .parameter "stateCount"
-    .parameter "i"
-    .parameter "j"
+    .param p1, "stateCount"    # [I
+    .param p2, "i"    # I
+    .param p3, "j"    # I
 
     .prologue
     const/4 v11, 0x2
@@ -425,13 +425,13 @@
     add-int v6, v7, v8
 
     .line 257
-    .local v6, stateCountTotal:I
+    .local v6, "stateCountTotal":I
     invoke-static {p1, p3}, Lcom/google/zxing/qrcode/detector/AlignmentPatternFinder;->centerFromEnd([II)F
 
     move-result v2
 
     .line 258
-    .local v2, centerJ:F
+    .local v2, "centerJ":F
     float-to-int v7, v2
 
     aget v8, p1, v9
@@ -443,7 +443,7 @@
     move-result v1
 
     .line 259
-    .local v1, centerI:F
+    .local v1, "centerI":F
     invoke-static {v1}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v7
@@ -463,19 +463,19 @@
 
     int-to-float v7, v7
 
-    const/high16 v8, 0x4040
+    const/high16 v8, 0x40400000
 
     div-float v3, v7, v8
 
     .line 261
-    .local v3, estimatedModuleSize:F
+    .local v3, "estimatedModuleSize":F
     iget-object v7, p0, Lcom/google/zxing/qrcode/detector/AlignmentPatternFinder;->possibleCenters:Ljava/util/List;
 
     invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
 
-    .local v4, i$:Ljava/util/Iterator;
+    .local v4, "i$":Ljava/util/Iterator;
     :cond_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
@@ -490,7 +490,7 @@
     check-cast v0, Lcom/google/zxing/qrcode/detector/AlignmentPattern;
 
     .line 263
-    .local v0, center:Lcom/google/zxing/qrcode/detector/AlignmentPattern;
+    .local v0, "center":Lcom/google/zxing/qrcode/detector/AlignmentPattern;
     invoke-virtual {v0, v3, v1, v2}, Lcom/google/zxing/qrcode/detector/AlignmentPattern;->aboutEquals(FFF)Z
 
     move-result v7
@@ -503,22 +503,22 @@
     move-result-object v7
 
     .line 274
-    .end local v0           #center:Lcom/google/zxing/qrcode/detector/AlignmentPattern;
-    .end local v3           #estimatedModuleSize:F
-    .end local v4           #i$:Ljava/util/Iterator;
+    .end local v0    # "center":Lcom/google/zxing/qrcode/detector/AlignmentPattern;
+    .end local v3    # "estimatedModuleSize":F
+    .end local v4    # "i$":Ljava/util/Iterator;
     :goto_0
     return-object v7
 
     .line 268
-    .restart local v3       #estimatedModuleSize:F
-    .restart local v4       #i$:Ljava/util/Iterator;
+    .restart local v3    # "estimatedModuleSize":F
+    .restart local v4    # "i$":Ljava/util/Iterator;
     :cond_1
     new-instance v5, Lcom/google/zxing/qrcode/detector/AlignmentPattern;
 
     invoke-direct {v5, v2, v1, v3}, Lcom/google/zxing/qrcode/detector/AlignmentPattern;-><init>(FFF)V
 
     .line 269
-    .local v5, point:Lcom/google/zxing/qrcode/detector/AlignmentPattern;
+    .local v5, "point":Lcom/google/zxing/qrcode/detector/AlignmentPattern;
     iget-object v7, p0, Lcom/google/zxing/qrcode/detector/AlignmentPatternFinder;->possibleCenters:Ljava/util/List;
 
     invoke-interface {v7, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -534,9 +534,9 @@
     invoke-interface {v7, v5}, Lcom/google/zxing/ResultPointCallback;->foundPossibleResultPoint(Lcom/google/zxing/ResultPoint;)V
 
     .line 274
-    .end local v3           #estimatedModuleSize:F
-    .end local v4           #i$:Ljava/util/Iterator;
-    .end local v5           #point:Lcom/google/zxing/qrcode/detector/AlignmentPattern;
+    .end local v3    # "estimatedModuleSize":F
+    .end local v4    # "i$":Ljava/util/Iterator;
+    .end local v5    # "point":Lcom/google/zxing/qrcode/detector/AlignmentPattern;
     :cond_2
     const/4 v7, 0x0
 
@@ -564,17 +564,17 @@
     iget v8, p0, Lcom/google/zxing/qrcode/detector/AlignmentPatternFinder;->startX:I
 
     .line 89
-    .local v8, startX:I
+    .local v8, "startX":I
     iget v2, p0, Lcom/google/zxing/qrcode/detector/AlignmentPatternFinder;->height:I
 
     .line 90
-    .local v2, height:I
+    .local v2, "height":I
     iget v10, p0, Lcom/google/zxing/qrcode/detector/AlignmentPatternFinder;->width:I
 
     add-int v6, v8, v10
 
     .line 91
-    .local v6, maxJ:I
+    .local v6, "maxJ":I
     iget v10, p0, Lcom/google/zxing/qrcode/detector/AlignmentPatternFinder;->startY:I
 
     shr-int/lit8 v11, v2, 0x1
@@ -582,16 +582,16 @@
     add-int v7, v10, v11
 
     .line 94
-    .local v7, middleI:I
+    .local v7, "middleI":I
     const/4 v10, 0x3
 
     new-array v9, v10, [I
 
     .line 95
-    .local v9, stateCount:[I
+    .local v9, "stateCount":[I
     const/4 v4, 0x0
 
-    .local v4, iGen:I
+    .local v4, "iGen":I
     :goto_0
     if-ge v4, v2, :cond_a
 
@@ -608,7 +608,7 @@
     add-int v3, v7, v10
 
     .line 98
-    .local v3, i:I
+    .local v3, "i":I
     aput v12, v9, v12
 
     .line 99
@@ -621,7 +621,7 @@
     move v5, v8
 
     .line 105
-    .local v5, j:I
+    .local v5, "j":I
     :goto_2
     if-ge v5, v6, :cond_1
 
@@ -639,8 +639,8 @@
     goto :goto_2
 
     .line 97
-    .end local v3           #i:I
-    .end local v5           #j:I
+    .end local v3    # "i":I
+    .end local v5    # "j":I
     :cond_0
     add-int/lit8 v10, v4, 0x1
 
@@ -651,13 +651,13 @@
     goto :goto_1
 
     .line 108
-    .restart local v3       #i:I
-    .restart local v5       #j:I
+    .restart local v3    # "i":I
+    .restart local v5    # "j":I
     :cond_1
     const/4 v1, 0x0
 
     .line 109
-    .local v1, currentState:I
+    .local v1, "currentState":I
     :goto_3
     if-ge v5, v6, :cond_8
 
@@ -703,22 +703,22 @@
     move-result-object v0
 
     .line 118
-    .local v0, confirmed:Lcom/google/zxing/qrcode/detector/AlignmentPattern;
+    .local v0, "confirmed":Lcom/google/zxing/qrcode/detector/AlignmentPattern;
     if-eqz v0, :cond_4
 
     .line 150
-    .end local v0           #confirmed:Lcom/google/zxing/qrcode/detector/AlignmentPattern;
-    .end local v1           #currentState:I
-    .end local v3           #i:I
-    .end local v5           #j:I
+    .end local v0    # "confirmed":Lcom/google/zxing/qrcode/detector/AlignmentPattern;
+    .end local v1    # "currentState":I
+    .end local v3    # "i":I
+    .end local v5    # "j":I
     :cond_3
     :goto_5
     return-object v0
 
     .line 122
-    .restart local v1       #currentState:I
-    .restart local v3       #i:I
-    .restart local v5       #j:I
+    .restart local v1    # "currentState":I
+    .restart local v3    # "i":I
+    .restart local v5    # "j":I
     :cond_4
     aget v10, v9, v14
 
@@ -778,20 +778,20 @@
     move-result-object v0
 
     .line 140
-    .restart local v0       #confirmed:Lcom/google/zxing/qrcode/detector/AlignmentPattern;
+    .restart local v0    # "confirmed":Lcom/google/zxing/qrcode/detector/AlignmentPattern;
     if-nez v0, :cond_3
 
     .line 95
-    .end local v0           #confirmed:Lcom/google/zxing/qrcode/detector/AlignmentPattern;
+    .end local v0    # "confirmed":Lcom/google/zxing/qrcode/detector/AlignmentPattern;
     :cond_9
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
     .line 149
-    .end local v1           #currentState:I
-    .end local v3           #i:I
-    .end local v5           #j:I
+    .end local v1    # "currentState":I
+    .end local v3    # "i":I
+    .end local v5    # "j":I
     :cond_a
     iget-object v10, p0, Lcom/google/zxing/qrcode/detector/AlignmentPatternFinder;->possibleCenters:Ljava/util/List;
 

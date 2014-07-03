@@ -43,7 +43,7 @@
     .line 269
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$2;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLView;->invalidate()V
+    invoke-virtual {v0}, Lcom/android/gallery3d/ui/PhotoView;->invalidate()V
 
     .line 270
     return-void
@@ -56,7 +56,7 @@
     .line 275
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$2;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mHolding:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mHolding:I
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$300(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v0
@@ -83,7 +83,7 @@
     .line 272
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$2;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mHolding:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mHolding:I
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$300(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v0
@@ -105,14 +105,14 @@
 
 .method public onAbsorb(II)V
     .locals 1
-    .parameter "velocity"
-    .parameter "direction"
+    .param p1, "velocity"    # I
+    .param p2, "direction"    # I
 
     .prologue
     .line 284
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$2;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mEdgeView:Lcom/android/gallery3d/ui/EdgeView;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mEdgeView:Lcom/android/gallery3d/ui/EdgeView;
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$400(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/EdgeView;
 
     move-result-object v0
@@ -125,14 +125,14 @@
 
 .method public onPull(II)V
     .locals 1
-    .parameter "offset"
-    .parameter "direction"
+    .param p1, "offset"    # I
+    .param p2, "direction"    # I
 
     .prologue
     .line 278
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$2;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mEdgeView:Lcom/android/gallery3d/ui/EdgeView;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mEdgeView:Lcom/android/gallery3d/ui/EdgeView;
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$400(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/EdgeView;
 
     move-result-object v0

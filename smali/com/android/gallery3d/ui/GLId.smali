@@ -32,10 +32,10 @@
 
 .method public static declared-synchronized glDeleteBuffers(Ljavax/microedition/khronos/opengles/GL11;I[II)V
     .locals 2
-    .parameter "gl"
-    .parameter "n"
-    .parameter "buffers"
-    .parameter "offset"
+    .param p0, "gl"    # Ljavax/microedition/khronos/opengles/GL11;
+    .param p1, "n"    # I
+    .param p2, "buffers"    # [I
+    .param p3, "offset"    # I
 
     .prologue
     .line 43
@@ -64,10 +64,10 @@
 
 .method public static declared-synchronized glDeleteTextures(Ljavax/microedition/khronos/opengles/GL11;I[II)V
     .locals 2
-    .parameter "gl"
-    .parameter "n"
-    .parameter "textures"
-    .parameter "offset"
+    .param p0, "gl"    # Ljavax/microedition/khronos/opengles/GL11;
+    .param p1, "n"    # I
+    .param p2, "textures"    # [I
+    .param p3, "offset"    # I
 
     .prologue
     .line 39
@@ -96,9 +96,9 @@
 
 .method public static declared-synchronized glGenBuffers(I[II)V
     .locals 5
-    .parameter "n"
-    .parameter "buffers"
-    .parameter "offset"
+    .param p0, "n"    # I
+    .param p1, "buffers"    # [I
+    .param p2, "offset"    # I
 
     .prologue
     .line 33
@@ -108,13 +108,13 @@
 
     move v0, p0
 
-    .end local p0
-    .local v0, n:I
+    .end local p0    # "n":I
+    .local v0, "n":I
     :goto_0
     add-int/lit8 p0, v0, -0x1
 
-    .end local v0           #n:I
-    .restart local p0
+    .end local v0    # "n":I
+    .restart local p0    # "n":I
     if-lez v0, :cond_0
 
     .line 34
@@ -133,13 +133,13 @@
 
     move v0, p0
 
-    .end local p0
-    .restart local v0       #n:I
+    .end local p0    # "n":I
+    .restart local v0    # "n":I
     goto :goto_0
 
     .line 36
-    .end local v0           #n:I
-    .restart local p0
+    .end local v0    # "n":I
+    .restart local p0    # "n":I
     :cond_0
     monitor-exit v2
 
@@ -156,9 +156,9 @@
 
 .method public static declared-synchronized glGenTextures(I[II)V
     .locals 5
-    .parameter "n"
-    .parameter "textures"
-    .parameter "offset"
+    .param p0, "n"    # I
+    .param p1, "textures"    # [I
+    .param p2, "offset"    # I
 
     .prologue
     .line 27
@@ -168,13 +168,13 @@
 
     move v0, p0
 
-    .end local p0
-    .local v0, n:I
+    .end local p0    # "n":I
+    .local v0, "n":I
     :goto_0
     add-int/lit8 p0, v0, -0x1
 
-    .end local v0           #n:I
-    .restart local p0
+    .end local v0    # "n":I
+    .restart local p0    # "n":I
     if-lez v0, :cond_0
 
     .line 28
@@ -193,13 +193,13 @@
 
     move v0, p0
 
-    .end local p0
-    .restart local v0       #n:I
+    .end local p0    # "n":I
+    .restart local v0    # "n":I
     goto :goto_0
 
     .line 30
-    .end local v0           #n:I
-    .restart local p0
+    .end local v0    # "n":I
+    .restart local p0    # "n":I
     :cond_0
     monitor-exit v2
 

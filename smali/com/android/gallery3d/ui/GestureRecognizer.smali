@@ -28,8 +28,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/gallery3d/ui/GestureRecognizer$Listener;)V
     .locals 4
-    .parameter "context"
-    .parameter "listener"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "listener"    # Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
 
     .prologue
     const/4 v3, 0x0
@@ -81,7 +81,7 @@
 
 .method static synthetic access$300(Lcom/android/gallery3d/ui/GestureRecognizer;)Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/ui/GestureRecognizer;
 
     .prologue
     .line 27
@@ -104,7 +104,7 @@
     move-result-wide v0
 
     .line 69
-    .local v0, now:J
+    .local v0, "now":J
     const/4 v4, 0x3
 
     const/4 v7, 0x0
@@ -118,7 +118,7 @@
     move-result-object v8
 
     .line 71
-    .local v8, cancelEvent:Landroid/view/MotionEvent;
+    .local v8, "cancelEvent":Landroid/view/MotionEvent;
     iget-object v2, p0, Lcom/android/gallery3d/ui/GestureRecognizer;->mScaleDetector:Landroid/view/ScaleGestureDetector;
 
     invoke-virtual {v2, v8}, Landroid/view/ScaleGestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
@@ -132,7 +132,7 @@
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)V
     .locals 1
-    .parameter "event"
+    .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
     .line 58

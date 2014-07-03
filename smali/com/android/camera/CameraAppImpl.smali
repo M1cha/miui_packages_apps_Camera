@@ -60,7 +60,7 @@
 # virtual methods
 .method public addActivity(Landroid/app/Activity;)V
     .locals 1
-    .parameter "activity"
+    .param p1, "activity"    # Landroid/app/Activity;
 
     .prologue
     .line 89
@@ -81,21 +81,21 @@
 
 .method public closeAllActivitiesBut(Landroid/app/Activity;)V
     .locals 4
-    .parameter "current"
+    .param p1, "current"    # Landroid/app/Activity;
 
     .prologue
     .line 103
     const/4 v0, 0x0
 
     .line 104
-    .local v0, activity:Landroid/app/Activity;
+    .local v0, "activity":Landroid/app/Activity;
     const/4 v1, 0x0
 
     .line 105
-    .local v1, i:I
+    .local v1, "i":I
     const/4 v2, 0x0
 
-    .local v2, j:I
+    .local v2, "j":I
     :goto_0
     invoke-virtual {p0}, Lcom/android/camera/CameraAppImpl;->getActivityCount()I
 
@@ -117,7 +117,7 @@
     .line 109
     iget-object v3, p0, Lcom/android/camera/CameraAppImpl;->mActivities:Ljava/util/Stack;
 
-    invoke-virtual {v3, v0}, Ljava/util/Vector;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v0}, Ljava/util/Stack;->remove(Ljava/lang/Object;)Z
 
     .line 105
     :goto_1
@@ -138,7 +138,7 @@
 
 .method public getActivity(I)Landroid/app/Activity;
     .locals 1
-    .parameter "index"
+    .param p1, "index"    # I
 
     .prologue
     .line 52
@@ -161,7 +161,7 @@
     :cond_1
     iget-object v0, p0, Lcom/android/camera/CameraAppImpl;->mActivities:Ljava/util/Stack;
 
-    invoke-virtual {v0, p1}, Ljava/util/Vector;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/util/Stack;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -177,7 +177,7 @@
     .line 85
     iget-object v0, p0, Lcom/android/camera/CameraAppImpl;->mActivities:Ljava/util/Stack;
 
-    invoke-virtual {v0}, Ljava/util/Vector;->size()I
+    invoke-virtual {v0}, Ljava/util/Stack;->size()I
 
     move-result v0
 
@@ -339,7 +339,7 @@
 
 .method public removeActivity(Landroid/app/Activity;)V
     .locals 1
-    .parameter "activity"
+    .param p1, "activity"    # Landroid/app/Activity;
 
     .prologue
     .line 96
@@ -353,7 +353,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/camera/CameraAppImpl;->mActivities:Ljava/util/Stack;
 
-    invoke-virtual {v0, p1}, Ljava/util/Vector;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Ljava/util/Stack;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 .end method

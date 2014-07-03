@@ -48,7 +48,7 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .parameter "in"
+    .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
     .line 1699
@@ -72,8 +72,8 @@
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Lcom/android/camera/ui/ScreenView$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Landroid/os/Parcel;
+    .param p2, "x1"    # Lcom/android/camera/ui/ScreenView$1;
 
     .prologue
     .line 1691
@@ -84,7 +84,7 @@
 
 .method constructor <init>(Landroid/os/Parcelable;)V
     .locals 1
-    .parameter "superState"
+    .param p1, "superState"    # Landroid/os/Parcelable;
 
     .prologue
     .line 1695
@@ -103,12 +103,12 @@
 # virtual methods
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .parameter "out"
-    .parameter "flags"
+    .param p1, "out"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
     .prologue
     .line 1705
-    invoke-super {p0, p1, p2}, Landroid/view/AbsSavedState;->writeToParcel(Landroid/os/Parcel;I)V
+    invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
     .line 1706
     iget v0, p0, Lcom/android/camera/ui/ScreenView$SavedState;->currentScreen:I

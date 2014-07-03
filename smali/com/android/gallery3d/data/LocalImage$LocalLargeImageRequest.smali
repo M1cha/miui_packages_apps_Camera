@@ -34,7 +34,7 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .parameter "localFilePath"
+    .param p1, "localFilePath"    # Ljava/lang/String;
 
     .prologue
     .line 201
@@ -51,7 +51,7 @@
 # virtual methods
 .method public run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Landroid/graphics/BitmapRegionDecoder;
     .locals 2
-    .parameter "jc"
+    .param p1, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
 
     .prologue
     .line 206
@@ -68,7 +68,7 @@
 
 .method public bridge synthetic run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Ljava/lang/Object;
     .locals 1
-    .parameter "x0"
+    .param p1, "x0"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
 
     .prologue
     .line 197

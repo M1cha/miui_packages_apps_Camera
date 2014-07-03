@@ -14,9 +14,9 @@
 # direct methods
 .method public constructor <init>(FFI)V
     .locals 0
-    .parameter "from"
-    .parameter "to"
-    .parameter "duration"
+    .param p1, "from"    # F
+    .param p2, "to"    # F
+    .param p3, "duration"    # I
 
     .prologue
     .line 25
@@ -32,7 +32,7 @@
     iput p1, p0, Lcom/android/gallery3d/anim/FloatAnimation;->mCurrent:F
 
     .line 29
-    invoke-virtual {p0, p3}, Lcom/android/gallery3d/anim/Animation;->setDuration(I)V
+    invoke-virtual {p0, p3}, Lcom/android/gallery3d/anim/FloatAnimation;->setDuration(I)V
 
     .line 30
     return-void
@@ -52,7 +52,7 @@
 
 .method protected onCalculate(F)V
     .locals 3
-    .parameter "progress"
+    .param p1, "progress"    # F
 
     .prologue
     .line 34

@@ -38,7 +38,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .parameter "v"
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 205
@@ -49,12 +49,12 @@
     check-cast v0, Ljava/lang/String;
 
     .line 206
-    .local v0, key:Ljava/lang/String;
+    .local v0, "key":Ljava/lang/String;
     const-string v1, "pref_camera_coloreffect_key"
 
     iget-object v2, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-object v2, v2, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
+    iget-object v2, v2, Lcom/android/camera/ui/SettingPopupView;->mCurrentMode:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -64,13 +64,13 @@
 
     iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-boolean v1, v1, Lcom/android/camera/ui/SettingView;->mIsAnimating:Z
+    iget-boolean v1, v1, Lcom/android/camera/ui/SettingPopupView;->mIsAnimating:Z
 
     if-nez v1, :cond_0
 
     iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-object v1, v1, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
+    iget-object v1, v1, Lcom/android/camera/ui/SettingPopupView;->mCurrentMode:Ljava/lang/String;
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -87,7 +87,7 @@
     :cond_1
     iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iput-object v0, v1, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
+    iput-object v0, v1, Lcom/android/camera/ui/SettingPopupView;->mCurrentMode:Ljava/lang/String;
 
     .line 213
     invoke-static {}, Lcom/android/camera/CameraDataAnalytics;->instance()Lcom/android/camera/CameraDataAnalytics;
@@ -99,11 +99,11 @@
     .line 214
     iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-object v1, v1, Lcom/android/camera/ui/SettingView;->mIndicatorClickListener:Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
+    iget-object v1, v1, Lcom/android/camera/ui/SettingPopupView;->mIndicatorClickListener:Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
 
     iget-object v2, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-object v2, v2, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
+    iget-object v2, v2, Lcom/android/camera/ui/SettingPopupView;->mCurrentMode:Ljava/lang/String;
 
     invoke-interface {v1, p1, v2}, Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;->onIndicatorClick(Landroid/view/View;Ljava/lang/String;)V
 
@@ -119,7 +119,7 @@
     .line 216
     iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-object v1, v1, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
+    iget-object v1, v1, Lcom/android/camera/ui/SettingPopupView;->mCurrentMode:Ljava/lang/String;
 
     const-string v2, "pref_camera_coloreffect_key"
 
@@ -148,7 +148,7 @@
 
     iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-object v1, v1, Lcom/android/camera/ui/SettingView;->mCurrentMode:Ljava/lang/String;
+    iget-object v1, v1, Lcom/android/camera/ui/SettingPopupView;->mCurrentMode:Ljava/lang/String;
 
     const-string v2, "pref_camera_panoramamode_key"
 
@@ -161,7 +161,7 @@
     .line 221
     iget-object v1, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    invoke-virtual {v1}, Lcom/android/camera/ui/SettingView;->dismiss()V
+    invoke-virtual {v1}, Lcom/android/camera/ui/SettingPopupView;->dismiss()V
 
     goto :goto_0
 .end method

@@ -14,8 +14,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/camera/IconListPreference;)V
     .locals 0
-    .parameter "context"
-    .parameter "pref"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "pref"    # Lcom/android/camera/IconListPreference;
 
     .prologue
     .line 18
@@ -32,10 +32,10 @@
 
     .prologue
     .line 48
-    invoke-virtual {p0}, Lcom/android/camera/ui/AbstractIndicatorButton;->dismissPopup()Z
+    invoke-virtual {p0}, Lcom/android/camera/ui/IndicatorButtonWhiteBalance;->dismissPopup()Z
 
     .line 49
-    invoke-virtual {p0}, Landroid/view/View;->getRootView()Landroid/view/View;
+    invoke-virtual {p0}, Lcom/android/camera/ui/IndicatorButtonWhiteBalance;->getRootView()Landroid/view/View;
 
     move-result-object v1
 
@@ -48,8 +48,8 @@
     check-cast v0, Landroid/view/ViewGroup;
 
     .line 50
-    .local v0, root:Landroid/view/ViewGroup;
-    iget-object v1, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
+    .local v0, "root":Landroid/view/ViewGroup;
+    iget-object v1, p0, Lcom/android/camera/ui/IndicatorButtonWhiteBalance;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
@@ -61,18 +61,18 @@
     .line 52
     iget-object v1, p0, Lcom/android/camera/ui/IndicatorButtonWhiteBalance;->mPopupWB:Lcom/android/camera/ui/GridSettingPopupWhiteBalance;
 
-    iput-object v1, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
+    iput-object v1, p0, Lcom/android/camera/ui/IndicatorButtonWhiteBalance;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
 
     .line 54
     :cond_0
-    iget-object v1, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
+    iget-object v1, p0, Lcom/android/camera/ui/IndicatorButtonWhiteBalance;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 55
     const/4 v1, 0x1
 
-    invoke-virtual {p0, v1}, Lcom/android/camera/ui/AbstractIndicatorButton;->showPopup(Z)V
+    invoke-virtual {p0, v1}, Lcom/android/camera/ui/IndicatorButtonWhiteBalance;->showPopup(Z)V
 
     .line 56
     return-void
@@ -86,7 +86,7 @@
     invoke-super {p0}, Lcom/android/camera/ui/IndicatorButton;->initializePopup()V
 
     .line 24
-    iget-object v0, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
+    iget-object v0, p0, Lcom/android/camera/ui/IndicatorButtonWhiteBalance;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
 
     check-cast v0, Lcom/android/camera/ui/GridSettingPopupWhiteBalance;
 

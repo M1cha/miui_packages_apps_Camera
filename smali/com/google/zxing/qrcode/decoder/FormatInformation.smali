@@ -294,222 +294,222 @@
 
     .line 34
     :array_0
-    .array-data 0x4
-        0x12t 0x54t 0x0t 0x0t
-        0x0t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x5412
+        0x0
     .end array-data
 
     :array_1
-    .array-data 0x4
-        0x25t 0x51t 0x0t 0x0t
-        0x1t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x5125
+        0x1
     .end array-data
 
     :array_2
-    .array-data 0x4
-        0x7ct 0x5et 0x0t 0x0t
-        0x2t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x5e7c
+        0x2
     .end array-data
 
     :array_3
-    .array-data 0x4
-        0x4bt 0x5bt 0x0t 0x0t
-        0x3t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x5b4b
+        0x3
     .end array-data
 
     :array_4
-    .array-data 0x4
-        0xf9t 0x45t 0x0t 0x0t
-        0x4t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x45f9
+        0x4
     .end array-data
 
     :array_5
-    .array-data 0x4
-        0xcet 0x40t 0x0t 0x0t
-        0x5t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x40ce
+        0x5
     .end array-data
 
     :array_6
-    .array-data 0x4
-        0x97t 0x4ft 0x0t 0x0t
-        0x6t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x4f97
+        0x6
     .end array-data
 
     :array_7
-    .array-data 0x4
-        0xa0t 0x4at 0x0t 0x0t
-        0x7t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x4aa0
+        0x7
     .end array-data
 
     :array_8
-    .array-data 0x4
-        0xc4t 0x77t 0x0t 0x0t
-        0x8t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x77c4
+        0x8
     .end array-data
 
     :array_9
-    .array-data 0x4
-        0xf3t 0x72t 0x0t 0x0t
-        0x9t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x72f3
+        0x9
     .end array-data
 
     :array_a
-    .array-data 0x4
-        0xaat 0x7dt 0x0t 0x0t
-        0xat 0x0t 0x0t 0x0t
+    .array-data 4
+        0x7daa
+        0xa
     .end array-data
 
     :array_b
-    .array-data 0x4
-        0x9dt 0x78t 0x0t 0x0t
-        0xbt 0x0t 0x0t 0x0t
+    .array-data 4
+        0x789d
+        0xb
     .end array-data
 
     :array_c
-    .array-data 0x4
-        0x2ft 0x66t 0x0t 0x0t
-        0xct 0x0t 0x0t 0x0t
+    .array-data 4
+        0x662f
+        0xc
     .end array-data
 
     :array_d
-    .array-data 0x4
-        0x18t 0x63t 0x0t 0x0t
-        0xdt 0x0t 0x0t 0x0t
+    .array-data 4
+        0x6318
+        0xd
     .end array-data
 
     :array_e
-    .array-data 0x4
-        0x41t 0x6ct 0x0t 0x0t
-        0xet 0x0t 0x0t 0x0t
+    .array-data 4
+        0x6c41
+        0xe
     .end array-data
 
     :array_f
-    .array-data 0x4
-        0x76t 0x69t 0x0t 0x0t
-        0xft 0x0t 0x0t 0x0t
+    .array-data 4
+        0x6976
+        0xf
     .end array-data
 
     :array_10
-    .array-data 0x4
-        0x89t 0x16t 0x0t 0x0t
-        0x10t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x1689
+        0x10
     .end array-data
 
     :array_11
-    .array-data 0x4
-        0xbet 0x13t 0x0t 0x0t
-        0x11t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x13be
+        0x11
     .end array-data
 
     :array_12
-    .array-data 0x4
-        0xe7t 0x1ct 0x0t 0x0t
-        0x12t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x1ce7
+        0x12
     .end array-data
 
     :array_13
-    .array-data 0x4
-        0xd0t 0x19t 0x0t 0x0t
-        0x13t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x19d0
+        0x13
     .end array-data
 
     :array_14
-    .array-data 0x4
-        0x62t 0x7t 0x0t 0x0t
-        0x14t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x762
+        0x14
     .end array-data
 
     :array_15
-    .array-data 0x4
-        0x55t 0x2t 0x0t 0x0t
-        0x15t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x255
+        0x15
     .end array-data
 
     :array_16
-    .array-data 0x4
-        0xct 0xdt 0x0t 0x0t
-        0x16t 0x0t 0x0t 0x0t
+    .array-data 4
+        0xd0c
+        0x16
     .end array-data
 
     :array_17
-    .array-data 0x4
-        0x3bt 0x8t 0x0t 0x0t
-        0x17t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x83b
+        0x17
     .end array-data
 
     :array_18
-    .array-data 0x4
-        0x5ft 0x35t 0x0t 0x0t
-        0x18t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x355f
+        0x18
     .end array-data
 
     :array_19
-    .array-data 0x4
-        0x68t 0x30t 0x0t 0x0t
-        0x19t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x3068
+        0x19
     .end array-data
 
     :array_1a
-    .array-data 0x4
-        0x31t 0x3ft 0x0t 0x0t
-        0x1at 0x0t 0x0t 0x0t
+    .array-data 4
+        0x3f31
+        0x1a
     .end array-data
 
     :array_1b
-    .array-data 0x4
-        0x6t 0x3at 0x0t 0x0t
-        0x1bt 0x0t 0x0t 0x0t
+    .array-data 4
+        0x3a06
+        0x1b
     .end array-data
 
     :array_1c
-    .array-data 0x4
-        0xb4t 0x24t 0x0t 0x0t
-        0x1ct 0x0t 0x0t 0x0t
+    .array-data 4
+        0x24b4
+        0x1c
     .end array-data
 
     :array_1d
-    .array-data 0x4
-        0x83t 0x21t 0x0t 0x0t
-        0x1dt 0x0t 0x0t 0x0t
+    .array-data 4
+        0x2183
+        0x1d
     .end array-data
 
     :array_1e
-    .array-data 0x4
-        0xdat 0x2et 0x0t 0x0t
-        0x1et 0x0t 0x0t 0x0t
+    .array-data 4
+        0x2eda
+        0x1e
     .end array-data
 
     :array_1f
-    .array-data 0x4
-        0xedt 0x2bt 0x0t 0x0t
-        0x1ft 0x0t 0x0t 0x0t
+    .array-data 4
+        0x2bed
+        0x1f
     .end array-data
 
     .line 72
     :array_20
-    .array-data 0x4
-        0x0t 0x0t 0x0t 0x0t
-        0x1t 0x0t 0x0t 0x0t
-        0x1t 0x0t 0x0t 0x0t
-        0x2t 0x0t 0x0t 0x0t
-        0x1t 0x0t 0x0t 0x0t
-        0x2t 0x0t 0x0t 0x0t
-        0x2t 0x0t 0x0t 0x0t
-        0x3t 0x0t 0x0t 0x0t
-        0x1t 0x0t 0x0t 0x0t
-        0x2t 0x0t 0x0t 0x0t
-        0x2t 0x0t 0x0t 0x0t
-        0x3t 0x0t 0x0t 0x0t
-        0x2t 0x0t 0x0t 0x0t
-        0x3t 0x0t 0x0t 0x0t
-        0x3t 0x0t 0x0t 0x0t
-        0x4t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x0
+        0x1
+        0x1
+        0x2
+        0x1
+        0x2
+        0x2
+        0x3
+        0x1
+        0x2
+        0x2
+        0x3
+        0x2
+        0x3
+        0x3
+        0x4
     .end array-data
 .end method
 
 .method private constructor <init>(I)V
     .locals 1
-    .parameter "formatInfo"
+    .param p1, "formatInfo"    # I
 
     .prologue
     .line 78
@@ -539,8 +539,8 @@
 
 .method static decodeFormatInformation(II)Lcom/google/zxing/qrcode/decoder/FormatInformation;
     .locals 3
-    .parameter "maskedFormatInfo1"
-    .parameter "maskedFormatInfo2"
+    .param p0, "maskedFormatInfo1"    # I
+    .param p1, "maskedFormatInfo2"    # I
 
     .prologue
     .line 106
@@ -549,15 +549,15 @@
     move-result-object v0
 
     .line 107
-    .local v0, formatInfo:Lcom/google/zxing/qrcode/decoder/FormatInformation;
+    .local v0, "formatInfo":Lcom/google/zxing/qrcode/decoder/FormatInformation;
     if-eqz v0, :cond_0
 
     .line 113
-    .end local v0           #formatInfo:Lcom/google/zxing/qrcode/decoder/FormatInformation;
+    .end local v0    # "formatInfo":Lcom/google/zxing/qrcode/decoder/FormatInformation;
     :goto_0
     return-object v0
 
-    .restart local v0       #formatInfo:Lcom/google/zxing/qrcode/decoder/FormatInformation;
+    .restart local v0    # "formatInfo":Lcom/google/zxing/qrcode/decoder/FormatInformation;
     :cond_0
     xor-int/lit16 v1, p0, 0x5412
 
@@ -572,8 +572,8 @@
 
 .method private static doDecodeFormatInformation(II)Lcom/google/zxing/qrcode/decoder/FormatInformation;
     .locals 10
-    .parameter "maskedFormatInfo1"
-    .parameter "maskedFormatInfo2"
+    .param p0, "maskedFormatInfo1"    # I
+    .param p1, "maskedFormatInfo2"    # I
 
     .prologue
     const/4 v9, 0x1
@@ -582,33 +582,33 @@
     const v1, 0x7fffffff
 
     .line 120
-    .local v1, bestDifference:I
+    .local v1, "bestDifference":I
     const/4 v2, 0x0
 
     .line 121
-    .local v2, bestFormatInfo:I
+    .local v2, "bestFormatInfo":I
     sget-object v0, Lcom/google/zxing/qrcode/decoder/FormatInformation;->FORMAT_INFO_DECODE_LOOKUP:[[I
 
-    .local v0, arr$:[[I
+    .local v0, "arr$":[[I
     array-length v6, v0
 
-    .local v6, len$:I
+    .local v6, "len$":I
     const/4 v5, 0x0
 
-    .local v5, i$:I
+    .local v5, "i$":I
     :goto_0
     if-ge v5, v6, :cond_4
 
     aget-object v4, v0, v5
 
     .line 122
-    .local v4, decodeInfo:[I
+    .local v4, "decodeInfo":[I
     const/4 v8, 0x0
 
     aget v7, v4, v8
 
     .line 123
-    .local v7, targetInfo:I
+    .local v7, "targetInfo":I
     if-eq v7, p0, :cond_0
 
     if-ne v7, p1, :cond_1
@@ -622,21 +622,21 @@
     invoke-direct {v8, v9}, Lcom/google/zxing/qrcode/decoder/FormatInformation;-><init>(I)V
 
     .line 146
-    .end local v4           #decodeInfo:[I
-    .end local v7           #targetInfo:I
+    .end local v4    # "decodeInfo":[I
+    .end local v7    # "targetInfo":I
     :goto_1
     return-object v8
 
     .line 127
-    .restart local v4       #decodeInfo:[I
-    .restart local v7       #targetInfo:I
+    .restart local v4    # "decodeInfo":[I
+    .restart local v7    # "targetInfo":I
     :cond_1
     invoke-static {p0, v7}, Lcom/google/zxing/qrcode/decoder/FormatInformation;->numBitsDiffering(II)I
 
     move-result v3
 
     .line 128
-    .local v3, bitsDifference:I
+    .local v3, "bitsDifference":I
     if-ge v3, v1, :cond_2
 
     .line 129
@@ -670,9 +670,9 @@
     goto :goto_0
 
     .line 143
-    .end local v3           #bitsDifference:I
-    .end local v4           #decodeInfo:[I
-    .end local v7           #targetInfo:I
+    .end local v3    # "bitsDifference":I
+    .end local v4    # "decodeInfo":[I
+    .end local v7    # "targetInfo":I
     :cond_4
     const/4 v8, 0x3
 
@@ -694,8 +694,8 @@
 
 .method static numBitsDiffering(II)I
     .locals 3
-    .parameter "a"
-    .parameter "b"
+    .param p0, "a"    # I
+    .param p1, "b"    # I
 
     .prologue
     .line 86
@@ -785,7 +785,7 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .parameter "o"
+    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     const/4 v1, 0x0
@@ -807,7 +807,7 @@
     check-cast v0, Lcom/google/zxing/qrcode/decoder/FormatInformation;
 
     .line 168
-    .local v0, other:Lcom/google/zxing/qrcode/decoder/FormatInformation;
+    .local v0, "other":Lcom/google/zxing/qrcode/decoder/FormatInformation;
     iget-object v2, p0, Lcom/google/zxing/qrcode/decoder/FormatInformation;->errorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
     iget-object v3, v0, Lcom/google/zxing/qrcode/decoder/FormatInformation;->errorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
@@ -852,7 +852,7 @@
     .line 159
     iget-object v0, p0, Lcom/google/zxing/qrcode/decoder/FormatInformation;->errorCorrectionLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
 
-    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v0}, Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;->ordinal()I
 
     move-result v0
 

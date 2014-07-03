@@ -118,7 +118,7 @@
 
     .prologue
     .line 106
-    .local p1, job:Lcom/android/gallery3d/util/ThreadPool$Job;,"Lcom/android/gallery3d/util/ThreadPool$Job<TT;>;"
+    .local p1, "job":Lcom/android/gallery3d/util/ThreadPool$Job;, "Lcom/android/gallery3d/util/ThreadPool$Job<TT;>;"
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/android/gallery3d/util/ThreadPool;->submit(Lcom/android/gallery3d/util/ThreadPool$Job;Lcom/android/gallery3d/util/FutureListener;)Lcom/android/gallery3d/util/Future;
@@ -146,14 +146,14 @@
 
     .prologue
     .line 91
-    .local p1, job:Lcom/android/gallery3d/util/ThreadPool$Job;,"Lcom/android/gallery3d/util/ThreadPool$Job<TT;>;"
-    .local p2, listener:Lcom/android/gallery3d/util/FutureListener;,"Lcom/android/gallery3d/util/FutureListener<TT;>;"
+    .local p1, "job":Lcom/android/gallery3d/util/ThreadPool$Job;, "Lcom/android/gallery3d/util/ThreadPool$Job<TT;>;"
+    .local p2, "listener":Lcom/android/gallery3d/util/FutureListener;, "Lcom/android/gallery3d/util/FutureListener<TT;>;"
     new-instance v0, Lcom/android/gallery3d/util/ThreadPool$Worker;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/android/gallery3d/util/ThreadPool$Worker;-><init>(Lcom/android/gallery3d/util/ThreadPool;Lcom/android/gallery3d/util/ThreadPool$Job;Lcom/android/gallery3d/util/FutureListener;)V
 
     .line 92
-    .local v0, w:Lcom/android/gallery3d/util/ThreadPool$Worker;,"Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
+    .local v0, "w":Lcom/android/gallery3d/util/ThreadPool$Worker;, "Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
     iget-object v1, p0, Lcom/android/gallery3d/util/ThreadPool;->mExecutor:Ljava/util/concurrent/Executor;
 
     invoke-interface {v1, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
@@ -180,27 +180,27 @@
 
     .prologue
     .line 97
-    .local p1, job:Lcom/android/gallery3d/util/ThreadPool$Job;,"Lcom/android/gallery3d/util/ThreadPool$Job<TT;>;"
-    .local p2, listener:Lcom/android/gallery3d/util/FutureListener;,"Lcom/android/gallery3d/util/FutureListener<TT;>;"
+    .local p1, "job":Lcom/android/gallery3d/util/ThreadPool$Job;, "Lcom/android/gallery3d/util/ThreadPool$Job<TT;>;"
+    .local p2, "listener":Lcom/android/gallery3d/util/FutureListener;, "Lcom/android/gallery3d/util/FutureListener<TT;>;"
     new-instance v1, Lcom/android/gallery3d/util/ThreadPool$Worker;
 
     invoke-direct {v1, p0, p1, p2}, Lcom/android/gallery3d/util/ThreadPool$Worker;-><init>(Lcom/android/gallery3d/util/ThreadPool;Lcom/android/gallery3d/util/ThreadPool$Job;Lcom/android/gallery3d/util/FutureListener;)V
 
     .line 98
-    .local v1, w:Lcom/android/gallery3d/util/ThreadPool$Worker;,"Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
+    .local v1, "w":Lcom/android/gallery3d/util/ThreadPool$Worker;, "Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
     invoke-interface {p1, v1}, Lcom/android/gallery3d/util/ThreadPool$Job;->run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Ljava/lang/Object;
 
     move-result-object v0
 
     .line 99
-    .local v0, result:Ljava/lang/Object;,"TT;"
-    #setter for: Lcom/android/gallery3d/util/ThreadPool$Worker;->mResult:Ljava/lang/Object;
+    .local v0, "result":Ljava/lang/Object;, "TT;"
+    # setter for: Lcom/android/gallery3d/util/ThreadPool$Worker;->mResult:Ljava/lang/Object;
     invoke-static {v1, v0}, Lcom/android/gallery3d/util/ThreadPool$Worker;->access$102(Lcom/android/gallery3d/util/ThreadPool$Worker;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 100
     const/4 v2, 0x1
 
-    #setter for: Lcom/android/gallery3d/util/ThreadPool$Worker;->mIsDone:Z
+    # setter for: Lcom/android/gallery3d/util/ThreadPool$Worker;->mIsDone:Z
     invoke-static {v1, v2}, Lcom/android/gallery3d/util/ThreadPool$Worker;->access$202(Lcom/android/gallery3d/util/ThreadPool$Worker;Z)Z
 
     .line 101

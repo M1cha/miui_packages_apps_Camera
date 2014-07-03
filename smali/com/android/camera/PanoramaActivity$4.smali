@@ -47,7 +47,7 @@
     move-result-object v1
 
     .line 579
-    .local v1, jpeg:Lcom/android/camera/PanoramaActivity$MosaicJpeg;
+    .local v1, "jpeg":Lcom/android/camera/PanoramaActivity$MosaicJpeg;
     if-eqz v1, :cond_0
 
     iget-boolean v2, v1, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->isValid:Z
@@ -58,7 +58,7 @@
     const/4 v0, 0x0
 
     .line 581
-    .local v0, bitmap:Landroid/graphics/Bitmap;
+    .local v0, "bitmap":Landroid/graphics/Bitmap;
     iget-object v2, v1, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->data:[B
 
     iget-object v3, v1, Lcom/android/camera/PanoramaActivity$MosaicJpeg;->data:[B
@@ -72,14 +72,14 @@
     .line 582
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$4;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mMainHandler:Landroid/os/Handler;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mMainHandler:Landroid/os/Handler;
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$400(Lcom/android/camera/PanoramaActivity;)Landroid/os/Handler;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/android/camera/PanoramaActivity$4;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mMainHandler:Landroid/os/Handler;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mMainHandler:Landroid/os/Handler;
     invoke-static {v3}, Lcom/android/camera/PanoramaActivity;->access$400(Lcom/android/camera/PanoramaActivity;)Landroid/os/Handler;
 
     move-result-object v3
@@ -93,7 +93,7 @@
     invoke-virtual {v2, v3}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
     .line 588
-    .end local v0           #bitmap:Landroid/graphics/Bitmap;
+    .end local v0    # "bitmap":Landroid/graphics/Bitmap;
     :goto_0
     return-void
 
@@ -101,14 +101,14 @@
     :cond_0
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$4;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mMainHandler:Landroid/os/Handler;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mMainHandler:Landroid/os/Handler;
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$400(Lcom/android/camera/PanoramaActivity;)Landroid/os/Handler;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/android/camera/PanoramaActivity$4;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mMainHandler:Landroid/os/Handler;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mMainHandler:Landroid/os/Handler;
     invoke-static {v3}, Lcom/android/camera/PanoramaActivity;->access$400(Lcom/android/camera/PanoramaActivity;)Landroid/os/Handler;
 
     move-result-object v3

@@ -31,20 +31,20 @@
 # direct methods
 .method public constructor <init>(Landroid/os/Handler;)V
     .locals 1
-    .parameter "handler"
+    .param p1, "handler"    # Landroid/os/Handler;
 
     .prologue
-    .line 331
+    .line 327
     invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 327
+    .line 323
     new-instance v0, Ljava/util/WeakHashMap;
 
     invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
     iput-object v0, p0, Lcom/android/gallery3d/data/DataManager$NotifyBroker;->mNotifiers:Ljava/util/WeakHashMap;
 
-    .line 332
+    .line 328
     return-void
 .end method
 
@@ -52,10 +52,10 @@
 # virtual methods
 .method public declared-synchronized onChange(Z)V
     .locals 3
-    .parameter "selfChange"
+    .param p1, "selfChange"    # Z
 
     .prologue
-    .line 340
+    .line 336
     monitor-enter p0
 
     :try_start_0
@@ -69,7 +69,7 @@
 
     move-result-object v0
 
-    .local v0, i$:Ljava/util/Iterator;
+    .local v0, "i$":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -83,17 +83,17 @@
 
     check-cast v1, Lcom/android/gallery3d/data/ChangeNotifier;
 
-    .line 341
-    .local v1, notifier:Lcom/android/gallery3d/data/ChangeNotifier;
+    .line 337
+    .local v1, "notifier":Lcom/android/gallery3d/data/ChangeNotifier;
     invoke-virtual {v1, p1}, Lcom/android/gallery3d/data/ChangeNotifier;->onChange(Z)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    .line 340
-    .end local v0           #i$:Ljava/util/Iterator;
-    .end local v1           #notifier:Lcom/android/gallery3d/data/ChangeNotifier;
+    .line 336
+    .end local v0    # "i$":Ljava/util/Iterator;
+    .end local v1    # "notifier":Lcom/android/gallery3d/data/ChangeNotifier;
     :catchall_0
     move-exception v2
 
@@ -101,8 +101,8 @@
 
     throw v2
 
-    .line 343
-    .restart local v0       #i$:Ljava/util/Iterator;
+    .line 339
+    .restart local v0    # "i$":Ljava/util/Iterator;
     :cond_0
     monitor-exit p0
 
@@ -111,10 +111,10 @@
 
 .method public declared-synchronized registerNotifier(Lcom/android/gallery3d/data/ChangeNotifier;)V
     .locals 2
-    .parameter "notifier"
+    .param p1, "notifier"    # Lcom/android/gallery3d/data/ChangeNotifier;
 
     .prologue
-    .line 335
+    .line 331
     monitor-enter p0
 
     :try_start_0
@@ -126,12 +126,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 336
+    .line 332
     monitor-exit p0
 
     return-void
 
-    .line 335
+    .line 331
     :catchall_0
     move-exception v0
 

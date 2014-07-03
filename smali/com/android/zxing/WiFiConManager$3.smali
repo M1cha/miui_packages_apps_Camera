@@ -46,13 +46,13 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Integer;
     .locals 1
-    .parameter "params"
+    .param p1, "params"    # [Ljava/lang/Void;
 
     .prologue
     .line 125
     iget-object v0, p0, Lcom/android/zxing/WiFiConManager$3;->this$0:Lcom/android/zxing/WiFiConManager;
 
-    #calls: Lcom/android/zxing/WiFiConManager;->connect()I
+    # invokes: Lcom/android/zxing/WiFiConManager;->connect()I
     invoke-static {v0}, Lcom/android/zxing/WiFiConManager;->access$600(Lcom/android/zxing/WiFiConManager;)I
 
     move-result v0
@@ -66,13 +66,13 @@
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .parameter "x0"
+    .param p1, "x0"    # [Ljava/lang/Object;
 
     .prologue
     .line 122
     check-cast p1, [Ljava/lang/Void;
 
-    .end local p1
+    .end local p1    # "x0":[Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/android/zxing/WiFiConManager$3;->doInBackground([Ljava/lang/Void;)Ljava/lang/Integer;
 
     move-result-object v0
@@ -82,13 +82,13 @@
 
 .method protected onPostExecute(Ljava/lang/Integer;)V
     .locals 3
-    .parameter "ret"
+    .param p1, "ret"    # Ljava/lang/Integer;
 
     .prologue
     .line 129
     iget-object v0, p0, Lcom/android/zxing/WiFiConManager$3;->this$0:Lcom/android/zxing/WiFiConManager;
 
-    #getter for: Lcom/android/zxing/WiFiConManager;->mDialog:Landroid/app/ProgressDialog;
+    # getter for: Lcom/android/zxing/WiFiConManager;->mDialog:Landroid/app/ProgressDialog;
     invoke-static {v0}, Lcom/android/zxing/WiFiConManager;->access$700(Lcom/android/zxing/WiFiConManager;)Landroid/app/ProgressDialog;
 
     move-result-object v0
@@ -98,18 +98,18 @@
     .line 130
     iget-object v0, p0, Lcom/android/zxing/WiFiConManager$3;->this$0:Lcom/android/zxing/WiFiConManager;
 
-    #getter for: Lcom/android/zxing/WiFiConManager;->mDialog:Landroid/app/ProgressDialog;
+    # getter for: Lcom/android/zxing/WiFiConManager;->mDialog:Landroid/app/ProgressDialog;
     invoke-static {v0}, Lcom/android/zxing/WiFiConManager;->access$700(Lcom/android/zxing/WiFiConManager;)Landroid/app/ProgressDialog;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
     .line 132
     :cond_0
     iget-object v0, p0, Lcom/android/zxing/WiFiConManager$3;->this$0:Lcom/android/zxing/WiFiConManager;
 
-    #getter for: Lcom/android/zxing/WiFiConManager;->mActivity:Landroid/app/Activity;
+    # getter for: Lcom/android/zxing/WiFiConManager;->mActivity:Landroid/app/Activity;
     invoke-static {v0}, Lcom/android/zxing/WiFiConManager;->access$800(Lcom/android/zxing/WiFiConManager;)Landroid/app/Activity;
 
     move-result-object v0
@@ -120,7 +120,7 @@
 
     move-result v2
 
-    #calls: Lcom/android/zxing/WiFiConManager;->getResultMessage(I)Ljava/lang/String;
+    # invokes: Lcom/android/zxing/WiFiConManager;->getResultMessage(I)Ljava/lang/String;
     invoke-static {v1, v2}, Lcom/android/zxing/WiFiConManager;->access$900(Lcom/android/zxing/WiFiConManager;I)Ljava/lang/String;
 
     move-result-object v1
@@ -139,13 +139,13 @@
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
-    .parameter "x0"
+    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 122
     check-cast p1, Ljava/lang/Integer;
 
-    .end local p1
+    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/android/zxing/WiFiConManager$3;->onPostExecute(Ljava/lang/Integer;)V
 
     return-void

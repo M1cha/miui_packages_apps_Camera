@@ -16,7 +16,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/CameraAppImpl;)V
     .locals 3
-    .parameter "application"
+    .param p1, "application"    # Lcom/android/camera/CameraAppImpl;
 
     .prologue
     .line 30
@@ -58,7 +58,7 @@
 
 .method public static getItemPath(I)Lcom/android/gallery3d/data/Path;
     .locals 1
-    .parameter "id"
+    .param p0, "id"    # I
 
     .prologue
     .line 67
@@ -77,7 +77,7 @@
 
 .method public static getSetPath(I)Lcom/android/gallery3d/data/Path;
     .locals 1
-    .parameter "id"
+    .param p0, "id"    # I
 
     .prologue
     .line 63
@@ -128,7 +128,7 @@
 # virtual methods
 .method public createMediaObject(Lcom/android/gallery3d/data/Path;)Lcom/android/gallery3d/data/MediaObject;
     .locals 7
-    .parameter "path"
+    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
 
     .prologue
     const/4 v6, 0x0
@@ -141,7 +141,7 @@
     move-result-object v0
 
     .line 41
-    .local v0, dataManager:Lcom/android/gallery3d/data/DataManager;
+    .local v0, "dataManager":Lcom/android/gallery3d/data/DataManager;
     iget-object v4, p0, Lcom/android/gallery3d/data/SnailSource;->mMatcher:Lcom/android/gallery3d/data/PathMatcher;
 
     invoke-virtual {v4, p1}, Lcom/android/gallery3d/data/PathMatcher;->match(Lcom/android/gallery3d/data/Path;)I
@@ -183,7 +183,7 @@
     move-result-object v3
 
     .line 44
-    .local v3, itemPath:Ljava/lang/String;
+    .local v3, "itemPath":Ljava/lang/String;
     invoke-virtual {v0, v3}, Lcom/android/gallery3d/data/DataManager;->getMediaObject(Ljava/lang/String;)Lcom/android/gallery3d/data/MediaObject;
 
     move-result-object v2
@@ -191,7 +191,7 @@
     check-cast v2, Lcom/android/gallery3d/data/MediaItem;
 
     .line 46
-    .local v2, item:Lcom/android/gallery3d/data/MediaItem;
+    .local v2, "item":Lcom/android/gallery3d/data/MediaItem;
     new-instance v4, Lcom/android/gallery3d/data/SnailAlbum;
 
     invoke-direct {v4, p1, v2}, Lcom/android/gallery3d/data/SnailAlbum;-><init>(Lcom/android/gallery3d/data/Path;Lcom/android/gallery3d/data/MediaItem;)V
@@ -199,8 +199,8 @@
     goto :goto_0
 
     .line 48
-    .end local v2           #item:Lcom/android/gallery3d/data/MediaItem;
-    .end local v3           #itemPath:Ljava/lang/String;
+    .end local v2    # "item":Lcom/android/gallery3d/data/MediaItem;
+    .end local v3    # "itemPath":Ljava/lang/String;
     :pswitch_1
     iget-object v4, p0, Lcom/android/gallery3d/data/SnailSource;->mMatcher:Lcom/android/gallery3d/data/PathMatcher;
 
@@ -209,7 +209,7 @@
     move-result v1
 
     .line 49
-    .local v1, id:I
+    .local v1, "id":I
     new-instance v4, Lcom/android/gallery3d/data/SnailItem;
 
     invoke-direct {v4, p1}, Lcom/android/gallery3d/data/SnailItem;-><init>(Lcom/android/gallery3d/data/Path;)V

@@ -49,10 +49,10 @@
 
     .prologue
     .line 38
-    .local p0, this:Lcom/android/gallery3d/util/IdentityCache$Entry;,"Lcom/android/gallery3d/util/IdentityCache$Entry<TK;TV;>;"
-    .local p1, key:Ljava/lang/Object;,"TK;"
-    .local p2, value:Ljava/lang/Object;,"TV;"
-    .local p3, queue:Ljava/lang/ref/ReferenceQueue;,"Ljava/lang/ref/ReferenceQueue<TV;>;"
+    .local p0, "this":Lcom/android/gallery3d/util/IdentityCache$Entry;, "Lcom/android/gallery3d/util/IdentityCache$Entry<TK;TV;>;"
+    .local p1, "key":Ljava/lang/Object;, "TK;"
+    .local p2, "value":Ljava/lang/Object;, "TV;"
+    .local p3, "queue":Ljava/lang/ref/ReferenceQueue;, "Ljava/lang/ref/ReferenceQueue<TV;>;"
     invoke-direct {p0, p2, p3}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
 
     .line 39

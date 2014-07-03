@@ -29,13 +29,12 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/ui/SlideshowView;IILjava/util/Random;)V
     .locals 5
-    .parameter
-    .parameter "width"
-    .parameter "height"
-    .parameter "random"
+    .param p2, "width"    # I
+    .param p3, "height"    # I
+    .param p4, "random"    # Ljava/util/Random;
 
     .prologue
-    const/high16 v4, 0x3f00
+    const/high16 v4, 0x3f000000
 
     const v3, 0x3e4ccccd
 
@@ -88,7 +87,7 @@
     .line 137
     const/16 v0, 0xdac
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/anim/Animation;->setDuration(I)V
+    invoke-virtual {p0, v0}, Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;->setDuration(I)V
 
     .line 138
     return-void
@@ -98,27 +97,27 @@
 # virtual methods
 .method public apply(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 10
-    .parameter "canvas"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
 
     .prologue
     .line 142
     iget-object v6, p0, Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;->this$0:Lcom/android/gallery3d/ui/SlideshowView;
 
-    invoke-virtual {v6}, Lcom/android/gallery3d/ui/GLView;->getWidth()I
+    invoke-virtual {v6}, Lcom/android/gallery3d/ui/SlideshowView;->getWidth()I
 
     move-result v5
 
     .line 143
-    .local v5, viewWidth:I
+    .local v5, "viewWidth":I
     iget-object v6, p0, Lcom/android/gallery3d/ui/SlideshowView$SlideshowAnimation;->this$0:Lcom/android/gallery3d/ui/SlideshowView;
 
-    invoke-virtual {v6}, Lcom/android/gallery3d/ui/GLView;->getHeight()I
+    invoke-virtual {v6}, Lcom/android/gallery3d/ui/SlideshowView;->getHeight()I
 
     move-result v4
 
     .line 145
-    .local v4, viewHeight:I
-    const/high16 v6, 0x4000
+    .local v4, "viewHeight":I
+    const/high16 v6, 0x40000000
 
     int-to-float v7, v5
 
@@ -145,8 +144,8 @@
     move-result v2
 
     .line 147
-    .local v2, initScale:F
-    const/high16 v6, 0x3f80
+    .local v2, "initScale":F
+    const/high16 v6, 0x3f800000
 
     const v7, 0x3e4ccccd
 
@@ -159,7 +158,7 @@
     mul-float v3, v2, v6
 
     .line 149
-    .local v3, scale:F
+    .local v3, "scale":F
     div-int/lit8 v6, v5, 0x2
 
     int-to-float v6, v6
@@ -175,7 +174,7 @@
     add-float v0, v6, v7
 
     .line 150
-    .local v0, centerX:F
+    .local v0, "centerX":F
     div-int/lit8 v6, v4, 0x2
 
     int-to-float v6, v6
@@ -191,7 +190,7 @@
     add-float v1, v6, v7
 
     .line 152
-    .local v1, centerY:F
+    .local v1, "centerY":F
     invoke-interface {p1, v0, v1}, Lcom/android/gallery3d/ui/GLCanvas;->translate(FF)V
 
     .line 153
@@ -215,7 +214,7 @@
 
 .method protected onCalculate(F)V
     .locals 0
-    .parameter "progress"
+    .param p1, "progress"    # F
 
     .prologue
     .line 163

@@ -17,21 +17,21 @@
 
 .method public static distance(FFFF)F
     .locals 4
-    .parameter "aX"
-    .parameter "aY"
-    .parameter "bX"
-    .parameter "bY"
+    .param p0, "aX"    # F
+    .param p1, "aY"    # F
+    .param p2, "bX"    # F
+    .param p3, "bY"    # F
 
     .prologue
     .line 33
     sub-float v0, p0, p2
 
     .line 34
-    .local v0, xDiff:F
+    .local v0, "xDiff":F
     sub-float v1, p1, p3
 
     .line 35
-    .local v1, yDiff:F
+    .local v1, "yDiff":F
     mul-float v2, v0, v0
 
     mul-float v3, v1, v1
@@ -51,21 +51,21 @@
 
 .method public static distance(IIII)F
     .locals 4
-    .parameter "aX"
-    .parameter "aY"
-    .parameter "bX"
-    .parameter "bY"
+    .param p0, "aX"    # I
+    .param p1, "aY"    # I
+    .param p2, "bX"    # I
+    .param p3, "bY"    # I
 
     .prologue
     .line 39
     sub-int v0, p0, p2
 
     .line 40
-    .local v0, xDiff:I
+    .local v0, "xDiff":I
     sub-int v1, p1, p3
 
     .line 41
-    .local v1, yDiff:I
+    .local v1, "yDiff":I
     mul-int v2, v0, v0
 
     mul-int v3, v1, v1
@@ -85,11 +85,11 @@
 
 .method public static round(F)I
     .locals 1
-    .parameter "d"
+    .param p0, "d"    # F
 
     .prologue
     .line 29
-    const/high16 v0, 0x3f00
+    const/high16 v0, 0x3f000000
 
     add-float/2addr v0, p0
 

@@ -44,7 +44,7 @@
     .locals 2
 
     .prologue
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -172,7 +172,7 @@
 
     iget v2, p0, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->mHeight:I
 
-    invoke-virtual {v0, v1, v2}, Lcom/android/gallery3d/ui/BasicTexture;->setSize(II)V
+    invoke-virtual {v0, v1, v2}, Lcom/android/gallery3d/ui/ExtTexture;->setSize(II)V
 
     .line 55
     new-instance v0, Landroid/graphics/SurfaceTexture;
@@ -240,11 +240,11 @@
 
 .method public draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
     .locals 9
-    .parameter "canvas"
-    .parameter "x"
-    .parameter "y"
-    .parameter "width"
-    .parameter "height"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .param p2, "x"    # I
+    .param p3, "y"    # I
+    .param p4, "width"    # I
+    .param p5, "height"    # I
 
     .prologue
     .line 141
@@ -286,13 +286,13 @@
     add-int v7, p2, v0
 
     .line 148
-    .local v7, cx:I
+    .local v7, "cx":I
     div-int/lit8 v0, p5, 0x2
 
     add-int v8, p3, v0
 
     .line 149
-    .local v8, cy:I
+    .local v8, "cy":I
     iget-object v0, p0, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->mTransform:[F
 
     invoke-virtual {p0, v0}, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->updateTransformMatrix([F)V
@@ -305,11 +305,11 @@
     invoke-interface {p1, v0, v1}, Lcom/android/gallery3d/ui/GLCanvas;->translate(FF)V
 
     .line 151
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
-    const/high16 v1, -0x4080
+    const/high16 v1, -0x40800000
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     invoke-interface {p1, v0, v1, v2}, Lcom/android/gallery3d/ui/GLCanvas;->scale(FFF)V
 
@@ -349,8 +349,8 @@
 
     goto :goto_0
 
-    .end local v7           #cx:I
-    .end local v8           #cy:I
+    .end local v7    # "cx":I
+    .end local v8    # "cy":I
     :catchall_0
     move-exception v0
 
@@ -363,9 +363,9 @@
 
 .method public draw(Lcom/android/gallery3d/ui/GLCanvas;Landroid/graphics/RectF;Landroid/graphics/RectF;)V
     .locals 1
-    .parameter "canvas"
-    .parameter "source"
-    .parameter "dest"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .param p2, "source"    # Landroid/graphics/RectF;
+    .param p3, "dest"    # Landroid/graphics/RectF;
 
     .prologue
     .line 191
@@ -537,8 +537,8 @@
 
 .method public setRenderSize(II)V
     .locals 0
-    .parameter "width"
-    .parameter "height"
+    .param p1, "width"    # I
+    .param p2, "height"    # I
 
     .prologue
     .line 104
@@ -556,8 +556,8 @@
 
 .method public setSize(II)V
     .locals 1
-    .parameter "width"
-    .parameter "height"
+    .param p1, "width"    # I
+    .param p2, "height"    # I
 
     .prologue
     .line 90
@@ -607,32 +607,32 @@
 
 .method protected updateTransformMatrix([F)V
     .locals 10
-    .parameter "matrix"
+    .param p1, "matrix"    # [F
 
     .prologue
     const v9, 0x3f4ccccd
 
-    const/high16 v8, 0x3f00
+    const/high16 v8, 0x3f000000
 
     const/4 v7, 0x0
 
-    const/high16 v6, -0x4100
+    const/high16 v6, -0x41000000
 
     const/4 v5, 0x0
 
     .line 160
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     .line 161
-    .local v1, scaleX:F
-    const/high16 v2, 0x3f80
+    .local v1, "scaleX":F
+    const/high16 v2, 0x3f800000
 
     .line 162
-    .local v2, scaleY:F
+    .local v2, "scaleY":F
     const/4 v0, 0x0
 
     .line 163
-    .local v0, change:Z
+    .local v0, "change":Z
     invoke-static {}, Lcom/android/camera/ModeChangeManager;->getCurrentMode()I
 
     move-result v3
@@ -691,7 +691,7 @@
     invoke-static {p1, v5, v8, v8, v7}, Landroid/opengl/Matrix;->translateM([FIFFF)V
 
     .line 177
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     invoke-static {p1, v5, v1, v2, v3}, Landroid/opengl/Matrix;->scaleM([FIFFF)V
 

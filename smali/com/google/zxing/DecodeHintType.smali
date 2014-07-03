@@ -235,7 +235,7 @@
 
     .prologue
     .line 97
-    .local p3, valueType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
+    .local p3, "valueType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 98
@@ -268,7 +268,7 @@
     .line 30
     sget-object v0, Lcom/google/zxing/DecodeHintType;->$VALUES:[Lcom/google/zxing/DecodeHintType;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, [Lcom/google/zxing/DecodeHintType;->clone()Ljava/lang/Object;
 
     move-result-object v0
 

@@ -34,8 +34,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/data/MediaSet;Z)V
     .locals 2
-    .parameter "mediaSet"
-    .parameter "repeat"
+    .param p1, "mediaSet"    # Lcom/android/gallery3d/data/MediaSet;
+    .param p2, "repeat"    # Z
 
     .prologue
     .line 248
@@ -83,7 +83,7 @@
 
 .method private generateOrderArray(I)V
     .locals 5
-    .parameter "totalCount"
+    .param p1, "totalCount"    # I
 
     .prologue
     const/4 v4, 0x0
@@ -103,7 +103,7 @@
     .line 283
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     if-ge v0, p1, :cond_0
 
@@ -118,11 +118,11 @@
     goto :goto_0
 
     .line 287
-    .end local v0           #i:I
+    .end local v0    # "i":I
     :cond_0
     add-int/lit8 v0, p1, -0x1
 
-    .restart local v0       #i:I
+    .restart local v0    # "i":I
     :goto_1
     if-lez v0, :cond_1
 
@@ -182,7 +182,7 @@
 # virtual methods
 .method public addContentListener(Lcom/android/gallery3d/data/ContentListener;)V
     .locals 1
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/gallery3d/data/ContentListener;
 
     .prologue
     .line 296
@@ -196,8 +196,8 @@
 
 .method public findItemIndex(Lcom/android/gallery3d/data/Path;I)I
     .locals 0
-    .parameter "path"
-    .parameter "hint"
+    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .param p2, "hint"    # I
 
     .prologue
     .line 254
@@ -206,7 +206,7 @@
 
 .method public getMediaItem(I)Lcom/android/gallery3d/data/MediaItem;
     .locals 5
-    .parameter "index"
+    .param p1, "index"    # I
 
     .prologue
     const/4 v1, 0x0
@@ -252,16 +252,16 @@
 
     iget v3, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mLastIndex:I
 
-    #calls: Lcom/android/gallery3d/app/SlideshowPage;->findMediaItem(Lcom/android/gallery3d/data/MediaSet;I)Lcom/android/gallery3d/data/MediaItem;
+    # invokes: Lcom/android/gallery3d/app/SlideshowPage;->findMediaItem(Lcom/android/gallery3d/data/MediaSet;I)Lcom/android/gallery3d/data/MediaItem;
     invoke-static {v2, v3}, Lcom/android/gallery3d/app/SlideshowPage;->access$500(Lcom/android/gallery3d/data/MediaSet;I)Lcom/android/gallery3d/data/MediaItem;
 
     move-result-object v1
 
     .line 262
-    .local v1, item:Lcom/android/gallery3d/data/MediaItem;
+    .local v1, "item":Lcom/android/gallery3d/data/MediaItem;
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     const/4 v2, 0x5
 
@@ -312,7 +312,7 @@
 
     iget v3, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mLastIndex:I
 
-    #calls: Lcom/android/gallery3d/app/SlideshowPage;->findMediaItem(Lcom/android/gallery3d/data/MediaSet;I)Lcom/android/gallery3d/data/MediaItem;
+    # invokes: Lcom/android/gallery3d/app/SlideshowPage;->findMediaItem(Lcom/android/gallery3d/data/MediaSet;I)Lcom/android/gallery3d/data/MediaItem;
     invoke-static {v2, v3}, Lcom/android/gallery3d/app/SlideshowPage;->access$500(Lcom/android/gallery3d/data/MediaSet;I)Lcom/android/gallery3d/data/MediaItem;
 
     move-result-object v1
@@ -335,7 +335,7 @@
     move-result-wide v1
 
     .line 272
-    .local v1, version:J
+    .local v1, "version":J
     iget-wide v3, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mSourceVersion:J
 
     cmp-long v3, v1, v3
@@ -353,7 +353,7 @@
     move-result v0
 
     .line 275
-    .local v0, count:I
+    .local v0, "count":I
     iget-object v3, p0, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->mOrder:[I
 
     array-length v3, v3
@@ -363,14 +363,14 @@
     invoke-direct {p0, v0}, Lcom/android/gallery3d/app/SlideshowPage$ShuffleSource;->generateOrderArray(I)V
 
     .line 277
-    .end local v0           #count:I
+    .end local v0    # "count":I
     :cond_0
     return-wide v1
 .end method
 
 .method public removeContentListener(Lcom/android/gallery3d/data/ContentListener;)V
     .locals 1
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/gallery3d/data/ContentListener;
 
     .prologue
     .line 300

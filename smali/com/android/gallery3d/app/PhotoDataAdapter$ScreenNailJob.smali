@@ -36,8 +36,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/app/PhotoDataAdapter;Lcom/android/gallery3d/data/MediaItem;)V
     .locals 0
-    .parameter
-    .parameter "item"
+    .param p2, "item"    # Lcom/android/gallery3d/data/MediaItem;
 
     .prologue
     .line 668
@@ -56,7 +55,7 @@
 # virtual methods
 .method public run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Lcom/android/gallery3d/ui/ScreenNail;
     .locals 6
-    .parameter "jc"
+    .param p1, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
 
     .prologue
     const/4 v2, 0x0
@@ -71,7 +70,7 @@
     move-result-object v1
 
     .line 677
-    .local v1, s:Lcom/android/gallery3d/ui/ScreenNail;
+    .local v1, "s":Lcom/android/gallery3d/ui/ScreenNail;
     if-eqz v1, :cond_1
 
     move-object v2, v1
@@ -87,7 +86,7 @@
 
     iget-object v4, p0, Lcom/android/gallery3d/app/PhotoDataAdapter$ScreenNailJob;->mItem:Lcom/android/gallery3d/data/MediaItem;
 
-    #calls: Lcom/android/gallery3d/app/PhotoDataAdapter;->isTemporaryItem(Lcom/android/gallery3d/data/MediaItem;)Z
+    # invokes: Lcom/android/gallery3d/app/PhotoDataAdapter;->isTemporaryItem(Lcom/android/gallery3d/data/MediaItem;)Z
     invoke-static {v3, v4}, Lcom/android/gallery3d/app/PhotoDataAdapter;->access$400(Lcom/android/gallery3d/app/PhotoDataAdapter;Lcom/android/gallery3d/data/MediaItem;)Z
 
     move-result v3
@@ -99,7 +98,7 @@
 
     iget-object v3, p0, Lcom/android/gallery3d/app/PhotoDataAdapter$ScreenNailJob;->mItem:Lcom/android/gallery3d/data/MediaItem;
 
-    #calls: Lcom/android/gallery3d/app/PhotoDataAdapter;->newPlaceholderScreenNail(Lcom/android/gallery3d/data/MediaItem;)Lcom/android/gallery3d/ui/ScreenNail;
+    # invokes: Lcom/android/gallery3d/app/PhotoDataAdapter;->newPlaceholderScreenNail(Lcom/android/gallery3d/data/MediaItem;)Lcom/android/gallery3d/ui/ScreenNail;
     invoke-static {v2, v3}, Lcom/android/gallery3d/app/PhotoDataAdapter;->access$500(Lcom/android/gallery3d/app/PhotoDataAdapter;Lcom/android/gallery3d/data/MediaItem;)Lcom/android/gallery3d/ui/ScreenNail;
 
     move-result-object v2
@@ -121,7 +120,7 @@
     check-cast v0, Landroid/graphics/Bitmap;
 
     .line 686
-    .local v0, bitmap:Landroid/graphics/Bitmap;
+    .local v0, "bitmap":Landroid/graphics/Bitmap;
     invoke-interface {p1}, Lcom/android/gallery3d/util/ThreadPool$JobContext;->isCancelled()Z
 
     move-result v3
@@ -163,7 +162,7 @@
 
 .method public bridge synthetic run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Ljava/lang/Object;
     .locals 1
-    .parameter "x0"
+    .param p1, "x0"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
 
     .prologue
     .line 665

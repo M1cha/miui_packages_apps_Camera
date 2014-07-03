@@ -12,7 +12,7 @@
 # direct methods
 .method public constructor <init>(Lcom/google/zxing/Binarizer;)V
     .locals 2
-    .parameter "binarizer"
+    .param p1, "binarizer"    # Lcom/google/zxing/Binarizer;
 
     .prologue
     .line 33
@@ -72,8 +72,8 @@
 
 .method public getBlackRow(ILcom/google/zxing/common/BitArray;)Lcom/google/zxing/common/BitArray;
     .locals 1
-    .parameter "y"
-    .parameter "row"
+    .param p1, "y"    # I
+    .param p2, "row"    # Lcom/google/zxing/common/BitArray;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -153,7 +153,7 @@
     move-result-object v0
 
     .line 125
-    .local v0, newSource:Lcom/google/zxing/LuminanceSource;
+    .local v0, "newSource":Lcom/google/zxing/LuminanceSource;
     new-instance v1, Lcom/google/zxing/BinaryBitmap;
 
     iget-object v2, p0, Lcom/google/zxing/BinaryBitmap;->binarizer:Lcom/google/zxing/Binarizer;

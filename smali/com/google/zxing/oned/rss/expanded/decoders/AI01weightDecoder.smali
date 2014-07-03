@@ -6,7 +6,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/zxing/common/BitArray;)V
     .locals 0
-    .parameter "information"
+    .param p1, "information"    # Lcom/google/zxing/common/BitArray;
 
     .prologue
     .line 37
@@ -26,13 +26,13 @@
 
 .method protected final encodeCompressedWeight(Ljava/lang/StringBuilder;II)V
     .locals 5
-    .parameter "buf"
-    .parameter "currentPos"
-    .parameter "weightSize"
+    .param p1, "buf"    # Ljava/lang/StringBuilder;
+    .param p2, "currentPos"    # I
+    .param p3, "weightSize"    # I
 
     .prologue
     .line 41
-    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
+    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01weightDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
 
     move-result-object v4
 
@@ -41,7 +41,7 @@
     move-result v2
 
     .line 42
-    .local v2, originalWeightNumeric:I
+    .local v2, "originalWeightNumeric":I
     invoke-virtual {p0, p1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01weightDecoder;->addWeightCode(Ljava/lang/StringBuilder;I)V
 
     .line 44
@@ -50,14 +50,14 @@
     move-result v3
 
     .line 46
-    .local v3, weightNumeric:I
+    .local v3, "weightNumeric":I
     const v0, 0x186a0
 
     .line 47
-    .local v0, currentDivisor:I
+    .local v0, "currentDivisor":I
     const/4 v1, 0x0
 
-    .local v1, i:I
+    .local v1, "i":I
     :goto_0
     const/4 v4, 0x5
 

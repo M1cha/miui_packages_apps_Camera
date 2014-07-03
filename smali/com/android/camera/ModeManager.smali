@@ -26,10 +26,10 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;ZLcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;)V
     .locals 1
-    .parameter "activity"
-    .parameter "captureIntent"
-    .parameter "indicatorClickListener"
-    .parameter "preferenceChangedListener"
+    .param p1, "activity"    # Landroid/app/Activity;
+    .param p2, "captureIntent"    # Z
+    .param p3, "indicatorClickListener"    # Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
+    .param p4, "preferenceChangedListener"    # Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
 
     .prologue
     .line 31
@@ -95,7 +95,7 @@
 
 .method public enableSettingView(Z)V
     .locals 1
-    .parameter "enabled"
+    .param p1, "enabled"    # Z
 
     .prologue
     .line 66
@@ -103,7 +103,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->setEnabled(Z)V
+    invoke-virtual {v0, p1}, Lcom/android/camera/ui/SettingView;->setEnabled(Z)V
 
     .line 67
     return-void
@@ -171,10 +171,10 @@
 
 .method protected initializeSettingScreen(ZZLandroid/hardware/Camera$Parameters;Z)V
     .locals 2
-    .parameter "frontCamera"
-    .parameter "mode"
-    .parameter "parameters"
-    .parameter "isSecure"
+    .param p1, "frontCamera"    # Z
+    .param p2, "mode"    # Z
+    .param p3, "parameters"    # Landroid/hardware/Camera$Parameters;
+    .param p4, "isSecure"    # Z
 
     .prologue
     .line 40
@@ -205,7 +205,7 @@
 
     iget-object v1, p0, Lcom/android/camera/ModeManager;->mPreferenceChangedListener:Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
 
-    invoke-virtual {v0, v1}, Lcom/android/camera/ui/SettingView;->setListener(Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/SettingScreenView;->setListener(Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;)V
 
     .line 43
     iget-object v0, p0, Lcom/android/camera/ModeManager;->mActivity:Landroid/app/Activity;
@@ -225,7 +225,7 @@
 
     iget-object v1, p0, Lcom/android/camera/ModeManager;->mPreferenceChangedListener:Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
 
-    invoke-virtual {v0, v1}, Lcom/android/camera/ui/SettingView;->setListener(Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/SettingPopupView;->setListener(Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;)V
 
     .line 46
     :cond_1
@@ -259,7 +259,7 @@
 
 .method public varargs overrideSettings([Ljava/lang/String;)V
     .locals 1
-    .parameter "keyvalues"
+    .param p1, "keyvalues"    # [Ljava/lang/String;
 
     .prologue
     .line 92
@@ -268,7 +268,7 @@
     move-result-object v0
 
     .line 93
-    .local v0, v:Lcom/android/camera/ui/SettingView;
+    .local v0, "v":Lcom/android/camera/ui/SettingView;
     invoke-virtual {v0, p1}, Lcom/android/camera/ui/SettingView;->overrideSettings([Ljava/lang/String;)V
 
     .line 94

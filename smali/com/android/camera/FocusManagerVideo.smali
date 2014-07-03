@@ -19,10 +19,10 @@
 # direct methods
 .method public constructor <init>(IIZI)V
     .locals 2
-    .parameter "previewWidth"
-    .parameter "previewHeight"
-    .parameter "mirror"
-    .parameter "displayOrientation"
+    .param p1, "previewWidth"    # I
+    .param p2, "previewHeight"    # I
+    .param p3, "mirror"    # Z
+    .param p4, "displayOrientation"    # I
 
     .prologue
     .line 743
@@ -38,10 +38,10 @@
     iput-object v0, p0, Lcom/android/camera/FocusManagerVideo;->mAutoFocusCallback:Landroid/hardware/Camera$AutoFocusCallback;
 
     .line 744
-    iput p4, p0, Lcom/android/camera/AbstractFocusManager;->mDisplayOrientation:I
+    iput p4, p0, Lcom/android/camera/FocusManagerVideo;->mDisplayOrientation:I
 
     .line 745
-    iput-boolean p3, p0, Lcom/android/camera/AbstractFocusManager;->mMirror:Z
+    iput-boolean p3, p0, Lcom/android/camera/FocusManagerVideo;->mMirror:Z
 
     .line 746
     invoke-virtual {p0, p1, p2}, Lcom/android/camera/FocusManagerVideo;->setPreviewSize(II)V
@@ -49,7 +49,7 @@
     .line 747
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/android/camera/AbstractFocusManager;->mInitialized:Z
+    iput-boolean v0, p0, Lcom/android/camera/FocusManagerVideo;->mInitialized:Z
 
     .line 748
     return-void
@@ -69,8 +69,8 @@
 
 .method public getFocusArea(II)Ljava/util/List;
     .locals 10
-    .parameter "x"
-    .parameter "y"
+    .param p1, "x"    # I
+    .param p2, "y"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -83,7 +83,7 @@
 
     .prologue
     .line 760
-    iget-boolean v0, p0, Lcom/android/camera/AbstractFocusManager;->mInitialized:Z
+    iget-boolean v0, p0, Lcom/android/camera/FocusManagerVideo;->mInitialized:Z
 
     if-eqz v0, :cond_0
 
@@ -93,7 +93,7 @@
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
     .line 762
-    .local v9, focusArea:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
+    .local v9, "focusArea":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/Camera$Area;>;"
     new-instance v0, Landroid/hardware/Camera$Area;
 
     new-instance v1, Landroid/graphics/Rect;
@@ -107,15 +107,15 @@
     invoke-interface {v9, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 764
-    iget v1, p0, Lcom/android/camera/AbstractFocusManager;->FOCUS_AREA_WIDTH:I
+    iget v1, p0, Lcom/android/camera/FocusManagerVideo;->FOCUS_AREA_WIDTH:I
 
-    iget v2, p0, Lcom/android/camera/AbstractFocusManager;->FOCUS_AREA_HEIGHT:I
+    iget v2, p0, Lcom/android/camera/FocusManagerVideo;->FOCUS_AREA_HEIGHT:I
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
-    iget v6, p0, Lcom/android/camera/AbstractFocusManager;->mPreviewWidth:I
+    iget v6, p0, Lcom/android/camera/FocusManagerVideo;->mPreviewWidth:I
 
-    iget v7, p0, Lcom/android/camera/AbstractFocusManager;->mPreviewHeight:I
+    iget v7, p0, Lcom/android/camera/FocusManagerVideo;->mPreviewHeight:I
 
     const/4 v0, 0x0
 
@@ -133,10 +133,10 @@
 
     move v5, p2
 
-    invoke-virtual/range {v0 .. v8}, Lcom/android/camera/AbstractFocusManager;->calculateTapArea(IIFIIIILandroid/graphics/Rect;)V
+    invoke-virtual/range {v0 .. v8}, Lcom/android/camera/FocusManagerVideo;->calculateTapArea(IIFIIIILandroid/graphics/Rect;)V
 
     .line 769
-    .end local v9           #focusArea:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
+    .end local v9    # "focusArea":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/Camera$Area;>;"
     :goto_0
     return-object v9
 
@@ -148,28 +148,28 @@
 
 .method public setPreviewSize(II)V
     .locals 1
-    .parameter "previewWidth"
-    .parameter "previewHeight"
+    .param p1, "previewWidth"    # I
+    .param p2, "previewHeight"    # I
 
     .prologue
     .line 752
-    iget v0, p0, Lcom/android/camera/AbstractFocusManager;->mPreviewWidth:I
+    iget v0, p0, Lcom/android/camera/FocusManagerVideo;->mPreviewWidth:I
 
     if-ne v0, p1, :cond_0
 
-    iget v0, p0, Lcom/android/camera/AbstractFocusManager;->mPreviewHeight:I
+    iget v0, p0, Lcom/android/camera/FocusManagerVideo;->mPreviewHeight:I
 
     if-eq v0, p2, :cond_1
 
     .line 753
     :cond_0
-    iput p1, p0, Lcom/android/camera/AbstractFocusManager;->mPreviewWidth:I
+    iput p1, p0, Lcom/android/camera/FocusManagerVideo;->mPreviewWidth:I
 
     .line 754
-    iput p2, p0, Lcom/android/camera/AbstractFocusManager;->mPreviewHeight:I
+    iput p2, p0, Lcom/android/camera/FocusManagerVideo;->mPreviewHeight:I
 
     .line 755
-    invoke-virtual {p0}, Lcom/android/camera/AbstractFocusManager;->setMatrix()V
+    invoke-virtual {p0}, Lcom/android/camera/FocusManagerVideo;->setMatrix()V
 
     .line 757
     :cond_1

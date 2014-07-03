@@ -10,7 +10,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/app/GalleryActivity;)V
     .locals 1
-    .parameter "context"
+    .param p1, "context"    # Lcom/android/gallery3d/app/GalleryActivity;
 
     .prologue
     .line 30
@@ -36,7 +36,7 @@
 # virtual methods
 .method public dispatchMessage(Landroid/os/Message;)V
     .locals 2
-    .parameter "message"
+    .param p1, "message"    # Landroid/os/Message;
 
     .prologue
     .line 37

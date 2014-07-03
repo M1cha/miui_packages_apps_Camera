@@ -21,9 +21,8 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/util/PriorityThreadFactory;Ljava/lang/Runnable;Ljava/lang/String;)V
     .locals 0
-    .parameter
-    .parameter "x0"
-    .parameter "x1"
+    .param p2, "x0"    # Ljava/lang/Runnable;
+    .param p3, "x1"    # Ljava/lang/String;
 
     .prologue
     .line 39
@@ -43,7 +42,7 @@
     .line 42
     iget-object v0, p0, Lcom/android/gallery3d/util/PriorityThreadFactory$1;->this$0:Lcom/android/gallery3d/util/PriorityThreadFactory;
 
-    #getter for: Lcom/android/gallery3d/util/PriorityThreadFactory;->mPriority:I
+    # getter for: Lcom/android/gallery3d/util/PriorityThreadFactory;->mPriority:I
     invoke-static {v0}, Lcom/android/gallery3d/util/PriorityThreadFactory;->access$000(Lcom/android/gallery3d/util/PriorityThreadFactory;)I
 
     move-result v0

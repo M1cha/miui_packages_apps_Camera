@@ -79,7 +79,7 @@
     const/4 v0, 0x0
 
     .line 37
-    .local v0, current:I
+    .local v0, "current":I
     :try_start_0
     invoke-static {}, Lcom/android/camera/CameraAppImpl;->sGetAndroidContext()Landroid/content/Context;
 
@@ -119,24 +119,24 @@
     invoke-static {v2, v3, v4}, Landroid/provider/Settings$System;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
     .line 54
-    .end local v0           #current:I
+    .end local v0    # "current":I
     :cond_0
     :goto_1
     return-void
 
     .line 41
-    .restart local v0       #current:I
+    .restart local v0    # "current":I
     :catch_0
     move-exception v1
 
     .line 42
-    .local v1, localException:Ljava/lang/Exception;
-    invoke-virtual {v1}, Ljava/lang/Throwable;->printStackTrace()V
+    .local v1, "localException":Ljava/lang/Exception;
+    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0
 
     .line 51
-    .end local v1           #localException:Ljava/lang/Exception;
+    .end local v1    # "localException":Ljava/lang/Exception;
     :cond_1
     const/4 v2, 0x1
 
@@ -223,8 +223,8 @@
     move-exception v0
 
     .line 21
-    .local v0, localException:Ljava/lang/Exception;
-    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
+    .local v0, "localException":Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0
 .end method

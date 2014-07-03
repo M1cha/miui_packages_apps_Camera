@@ -33,8 +33,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/ui/AbstractIndicatorButton;Lcom/android/camera/ui/AbstractIndicatorButton$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Lcom/android/camera/ui/AbstractIndicatorButton;
+    .param p2, "x1"    # Lcom/android/camera/ui/AbstractIndicatorButton$1;
 
     .prologue
     .line 201
@@ -47,7 +47,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .parameter "msg"
+    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
     .line 204

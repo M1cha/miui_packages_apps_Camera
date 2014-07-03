@@ -29,7 +29,7 @@
     .end annotation
 
     .prologue
-    .local p0, pairs:Ljava/util/List;,"Ljava/util/List<Lcom/google/zxing/oned/rss/expanded/ExpandedPair;>;"
+    .local p0, "pairs":Ljava/util/List;, "Ljava/util/List<Lcom/google/zxing/oned/rss/expanded/ExpandedPair;>;"
     const/4 v12, 0x1
 
     .line 43
@@ -42,7 +42,7 @@
     add-int/lit8 v2, v11, -0x1
 
     .line 44
-    .local v2, charNumber:I
+    .local v2, "charNumber":I
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v11
@@ -69,17 +69,17 @@
     mul-int/lit8 v10, v2, 0xc
 
     .line 50
-    .local v10, size:I
+    .local v10, "size":I
     new-instance v1, Lcom/google/zxing/common/BitArray;
 
     invoke-direct {v1, v10}, Lcom/google/zxing/common/BitArray;-><init>(I)V
 
     .line 51
-    .local v1, binary:Lcom/google/zxing/common/BitArray;
+    .local v1, "binary":Lcom/google/zxing/common/BitArray;
     const/4 v0, 0x0
 
     .line 53
-    .local v0, accPos:I
+    .local v0, "accPos":I
     const/4 v11, 0x0
 
     invoke-interface {p0, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -89,7 +89,7 @@
     check-cast v4, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
 
     .line 54
-    .local v4, firstPair:Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
+    .local v4, "firstPair":Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
     invoke-virtual {v4}, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->getRightChar()Lcom/google/zxing/oned/rss/DataCharacter;
 
     move-result-object v11
@@ -99,10 +99,10 @@
     move-result v5
 
     .line 55
-    .local v5, firstValue:I
+    .local v5, "firstValue":I
     const/16 v6, 0xb
 
-    .local v6, i:I
+    .local v6, "i":I
     :goto_0
     if-ltz v6, :cond_2
 
@@ -144,7 +144,7 @@
     check-cast v3, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
 
     .line 65
-    .local v3, currentPair:Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
+    .local v3, "currentPair":Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
     invoke-virtual {v3}, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->getLeftChar()Lcom/google/zxing/oned/rss/DataCharacter;
 
     move-result-object v11
@@ -154,10 +154,10 @@
     move-result v8
 
     .line 66
-    .local v8, leftValue:I
+    .local v8, "leftValue":I
     const/16 v7, 0xb
 
-    .local v7, j:I
+    .local v7, "j":I
     :goto_2
     if-ltz v7, :cond_4
 
@@ -198,7 +198,7 @@
     move-result v9
 
     .line 75
-    .local v9, rightValue:I
+    .local v9, "rightValue":I
     const/16 v7, 0xb
 
     :goto_3
@@ -224,16 +224,16 @@
     goto :goto_3
 
     .line 62
-    .end local v9           #rightValue:I
+    .end local v9    # "rightValue":I
     :cond_6
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_1
 
     .line 83
-    .end local v3           #currentPair:Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
-    .end local v7           #j:I
-    .end local v8           #leftValue:I
+    .end local v3    # "currentPair":Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
+    .end local v7    # "j":I
+    .end local v8    # "leftValue":I
     :cond_7
     return-object v1
 .end method

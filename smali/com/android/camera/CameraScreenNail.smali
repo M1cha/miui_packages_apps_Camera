@@ -34,7 +34,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/CameraScreenNail$Listener;)V
     .locals 2
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/camera/CameraScreenNail$Listener;
 
     .prologue
     const/4 v1, 0x0
@@ -85,11 +85,11 @@
 
 .method private copyPreviewTexture(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 1
-    .parameter "canvas"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
 
     .prologue
     .line 228
-    iget-object v0, p0, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->mAnimTexture:Lcom/android/gallery3d/ui/RawTexture;
+    iget-object v0, p0, Lcom/android/camera/CameraScreenNail;->mAnimTexture:Lcom/android/gallery3d/ui/RawTexture;
 
     invoke-direct {p0, p1, v0}, Lcom/android/camera/CameraScreenNail;->copyTexture(Lcom/android/gallery3d/ui/GLCanvas;Lcom/android/gallery3d/ui/RawTexture;)V
 
@@ -99,13 +99,13 @@
 
 .method private copyTexture(Lcom/android/gallery3d/ui/GLCanvas;Lcom/android/gallery3d/ui/RawTexture;)V
     .locals 7
-    .parameter "canvas"
-    .parameter "texture"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .param p2, "texture"    # Lcom/android/gallery3d/ui/RawTexture;
 
     .prologue
     const/4 v3, 0x0
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     .line 232
     invoke-virtual {p2}, Lcom/android/gallery3d/ui/RawTexture;->getWidth()I
@@ -113,13 +113,13 @@
     move-result v5
 
     .line 233
-    .local v5, width:I
+    .local v5, "width":I
     invoke-virtual {p2}, Lcom/android/gallery3d/ui/RawTexture;->getHeight()I
 
     move-result v6
 
     .line 234
-    .local v6, height:I
+    .local v6, "height":I
     invoke-interface {p1, p2}, Lcom/android/gallery3d/ui/GLCanvas;->beginRenderTarget(Lcom/android/gallery3d/ui/RawTexture;)V
 
     .line 237
@@ -130,12 +130,12 @@
     invoke-interface {p1, v0, v1}, Lcom/android/gallery3d/ui/GLCanvas;->translate(FF)V
 
     .line 238
-    const/high16 v0, -0x4080
+    const/high16 v0, -0x40800000
 
     invoke-interface {p1, v2, v0, v2}, Lcom/android/gallery3d/ui/GLCanvas;->scale(FFF)V
 
     .line 239
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->getSurfaceTexture()Landroid/graphics/SurfaceTexture;
+    invoke-virtual {p0}, Lcom/android/camera/CameraScreenNail;->getSurfaceTexture()Landroid/graphics/SurfaceTexture;
 
     move-result-object v0
 
@@ -146,10 +146,10 @@
     .line 240
     iget-object v0, p0, Lcom/android/camera/CameraScreenNail;->mTextureTransformMatrix:[F
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->updateTransformMatrix([F)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/CameraScreenNail;->updateTransformMatrix([F)V
 
     .line 241
-    iget-object v1, p0, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->mExtTexture:Lcom/android/gallery3d/ui/ExtTexture;
+    iget-object v1, p0, Lcom/android/camera/CameraScreenNail;->mExtTexture:Lcom/android/gallery3d/ui/ExtTexture;
 
     iget-object v2, p0, Lcom/android/camera/CameraScreenNail;->mTextureTransformMatrix:[F
 
@@ -205,7 +205,7 @@
 
 .method public animateCapture(I)V
     .locals 2
-    .parameter "animOrientation"
+    .param p1, "animOrientation"    # I
 
     .prologue
     .line 122
@@ -338,11 +338,11 @@
 
 .method public directDraw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
     .locals 0
-    .parameter "canvas"
-    .parameter "x"
-    .parameter "y"
-    .parameter "width"
-    .parameter "height"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .param p2, "x"    # I
+    .param p3, "y"    # I
+    .param p4, "width"    # I
+    .param p5, "height"    # I
 
     .prologue
     .line 133
@@ -354,11 +354,11 @@
 
 .method public draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
     .locals 15
-    .parameter "canvas"
-    .parameter "x"
-    .parameter "y"
-    .parameter "width"
-    .parameter "height"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .param p2, "x"    # I
+    .param p3, "y"    # I
+    .param p4, "width"    # I
+    .param p5, "height"    # I
 
     .prologue
     .line 138
@@ -378,12 +378,12 @@
 
     .line 140
     :cond_0
-    iget-object v4, p0, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->mBitmapTexture:Lcom/android/gallery3d/ui/BitmapTexture;
+    iget-object v4, p0, Lcom/android/camera/CameraScreenNail;->mBitmapTexture:Lcom/android/gallery3d/ui/BitmapTexture;
 
     if-eqz v4, :cond_1
 
     .line 141
-    iget-object v4, p0, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->mBitmapTexture:Lcom/android/gallery3d/ui/BitmapTexture;
+    iget-object v4, p0, Lcom/android/camera/CameraScreenNail;->mBitmapTexture:Lcom/android/gallery3d/ui/BitmapTexture;
 
     move-object/from16 v5, p1
 
@@ -406,12 +406,12 @@
 
     .line 145
     :cond_1
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->getSurfaceTexture()Landroid/graphics/SurfaceTexture;
+    invoke-virtual {p0}, Lcom/android/camera/CameraScreenNail;->getSurfaceTexture()Landroid/graphics/SurfaceTexture;
 
     move-result-object v13
 
     .line 146
-    .local v13, surfaceTexture:Landroid/graphics/SurfaceTexture;
+    .local v13, "surfaceTexture":Landroid/graphics/SurfaceTexture;
     if-eqz v13, :cond_2
 
     iget-boolean v4, p0, Lcom/android/camera/CameraScreenNail;->mFirstFrameArrived:Z
@@ -424,7 +424,7 @@
     goto :goto_0
 
     .line 219
-    .end local v13           #surfaceTexture:Landroid/graphics/SurfaceTexture;
+    .end local v13    # "surfaceTexture":Landroid/graphics/SurfaceTexture;
     :catchall_0
     move-exception v4
 
@@ -435,7 +435,7 @@
     throw v4
 
     .line 148
-    .restart local v13       #surfaceTexture:Landroid/graphics/SurfaceTexture;
+    .restart local v13    # "surfaceTexture":Landroid/graphics/SurfaceTexture;
     :cond_3
     :try_start_1
     iget v4, p0, Lcom/android/camera/CameraScreenNail;->mAnimState:I
@@ -507,7 +507,7 @@
     .line 166
     iget-object v4, p0, Lcom/android/camera/CameraScreenNail;->mSwitchAnimManager:Lcom/android/camera/SwitchAnimManager;
 
-    iget-object v10, p0, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->mAnimTexture:Lcom/android/gallery3d/ui/RawTexture;
+    iget-object v10, p0, Lcom/android/camera/CameraScreenNail;->mAnimTexture:Lcom/android/gallery3d/ui/RawTexture;
 
     move-object/from16 v5, p1
 
@@ -579,7 +579,7 @@
     const/4 v12, 0x0
 
     .line 185
-    .local v12, drawn:Z
+    .local v12, "drawn":Z
     invoke-virtual {v13}, Landroid/graphics/SurfaceTexture;->updateTexImage()V
 
     .line 186
@@ -590,7 +590,7 @@
     .line 187
     iget-object v4, p0, Lcom/android/camera/CameraScreenNail;->mSwitchAnimManager:Lcom/android/camera/SwitchAnimManager;
 
-    iget-object v11, p0, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->mAnimTexture:Lcom/android/gallery3d/ui/RawTexture;
+    iget-object v11, p0, Lcom/android/camera/CameraScreenNail;->mAnimTexture:Lcom/android/gallery3d/ui/RawTexture;
 
     move-object/from16 v5, p1
 
@@ -617,7 +617,7 @@
     invoke-interface {v4}, Lcom/android/camera/CameraScreenNail$Listener;->requestRender()V
 
     .line 219
-    .end local v12           #drawn:Z
+    .end local v12    # "drawn":Z
     :cond_6
     :goto_2
     monitor-exit v14
@@ -625,7 +625,7 @@
     goto/16 :goto_0
 
     .line 192
-    .restart local v12       #drawn:Z
+    .restart local v12    # "drawn":Z
     :cond_7
     const/4 v4, 0x1
 
@@ -640,7 +640,7 @@
 
     .line 196
     :cond_8
-    iget-object v4, p0, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->mAnimTexture:Lcom/android/gallery3d/ui/RawTexture;
+    iget-object v4, p0, Lcom/android/camera/CameraScreenNail;->mAnimTexture:Lcom/android/gallery3d/ui/RawTexture;
 
     move-object/from16 v0, p1
 
@@ -649,7 +649,7 @@
     .line 197
     iget-object v4, p0, Lcom/android/camera/CameraScreenNail;->mSwitchAnimManager:Lcom/android/camera/SwitchAnimManager;
 
-    iget-object v11, p0, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->mAnimTexture:Lcom/android/gallery3d/ui/RawTexture;
+    iget-object v11, p0, Lcom/android/camera/CameraScreenNail;->mAnimTexture:Lcom/android/gallery3d/ui/RawTexture;
 
     move-object/from16 v5, p1
 
@@ -689,7 +689,7 @@
     goto :goto_2
 
     .line 208
-    .end local v12           #drawn:Z
+    .end local v12    # "drawn":Z
     :cond_a
     iget v4, p0, Lcom/android/camera/CameraScreenNail;->mAnimState:I
 
@@ -700,7 +700,7 @@
     .line 209
     iget-object v4, p0, Lcom/android/camera/CameraScreenNail;->mCaptureAnimManager:Lcom/android/camera/CaptureAnimManager;
 
-    iget-object v5, p0, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->mAnimTexture:Lcom/android/gallery3d/ui/RawTexture;
+    iget-object v5, p0, Lcom/android/camera/CameraScreenNail;->mAnimTexture:Lcom/android/gallery3d/ui/RawTexture;
 
     move-object/from16 v0, p1
 
@@ -709,7 +709,7 @@
     move-result v12
 
     .line 210
-    .restart local v12       #drawn:Z
+    .restart local v12    # "drawn":Z
     if-eqz v12, :cond_b
 
     .line 211
@@ -780,7 +780,7 @@
 
 .method public onFrameAvailable(Landroid/graphics/SurfaceTexture;)V
     .locals 3
-    .parameter "surfaceTexture"
+    .param p1, "surfaceTexture"    # Landroid/graphics/SurfaceTexture;
 
     .prologue
     .line 268
@@ -928,7 +928,7 @@
 
 .method public renderBitmapToCanvas(Landroid/graphics/Bitmap;)V
     .locals 1
-    .parameter "bitmap"
+    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
     .line 247
@@ -941,7 +941,7 @@
 
     invoke-direct {v0, p1}, Lcom/android/gallery3d/ui/BitmapTexture;-><init>(Landroid/graphics/Bitmap;)V
 
-    iput-object v0, p0, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->mBitmapTexture:Lcom/android/gallery3d/ui/BitmapTexture;
+    iput-object v0, p0, Lcom/android/camera/CameraScreenNail;->mBitmapTexture:Lcom/android/gallery3d/ui/BitmapTexture;
 
     .line 249
     iget-object v0, p0, Lcom/android/camera/CameraScreenNail;->mListener:Lcom/android/camera/CameraScreenNail$Listener;
@@ -954,8 +954,8 @@
 
 .method public setPreviewFrameLayoutSize(II)V
     .locals 2
-    .parameter "width"
-    .parameter "height"
+    .param p1, "width"    # I
+    .param p2, "height"    # I
 
     .prologue
     .line 286

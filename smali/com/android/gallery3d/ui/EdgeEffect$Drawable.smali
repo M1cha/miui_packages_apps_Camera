@@ -23,8 +23,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;I)V
     .locals 1
-    .parameter "context"
-    .parameter "resId"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "resId"    # I
 
     .prologue
     .line 413
@@ -50,7 +50,7 @@
 # virtual methods
 .method public draw(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 7
-    .parameter "canvas"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
 
     .prologue
     .line 433
@@ -63,7 +63,7 @@
 
     int-to-float v0, v0
 
-    const/high16 v1, 0x437f
+    const/high16 v1, 0x437f0000
 
     div-float/2addr v0, v1
 
@@ -73,7 +73,7 @@
     iget-object v6, p0, Lcom/android/gallery3d/ui/EdgeEffect$Drawable;->mBounds:Landroid/graphics/Rect;
 
     .line 436
-    .local v6, b:Landroid/graphics/Rect;
+    .local v6, "b":Landroid/graphics/Rect;
     iget v2, v6, Landroid/graphics/Rect;->left:I
 
     iget v3, v6, Landroid/graphics/Rect;->top:I
@@ -90,7 +90,7 @@
 
     move-object v1, p1
 
-    invoke-virtual/range {v0 .. v5}, Lcom/android/gallery3d/ui/ResourceTexture;->draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
+    invoke-virtual/range {v0 .. v5}, Lcom/android/gallery3d/ui/EdgeEffect$Drawable;->draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
 
     .line 437
     invoke-interface {p1}, Lcom/android/gallery3d/ui/GLCanvas;->restore()V
@@ -104,7 +104,7 @@
 
     .prologue
     .line 421
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/ResourceTexture;->getHeight()I
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/EdgeEffect$Drawable;->getHeight()I
 
     move-result v0
 
@@ -116,7 +116,7 @@
 
     .prologue
     .line 417
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/ResourceTexture;->getWidth()I
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/EdgeEffect$Drawable;->getWidth()I
 
     move-result v0
 
@@ -125,7 +125,7 @@
 
 .method public setAlpha(I)V
     .locals 0
-    .parameter "alpha"
+    .param p1, "alpha"    # I
 
     .prologue
     .line 429
@@ -137,10 +137,10 @@
 
 .method public setBounds(IIII)V
     .locals 1
-    .parameter "left"
-    .parameter "top"
-    .parameter "right"
-    .parameter "bottom"
+    .param p1, "left"    # I
+    .param p2, "top"    # I
+    .param p3, "right"    # I
+    .param p4, "bottom"    # I
 
     .prologue
     .line 425

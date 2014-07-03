@@ -12,8 +12,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;Lcom/android/gallery3d/data/MediaItem;)V
     .locals 2
-    .parameter "path"
-    .parameter "item"
+    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .param p2, "item"    # Lcom/android/gallery3d/data/MediaItem;
 
     .prologue
     .line 29
@@ -35,7 +35,7 @@
     .line 30
     check-cast p2, Lcom/android/gallery3d/data/SnailItem;
 
-    .end local p2
+    .end local p2    # "item":Lcom/android/gallery3d/data/MediaItem;
     iput-object p2, p0, Lcom/android/gallery3d/data/SnailAlbum;->mItem:Lcom/android/gallery3d/data/SnailItem;
 
     .line 31
@@ -46,8 +46,8 @@
 # virtual methods
 .method public getMediaItem(II)Ljava/util/ArrayList;
     .locals 2
-    .parameter "start"
-    .parameter "count"
+    .param p1, "start"    # I
+    .param p2, "count"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -65,7 +65,7 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 43
-    .local v0, result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .local v0, "result":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     if-gtz p1, :cond_0
 
     add-int v1, p1, p2
@@ -114,7 +114,7 @@
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     .line 71
-    invoke-virtual {p0}, Lcom/android/gallery3d/data/MediaSet;->notifyContentChanged()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/data/SnailAlbum;->notifyContentChanged()V
 
     .line 72
     return-void
@@ -147,11 +147,11 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/android/gallery3d/data/MediaObject;->mDataVersion:J
+    iput-wide v0, p0, Lcom/android/gallery3d/data/SnailAlbum;->mDataVersion:J
 
     .line 66
     :cond_0
-    iget-wide v0, p0, Lcom/android/gallery3d/data/MediaObject;->mDataVersion:J
+    iget-wide v0, p0, Lcom/android/gallery3d/data/SnailAlbum;->mDataVersion:J
 
     return-wide v0
 .end method

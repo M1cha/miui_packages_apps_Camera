@@ -117,7 +117,7 @@
 
 .method synthetic constructor <init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
     .locals 0
-    .parameter "x0"
+    .param p1, "x0"    # Lcom/google/zxing/qrcode/decoder/DataMask$1;
 
     .prologue
     .line 32
@@ -128,7 +128,7 @@
 
 .method static forReference(I)Lcom/google/zxing/qrcode/decoder/DataMask;
     .locals 1
-    .parameter "reference"
+    .param p0, "reference"    # I
 
     .prologue
     .line 76
@@ -162,21 +162,21 @@
 
 .method final unmaskBitMatrix(Lcom/google/zxing/common/BitMatrix;I)V
     .locals 3
-    .parameter "bits"
-    .parameter "dimension"
+    .param p1, "bits"    # Lcom/google/zxing/common/BitMatrix;
+    .param p2, "dimension"    # I
 
     .prologue
     .line 59
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     if-ge v0, p2, :cond_2
 
     .line 60
     const/4 v1, 0x0
 
-    .local v1, j:I
+    .local v1, "j":I
     :goto_1
     if-ge v1, p2, :cond_1
 
@@ -203,7 +203,7 @@
     goto :goto_0
 
     .line 66
-    .end local v1           #j:I
+    .end local v1    # "j":I
     :cond_2
     return-void
 .end method
