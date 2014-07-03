@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 698
+    .line 712
     iput-object p1, p0, Lcom/android/camera/ActivityBase$3;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 2
 
     .prologue
-    .line 700
+    .line 714
     iget-object v1, p0, Lcom/android/camera/ActivityBase$3;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-static {v1}, Lcom/android/camera/AutoLockManager;->getInstance(Landroid/content/Context;)Lcom/android/camera/AutoLockManager;
@@ -49,14 +49,14 @@
 
     invoke-virtual {v1}, Lcom/android/camera/AutoLockManager;->onUserInteraction()V
 
-    .line 701
+    .line 715
     invoke-static {}, Lcom/android/camera/ModeChangeManager;->getCurrentMode()I
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 702
+    .line 716
     iget-object v1, p0, Lcom/android/camera/ActivityBase$3;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-static {v1}, Lcom/android/zxing/QRCodeManager;->instance(Landroid/content/Context;)Lcom/android/zxing/QRCodeManager;
@@ -65,38 +65,38 @@
 
     invoke-virtual {v1}, Lcom/android/zxing/QRCodeManager;->hideViewFinderFrame()V
 
-    .line 704
+    .line 718
     :cond_0
     iget-object v1, p0, Lcom/android/camera/ActivityBase$3;->this$0:Lcom/android/camera/ActivityBase;
 
     iget-object v0, v1, Lcom/android/camera/ActivityBase;->mSettingView:Lcom/android/camera/ui/SettingView;
 
-    .line 705
-    .local v0, view:Lcom/android/camera/ui/SettingView;
+    .line 719
+    .local v0, "view":Lcom/android/camera/ui/SettingView;
     if-nez v0, :cond_1
 
-    .line 712
+    .line 726
     :goto_0
     return-void
 
-    .line 706
+    .line 720
     :cond_1
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+    invoke-virtual {v0}, Lcom/android/camera/ui/SettingView;->getVisibility()I
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 707
+    .line 721
     invoke-virtual {v0}, Lcom/android/camera/ui/SettingView;->dismiss()V
 
     goto :goto_0
 
-    .line 709
+    .line 723
     :cond_2
     invoke-virtual {v0}, Lcom/android/camera/ui/SettingView;->show()V
 
-    .line 710
+    .line 724
     iget-object v1, p0, Lcom/android/camera/ActivityBase$3;->this$0:Lcom/android/camera/ActivityBase;
 
     iget-object v1, v1, Lcom/android/camera/ActivityBase;->mZoomControl:Lcom/android/camera/ui/ZoomControl;

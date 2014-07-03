@@ -23,8 +23,8 @@
 # direct methods
 .method public constructor <init>(Landroid/os/Bundle;Lcom/android/gallery3d/app/ActivityState;)V
     .locals 0
-    .parameter "data"
-    .parameter "state"
+    .param p1, "data"    # Landroid/os/Bundle;
+    .param p2, "state"    # Lcom/android/gallery3d/app/ActivityState;
 
     .prologue
     .line 286

@@ -48,7 +48,7 @@
 
 .method private getV(F)D
     .locals 6
-    .parameter "progress"
+    .param p1, "progress"    # F
 
     .prologue
     .line 137
@@ -60,13 +60,13 @@
 
     int-to-double v0, v0
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     sub-float/2addr v2, p1
 
     float-to-double v2, v2
 
-    const-wide/high16 v4, 0x4008
+    const-wide/high16 v4, 0x4008000000000000L
 
     invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
@@ -85,7 +85,7 @@
 
 .method private getX(F)I
     .locals 9
-    .parameter "f"
+    .param p1, "f"    # F
 
     .prologue
     const-wide/16 v7, 0x0
@@ -116,7 +116,7 @@
     long-to-int v0, v1
 
     .line 117
-    .local v0, r:I
+    .local v0, "r":I
     iget-wide v1, p0, Lcom/android/gallery3d/ui/FlingScroller;->mCosAngle:D
 
     cmpl-double v1, v1, v7
@@ -167,7 +167,7 @@
 
 .method private getY(F)I
     .locals 9
-    .parameter "f"
+    .param p1, "f"    # F
 
     .prologue
     const-wide/16 v7, 0x0
@@ -198,7 +198,7 @@
     long-to-int v0, v1
 
     .line 127
-    .local v0, r:I
+    .local v0, "r":I
     iget-wide v1, p0, Lcom/android/gallery3d/ui/FlingScroller;->mSinAngle:D
 
     cmpl-double v1, v1, v7
@@ -251,10 +251,10 @@
 # virtual methods
 .method public computeScrollOffset(F)V
     .locals 6
-    .parameter "progress"
+    .param p1, "progress"    # F
 
     .prologue
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x3f800000
 
     .line 107
     invoke-static {p1, v5}, Ljava/lang/Math;->min(FF)F
@@ -265,10 +265,10 @@
     sub-float v0, v5, p1
 
     .line 109
-    .local v0, f:F
+    .local v0, "f":F
     float-to-double v1, v0
 
-    const-wide/high16 v3, 0x4010
+    const-wide/high16 v3, 0x4010000000000000L
 
     invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->pow(DD)D
 
@@ -305,14 +305,14 @@
 
 .method public fling(IIIIIIII)V
     .locals 9
-    .parameter "startX"
-    .parameter "startY"
-    .parameter "velocityX"
-    .parameter "velocityY"
-    .parameter "minX"
-    .parameter "maxX"
-    .parameter "minY"
-    .parameter "maxY"
+    .param p1, "startX"    # I
+    .param p2, "startY"    # I
+    .param p3, "velocityX"    # I
+    .param p4, "velocityY"    # I
+    .param p5, "minX"    # I
+    .param p6, "maxX"    # I
+    .param p7, "minY"    # I
+    .param p8, "maxY"    # I
 
     .prologue
     .line 77
@@ -347,7 +347,7 @@
     move-result-wide v1
 
     .line 85
-    .local v1, velocity:D
+    .local v1, "velocity":D
     int-to-double v3, p4
 
     div-double/2addr v3, v1
@@ -362,7 +362,7 @@
     iput-wide v3, p0, Lcom/android/gallery3d/ui/FlingScroller;->mCosAngle:D
 
     .line 95
-    const-wide/high16 v3, 0x4049
+    const-wide/high16 v3, 0x4049000000000000L
 
     invoke-static {v1, v2}, Ljava/lang/Math;->abs(D)D
 
@@ -391,7 +391,7 @@
 
     mul-double/2addr v3, v1
 
-    const-wide/high16 v5, 0x4010
+    const-wide/high16 v5, 0x4010000000000000L
 
     div-double/2addr v3, v5
 
@@ -408,7 +408,7 @@
     iput v3, p0, Lcom/android/gallery3d/ui/FlingScroller;->mDistance:I
 
     .line 102
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     invoke-direct {p0, v3}, Lcom/android/gallery3d/ui/FlingScroller;->getX(F)I
 
@@ -417,7 +417,7 @@
     iput v3, p0, Lcom/android/gallery3d/ui/FlingScroller;->mFinalX:I
 
     .line 103
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     invoke-direct {p0, v3}, Lcom/android/gallery3d/ui/FlingScroller;->getY(F)I
 

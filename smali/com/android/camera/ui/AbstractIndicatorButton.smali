@@ -42,7 +42,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 4
-    .parameter "context"
+    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     const/4 v3, 0x1
@@ -100,7 +100,7 @@
     .line 59
     sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
-    invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/AbstractIndicatorButton;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
     .line 60
     invoke-static {p1}, Lcom/android/camera/ui/PopupManager;->getInstance(Landroid/content/Context;)Lcom/android/camera/ui/PopupManager;
@@ -110,7 +110,7 @@
     invoke-virtual {v0, p0}, Lcom/android/camera/ui/PopupManager;->setOnOtherPopupShowedListener(Lcom/android/camera/ui/PopupManager$OnOtherPopupShowedListener;)V
 
     .line 62
-    invoke-virtual {p0, v3}, Landroid/view/View;->setClickable(Z)V
+    invoke-virtual {p0, v3}, Lcom/android/camera/ui/AbstractIndicatorButton;->setClickable(Z)V
 
     .line 63
     return-void
@@ -125,7 +125,7 @@
     const/4 v0, 0x0
 
     .line 168
-    invoke-virtual {p0, v0}, Landroid/view/View;->setPressed(Z)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/AbstractIndicatorButton;->setPressed(Z)V
 
     .line 169
     iget-object v1, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mHandler:Landroid/os/Handler;
@@ -139,7 +139,7 @@
 
     iget-object v1, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
 
-    invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
+    invoke-virtual {v1}, Lcom/android/camera/ui/AbstractSettingPopup;->getVisibility()I
 
     move-result v1
 
@@ -148,14 +148,14 @@
     .line 171
     iget-object v1, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
 
-    invoke-virtual {v1}, Landroid/view/View;->clearAnimation()V
+    invoke-virtual {v1}, Lcom/android/camera/ui/AbstractSettingPopup;->clearAnimation()V
 
     .line 172
     iget-object v1, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
 
     const/16 v2, 0x8
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v1, v2}, Lcom/android/camera/ui/AbstractSettingPopup;->setVisibility(I)V
 
     .line 173
     iget-object v1, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mIndicatorChangeListener:Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorChangeListener;
@@ -168,10 +168,10 @@
 
     .line 174
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/AbstractIndicatorButton;->invalidate()V
 
     .line 177
-    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {p0}, Lcom/android/camera/ui/AbstractIndicatorButton;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
@@ -208,7 +208,7 @@
 
     iget-object v0, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
 
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+    invoke-virtual {v0}, Lcom/android/camera/ui/AbstractSettingPopup;->getVisibility()I
 
     move-result v0
 
@@ -253,7 +253,7 @@
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 4
-    .parameter "ev"
+    .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
     const/4 v1, 0x0
@@ -261,7 +261,7 @@
     const/4 v2, 0x1
 
     .line 96
-    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
+    invoke-virtual {p0}, Lcom/android/camera/ui/AbstractIndicatorButton;->isEnabled()Z
 
     move-result v3
 
@@ -279,7 +279,7 @@
     move-result v0
 
     .line 98
-    .local v0, action:I
+    .local v0, "action":I
     if-nez v0, :cond_2
 
     invoke-virtual {p0}, Lcom/android/camera/ui/AbstractIndicatorButton;->isOverridden()Z
@@ -289,7 +289,7 @@
     if-nez v3, :cond_2
 
     .line 99
-    invoke-virtual {p0, v2}, Landroid/view/View;->setPressed(Z)V
+    invoke-virtual {p0, v2}, Lcom/android/camera/ui/AbstractIndicatorButton;->setPressed(Z)V
 
     move v1, v2
 
@@ -325,7 +325,7 @@
 
     iget-object v1, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
 
-    invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
+    invoke-virtual {v1}, Lcom/android/camera/ui/AbstractSettingPopup;->getVisibility()I
 
     move-result v1
 
@@ -368,7 +368,7 @@
 
     iget-object v1, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
 
-    invoke-virtual {v1}, Landroid/view/View;->getVisibility()I
+    invoke-virtual {v1}, Lcom/android/camera/ui/AbstractSettingPopup;->getVisibility()I
 
     move-result v1
 
@@ -379,7 +379,7 @@
     invoke-virtual {p0, v2}, Lcom/android/camera/ui/AbstractIndicatorButton;->showPopup(Z)V
 
     .line 112
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/android/camera/ui/AbstractIndicatorButton;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -463,7 +463,7 @@
 
 .method public setEnabled(Z)V
     .locals 1
-    .parameter "enabled"
+    .param p1, "enabled"    # Z
 
     .prologue
     .line 130
@@ -478,7 +478,7 @@
 
     .line 136
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
+    invoke-virtual {p0}, Lcom/android/camera/ui/AbstractIndicatorButton;->isEnabled()Z
 
     move-result v0
 
@@ -487,7 +487,7 @@
     if-eqz v0, :cond_1
 
     .line 137
-    invoke-super {p0, p1}, Lcom/android/camera/ui/TwoStateImageView;->setEnabled(Z)V
+    invoke-super {p0, p1}, Lcom/android/camera/ui/RotateImageView;->setEnabled(Z)V
 
     .line 139
     :cond_1
@@ -496,7 +496,7 @@
 
 .method public setIndicatorClickListener(Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;)V
     .locals 0
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
 
     .prologue
     .line 75
@@ -508,7 +508,7 @@
 
 .method public setOrientation(I)V
     .locals 1
-    .parameter "orientation"
+    .param p1, "orientation"    # I
 
     .prologue
     .line 143
@@ -531,7 +531,7 @@
 
 .method protected showPopup(Z)V
     .locals 4
-    .parameter "animate"
+    .param p1, "animate"    # Z
 
     .prologue
     const/4 v3, 0x1
@@ -539,7 +539,7 @@
     const/4 v2, 0x0
 
     .line 152
-    invoke-virtual {p0, v3}, Landroid/view/View;->setPressed(Z)V
+    invoke-virtual {p0, v3}, Lcom/android/camera/ui/AbstractIndicatorButton;->setPressed(Z)V
 
     .line 153
     iget-object v0, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mHandler:Landroid/os/Handler;
@@ -562,7 +562,7 @@
     .line 156
     iget-object v0, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
 
-    invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
+    invoke-virtual {v0}, Lcom/android/camera/ui/AbstractSettingPopup;->clearAnimation()V
 
     .line 157
     if-eqz p1, :cond_1
@@ -572,18 +572,18 @@
 
     iget-object v1, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mFadeIn:Landroid/view/animation/Animation;
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/AbstractSettingPopup;->startAnimation(Landroid/view/animation/Animation;)V
 
     .line 160
     :cond_1
     iget-object v0, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Lcom/android/camera/ui/AbstractSettingPopup;->setVisibility(I)V
 
     .line 161
     iget-object v0, p0, Lcom/android/camera/ui/AbstractIndicatorButton;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
 
-    invoke-virtual {p0}, Lcom/android/camera/ui/RotateImageView;->getDegree()I
+    invoke-virtual {p0}, Lcom/android/camera/ui/AbstractIndicatorButton;->getDegree()I
 
     move-result v1
 

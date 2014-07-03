@@ -55,11 +55,11 @@
 # direct methods
 .method public constructor <init>(Landroid/view/View;Lcom/android/gallery3d/app/MovieActivity;Landroid/net/Uri;Landroid/os/Bundle;Z)V
     .locals 9
-    .parameter "rootView"
-    .parameter "movieActivity"
-    .parameter "videoUri"
-    .parameter "savedInstance"
-    .parameter "canReplay"
+    .param p1, "rootView"    # Landroid/view/View;
+    .param p2, "movieActivity"    # Lcom/android/gallery3d/app/MovieActivity;
+    .param p3, "videoUri"    # Landroid/net/Uri;
+    .param p4, "savedInstance"    # Landroid/os/Bundle;
+    .param p5, "canReplay"    # Z
 
     .prologue
     const-wide v7, 0x7fffffffffffffffL
@@ -110,7 +110,7 @@
     iput-object v2, p0, Lcom/android/gallery3d/app/MoviePlayer;->mProgressChecker:Ljava/lang/Runnable;
 
     .line 117
-    invoke-virtual {p2}, Landroid/content/ContextWrapper;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {p2}, Lcom/android/gallery3d/app/MovieActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -152,7 +152,7 @@
     .line 124
     check-cast p1, Landroid/view/ViewGroup;
 
-    .end local p1
+    .end local p1    # "rootView":Landroid/view/View;
     iget-object v2, p0, Lcom/android/gallery3d/app/MoviePlayer;->mController:Lcom/android/gallery3d/app/MovieControllerOverlay;
 
     invoke-virtual {v2}, Lcom/android/gallery3d/app/MovieControllerOverlay;->getView()Landroid/view/View;
@@ -195,7 +195,7 @@
 
     invoke-direct {v3, p0}, Lcom/android/gallery3d/app/MoviePlayer$4;-><init>(Lcom/android/gallery3d/app/MoviePlayer;)V
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v2, v3}, Landroid/widget/VideoView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 144
     iget-object v2, p0, Lcom/android/gallery3d/app/MoviePlayer;->mVideoView:Landroid/widget/VideoView;
@@ -206,7 +206,7 @@
 
     const-wide/16 v4, 0x1f4
 
-    invoke-virtual {v2, v3, v4, v5}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v2, v3, v4, v5}, Landroid/widget/VideoView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 154
     iget-object v2, p0, Lcom/android/gallery3d/app/MoviePlayer;->mVideoView:Landroid/widget/VideoView;
@@ -215,7 +215,7 @@
 
     invoke-direct {v3, p0}, Lcom/android/gallery3d/app/MoviePlayer$6;-><init>(Lcom/android/gallery3d/app/MoviePlayer;)V
 
-    invoke-virtual {v2, v3}, Landroid/view/View;->setOnSystemUiVisibilityChangeListener(Landroid/view/View$OnSystemUiVisibilityChangeListener;)V
+    invoke-virtual {v2, v3}, Landroid/widget/VideoView;->setOnSystemUiVisibilityChangeListener(Landroid/view/View$OnSystemUiVisibilityChangeListener;)V
 
     .line 181
     invoke-direct {p0, v6}, Lcom/android/gallery3d/app/MoviePlayer;->showSystemUi(Z)V
@@ -242,7 +242,7 @@
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 187
-    .local v1, i:Landroid/content/Intent;
+    .local v1, "i":Landroid/content/Intent;
     const-string v2, "command"
 
     const-string v3, "pause"
@@ -250,7 +250,7 @@
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 188
-    invoke-virtual {p2, v1}, Landroid/content/ContextWrapper;->sendBroadcast(Landroid/content/Intent;)V
+    invoke-virtual {p2, v1}, Lcom/android/gallery3d/app/MovieActivity;->sendBroadcast(Landroid/content/Intent;)V
 
     .line 190
     if-eqz p4, :cond_0
@@ -303,7 +303,7 @@
     move-result-object v0
 
     .line 198
-    .local v0, bookmark:Ljava/lang/Integer;
+    .local v0, "bookmark":Ljava/lang/Integer;
     if-eqz v0, :cond_1
 
     .line 199
@@ -324,7 +324,7 @@
 
 .method static synthetic access$000(Lcom/android/gallery3d/app/MoviePlayer;)Landroid/widget/VideoView;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/MoviePlayer;
 
     .prologue
     .line 49
@@ -335,7 +335,7 @@
 
 .method static synthetic access$100(Lcom/android/gallery3d/app/MoviePlayer;)Lcom/android/gallery3d/app/MovieControllerOverlay;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/MoviePlayer;
 
     .prologue
     .line 49
@@ -346,7 +346,7 @@
 
 .method static synthetic access$1000(Lcom/android/gallery3d/app/MoviePlayer;)V
     .locals 0
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/MoviePlayer;
 
     .prologue
     .line 49
@@ -357,7 +357,7 @@
 
 .method static synthetic access$1100(Lcom/android/gallery3d/app/MoviePlayer;)Landroid/content/Context;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/MoviePlayer;
 
     .prologue
     .line 49
@@ -368,7 +368,7 @@
 
 .method static synthetic access$1200(Lcom/android/gallery3d/app/MoviePlayer;)V
     .locals 0
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/MoviePlayer;
 
     .prologue
     .line 49
@@ -379,7 +379,7 @@
 
 .method static synthetic access$200(Lcom/android/gallery3d/app/MoviePlayer;)Ljava/lang/Runnable;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/MoviePlayer;
 
     .prologue
     .line 49
@@ -390,7 +390,7 @@
 
 .method static synthetic access$300(Lcom/android/gallery3d/app/MoviePlayer;)Landroid/os/Handler;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/MoviePlayer;
 
     .prologue
     .line 49
@@ -401,7 +401,7 @@
 
 .method static synthetic access$400(Lcom/android/gallery3d/app/MoviePlayer;)Landroid/view/View;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/MoviePlayer;
 
     .prologue
     .line 49
@@ -412,7 +412,7 @@
 
 .method static synthetic access$500(Lcom/android/gallery3d/app/MoviePlayer;)I
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/MoviePlayer;
 
     .prologue
     .line 49
@@ -425,7 +425,7 @@
 
 .method static synthetic access$600(Lcom/android/gallery3d/app/MoviePlayer;)Ljava/lang/Runnable;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/MoviePlayer;
 
     .prologue
     .line 49
@@ -436,7 +436,7 @@
 
 .method static synthetic access$700(Lcom/android/gallery3d/app/MoviePlayer;)I
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/MoviePlayer;
 
     .prologue
     .line 49
@@ -447,8 +447,8 @@
 
 .method static synthetic access$702(Lcom/android/gallery3d/app/MoviePlayer;I)I
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/MoviePlayer;
+    .param p1, "x1"    # I
 
     .prologue
     .line 49
@@ -459,7 +459,7 @@
 
 .method static synthetic access$800(Lcom/android/gallery3d/app/MoviePlayer;)Ljava/lang/Runnable;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/MoviePlayer;
 
     .prologue
     .line 49
@@ -470,7 +470,7 @@
 
 .method private static isMediaKey(I)Z
     .locals 1
-    .parameter "keyCode"
+    .param p0, "keyCode"    # I
 
     .prologue
     .line 427
@@ -579,7 +579,7 @@
     move-result v1
 
     .line 289
-    .local v1, position:I
+    .local v1, "position":I
     iget-object v2, p0, Lcom/android/gallery3d/app/MoviePlayer;->mVideoView:Landroid/widget/VideoView;
 
     invoke-virtual {v2}, Landroid/widget/VideoView;->getDuration()I
@@ -587,7 +587,7 @@
     move-result v0
 
     .line 290
-    .local v0, duration:I
+    .local v0, "duration":I
     iget-object v2, p0, Lcom/android/gallery3d/app/MoviePlayer;->mController:Lcom/android/gallery3d/app/MovieControllerOverlay;
 
     invoke-virtual {v2, v1, v0}, Lcom/android/gallery3d/app/MovieControllerOverlay;->setTimes(II)V
@@ -597,8 +597,8 @@
 
 .method private showResumeDialog(Landroid/content/Context;I)V
     .locals 5
-    .parameter "context"
-    .parameter "bookmark"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "bookmark"    # I
 
     .prologue
     .line 223
@@ -607,7 +607,7 @@
     invoke-direct {v0, p1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     .line 224
-    .local v0, builder:Landroid/app/AlertDialog$Builder;
+    .local v0, "builder":Landroid/app/AlertDialog$Builder;
     const v1, 0x7f0d01e2
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
@@ -673,14 +673,14 @@
 
 .method private showSystemUi(Z)V
     .locals 2
-    .parameter "visible"
+    .param p1, "visible"    # Z
 
     .prologue
     .line 207
     const/16 v0, 0x700
 
     .line 210
-    .local v0, flag:I
+    .local v0, "flag":I
     if-nez p1, :cond_0
 
     .line 211
@@ -690,7 +690,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/gallery3d/app/MoviePlayer;->mVideoView:Landroid/widget/VideoView;
 
-    invoke-virtual {v1, v0}, Landroid/view/View;->setSystemUiVisibility(I)V
+    invoke-virtual {v1, v0}, Landroid/widget/VideoView;->setSystemUiVisibility(I)V
 
     .line 215
     return-void
@@ -708,7 +708,7 @@
     move-result-object v0
 
     .line 298
-    .local v0, scheme:Ljava/lang/String;
+    .local v0, "scheme":Ljava/lang/String;
     const-string v1, "http"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
@@ -785,7 +785,7 @@
 
 .method public onCompletion(Landroid/media/MediaPlayer;)V
     .locals 1
-    .parameter "mp"
+    .param p1, "mp"    # Landroid/media/MediaPlayer;
 
     .prologue
     .line 334
@@ -820,9 +820,9 @@
 
 .method public onError(Landroid/media/MediaPlayer;II)Z
     .locals 2
-    .parameter "player"
-    .parameter "arg1"
-    .parameter "arg2"
+    .param p1, "player"    # Landroid/media/MediaPlayer;
+    .param p2, "arg1"    # I
+    .param p3, "arg2"    # I
 
     .prologue
     .line 325
@@ -863,8 +863,8 @@
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z
     .locals 2
-    .parameter "keyCode"
-    .parameter "event"
+    .param p1, "keyCode"    # I
+    .param p2, "event"    # Landroid/view/KeyEvent;
 
     .prologue
     const/4 v0, 0x1
@@ -963,8 +963,8 @@
 
 .method public onKeyUp(ILandroid/view/KeyEvent;)Z
     .locals 1
-    .parameter "keyCode"
-    .parameter "event"
+    .param p1, "keyCode"    # I
+    .param p2, "event"    # Landroid/view/KeyEvent;
 
     .prologue
     .line 423
@@ -1138,7 +1138,7 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 3
-    .parameter "outState"
+    .param p1, "outState"    # Landroid/os/Bundle;
 
     .prologue
     .line 218
@@ -1161,7 +1161,7 @@
 
 .method public onSeekEnd(I)V
     .locals 1
-    .parameter "time"
+    .param p1, "time"    # I
 
     .prologue
     .line 363
@@ -1183,7 +1183,7 @@
 
 .method public onSeekMove(I)V
     .locals 1
-    .parameter "time"
+    .param p1, "time"    # I
 
     .prologue
     .line 358

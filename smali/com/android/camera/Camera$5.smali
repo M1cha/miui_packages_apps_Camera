@@ -38,7 +38,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .parameter "v"
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 1450
@@ -46,7 +46,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Lcom/android/camera/ActivityBase;->exitHDRMode(Z)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/Camera;->exitHDRMode(Z)V
 
     .line 1451
     return-void

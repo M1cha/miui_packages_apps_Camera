@@ -21,10 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/CameraAppImpl;Lcom/android/gallery3d/data/Path;ILjava/lang/String;)V
     .locals 1
-    .parameter "application"
-    .parameter "path"
-    .parameter "type"
-    .parameter "localFilePath"
+    .param p1, "application"    # Lcom/android/camera/CameraAppImpl;
+    .param p2, "path"    # Lcom/android/gallery3d/data/Path;
+    .param p3, "type"    # I
+    .param p4, "localFilePath"    # Ljava/lang/String;
 
     .prologue
     .line 159
@@ -45,8 +45,8 @@
 # virtual methods
 .method public onDecodeOriginal(Lcom/android/gallery3d/util/ThreadPool$JobContext;I)Landroid/graphics/Bitmap;
     .locals 9
-    .parameter "jc"
-    .parameter "type"
+    .param p1, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
+    .param p2, "type"    # I
 
     .prologue
     .line 165
@@ -55,7 +55,7 @@
     invoke-direct {v3}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
     .line 166
-    .local v3, options:Landroid/graphics/BitmapFactory$Options;
+    .local v3, "options":Landroid/graphics/BitmapFactory$Options;
     sget-object v7, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     iput-object v7, v3, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
@@ -66,7 +66,7 @@
     move-result v5
 
     .line 170
-    .local v5, targetSize:I
+    .local v5, "targetSize":I
     const/4 v7, 0x2
 
     if-ne p2, v7, :cond_1
@@ -75,11 +75,11 @@
     const/4 v1, 0x0
 
     .line 172
-    .local v1, exif:Landroid/media/ExifInterface;
+    .local v1, "exif":Landroid/media/ExifInterface;
     const/4 v6, 0x0
 
     .line 174
-    .local v6, thumbData:[B
+    .local v6, "thumbData":[B
     :try_start_0
     new-instance v2, Landroid/media/ExifInterface;
 
@@ -90,8 +90,8 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 175
-    .end local v1           #exif:Landroid/media/ExifInterface;
-    .local v2, exif:Landroid/media/ExifInterface;
+    .end local v1    # "exif":Landroid/media/ExifInterface;
+    .local v2, "exif":Landroid/media/ExifInterface;
     if-eqz v2, :cond_0
 
     .line 176
@@ -106,8 +106,8 @@
     move-object v1, v2
 
     .line 181
-    .end local v2           #exif:Landroid/media/ExifInterface;
-    .restart local v1       #exif:Landroid/media/ExifInterface;
+    .end local v2    # "exif":Landroid/media/ExifInterface;
+    .restart local v1    # "exif":Landroid/media/ExifInterface;
     :goto_0
     if-eqz v6, :cond_1
 
@@ -117,24 +117,24 @@
     move-result-object v0
 
     .line 184
-    .local v0, bitmap:Landroid/graphics/Bitmap;
+    .local v0, "bitmap":Landroid/graphics/Bitmap;
     if-eqz v0, :cond_1
 
     .line 188
-    .end local v0           #bitmap:Landroid/graphics/Bitmap;
-    .end local v1           #exif:Landroid/media/ExifInterface;
-    .end local v6           #thumbData:[B
+    .end local v0    # "bitmap":Landroid/graphics/Bitmap;
+    .end local v1    # "exif":Landroid/media/ExifInterface;
+    .end local v6    # "thumbData":[B
     :goto_1
     return-object v0
 
     .line 178
-    .restart local v1       #exif:Landroid/media/ExifInterface;
-    .restart local v6       #thumbData:[B
+    .restart local v1    # "exif":Landroid/media/ExifInterface;
+    .restart local v6    # "thumbData":[B
     :catch_0
     move-exception v4
 
     .line 179
-    .local v4, t:Ljava/lang/Throwable;
+    .local v4, "t":Ljava/lang/Throwable;
     :goto_2
     const-string v7, "LocalImage"
 
@@ -145,9 +145,9 @@
     goto :goto_0
 
     .line 188
-    .end local v1           #exif:Landroid/media/ExifInterface;
-    .end local v4           #t:Ljava/lang/Throwable;
-    .end local v6           #thumbData:[B
+    .end local v1    # "exif":Landroid/media/ExifInterface;
+    .end local v4    # "t":Ljava/lang/Throwable;
+    .end local v6    # "thumbData":[B
     :cond_1
     iget-object v7, p0, Lcom/android/gallery3d/data/LocalImage$LocalImageRequest;->mLocalFilePath:Ljava/lang/String;
 
@@ -158,21 +158,21 @@
     goto :goto_1
 
     .line 178
-    .restart local v2       #exif:Landroid/media/ExifInterface;
-    .restart local v6       #thumbData:[B
+    .restart local v2    # "exif":Landroid/media/ExifInterface;
+    .restart local v6    # "thumbData":[B
     :catch_1
     move-exception v4
 
     move-object v1, v2
 
-    .end local v2           #exif:Landroid/media/ExifInterface;
-    .restart local v1       #exif:Landroid/media/ExifInterface;
+    .end local v2    # "exif":Landroid/media/ExifInterface;
+    .restart local v1    # "exif":Landroid/media/ExifInterface;
     goto :goto_2
 .end method
 
 .method public bridge synthetic run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Landroid/graphics/Bitmap;
     .locals 1
-    .parameter "x0"
+    .param p1, "x0"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
 
     .prologue
     .line 154

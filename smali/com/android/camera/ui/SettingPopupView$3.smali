@@ -43,7 +43,7 @@
     .line 267
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView$3;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    iget-object v0, v0, Lcom/android/camera/ui/SettingView;->mListener:Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
+    iget-object v0, v0, Lcom/android/camera/ui/SettingPopupView;->mListener:Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
 
     invoke-interface {v0}, Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;->onSharedPreferenceChanged()V
 

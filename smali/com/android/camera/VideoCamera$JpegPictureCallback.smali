@@ -26,8 +26,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/VideoCamera;Landroid/location/Location;)V
     .locals 0
-    .parameter
-    .parameter "loc"
+    .param p2, "loc"    # Landroid/location/Location;
 
     .prologue
     .line 3237
@@ -46,8 +45,8 @@
 # virtual methods
 .method public onPictureTaken([BLandroid/hardware/Camera;)V
     .locals 3
-    .parameter "jpegData"
-    .parameter "camera"
+    .param p1, "jpegData"    # [B
+    .param p2, "camera"    # Landroid/hardware/Camera;
 
     .prologue
     const/4 v2, 0x0
@@ -62,7 +61,7 @@
     .line 3244
     iget-object v0, p0, Lcom/android/camera/VideoCamera$JpegPictureCallback;->this$0:Lcom/android/camera/VideoCamera;
 
-    #setter for: Lcom/android/camera/VideoCamera;->mSnapshotInProgress:Z
+    # setter for: Lcom/android/camera/VideoCamera;->mSnapshotInProgress:Z
     invoke-static {v0, v2}, Lcom/android/camera/VideoCamera;->access$3202(Lcom/android/camera/VideoCamera;Z)Z
 
     .line 3245
@@ -75,7 +74,7 @@
 
     iget-object v1, p0, Lcom/android/camera/VideoCamera$JpegPictureCallback;->mLocation:Landroid/location/Location;
 
-    #calls: Lcom/android/camera/VideoCamera;->storeImage([BLandroid/location/Location;)V
+    # invokes: Lcom/android/camera/VideoCamera;->storeImage([BLandroid/location/Location;)V
     invoke-static {v0, p1, v1}, Lcom/android/camera/VideoCamera;->access$3300(Lcom/android/camera/VideoCamera;[BLandroid/location/Location;)V
 
     .line 3247

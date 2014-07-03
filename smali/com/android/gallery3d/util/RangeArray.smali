@@ -29,12 +29,12 @@
 # direct methods
 .method public constructor <init>(II)V
     .locals 1
-    .parameter "min"
-    .parameter "max"
+    .param p1, "min"    # I
+    .param p2, "max"    # I
 
     .prologue
     .line 24
-    .local p0, this:Lcom/android/gallery3d/util/RangeArray;,"Lcom/android/gallery3d/util/RangeArray<TT;>;"
+    .local p0, "this":Lcom/android/gallery3d/util/RangeArray;, "Lcom/android/gallery3d/util/RangeArray<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
@@ -59,7 +59,7 @@
 # virtual methods
 .method public get(I)Ljava/lang/Object;
     .locals 2
-    .parameter "i"
+    .param p1, "i"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TT;"
@@ -68,7 +68,7 @@
 
     .prologue
     .line 43
-    .local p0, this:Lcom/android/gallery3d/util/RangeArray;,"Lcom/android/gallery3d/util/RangeArray<TT;>;"
+    .local p0, "this":Lcom/android/gallery3d/util/RangeArray;, "Lcom/android/gallery3d/util/RangeArray<TT;>;"
     iget-object v0, p0, Lcom/android/gallery3d/util/RangeArray;->mData:[Ljava/lang/Object;
 
     iget v1, p0, Lcom/android/gallery3d/util/RangeArray;->mOffset:I
@@ -82,7 +82,7 @@
 
 .method public put(ILjava/lang/Object;)V
     .locals 2
-    .parameter "i"
+    .param p1, "i"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITT;)V"
@@ -91,8 +91,8 @@
 
     .prologue
     .line 39
-    .local p0, this:Lcom/android/gallery3d/util/RangeArray;,"Lcom/android/gallery3d/util/RangeArray<TT;>;"
-    .local p2, object:Ljava/lang/Object;,"TT;"
+    .local p0, "this":Lcom/android/gallery3d/util/RangeArray;, "Lcom/android/gallery3d/util/RangeArray<TT;>;"
+    .local p2, "object":Ljava/lang/Object;, "TT;"
     iget-object v0, p0, Lcom/android/gallery3d/util/RangeArray;->mData:[Ljava/lang/Object;
 
     iget v1, p0, Lcom/android/gallery3d/util/RangeArray;->mOffset:I

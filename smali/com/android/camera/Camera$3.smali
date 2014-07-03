@@ -35,8 +35,8 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .parameter "context"
-    .parameter "intent"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "intent"    # Landroid/content/Intent;
 
     .prologue
     .line 685
@@ -45,7 +45,7 @@
     move-result-object v0
 
     .line 686
-    .local v0, action:Ljava/lang/String;
+    .local v0, "action":Ljava/lang/String;
     const-string v1, "camera"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -97,7 +97,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
-    iget-object v1, v1, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
+    iget-object v1, v1, Lcom/android/camera/Camera;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
 
     invoke-virtual {v1}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
 
@@ -119,14 +119,14 @@
     .line 692
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
-    iget-object v1, v1, Lcom/android/camera/ActivityBase;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
+    iget-object v1, v1, Lcom/android/camera/Camera;->mScreenHint:Lcom/android/camera/ui/ScreenHint;
 
     invoke-virtual {v1}, Lcom/android/camera/ui/ScreenHint;->updateHint()V
 
     .line 693
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
-    #getter for: Lcom/android/camera/Camera;->mIsImageCaptureIntent:Z
+    # getter for: Lcom/android/camera/Camera;->mIsImageCaptureIntent:Z
     invoke-static {v1}, Lcom/android/camera/Camera;->access$3400(Lcom/android/camera/Camera;)Z
 
     move-result v1
@@ -136,7 +136,7 @@
     .line 694
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
-    invoke-virtual {v1}, Lcom/android/camera/ActivityBase;->getLastThumbnail()V
+    invoke-virtual {v1}, Lcom/android/camera/Camera;->getLastThumbnail()V
 
     goto :goto_0
 .end method

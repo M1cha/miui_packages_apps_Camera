@@ -61,11 +61,11 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;IIZI)V
     .locals 3
-    .parameter "path"
-    .parameter "maxEntries"
-    .parameter "maxBytes"
-    .parameter "reset"
-    .parameter "version"
+    .param p1, "path"    # Ljava/lang/String;
+    .param p2, "maxEntries"    # I
+    .param p3, "maxBytes"    # I
+    .param p4, "reset"    # Z
+    .param p5, "version"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -227,7 +227,7 @@
 
 .method private clearHash(I)V
     .locals 6
-    .parameter "hashStart"
+    .param p1, "hashStart"    # I
 
     .prologue
     const/16 v5, 0x400
@@ -236,17 +236,17 @@
     new-array v2, v5, [B
 
     .line 352
-    .local v2, zero:[B
+    .local v2, "zero":[B
     iget-object v3, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexBuffer:Ljava/nio/MappedByteBuffer;
 
-    invoke-virtual {v3, p1}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v3, p1}, Ljava/nio/MappedByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 353
     iget v3, p0, Lcom/android/gallery3d/common/BlobCache;->mMaxEntries:I
 
     mul-int/lit8 v0, v3, 0xc
 
-    .local v0, count:I
+    .local v0, "count":I
     :goto_0
     if-lez v0, :cond_0
 
@@ -256,12 +256,12 @@
     move-result v1
 
     .line 355
-    .local v1, todo:I
+    .local v1, "todo":I
     iget-object v3, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexBuffer:Ljava/nio/MappedByteBuffer;
 
     const/4 v4, 0x0
 
-    invoke-virtual {v3, v2, v4, v1}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
+    invoke-virtual {v3, v2, v4, v1}, Ljava/nio/MappedByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
 
     .line 356
     sub-int/2addr v0, v1
@@ -270,7 +270,7 @@
     goto :goto_0
 
     .line 358
-    .end local v1           #todo:I
+    .end local v1    # "todo":I
     :cond_0
     return-void
 .end method
@@ -305,7 +305,7 @@
 
 .method static closeSilently(Ljava/io/Closeable;)V
     .locals 1
-    .parameter "c"
+    .param p0, "c"    # Ljava/io/Closeable;
 
     .prologue
     .line 618
@@ -333,7 +333,7 @@
 
 .method private static deleteFileSilently(Ljava/lang/String;)V
     .locals 1
-    .parameter "path"
+    .param p0, "path"    # Ljava/lang/String;
 
     .prologue
     .line 166
@@ -359,7 +359,7 @@
 
 .method public static deleteFiles(Ljava/lang/String;)V
     .locals 2
-    .parameter "path"
+    .param p0, "path"    # Ljava/lang/String;
 
     .prologue
     .line 159
@@ -502,9 +502,9 @@
 
 .method private getBlob(Ljava/io/RandomAccessFile;ILcom/android/gallery3d/common/BlobCache$LookupRequest;)Z
     .locals 14
-    .parameter "file"
-    .parameter "offset"
-    .parameter "req"
+    .param p1, "file"    # Ljava/io/RandomAccessFile;
+    .param p2, "offset"    # I
+    .param p3, "req"    # Lcom/android/gallery3d/common/BlobCache$LookupRequest;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -516,13 +516,13 @@
     iget-object v5, p0, Lcom/android/gallery3d/common/BlobCache;->mBlobHeader:[B
 
     .line 480
-    .local v5, header:[B
+    .local v5, "header":[B
     invoke-virtual {p1}, Ljava/io/RandomAccessFile;->getFilePointer()J
 
     move-result-wide v7
 
     .line 482
-    .local v7, oldPosition:J
+    .local v7, "oldPosition":J
     move/from16 v0, p2
 
     int-to-long v11, v0
@@ -546,8 +546,8 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 485
     const/4 v11, 0x0
@@ -568,7 +568,7 @@
     move-result-wide v2
 
     .line 488
-    .local v2, blobKey:J
+    .local v2, "blobKey":J
     move-object/from16 v0, p3
 
     iget-wide v11, v0, Lcom/android/gallery3d/common/BlobCache$LookupRequest;->key:J
@@ -600,8 +600,8 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 490
     const/4 v11, 0x0
@@ -621,7 +621,7 @@
     move-result v9
 
     .line 493
-    .local v9, sum:I
+    .local v9, "sum":I
     const/16 v11, 0xc
 
     invoke-static {v5, v11}, Lcom/android/gallery3d/common/BlobCache;->readInt([BI)I
@@ -629,7 +629,7 @@
     move-result v4
 
     .line 494
-    .local v4, blobOffset:I
+    .local v4, "blobOffset":I
     move/from16 v0, p2
 
     if-eq v4, v0, :cond_2
@@ -657,8 +657,8 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 496
     const/4 v11, 0x0
@@ -678,7 +678,7 @@
     move-result v6
 
     .line 499
-    .local v6, length:I
+    .local v6, "length":I
     if-ltz v6, :cond_3
 
     iget v11, p0, Lcom/android/gallery3d/common/BlobCache;->mMaxBytes:I
@@ -713,8 +713,8 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 501
     const/4 v11, 0x0
@@ -756,7 +756,7 @@
     iget-object v1, v0, Lcom/android/gallery3d/common/BlobCache$LookupRequest;->buffer:[B
 
     .line 508
-    .local v1, blob:[B
+    .local v1, "blob":[B
     move-object/from16 v0, p3
 
     iput v6, v0, Lcom/android/gallery3d/common/BlobCache$LookupRequest;->length:I
@@ -777,8 +777,8 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_4 .. :try_end_4} :catch_0
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
     .line 512
     const/4 v11, 0x0
@@ -822,8 +822,8 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_5 .. :try_end_5} :catch_0
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
     .line 516
     const/4 v11, 0x0
@@ -843,16 +843,16 @@
     goto/16 :goto_0
 
     .line 519
-    .end local v1           #blob:[B
-    .end local v2           #blobKey:J
-    .end local v4           #blobOffset:I
-    .end local v6           #length:I
-    .end local v9           #sum:I
+    .end local v1    # "blob":[B
+    .end local v2    # "blobKey":J
+    .end local v4    # "blobOffset":I
+    .end local v6    # "length":I
+    .end local v9    # "sum":I
     :catch_0
     move-exception v10
 
     .line 520
-    .local v10, t:Ljava/lang/Throwable;
+    .local v10, "t":Ljava/lang/Throwable;
     :try_start_6
     const-string v11, "BlobCache"
 
@@ -870,7 +870,7 @@
 
     goto/16 :goto_0
 
-    .end local v10           #t:Ljava/lang/Throwable;
+    .end local v10    # "t":Ljava/lang/Throwable;
     :catchall_0
     move-exception v11
 
@@ -881,9 +881,9 @@
 
 .method private insertInternal(J[BI)V
     .locals 5
-    .parameter "key"
-    .parameter "data"
-    .parameter "length"
+    .param p1, "key"    # J
+    .param p3, "data"    # [B
+    .param p4, "length"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -897,13 +897,13 @@
     iget-object v0, p0, Lcom/android/gallery3d/common/BlobCache;->mBlobHeader:[B
 
     .line 388
-    .local v0, header:[B
+    .local v0, "header":[B
     invoke-virtual {p0, p3}, Lcom/android/gallery3d/common/BlobCache;->checkSum([B)I
 
     move-result v1
 
     .line 389
-    .local v1, sum:I
+    .local v1, "sum":I
     invoke-static {v0, v4, p1, p2}, Lcom/android/gallery3d/common/BlobCache;->writeLong([BIJ)V
 
     .line 390
@@ -938,7 +938,7 @@
 
     iget v3, p0, Lcom/android/gallery3d/common/BlobCache;->mSlotOffset:I
 
-    invoke-virtual {v2, v3, p1, p2}, Ljava/nio/ByteBuffer;->putLong(IJ)Ljava/nio/ByteBuffer;
+    invoke-virtual {v2, v3, p1, p2}, Ljava/nio/MappedByteBuffer;->putLong(IJ)Ljava/nio/ByteBuffer;
 
     .line 397
     iget-object v2, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexBuffer:Ljava/nio/MappedByteBuffer;
@@ -949,7 +949,7 @@
 
     iget v4, p0, Lcom/android/gallery3d/common/BlobCache;->mActiveBytes:I
 
-    invoke-virtual {v2, v3, v4}, Ljava/nio/ByteBuffer;->putInt(II)Ljava/nio/ByteBuffer;
+    invoke-virtual {v2, v3, v4}, Ljava/nio/MappedByteBuffer;->putInt(II)Ljava/nio/ByteBuffer;
 
     .line 398
     iget v2, p0, Lcom/android/gallery3d/common/BlobCache;->mActiveBytes:I
@@ -1011,7 +1011,7 @@
     iget-object v6, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexHeader:[B
 
     .line 196
-    .local v6, buf:[B
+    .local v6, "buf":[B
     iget-object v0, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexFile:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v0, v6}, Ljava/io/RandomAccessFile;->read([B)I
@@ -1032,12 +1032,12 @@
     move v0, v10
 
     .line 279
-    .end local v6           #buf:[B
+    .end local v6    # "buf":[B
     :goto_0
     return v0
 
     .line 201
-    .restart local v6       #buf:[B
+    .restart local v6    # "buf":[B
     :cond_0
     const/4 v0, 0x0
 
@@ -1139,7 +1139,7 @@
     move-result v9
 
     .line 218
-    .local v9, sum:I
+    .local v9, "sum":I
     const/4 v0, 0x0
 
     const/16 v1, 0x1c
@@ -1311,7 +1311,7 @@
     new-array v8, v0, [B
 
     .line 252
-    .local v8, magic:[B
+    .local v8, "magic":[B
     iget-object v0, p0, Lcom/android/gallery3d/common/BlobCache;->mDataFile0:Ljava/io/RandomAccessFile;
 
     invoke-virtual {v0, v8}, Ljava/io/RandomAccessFile;->read([B)I
@@ -1432,7 +1432,7 @@
 
     sget-object v1, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v1}, Ljava/nio/MappedByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
     .line 275
     invoke-direct {p0}, Lcom/android/gallery3d/common/BlobCache;->setActiveVariables()V
@@ -1445,14 +1445,14 @@
     goto/16 :goto_0
 
     .line 277
-    .end local v6           #buf:[B
-    .end local v8           #magic:[B
-    .end local v9           #sum:I
+    .end local v6    # "buf":[B
+    .end local v8    # "magic":[B
+    .end local v9    # "sum":I
     :catch_0
     move-exception v7
 
     .line 278
-    .local v7, ex:Ljava/io/IOException;
+    .local v7, "ex":Ljava/io/IOException;
     const-string v0, "BlobCache"
 
     const-string v1, "loadIndex failed."
@@ -1467,8 +1467,8 @@
 
 .method private lookupInternal(JI)Z
     .locals 9
-    .parameter "key"
-    .parameter "hashStart"
+    .param p1, "key"    # J
+    .param p3, "hashStart"    # I
 
     .prologue
     const/4 v6, 0x0
@@ -1483,7 +1483,7 @@
     long-to-int v4, v7
 
     .line 538
-    .local v4, slot:I
+    .local v4, "slot":I
     if-gez v4, :cond_0
 
     iget v7, p0, Lcom/android/gallery3d/common/BlobCache;->mMaxEntries:I
@@ -1495,7 +1495,7 @@
     move v5, v4
 
     .line 541
-    .local v5, slotBegin:I
+    .local v5, "slotBegin":I
     :cond_1
     :goto_0
     mul-int/lit8 v7, v4, 0xc
@@ -1503,25 +1503,25 @@
     add-int v3, p3, v7
 
     .line 542
-    .local v3, offset:I
+    .local v3, "offset":I
     iget-object v7, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexBuffer:Ljava/nio/MappedByteBuffer;
 
-    invoke-virtual {v7, v3}, Ljava/nio/ByteBuffer;->getLong(I)J
+    invoke-virtual {v7, v3}, Ljava/nio/MappedByteBuffer;->getLong(I)J
 
     move-result-wide v0
 
     .line 543
-    .local v0, candidateKey:J
+    .local v0, "candidateKey":J
     iget-object v7, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexBuffer:Ljava/nio/MappedByteBuffer;
 
     add-int/lit8 v8, v3, 0x8
 
-    invoke-virtual {v7, v8}, Ljava/nio/ByteBuffer;->getInt(I)I
+    invoke-virtual {v7, v8}, Ljava/nio/MappedByteBuffer;->getInt(I)I
 
     move-result v2
 
     .line 544
-    .local v2, candidateOffset:I
+    .local v2, "candidateOffset":I
     if-nez v2, :cond_2
 
     .line 545
@@ -1579,15 +1579,15 @@
 
     add-int/lit8 v8, v8, 0x8
 
-    invoke-virtual {v7, v8, v6}, Ljava/nio/ByteBuffer;->putInt(II)Ljava/nio/ByteBuffer;
+    invoke-virtual {v7, v8, v6}, Ljava/nio/MappedByteBuffer;->putInt(II)Ljava/nio/ByteBuffer;
 
     goto :goto_0
 .end method
 
 .method static readInt([BI)I
     .locals 2
-    .parameter "buf"
-    .parameter "offset"
+    .param p0, "buf"    # [B
+    .param p1, "offset"    # I
 
     .prologue
     .line 627
@@ -1630,8 +1630,8 @@
 
 .method static readLong([BI)J
     .locals 7
-    .parameter "buf"
-    .parameter "offset"
+    .param p0, "buf"    # [B
+    .param p1, "offset"    # I
 
     .prologue
     .line 634
@@ -1644,10 +1644,10 @@
     int-to-long v1, v3
 
     .line 635
-    .local v1, result:J
+    .local v1, "result":J
     const/4 v0, 0x6
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     if-ltz v0, :cond_0
 
@@ -1678,8 +1678,8 @@
 
 .method private resetCache(II)V
     .locals 9
-    .parameter "maxEntries"
-    .parameter "maxBytes"
+    .param p1, "maxEntries"    # I
+    .param p2, "maxBytes"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -1722,7 +1722,7 @@
     iget-object v0, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexHeader:[B
 
     .line 304
-    .local v0, buf:[B
+    .local v0, "buf":[B
     const v1, -0x4cd8cfd0
 
     invoke-static {v0, v4, v1}, Lcom/android/gallery3d/common/BlobCache;->writeInt([BII)V
@@ -1934,14 +1934,14 @@
     .line 345
     iget-object v0, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexBuffer:Ljava/nio/MappedByteBuffer;
 
-    invoke-virtual {v0, v2}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
+    invoke-virtual {v0, v2}, Ljava/nio/MappedByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 346
     iget-object v0, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexBuffer:Ljava/nio/MappedByteBuffer;
 
     iget-object v1, p0, Lcom/android/gallery3d/common/BlobCache;->mIndexHeader:[B
 
-    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v1}, Ljava/nio/MappedByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
     .line 347
     return-void
@@ -1949,15 +1949,15 @@
 
 .method static writeInt([BII)V
     .locals 3
-    .parameter "buf"
-    .parameter "offset"
-    .parameter "value"
+    .param p0, "buf"    # [B
+    .param p1, "offset"    # I
+    .param p2, "value"    # I
 
     .prologue
     .line 642
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     const/4 v1, 0x4
 
@@ -1987,9 +1987,9 @@
 
 .method static writeLong([BIJ)V
     .locals 5
-    .parameter "buf"
-    .parameter "offset"
-    .parameter "value"
+    .param p0, "buf"    # [B
+    .param p1, "offset"    # I
+    .param p2, "value"    # J
 
     .prologue
     const/16 v4, 0x8
@@ -1997,7 +1997,7 @@
     .line 649
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     if-ge v0, v4, :cond_0
 
@@ -2031,7 +2031,7 @@
 # virtual methods
 .method checkSum([B)I
     .locals 2
-    .parameter "data"
+    .param p1, "data"    # [B
 
     .prologue
     .line 606
@@ -2058,9 +2058,9 @@
 
 .method checkSum([BII)I
     .locals 2
-    .parameter "data"
-    .parameter "offset"
-    .parameter "nbytes"
+    .param p1, "data"    # [B
+    .param p2, "offset"    # I
+    .param p3, "nbytes"    # I
 
     .prologue
     .line 612
@@ -2101,8 +2101,8 @@
 
 .method public insert(J[B)V
     .locals 3
-    .parameter "key"
-    .parameter "data"
+    .param p1, "key"    # J
+    .param p3, "data"    # [B
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2195,7 +2195,7 @@
 
 .method public lookup(Lcom/android/gallery3d/common/BlobCache$LookupRequest;)Z
     .locals 7
-    .parameter "req"
+    .param p1, "req"    # Lcom/android/gallery3d/common/BlobCache$LookupRequest;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2237,7 +2237,7 @@
     iget v0, p0, Lcom/android/gallery3d/common/BlobCache;->mSlotOffset:I
 
     .line 445
-    .local v0, insertOffset:I
+    .local v0, "insertOffset":I
     iget-wide v3, p1, Lcom/android/gallery3d/common/BlobCache$LookupRequest;->key:J
 
     iget v5, p0, Lcom/android/gallery3d/common/BlobCache;->mInactiveHashStart:I
@@ -2321,7 +2321,7 @@
     move-exception v1
 
     .line 461
-    .local v1, t:Ljava/lang/Throwable;
+    .local v1, "t":Ljava/lang/Throwable;
     const-string v3, "BlobCache"
 
     const-string v4, "cannot copy over"
@@ -2331,7 +2331,7 @@
     goto :goto_0
 
     .line 467
-    .end local v1           #t:Ljava/lang/Throwable;
+    .end local v1    # "t":Ljava/lang/Throwable;
     :cond_2
     const/4 v2, 0x0
 
@@ -2340,7 +2340,7 @@
 
 .method public lookup(J)[B
     .locals 2
-    .parameter "key"
+    .param p1, "key"    # J
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -2420,7 +2420,7 @@
     move-exception v0
 
     .line 576
-    .local v0, t:Ljava/lang/Throwable;
+    .local v0, "t":Ljava/lang/Throwable;
     const-string v1, "BlobCache"
 
     const-string v2, "sync data file 0 failed"
@@ -2430,12 +2430,12 @@
     goto :goto_0
 
     .line 580
-    .end local v0           #t:Ljava/lang/Throwable;
+    .end local v0    # "t":Ljava/lang/Throwable;
     :catch_1
     move-exception v0
 
     .line 581
-    .restart local v0       #t:Ljava/lang/Throwable;
+    .restart local v0    # "t":Ljava/lang/Throwable;
     const-string v1, "BlobCache"
 
     const-string v2, "sync data file 1 failed"
@@ -2466,7 +2466,7 @@
     move-exception v0
 
     .line 567
-    .local v0, t:Ljava/lang/Throwable;
+    .local v0, "t":Ljava/lang/Throwable;
     const-string v1, "BlobCache"
 
     const-string v2, "sync index failed"

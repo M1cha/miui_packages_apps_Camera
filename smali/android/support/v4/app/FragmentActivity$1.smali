@@ -35,7 +35,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .parameter "msg"
+    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
     .line 83

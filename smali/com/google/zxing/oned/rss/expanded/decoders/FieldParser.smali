@@ -2273,7 +2273,7 @@
 
 .method static parseFieldsInGeneralPurpose(Ljava/lang/String;)Ljava/lang/String;
     .locals 13
-    .parameter "rawInformation"
+    .param p0, "rawInformation"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -2327,23 +2327,23 @@
     move-result-object v4
 
     .line 206
-    .local v4, firstTwoDigits:Ljava/lang/String;
+    .local v4, "firstTwoDigits":Ljava/lang/String;
     sget-object v0, Lcom/google/zxing/oned/rss/expanded/decoders/FieldParser;->TWO_DIGIT_DATA_LENGTH:[[Ljava/lang/Object;
 
-    .local v0, arr$:[[Ljava/lang/Object;
+    .local v0, "arr$":[[Ljava/lang/Object;
     array-length v6, v0
 
-    .local v6, len$:I
+    .local v6, "len$":I
     const/4 v5, 0x0
 
-    .local v5, i$:I
+    .local v5, "i$":I
     :goto_1
     if-ge v5, v6, :cond_4
 
     aget-object v1, v0, v5
 
     .line 207
-    .local v1, dataLength:[Ljava/lang/Object;
+    .local v1, "dataLength":[Ljava/lang/Object;
     aget-object v7, v1, v8
 
     invoke-virtual {v7, v4}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -2397,7 +2397,7 @@
     goto :goto_1
 
     .line 215
-    .end local v1           #dataLength:[Ljava/lang/Object;
+    .end local v1    # "dataLength":[Ljava/lang/Object;
     :cond_4
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -2419,7 +2419,7 @@
     move-result-object v3
 
     .line 221
-    .local v3, firstThreeDigits:Ljava/lang/String;
+    .local v3, "firstThreeDigits":Ljava/lang/String;
     sget-object v0, Lcom/google/zxing/oned/rss/expanded/decoders/FieldParser;->THREE_DIGIT_DATA_LENGTH:[[Ljava/lang/Object;
 
     array-length v6, v0
@@ -2432,7 +2432,7 @@
     aget-object v1, v0, v5
 
     .line 222
-    .restart local v1       #dataLength:[Ljava/lang/Object;
+    .restart local v1    # "dataLength":[Ljava/lang/Object;
     aget-object v7, v1, v8
 
     invoke-virtual {v7, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -2486,7 +2486,7 @@
     goto :goto_2
 
     .line 231
-    .end local v1           #dataLength:[Ljava/lang/Object;
+    .end local v1    # "dataLength":[Ljava/lang/Object;
     :cond_8
     sget-object v0, Lcom/google/zxing/oned/rss/expanded/decoders/FieldParser;->THREE_DIGIT_PLUS_DIGIT_DATA_LENGTH:[[Ljava/lang/Object;
 
@@ -2500,7 +2500,7 @@
     aget-object v1, v0, v5
 
     .line 232
-    .restart local v1       #dataLength:[Ljava/lang/Object;
+    .restart local v1    # "dataLength":[Ljava/lang/Object;
     aget-object v7, v1, v8
 
     invoke-virtual {v7, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -2554,7 +2554,7 @@
     goto :goto_3
 
     .line 240
-    .end local v1           #dataLength:[Ljava/lang/Object;
+    .end local v1    # "dataLength":[Ljava/lang/Object;
     :cond_b
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -2576,7 +2576,7 @@
     move-result-object v2
 
     .line 246
-    .local v2, firstFourDigits:Ljava/lang/String;
+    .local v2, "firstFourDigits":Ljava/lang/String;
     sget-object v0, Lcom/google/zxing/oned/rss/expanded/decoders/FieldParser;->FOUR_DIGIT_DATA_LENGTH:[[Ljava/lang/Object;
 
     array-length v6, v0
@@ -2589,7 +2589,7 @@
     aget-object v1, v0, v5
 
     .line 247
-    .restart local v1       #dataLength:[Ljava/lang/Object;
+    .restart local v1    # "dataLength":[Ljava/lang/Object;
     aget-object v7, v1, v8
 
     invoke-virtual {v7, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -2643,7 +2643,7 @@
     goto :goto_4
 
     .line 255
-    .end local v1           #dataLength:[Ljava/lang/Object;
+    .end local v1    # "dataLength":[Ljava/lang/Object;
     :cond_f
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
@@ -2654,9 +2654,9 @@
 
 .method private static processFixedAI(IILjava/lang/String;)Ljava/lang/String;
     .locals 7
-    .parameter "aiSize"
-    .parameter "fieldSize"
-    .parameter "rawInformation"
+    .param p0, "aiSize"    # I
+    .param p1, "fieldSize"    # I
+    .param p2, "rawInformation"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -2687,7 +2687,7 @@
     move-result-object v0
 
     .line 265
-    .local v0, ai:Ljava/lang/String;
+    .local v0, "ai":Ljava/lang/String;
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result v5
@@ -2712,7 +2712,7 @@
     move-result-object v1
 
     .line 270
-    .local v1, field:Ljava/lang/String;
+    .local v1, "field":Ljava/lang/String;
     add-int v5, p0, p1
 
     invoke-virtual {p2, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -2720,7 +2720,7 @@
     move-result-object v3
 
     .line 271
-    .local v3, remaining:Ljava/lang/String;
+    .local v3, "remaining":Ljava/lang/String;
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -2750,20 +2750,20 @@
     move-result-object v4
 
     .line 272
-    .local v4, result:Ljava/lang/String;
+    .local v4, "result":Ljava/lang/String;
     invoke-static {v3}, Lcom/google/zxing/oned/rss/expanded/decoders/FieldParser;->parseFieldsInGeneralPurpose(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
     .line 273
-    .local v2, parsedAI:Ljava/lang/String;
+    .local v2, "parsedAI":Ljava/lang/String;
     if-nez v2, :cond_2
 
-    .end local v4           #result:Ljava/lang/String;
+    .end local v4    # "result":Ljava/lang/String;
     :goto_0
     return-object v4
 
-    .restart local v4       #result:Ljava/lang/String;
+    .restart local v4    # "result":Ljava/lang/String;
     :cond_2
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -2786,9 +2786,9 @@
 
 .method private static processVariableAI(IILjava/lang/String;)Ljava/lang/String;
     .locals 8
-    .parameter "aiSize"
-    .parameter "variableFieldSize"
-    .parameter "rawInformation"
+    .param p0, "aiSize"    # I
+    .param p1, "variableFieldSize"    # I
+    .param p2, "rawInformation"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -2804,7 +2804,7 @@
     move-result-object v0
 
     .line 280
-    .local v0, ai:Ljava/lang/String;
+    .local v0, "ai":Ljava/lang/String;
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result v6
@@ -2819,20 +2819,20 @@
     move-result v2
 
     .line 285
-    .local v2, maxSize:I
+    .local v2, "maxSize":I
     :goto_0
     invoke-virtual {p2, p0, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
 
     .line 286
-    .local v1, field:Ljava/lang/String;
+    .local v1, "field":Ljava/lang/String;
     invoke-virtual {p2, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v4
 
     .line 287
-    .local v4, remaining:Ljava/lang/String;
+    .local v4, "remaining":Ljava/lang/String;
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -2862,35 +2862,35 @@
     move-result-object v5
 
     .line 288
-    .local v5, result:Ljava/lang/String;
+    .local v5, "result":Ljava/lang/String;
     invoke-static {v4}, Lcom/google/zxing/oned/rss/expanded/decoders/FieldParser;->parseFieldsInGeneralPurpose(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     .line 289
-    .local v3, parsedAI:Ljava/lang/String;
+    .local v3, "parsedAI":Ljava/lang/String;
     if-nez v3, :cond_1
 
-    .end local v5           #result:Ljava/lang/String;
+    .end local v5    # "result":Ljava/lang/String;
     :goto_1
     return-object v5
 
     .line 283
-    .end local v1           #field:Ljava/lang/String;
-    .end local v2           #maxSize:I
-    .end local v3           #parsedAI:Ljava/lang/String;
-    .end local v4           #remaining:Ljava/lang/String;
+    .end local v1    # "field":Ljava/lang/String;
+    .end local v2    # "maxSize":I
+    .end local v3    # "parsedAI":Ljava/lang/String;
+    .end local v4    # "remaining":Ljava/lang/String;
     :cond_0
     add-int v2, p0, p1
 
-    .restart local v2       #maxSize:I
+    .restart local v2    # "maxSize":I
     goto :goto_0
 
     .line 289
-    .restart local v1       #field:Ljava/lang/String;
-    .restart local v3       #parsedAI:Ljava/lang/String;
-    .restart local v4       #remaining:Ljava/lang/String;
-    .restart local v5       #result:Ljava/lang/String;
+    .restart local v1    # "field":Ljava/lang/String;
+    .restart local v3    # "parsedAI":Ljava/lang/String;
+    .restart local v4    # "remaining":Ljava/lang/String;
+    .restart local v5    # "result":Ljava/lang/String;
     :cond_1
     new-instance v6, Ljava/lang/StringBuilder;
 

@@ -62,9 +62,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/app/GalleryActivity;Lcom/android/gallery3d/ui/PhotoView;Lcom/android/gallery3d/data/MediaItem;)V
     .locals 2
-    .parameter "activity"
-    .parameter "view"
-    .parameter "item"
+    .param p1, "activity"    # Lcom/android/gallery3d/app/GalleryActivity;
+    .param p2, "view"    # Lcom/android/gallery3d/ui/PhotoView;
+    .param p3, "item"    # Lcom/android/gallery3d/data/MediaItem;
 
     .prologue
     const/4 v1, 0x0
@@ -99,7 +99,7 @@
     iput-object v0, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mItem:Lcom/android/gallery3d/data/MediaItem;
 
     .line 57
-    invoke-virtual {p3}, Lcom/android/gallery3d/data/MediaObject;->getSupportedOperations()I
+    invoke-virtual {p3}, Lcom/android/gallery3d/data/MediaItem;->getSupportedOperations()I
 
     move-result v0
 
@@ -147,7 +147,7 @@
 
 .method static synthetic access$000(Lcom/android/gallery3d/app/SinglePhotoDataAdapter;)Z
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/SinglePhotoDataAdapter;
 
     .prologue
     .line 38
@@ -158,8 +158,8 @@
 
 .method static synthetic access$100(Lcom/android/gallery3d/app/SinglePhotoDataAdapter;Lcom/android/gallery3d/app/SinglePhotoDataAdapter$ImageBundle;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/SinglePhotoDataAdapter;
+    .param p1, "x1"    # Lcom/android/gallery3d/app/SinglePhotoDataAdapter$ImageBundle;
 
     .prologue
     .line 38
@@ -170,8 +170,8 @@
 
 .method static synthetic access$200(Lcom/android/gallery3d/app/SinglePhotoDataAdapter;Lcom/android/gallery3d/util/Future;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/SinglePhotoDataAdapter;
+    .param p1, "x1"    # Lcom/android/gallery3d/util/Future;
 
     .prologue
     .line 38
@@ -182,7 +182,7 @@
 
 .method static synthetic access$300(Lcom/android/gallery3d/app/SinglePhotoDataAdapter;)Landroid/os/Handler;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/SinglePhotoDataAdapter;
 
     .prologue
     .line 38
@@ -193,7 +193,7 @@
 
 .method private onDecodeLargeComplete(Lcom/android/gallery3d/app/SinglePhotoDataAdapter$ImageBundle;)V
     .locals 4
-    .parameter "bundle"
+    .param p1, "bundle"    # Lcom/android/gallery3d/app/SinglePhotoDataAdapter$ImageBundle;
 
     .prologue
     .line 115
@@ -212,12 +212,12 @@
 
     move-result v3
 
-    invoke-virtual {p0, v1, v2, v3}, Lcom/android/gallery3d/ui/TileImageViewAdapter;->setScreenNail(Landroid/graphics/Bitmap;II)V
+    invoke-virtual {p0, v1, v2, v3}, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->setScreenNail(Landroid/graphics/Bitmap;II)V
 
     .line 117
     iget-object v1, p1, Lcom/android/gallery3d/app/SinglePhotoDataAdapter$ImageBundle;->decoder:Landroid/graphics/BitmapRegionDecoder;
 
-    invoke-virtual {p0, v1}, Lcom/android/gallery3d/ui/TileImageViewAdapter;->setRegionDecoder(Landroid/graphics/BitmapRegionDecoder;)V
+    invoke-virtual {p0, v1}, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->setRegionDecoder(Landroid/graphics/BitmapRegionDecoder;)V
 
     .line 118
     iget-object v1, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mPhotoView:Lcom/android/gallery3d/ui/PhotoView;
@@ -237,7 +237,7 @@
     move-exception v0
 
     .line 120
-    .local v0, t:Ljava/lang/Throwable;
+    .local v0, "t":Ljava/lang/Throwable;
     const-string v1, "SinglePhotoDataAdapter"
 
     const-string v2, "fail to decode large"
@@ -261,7 +261,7 @@
 
     .prologue
     .line 126
-    .local p1, future:Lcom/android/gallery3d/util/Future;,"Lcom/android/gallery3d/util/Future<Landroid/graphics/Bitmap;>;"
+    .local p1, "future":Lcom/android/gallery3d/util/Future;, "Lcom/android/gallery3d/util/Future<Landroid/graphics/Bitmap;>;"
     :try_start_0
     invoke-interface {p1}, Lcom/android/gallery3d/util/Future;->get()Ljava/lang/Object;
 
@@ -270,7 +270,7 @@
     check-cast v0, Landroid/graphics/Bitmap;
 
     .line 127
-    .local v0, backup:Landroid/graphics/Bitmap;
+    .local v0, "backup":Landroid/graphics/Bitmap;
     if-nez v0, :cond_0
 
     .line 128
@@ -279,12 +279,12 @@
     iput v2, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mLoadingState:I
 
     .line 138
-    .end local v0           #backup:Landroid/graphics/Bitmap;
+    .end local v0    # "backup":Landroid/graphics/Bitmap;
     :goto_0
     return-void
 
     .line 131
-    .restart local v0       #backup:Landroid/graphics/Bitmap;
+    .restart local v0    # "backup":Landroid/graphics/Bitmap;
     :cond_0
     const/4 v2, 0x1
 
@@ -299,7 +299,7 @@
 
     move-result v3
 
-    invoke-virtual {p0, v0, v2, v3}, Lcom/android/gallery3d/ui/TileImageViewAdapter;->setScreenNail(Landroid/graphics/Bitmap;II)V
+    invoke-virtual {p0, v0, v2, v3}, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->setScreenNail(Landroid/graphics/Bitmap;II)V
 
     .line 134
     iget-object v2, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mPhotoView:Lcom/android/gallery3d/ui/PhotoView;
@@ -313,12 +313,12 @@
     goto :goto_0
 
     .line 135
-    .end local v0           #backup:Landroid/graphics/Bitmap;
+    .end local v0    # "backup":Landroid/graphics/Bitmap;
     :catch_0
     move-exception v1
 
     .line 136
-    .local v1, t:Ljava/lang/Throwable;
+    .local v1, "t":Ljava/lang/Throwable;
     const-string v2, "SinglePhotoDataAdapter"
 
     const-string v3, "fail to decode thumb"
@@ -342,7 +342,7 @@
 
 .method public getImageRotation(I)I
     .locals 1
-    .parameter "offset"
+    .param p1, "offset"    # I
 
     .prologue
     .line 180
@@ -365,8 +365,8 @@
 
 .method public getImageSize(ILcom/android/gallery3d/ui/PhotoView$Size;)V
     .locals 1
-    .parameter "offset"
-    .parameter "size"
+    .param p1, "offset"    # I
+    .param p2, "size"    # Lcom/android/gallery3d/ui/PhotoView$Size;
 
     .prologue
     const/4 v0, 0x0
@@ -408,7 +408,7 @@
 
 .method public getLoadingState(I)I
     .locals 1
-    .parameter "offset"
+    .param p1, "offset"    # I
 
     .prologue
     .line 260
@@ -419,7 +419,7 @@
 
 .method public getMediaItem(I)Lcom/android/gallery3d/data/MediaItem;
     .locals 1
-    .parameter "offset"
+    .param p1, "offset"    # I
 
     .prologue
     .line 215
@@ -438,13 +438,13 @@
 
 .method public getScreenNail(I)Lcom/android/gallery3d/ui/ScreenNail;
     .locals 1
-    .parameter "offset"
+    .param p1, "offset"    # I
 
     .prologue
     .line 185
     if-nez p1, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/TileImageViewAdapter;->getScreenNail()Lcom/android/gallery3d/ui/ScreenNail;
+    invoke-virtual {p0}, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->getScreenNail()Lcom/android/gallery3d/ui/ScreenNail;
 
     move-result-object v0
 
@@ -479,7 +479,7 @@
 
 .method public isCamera(I)Z
     .locals 1
-    .parameter "offset"
+    .param p1, "offset"    # I
 
     .prologue
     .line 195
@@ -490,13 +490,13 @@
 
 .method public isDeletable(I)Z
     .locals 1
-    .parameter "offset"
+    .param p1, "offset"    # I
 
     .prologue
     .line 210
     iget-object v0, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mItem:Lcom/android/gallery3d/data/MediaItem;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaObject;->getSupportedOperations()I
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaItem;->getSupportedOperations()I
 
     move-result v0
 
@@ -527,7 +527,7 @@
 
 .method public isPanorama(I)Z
     .locals 1
-    .parameter "offset"
+    .param p1, "offset"    # I
 
     .prologue
     .line 200
@@ -538,13 +538,13 @@
 
 .method public isVideo(I)Z
     .locals 2
-    .parameter "offset"
+    .param p1, "offset"    # I
 
     .prologue
     .line 205
     iget-object v0, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mItem:Lcom/android/gallery3d/data/MediaItem;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaObject;->getMediaType()I
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaItem;->getMediaType()I
 
     move-result v0
 
@@ -565,7 +565,7 @@
 
 .method public moveTo(I)V
     .locals 1
-    .parameter "index"
+    .param p1, "index"    # I
 
     .prologue
     .line 164
@@ -584,7 +584,7 @@
     iget-object v0, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mTask:Lcom/android/gallery3d/util/Future;
 
     .line 155
-    .local v0, task:Lcom/android/gallery3d/util/Future;,"Lcom/android/gallery3d/util/Future<*>;"
+    .local v0, "task":Lcom/android/gallery3d/util/Future;, "Lcom/android/gallery3d/util/Future<*>;"
     invoke-interface {v0}, Lcom/android/gallery3d/util/Future;->cancel()V
 
     .line 156
@@ -668,8 +668,8 @@
 
 .method public setCurrentPhoto(Lcom/android/gallery3d/data/Path;I)V
     .locals 0
-    .parameter "path"
-    .parameter "indexHint"
+    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .param p2, "indexHint"    # I
 
     .prologue
     .line 226
@@ -678,7 +678,7 @@
 
 .method public setFocusHintDirection(I)V
     .locals 0
-    .parameter "direction"
+    .param p1, "direction"    # I
 
     .prologue
     .line 251
@@ -687,7 +687,7 @@
 
 .method public setFocusHintPath(Lcom/android/gallery3d/data/Path;)V
     .locals 0
-    .parameter "path"
+    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
 
     .prologue
     .line 256
@@ -696,7 +696,7 @@
 
 .method public setNeedFullImage(Z)V
     .locals 0
-    .parameter "enabled"
+    .param p1, "enabled"    # Z
 
     .prologue
     .line 191
@@ -705,7 +705,7 @@
 
 .method public setSecure(Z)V
     .locals 0
-    .parameter "isSecure"
+    .param p1, "isSecure"    # Z
 
     .prologue
     .line 231
@@ -714,7 +714,7 @@
 
 .method public setSecureSize(I)V
     .locals 0
-    .parameter "size"
+    .param p1, "size"    # I
 
     .prologue
     .line 241

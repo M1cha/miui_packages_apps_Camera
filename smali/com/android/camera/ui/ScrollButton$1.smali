@@ -35,7 +35,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .parameter "m"
+    .param p1, "m"    # Landroid/os/Message;
 
     .prologue
     .line 58
@@ -51,7 +51,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/camera/ui/ScrollButton$1;->this$0:Lcom/android/camera/ui/ScrollButton;
 
-    #calls: Lcom/android/camera/ui/ScrollButton;->doAnimation()V
+    # invokes: Lcom/android/camera/ui/ScrollButton;->doAnimation()V
     invoke-static {v0}, Lcom/android/camera/ui/ScrollButton;->access$000(Lcom/android/camera/ui/ScrollButton;)V
 
     goto :goto_0

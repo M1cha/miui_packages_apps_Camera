@@ -37,9 +37,9 @@
 
 .method public constructor <init>(IIZ)V
     .locals 0
-    .parameter "width"
-    .parameter "height"
-    .parameter "opaque"
+    .param p1, "width"    # I
+    .param p2, "height"    # I
+    .param p3, "opaque"    # Z
 
     .prologue
     .line 30
@@ -49,7 +49,7 @@
     iput-boolean p3, p0, Lcom/android/gallery3d/ui/RawTexture;->mOpaque:Z
 
     .line 32
-    invoke-virtual {p0, p1, p2}, Lcom/android/gallery3d/ui/BasicTexture;->setSize(II)V
+    invoke-virtual {p0, p1, p2}, Lcom/android/gallery3d/ui/RawTexture;->setSize(II)V
 
     .line 33
     return-void
@@ -59,9 +59,9 @@
 # virtual methods
 .method public bridge synthetic draw(Lcom/android/gallery3d/ui/GLCanvas;II)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
+    .param p1, "x0"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .param p2, "x1"    # I
+    .param p3, "x2"    # I
 
     .prologue
     .line 22
@@ -72,11 +72,11 @@
 
 .method public bridge synthetic draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-    .parameter "x3"
-    .parameter "x4"
+    .param p1, "x0"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .param p2, "x1"    # I
+    .param p3, "x2"    # I
+    .param p4, "x3"    # I
+    .param p5, "x4"    # I
 
     .prologue
     .line 22
@@ -191,7 +191,7 @@
 
 .method protected onBind(Lcom/android/gallery3d/ui/GLCanvas;)Z
     .locals 2
-    .parameter "canvas"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
 
     .prologue
     .line 77
@@ -223,7 +223,7 @@
 
 .method protected prepare(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 11
-    .parameter "canvas"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
 
     .prologue
     const/16 v3, 0x1908
@@ -242,7 +242,7 @@
     move-result-object v0
 
     .line 47
-    .local v0, gl:Ljavax/microedition/khronos/opengles/GL11;
+    .local v0, "gl":Ljavax/microedition/khronos/opengles/GL11;
     sget-object v4, Lcom/android/gallery3d/ui/RawTexture;->sCropRect:[F
 
     const/4 v5, 0x0
@@ -252,7 +252,7 @@
     .line 48
     sget-object v4, Lcom/android/gallery3d/ui/RawTexture;->sCropRect:[F
 
-    iget v5, p0, Lcom/android/gallery3d/ui/BasicTexture;->mHeight:I
+    iget v5, p0, Lcom/android/gallery3d/ui/RawTexture;->mHeight:I
 
     int-to-float v5, v5
 
@@ -263,7 +263,7 @@
 
     const/4 v5, 0x2
 
-    iget v6, p0, Lcom/android/gallery3d/ui/BasicTexture;->mWidth:I
+    iget v6, p0, Lcom/android/gallery3d/ui/RawTexture;->mWidth:I
 
     int-to-float v6, v6
 
@@ -274,7 +274,7 @@
 
     const/4 v5, 0x3
 
-    iget v6, p0, Lcom/android/gallery3d/ui/BasicTexture;->mHeight:I
+    iget v6, p0, Lcom/android/gallery3d/ui/RawTexture;->mHeight:I
 
     neg-int v6, v6
 
@@ -349,13 +349,13 @@
 
     aget v1, v1, v2
 
-    iput v1, p0, Lcom/android/gallery3d/ui/BasicTexture;->mId:I
+    iput v1, p0, Lcom/android/gallery3d/ui/RawTexture;->mId:I
 
     .line 71
-    iput v10, p0, Lcom/android/gallery3d/ui/BasicTexture;->mState:I
+    iput v10, p0, Lcom/android/gallery3d/ui/RawTexture;->mState:I
 
     .line 72
-    invoke-virtual {p0, p1}, Lcom/android/gallery3d/ui/BasicTexture;->setAssociatedCanvas(Lcom/android/gallery3d/ui/GLCanvas;)V
+    invoke-virtual {p0, p1}, Lcom/android/gallery3d/ui/RawTexture;->setAssociatedCanvas(Lcom/android/gallery3d/ui/GLCanvas;)V
 
     .line 73
     return-void

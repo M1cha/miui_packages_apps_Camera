@@ -22,8 +22,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 39
@@ -47,7 +47,7 @@
     .line 45
     const v0, 0x7f0c0064
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/camera/PreviewFrameLayout;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -59,10 +59,10 @@
 
 .method protected onSizeChanged(IIII)V
     .locals 1
-    .parameter "w"
-    .parameter "h"
-    .parameter "oldw"
-    .parameter "oldh"
+    .param p1, "w"    # I
+    .param p2, "h"    # I
+    .param p3, "oldw"    # I
+    .param p4, "oldh"    # I
 
     .prologue
     .line 75
@@ -81,7 +81,7 @@
 
 .method public setAspectRatio(D)V
     .locals 2
-    .parameter "ratio"
+    .param p1, "ratio"    # D
 
     .prologue
     .line 49
@@ -99,7 +99,7 @@
 
     .line 51
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/camera/PreviewFrameLayout;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -114,7 +114,7 @@
     if-ne v0, v1, :cond_1
 
     .line 53
-    const-wide/high16 v0, 0x3ff0
+    const-wide/high16 v0, 0x3ff0000000000000L
 
     div-double p1, v0, p1
 
@@ -130,7 +130,7 @@
     iput-wide p1, p0, Lcom/android/camera/PreviewFrameLayout;->mAspectRatio:D
 
     .line 57
-    invoke-virtual {p0}, Landroid/widget/RelativeLayout;->requestLayout()V
+    invoke-virtual {p0}, Lcom/android/camera/PreviewFrameLayout;->requestLayout()V
 
     .line 59
     :cond_2
@@ -139,7 +139,7 @@
 
 .method public setOnSizeChangedListener(Lcom/android/camera/PreviewFrameLayout$OnSizeChangedListener;)V
     .locals 0
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/camera/PreviewFrameLayout$OnSizeChangedListener;
 
     .prologue
     .line 70
@@ -151,7 +151,7 @@
 
 .method public showBorder(Z)V
     .locals 2
-    .parameter "enabled"
+    .param p1, "enabled"    # Z
 
     .prologue
     .line 62

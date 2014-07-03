@@ -52,8 +52,8 @@
 
 .method public put(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 1
-    .parameter "key"
-    .parameter "value"
+    .param p1, "key"    # Ljava/lang/Object;
+    .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 25

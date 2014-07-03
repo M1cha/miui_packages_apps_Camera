@@ -6,8 +6,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 12
@@ -21,9 +21,9 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
-    .parameter "defStyle"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .param p3, "defStyle"    # I
 
     .prologue
     .line 16
@@ -32,7 +32,7 @@
     .line 17
     const v0, 0x7f04001e
 
-    invoke-virtual {p0, v0}, Landroid/preference/Preference;->setLayoutResource(I)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/TextViewPreference;->setLayoutResource(I)V
 
     .line 18
     return-void

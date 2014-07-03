@@ -23,8 +23,8 @@
 # direct methods
 .method varargs constructor <init>(I[Lcom/google/zxing/qrcode/decoder/Version$ECB;)V
     .locals 0
-    .parameter "ecCodewordsPerBlock"
-    .parameter "ecBlocks"
+    .param p1, "ecCodewordsPerBlock"    # I
+    .param p2, "ecBlocks"    # [Lcom/google/zxing/qrcode/decoder/Version$ECB;
 
     .prologue
     .line 188

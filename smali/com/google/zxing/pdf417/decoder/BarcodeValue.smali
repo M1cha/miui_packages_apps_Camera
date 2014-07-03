@@ -45,13 +45,13 @@
     const/4 v2, -0x1
 
     .line 52
-    .local v2, maxConfidence:I
+    .local v2, "maxConfidence":I
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     .line 53
-    .local v3, result:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/lang/Integer;>;"
+    .local v3, "result":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/lang/Integer;>;"
     iget-object v4, p0, Lcom/google/zxing/pdf417/decoder/BarcodeValue;->values:Ljava/util/Map;
 
     invoke-interface {v4}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -62,7 +62,7 @@
 
     move-result-object v1
 
-    .local v1, i$:Ljava/util/Iterator;
+    .local v1, "i$":Ljava/util/Iterator;
     :cond_0
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -78,7 +78,7 @@
     check-cast v0, Ljava/util/Map$Entry;
 
     .line 54
-    .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/Integer;>;"
+    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/Integer;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
@@ -138,7 +138,7 @@
     goto :goto_0
 
     .line 62
-    .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/Integer;>;"
+    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/Integer;>;"
     :cond_2
     invoke-static {v3}, Lcom/google/zxing/pdf417/PDF417Common;->toIntArray(Ljava/util/Collection;)[I
 
@@ -149,7 +149,7 @@
 
 .method setValue(I)V
     .locals 3
-    .parameter "value"
+    .param p1, "value"    # I
 
     .prologue
     .line 38
@@ -166,7 +166,7 @@
     check-cast v0, Ljava/lang/Integer;
 
     .line 39
-    .local v0, confidence:Ljava/lang/Integer;
+    .local v0, "confidence":Ljava/lang/Integer;
     if-nez v0, :cond_0
 
     .line 40

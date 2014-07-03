@@ -12,9 +12,9 @@
 # direct methods
 .method public constructor <init>([III)V
     .locals 0
-    .parameter "src"
-    .parameter "min"
-    .parameter "max"
+    .param p1, "src"    # [I
+    .param p2, "min"    # I
+    .param p3, "max"    # I
 
     .prologue
     .line 30
@@ -34,7 +34,7 @@
 # virtual methods
 .method public get(I)I
     .locals 2
-    .parameter "i"
+    .param p1, "i"    # I
 
     .prologue
     .line 40

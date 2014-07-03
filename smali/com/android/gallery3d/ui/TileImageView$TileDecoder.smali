@@ -55,8 +55,8 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/ui/TileImageView;Lcom/android/gallery3d/ui/TileImageView$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Lcom/android/gallery3d/ui/TileImageView;
+    .param p2, "x1"    # Lcom/android/gallery3d/ui/TileImageView$1;
 
     .prologue
     .line 744
@@ -69,7 +69,7 @@
 # virtual methods
 .method public bridge synthetic run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Ljava/lang/Object;
     .locals 1
-    .parameter "x0"
+    .param p1, "x0"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
 
     .prologue
     .line 744
@@ -82,7 +82,7 @@
 
 .method public run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Ljava/lang/Void;
     .locals 3
-    .parameter "jc"
+    .param p1, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
 
     .prologue
     .line 757
@@ -108,7 +108,7 @@
     const/4 v0, 0x0
 
     .line 761
-    .local v0, tile:Lcom/android/gallery3d/ui/TileImageView$Tile;
+    .local v0, "tile":Lcom/android/gallery3d/ui/TileImageView$Tile;
     iget-object v2, p0, Lcom/android/gallery3d/ui/TileImageView$TileDecoder;->this$0:Lcom/android/gallery3d/ui/TileImageView;
 
     monitor-enter v2
@@ -117,7 +117,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/gallery3d/ui/TileImageView$TileDecoder;->this$0:Lcom/android/gallery3d/ui/TileImageView;
 
-    #getter for: Lcom/android/gallery3d/ui/TileImageView;->mDecodeQueue:Lcom/android/gallery3d/ui/TileImageView$TileQueue;
+    # getter for: Lcom/android/gallery3d/ui/TileImageView;->mDecodeQueue:Lcom/android/gallery3d/ui/TileImageView$TileQueue;
     invoke-static {v1}, Lcom/android/gallery3d/ui/TileImageView;->access$800(Lcom/android/gallery3d/ui/TileImageView;)Lcom/android/gallery3d/ui/TileImageView$TileQueue;
 
     move-result-object v1
@@ -176,7 +176,7 @@
     throw v1
 
     .line 770
-    .end local v0           #tile:Lcom/android/gallery3d/ui/TileImageView$Tile;
+    .end local v0    # "tile":Lcom/android/gallery3d/ui/TileImageView$Tile;
     :cond_2
     const/4 v1, 0x0
 

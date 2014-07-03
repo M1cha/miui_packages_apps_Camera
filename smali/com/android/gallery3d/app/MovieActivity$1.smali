@@ -21,12 +21,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/MovieActivity;Landroid/view/View;Lcom/android/gallery3d/app/MovieActivity;Landroid/net/Uri;Landroid/os/Bundle;Z)V
     .locals 6
-    .parameter
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-    .parameter "x3"
-    .parameter "x4"
+    .param p2, "x0"    # Landroid/view/View;
+    .param p3, "x1"    # Lcom/android/gallery3d/app/MovieActivity;
+    .param p4, "x2"    # Landroid/net/Uri;
+    .param p5, "x3"    # Landroid/os/Bundle;
+    .param p6, "x4"    # Z
 
     .prologue
     .line 80
@@ -58,7 +57,7 @@
     .line 83
     iget-object v0, p0, Lcom/android/gallery3d/app/MovieActivity$1;->this$0:Lcom/android/gallery3d/app/MovieActivity;
 
-    #getter for: Lcom/android/gallery3d/app/MovieActivity;->mFinishOnCompletion:Z
+    # getter for: Lcom/android/gallery3d/app/MovieActivity;->mFinishOnCompletion:Z
     invoke-static {v0}, Lcom/android/gallery3d/app/MovieActivity;->access$000(Lcom/android/gallery3d/app/MovieActivity;)Z
 
     move-result v0
@@ -68,7 +67,7 @@
     .line 84
     iget-object v0, p0, Lcom/android/gallery3d/app/MovieActivity$1;->this$0:Lcom/android/gallery3d/app/MovieActivity;
 
-    invoke-virtual {v0}, Landroid/app/Activity;->finish()V
+    invoke-virtual {v0}, Lcom/android/gallery3d/app/MovieActivity;->finish()V
 
     .line 86
     :cond_0

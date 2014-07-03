@@ -42,7 +42,7 @@
     .line 33
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
-    const/high16 v1, 0x3fc0
+    const/high16 v1, 0x3fc00000
 
     invoke-direct {v0, v1}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
 
@@ -82,12 +82,12 @@
     .line 62
     const/16 v0, 0x12c
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/anim/Animation;->setDuration(I)V
+    invoke-virtual {p0, v0}, Lcom/android/gallery3d/ui/PhotoFallbackEffect;->setDuration(I)V
 
     .line 63
     sget-object v0, Lcom/android/gallery3d/ui/PhotoFallbackEffect;->ANIM_INTERPOLATE:Landroid/view/animation/Interpolator;
 
-    invoke-virtual {p0, v0}, Lcom/android/gallery3d/anim/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {p0, v0}, Lcom/android/gallery3d/ui/PhotoFallbackEffect;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     .line 64
     return-void
@@ -97,9 +97,9 @@
 # virtual methods
 .method public addEntry(Lcom/android/gallery3d/data/Path;Landroid/graphics/Rect;Lcom/android/gallery3d/ui/RawTexture;)V
     .locals 2
-    .parameter "path"
-    .parameter "rect"
-    .parameter "texture"
+    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .param p2, "rect"    # Landroid/graphics/Rect;
+    .param p3, "texture"    # Lcom/android/gallery3d/ui/RawTexture;
 
     .prologue
     .line 67
@@ -117,7 +117,7 @@
 
 .method protected onCalculate(F)V
     .locals 0
-    .parameter "progress"
+    .param p1, "progress"    # F
 
     .prologue
     .line 156

@@ -12,9 +12,9 @@
 # direct methods
 .method constructor <init>(Lcom/google/zxing/common/BitArray;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
-    .parameter "information"
-    .parameter "firstAIdigits"
-    .parameter "dateCode"
+    .param p1, "information"    # Lcom/google/zxing/common/BitArray;
+    .param p2, "firstAIdigits"    # Ljava/lang/String;
+    .param p3, "dateCode"    # Ljava/lang/String;
 
     .prologue
     .line 46
@@ -32,14 +32,14 @@
 
 .method private encodeCompressedDate(Ljava/lang/StringBuilder;I)V
     .locals 7
-    .parameter "buf"
-    .parameter "currentPos"
+    .param p1, "buf"    # Ljava/lang/StringBuilder;
+    .param p2, "currentPos"    # I
 
     .prologue
     const/16 v6, 0x30
 
     .line 67
-    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
+    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
 
     move-result-object v4
 
@@ -50,7 +50,7 @@
     move-result v2
 
     .line 68
-    .local v2, numericDate:I
+    .local v2, "numericDate":I
     const v4, 0x9600
 
     if-ne v2, v4, :cond_0
@@ -79,7 +79,7 @@
     rem-int/lit8 v0, v2, 0x20
 
     .line 77
-    .local v0, day:I
+    .local v0, "day":I
     div-int/lit8 v2, v2, 0x20
 
     .line 78
@@ -88,14 +88,14 @@
     add-int/lit8 v1, v4, 0x1
 
     .line 79
-    .local v1, month:I
+    .local v1, "month":I
     div-int/lit8 v2, v2, 0xc
 
     .line 80
     move v3, v2
 
     .line 82
-    .local v3, year:I
+    .local v3, "year":I
     div-int/lit8 v4, v3, 0xa
 
     if-nez v4, :cond_1
@@ -138,8 +138,8 @@
 # virtual methods
 .method protected addWeightCode(Ljava/lang/StringBuilder;I)V
     .locals 2
-    .parameter "buf"
-    .parameter "weight"
+    .param p1, "buf"    # Ljava/lang/StringBuilder;
+    .param p2, "weight"    # I
 
     .prologue
     .line 98
@@ -148,7 +148,7 @@
     div-int v0, p2, v1
 
     .line 99
-    .local v0, lastAI:I
+    .local v0, "lastAI":I
     const/16 v1, 0x28
 
     invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -172,7 +172,7 @@
 
 .method protected checkWeight(I)I
     .locals 1
-    .parameter "weight"
+    .param p1, "weight"    # I
 
     .prologue
     .line 107
@@ -193,7 +193,7 @@
 
     .prologue
     .line 53
-    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->getInformation()Lcom/google/zxing/common/BitArray;
+    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;->getInformation()Lcom/google/zxing/common/BitArray;
 
     move-result-object v1
 
@@ -219,17 +219,17 @@
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 59
-    .local v0, buf:Ljava/lang/StringBuilder;
+    .local v0, "buf":Ljava/lang/StringBuilder;
     const/16 v1, 0x8
 
-    invoke-virtual {p0, v0, v1}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01decoder;->encodeCompressedGtin(Ljava/lang/StringBuilder;I)V
+    invoke-virtual {p0, v0, v1}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;->encodeCompressedGtin(Ljava/lang/StringBuilder;I)V
 
     .line 60
     const/16 v1, 0x30
 
     const/16 v2, 0x14
 
-    invoke-virtual {p0, v0, v1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01weightDecoder;->encodeCompressedWeight(Ljava/lang/StringBuilder;II)V
+    invoke-virtual {p0, v0, v1, v2}, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;->encodeCompressedWeight(Ljava/lang/StringBuilder;II)V
 
     .line 61
     const/16 v1, 0x44

@@ -21,8 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/CameraHolder;Landroid/os/Looper;)V
     .locals 0
-    .parameter
-    .parameter "looper"
+    .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
     .line 78
@@ -39,7 +38,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .parameter "msg"
+    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
     .line 84
@@ -61,7 +60,7 @@
     :try_start_0
     iget-object v0, p0, Lcom/android/camera/CameraHolder$MyHandler;->this$0:Lcom/android/camera/CameraHolder;
 
-    #getter for: Lcom/android/camera/CameraHolder;->mCameraOpened:Z
+    # getter for: Lcom/android/camera/CameraHolder;->mCameraOpened:Z
     invoke-static {v0}, Lcom/android/camera/CameraHolder;->access$000(Lcom/android/camera/CameraHolder;)Z
 
     move-result v0

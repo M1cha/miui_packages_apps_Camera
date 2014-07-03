@@ -28,11 +28,11 @@
 # virtual methods
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 2
-    .parameter "canvas"
+    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
     .line 502
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->dispatchDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     .line 503
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView$SlideBar;->mSlidePoint:Landroid/graphics/NinePatch;
@@ -53,22 +53,22 @@
 
 .method public fastOffset(I)V
     .locals 2
-    .parameter "offset"
+    .param p1, "offset"    # I
 
     .prologue
     .line 529
-    iget v0, p0, Landroid/view/View;->mRight:I
+    iget v0, p0, Lcom/android/camera/ui/ScreenView$SlideBar;->mRight:I
 
     add-int/2addr v0, p1
 
-    iget v1, p0, Landroid/view/View;->mLeft:I
+    iget v1, p0, Lcom/android/camera/ui/ScreenView$SlideBar;->mLeft:I
 
     sub-int/2addr v0, v1
 
-    iput v0, p0, Landroid/view/View;->mRight:I
+    iput v0, p0, Lcom/android/camera/ui/ScreenView$SlideBar;->mRight:I
 
     .line 530
-    iput p1, p0, Landroid/view/View;->mLeft:I
+    iput p1, p0, Lcom/android/camera/ui/ScreenView$SlideBar;->mLeft:I
 
     .line 531
     return-void
@@ -79,7 +79,7 @@
 
     .prologue
     .line 524
-    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScreenView$SlideBar;->getMeasuredWidth()I
 
     move-result v0
 
@@ -100,19 +100,19 @@
 
 .method protected setFrame(IIII)Z
     .locals 4
-    .parameter "left"
-    .parameter "top"
-    .parameter "right"
-    .parameter "bottom"
+    .param p1, "left"    # I
+    .param p2, "top"    # I
+    .param p3, "right"    # I
+    .param p4, "bottom"    # I
 
     .prologue
     .line 510
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->setFrame(IIII)Z
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->setFrame(IIII)Z
 
     move-result v0
 
     .line 511
-    .local v0, r:Z
+    .local v0, "r":Z
     iget-object v1, p0, Lcom/android/camera/ui/ScreenView$SlideBar;->mSlidePoint:Landroid/graphics/NinePatch;
 
     if-eqz v1, :cond_0
@@ -154,8 +154,8 @@
 
 .method public setPosition(II)V
     .locals 2
-    .parameter "left"
-    .parameter "right"
+    .param p1, "left"    # I
+    .param p2, "right"    # I
 
     .prologue
     .line 519

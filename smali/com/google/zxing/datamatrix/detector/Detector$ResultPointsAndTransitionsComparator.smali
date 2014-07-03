@@ -42,7 +42,7 @@
 
 .method synthetic constructor <init>(Lcom/google/zxing/datamatrix/detector/Detector$1;)V
     .locals 0
-    .parameter "x0"
+    .param p1, "x0"    # Lcom/google/zxing/datamatrix/detector/Detector$1;
 
     .prologue
     .line 432
@@ -55,8 +55,8 @@
 # virtual methods
 .method public compare(Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;)I
     .locals 2
-    .parameter "o1"
-    .parameter "o2"
+    .param p1, "o1"    # Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
+    .param p2, "o2"    # Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 
     .prologue
     .line 436
@@ -75,17 +75,17 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Ljava/lang/Object;
+    .param p2, "x1"    # Ljava/lang/Object;
 
     .prologue
     .line 432
     check-cast p1, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 
-    .end local p1
+    .end local p1    # "x0":Ljava/lang/Object;
     check-cast p2, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 
-    .end local p2
+    .end local p2    # "x1":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2}, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitionsComparator;->compare(Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;)I
 
     move-result v0

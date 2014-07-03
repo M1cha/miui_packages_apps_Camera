@@ -33,8 +33,8 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/ui/GestureRecognizer;Lcom/android/gallery3d/ui/GestureRecognizer$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Lcom/android/gallery3d/ui/GestureRecognizer;
+    .param p2, "x1"    # Lcom/android/gallery3d/ui/GestureRecognizer$1;
 
     .prologue
     .line 106
@@ -47,13 +47,13 @@
 # virtual methods
 .method public onScale(Landroid/view/ScaleGestureDetector;)Z
     .locals 4
-    .parameter "detector"
+    .param p1, "detector"    # Landroid/view/ScaleGestureDetector;
 
     .prologue
     .line 116
     iget-object v0, p0, Lcom/android/gallery3d/ui/GestureRecognizer$MyScaleListener;->this$0:Lcom/android/gallery3d/ui/GestureRecognizer;
 
-    #getter for: Lcom/android/gallery3d/ui/GestureRecognizer;->mListener:Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
+    # getter for: Lcom/android/gallery3d/ui/GestureRecognizer;->mListener:Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
     invoke-static {v0}, Lcom/android/gallery3d/ui/GestureRecognizer;->access$300(Lcom/android/gallery3d/ui/GestureRecognizer;)Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
 
     move-result-object v0
@@ -79,13 +79,13 @@
 
 .method public onScaleBegin(Landroid/view/ScaleGestureDetector;)Z
     .locals 3
-    .parameter "detector"
+    .param p1, "detector"    # Landroid/view/ScaleGestureDetector;
 
     .prologue
     .line 110
     iget-object v0, p0, Lcom/android/gallery3d/ui/GestureRecognizer$MyScaleListener;->this$0:Lcom/android/gallery3d/ui/GestureRecognizer;
 
-    #getter for: Lcom/android/gallery3d/ui/GestureRecognizer;->mListener:Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
+    # getter for: Lcom/android/gallery3d/ui/GestureRecognizer;->mListener:Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
     invoke-static {v0}, Lcom/android/gallery3d/ui/GestureRecognizer;->access$300(Lcom/android/gallery3d/ui/GestureRecognizer;)Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
 
     move-result-object v0
@@ -107,13 +107,13 @@
 
 .method public onScaleEnd(Landroid/view/ScaleGestureDetector;)V
     .locals 1
-    .parameter "detector"
+    .param p1, "detector"    # Landroid/view/ScaleGestureDetector;
 
     .prologue
     .line 122
     iget-object v0, p0, Lcom/android/gallery3d/ui/GestureRecognizer$MyScaleListener;->this$0:Lcom/android/gallery3d/ui/GestureRecognizer;
 
-    #getter for: Lcom/android/gallery3d/ui/GestureRecognizer;->mListener:Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
+    # getter for: Lcom/android/gallery3d/ui/GestureRecognizer;->mListener:Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
     invoke-static {v0}, Lcom/android/gallery3d/ui/GestureRecognizer;->access$300(Lcom/android/gallery3d/ui/GestureRecognizer;)Lcom/android/gallery3d/ui/GestureRecognizer$Listener;
 
     move-result-object v0

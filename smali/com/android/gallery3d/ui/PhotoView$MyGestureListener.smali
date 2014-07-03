@@ -63,8 +63,8 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/ui/PhotoView;Lcom/android/gallery3d/ui/PhotoView$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Lcom/android/gallery3d/ui/PhotoView;
+    .param p2, "x1"    # Lcom/android/gallery3d/ui/PhotoView$1;
 
     .prologue
     .line 925
@@ -75,15 +75,15 @@
 
 .method private calculateDeltaY(F)I
     .locals 5
-    .parameter "delta"
+    .param p1, "delta"    # F
 
     .prologue
-    const/high16 v4, 0x3f00
+    const/high16 v4, 0x3f000000
 
     .line 1021
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxDeletable:Z
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxDeletable:Z
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$3500(Lcom/android/gallery3d/ui/PhotoView;)Z
 
     move-result v2
@@ -102,12 +102,12 @@
     :cond_0
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    invoke-virtual {v2}, Lcom/android/gallery3d/ui/GLView;->getHeight()I
+    invoke-virtual {v2}, Lcom/android/gallery3d/ui/PhotoView;->getHeight()I
 
     move-result v1
 
     .line 1026
-    .local v1, size:I
+    .local v1, "size":I
     const v2, 0x3e19999a
 
     int-to-float v3, v1
@@ -115,7 +115,7 @@
     mul-float v0, v2, v3
 
     .line 1027
-    .local v0, maxScrollDistance:F
+    .local v0, "maxScrollDistance":F
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
 
     move-result v2
@@ -170,20 +170,20 @@
 
 .method private deleteAfterAnimation(I)V
     .locals 5
-    .parameter "duration"
+    .param p1, "duration"    # I
 
     .prologue
     .line 1087
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mModel:Lcom/android/gallery3d/ui/PhotoView$Model;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mModel:Lcom/android/gallery3d/ui/PhotoView$Model;
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$1300(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PhotoView$Model;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v3}, Lcom/android/gallery3d/ui/PhotoView;->access$3400(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v3
@@ -193,7 +193,7 @@
     move-result-object v0
 
     .line 1088
-    .local v0, item:Lcom/android/gallery3d/data/MediaItem;
+    .local v0, "item":Lcom/android/gallery3d/data/MediaItem;
     if-nez v0, :cond_0
 
     .line 1096
@@ -204,7 +204,7 @@
     :cond_0
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$000(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PhotoView$Listener;
 
     move-result-object v2
@@ -216,7 +216,7 @@
 
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mModel:Lcom/android/gallery3d/ui/PhotoView$Model;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mModel:Lcom/android/gallery3d/ui/PhotoView$Model;
     invoke-static {v3}, Lcom/android/gallery3d/ui/PhotoView;->access$1300(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PhotoView$Model;
 
     move-result-object v3
@@ -227,14 +227,14 @@
 
     iget-object v4, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v4}, Lcom/android/gallery3d/ui/PhotoView;->access$3400(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v4
 
     add-int/2addr v3, v4
 
-    #setter for: Lcom/android/gallery3d/ui/PhotoView;->mUndoIndexHint:I
+    # setter for: Lcom/android/gallery3d/ui/PhotoView;->mUndoIndexHint:I
     invoke-static {v2, v3}, Lcom/android/gallery3d/ui/PhotoView;->access$3702(Lcom/android/gallery3d/ui/PhotoView;I)I
 
     .line 1091
@@ -242,25 +242,26 @@
 
     const/4 v3, 0x4
 
+    # |= operator for: Lcom/android/gallery3d/ui/PhotoView;->mHolding:I
     invoke-static {v2, v3}, Lcom/android/gallery3d/ui/PhotoView;->access$376(Lcom/android/gallery3d/ui/PhotoView;I)I
 
     .line 1092
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mHandler:Lcom/android/gallery3d/ui/SynchronizedHandler;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mHandler:Lcom/android/gallery3d/ui/SynchronizedHandler;
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$1000(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/SynchronizedHandler;
 
     move-result-object v2
 
     const/4 v3, 0x5
 
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {v2, v3}, Lcom/android/gallery3d/ui/SynchronizedHandler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v1
 
     .line 1093
-    .local v1, m:Landroid/os/Message;
-    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
+    .local v1, "m":Landroid/os/Message;
+    invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaItem;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v2
 
@@ -269,7 +270,7 @@
     .line 1094
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$3400(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v2
@@ -279,27 +280,27 @@
     .line 1095
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mHandler:Lcom/android/gallery3d/ui/SynchronizedHandler;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mHandler:Lcom/android/gallery3d/ui/SynchronizedHandler;
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$1000(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/SynchronizedHandler;
 
     move-result-object v2
 
     int-to-long v3, p1
 
-    invoke-virtual {v2, v1, v3, v4}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {v2, v1, v3, v4}, Lcom/android/gallery3d/ui/SynchronizedHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     goto :goto_0
 .end method
 
 .method private flingImages(FF)Z
     .locals 12
-    .parameter "velocityX"
-    .parameter "velocityY"
+    .param p1, "velocityX"    # F
+    .param p2, "velocityY"    # F
 
     .prologue
     const v11, 0x7fffffff
 
-    const/high16 v10, 0x3f00
+    const/high16 v10, 0x3f000000
 
     const/4 v8, 0x1
 
@@ -311,16 +312,16 @@
     float-to-int v5, v7
 
     .line 1050
-    .local v5, vx:I
+    .local v5, "vx":I
     add-float v7, p2, v10
 
     float-to-int v6, v7
 
     .line 1051
-    .local v6, vy:I
+    .local v6, "vy":I
     iget-object v7, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
     invoke-static {v7}, Lcom/android/gallery3d/ui/PhotoView;->access$2200(Lcom/android/gallery3d/ui/PhotoView;)Z
 
     move-result v7
@@ -330,7 +331,7 @@
     .line 1052
     iget-object v7, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v7}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v7
@@ -361,7 +362,7 @@
     .line 1055
     iget-object v7, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v7}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v7
@@ -376,7 +377,7 @@
     :cond_2
     iget-object v7, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
     invoke-static {v7}, Lcom/android/gallery3d/ui/PhotoView;->access$2200(Lcom/android/gallery3d/ui/PhotoView;)Z
 
     move-result v7
@@ -385,7 +386,7 @@
 
     iget-object v7, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v7}, Lcom/android/gallery3d/ui/PhotoView;->access$3400(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v7
@@ -394,7 +395,7 @@
 
     iget-object v7, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxDeletable:Z
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxDeletable:Z
     invoke-static {v7}, Lcom/android/gallery3d/ui/PhotoView;->access$3500(Lcom/android/gallery3d/ui/PhotoView;)Z
 
     move-result v7
@@ -409,7 +410,7 @@
     move-result v4
 
     .line 1064
-    .local v4, maxVelocity:I
+    .local v4, "maxVelocity":I
     const/16 v7, 0x1f4
 
     invoke-static {v7}, Lcom/android/gallery3d/util/GalleryUtils;->dpToPixel(I)I
@@ -417,17 +418,17 @@
     move-result v2
 
     .line 1066
-    .local v2, escapeVelocity:I
+    .local v2, "escapeVelocity":I
     iget-object v7, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v7}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v7
 
     iget-object v10, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v10}, Lcom/android/gallery3d/ui/PhotoView;->access$3400(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v10
@@ -441,7 +442,7 @@
     move-result v0
 
     .line 1068
-    .local v0, centerY:I
+    .local v0, "centerY":I
     invoke-static {v6}, Ljava/lang/Math;->abs(I)I
 
     move-result v7
@@ -465,7 +466,7 @@
     :goto_1
     iget-object v10, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    invoke-virtual {v10}, Lcom/android/gallery3d/ui/GLView;->getHeight()I
+    invoke-virtual {v10}, Lcom/android/gallery3d/ui/PhotoView;->getHeight()I
 
     move-result v10
 
@@ -481,7 +482,7 @@
     move v3, v8
 
     .line 1071
-    .local v3, fastEnough:Z
+    .local v3, "fastEnough":Z
     :goto_3
     if-eqz v3, :cond_0
 
@@ -493,14 +494,14 @@
     .line 1073
     iget-object v7, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v7}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v7
 
     iget-object v10, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v10}, Lcom/android/gallery3d/ui/PhotoView;->access$3400(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v10
@@ -510,13 +511,13 @@
     move-result v1
 
     .line 1074
-    .local v1, duration:I
+    .local v1, "duration":I
     if-ltz v1, :cond_0
 
     .line 1075
     iget-object v7, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v7}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v7
@@ -534,7 +535,7 @@
     .line 1079
     iget-object v7, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #setter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # setter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v7, v11}, Lcom/android/gallery3d/ui/PhotoView;->access$3402(Lcom/android/gallery3d/ui/PhotoView;I)I
 
     move v9, v8
@@ -542,8 +543,8 @@
     .line 1080
     goto/16 :goto_0
 
-    .end local v1           #duration:I
-    .end local v3           #fastEnough:Z
+    .end local v1    # "duration":I
+    .end local v3    # "fastEnough":Z
     :cond_4
     move v7, v9
 
@@ -570,7 +571,7 @@
     .line 1171
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mCancelExtraScalingPending:Z
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mCancelExtraScalingPending:Z
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$700(Lcom/android/gallery3d/ui/PhotoView;)Z
 
     move-result v0
@@ -580,7 +581,7 @@
     .line 1172
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mHandler:Lcom/android/gallery3d/ui/SynchronizedHandler;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mHandler:Lcom/android/gallery3d/ui/SynchronizedHandler;
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$1000(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/SynchronizedHandler;
 
     move-result-object v0
@@ -589,12 +590,12 @@
 
     const-wide/16 v2, 0x2bc
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/gallery3d/ui/SynchronizedHandler;->sendEmptyMessageDelayed(IJ)Z
 
     .line 1174
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v0
@@ -604,7 +605,7 @@
     .line 1175
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #setter for: Lcom/android/gallery3d/ui/PhotoView;->mCancelExtraScalingPending:Z
+    # setter for: Lcom/android/gallery3d/ui/PhotoView;->mCancelExtraScalingPending:Z
     invoke-static {v0, v4}, Lcom/android/gallery3d/ui/PhotoView;->access$702(Lcom/android/gallery3d/ui/PhotoView;Z)Z
 
     .line 1177
@@ -621,7 +622,7 @@
     .line 1180
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mCancelExtraScalingPending:Z
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mCancelExtraScalingPending:Z
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$700(Lcom/android/gallery3d/ui/PhotoView;)Z
 
     move-result v0
@@ -631,19 +632,19 @@
     .line 1181
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mHandler:Lcom/android/gallery3d/ui/SynchronizedHandler;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mHandler:Lcom/android/gallery3d/ui/SynchronizedHandler;
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$1000(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/SynchronizedHandler;
 
     move-result-object v0
 
     const/4 v1, 0x2
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
+    invoke-virtual {v0, v1}, Lcom/android/gallery3d/ui/SynchronizedHandler;->removeMessages(I)V
 
     .line 1182
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v0
@@ -653,7 +654,7 @@
     .line 1183
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #setter for: Lcom/android/gallery3d/ui/PhotoView;->mCancelExtraScalingPending:Z
+    # setter for: Lcom/android/gallery3d/ui/PhotoView;->mCancelExtraScalingPending:Z
     invoke-static {v0, v2}, Lcom/android/gallery3d/ui/PhotoView;->access$702(Lcom/android/gallery3d/ui/PhotoView;Z)Z
 
     .line 1185
@@ -665,13 +666,13 @@
 # virtual methods
 .method public onDoubleTap(FF)Z
     .locals 6
-    .parameter "x"
-    .parameter "y"
+    .param p1, "x"    # F
+    .param p2, "y"    # F
 
     .prologue
     const/4 v4, 0x0
 
-    const/high16 v5, 0x3fc0
+    const/high16 v5, 0x3fc00000
 
     const/4 v3, 0x1
 
@@ -690,7 +691,7 @@
     :cond_0
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPictures:Lcom/android/gallery3d/util/RangeArray;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPictures:Lcom/android/gallery3d/util/RangeArray;
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$3300(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/util/RangeArray;
 
     move-result-object v2
@@ -715,23 +716,23 @@
     :cond_1
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v0
 
     .line 980
-    .local v0, controller:Lcom/android/gallery3d/ui/PositionController;
+    .local v0, "controller":Lcom/android/gallery3d/ui/PositionController;
     invoke-virtual {v0}, Lcom/android/gallery3d/ui/PositionController;->getImageScale()F
 
     move-result v1
 
     .line 983
-    .local v1, scale:F
+    .local v1, "scale":F
     iput-boolean v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->mIgnoreUpEvent:Z
 
     .line 984
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     cmpg-float v2, v1, v2
 
@@ -768,22 +769,22 @@
 
 .method public onDown(FF)V
     .locals 8
-    .parameter "x"
-    .parameter "y"
+    .param p1, "x"    # F
+    .param p2, "y"    # F
 
     .prologue
     const v7, 0x7fffffff
 
     const/4 v6, 0x1
 
-    const/high16 v5, 0x3f00
+    const/high16 v5, 0x3f000000
 
     const/4 v4, 0x0
 
     .line 1189
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPictures:Lcom/android/gallery3d/util/RangeArray;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPictures:Lcom/android/gallery3d/util/RangeArray;
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$3300(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/util/RangeArray;
 
     move-result-object v2
@@ -803,7 +804,7 @@
     .line 1190
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$000(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PhotoView$Listener;
 
     move-result-object v2
@@ -816,7 +817,7 @@
 
     const/4 v3, 0x4
 
-    #calls: Lcom/android/gallery3d/ui/PhotoView;->checkHideUndoBar(I)V
+    # invokes: Lcom/android/gallery3d/ui/PhotoView;->checkHideUndoBar(I)V
     invoke-static {v2, v3}, Lcom/android/gallery3d/ui/PhotoView;->access$1600(Lcom/android/gallery3d/ui/PhotoView;I)V
 
     .line 1194
@@ -838,12 +839,13 @@
     :cond_1
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
+    # |= operator for: Lcom/android/gallery3d/ui/PhotoView;->mHolding:I
     invoke-static {v2, v6}, Lcom/android/gallery3d/ui/PhotoView;->access$376(Lcom/android/gallery3d/ui/PhotoView;I)I
 
     .line 1201
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$2200(Lcom/android/gallery3d/ui/PhotoView;)Z
 
     move-result v2
@@ -852,7 +854,7 @@
 
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v2
@@ -869,7 +871,7 @@
     .line 1203
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v2
@@ -883,7 +885,7 @@
     .line 1209
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$2200(Lcom/android/gallery3d/ui/PhotoView;)Z
 
     move-result v2
@@ -896,18 +898,18 @@
     float-to-int v0, v2
 
     .line 1211
-    .local v0, xi:I
+    .local v0, "xi":I
     add-float v2, p2, v5
 
     float-to-int v1, v2
 
     .line 1212
-    .local v1, yi:I
+    .local v1, "yi":I
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v3}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v3
@@ -916,20 +918,20 @@
 
     move-result v3
 
-    #setter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # setter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v2, v3}, Lcom/android/gallery3d/ui/PhotoView;->access$3402(Lcom/android/gallery3d/ui/PhotoView;I)I
 
     .line 1213
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$3400(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v2
 
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPrevBound:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPrevBound:I
     invoke-static {v3}, Lcom/android/gallery3d/ui/PhotoView;->access$1200(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v3
@@ -938,14 +940,14 @@
 
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$3400(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v2
 
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mNextBound:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mNextBound:I
     invoke-static {v3}, Lcom/android/gallery3d/ui/PhotoView;->access$1100(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v3
@@ -956,35 +958,35 @@
     :cond_2
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #setter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # setter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v2, v7}, Lcom/android/gallery3d/ui/PhotoView;->access$3402(Lcom/android/gallery3d/ui/PhotoView;I)I
 
     goto :goto_0
 
     .line 1205
-    .end local v0           #xi:I
-    .end local v1           #yi:I
+    .end local v0    # "xi":I
+    .end local v1    # "yi":I
     :cond_3
     iput-boolean v4, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->mDownInScrolling:Z
 
     goto :goto_1
 
     .line 1216
-    .restart local v0       #xi:I
-    .restart local v1       #yi:I
+    .restart local v0    # "xi":I
+    .restart local v1    # "yi":I
     :cond_4
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPictures:Lcom/android/gallery3d/util/RangeArray;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPictures:Lcom/android/gallery3d/util/RangeArray;
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$3300(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/util/RangeArray;
 
     move-result-object v2
 
     iget-object v4, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v4}, Lcom/android/gallery3d/ui/PhotoView;->access$3400(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v4
@@ -999,18 +1001,18 @@
 
     move-result v2
 
-    #setter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxDeletable:Z
+    # setter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxDeletable:Z
     invoke-static {v3, v2}, Lcom/android/gallery3d/ui/PhotoView;->access$3502(Lcom/android/gallery3d/ui/PhotoView;Z)Z
 
     goto/16 :goto_0
 
     .line 1220
-    .end local v0           #xi:I
-    .end local v1           #yi:I
+    .end local v0    # "xi":I
+    .end local v1    # "yi":I
     :cond_5
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #setter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # setter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v2, v7}, Lcom/android/gallery3d/ui/PhotoView;->access$3402(Lcom/android/gallery3d/ui/PhotoView;I)I
 
     goto/16 :goto_0
@@ -1018,8 +1020,8 @@
 
 .method public onFling(FF)Z
     .locals 2
-    .parameter "velocityX"
-    .parameter "velocityY"
+    .param p1, "velocityX"    # F
+    .param p2, "velocityY"    # F
 
     .prologue
     const/4 v1, 0x1
@@ -1043,7 +1045,7 @@
     .line 1040
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #calls: Lcom/android/gallery3d/ui/PhotoView;->swipeImages(FF)Z
+    # invokes: Lcom/android/gallery3d/ui/PhotoView;->swipeImages(FF)Z
     invoke-static {v0, p1, p2}, Lcom/android/gallery3d/ui/PhotoView;->access$3600(Lcom/android/gallery3d/ui/PhotoView;FF)Z
 
     move-result v0
@@ -1064,13 +1066,13 @@
 
 .method public onLongPress(Landroid/view/MotionEvent;)V
     .locals 2
-    .parameter "e"
+    .param p1, "e"    # Landroid/view/MotionEvent;
 
     .prologue
     .line 1261
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPictures:Lcom/android/gallery3d/util/RangeArray;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPictures:Lcom/android/gallery3d/util/RangeArray;
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$3300(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/util/RangeArray;
 
     move-result-object v0
@@ -1092,7 +1094,7 @@
     .line 1262
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$000(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PhotoView$Listener;
 
     move-result-object v0
@@ -1106,9 +1108,9 @@
 
 .method public onScale(FFF)Z
     .locals 6
-    .parameter "focusX"
-    .parameter "focusY"
-    .parameter "scale"
+    .param p1, "focusX"    # F
+    .param p2, "focusY"    # F
+    .param p3, "scale"    # F
 
     .prologue
     const/4 v2, 0x0
@@ -1123,7 +1125,7 @@
     .line 1120
     iget-object v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
     invoke-static {v2}, Lcom/android/gallery3d/ui/PhotoView;->access$000(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PhotoView$Listener;
 
     move-result-object v2
@@ -1168,7 +1170,7 @@
     :cond_3
     iget-object v4, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v4}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v4
@@ -1178,7 +1180,7 @@
     move-result v1
 
     .line 1132
-    .local v1, outOfRange:I
+    .local v1, "outOfRange":I
     iget v4, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->mAccScale:F
 
     mul-float/2addr v4, p3
@@ -1206,7 +1208,7 @@
     move v0, v3
 
     .line 1136
-    .local v0, largeEnough:Z
+    .local v0, "largeEnough":Z
     :goto_1
     iget-boolean v4, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->mCanChangeMode:Z
 
@@ -1219,7 +1221,7 @@
 
     iget-object v4, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
     invoke-static {v4}, Lcom/android/gallery3d/ui/PhotoView;->access$2200(Lcom/android/gallery3d/ui/PhotoView;)Z
 
     move-result v4
@@ -1231,7 +1233,7 @@
 
     iget-object v4, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
     invoke-static {v4}, Lcom/android/gallery3d/ui/PhotoView;->access$2200(Lcom/android/gallery3d/ui/PhotoView;)Z
 
     move-result v4
@@ -1247,6 +1249,7 @@
 
     const/4 v5, -0x2
 
+    # &= operator for: Lcom/android/gallery3d/ui/PhotoView;->mHolding:I
     invoke-static {v4, v5}, Lcom/android/gallery3d/ui/PhotoView;->access$372(Lcom/android/gallery3d/ui/PhotoView;I)I
 
     .line 1144
@@ -1254,7 +1257,7 @@
 
     iget-object v5, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
     invoke-static {v5}, Lcom/android/gallery3d/ui/PhotoView;->access$2200(Lcom/android/gallery3d/ui/PhotoView;)Z
 
     move-result v5
@@ -1264,7 +1267,7 @@
     move v2, v3
 
     :cond_7
-    #calls: Lcom/android/gallery3d/ui/PhotoView;->setFilmMode(Z)V
+    # invokes: Lcom/android/gallery3d/ui/PhotoView;->setFilmMode(Z)V
     invoke-static {v4, v2}, Lcom/android/gallery3d/ui/PhotoView;->access$2300(Lcom/android/gallery3d/ui/PhotoView;Z)V
 
     .line 1148
@@ -1275,7 +1278,7 @@
 
     goto :goto_0
 
-    .end local v0           #largeEnough:Z
+    .end local v0    # "largeEnough":Z
     :cond_8
     move v0, v2
 
@@ -1283,7 +1286,7 @@
     goto :goto_1
 
     .line 1154
-    .restart local v0       #largeEnough:Z
+    .restart local v0    # "largeEnough":Z
     :cond_9
     if-eqz v1, :cond_a
 
@@ -1301,8 +1304,8 @@
 
 .method public onScaleBegin(FF)Z
     .locals 3
-    .parameter "focusX"
-    .parameter "focusY"
+    .param p1, "focusX"    # F
+    .param p2, "focusY"    # F
 
     .prologue
     const/4 v1, 0x0
@@ -1312,7 +1315,7 @@
     .line 1100
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPictures:Lcom/android/gallery3d/util/RangeArray;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPictures:Lcom/android/gallery3d/util/RangeArray;
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$3300(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/util/RangeArray;
 
     move-result-object v0
@@ -1337,7 +1340,7 @@
     .line 1102
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$000(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PhotoView$Listener;
 
     move-result-object v0
@@ -1358,7 +1361,7 @@
     .line 1106
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v0
@@ -1368,7 +1371,7 @@
     .line 1109
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$2200(Lcom/android/gallery3d/ui/PhotoView;)Z
 
     move-result v0
@@ -1377,7 +1380,7 @@
 
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v0
@@ -1401,7 +1404,7 @@
     iput-boolean v2, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->mSeenScaling:Z
 
     .line 1113
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
     iput v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->mAccScale:F
 
@@ -1442,7 +1445,7 @@
     .line 1167
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v0
@@ -1454,13 +1457,13 @@
 
 .method public onScroll(FFFF)Z
     .locals 8
-    .parameter "dx"
-    .parameter "dy"
-    .parameter "totalX"
-    .parameter "totalY"
+    .param p1, "dx"    # F
+    .param p2, "dy"    # F
+    .param p3, "totalX"    # F
+    .param p4, "totalY"    # F
 
     .prologue
-    const/high16 v7, 0x3f00
+    const/high16 v7, 0x3f000000
 
     const/4 v5, 0x1
 
@@ -1510,7 +1513,7 @@
     float-to-int v1, v4
 
     .line 1001
-    .local v1, dxi:I
+    .local v1, "dxi":I
     neg-float v4, p2
 
     add-float/2addr v4, v7
@@ -1518,10 +1521,10 @@
     float-to-int v2, v4
 
     .line 1002
-    .local v2, dyi:I
+    .local v2, "dyi":I
     iget-object v4, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
     invoke-static {v4}, Lcom/android/gallery3d/ui/PhotoView;->access$2200(Lcom/android/gallery3d/ui/PhotoView;)Z
 
     move-result v4
@@ -1536,7 +1539,7 @@
     .line 1004
     iget-object v4, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v4}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v4
@@ -1546,20 +1549,20 @@
     goto :goto_0
 
     .line 997
-    .end local v1           #dxi:I
-    .end local v2           #dyi:I
+    .end local v1    # "dxi":I
+    .end local v2    # "dyi":I
     :cond_3
     const/4 v4, 0x0
 
     goto :goto_1
 
     .line 1006
-    .restart local v1       #dxi:I
-    .restart local v2       #dyi:I
+    .restart local v1    # "dxi":I
+    .restart local v2    # "dyi":I
     :cond_4
     iget-object v4, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v4}, Lcom/android/gallery3d/ui/PhotoView;->access$3400(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v4
@@ -1574,26 +1577,26 @@
     move-result v3
 
     .line 1008
-    .local v3, newDeltaY:I
+    .local v3, "newDeltaY":I
     iget v4, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->mDeltaY:I
 
     sub-int v0, v3, v4
 
     .line 1009
-    .local v0, d:I
+    .local v0, "d":I
     if-eqz v0, :cond_0
 
     .line 1010
     iget-object v4, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v4}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v4
 
     iget-object v6, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v6}, Lcom/android/gallery3d/ui/PhotoView;->access$3400(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v6
@@ -1606,12 +1609,12 @@
     goto :goto_0
 
     .line 1015
-    .end local v0           #d:I
-    .end local v3           #newDeltaY:I
+    .end local v0    # "d":I
+    .end local v3    # "newDeltaY":I
     :cond_5
     iget-object v4, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v4}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v4
@@ -1623,13 +1626,13 @@
 
 .method public onSingleTapUp(FF)Z
     .locals 9
-    .parameter "x"
-    .parameter "y"
+    .param p1, "x"    # F
+    .param p2, "y"    # F
 
     .prologue
     const/4 v8, 0x0
 
-    const/high16 v7, 0x3f00
+    const/high16 v7, 0x3f000000
 
     const/4 v6, 0x1
 
@@ -1638,12 +1641,13 @@
 
     const/4 v4, -0x2
 
+    # &= operator for: Lcom/android/gallery3d/ui/PhotoView;->mHolding:I
     invoke-static {v3, v4}, Lcom/android/gallery3d/ui/PhotoView;->access$372(Lcom/android/gallery3d/ui/PhotoView;I)I
 
     .line 956
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
     invoke-static {v3}, Lcom/android/gallery3d/ui/PhotoView;->access$2200(Lcom/android/gallery3d/ui/PhotoView;)Z
 
     move-result v3
@@ -1665,13 +1669,13 @@
 
     float-to-int v5, v5
 
-    #calls: Lcom/android/gallery3d/ui/PhotoView;->switchToHitPicture(II)V
+    # invokes: Lcom/android/gallery3d/ui/PhotoView;->switchToHitPicture(II)V
     invoke-static {v3, v4, v5}, Lcom/android/gallery3d/ui/PhotoView;->access$3200(Lcom/android/gallery3d/ui/PhotoView;II)V
 
     .line 958
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #calls: Lcom/android/gallery3d/ui/PhotoView;->setFilmMode(Z)V
+    # invokes: Lcom/android/gallery3d/ui/PhotoView;->setFilmMode(Z)V
     invoke-static {v3, v8}, Lcom/android/gallery3d/ui/PhotoView;->access$2300(Lcom/android/gallery3d/ui/PhotoView;Z)V
 
     .line 959
@@ -1686,7 +1690,7 @@
     :cond_1
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
     invoke-static {v3}, Lcom/android/gallery3d/ui/PhotoView;->access$000(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PhotoView$Listener;
 
     move-result-object v3
@@ -1696,7 +1700,7 @@
     .line 965
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    invoke-virtual {v3}, Lcom/android/gallery3d/ui/GLView;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
+    invoke-virtual {v3}, Lcom/android/gallery3d/ui/PhotoView;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
 
     move-result-object v3
 
@@ -1705,13 +1709,13 @@
     move-result-object v1
 
     .line 966
-    .local v1, m:Landroid/graphics/Matrix;
+    .local v1, "m":Landroid/graphics/Matrix;
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     .line 967
-    .local v0, inv:Landroid/graphics/Matrix;
+    .local v0, "inv":Landroid/graphics/Matrix;
     invoke-virtual {v1, v0}, Landroid/graphics/Matrix;->invert(Landroid/graphics/Matrix;)Z
 
     .line 968
@@ -1724,13 +1728,13 @@
     aput p2, v2, v6
 
     .line 969
-    .local v2, pts:[F
+    .local v2, "pts":[F
     invoke-virtual {v0, v2}, Landroid/graphics/Matrix;->mapPoints([F)V
 
     .line 970
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
     invoke-static {v3}, Lcom/android/gallery3d/ui/PhotoView;->access$000(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PhotoView$Listener;
 
     move-result-object v3
@@ -1756,7 +1760,7 @@
     .locals 8
 
     .prologue
-    const/high16 v7, 0x3f00
+    const/high16 v7, 0x3f000000
 
     const/4 v4, 0x0
 
@@ -1775,12 +1779,13 @@
 
     const/4 v5, -0x2
 
+    # &= operator for: Lcom/android/gallery3d/ui/PhotoView;->mHolding:I
     invoke-static {v3, v5}, Lcom/android/gallery3d/ui/PhotoView;->access$372(Lcom/android/gallery3d/ui/PhotoView;I)I
 
     .line 1229
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mEdgeView:Lcom/android/gallery3d/ui/EdgeView;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mEdgeView:Lcom/android/gallery3d/ui/EdgeView;
     invoke-static {v3}, Lcom/android/gallery3d/ui/PhotoView;->access$400(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/EdgeView;
 
     move-result-object v3
@@ -1790,7 +1795,7 @@
     .line 1233
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mFilmMode:Z
     invoke-static {v3}, Lcom/android/gallery3d/ui/PhotoView;->access$2200(Lcom/android/gallery3d/ui/PhotoView;)Z
 
     move-result v3
@@ -1807,7 +1812,7 @@
 
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v3}, Lcom/android/gallery3d/ui/PhotoView;->access$3400(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v3
@@ -1819,14 +1824,14 @@
     .line 1235
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v3}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v3
 
     iget-object v5, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v5}, Lcom/android/gallery3d/ui/PhotoView;->access$3400(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v5
@@ -1836,15 +1841,15 @@
     move-result-object v2
 
     .line 1236
-    .local v2, r:Landroid/graphics/Rect;
+    .local v2, "r":Landroid/graphics/Rect;
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    invoke-virtual {v3}, Lcom/android/gallery3d/ui/GLView;->getHeight()I
+    invoke-virtual {v3}, Lcom/android/gallery3d/ui/PhotoView;->getHeight()I
 
     move-result v1
 
     .line 1237
-    .local v1, h:I
+    .local v1, "h":I
     invoke-virtual {v2}, Landroid/graphics/Rect;->centerY()I
 
     move-result v3
@@ -1874,14 +1879,14 @@
     .line 1238
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v3}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v3
 
     iget-object v5, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mTouchBoxIndex:I
     invoke-static {v5}, Lcom/android/gallery3d/ui/PhotoView;->access$3400(Lcom/android/gallery3d/ui/PhotoView;)I
 
     move-result v5
@@ -1891,13 +1896,13 @@
     move-result v0
 
     .line 1240
-    .local v0, duration:I
+    .local v0, "duration":I
     if-ltz v0, :cond_1
 
     .line 1241
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mPositionController:Lcom/android/gallery3d/ui/PositionController;
     invoke-static {v3}, Lcom/android/gallery3d/ui/PhotoView;->access$600(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PositionController;
 
     move-result-object v5
@@ -1925,9 +1930,9 @@
     invoke-direct {p0, v0}, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->deleteAfterAnimation(I)V
 
     .line 1247
-    .end local v0           #duration:I
-    .end local v1           #h:I
-    .end local v2           #r:Landroid/graphics/Rect;
+    .end local v0    # "duration":I
+    .end local v1    # "h":I
+    .end local v2    # "r":Landroid/graphics/Rect;
     :cond_1
     iget-boolean v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->mIgnoreUpEvent:Z
 
@@ -1938,9 +1943,9 @@
 
     goto/16 :goto_0
 
-    .restart local v0       #duration:I
-    .restart local v1       #h:I
-    .restart local v2       #r:Landroid/graphics/Rect;
+    .restart local v0    # "duration":I
+    .restart local v1    # "h":I
+    .restart local v2    # "r":Landroid/graphics/Rect;
     :cond_2
     move v3, v4
 
@@ -1948,13 +1953,13 @@
     goto :goto_1
 
     .line 1252
-    .end local v0           #duration:I
-    .end local v1           #h:I
-    .end local v2           #r:Landroid/graphics/Rect;
+    .end local v0    # "duration":I
+    .end local v1    # "h":I
+    .end local v2    # "r":Landroid/graphics/Rect;
     :cond_3
     iget-object v3, p0, Lcom/android/gallery3d/ui/PhotoView$MyGestureListener;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #calls: Lcom/android/gallery3d/ui/PhotoView;->snapback()V
+    # invokes: Lcom/android/gallery3d/ui/PhotoView;->snapback()V
     invoke-static {v3}, Lcom/android/gallery3d/ui/PhotoView;->access$1500(Lcom/android/gallery3d/ui/PhotoView;)V
 
     goto/16 :goto_0
@@ -1962,7 +1967,7 @@
 
 .method public setSwipingEnabled(Z)V
     .locals 1
-    .parameter "enabled"
+    .param p1, "enabled"    # Z
 
     .prologue
     .line 1256

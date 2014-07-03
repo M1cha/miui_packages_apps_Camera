@@ -172,7 +172,7 @@
     <string name="video_reach_size_limit">Достигнут предельный размер видео</string>
     <string name="pref_camera_hfr_title">Частота кадров в режиме замедления</string>
     <string name="pref_camera_hfr_entry_off">Выкл.</string>
-    <string name="pref_video_speed_title">Скорость видео</string>
+    <string name="pref_video_speed_title">Скорость съемки</string>
     <string name="pref_video_speed_entry_normal">Обычная</string>
     <string name="pref_video_speed_entry_fast">Быстрая</string>
     <string name="pref_video_speed_entry_slow">Медленная</string>
@@ -259,7 +259,6 @@
     <string name="pref_camera_ae_bracket_hdr_entry_off">Выкл.</string>
     <string name="pref_camera_ae_bracket_hdr_entry_hdr">HDR</string>
     <string name="pref_camera_ae_bracket_hdr_entry_ae_bracket">AE-Bracket</string>
-    <string name="pref_camera_ae_bracket_hdr_default">Выкл</string>
     <string name="hdr_exit_button_text">Выйти</string>
     <string name="hand_night_exit_button_text">Выйти</string>
     <string name="videocamera_settings_label">Настройки видеокамеры</string>
@@ -440,16 +439,18 @@
     <string name="pref_camera_watermark_title">Дата на фотографии</string>
     <string name="pref_camera_watermark_entry_off">Выкл.</string>
     <string name="pref_camera_watermark_entry_on">Вкл.</string>
+    <string name="find_weixin_qrcode">Поиск в WeiXin по QR-коду</string>
     <string name="cannot_connect_camera">Не удаeтся подключиться к камере</string>
-    <string name="enter_expert_mode_title">Профессиональный режим</string>
+    <string name="pref_camera_picturesize_entry_standard">Стандарт 4:3</string>
+    <string name="pref_scan_qrcode_title">Сканировать QR-код</string>
+    <string name="pref_scan_qrcode_entry_off">Выкл.</string>
+    <string name="pref_scan_qrcode_entry_on">Вкл.</string>
     <string name="open">Включить</string>
     <string name="pref_camera_coloreffect_title_simple_mode">Эффекты</string>
     <string name="pref_video_continuous_focus">Непрерывный фокус</string>
     <string name="pref_video_continuous_focus_entry_off">Выкл.</string>
     <string name="pref_video_continuous_focus_entry_on">Вкл.</string>
     <string name="skip">Пропустить</string>
-    <string name="find_weixin_qrcode">Поиск в WeiXin по QR-коду</string>
-    <string name="weixin_details">Информация о WeiXin:</string>
     <string name="access_phone_fail_no_product">Нет доступа к USB-накопителю</string>
     <string name="access_sd_fail_no_product">Нет доступа к SD-карте</string>
     <string name="pref_camera_coloreffect_entry_blackboard">Черная доска</string>
@@ -459,7 +460,6 @@
     <string name="pref_camera_contrast_entry_low">Низкий</string>
     <string name="pref_camera_contrast_entry_middle">Средний(По умолчанию)</string>
     <string name="pref_camera_picturesize_entry_full_screen">Широкоформатный 16:9</string>
-    <string name="pref_camera_picturesize_entry_standard">Стандарт 4:3</string>
     <string name="pref_camera_picturesize_professional_entry_1280x960">1.3 Мп (1280x960)</string>
     <string name="pref_camera_picturesize_professional_entry_2560x1440">4 Мп (2560x1440)</string>
     <string name="pref_camera_picturesize_professional_entry_2560x1920">5 Мп (2560x1920)</string>
@@ -474,9 +474,8 @@
     <string name="pref_camera_storage_external_entry_off">Память телефона</string>
     <string name="pref_camera_storage_external_entry_on">SD-карта</string>
     <string name="pref_camera_storage_external_title">Накопитель</string>
-    <string name="pref_scan_qrcode_entry_off">Выкл.</string>
-    <string name="pref_scan_qrcode_entry_on">Вкл.</string>
-    <string name="pref_scan_qrcode_title">Сканировать QR-код</string>
     <string name="pref_camera_id_entry_back">Основная</string>
     <string name="pref_camera_id_entry_front">Фронтальная</string>
+    <string name="weixin_details">Информация о WeiXin:</string>
+    <string name="enter_expert_mode_title">Профессиональный режим</string>
 </resources>

@@ -74,7 +74,7 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 6
-    .parameter "context"
+    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     const/4 v5, -0x1
@@ -139,7 +139,7 @@
     .line 51
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     iget-object v1, p0, Lcom/android/camera/MiuiCameraSound;->mSoundIds:[I
 
@@ -167,7 +167,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/MiuiCameraSound;)I
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/MiuiCameraSound;
 
     .prologue
     .line 14
@@ -178,8 +178,8 @@
 
 .method static synthetic access$002(Lcom/android/camera/MiuiCameraSound;I)I
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/camera/MiuiCameraSound;
+    .param p1, "x1"    # I
 
     .prologue
     .line 14
@@ -190,14 +190,14 @@
 
 .method private loadFromAsset(I)I
     .locals 5
-    .parameter "soundName"
+    .param p1, "soundName"    # I
 
     .prologue
     .line 72
     const/4 v1, -0x1
 
     .line 74
-    .local v1, soundId:I
+    .local v1, "soundId":I
     :try_start_0
     iget-object v2, p0, Lcom/android/camera/MiuiCameraSound;->mSoundPool:Landroid/media/SoundPool;
 
@@ -228,16 +228,16 @@
     move-exception v0
 
     .line 76
-    .local v0, e:Ljava/io/IOException;
-    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
+    .local v0, "e":Ljava/io/IOException;
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_0
 .end method
 
 .method private declared-synchronized play(II)V
     .locals 7
-    .parameter "soundName"
-    .parameter "times"
+    .param p1, "soundName"    # I
+    .param p2, "times"    # I
 
     .prologue
     .line 82
@@ -354,15 +354,15 @@
 
     aget v1, v1, p1
 
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     const/4 v4, 0x0
 
     add-int/lit8 v5, p2, -0x1
 
-    const/high16 v6, 0x3f80
+    const/high16 v6, 0x3f800000
 
     invoke-virtual/range {v0 .. v6}, Landroid/media/SoundPool;->play(IFFIIF)I
     :try_end_2
@@ -375,7 +375,7 @@
 # virtual methods
 .method public declared-synchronized load(I)V
     .locals 4
-    .parameter "soundName"
+    .param p1, "soundName"    # I
 
     .prologue
     .line 58
@@ -491,7 +491,7 @@
 
 .method public playSound(I)V
     .locals 1
-    .parameter "soundId"
+    .param p1, "soundId"    # I
 
     .prologue
     .line 128
@@ -505,8 +505,8 @@
 
 .method public playSound(II)V
     .locals 2
-    .parameter "soundId"
-    .parameter "times"
+    .param p1, "soundId"    # I
+    .param p2, "times"    # I
 
     .prologue
     .line 122

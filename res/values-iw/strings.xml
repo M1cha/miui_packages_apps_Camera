@@ -427,18 +427,18 @@
     <string name="pref_camera_watermark_title">טביעת מים של זמן</string>
     <string name="pref_camera_watermark_entry_off">כבוי</string>
     <string name="pref_camera_watermark_entry_on">פעיל</string>
+    <string name="find_weixin_qrcode">Find weixin QR code</string>
     <string name="cannot_connect_camera">לא ניתן להתחבר למצלמה.</string>
-    <string name="enter_expert_mode_title">מצב מתקדם</string>
     <string name="open">פתח</string>
     <string name="pref_camera_coloreffect_title_simple_mode">מסננים</string>
-    <string name="pref_camera_preview_title">תצוגה מקדימה</string>
     <string name="pref_video_continuous_focus">מיקוד מתמשך</string>
     <string name="pref_video_continuous_focus_entry_off">כבוי</string>
     <string name="pref_video_continuous_focus_entry_on">דלוק</string>
+    <string name="skip">דלג</string>
+    <string name="weixin_details">"Weixin details: "</string>
+    <string name="enter_expert_mode_title">מצב מתקדם</string>
+    <string name="pref_camera_preview_title">תצוגה מקדימה</string>
     <string name="pref_video_time_lapse_frame_interval_entry_100">100x</string>
     <string name="pref_video_time_lapse_frame_interval_entry_250">250x</string>
     <string name="pref_video_time_lapse_frame_interval_entry_50">50x</string>
-    <string name="skip">דלג</string>
-    <string name="find_weixin_qrcode">Find weixin QR code</string>
-    <string name="weixin_details">"Weixin details: "</string>
 </resources>

@@ -31,11 +31,11 @@
 # direct methods
 .method public constructor <init>(IZZII)V
     .locals 7
-    .parameter "action"
-    .parameter "applied"
-    .parameter "enabled"
-    .parameter "title"
-    .parameter "clusterBy"
+    .param p1, "action"    # I
+    .param p2, "applied"    # Z
+    .param p3, "enabled"    # Z
+    .param p4, "title"    # I
+    .param p5, "clusterBy"    # I
 
     .prologue
     .line 64
@@ -61,12 +61,12 @@
 
 .method public constructor <init>(IZZIII)V
     .locals 1
-    .parameter "action"
-    .parameter "applied"
-    .parameter "enabled"
-    .parameter "spinnerTitle"
-    .parameter "dialogTitle"
-    .parameter "clusterBy"
+    .param p1, "action"    # I
+    .param p2, "applied"    # Z
+    .param p3, "enabled"    # Z
+    .param p4, "spinnerTitle"    # I
+    .param p5, "dialogTitle"    # I
+    .param p6, "clusterBy"    # I
 
     .prologue
     .line 68

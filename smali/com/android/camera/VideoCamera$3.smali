@@ -45,18 +45,18 @@
     .line 1788
     iget-object v0, p0, Lcom/android/camera/VideoCamera$3;->this$0:Lcom/android/camera/VideoCamera;
 
-    invoke-virtual {v0, v1}, Lcom/android/camera/ActivityBase;->setSwipingEnabled(Z)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/VideoCamera;->setSwipingEnabled(Z)V
 
     .line 1789
     iget-object v0, p0, Lcom/android/camera/VideoCamera$3;->this$0:Lcom/android/camera/VideoCamera;
 
-    #calls: Lcom/android/camera/VideoCamera;->enableExitButton(Z)V
+    # invokes: Lcom/android/camera/VideoCamera;->enableExitButton(Z)V
     invoke-static {v0, v1}, Lcom/android/camera/VideoCamera;->access$1500(Lcom/android/camera/VideoCamera;Z)V
 
     .line 1790
     iget-object v0, p0, Lcom/android/camera/VideoCamera$3;->this$0:Lcom/android/camera/VideoCamera;
 
-    #getter for: Lcom/android/camera/VideoCamera;->mAudioManager:Landroid/media/AudioManager;
+    # getter for: Lcom/android/camera/VideoCamera;->mAudioManager:Landroid/media/AudioManager;
     invoke-static {v0}, Lcom/android/camera/VideoCamera;->access$1600(Lcom/android/camera/VideoCamera;)Landroid/media/AudioManager;
 
     move-result-object v0
@@ -70,19 +70,19 @@
 
     const/4 v1, 0x0
 
-    #calls: Lcom/android/camera/VideoCamera;->showRecordingUI(Z)V
+    # invokes: Lcom/android/camera/VideoCamera;->showRecordingUI(Z)V
     invoke-static {v0, v1}, Lcom/android/camera/VideoCamera;->access$1700(Lcom/android/camera/VideoCamera;Z)V
 
     .line 1792
     iget-object v0, p0, Lcom/android/camera/VideoCamera$3;->this$0:Lcom/android/camera/VideoCamera;
 
-    #calls: Lcom/android/camera/VideoCamera;->keepScreenOnAwhile()V
+    # invokes: Lcom/android/camera/VideoCamera;->keepScreenOnAwhile()V
     invoke-static {v0}, Lcom/android/camera/VideoCamera;->access$1800(Lcom/android/camera/VideoCamera;)V
 
     .line 1793
     iget-object v0, p0, Lcom/android/camera/VideoCamera$3;->this$0:Lcom/android/camera/VideoCamera;
 
-    #calls: Lcom/android/camera/VideoCamera;->effectsActive()Z
+    # invokes: Lcom/android/camera/VideoCamera;->effectsActive()Z
     invoke-static {v0}, Lcom/android/camera/VideoCamera;->access$1300(Lcom/android/camera/VideoCamera;)Z
 
     move-result v0
@@ -91,7 +91,7 @@
 
     iget-object v0, p0, Lcom/android/camera/VideoCamera$3;->this$0:Lcom/android/camera/VideoCamera;
 
-    #calls: Lcom/android/camera/VideoCamera;->getThumbnail()V
+    # invokes: Lcom/android/camera/VideoCamera;->getThumbnail()V
     invoke-static {v0}, Lcom/android/camera/VideoCamera;->access$1900(Lcom/android/camera/VideoCamera;)V
 
     .line 1794

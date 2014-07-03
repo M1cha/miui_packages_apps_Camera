@@ -14,7 +14,7 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
     .locals 0
-    .parameter "activity"
+    .param p1, "activity"    # Landroid/app/Activity;
 
     .prologue
     .line 19
@@ -29,11 +29,11 @@
 
 .method static synthetic access$000(Lcom/android/camera/ui/ScreenHint;Lcom/android/camera/ComboPreferences;Lcom/android/camera/LocationManager;ZZ)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-    .parameter "x3"
-    .parameter "x4"
+    .param p0, "x0"    # Lcom/android/camera/ui/ScreenHint;
+    .param p1, "x1"    # Lcom/android/camera/ComboPreferences;
+    .param p2, "x2"    # Lcom/android/camera/LocationManager;
+    .param p3, "x3"    # Z
+    .param p4, "x4"    # Z
 
     .prologue
     .line 15
@@ -44,10 +44,10 @@
 
 .method private updateFirstUseHintState(Lcom/android/camera/ComboPreferences;Lcom/android/camera/LocationManager;ZZ)V
     .locals 5
-    .parameter "preferences"
-    .parameter "locationManager"
-    .parameter "value"
-    .parameter "isFrontCamera"
+    .param p1, "preferences"    # Lcom/android/camera/ComboPreferences;
+    .param p2, "locationManager"    # Lcom/android/camera/LocationManager;
+    .param p3, "value"    # Z
+    .param p4, "isFrontCamera"    # Z
 
     .prologue
     .line 65
@@ -56,7 +56,7 @@
     move-result-object v0
 
     .line 66
-    .local v0, editor:Landroid/content/SharedPreferences$Editor;
+    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
     const-string v1, "pref_camera_recordlocation_key"
 
     invoke-interface {v0, v1, p3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
@@ -159,34 +159,34 @@
 
 .method public showFirstUseHint(Lcom/android/camera/ComboPreferences;Lcom/android/camera/LocationManager;Z)V
     .locals 10
-    .parameter "preferences"
-    .parameter "locationManager"
-    .parameter "isFrontCamera"
+    .param p1, "preferences"    # Lcom/android/camera/ComboPreferences;
+    .param p2, "locationManager"    # Lcom/android/camera/LocationManager;
+    .param p3, "isFrontCamera"    # Z
 
     .prologue
     .line 74
     move v8, p3
 
     .line 75
-    .local v8, front:Z
+    .local v8, "front":Z
     new-instance v4, Lcom/android/camera/ui/ScreenHint$1;
 
     invoke-direct {v4, p0, p1, p2, v8}, Lcom/android/camera/ui/ScreenHint$1;-><init>(Lcom/android/camera/ui/ScreenHint;Lcom/android/camera/ComboPreferences;Lcom/android/camera/LocationManager;Z)V
 
     .line 82
-    .local v4, save:Ljava/lang/Runnable;
+    .local v4, "save":Ljava/lang/Runnable;
     new-instance v6, Lcom/android/camera/ui/ScreenHint$2;
 
     invoke-direct {v6, p0, p1, p2, v8}, Lcom/android/camera/ui/ScreenHint$2;-><init>(Lcom/android/camera/ui/ScreenHint;Lcom/android/camera/ComboPreferences;Lcom/android/camera/LocationManager;Z)V
 
     .line 89
-    .local v6, no_save:Ljava/lang/Runnable;
+    .local v6, "no_save":Ljava/lang/Runnable;
     invoke-virtual {p1}, Lcom/android/camera/ComboPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v7
 
     .line 90
-    .local v7, editor:Landroid/content/SharedPreferences$Editor;
+    .local v7, "editor":Landroid/content/SharedPreferences$Editor;
     const-string v0, "pref_camera_first_use_hint_shown_key"
 
     const/4 v1, 0x0
@@ -203,7 +203,7 @@
 
     const v2, 0x7f0d0010
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
@@ -213,7 +213,7 @@
 
     const v5, 0x7f0d0011
 
-    invoke-virtual {v3, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v3, v5}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -221,7 +221,7 @@
 
     const v9, 0x7f0d0012
 
-    invoke-virtual {v5, v9}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v5, v9}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -246,7 +246,7 @@
     const/4 v0, 0x0
 
     .line 30
-    .local v0, message:Ljava/lang/String;
+    .local v0, "message":Ljava/lang/String;
     iget-wide v1, p0, Lcom/android/camera/ui/ScreenHint;->mStorageSpace:J
 
     const-wide/16 v3, -0x1
@@ -260,7 +260,7 @@
 
     const v2, 0x7f0d0007
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -309,7 +309,7 @@
 
     const v2, 0x7f0d0009
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -330,7 +330,7 @@
 
     const v2, 0x7f0d000a
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
@@ -351,7 +351,7 @@
 
     const v2, 0x7f0d00eb
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 

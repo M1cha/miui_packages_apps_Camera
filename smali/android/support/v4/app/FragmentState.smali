@@ -60,7 +60,7 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 3
-    .parameter "in"
+    .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
     const/4 v1, 0x1
@@ -177,7 +177,7 @@
 
 .method public constructor <init>(Landroid/support/v4/app/Fragment;)V
     .locals 1
-    .parameter "frag"
+    .param p1, "frag"    # Landroid/support/v4/app/Fragment;
 
     .prologue
     .line 63
@@ -252,7 +252,7 @@
 
 .method public instantiate(Landroid/support/v4/app/FragmentActivity;)Landroid/support/v4/app/Fragment;
     .locals 3
-    .parameter "activity"
+    .param p1, "activity"    # Landroid/support/v4/app/FragmentActivity;
 
     .prologue
     .line 89
@@ -276,7 +276,7 @@
     .line 94
     iget-object v0, p0, Landroid/support/v4/app/FragmentState;->mArguments:Landroid/os/Bundle;
 
-    invoke-virtual {p1}, Landroid/content/ContextWrapper;->getClassLoader()Ljava/lang/ClassLoader;
+    invoke-virtual {p1}, Landroid/support/v4/app/FragmentActivity;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v1
 
@@ -302,7 +302,7 @@
     .line 100
     iget-object v0, p0, Landroid/support/v4/app/FragmentState;->mSavedFragmentState:Landroid/os/Bundle;
 
-    invoke-virtual {p1}, Landroid/content/ContextWrapper;->getClassLoader()Ljava/lang/ClassLoader;
+    invoke-virtual {p1}, Landroid/support/v4/app/FragmentActivity;->getClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v1
 
@@ -417,8 +417,8 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
-    .parameter "dest"
-    .parameter "flags"
+    .param p1, "dest"    # Landroid/os/Parcel;
+    .param p2, "flags"    # I
 
     .prologue
     const/4 v1, 0x1

@@ -63,7 +63,7 @@
 
     iget-boolean v4, p0, Lcom/android/camera/ui/ScreenHint$2;->val$front:Z
 
-    #calls: Lcom/android/camera/ui/ScreenHint;->updateFirstUseHintState(Lcom/android/camera/ComboPreferences;Lcom/android/camera/LocationManager;ZZ)V
+    # invokes: Lcom/android/camera/ui/ScreenHint;->updateFirstUseHintState(Lcom/android/camera/ComboPreferences;Lcom/android/camera/LocationManager;ZZ)V
     invoke-static {v0, v1, v2, v3, v4}, Lcom/android/camera/ui/ScreenHint;->access$000(Lcom/android/camera/ui/ScreenHint;Lcom/android/camera/ComboPreferences;Lcom/android/camera/LocationManager;ZZ)V
 
     .line 86

@@ -30,17 +30,17 @@
     return-void
 
     :array_0
-    .array-data 0x4
-        0x18t 0x0t 0x0t 0x0t
-        0x14t 0x0t 0x0t 0x0t
-        0x12t 0x0t 0x0t 0x0t
-        0x11t 0x0t 0x0t 0x0t
-        0xct 0x0t 0x0t 0x0t
-        0x6t 0x0t 0x0t 0x0t
-        0x3t 0x0t 0x0t 0x0t
-        0xat 0x0t 0x0t 0x0t
-        0x9t 0x0t 0x0t 0x0t
-        0x5t 0x0t 0x0t 0x0t
+    .array-data 4
+        0x18
+        0x14
+        0x12
+        0x11
+        0xc
+        0x6
+        0x3
+        0xa
+        0x9
+        0x5
     .end array-data
 .end method
 
@@ -70,7 +70,7 @@
 
 .method private static determineCheckDigit(I)I
     .locals 2
-    .parameter "lgPatternFound"
+    .param p0, "lgPatternFound"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -81,7 +81,7 @@
     .line 119
     const/4 v0, 0x0
 
-    .local v0, d:I
+    .local v0, "d":I
     :goto_0
     const/16 v1, 0xa
 
@@ -114,7 +114,7 @@
 
 .method private static extensionChecksum(Ljava/lang/CharSequence;)I
     .locals 4
-    .parameter "s"
+    .param p0, "s"    # Ljava/lang/CharSequence;
 
     .prologue
     .line 104
@@ -123,14 +123,14 @@
     move-result v1
 
     .line 105
-    .local v1, length:I
+    .local v1, "length":I
     const/4 v2, 0x0
 
     .line 106
-    .local v2, sum:I
+    .local v2, "sum":I
     add-int/lit8 v0, v1, -0x2
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     if-ltz v0, :cond_0
 
@@ -184,7 +184,7 @@
 
 .method private static parseExtension5String(Ljava/lang/String;)Ljava/lang/String;
     .locals 7
-    .parameter "raw"
+    .param p0, "raw"    # Ljava/lang/String;
 
     .prologue
     .line 147
@@ -200,7 +200,7 @@
     const-string v0, ""
 
     .line 174
-    .local v0, currency:Ljava/lang/String;
+    .local v0, "currency":Ljava/lang/String;
     :goto_0
     const/4 v5, 0x1
 
@@ -213,7 +213,7 @@
     move-result v3
 
     .line 175
-    .local v3, rawAmount:I
+    .local v3, "rawAmount":I
     div-int/lit8 v5, v3, 0x64
 
     invoke-static {v5}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
@@ -221,11 +221,11 @@
     move-result-object v4
 
     .line 176
-    .local v4, unitsString:Ljava/lang/String;
+    .local v4, "unitsString":Ljava/lang/String;
     rem-int/lit8 v1, v3, 0x64
 
     .line 177
-    .local v1, hundredths:I
+    .local v1, "hundredths":I
     const/16 v5, 0xa
 
     if-ge v1, v5, :cond_3
@@ -249,7 +249,7 @@
     move-result-object v2
 
     .line 178
-    .local v2, hundredthsString:Ljava/lang/String;
+    .local v2, "hundredthsString":Ljava/lang/String;
     :goto_1
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -277,11 +277,11 @@
 
     move-result-object v5
 
-    .end local v0           #currency:Ljava/lang/String;
-    .end local v1           #hundredths:I
-    .end local v2           #hundredthsString:Ljava/lang/String;
-    .end local v3           #rawAmount:I
-    .end local v4           #unitsString:Ljava/lang/String;
+    .end local v0    # "currency":Ljava/lang/String;
+    .end local v1    # "hundredths":I
+    .end local v2    # "hundredthsString":Ljava/lang/String;
+    .end local v3    # "rawAmount":I
+    .end local v4    # "unitsString":Ljava/lang/String;
     :goto_2
     return-object v5
 
@@ -290,20 +290,20 @@
     const-string v0, "\u00a3"
 
     .line 150
-    .restart local v0       #currency:Ljava/lang/String;
+    .restart local v0    # "currency":Ljava/lang/String;
     goto :goto_0
 
     .line 152
-    .end local v0           #currency:Ljava/lang/String;
+    .end local v0    # "currency":Ljava/lang/String;
     :sswitch_1
     const-string v0, "$"
 
     .line 153
-    .restart local v0       #currency:Ljava/lang/String;
+    .restart local v0    # "currency":Ljava/lang/String;
     goto :goto_0
 
     .line 156
-    .end local v0           #currency:Ljava/lang/String;
+    .end local v0    # "currency":Ljava/lang/String;
     :sswitch_2
     const-string v5, "90000"
 
@@ -353,13 +353,13 @@
     const-string v0, ""
 
     .line 169
-    .restart local v0       #currency:Ljava/lang/String;
+    .restart local v0    # "currency":Ljava/lang/String;
     goto :goto_0
 
     .line 177
-    .restart local v1       #hundredths:I
-    .restart local v3       #rawAmount:I
-    .restart local v4       #unitsString:Ljava/lang/String;
+    .restart local v1    # "hundredths":I
+    .restart local v3    # "rawAmount":I
+    .restart local v4    # "unitsString":Ljava/lang/String;
     :cond_3
     invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
@@ -436,9 +436,9 @@
 # virtual methods
 .method decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuilder;)I
     .locals 14
-    .parameter "row"
-    .parameter "startRange"
-    .parameter "resultString"
+    .param p1, "row"    # Lcom/google/zxing/common/BitArray;
+    .param p2, "startRange"    # [I
+    .param p3, "resultString"    # Ljava/lang/StringBuilder;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -450,7 +450,7 @@
     iget-object v5, p0, Lcom/google/zxing/oned/UPCEANExtension5Support;->decodeMiddleCounters:[I
 
     .line 66
-    .local v5, counters:[I
+    .local v5, "counters":[I
     const/4 v12, 0x0
 
     const/4 v13, 0x0
@@ -484,20 +484,20 @@
     move-result v6
 
     .line 71
-    .local v6, end:I
+    .local v6, "end":I
     const/4 v12, 0x1
 
     aget v10, p2, v12
 
     .line 73
-    .local v10, rowOffset:I
+    .local v10, "rowOffset":I
     const/4 v9, 0x0
 
     .line 75
-    .local v9, lgPatternFound:I
+    .local v9, "lgPatternFound":I
     const/4 v11, 0x0
 
-    .local v11, x:I
+    .local v11, "x":I
     :goto_0
     const/4 v12, 0x5
 
@@ -513,7 +513,7 @@
     move-result v2
 
     .line 77
-    .local v2, bestMatch:I
+    .local v2, "bestMatch":I
     rem-int/lit8 v12, v2, 0xa
 
     add-int/lit8 v12, v12, 0x30
@@ -527,20 +527,20 @@
     .line 78
     move-object v1, v5
 
-    .local v1, arr$:[I
+    .local v1, "arr$":[I
     array-length v8, v1
 
-    .local v8, len$:I
+    .local v8, "len$":I
     const/4 v7, 0x0
 
-    .local v7, i$:I
+    .local v7, "i$":I
     :goto_1
     if-ge v7, v8, :cond_0
 
     aget v4, v1, v7
 
     .line 79
-    .local v4, counter:I
+    .local v4, "counter":I
     add-int/2addr v10, v4
 
     .line 78
@@ -549,7 +549,7 @@
     goto :goto_1
 
     .line 81
-    .end local v4           #counter:I
+    .end local v4    # "counter":I
     :cond_0
     const/16 v12, 0xa
 
@@ -587,10 +587,10 @@
     goto :goto_0
 
     .line 91
-    .end local v1           #arr$:[I
-    .end local v2           #bestMatch:I
-    .end local v7           #i$:I
-    .end local v8           #len$:I
+    .end local v1    # "arr$":[I
+    .end local v2    # "bestMatch":I
+    .end local v7    # "i$":I
+    .end local v8    # "len$":I
     :cond_3
     invoke-virtual/range {p3 .. p3}, Ljava/lang/StringBuilder;->length()I
 
@@ -614,7 +614,7 @@
     move-result v3
 
     .line 96
-    .local v3, checkDigit:I
+    .local v3, "checkDigit":I
     invoke-virtual/range {p3 .. p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v12
@@ -639,9 +639,9 @@
 
 .method decodeRow(ILcom/google/zxing/common/BitArray;[I)Lcom/google/zxing/Result;
     .locals 12
-    .parameter "rowNumber"
-    .parameter "row"
-    .parameter "extensionStartRange"
+    .param p1, "rowNumber"    # I
+    .param p2, "row"    # Lcom/google/zxing/common/BitArray;
+    .param p3, "extensionStartRange"    # [I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -657,7 +657,7 @@
     iget-object v3, p0, Lcom/google/zxing/oned/UPCEANExtension5Support;->decodeRowStringBuffer:Ljava/lang/StringBuilder;
 
     .line 44
-    .local v3, result:Ljava/lang/StringBuilder;
+    .local v3, "result":Ljava/lang/StringBuilder;
     invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->setLength(I)V
 
     .line 45
@@ -666,19 +666,19 @@
     move-result v0
 
     .line 47
-    .local v0, end:I
+    .local v0, "end":I
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
     .line 48
-    .local v4, resultString:Ljava/lang/String;
+    .local v4, "resultString":Ljava/lang/String;
     invoke-static {v4}, Lcom/google/zxing/oned/UPCEANExtension5Support;->parseExtensionString(Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v1
 
     .line 50
-    .local v1, extensionData:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;>;"
+    .local v1, "extensionData":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;>;"
     new-instance v2, Lcom/google/zxing/Result;
 
     const/4 v5, 0x0
@@ -697,7 +697,7 @@
 
     int-to-float v8, v8
 
-    const/high16 v9, 0x4000
+    const/high16 v9, 0x40000000
 
     div-float/2addr v8, v9
 
@@ -722,7 +722,7 @@
     invoke-direct {v2, v4, v5, v6, v7}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
 
     .line 58
-    .local v2, extensionResult:Lcom/google/zxing/Result;
+    .local v2, "extensionResult":Lcom/google/zxing/Result;
     if-eqz v1, :cond_0
 
     .line 59

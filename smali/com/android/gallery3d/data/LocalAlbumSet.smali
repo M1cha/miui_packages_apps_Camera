@@ -175,8 +175,8 @@
 
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;Lcom/android/camera/CameraAppImpl;)V
     .locals 2
-    .parameter "path"
-    .parameter "application"
+    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .param p2, "application"    # Lcom/android/camera/CameraAppImpl;
 
     .prologue
     .line 109
@@ -199,7 +199,7 @@
     .line 111
     new-instance v0, Landroid/os/Handler;
 
-    invoke-virtual {p2}, Landroid/content/ContextWrapper;->getMainLooper()Landroid/os/Looper;
+    invoke-virtual {p2}, Lcom/android/camera/CameraAppImpl;->getMainLooper()Landroid/os/Looper;
 
     move-result-object v1
 
@@ -233,7 +233,7 @@
     iput-object v0, p0, Lcom/android/gallery3d/data/LocalAlbumSet;->mNotifierVideo:Lcom/android/gallery3d/data/ChangeNotifier;
 
     .line 115
-    invoke-virtual {p2}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p2}, Lcom/android/camera/CameraAppImpl;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -251,8 +251,8 @@
 
 .method static synthetic access$000(Lcom/android/gallery3d/data/LocalAlbumSet;Lcom/android/gallery3d/util/ThreadPool$JobContext;)[Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;
     .locals 1
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/gallery3d/data/LocalAlbumSet;
+    .param p1, "x1"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
 
     .prologue
     .line 44
@@ -265,8 +265,8 @@
 
 .method static synthetic access$100([Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;I)I
     .locals 1
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # [Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;
+    .param p1, "x1"    # I
 
     .prologue
     .line 44
@@ -279,9 +279,9 @@
 
 .method static synthetic access$200([Ljava/lang/Object;II)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
+    .param p0, "x0"    # [Ljava/lang/Object;
+    .param p1, "x1"    # I
+    .param p2, "x2"    # I
 
     .prologue
     .line 44
@@ -292,7 +292,7 @@
 
 .method static synthetic access$300(Lcom/android/gallery3d/data/LocalAlbumSet;)Lcom/android/camera/CameraAppImpl;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/data/LocalAlbumSet;
 
     .prologue
     .line 44
@@ -303,7 +303,7 @@
 
 .method static synthetic access$400(Lcom/android/gallery3d/data/LocalAlbumSet;)I
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/data/LocalAlbumSet;
 
     .prologue
     .line 44
@@ -314,12 +314,12 @@
 
 .method static synthetic access$500(Lcom/android/gallery3d/data/LocalAlbumSet;Lcom/android/gallery3d/data/DataManager;ILcom/android/gallery3d/data/Path;ILjava/lang/String;)Lcom/android/gallery3d/data/MediaSet;
     .locals 1
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-    .parameter "x3"
-    .parameter "x4"
-    .parameter "x5"
+    .param p0, "x0"    # Lcom/android/gallery3d/data/LocalAlbumSet;
+    .param p1, "x1"    # Lcom/android/gallery3d/data/DataManager;
+    .param p2, "x2"    # I
+    .param p3, "x3"    # Lcom/android/gallery3d/data/Path;
+    .param p4, "x4"    # I
+    .param p5, "x5"    # Ljava/lang/String;
 
     .prologue
     .line 44
@@ -332,9 +332,8 @@
 
 .method private static circularShiftRight([Ljava/lang/Object;II)V
     .locals 3
-    .parameter
-    .parameter "i"
-    .parameter "j"
+    .param p1, "i"    # I
+    .param p2, "j"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -345,14 +344,14 @@
 
     .prologue
     .line 336
-    .local p0, array:[Ljava/lang/Object;,"[TT;"
+    .local p0, "array":[Ljava/lang/Object;, "[TT;"
     aget-object v1, p0, p2
 
     .line 337
-    .local v1, temp:Ljava/lang/Object;,"TT;"
+    .local v1, "temp":Ljava/lang/Object;, "TT;"
     move v0, p2
 
-    .local v0, k:I
+    .local v0, "k":I
     :goto_0
     if-le v0, p1, :cond_0
 
@@ -378,17 +377,17 @@
 
 .method private static findBucket([Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;I)I
     .locals 3
-    .parameter "entries"
-    .parameter "bucketId"
+    .param p0, "entries"    # [Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;
+    .param p1, "bucketId"    # I
 
     .prologue
     .line 181
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     array-length v1, p0
 
-    .local v1, n:I
+    .local v1, "n":I
     :goto_0
     if-ge v0, v1, :cond_1
 
@@ -400,12 +399,12 @@
     if-ne v2, p1, :cond_0
 
     .line 184
-    .end local v0           #i:I
+    .end local v0    # "i":I
     :goto_1
     return v0
 
     .line 181
-    .restart local v0       #i:I
+    .restart local v0    # "i":I
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
@@ -420,8 +419,8 @@
 
 .method public static getBucketName(Landroid/content/ContentResolver;I)Ljava/lang/String;
     .locals 7
-    .parameter "resolver"
-    .parameter "bucketId"
+    .param p0, "resolver"    # Landroid/content/ContentResolver;
+    .param p1, "bucketId"    # I
 
     .prologue
     .line 243
@@ -444,7 +443,7 @@
     move-result-object v1
 
     .line 247
-    .local v1, uri:Landroid/net/Uri;
+    .local v1, "uri":Landroid/net/Uri;
     sget-object v2, Lcom/android/gallery3d/data/LocalAlbumSet;->PROJECTION_BUCKET:[Ljava/lang/String;
 
     const-string v3, "bucket_id = ?"
@@ -470,7 +469,7 @@
     move-result-object v6
 
     .line 251
-    .local v6, cursor:Landroid/database/Cursor;
+    .local v6, "cursor":Landroid/database/Cursor;
     if-nez v6, :cond_0
 
     .line 252
@@ -546,11 +545,11 @@
 
 .method private getLocalAlbum(Lcom/android/gallery3d/data/DataManager;ILcom/android/gallery3d/data/Path;ILjava/lang/String;)Lcom/android/gallery3d/data/MediaSet;
     .locals 14
-    .parameter "manager"
-    .parameter "type"
-    .parameter "parent"
-    .parameter "id"
-    .parameter "name"
+    .param p1, "manager"    # Lcom/android/gallery3d/data/DataManager;
+    .param p2, "type"    # I
+    .param p3, "parent"    # Lcom/android/gallery3d/data/Path;
+    .param p4, "id"    # I
+    .param p5, "name"    # Ljava/lang/String;
 
     .prologue
     .line 223
@@ -565,18 +564,18 @@
     move-result-object v2
 
     .line 225
-    .local v2, path:Lcom/android/gallery3d/data/Path;
+    .local v2, "path":Lcom/android/gallery3d/data/Path;
     invoke-virtual {p1, v2}, Lcom/android/gallery3d/data/DataManager;->peekMediaObject(Lcom/android/gallery3d/data/Path;)Lcom/android/gallery3d/data/MediaObject;
 
     move-result-object v10
 
     .line 226
-    .local v10, object:Lcom/android/gallery3d/data/MediaObject;
+    .local v10, "object":Lcom/android/gallery3d/data/MediaObject;
     if-eqz v10, :cond_0
 
     check-cast v10, Lcom/android/gallery3d/data/MediaSet;
 
-    .end local v10           #object:Lcom/android/gallery3d/data/MediaObject;
+    .end local v10    # "object":Lcom/android/gallery3d/data/MediaObject;
     monitor-exit v11
 
     move-object v1, v10
@@ -586,7 +585,7 @@
     return-object v1
 
     .line 227
-    .restart local v10       #object:Lcom/android/gallery3d/data/MediaObject;
+    .restart local v10    # "object":Lcom/android/gallery3d/data/MediaObject;
     :cond_0
     packed-switch p2, :pswitch_data_0
 
@@ -603,8 +602,8 @@
     throw v1
 
     .line 239
-    .end local v2           #path:Lcom/android/gallery3d/data/Path;
-    .end local v10           #object:Lcom/android/gallery3d/data/MediaObject;
+    .end local v2    # "path":Lcom/android/gallery3d/data/Path;
+    .end local v10    # "object":Lcom/android/gallery3d/data/MediaObject;
     :catchall_0
     move-exception v1
 
@@ -615,8 +614,8 @@
     throw v1
 
     .line 229
-    .restart local v2       #path:Lcom/android/gallery3d/data/Path;
-    .restart local v10       #object:Lcom/android/gallery3d/data/MediaObject;
+    .restart local v2    # "path":Lcom/android/gallery3d/data/Path;
+    .restart local v10    # "object":Lcom/android/gallery3d/data/MediaObject;
     :pswitch_1
     :try_start_1
     new-instance v1, Lcom/android/gallery3d/data/LocalAlbum;
@@ -658,7 +657,7 @@
     sget-object v9, Lcom/android/gallery3d/data/DataManager;->sDateTakenComparator:Ljava/util/Comparator;
 
     .line 234
-    .local v9, comp:Ljava/util/Comparator;,"Ljava/util/Comparator<Lcom/android/gallery3d/data/MediaItem;>;"
+    .local v9, "comp":Ljava/util/Comparator;, "Ljava/util/Comparator<Lcom/android/gallery3d/data/MediaItem;>;"
     new-instance v1, Lcom/android/gallery3d/data/LocalMergeAlbum;
 
     const/4 v3, 0x2
@@ -728,7 +727,7 @@
 
 .method private static getTypeFromPath(Lcom/android/gallery3d/data/Path;)I
     .locals 3
-    .parameter "path"
+    .param p0, "path"    # Lcom/android/gallery3d/data/Path;
 
     .prologue
     .line 120
@@ -737,7 +736,7 @@
     move-result-object v0
 
     .line 121
-    .local v0, name:[Ljava/lang/String;
+    .local v0, "name":[Ljava/lang/String;
     array-length v1, v0
 
     const/4 v2, 0x2
@@ -770,7 +769,7 @@
 
 .method private loadBucketEntries(Lcom/android/gallery3d/util/ThreadPool$JobContext;)[Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;
     .locals 12
-    .parameter "jc"
+    .param p1, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
 
     .prologue
     const/4 v4, 0x0
@@ -783,7 +782,7 @@
     sget-object v1, Lcom/android/gallery3d/data/LocalAlbumSet;->mBaseUri:Landroid/net/Uri;
 
     .line 145
-    .local v1, uri:Landroid/net/Uri;
+    .local v1, "uri":Landroid/net/Uri;
     const-string v0, "DebugLoadingTime"
 
     const-string v2, "start quering media provider"
@@ -793,7 +792,7 @@
     .line 146
     iget-object v0, p0, Lcom/android/gallery3d/data/LocalAlbumSet;->mApplication:Lcom/android/camera/CameraAppImpl;
 
-    invoke-virtual {v0}, Landroid/content/ContextWrapper;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v0}, Lcom/android/camera/CameraAppImpl;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
@@ -808,7 +807,7 @@
     move-result-object v7
 
     .line 148
-    .local v7, cursor:Landroid/database/Cursor;
+    .local v7, "cursor":Landroid/database/Cursor;
     if-nez v7, :cond_0
 
     .line 149
@@ -848,11 +847,11 @@
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
     .line 153
-    .local v6, buffer:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;>;"
+    .local v6, "buffer":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;>;"
     const/4 v9, 0x0
 
     .line 154
-    .local v9, typeBits:I
+    .local v9, "typeBits":I
     iget v0, p0, Lcom/android/gallery3d/data/LocalAlbumSet;->mType:I
 
     and-int/lit8 v0, v0, 0x2
@@ -913,7 +912,7 @@
     invoke-direct {v8, v0, v2}, Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;-><init>(ILjava/lang/String;)V
 
     .line 166
-    .local v8, entry:Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;
+    .local v8, "entry":Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;
     invoke-virtual {v6, v8}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
 
     move-result v0
@@ -924,7 +923,7 @@
     invoke-virtual {v6, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 170
-    .end local v8           #entry:Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;
+    .end local v8    # "entry":Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;
     :cond_3
     invoke-interface {p1}, Lcom/android/gallery3d/util/ThreadPool$JobContext;->isCancelled()Z
     :try_end_0
@@ -1019,7 +1018,7 @@
 
 .method public getSubMediaSet(I)Lcom/android/gallery3d/data/MediaSet;
     .locals 1
-    .parameter "index"
+    .param p1, "index"    # I
 
     .prologue
     .line 129
@@ -1064,7 +1063,7 @@
 
     .prologue
     .line 293
-    .local p1, future:Lcom/android/gallery3d/util/Future;,"Lcom/android/gallery3d/util/Future<Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSet;>;>;"
+    .local p1, "future":Lcom/android/gallery3d/util/Future;, "Lcom/android/gallery3d/util/Future<Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSet;>;>;"
     monitor-enter p0
 
     :try_start_0
@@ -1211,7 +1210,7 @@
 
     move-result-object v1
 
-    .local v1, i$:Ljava/util/Iterator;
+    .local v1, "i$":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -1226,7 +1225,7 @@
     check-cast v0, Lcom/android/gallery3d/data/MediaSet;
 
     .line 284
-    .local v0, album:Lcom/android/gallery3d/data/MediaSet;
+    .local v0, "album":Lcom/android/gallery3d/data/MediaSet;
     invoke-virtual {v0}, Lcom/android/gallery3d/data/MediaSet;->reload()J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1234,8 +1233,8 @@
     goto :goto_0
 
     .line 275
-    .end local v0           #album:Lcom/android/gallery3d/data/MediaSet;
-    .end local v1           #i$:Ljava/util/Iterator;
+    .end local v0    # "album":Lcom/android/gallery3d/data/MediaSet;
+    .end local v1    # "i$":Ljava/util/Iterator;
     :catchall_0
     move-exception v2
 
@@ -1244,19 +1243,19 @@
     throw v2
 
     .line 286
-    .restart local v1       #i$:Ljava/util/Iterator;
+    .restart local v1    # "i$":Ljava/util/Iterator;
     :cond_2
     :try_start_1
     invoke-static {}, Lcom/android/gallery3d/data/LocalAlbumSet;->nextVersionNumber()J
 
     move-result-wide v2
 
-    iput-wide v2, p0, Lcom/android/gallery3d/data/MediaObject;->mDataVersion:J
+    iput-wide v2, p0, Lcom/android/gallery3d/data/LocalAlbumSet;->mDataVersion:J
 
     .line 288
-    .end local v1           #i$:Ljava/util/Iterator;
+    .end local v1    # "i$":Ljava/util/Iterator;
     :cond_3
-    iget-wide v2, p0, Lcom/android/gallery3d/data/MediaObject;->mDataVersion:J
+    iget-wide v2, p0, Lcom/android/gallery3d/data/LocalAlbumSet;->mDataVersion:J
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 

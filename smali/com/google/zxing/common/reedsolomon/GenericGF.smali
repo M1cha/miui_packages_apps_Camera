@@ -127,9 +127,9 @@
 
 .method public constructor <init>(III)V
     .locals 1
-    .parameter "primitive"
-    .parameter "size"
-    .parameter "b"
+    .param p1, "primitive"    # I
+    .param p2, "size"    # I
+    .param p3, "b"    # I
 
     .prologue
     .line 63
@@ -162,8 +162,8 @@
 
 .method static addOrSubtract(II)I
     .locals 1
-    .parameter "a"
-    .parameter "b"
+    .param p0, "a"    # I
+    .param p1, "b"    # I
 
     .prologue
     .line 135
@@ -215,10 +215,10 @@
     const/4 v1, 0x1
 
     .line 77
-    .local v1, x:I
+    .local v1, "x":I
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     iget v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGF;->size:I
 
@@ -314,8 +314,8 @@
 # virtual methods
 .method buildMonomial(II)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     .locals 2
-    .parameter "degree"
-    .parameter "coefficient"
+    .param p1, "degree"    # I
+    .param p2, "coefficient"    # I
 
     .prologue
     .line 116
@@ -349,7 +349,7 @@
     new-array v0, v1, [I
 
     .line 125
-    .local v0, coefficients:[I
+    .local v0, "coefficients":[I
     const/4 v1, 0x0
 
     aput p2, v0, v1
@@ -364,7 +364,7 @@
 
 .method exp(I)I
     .locals 1
-    .parameter "a"
+    .param p1, "a"    # I
 
     .prologue
     .line 142
@@ -426,7 +426,7 @@
 
 .method inverse(I)I
     .locals 3
-    .parameter "a"
+    .param p1, "a"    # I
 
     .prologue
     .line 163
@@ -463,7 +463,7 @@
 
 .method log(I)I
     .locals 1
-    .parameter "a"
+    .param p1, "a"    # I
 
     .prologue
     .line 151
@@ -490,8 +490,8 @@
 
 .method multiply(II)I
     .locals 3
-    .parameter "a"
-    .parameter "b"
+    .param p1, "a"    # I
+    .param p2, "b"    # I
 
     .prologue
     .line 175

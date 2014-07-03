@@ -15,8 +15,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 17
@@ -37,8 +37,8 @@
 # virtual methods
 .method protected onMeasure(II)V
     .locals 1
-    .parameter "widthSpec"
-    .parameter "heightSpec"
+    .param p1, "widthSpec"    # I
+    .param p2, "heightSpec"    # I
 
     .prologue
     .line 22
@@ -54,8 +54,8 @@
 
 .method public setOrientation(IZ)V
     .locals 1
-    .parameter "orientation"
-    .parameter "animation"
+    .param p1, "orientation"    # I
+    .param p2, "animation"    # Z
 
     .prologue
     .line 27
@@ -80,7 +80,7 @@
     invoke-static {p0, v0}, Lcom/android/camera/ui/UIHelper;->visitAllChildViews(Landroid/view/View;Lcom/android/camera/ui/UIHelper$ViewVisitAction;)V
 
     .line 32
-    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/RestrictRotateLayout;->requestLayout()V
 
     goto :goto_0
 .end method

@@ -47,7 +47,7 @@
 
     const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/SettingView;->setVisibility(I)V
 
     .line 192
     iget-object v0, p0, Lcom/android/camera/ui/SettingView$2;->this$0:Lcom/android/camera/ui/SettingView;
@@ -89,7 +89,7 @@
     .line 197
     iget-object v0, p0, Lcom/android/camera/ui/SettingView$2;->this$0:Lcom/android/camera/ui/SettingView;
 
-    #getter for: Lcom/android/camera/ui/SettingView;->mRunnable:Ljava/lang/Runnable;
+    # getter for: Lcom/android/camera/ui/SettingView;->mRunnable:Ljava/lang/Runnable;
     invoke-static {v0}, Lcom/android/camera/ui/SettingView;->access$000(Lcom/android/camera/ui/SettingView;)Ljava/lang/Runnable;
 
     move-result-object v0
@@ -99,7 +99,7 @@
     .line 198
     iget-object v0, p0, Lcom/android/camera/ui/SettingView$2;->this$0:Lcom/android/camera/ui/SettingView;
 
-    #getter for: Lcom/android/camera/ui/SettingView;->mRunnable:Ljava/lang/Runnable;
+    # getter for: Lcom/android/camera/ui/SettingView;->mRunnable:Ljava/lang/Runnable;
     invoke-static {v0}, Lcom/android/camera/ui/SettingView;->access$000(Lcom/android/camera/ui/SettingView;)Ljava/lang/Runnable;
 
     move-result-object v0
@@ -111,7 +111,7 @@
 
     const/4 v1, 0x0
 
-    #setter for: Lcom/android/camera/ui/SettingView;->mRunnable:Ljava/lang/Runnable;
+    # setter for: Lcom/android/camera/ui/SettingView;->mRunnable:Ljava/lang/Runnable;
     invoke-static {v0, v1}, Lcom/android/camera/ui/SettingView;->access$002(Lcom/android/camera/ui/SettingView;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
     .line 201

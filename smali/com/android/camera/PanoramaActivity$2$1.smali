@@ -45,7 +45,7 @@
 
     iget-object v0, v0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->resetToPreview()V
+    # invokes: Lcom/android/camera/PanoramaActivity;->resetToPreview()V
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$900(Lcom/android/camera/PanoramaActivity;)V
 
     .line 291

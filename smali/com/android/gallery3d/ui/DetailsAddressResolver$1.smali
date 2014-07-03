@@ -60,12 +60,12 @@
 
     .prologue
     .line 67
-    .local p1, future:Lcom/android/gallery3d/util/Future;,"Lcom/android/gallery3d/util/Future<Landroid/location/Address;>;"
+    .local p1, "future":Lcom/android/gallery3d/util/Future;, "Lcom/android/gallery3d/util/Future<Landroid/location/Address;>;"
     iget-object v0, p0, Lcom/android/gallery3d/ui/DetailsAddressResolver$1;->this$0:Lcom/android/gallery3d/ui/DetailsAddressResolver;
 
     const/4 v1, 0x0
 
-    #setter for: Lcom/android/gallery3d/ui/DetailsAddressResolver;->mAddressLookupJob:Lcom/android/gallery3d/util/Future;
+    # setter for: Lcom/android/gallery3d/ui/DetailsAddressResolver;->mAddressLookupJob:Lcom/android/gallery3d/util/Future;
     invoke-static {v0, v1}, Lcom/android/gallery3d/ui/DetailsAddressResolver;->access$102(Lcom/android/gallery3d/ui/DetailsAddressResolver;Lcom/android/gallery3d/util/Future;)Lcom/android/gallery3d/util/Future;
 
     .line 68
@@ -78,7 +78,7 @@
     .line 69
     iget-object v0, p0, Lcom/android/gallery3d/ui/DetailsAddressResolver$1;->this$0:Lcom/android/gallery3d/ui/DetailsAddressResolver;
 
-    #getter for: Lcom/android/gallery3d/ui/DetailsAddressResolver;->mHandler:Landroid/os/Handler;
+    # getter for: Lcom/android/gallery3d/ui/DetailsAddressResolver;->mHandler:Landroid/os/Handler;
     invoke-static {v0}, Lcom/android/gallery3d/ui/DetailsAddressResolver;->access$300(Lcom/android/gallery3d/ui/DetailsAddressResolver;)Landroid/os/Handler;
 
     move-result-object v0

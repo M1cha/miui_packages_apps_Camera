@@ -24,8 +24,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 40
@@ -50,7 +50,7 @@
     .line 47
     const v0, 0x7f0c0009
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/AbstractSettingPopup;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -61,7 +61,7 @@
     .line 48
     const v0, 0x7f0c000a
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/AbstractSettingPopup;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -86,7 +86,7 @@
 
 .method public setOrientation(I)V
     .locals 0
-    .parameter "orientation"
+    .param p1, "orientation"    # I
 
     .prologue
     .line 62
@@ -95,7 +95,7 @@
 
 .method public setSettingChangedListener(Lcom/android/camera/ui/AbstractSettingPopup$Listener;)V
     .locals 0
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/camera/ui/AbstractSettingPopup$Listener;
 
     .prologue
     .line 52

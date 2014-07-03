@@ -33,10 +33,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/ui/TileImageView;III)V
     .locals 1
-    .parameter
-    .parameter "x"
-    .parameter "y"
-    .parameter "level"
+    .param p2, "x"    # I
+    .param p3, "y"    # I
+    .param p4, "level"    # I
 
     .prologue
     .line 648
@@ -74,7 +73,7 @@
     :try_start_0
     iget-object v0, p0, Lcom/android/gallery3d/ui/TileImageView$Tile;->this$0:Lcom/android/gallery3d/ui/TileImageView;
 
-    #getter for: Lcom/android/gallery3d/ui/TileImageView;->mModel:Lcom/android/gallery3d/ui/TileImageView$Model;
+    # getter for: Lcom/android/gallery3d/ui/TileImageView;->mModel:Lcom/android/gallery3d/ui/TileImageView$Model;
     invoke-static {v0}, Lcom/android/gallery3d/ui/TileImageView;->access$500(Lcom/android/gallery3d/ui/TileImageView;)Lcom/android/gallery3d/ui/TileImageView$Model;
 
     move-result-object v0
@@ -89,6 +88,7 @@
 
     const/4 v5, 0x1
 
+    # getter for: Lcom/android/gallery3d/ui/TileImageView;->sTilePool:Lcom/android/gallery3d/data/BitmapPool;
     invoke-static {}, Lcom/android/gallery3d/ui/TileImageView;->access$400()Lcom/android/gallery3d/data/BitmapPool;
 
     move-result-object v6
@@ -121,7 +121,7 @@
     move-exception v7
 
     .line 666
-    .local v7, t:Ljava/lang/Throwable;
+    .local v7, "t":Ljava/lang/Throwable;
     const-string v0, "TileImageView"
 
     const-string v1, "fail to decode tile"
@@ -131,7 +131,7 @@
     goto :goto_0
 
     .line 668
-    .end local v7           #t:Ljava/lang/Throwable;
+    .end local v7    # "t":Ljava/lang/Throwable;
     :cond_0
     const/4 v0, 0x0
 
@@ -170,7 +170,7 @@
     shl-int v0, v3, v4
 
     .line 711
-    .local v0, size:I
+    .local v0, "size":I
     iget v3, p0, Lcom/android/gallery3d/ui/TileImageView$Tile;->mX:I
 
     div-int/2addr v3, v0
@@ -178,7 +178,7 @@
     mul-int v1, v0, v3
 
     .line 712
-    .local v1, x:I
+    .local v1, "x":I
     iget v3, p0, Lcom/android/gallery3d/ui/TileImageView$Tile;->mY:I
 
     div-int/2addr v3, v0
@@ -186,14 +186,14 @@
     mul-int v2, v0, v3
 
     .line 713
-    .local v2, y:I
+    .local v2, "y":I
     iget-object v3, p0, Lcom/android/gallery3d/ui/TileImageView$Tile;->this$0:Lcom/android/gallery3d/ui/TileImageView;
 
     iget v4, p0, Lcom/android/gallery3d/ui/TileImageView$Tile;->mTileLevel:I
 
     add-int/lit8 v4, v4, 0x1
 
-    #calls: Lcom/android/gallery3d/ui/TileImageView;->getTile(III)Lcom/android/gallery3d/ui/TileImageView$Tile;
+    # invokes: Lcom/android/gallery3d/ui/TileImageView;->getTile(III)Lcom/android/gallery3d/ui/TileImageView$Tile;
     invoke-static {v3, v1, v2, v4}, Lcom/android/gallery3d/ui/TileImageView;->access$600(Lcom/android/gallery3d/ui/TileImageView;III)Lcom/android/gallery3d/ui/TileImageView$Tile;
 
     move-result-object v3
@@ -223,10 +223,11 @@
 
 .method protected onFreeBitmap(Landroid/graphics/Bitmap;)V
     .locals 1
-    .parameter "bitmap"
+    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
     .line 656
+    # getter for: Lcom/android/gallery3d/ui/TileImageView;->sTilePool:Lcom/android/gallery3d/data/BitmapPool;
     invoke-static {}, Lcom/android/gallery3d/ui/TileImageView;->access$400()Lcom/android/gallery3d/data/BitmapPool;
 
     move-result-object v0
@@ -273,7 +274,7 @@
     add-int/lit8 v2, v3, 0x1
 
     .line 678
-    .local v2, rightEdge:I
+    .local v2, "rightEdge":I
     iget-object v3, p0, Lcom/android/gallery3d/ui/TileImageView$Tile;->this$0:Lcom/android/gallery3d/ui/TileImageView;
 
     iget v3, v3, Lcom/android/gallery3d/ui/TileImageView;->mImageHeight:I
@@ -289,7 +290,7 @@
     add-int/lit8 v1, v3, 0x1
 
     .line 679
-    .local v1, bottomEdge:I
+    .local v1, "bottomEdge":I
     invoke-static {v6, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v3
@@ -298,13 +299,13 @@
 
     move-result v5
 
-    invoke-virtual {p0, v3, v5}, Lcom/android/gallery3d/ui/BasicTexture;->setSize(II)V
+    invoke-virtual {p0, v3, v5}, Lcom/android/gallery3d/ui/TileImageView$Tile;->setSize(II)V
 
     .line 681
     iget-object v0, p0, Lcom/android/gallery3d/ui/TileImageView$Tile;->mDecodedTile:Landroid/graphics/Bitmap;
 
     .line 682
-    .local v0, bitmap:Landroid/graphics/Bitmap;
+    .local v0, "bitmap":Landroid/graphics/Bitmap;
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/gallery3d/ui/TileImageView$Tile;->mDecodedTile:Landroid/graphics/Bitmap;
@@ -316,9 +317,9 @@
     return-object v0
 
     .line 673
-    .end local v0           #bitmap:Landroid/graphics/Bitmap;
-    .end local v1           #bottomEdge:I
-    .end local v2           #rightEdge:I
+    .end local v0    # "bitmap":Landroid/graphics/Bitmap;
+    .end local v1    # "bottomEdge":I
+    .end local v2    # "rightEdge":I
     :cond_0
     const/4 v3, 0x0
 
@@ -364,7 +365,7 @@
 
     iget-object v3, p0, Lcom/android/gallery3d/ui/TileImageView$Tile;->this$0:Lcom/android/gallery3d/ui/TileImageView;
 
-    #getter for: Lcom/android/gallery3d/ui/TileImageView;->mLevel:I
+    # getter for: Lcom/android/gallery3d/ui/TileImageView;->mLevel:I
     invoke-static {v3}, Lcom/android/gallery3d/ui/TileImageView;->access$700(Lcom/android/gallery3d/ui/TileImageView;)I
 
     move-result v3
@@ -396,9 +397,9 @@
 
 .method public update(III)V
     .locals 0
-    .parameter "x"
-    .parameter "y"
-    .parameter "level"
+    .param p1, "x"    # I
+    .param p2, "y"    # I
+    .param p3, "level"    # I
 
     .prologue
     .line 702
@@ -411,7 +412,7 @@
     iput p3, p0, Lcom/android/gallery3d/ui/TileImageView$Tile;->mTileLevel:I
 
     .line 705
-    invoke-virtual {p0}, Lcom/android/gallery3d/ui/UploadedTexture;->invalidateContent()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/ui/TileImageView$Tile;->invalidateContent()V
 
     .line 706
     return-void

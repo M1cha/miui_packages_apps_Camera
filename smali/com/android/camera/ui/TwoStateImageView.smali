@@ -12,7 +12,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .parameter "context"
+    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 35
@@ -26,8 +26,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 31
@@ -51,7 +51,7 @@
 # virtual methods
 .method public enableFilter(Z)V
     .locals 0
-    .parameter "enabled"
+    .param p1, "enabled"    # Z
 
     .prologue
     .line 51
@@ -63,11 +63,11 @@
 
 .method public setEnabled(Z)V
     .locals 1
-    .parameter "enabled"
+    .param p1, "enabled"    # Z
 
     .prologue
     .line 40
-    invoke-super {p0, p1}, Landroid/view/View;->setEnabled(Z)V
+    invoke-super {p0, p1}, Landroid/widget/ImageView;->setEnabled(Z)V
 
     .line 41
     iget-boolean v0, p0, Lcom/android/camera/ui/TwoStateImageView;->mFilterEnabled:Z
@@ -78,9 +78,9 @@
     if-eqz p1, :cond_1
 
     .line 43
-    const/high16 v0, 0x3f80
+    const/high16 v0, 0x3f800000
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/TwoStateImageView;->setAlpha(F)V
 
     .line 48
     :cond_0
@@ -91,7 +91,7 @@
     :cond_1
     const v0, 0x3ecccccd
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/TwoStateImageView;->setAlpha(F)V
 
     goto :goto_0
 .end method

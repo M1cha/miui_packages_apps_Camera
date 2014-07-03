@@ -63,7 +63,7 @@
 
 .method static synthetic access$000(Lcom/android/gallery3d/app/ActivityState;)Z
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/ActivityState;
 
     .prologue
     .line 36
@@ -74,8 +74,8 @@
 
 .method static synthetic access$002(Lcom/android/gallery3d/app/ActivityState;Z)Z
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/gallery3d/app/ActivityState;
+    .param p1, "x1"    # Z
 
     .prologue
     .line 36
@@ -88,8 +88,8 @@
 # virtual methods
 .method initialize(Lcom/android/gallery3d/app/GalleryActivity;Landroid/os/Bundle;)V
     .locals 0
-    .parameter "activity"
-    .parameter "data"
+    .param p1, "activity"    # Lcom/android/gallery3d/app/GalleryActivity;
+    .param p2, "data"    # Landroid/os/Bundle;
 
     .prologue
     .line 72
@@ -141,7 +141,7 @@
 
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 0
-    .parameter "config"
+    .param p1, "config"    # Landroid/content/res/Configuration;
 
     .prologue
     .line 91
@@ -150,8 +150,8 @@
 
 .method protected onCreate(Landroid/os/Bundle;Landroid/os/Bundle;)V
     .locals 0
-    .parameter "data"
-    .parameter "storedState"
+    .param p1, "data"    # Landroid/os/Bundle;
+    .param p2, "storedState"    # Landroid/os/Bundle;
 
     .prologue
     .line 100
@@ -160,7 +160,7 @@
 
 .method protected onCreateActionBar(Landroid/view/Menu;)Z
     .locals 1
-    .parameter "menu"
+    .param p1, "menu"    # Landroid/view/Menu;
 
     .prologue
     .line 183
@@ -184,7 +184,7 @@
 
 .method protected onItemSelected(Landroid/view/MenuItem;)Z
     .locals 1
-    .parameter "item"
+    .param p1, "item"    # Landroid/view/MenuItem;
 
     .prologue
     .line 187
@@ -211,7 +211,7 @@
 
     iget-object v1, p0, Lcom/android/gallery3d/app/ActivityState;->mPowerIntentReceiver:Landroid/content/BroadcastReceiver;
 
-    invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    invoke-virtual {v0, v1}, Landroid/app/Activity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
     .line 133
     :cond_0
@@ -228,7 +228,7 @@
 
 .method protected onSaveState(Landroid/os/Bundle;)V
     .locals 0
-    .parameter "outState"
+    .param p1, "outState"    # Landroid/os/Bundle;
 
     .prologue
     .line 94
@@ -237,9 +237,9 @@
 
 .method protected onStateResult(IILandroid/content/Intent;)V
     .locals 0
-    .parameter "requestCode"
-    .parameter "resultCode"
-    .parameter "data"
+    .param p1, "requestCode"    # I
+    .param p2, "resultCode"    # I
+    .param p3, "data"    # Landroid/content/Intent;
 
     .prologue
     .line 97
@@ -260,13 +260,13 @@
     check-cast v1, Landroid/app/Activity;
 
     .line 138
-    .local v1, activity:Landroid/app/Activity;
+    .local v1, "activity":Landroid/app/Activity;
     invoke-virtual {v1}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object v0
 
     .line 139
-    .local v0, actionBar:Landroid/app/ActionBar;
+    .local v0, "actionBar":Landroid/app/ActionBar;
     if-eqz v0, :cond_0
 
     .line 140
@@ -292,7 +292,7 @@
     move-result v5
 
     .line 146
-    .local v5, stateCount:I
+    .local v5, "stateCount":I
     iget-object v6, p0, Lcom/android/gallery3d/app/ActivityState;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
 
     invoke-interface {v6}, Lcom/android/gallery3d/app/GalleryActivity;->getGalleryActionBar()Lcom/android/gallery3d/app/GalleryActionBar;
@@ -310,7 +310,7 @@
     invoke-virtual {v0, v8}, Landroid/app/ActionBar;->setNavigationMode(I)V
 
     .line 151
-    .end local v5           #stateCount:I
+    .end local v5    # "stateCount":I
     :cond_0
     invoke-virtual {v1}, Landroid/app/Activity;->invalidateOptionsMenu()V
 
@@ -327,7 +327,7 @@
     move v4, v7
 
     .line 156
-    .local v4, lightsOut:Z
+    .local v4, "lightsOut":Z
     :goto_2
     iget-object v6, p0, Lcom/android/gallery3d/app/ActivityState;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
 
@@ -341,7 +341,7 @@
     iget-object v2, p0, Lcom/android/gallery3d/app/ActivityState;->mReceivedResults:Lcom/android/gallery3d/app/ActivityState$ResultEntry;
 
     .line 159
-    .local v2, entry:Lcom/android/gallery3d/app/ActivityState$ResultEntry;
+    .local v2, "entry":Lcom/android/gallery3d/app/ActivityState$ResultEntry;
     if-eqz v2, :cond_1
 
     .line 160
@@ -372,7 +372,7 @@
     invoke-direct {v3}, Landroid/content/IntentFilter;-><init>()V
 
     .line 167
-    .local v3, filter:Landroid/content/IntentFilter;
+    .local v3, "filter":Landroid/content/IntentFilter;
     const-string v6, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {v3, v6}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
@@ -380,10 +380,10 @@
     .line 168
     iget-object v6, p0, Lcom/android/gallery3d/app/ActivityState;->mPowerIntentReceiver:Landroid/content/BroadcastReceiver;
 
-    invoke-virtual {v1, v6, v3}, Landroid/content/ContextWrapper;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-virtual {v1, v6, v3}, Landroid/app/Activity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     .line 170
-    .end local v3           #filter:Landroid/content/IntentFilter;
+    .end local v3    # "filter":Landroid/content/IntentFilter;
     :cond_2
     invoke-virtual {p0}, Lcom/android/gallery3d/app/ActivityState;->onResume()V
 
@@ -400,21 +400,21 @@
     return-void
 
     .line 143
-    .end local v2           #entry:Lcom/android/gallery3d/app/ActivityState$ResultEntry;
-    .end local v4           #lightsOut:Z
+    .end local v2    # "entry":Lcom/android/gallery3d/app/ActivityState$ResultEntry;
+    .end local v4    # "lightsOut":Z
     :cond_3
     invoke-virtual {v0}, Landroid/app/ActionBar;->show()V
 
     goto :goto_0
 
-    .restart local v5       #stateCount:I
+    .restart local v5    # "stateCount":I
     :cond_4
     move v6, v8
 
     .line 146
     goto :goto_1
 
-    .end local v5           #stateCount:I
+    .end local v5    # "stateCount":I
     :cond_5
     move v4, v8
 
@@ -424,7 +424,7 @@
 
 .method protected setContentPane(Lcom/android/gallery3d/ui/GLView;)V
     .locals 1
-    .parameter "content"
+    .param p1, "content"    # Lcom/android/gallery3d/ui/GLView;
 
     .prologue
     .line 68
@@ -454,13 +454,13 @@
     move-result-object v1
 
     .line 119
-    .local v1, win:Landroid/view/Window;
+    .local v1, "win":Landroid/view/Window;
     invoke-virtual {v1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v0
 
     .line 120
-    .local v0, params:Landroid/view/WindowManager$LayoutParams;
+    .local v0, "params":Landroid/view/WindowManager$LayoutParams;
     iget v2, p0, Lcom/android/gallery3d/app/ActivityState;->mFlags:I
 
     and-int/lit8 v2, v2, 0x8
@@ -505,8 +505,8 @@
 
 .method protected setStateResult(ILandroid/content/Intent;)V
     .locals 1
-    .parameter "resultCode"
-    .parameter "data"
+    .param p1, "resultCode"    # I
+    .param p2, "data"    # Landroid/content/Intent;
 
     .prologue
     .line 85

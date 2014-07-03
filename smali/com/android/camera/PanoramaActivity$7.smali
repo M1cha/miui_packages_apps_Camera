@@ -54,7 +54,7 @@
     .line 849
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$7;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-virtual {v0}, Landroid/app/Activity;->finish()V
+    invoke-virtual {v0}, Lcom/android/camera/PanoramaActivity;->finish()V
 
     .line 850
     return-void

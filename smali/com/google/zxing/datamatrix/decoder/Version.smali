@@ -50,12 +50,12 @@
 
 .method private constructor <init>(IIIIILcom/google/zxing/datamatrix/decoder/Version$ECBlocks;)V
     .locals 9
-    .parameter "versionNumber"
-    .parameter "symbolSizeRows"
-    .parameter "symbolSizeColumns"
-    .parameter "dataRegionSizeRows"
-    .parameter "dataRegionSizeColumns"
-    .parameter "ecBlocks"
+    .param p1, "versionNumber"    # I
+    .param p2, "symbolSizeRows"    # I
+    .param p3, "symbolSizeColumns"    # I
+    .param p4, "dataRegionSizeRows"    # I
+    .param p5, "dataRegionSizeColumns"    # I
+    .param p6, "ecBlocks"    # Lcom/google/zxing/datamatrix/decoder/Version$ECBlocks;
 
     .prologue
     .line 44
@@ -83,35 +83,35 @@
     const/4 v6, 0x0
 
     .line 54
-    .local v6, total:I
+    .local v6, "total":I
     invoke-virtual {p6}, Lcom/google/zxing/datamatrix/decoder/Version$ECBlocks;->getECCodewords()I
 
     move-result v2
 
     .line 55
-    .local v2, ecCodewords:I
+    .local v2, "ecCodewords":I
     invoke-virtual {p6}, Lcom/google/zxing/datamatrix/decoder/Version$ECBlocks;->getECBlocks()[Lcom/google/zxing/datamatrix/decoder/Version$ECB;
 
     move-result-object v3
 
     .line 56
-    .local v3, ecbArray:[Lcom/google/zxing/datamatrix/decoder/Version$ECB;
+    .local v3, "ecbArray":[Lcom/google/zxing/datamatrix/decoder/Version$ECB;
     move-object v0, v3
 
-    .local v0, arr$:[Lcom/google/zxing/datamatrix/decoder/Version$ECB;
+    .local v0, "arr$":[Lcom/google/zxing/datamatrix/decoder/Version$ECB;
     array-length v5, v0
 
-    .local v5, len$:I
+    .local v5, "len$":I
     const/4 v4, 0x0
 
-    .local v4, i$:I
+    .local v4, "i$":I
     :goto_0
     if-ge v4, v5, :cond_0
 
     aget-object v1, v0, v4
 
     .line 57
-    .local v1, ecBlock:Lcom/google/zxing/datamatrix/decoder/Version$ECB;
+    .local v1, "ecBlock":Lcom/google/zxing/datamatrix/decoder/Version$ECB;
     invoke-virtual {v1}, Lcom/google/zxing/datamatrix/decoder/Version$ECB;->getCount()I
 
     move-result v7
@@ -132,7 +132,7 @@
     goto :goto_0
 
     .line 59
-    .end local v1           #ecBlock:Lcom/google/zxing/datamatrix/decoder/Version$ECB;
+    .end local v1    # "ecBlock":Lcom/google/zxing/datamatrix/decoder/Version$ECB;
     :cond_0
     iput v6, p0, Lcom/google/zxing/datamatrix/decoder/Version;->totalCodewords:I
 
@@ -1244,8 +1244,8 @@
 
 .method public static getVersionForDimensions(II)Lcom/google/zxing/datamatrix/decoder/Version;
     .locals 5
-    .parameter "numRows"
-    .parameter "numColumns"
+    .param p0, "numRows"    # I
+    .param p1, "numColumns"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -1274,20 +1274,20 @@
     :cond_1
     sget-object v0, Lcom/google/zxing/datamatrix/decoder/Version;->VERSIONS:[Lcom/google/zxing/datamatrix/decoder/Version;
 
-    .local v0, arr$:[Lcom/google/zxing/datamatrix/decoder/Version;
+    .local v0, "arr$":[Lcom/google/zxing/datamatrix/decoder/Version;
     array-length v2, v0
 
-    .local v2, len$:I
+    .local v2, "len$":I
     const/4 v1, 0x0
 
-    .local v1, i$:I
+    .local v1, "i$":I
     :goto_0
     if-ge v1, v2, :cond_3
 
     aget-object v3, v0, v1
 
     .line 104
-    .local v3, version:Lcom/google/zxing/datamatrix/decoder/Version;
+    .local v3, "version":Lcom/google/zxing/datamatrix/decoder/Version;
     iget v4, v3, Lcom/google/zxing/datamatrix/decoder/Version;->symbolSizeRows:I
 
     if-ne v4, p0, :cond_2
@@ -1306,7 +1306,7 @@
     goto :goto_0
 
     .line 109
-    .end local v3           #version:Lcom/google/zxing/datamatrix/decoder/Version;
+    .end local v3    # "version":Lcom/google/zxing/datamatrix/decoder/Version;
     :cond_3
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 

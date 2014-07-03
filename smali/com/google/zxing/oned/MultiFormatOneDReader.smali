@@ -22,7 +22,7 @@
 
     .prologue
     .line 41
-    .local p1, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p1, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     invoke-direct {p0}, Lcom/google/zxing/oned/OneDReader;-><init>()V
 
     .line 43
@@ -31,7 +31,7 @@
     const/4 v0, 0x0
 
     .line 45
-    .local v0, possibleFormats:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/zxing/BarcodeFormat;>;"
+    .local v0, "possibleFormats":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/google/zxing/BarcodeFormat;>;"
     :goto_0
     if-eqz p1, :cond_b
 
@@ -46,14 +46,14 @@
     const/4 v2, 0x1
 
     .line 47
-    .local v2, useCode39CheckDigit:Z
+    .local v2, "useCode39CheckDigit":Z
     :goto_1
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 48
-    .local v1, readers:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/zxing/oned/OneDReader;>;"
+    .local v1, "readers":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/google/zxing/oned/OneDReader;>;"
     if-eqz v0, :cond_8
 
     .line 49
@@ -300,9 +300,9 @@
     return-void
 
     .line 43
-    .end local v0           #possibleFormats:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/zxing/BarcodeFormat;>;"
-    .end local v1           #readers:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/zxing/oned/OneDReader;>;"
-    .end local v2           #useCode39CheckDigit:Z
+    .end local v0    # "possibleFormats":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/google/zxing/BarcodeFormat;>;"
+    .end local v1    # "readers":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/google/zxing/oned/OneDReader;>;"
+    .end local v2    # "useCode39CheckDigit":Z
     :cond_a
     sget-object v3, Lcom/google/zxing/DecodeHintType;->POSSIBLE_FORMATS:Lcom/google/zxing/DecodeHintType;
 
@@ -317,7 +317,7 @@
     goto/16 :goto_0
 
     .line 45
-    .restart local v0       #possibleFormats:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/zxing/BarcodeFormat;>;"
+    .restart local v0    # "possibleFormats":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/google/zxing/BarcodeFormat;>;"
     :cond_b
     const/4 v2, 0x0
 
@@ -328,8 +328,8 @@
 # virtual methods
 .method public decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 5
-    .parameter "rowNumber"
-    .parameter "row"
+    .param p1, "rowNumber"    # I
+    .param p2, "row"    # Lcom/google/zxing/common/BitArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -350,23 +350,23 @@
 
     .prologue
     .line 94
-    .local p3, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p3, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     iget-object v0, p0, Lcom/google/zxing/oned/MultiFormatOneDReader;->readers:[Lcom/google/zxing/oned/OneDReader;
 
-    .local v0, arr$:[Lcom/google/zxing/oned/OneDReader;
+    .local v0, "arr$":[Lcom/google/zxing/oned/OneDReader;
     array-length v2, v0
 
-    .local v2, len$:I
+    .local v2, "len$":I
     const/4 v1, 0x0
 
-    .local v1, i$:I
+    .local v1, "i$":I
     :goto_0
     if-ge v1, v2, :cond_0
 
     aget-object v3, v0, v1
 
     .line 96
-    .local v3, reader:Lcom/google/zxing/oned/OneDReader;
+    .local v3, "reader":Lcom/google/zxing/oned/OneDReader;
     :try_start_0
     invoke-virtual {v3, p1, p2, p3}, Lcom/google/zxing/oned/OneDReader;->decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
     :try_end_0
@@ -386,7 +386,7 @@
     goto :goto_0
 
     .line 102
-    .end local v3           #reader:Lcom/google/zxing/oned/OneDReader;
+    .end local v3    # "reader":Lcom/google/zxing/oned/OneDReader;
     :cond_0
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
@@ -402,20 +402,20 @@
     .line 107
     iget-object v0, p0, Lcom/google/zxing/oned/MultiFormatOneDReader;->readers:[Lcom/google/zxing/oned/OneDReader;
 
-    .local v0, arr$:[Lcom/google/zxing/oned/OneDReader;
+    .local v0, "arr$":[Lcom/google/zxing/oned/OneDReader;
     array-length v2, v0
 
-    .local v2, len$:I
+    .local v2, "len$":I
     const/4 v1, 0x0
 
-    .local v1, i$:I
+    .local v1, "i$":I
     :goto_0
     if-ge v1, v2, :cond_0
 
     aget-object v3, v0, v1
 
     .line 108
-    .local v3, reader:Lcom/google/zxing/Reader;
+    .local v3, "reader":Lcom/google/zxing/Reader;
     invoke-interface {v3}, Lcom/google/zxing/Reader;->reset()V
 
     .line 107
@@ -424,7 +424,7 @@
     goto :goto_0
 
     .line 110
-    .end local v3           #reader:Lcom/google/zxing/Reader;
+    .end local v3    # "reader":Lcom/google/zxing/Reader;
     :cond_0
     return-void
 .end method

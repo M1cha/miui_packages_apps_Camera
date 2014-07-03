@@ -14,8 +14,8 @@
 # direct methods
 .method constructor <init>(ILjava/lang/String;)V
     .locals 1
-    .parameter "newPosition"
-    .parameter "newString"
+    .param p1, "newPosition"    # I
+    .param p2, "newString"    # Ljava/lang/String;
 
     .prologue
     const/4 v0, 0x0
@@ -38,9 +38,9 @@
 
 .method constructor <init>(ILjava/lang/String;I)V
     .locals 1
-    .parameter "newPosition"
-    .parameter "newString"
-    .parameter "remainingValue"
+    .param p1, "newPosition"    # I
+    .param p2, "newString"    # Ljava/lang/String;
+    .param p3, "remainingValue"    # I
 
     .prologue
     .line 47

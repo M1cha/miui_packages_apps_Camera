@@ -66,25 +66,25 @@
     return-void
 
     :array_0
-    .array-data 0x4
-        0x40t 0x30t 0x0t 0x0t
-        0x4t 0x0t 0x0t 0x0t
-        0x24t 0x30t 0x0t 0x0t
-        0x8t 0x0t 0x0t 0x0t
-        0x23t 0x30t 0x0t 0x0t
-        0x8t 0x0t 0x0t 0x0t
-        0x22t 0x30t 0x0t 0x0t
-        0x8t 0x0t 0x0t 0x0t
-        0x38t 0x30t 0x0t 0x0t
+    .array-data 4
+        0x3040
+        0x4
+        0x3024
+        0x8
+        0x3023
+        0x8
+        0x3022
+        0x8
+        0x3038
     .end array-data
 .end method
 
 .method public constructor <init>(Landroid/graphics/SurfaceTexture;IIZ)V
     .locals 3
-    .parameter "tex"
-    .parameter "w"
-    .parameter "h"
-    .parameter "isLandscape"
+    .param p1, "tex"    # Landroid/graphics/SurfaceTexture;
+    .param p2, "w"    # I
+    .param p3, "h"    # I
+    .param p4, "isLandscape"    # Z
 
     .prologue
     const/4 v2, 0x0
@@ -138,7 +138,7 @@
     .line 189
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer;->mEglThread:Landroid/os/HandlerThread;
 
-    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
     .line 190
     new-instance v0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;
@@ -164,7 +164,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/MosaicPreviewRenderer;)Landroid/os/ConditionVariable;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
 
     .prologue
     .line 34
@@ -175,7 +175,7 @@
 
 .method static synthetic access$100(Lcom/android/camera/MosaicPreviewRenderer;)Landroid/graphics/SurfaceTexture;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
 
     .prologue
     .line 34
@@ -186,7 +186,7 @@
 
 .method static synthetic access$1000(Lcom/android/camera/MosaicPreviewRenderer;)Landroid/graphics/SurfaceTexture;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
 
     .prologue
     .line 34
@@ -197,8 +197,8 @@
 
 .method static synthetic access$102(Lcom/android/camera/MosaicPreviewRenderer;Landroid/graphics/SurfaceTexture;)Landroid/graphics/SurfaceTexture;
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
+    .param p1, "x1"    # Landroid/graphics/SurfaceTexture;
 
     .prologue
     .line 34
@@ -209,8 +209,8 @@
 
 .method static synthetic access$1102(Lcom/android/camera/MosaicPreviewRenderer;Ljavax/microedition/khronos/opengles/GL10;)Ljavax/microedition/khronos/opengles/GL10;
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
+    .param p1, "x1"    # Ljavax/microedition/khronos/opengles/GL10;
 
     .prologue
     .line 34
@@ -221,7 +221,7 @@
 
 .method static synthetic access$1200(Lcom/android/camera/MosaicPreviewRenderer;)I
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
 
     .prologue
     .line 34
@@ -232,7 +232,7 @@
 
 .method static synthetic access$1300(Lcom/android/camera/MosaicPreviewRenderer;)I
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
 
     .prologue
     .line 34
@@ -243,7 +243,7 @@
 
 .method static synthetic access$1400(Lcom/android/camera/MosaicPreviewRenderer;)Z
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
 
     .prologue
     .line 34
@@ -254,7 +254,7 @@
 
 .method static synthetic access$1500(Lcom/android/camera/MosaicPreviewRenderer;)Landroid/os/HandlerThread;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
 
     .prologue
     .line 34
@@ -265,7 +265,7 @@
 
 .method static synthetic access$200(Lcom/android/camera/MosaicPreviewRenderer;)[F
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
 
     .prologue
     .line 34
@@ -276,7 +276,7 @@
 
 .method static synthetic access$300(Lcom/android/camera/MosaicPreviewRenderer;)V
     .locals 0
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
 
     .prologue
     .line 34
@@ -287,7 +287,7 @@
 
 .method static synthetic access$400(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLDisplay;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
 
     .prologue
     .line 34
@@ -298,8 +298,8 @@
 
 .method static synthetic access$402(Lcom/android/camera/MosaicPreviewRenderer;Ljavax/microedition/khronos/egl/EGLDisplay;)Ljavax/microedition/khronos/egl/EGLDisplay;
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
+    .param p1, "x1"    # Ljavax/microedition/khronos/egl/EGLDisplay;
 
     .prologue
     .line 34
@@ -310,7 +310,7 @@
 
 .method static synthetic access$500(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLSurface;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
 
     .prologue
     .line 34
@@ -321,8 +321,8 @@
 
 .method static synthetic access$502(Lcom/android/camera/MosaicPreviewRenderer;Ljavax/microedition/khronos/egl/EGLSurface;)Ljavax/microedition/khronos/egl/EGLSurface;
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
+    .param p1, "x1"    # Ljavax/microedition/khronos/egl/EGLSurface;
 
     .prologue
     .line 34
@@ -333,7 +333,7 @@
 
 .method static synthetic access$600(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGL10;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
 
     .prologue
     .line 34
@@ -344,8 +344,8 @@
 
 .method static synthetic access$602(Lcom/android/camera/MosaicPreviewRenderer;Ljavax/microedition/khronos/egl/EGL10;)Ljavax/microedition/khronos/egl/EGL10;
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
+    .param p1, "x1"    # Ljavax/microedition/khronos/egl/EGL10;
 
     .prologue
     .line 34
@@ -356,7 +356,7 @@
 
 .method static synthetic access$700(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLConfig;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
 
     .prologue
     .line 34
@@ -367,8 +367,8 @@
 
 .method static synthetic access$702(Lcom/android/camera/MosaicPreviewRenderer;Ljavax/microedition/khronos/egl/EGLConfig;)Ljavax/microedition/khronos/egl/EGLConfig;
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
+    .param p1, "x1"    # Ljavax/microedition/khronos/egl/EGLConfig;
 
     .prologue
     .line 34
@@ -379,8 +379,8 @@
 
 .method static synthetic access$800(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;)Ljavax/microedition/khronos/egl/EGLConfig;
     .locals 1
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Ljavax/microedition/khronos/egl/EGL10;
+    .param p1, "x1"    # Ljavax/microedition/khronos/egl/EGLDisplay;
 
     .prologue
     .line 34
@@ -393,7 +393,7 @@
 
 .method static synthetic access$900(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLContext;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
 
     .prologue
     .line 34
@@ -404,8 +404,8 @@
 
 .method static synthetic access$902(Lcom/android/camera/MosaicPreviewRenderer;Ljavax/microedition/khronos/egl/EGLContext;)Ljavax/microedition/khronos/egl/EGLContext;
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/camera/MosaicPreviewRenderer;
+    .param p1, "x1"    # Ljavax/microedition/khronos/egl/EGLContext;
 
     .prologue
     .line 34
@@ -416,8 +416,8 @@
 
 .method private static chooseConfig(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;)Ljavax/microedition/khronos/egl/EGLConfig;
     .locals 12
-    .parameter "egl"
-    .parameter "display"
+    .param p0, "egl"    # Ljavax/microedition/khronos/egl/EGL10;
+    .param p1, "display"    # Ljavax/microedition/khronos/egl/EGLDisplay;
 
     .prologue
     const/4 v4, 0x0
@@ -428,7 +428,7 @@
     new-array v5, v0, [I
 
     .line 248
-    .local v5, numConfig:[I
+    .local v5, "numConfig":[I
     sget-object v2, Lcom/android/camera/MosaicPreviewRenderer;->CONFIG_SPEC:[I
 
     const/4 v3, 0x0
@@ -457,7 +457,7 @@
     aget v10, v5, v4
 
     .line 253
-    .local v10, numConfigs:I
+    .local v10, "numConfigs":I
     if-gtz v10, :cond_1
 
     .line 254
@@ -474,7 +474,7 @@
     new-array v9, v10, [Ljavax/microedition/khronos/egl/EGLConfig;
 
     .line 258
-    .local v9, configs:[Ljavax/microedition/khronos/egl/EGLConfig;
+    .local v9, "configs":[Ljavax/microedition/khronos/egl/EGLConfig;
     sget-object v8, Lcom/android/camera/MosaicPreviewRenderer;->CONFIG_SPEC:[I
 
     move-object v6, p0
@@ -527,7 +527,7 @@
 
     const/4 v1, 0x3
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v1}, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->sendEmptyMessage(I)Z
 
     .line 212
     return-void
@@ -562,7 +562,7 @@
 
     const/4 v1, 0x4
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v1}, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->sendEmptyMessage(I)Z
 
     .line 200
     return-void
@@ -570,7 +570,7 @@
 
 .method public setFramesUpdated(Z)V
     .locals 0
-    .parameter "updated"
+    .param p1, "updated"    # Z
 
     .prologue
     .line 219
@@ -589,7 +589,7 @@
 
     const/4 v1, 0x2
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+    invoke-virtual {v0, v1}, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->sendEmptyMessage(I)Z
 
     .line 208
     return-void

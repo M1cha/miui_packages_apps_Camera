@@ -33,8 +33,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/app/GalleryActivity;Lcom/android/gallery3d/ui/DetailsHelper$DetailsSource;)V
     .locals 0
-    .parameter "activity"
-    .parameter "source"
+    .param p1, "activity"    # Lcom/android/gallery3d/app/GalleryActivity;
+    .param p2, "source"    # Lcom/android/gallery3d/ui/DetailsHelper$DetailsSource;
 
     .prologue
     .line 57
@@ -52,7 +52,7 @@
 
 .method static synthetic access$000(Lcom/android/gallery3d/ui/DialogDetailsView;)Landroid/app/Dialog;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/ui/DialogDetailsView;
 
     .prologue
     .line 45
@@ -63,7 +63,7 @@
 
 .method static synthetic access$100(Lcom/android/gallery3d/ui/DialogDetailsView;)Lcom/android/gallery3d/ui/DetailsHelper$CloseListener;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/ui/DialogDetailsView;
 
     .prologue
     .line 45
@@ -74,7 +74,7 @@
 
 .method static synthetic access$200(Lcom/android/gallery3d/ui/DialogDetailsView;)Lcom/android/gallery3d/app/GalleryActivity;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/ui/DialogDetailsView;
 
     .prologue
     .line 45
@@ -85,7 +85,7 @@
 
 .method static synthetic access$300(Lcom/android/gallery3d/ui/DialogDetailsView;)Lcom/android/gallery3d/data/MediaDetails;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/ui/DialogDetailsView;
 
     .prologue
     .line 45
@@ -96,7 +96,7 @@
 
 .method private setDetails(Lcom/android/gallery3d/data/MediaDetails;)V
     .locals 7
-    .parameter "details"
+    .param p1, "details"    # Lcom/android/gallery3d/data/MediaDetails;
 
     .prologue
     const/4 v6, 0x0
@@ -154,7 +154,7 @@
     move-result-object v1
 
     .line 88
-    .local v1, title:Ljava/lang/String;
+    .local v1, "title":Ljava/lang/String;
     iget-object v2, p0, Lcom/android/gallery3d/ui/DialogDetailsView;->mContext:Lcom/android/gallery3d/app/GalleryActivity;
 
     invoke-interface {v2}, Lcom/android/gallery3d/app/GalleryActivity;->getAndroidContext()Landroid/content/Context;
@@ -176,7 +176,7 @@
     check-cast v0, Landroid/widget/ListView;
 
     .line 90
-    .local v0, detailsList:Landroid/widget/ListView;
+    .local v0, "detailsList":Landroid/widget/ListView;
     iget-object v2, p0, Lcom/android/gallery3d/ui/DialogDetailsView;->mAdapter:Lcom/android/gallery3d/ui/DialogDetailsView$DetailsAdapter;
 
     invoke-virtual {v0, v2}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
@@ -255,7 +255,7 @@
 
 .method public reloadDetails(I)V
     .locals 3
-    .parameter "indexHint"
+    .param p1, "indexHint"    # I
 
     .prologue
     .line 72
@@ -266,7 +266,7 @@
     move-result v1
 
     .line 73
-    .local v1, index:I
+    .local v1, "index":I
     const/4 v2, -0x1
 
     if-ne v1, v2, :cond_1
@@ -285,7 +285,7 @@
     move-result-object v0
 
     .line 75
-    .local v0, details:Lcom/android/gallery3d/data/MediaDetails;
+    .local v0, "details":Lcom/android/gallery3d/data/MediaDetails;
     if-eqz v0, :cond_0
 
     .line 76
@@ -312,7 +312,7 @@
 
 .method public setCloseListener(Lcom/android/gallery3d/ui/DetailsHelper$CloseListener;)V
     .locals 0
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/gallery3d/ui/DetailsHelper$CloseListener;
 
     .prologue
     .line 236

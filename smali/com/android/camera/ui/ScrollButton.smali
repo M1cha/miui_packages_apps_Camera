@@ -66,8 +66,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     const/4 v0, 0x0
@@ -82,7 +82,7 @@
     iput-boolean v0, p0, Lcom/android/camera/ui/ScrollButton;->mAnimating:Z
 
     .line 49
-    const/high16 v0, 0x42c8
+    const/high16 v0, 0x42c80000
 
     iput v0, p0, Lcom/android/camera/ui/ScrollButton;->mAnimatedVelocity:F
 
@@ -111,7 +111,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/ui/ScrollButton;)V
     .locals 0
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/ui/ScrollButton;
 
     .prologue
     .line 22
@@ -125,12 +125,12 @@
 
     .prologue
     .line 192
-    const/high16 v0, -0x3d38
+    const/high16 v0, -0x3d380000
 
     invoke-direct {p0, v0}, Lcom/android/camera/ui/ScrollButton;->performFling(F)V
 
     .line 193
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScrollButton;->invalidate()V
 
     .line 194
     return-void
@@ -141,12 +141,12 @@
 
     .prologue
     .line 187
-    const/high16 v0, 0x42c8
+    const/high16 v0, 0x42c80000
 
     invoke-direct {p0, v0}, Lcom/android/camera/ui/ScrollButton;->performFling(F)V
 
     .line 188
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScrollButton;->invalidate()V
 
     .line 189
     return-void
@@ -234,7 +234,7 @@
     const/4 v0, 0x1
 
     .line 252
-    .local v0, b:Z
+    .local v0, "b":Z
     :cond_3
     iget-object v1, p0, Lcom/android/camera/ui/ScrollButton;->mOnCheckedChangedListener:Lcom/android/camera/ui/ScrollButton$OnCheckedChangedListener;
 
@@ -257,7 +257,7 @@
     goto :goto_0
 
     .line 257
-    .end local v0           #b:Z
+    .end local v0    # "b":Z
     :cond_4
     iget-wide v1, p0, Lcom/android/camera/ui/ScrollButton;->mCurrentAnimationTime:J
 
@@ -295,9 +295,9 @@
     const v0, 0x7f0d0005
 
     .line 324
-    .local v0, resId:I
+    .local v0, "resId":I
     :goto_0
-    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScrollButton;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -308,7 +308,7 @@
     return-object v1
 
     .line 323
-    .end local v0           #resId:I
+    .end local v0    # "resId":I
     :cond_0
     const v0, 0x7f0d0004
 
@@ -325,23 +325,23 @@
     move-result-wide v0
 
     .line 264
-    .local v0, now:J
+    .local v0, "now":J
     iget-wide v4, p0, Lcom/android/camera/ui/ScrollButton;->mAnimationLastTime:J
 
     sub-long v4, v0, v4
 
     long-to-float v4, v4
 
-    const/high16 v5, 0x447a
+    const/high16 v5, 0x447a0000
 
     div-float v3, v4, v5
 
     .line 265
-    .local v3, t:F
+    .local v3, "t":F
     iget v2, p0, Lcom/android/camera/ui/ScrollButton;->mAnimationPosition:F
 
     .line 266
-    .local v2, position:F
+    .local v2, "position":F
     iget v4, p0, Lcom/android/camera/ui/ScrollButton;->mAnimatedVelocity:F
 
     mul-float/2addr v4, v3
@@ -359,7 +359,7 @@
 
 .method private moveSlider(I)V
     .locals 2
-    .parameter "offsetX"
+    .param p1, "offsetX"    # I
 
     .prologue
     .line 198
@@ -382,7 +382,7 @@
     .line 204
     :cond_0
     :goto_0
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScrollButton;->invalidate()V
 
     .line 205
     return-void
@@ -405,7 +405,7 @@
 
 .method private performFling(F)V
     .locals 6
-    .parameter "velocity"
+    .param p1, "velocity"    # F
 
     .prologue
     const/4 v4, 0x0
@@ -429,7 +429,7 @@
     move-result-wide v0
 
     .line 235
-    .local v0, now:J
+    .local v0, "now":J
     iput-wide v0, p0, Lcom/android/camera/ui/ScrollButton;->mAnimationLastTime:J
 
     .line 236
@@ -485,7 +485,7 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 0
-    .parameter "v"
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 83
@@ -494,11 +494,11 @@
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 2
-    .parameter "canvas"
+    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
     .line 293
-    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScrollButton;->isEnabled()Z
 
     move-result v0
 
@@ -511,11 +511,11 @@
 
     int-to-float v1, v1
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->setX(F)V
+    invoke-virtual {v0, v1}, Lcom/android/camera/ui/RotateImageView;->setX(F)V
 
     .line 296
     :cond_0
-    invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
+    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->onDraw(Landroid/graphics/Canvas;)V
 
     .line 297
     return-void
@@ -526,12 +526,12 @@
 
     .prologue
     .line 87
-    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
+    invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
     .line 88
     const v2, 0x7f0c002c
 
-    invoke-virtual {p0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/camera/ui/ScrollButton;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -542,7 +542,7 @@
     .line 89
     const v2, 0x7f0c002f
 
-    invoke-virtual {p0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/camera/ui/ScrollButton;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -553,7 +553,7 @@
     .line 90
     iget-object v2, p0, Lcom/android/camera/ui/ScrollButton;->mSoundView:Landroid/view/View;
 
-    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {p0, v2}, Lcom/android/camera/ui/ScrollButton;->addView(Landroid/view/View;)V
 
     .line 91
     iget-object v2, p0, Lcom/android/camera/ui/ScrollButton;->mSoundView:Landroid/view/View;
@@ -570,7 +570,7 @@
     .line 93
     const v2, 0x7f0c002d
 
-    invoke-virtual {p0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/camera/ui/ScrollButton;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -581,7 +581,7 @@
     .line 94
     const v2, 0x7f0c002e
 
-    invoke-virtual {p0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Lcom/android/camera/ui/ScrollButton;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -592,12 +592,12 @@
     .line 96
     iget-object v2, p0, Lcom/android/camera/ui/ScrollButton;->mFrame:Landroid/widget/ImageView;
 
-    invoke-virtual {v2}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v2}, Landroid/widget/ImageView;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     .line 97
-    .local v1, frameDrawable:Landroid/graphics/drawable/Drawable;
+    .local v1, "frameDrawable":Landroid/graphics/drawable/Drawable;
     if-nez v1, :cond_0
 
     .line 110
@@ -608,7 +608,7 @@
     :cond_0
     const/4 v2, 0x0
 
-    invoke-virtual {p0, v2}, Landroid/view/View;->setDrawingCacheEnabled(Z)V
+    invoke-virtual {p0, v2}, Lcom/android/camera/ui/ScrollButton;->setDrawingCacheEnabled(Z)V
 
     .line 101
     invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
@@ -629,7 +629,7 @@
 
     iget-object v3, p0, Lcom/android/camera/ui/ScrollButton;->mSlider:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v3}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v3}, Lcom/android/camera/ui/RotateImageView;->getBackground()Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
@@ -653,7 +653,7 @@
     iput v2, p0, Lcom/android/camera/ui/ScrollButton;->mSliderEndPosition:I
 
     .line 106
-    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScrollButton;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -664,12 +664,12 @@
     iget v0, v2, Landroid/util/DisplayMetrics;->density:F
 
     .line 107
-    .local v0, density:F
-    const/high16 v2, 0x4080
+    .local v0, "density":F
+    const/high16 v2, 0x40800000
 
     mul-float/2addr v2, v0
 
-    const/high16 v3, 0x3f00
+    const/high16 v3, 0x3f000000
 
     add-float/2addr v2, v3
 
@@ -678,24 +678,24 @@
     iput v2, p0, Lcom/android/camera/ui/ScrollButton;->mTapThreshold:I
 
     .line 108
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScrollButton;->invalidate()V
 
     .line 109
-    invoke-virtual {p0}, Landroid/widget/RelativeLayout;->requestLayout()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScrollButton;->requestLayout()V
 
     goto :goto_0
 .end method
 
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 5
-    .parameter "info"
+    .param p1, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .prologue
     .line 315
     invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     .line 316
-    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScrollButton;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
@@ -722,7 +722,7 @@
     move-result-object v0
 
     .line 319
-    .local v0, contentDescription:Ljava/lang/String;
+    .local v0, "contentDescription":Ljava/lang/String;
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentDescription(Ljava/lang/CharSequence;)V
 
     .line 320
@@ -731,18 +731,18 @@
 
 .method protected onMeasure(II)V
     .locals 3
-    .parameter "widthMeasureSpec"
-    .parameter "heightMeasureSpec"
+    .param p1, "widthMeasureSpec"    # I
+    .param p2, "heightMeasureSpec"    # I
 
     .prologue
-    const/high16 v2, 0x4000
+    const/high16 v2, 0x40000000
 
     .line 225
     iget v0, p0, Lcom/android/camera/ui/ScrollButton;->mWidth:I
 
     iget v1, p0, Lcom/android/camera/ui/ScrollButton;->mHeight:I
 
-    invoke-virtual {p0, v0, v1}, Landroid/view/View;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v0, v1}, Lcom/android/camera/ui/ScrollButton;->setMeasuredDimension(II)V
 
     .line 226
     iget v0, p0, Lcom/android/camera/ui/ScrollButton;->mWidth:I
@@ -765,7 +765,7 @@
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 9
-    .parameter "event"
+    .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
     const/4 v5, 0x1
@@ -773,7 +773,7 @@
     const/4 v4, 0x0
 
     .line 114
-    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScrollButton;->isEnabled()Z
 
     move-result v6
 
@@ -790,7 +790,7 @@
     move-result v0
 
     .line 118
-    .local v0, action:I
+    .local v0, "action":I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v6
@@ -798,7 +798,7 @@
     float-to-int v2, v6
 
     .line 119
-    .local v2, x:I
+    .local v2, "x":I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v6
@@ -806,7 +806,7 @@
     float-to-int v3, v6
 
     .line 120
-    .local v3, y:I
+    .local v3, "y":I
     new-instance v1, Landroid/graphics/Rect;
 
     iget v6, p0, Lcom/android/camera/ui/ScrollButton;->mSliderOffset:I
@@ -822,7 +822,7 @@
     invoke-direct {v1, v6, v4, v7, v8}, Landroid/graphics/Rect;-><init>(IIII)V
 
     .line 122
-    .local v1, sliderFrame:Landroid/graphics/Rect;
+    .local v1, "sliderFrame":Landroid/graphics/Rect;
     packed-switch v0, :pswitch_data_0
 
     :cond_1
@@ -844,7 +844,7 @@
     iput-boolean v5, p0, Lcom/android/camera/ui/ScrollButton;->mTracking:Z
 
     .line 126
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScrollButton;->invalidate()V
 
     .line 130
     :goto_2
@@ -897,7 +897,7 @@
     iput-boolean v5, p0, Lcom/android/camera/ui/ScrollButton;->mSliderMoved:Z
 
     .line 141
-    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScrollButton;->getParent()Landroid/view/ViewParent;
 
     move-result-object v4
 
@@ -997,13 +997,13 @@
 
 .method public setCameraIconDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .parameter "drawable"
+    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 275
     iget-object v0, p0, Lcom/android/camera/ui/ScrollButton;->mCameraIcon:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, p1}, Lcom/android/camera/ui/RotateImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 276
     return-void
@@ -1011,7 +1011,7 @@
 
 .method public setChecked(Z)V
     .locals 1
-    .parameter "checked"
+    .param p1, "checked"    # Z
 
     .prologue
     .line 209
@@ -1032,7 +1032,7 @@
 
     .line 216
     :goto_0
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/ScrollButton;->invalidate()V
 
     .line 217
     return-void
@@ -1048,16 +1048,16 @@
 
 .method public setEnabled(Z)V
     .locals 1
-    .parameter "enabled"
+    .param p1, "enabled"    # Z
 
     .prologue
     .line 309
     iget-object v0, p0, Lcom/android/camera/ui/ScrollButton;->mSlider:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v0, p1}, Lcom/android/camera/ui/TwoStateImageView;->setEnabled(Z)V
+    invoke-virtual {v0, p1}, Lcom/android/camera/ui/RotateImageView;->setEnabled(Z)V
 
     .line 310
-    invoke-super {p0, p1}, Landroid/view/View;->setEnabled(Z)V
+    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->setEnabled(Z)V
 
     .line 311
     return-void
@@ -1065,13 +1065,13 @@
 
 .method public setFrameBackground(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .parameter "drawable"
+    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 283
     iget-object v0, p0, Lcom/android/camera/ui/ScrollButton;->mFrame:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 284
     return-void
@@ -1079,7 +1079,7 @@
 
 .method public setOnCheckedChangedListener(Lcom/android/camera/ui/ScrollButton$OnCheckedChangedListener;)V
     .locals 0
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/camera/ui/ScrollButton$OnCheckedChangedListener;
 
     .prologue
     .line 72
@@ -1091,8 +1091,8 @@
 
 .method public setOrientation(IZ)V
     .locals 1
-    .parameter "orientation"
-    .parameter "animation"
+    .param p1, "orientation"    # I
+    .param p2, "animation"    # Z
 
     .prologue
     .line 302
@@ -1116,13 +1116,13 @@
 
 .method public setSliderBackground(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .parameter "drawable"
+    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 288
     iget-object v0, p0, Lcom/android/camera/ui/ScrollButton;->mSlider:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, p1}, Lcom/android/camera/ui/RotateImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 289
     return-void
@@ -1130,13 +1130,13 @@
 
 .method public setSliderDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .parameter "drawable"
+    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 271
     iget-object v0, p0, Lcom/android/camera/ui/ScrollButton;->mSlider:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, p1}, Lcom/android/camera/ui/RotateImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 272
     return-void
@@ -1144,13 +1144,13 @@
 
 .method public setVideoIconDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .parameter "drawable"
+    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 279
     iget-object v0, p0, Lcom/android/camera/ui/ScrollButton;->mVideoIcon:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, p1}, Lcom/android/camera/ui/RotateImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 280
     return-void

@@ -30,11 +30,11 @@
 
 .method private correctErrors([BIIII)V
     .locals 7
-    .parameter "codewordBytes"
-    .parameter "start"
-    .parameter "dataCodewords"
-    .parameter "ecCodewords"
-    .parameter "mode"
+    .param p1, "codewordBytes"    # [B
+    .param p2, "start"    # I
+    .param p3, "dataCodewords"    # I
+    .param p4, "ecCodewords"    # I
+    .param p5, "mode"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/ChecksumException;
@@ -46,23 +46,23 @@
     add-int v0, p3, p4
 
     .line 91
-    .local v0, codewords:I
+    .local v0, "codewords":I
     if-nez p5, :cond_2
 
     const/4 v2, 0x1
 
     .line 94
-    .local v2, divisor:I
+    .local v2, "divisor":I
     :goto_0
     div-int v5, v0, v2
 
     new-array v1, v5, [I
 
     .line 95
-    .local v1, codewordsInts:[I
+    .local v1, "codewordsInts":[I
     const/4 v3, 0x0
 
-    .local v3, i:I
+    .local v3, "i":I
     :goto_1
     if-ge v3, v0, :cond_3
 
@@ -94,18 +94,18 @@
     goto :goto_1
 
     .line 91
-    .end local v1           #codewordsInts:[I
-    .end local v2           #divisor:I
-    .end local v3           #i:I
+    .end local v1    # "codewordsInts":[I
+    .end local v2    # "divisor":I
+    .end local v3    # "i":I
     :cond_2
     const/4 v2, 0x2
 
     goto :goto_0
 
     .line 101
-    .restart local v1       #codewordsInts:[I
-    .restart local v2       #divisor:I
-    .restart local v3       #i:I
+    .restart local v1    # "codewordsInts":[I
+    .restart local v2    # "divisor":I
+    .restart local v3    # "i":I
     :cond_3
     :try_start_0
     iget-object v5, p0, Lcom/google/zxing/maxicode/decoder/Decoder;->rsDecoder:Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;
@@ -154,7 +154,7 @@
     move-exception v4
 
     .line 103
-    .local v4, ignored:Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
+    .local v4, "ignored":Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
     invoke-static {}, Lcom/google/zxing/ChecksumException;->getChecksumInstance()Lcom/google/zxing/ChecksumException;
 
     move-result-object v5
@@ -162,7 +162,7 @@
     throw v5
 
     .line 112
-    .end local v4           #ignored:Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
+    .end local v4    # "ignored":Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
     :cond_6
     return-void
 .end method
@@ -171,7 +171,7 @@
 # virtual methods
 .method public decode(Lcom/google/zxing/common/BitMatrix;Ljava/util/Map;)Lcom/google/zxing/common/DecoderResult;
     .locals 9
-    .parameter "bits"
+    .param p1, "bits"    # Lcom/google/zxing/common/BitMatrix;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -193,19 +193,19 @@
 
     .prologue
     .line 54
-    .local p2, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p2, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     new-instance v8, Lcom/google/zxing/maxicode/decoder/BitMatrixParser;
 
     invoke-direct {v8, p1}, Lcom/google/zxing/maxicode/decoder/BitMatrixParser;-><init>(Lcom/google/zxing/common/BitMatrix;)V
 
     .line 55
-    .local v8, parser:Lcom/google/zxing/maxicode/decoder/BitMatrixParser;
+    .local v8, "parser":Lcom/google/zxing/maxicode/decoder/BitMatrixParser;
     invoke-virtual {v8}, Lcom/google/zxing/maxicode/decoder/BitMatrixParser;->readCodewords()[B
 
     move-result-object v1
 
     .line 57
-    .local v1, codewords:[B
+    .local v1, "codewords":[B
     const/4 v2, 0x0
 
     const/16 v3, 0xa
@@ -226,7 +226,7 @@
     and-int/lit8 v7, v0, 0xf
 
     .line 60
-    .local v7, mode:I
+    .local v7, "mode":I
     packed-switch v7, :pswitch_data_0
 
     .line 74
@@ -269,7 +269,7 @@
     new-array v6, v0, [B
 
     .line 77
-    .local v6, datawords:[B
+    .local v6, "datawords":[B
     :goto_0
     const/4 v0, 0x0
 
@@ -298,7 +298,7 @@
     return-object v0
 
     .line 69
-    .end local v6           #datawords:[B
+    .end local v6    # "datawords":[B
     :pswitch_1
     const/16 v2, 0x14
 
@@ -331,7 +331,7 @@
     new-array v6, v0, [B
 
     .line 72
-    .restart local v6       #datawords:[B
+    .restart local v6    # "datawords":[B
     goto :goto_0
 
     .line 60

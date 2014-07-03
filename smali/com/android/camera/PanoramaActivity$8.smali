@@ -38,13 +38,13 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .parameter "v"
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 884
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$8;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    iget-object v0, v0, Lcom/android/camera/ActivityBase;->mPreferences:Lcom/android/camera/ComboPreferences;
+    iget-object v0, v0, Lcom/android/camera/PanoramaActivity;->mPreferences:Lcom/android/camera/ComboPreferences;
 
     const/4 v1, 0x1
 
@@ -53,7 +53,7 @@
     .line 885
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$8;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->switchToCameraMode()V
+    # invokes: Lcom/android/camera/PanoramaActivity;->switchToCameraMode()V
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$2200(Lcom/android/camera/PanoramaActivity;)V
 
     .line 886

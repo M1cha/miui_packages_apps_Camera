@@ -23,8 +23,8 @@
 # direct methods
 .method constructor <init>(II)V
     .locals 0
-    .parameter "count"
-    .parameter "dataCodewords"
+    .param p1, "count"    # I
+    .param p2, "dataCodewords"    # I
 
     .prologue
     .line 223

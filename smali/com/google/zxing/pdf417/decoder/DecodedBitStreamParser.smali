@@ -67,7 +67,7 @@
     move-result-object v1
 
     .line 80
-    .local v1, nineHundred:Ljava/math/BigInteger;
+    .local v1, "nineHundred":Ljava/math/BigInteger;
     sget-object v2, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->EXP900:[Ljava/math/BigInteger;
 
     const/4 v3, 0x1
@@ -77,7 +77,7 @@
     .line 81
     const/4 v0, 0x2
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     sget-object v2, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->EXP900:[Ljava/math/BigInteger;
 
@@ -111,68 +111,68 @@
 
     .line 61
     :array_0
-    .array-data 0x2
-        0x3bt 0x0t
-        0x3ct 0x0t
-        0x3et 0x0t
-        0x40t 0x0t
-        0x5bt 0x0t
-        0x5ct 0x0t
-        0x7dt 0x0t
-        0x5ft 0x0t
-        0x60t 0x0t
-        0x7et 0x0t
-        0x21t 0x0t
-        0xdt 0x0t
-        0x9t 0x0t
-        0x2ct 0x0t
-        0x3at 0x0t
-        0xat 0x0t
-        0x2dt 0x0t
-        0x2et 0x0t
-        0x24t 0x0t
-        0x2ft 0x0t
-        0x22t 0x0t
-        0x7ct 0x0t
-        0x2at 0x0t
-        0x28t 0x0t
-        0x29t 0x0t
-        0x3ft 0x0t
-        0x7bt 0x0t
-        0x7dt 0x0t
-        0x27t 0x0t
+    .array-data 2
+        0x3bs
+        0x3cs
+        0x3es
+        0x40s
+        0x5bs
+        0x5cs
+        0x7ds
+        0x5fs
+        0x60s
+        0x7es
+        0x21s
+        0xds
+        0x9s
+        0x2cs
+        0x3as
+        0xas
+        0x2ds
+        0x2es
+        0x24s
+        0x2fs
+        0x22s
+        0x7cs
+        0x2as
+        0x28s
+        0x29s
+        0x3fs
+        0x7bs
+        0x7ds
+        0x27s
     .end array-data
 
     .line 66
     nop
 
     :array_1
-    .array-data 0x2
-        0x30t 0x0t
-        0x31t 0x0t
-        0x32t 0x0t
-        0x33t 0x0t
-        0x34t 0x0t
-        0x35t 0x0t
-        0x36t 0x0t
-        0x37t 0x0t
-        0x38t 0x0t
-        0x39t 0x0t
-        0x26t 0x0t
-        0xdt 0x0t
-        0x9t 0x0t
-        0x2ct 0x0t
-        0x3at 0x0t
-        0x23t 0x0t
-        0x2dt 0x0t
-        0x2et 0x0t
-        0x24t 0x0t
-        0x2ft 0x0t
-        0x2bt 0x0t
-        0x25t 0x0t
-        0x2at 0x0t
-        0x3dt 0x0t
-        0x5et 0x0t
+    .array-data 2
+        0x30s
+        0x31s
+        0x32s
+        0x33s
+        0x34s
+        0x35s
+        0x36s
+        0x37s
+        0x38s
+        0x39s
+        0x26s
+        0xds
+        0x9s
+        0x2cs
+        0x3as
+        0x23s
+        0x2ds
+        0x2es
+        0x24s
+        0x2fs
+        0x2bs
+        0x25s
+        0x2as
+        0x3ds
+        0x5es
     .end array-data
 .end method
 
@@ -189,10 +189,10 @@
 
 .method private static byteCompaction(I[IILjava/lang/StringBuilder;)I
     .locals 17
-    .parameter "mode"
-    .parameter "codewords"
-    .parameter "codeIndex"
-    .parameter "result"
+    .param p0, "mode"    # I
+    .param p1, "codewords"    # [I
+    .param p2, "codeIndex"    # I
+    .param p3, "result"    # Ljava/lang/StringBuilder;
 
     .prologue
     .line 433
@@ -206,39 +206,39 @@
     const/4 v4, 0x0
 
     .line 437
-    .local v4, count:I
+    .local v4, "count":I
     const-wide/16 v11, 0x0
 
     .line 438
-    .local v11, value:J
+    .local v11, "value":J
     const/4 v13, 0x6
 
     new-array v6, v13, [C
 
     .line 439
-    .local v6, decodedData:[C
+    .local v6, "decodedData":[C
     const/4 v13, 0x6
 
     new-array v1, v13, [I
 
     .line 440
-    .local v1, byteCompactedCodewords:[I
+    .local v1, "byteCompactedCodewords":[I
     const/4 v7, 0x0
 
     .line 441
-    .local v7, end:Z
+    .local v7, "end":Z
     add-int/lit8 v3, p2, 0x1
 
-    .end local p2
-    .local v3, codeIndex:I
+    .end local p2    # "codeIndex":I
+    .local v3, "codeIndex":I
     aget v10, p1, p2
 
-    .local v10, nextCode:I
+    .local v10, "nextCode":I
     move/from16 p2, v3
 
     .line 442
-    .end local v3           #codeIndex:I
-    .restart local p2
+    .end local v3    # "codeIndex":I
+    .restart local p2    # "codeIndex":I
     :goto_0
     const/4 v13, 0x0
 
@@ -253,8 +253,8 @@
     .line 443
     add-int/lit8 v5, v4, 0x1
 
-    .end local v4           #count:I
-    .local v5, count:I
+    .end local v4    # "count":I
+    .local v5, "count":I
     aput v10, v1, v4
 
     .line 445
@@ -269,8 +269,8 @@
     .line 446
     add-int/lit8 v3, p2, 0x1
 
-    .end local p2
-    .restart local v3       #codeIndex:I
+    .end local p2    # "codeIndex":I
+    .restart local v3    # "codeIndex":I
     aget v10, p1, p2
 
     .line 448
@@ -307,21 +307,21 @@
     add-int/lit8 p2, v3, -0x1
 
     .line 456
-    .end local v3           #codeIndex:I
-    .restart local p2
+    .end local v3    # "codeIndex":I
+    .restart local p2    # "codeIndex":I
     const/4 v7, 0x1
 
     move v4, v5
 
-    .end local v5           #count:I
-    .restart local v4       #count:I
+    .end local v5    # "count":I
+    .restart local v4    # "count":I
     goto :goto_0
 
     .line 458
-    .end local v4           #count:I
-    .end local p2
-    .restart local v3       #codeIndex:I
-    .restart local v5       #count:I
+    .end local v4    # "count":I
+    .end local p2    # "codeIndex":I
+    .restart local v3    # "codeIndex":I
+    .restart local v5    # "count":I
     :cond_1
     rem-int/lit8 v13, v5, 0x5
 
@@ -332,7 +332,7 @@
     .line 461
     const/4 v9, 0x0
 
-    .local v9, j:I
+    .local v9, "j":I
     :goto_1
     const/4 v13, 0x6
 
@@ -370,16 +370,16 @@
     .line 466
     const/4 v4, 0x0
 
-    .end local v5           #count:I
-    .restart local v4       #count:I
+    .end local v5    # "count":I
+    .restart local v4    # "count":I
     move/from16 p2, v3
 
-    .end local v3           #codeIndex:I
-    .restart local p2
+    .end local v3    # "codeIndex":I
+    .restart local p2    # "codeIndex":I
     goto :goto_0
 
     .line 472
-    .end local v9           #j:I
+    .end local v9    # "j":I
     :cond_3
     const/4 v13, 0x0
 
@@ -396,19 +396,19 @@
     .line 473
     add-int/lit8 v5, v4, 0x1
 
-    .end local v4           #count:I
-    .restart local v5       #count:I
+    .end local v4    # "count":I
+    .restart local v5    # "count":I
     aput v10, v1, v4
 
     move v4, v5
 
     .line 479
-    .end local v5           #count:I
-    .restart local v4       #count:I
+    .end local v5    # "count":I
+    .restart local v4    # "count":I
     :cond_4
     const/4 v8, 0x0
 
-    .local v8, i:I
+    .local v8, "i":I
     :goto_2
     if-ge v8, v4, :cond_a
 
@@ -427,13 +427,13 @@
     goto :goto_2
 
     .line 483
-    .end local v1           #byteCompactedCodewords:[I
-    .end local v4           #count:I
-    .end local v6           #decodedData:[C
-    .end local v7           #end:Z
-    .end local v8           #i:I
-    .end local v10           #nextCode:I
-    .end local v11           #value:J
+    .end local v1    # "byteCompactedCodewords":[I
+    .end local v4    # "count":I
+    .end local v6    # "decodedData":[C
+    .end local v7    # "end":Z
+    .end local v8    # "i":I
+    .end local v10    # "nextCode":I
+    .end local v11    # "value":J
     :cond_5
     const/16 v13, 0x39c
 
@@ -445,15 +445,15 @@
     const/4 v4, 0x0
 
     .line 487
-    .restart local v4       #count:I
+    .restart local v4    # "count":I
     const-wide/16 v11, 0x0
 
     .line 488
-    .restart local v11       #value:J
+    .restart local v11    # "value":J
     const/4 v7, 0x0
 
     .line 489
-    .restart local v7       #end:Z
+    .restart local v7    # "end":Z
     :cond_6
     :goto_3
     const/4 v13, 0x0
@@ -469,12 +469,12 @@
     .line 490
     add-int/lit8 v3, p2, 0x1
 
-    .end local p2
-    .restart local v3       #codeIndex:I
+    .end local p2    # "codeIndex":I
+    .restart local v3    # "codeIndex":I
     aget v2, p1, p2
 
     .line 491
-    .local v2, code:I
+    .local v2, "code":I
     const/16 v13, 0x384
 
     if-ge v2, v13, :cond_7
@@ -494,8 +494,8 @@
     move/from16 p2, v3
 
     .line 507
-    .end local v3           #codeIndex:I
-    .restart local p2
+    .end local v3    # "codeIndex":I
+    .restart local p2    # "codeIndex":I
     :goto_4
     rem-int/lit8 v13, v4, 0x5
 
@@ -509,10 +509,10 @@
     new-array v6, v13, [C
 
     .line 511
-    .restart local v6       #decodedData:[C
+    .restart local v6    # "decodedData":[C
     const/4 v9, 0x0
 
-    .restart local v9       #j:I
+    .restart local v9    # "j":I
     :goto_5
     const/4 v13, 0x6
 
@@ -542,10 +542,10 @@
     goto :goto_5
 
     .line 496
-    .end local v6           #decodedData:[C
-    .end local v9           #j:I
-    .end local p2
-    .restart local v3       #codeIndex:I
+    .end local v6    # "decodedData":[C
+    .end local v9    # "j":I
+    .end local p2    # "codeIndex":I
+    .restart local v3    # "codeIndex":I
     :cond_7
     const/16 v13, 0x384
 
@@ -580,15 +580,15 @@
     add-int/lit8 p2, v3, -0x1
 
     .line 504
-    .end local v3           #codeIndex:I
-    .restart local p2
+    .end local v3    # "codeIndex":I
+    .restart local p2    # "codeIndex":I
     const/4 v7, 0x1
 
     goto :goto_4
 
     .line 515
-    .restart local v6       #decodedData:[C
-    .restart local v9       #j:I
+    .restart local v6    # "decodedData":[C
+    .restart local v9    # "j":I
     :cond_9
     move-object/from16 v0, p3
 
@@ -600,52 +600,52 @@
     goto :goto_3
 
     .line 520
-    .end local v2           #code:I
-    .end local v4           #count:I
-    .end local v6           #decodedData:[C
-    .end local v7           #end:Z
-    .end local v9           #j:I
-    .end local v11           #value:J
+    .end local v2    # "code":I
+    .end local v4    # "count":I
+    .end local v6    # "decodedData":[C
+    .end local v7    # "end":Z
+    .end local v9    # "j":I
+    .end local v11    # "value":J
     :cond_a
     return p2
 
-    .end local p2
-    .restart local v2       #code:I
-    .restart local v3       #codeIndex:I
-    .restart local v4       #count:I
-    .restart local v7       #end:Z
-    .restart local v11       #value:J
+    .end local p2    # "codeIndex":I
+    .restart local v2    # "code":I
+    .restart local v3    # "codeIndex":I
+    .restart local v4    # "count":I
+    .restart local v7    # "end":Z
+    .restart local v11    # "value":J
     :cond_b
     move/from16 p2, v3
 
-    .end local v3           #codeIndex:I
-    .restart local p2
+    .end local v3    # "codeIndex":I
+    .restart local p2    # "codeIndex":I
     goto :goto_4
 
-    .end local v2           #code:I
-    .end local v4           #count:I
-    .end local p2
-    .restart local v1       #byteCompactedCodewords:[I
-    .restart local v3       #codeIndex:I
-    .restart local v5       #count:I
-    .restart local v6       #decodedData:[C
-    .restart local v10       #nextCode:I
+    .end local v2    # "code":I
+    .end local v4    # "count":I
+    .end local p2    # "codeIndex":I
+    .restart local v1    # "byteCompactedCodewords":[I
+    .restart local v3    # "codeIndex":I
+    .restart local v5    # "count":I
+    .restart local v6    # "decodedData":[C
+    .restart local v10    # "nextCode":I
     :cond_c
     move v4, v5
 
-    .end local v5           #count:I
-    .restart local v4       #count:I
+    .end local v5    # "count":I
+    .restart local v4    # "count":I
     move/from16 p2, v3
 
-    .end local v3           #codeIndex:I
-    .restart local p2
+    .end local v3    # "codeIndex":I
+    .restart local p2    # "codeIndex":I
     goto/16 :goto_0
 .end method
 
 .method static decode([ILjava/lang/String;)Lcom/google/zxing/common/DecoderResult;
     .locals 8
-    .parameter "codewords"
-    .parameter "ecLevel"
+    .param p0, "codewords"    # [I
+    .param p1, "ecLevel"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -665,29 +665,29 @@
     invoke-direct {v4, v6}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 94
-    .local v4, result:Ljava/lang/StringBuilder;
+    .local v4, "result":Ljava/lang/StringBuilder;
     const/4 v1, 0x1
 
     .line 95
-    .local v1, codeIndex:I
+    .local v1, "codeIndex":I
     add-int/lit8 v2, v1, 0x1
 
-    .end local v1           #codeIndex:I
-    .local v2, codeIndex:I
+    .end local v1    # "codeIndex":I
+    .local v2, "codeIndex":I
     aget v0, p0, v1
 
     .line 96
-    .local v0, code:I
+    .local v0, "code":I
     new-instance v5, Lcom/google/zxing/pdf417/PDF417ResultMetadata;
 
     invoke-direct {v5}, Lcom/google/zxing/pdf417/PDF417ResultMetadata;-><init>()V
 
-    .local v5, resultMetadata:Lcom/google/zxing/pdf417/PDF417ResultMetadata;
+    .local v5, "resultMetadata":Lcom/google/zxing/pdf417/PDF417ResultMetadata;
     move v1, v2
 
     .line 97
-    .end local v2           #codeIndex:I
-    .restart local v1       #codeIndex:I
+    .end local v2    # "codeIndex":I
+    .restart local v1    # "codeIndex":I
     :goto_0
     const/4 v6, 0x0
 
@@ -715,14 +715,14 @@
     .line 126
     add-int/lit8 v2, v1, 0x1
 
-    .end local v1           #codeIndex:I
-    .restart local v2       #codeIndex:I
+    .end local v1    # "codeIndex":I
+    .restart local v2    # "codeIndex":I
     aget v0, p0, v1
 
     move v1, v2
 
-    .end local v2           #codeIndex:I
-    .restart local v1       #codeIndex:I
+    .end local v2    # "codeIndex":I
+    .restart local v1    # "codeIndex":I
     goto :goto_0
 
     .line 100
@@ -813,7 +813,7 @@
     invoke-direct {v3, v7, v6, v7, p1}, Lcom/google/zxing/common/DecoderResult;-><init>([BLjava/lang/String;Ljava/util/List;Ljava/lang/String;)V
 
     .line 135
-    .local v3, decoderResult:Lcom/google/zxing/common/DecoderResult;
+    .local v3, "decoderResult":Lcom/google/zxing/common/DecoderResult;
     invoke-virtual {v3, v5}, Lcom/google/zxing/common/DecoderResult;->setOther(Ljava/lang/Object;)V
 
     .line 136
@@ -833,8 +833,8 @@
 
 .method private static decodeBase900toBase10([II)Ljava/lang/String;
     .locals 6
-    .parameter "codewords"
-    .parameter "count"
+    .param p0, "codewords"    # [I
+    .param p1, "count"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -846,10 +846,10 @@
     sget-object v1, Ljava/math/BigInteger;->ZERO:Ljava/math/BigInteger;
 
     .line 616
-    .local v1, result:Ljava/math/BigInteger;
+    .local v1, "result":Ljava/math/BigInteger;
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     if-ge v0, p1, :cond_0
 
@@ -890,7 +890,7 @@
     move-result-object v2
 
     .line 620
-    .local v2, resultString:Ljava/lang/String;
+    .local v2, "resultString":Ljava/lang/String;
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->charAt(I)C
@@ -921,9 +921,9 @@
 
 .method private static decodeMacroBlock([IILcom/google/zxing/pdf417/PDF417ResultMetadata;)I
     .locals 11
-    .parameter "codewords"
-    .parameter "codeIndex"
-    .parameter "resultMetadata"
+    .param p0, "codewords"    # [I
+    .param p1, "codeIndex"    # I
+    .param p2, "resultMetadata"    # Lcom/google/zxing/pdf417/PDF417ResultMetadata;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -954,10 +954,10 @@
     new-array v8, v9, [I
 
     .line 146
-    .local v8, segmentIndexArray:[I
+    .local v8, "segmentIndexArray":[I
     const/4 v7, 0x0
 
-    .local v7, i:I
+    .local v7, "i":I
     :goto_0
     const/4 v9, 0x2
 
@@ -995,7 +995,7 @@
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 153
-    .local v6, fileId:Ljava/lang/StringBuilder;
+    .local v6, "fileId":Ljava/lang/StringBuilder;
     invoke-static {p0, p1, v6}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->textCompaction([IILjava/lang/StringBuilder;)I
 
     move-result p1
@@ -1027,15 +1027,15 @@
     new-array v0, v9, [I
 
     .line 159
-    .local v0, additionalOptionCodeWords:[I
+    .local v0, "additionalOptionCodeWords":[I
     const/4 v1, 0x0
 
     .line 161
-    .local v1, additionalOptionCodeWordsIndex:I
+    .local v1, "additionalOptionCodeWordsIndex":I
     const/4 v5, 0x0
 
     .line 162
-    .local v5, end:Z
+    .local v5, "end":Z
     :goto_1
     const/4 v9, 0x0
 
@@ -1048,12 +1048,12 @@
     .line 163
     add-int/lit8 v4, p1, 0x1
 
-    .end local p1
-    .local v4, codeIndex:I
+    .end local p1    # "codeIndex":I
+    .local v4, "codeIndex":I
     aget v3, p0, p1
 
     .line 164
-    .local v3, code:I
+    .local v3, "code":I
     const/16 v9, 0x384
 
     if-ge v3, v9, :cond_2
@@ -1061,23 +1061,23 @@
     .line 165
     add-int/lit8 v2, v1, 0x1
 
-    .end local v1           #additionalOptionCodeWordsIndex:I
-    .local v2, additionalOptionCodeWordsIndex:I
+    .end local v1    # "additionalOptionCodeWordsIndex":I
+    .local v2, "additionalOptionCodeWordsIndex":I
     aput v3, v0, v1
 
     move v1, v2
 
-    .end local v2           #additionalOptionCodeWordsIndex:I
-    .restart local v1       #additionalOptionCodeWordsIndex:I
+    .end local v2    # "additionalOptionCodeWordsIndex":I
+    .restart local v1    # "additionalOptionCodeWordsIndex":I
     move p1, v4
 
-    .end local v4           #codeIndex:I
-    .restart local p1
+    .end local v4    # "codeIndex":I
+    .restart local p1    # "codeIndex":I
     goto :goto_1
 
     .line 167
-    .end local p1
-    .restart local v4       #codeIndex:I
+    .end local p1    # "codeIndex":I
+    .restart local v4    # "codeIndex":I
     :cond_2
     packed-switch v3, :pswitch_data_0
 
@@ -1098,15 +1098,15 @@
     add-int/lit8 p1, v4, 0x1
 
     .line 171
-    .end local v4           #codeIndex:I
-    .restart local p1
+    .end local v4    # "codeIndex":I
+    .restart local p1    # "codeIndex":I
     const/4 v5, 0x1
 
     .line 172
     goto :goto_1
 
     .line 179
-    .end local v3           #code:I
+    .end local v3    # "code":I
     :cond_3
     invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([II)[I
 
@@ -1115,9 +1115,9 @@
     invoke-virtual {p2, v9}, Lcom/google/zxing/pdf417/PDF417ResultMetadata;->setOptionalData([I)V
 
     .line 185
-    .end local v0           #additionalOptionCodeWords:[I
-    .end local v1           #additionalOptionCodeWordsIndex:I
-    .end local v5           #end:Z
+    .end local v0    # "additionalOptionCodeWords":[I
+    .end local v1    # "additionalOptionCodeWordsIndex":I
+    .end local v5    # "end":Z
     :cond_4
     :goto_2
     return p1
@@ -1151,10 +1151,10 @@
 
 .method private static decodeTextCompaction([I[IILjava/lang/StringBuilder;)V
     .locals 12
-    .parameter "textCompactionData"
-    .parameter "byteCompactionData"
-    .parameter "length"
-    .parameter "result"
+    .param p0, "textCompactionData"    # [I
+    .param p1, "byteCompactionData"    # [I
+    .param p2, "length"    # I
+    .param p3, "result"    # Ljava/lang/StringBuilder;
 
     .prologue
     const/16 v11, 0x1b
@@ -1171,15 +1171,15 @@
     sget-object v3, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
     .line 286
-    .local v3, subMode:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
+    .local v3, "subMode":Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
     sget-object v2, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ALPHA:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
 
     .line 287
-    .local v2, priorToShiftMode:Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
+    .local v2, "priorToShiftMode":Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;
     const/4 v1, 0x0
 
     .line 288
-    .local v1, i:I
+    .local v1, "i":I
     :goto_0
     if-ge v1, p2, :cond_1d
 
@@ -1187,14 +1187,14 @@
     aget v4, p0, v1
 
     .line 290
-    .local v4, subModeCh:I
+    .local v4, "subModeCh":I
     const/4 v0, 0x0
 
     .line 291
-    .local v0, ch:C
+    .local v0, "ch":C
     sget-object v5, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$1;->$SwitchMap$com$google$zxing$pdf417$decoder$DecodedBitStreamParser$Mode:[I
 
-    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v3}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser$Mode;->ordinal()I
 
     move-result v6
 
@@ -1575,8 +1575,8 @@
     goto/16 :goto_1
 
     .line 419
-    .end local v0           #ch:C
-    .end local v4           #subModeCh:I
+    .end local v0    # "ch":C
+    .end local v4    # "subModeCh":I
     :cond_1d
     return-void
 
@@ -1594,9 +1594,9 @@
 
 .method private static numericCompaction([IILjava/lang/StringBuilder;)I
     .locals 9
-    .parameter "codewords"
-    .parameter "codeIndex"
-    .parameter "result"
+    .param p0, "codewords"    # [I
+    .param p1, "codeIndex"    # I
+    .param p2, "result"    # Ljava/lang/StringBuilder;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -1612,17 +1612,17 @@
     const/4 v2, 0x0
 
     .line 533
-    .local v2, count:I
+    .local v2, "count":I
     const/4 v3, 0x0
 
     .line 535
-    .local v3, end:Z
+    .local v3, "end":Z
     const/16 v6, 0xf
 
     new-array v4, v6, [I
 
     .line 537
-    .local v4, numericCodewords:[I
+    .local v4, "numericCodewords":[I
     :cond_0
     :goto_0
     aget v6, p0, v7
@@ -1634,12 +1634,12 @@
     .line 538
     add-int/lit8 v1, p1, 0x1
 
-    .end local p1
-    .local v1, codeIndex:I
+    .end local p1    # "codeIndex":I
+    .local v1, "codeIndex":I
     aget v0, p0, p1
 
     .line 539
-    .local v0, code:I
+    .local v0, "code":I
     aget v6, p0, v7
 
     if-ne v1, v6, :cond_1
@@ -1660,8 +1660,8 @@
     move p1, v1
 
     .line 556
-    .end local v1           #codeIndex:I
-    .restart local p1
+    .end local v1    # "codeIndex":I
+    .restart local p1    # "codeIndex":I
     :goto_1
     rem-int/lit8 v6, v2, 0xf
 
@@ -1680,7 +1680,7 @@
     move-result-object v5
 
     .line 564
-    .local v5, s:Ljava/lang/String;
+    .local v5, "s":Ljava/lang/String;
     invoke-virtual {p2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 565
@@ -1689,9 +1689,9 @@
     goto :goto_0
 
     .line 546
-    .end local v5           #s:Ljava/lang/String;
-    .end local p1
-    .restart local v1       #codeIndex:I
+    .end local v5    # "s":Ljava/lang/String;
+    .end local p1    # "codeIndex":I
+    .restart local v1    # "codeIndex":I
     :cond_3
     if-eq v0, v8, :cond_4
 
@@ -1720,33 +1720,33 @@
     add-int/lit8 p1, v1, -0x1
 
     .line 553
-    .end local v1           #codeIndex:I
-    .restart local p1
+    .end local v1    # "codeIndex":I
+    .restart local p1    # "codeIndex":I
     const/4 v3, 0x1
 
     goto :goto_1
 
     .line 568
-    .end local v0           #code:I
+    .end local v0    # "code":I
     :cond_5
     return p1
 
-    .end local p1
-    .restart local v0       #code:I
-    .restart local v1       #codeIndex:I
+    .end local p1    # "codeIndex":I
+    .restart local v0    # "code":I
+    .restart local v1    # "codeIndex":I
     :cond_6
     move p1, v1
 
-    .end local v1           #codeIndex:I
-    .restart local p1
+    .end local v1    # "codeIndex":I
+    .restart local p1    # "codeIndex":I
     goto :goto_1
 .end method
 
 .method private static textCompaction([IILjava/lang/StringBuilder;)I
     .locals 11
-    .parameter "codewords"
-    .parameter "codeIndex"
-    .parameter "result"
+    .param p0, "codewords"    # [I
+    .param p1, "codeIndex"    # I
+    .param p2, "result"    # Ljava/lang/StringBuilder;
 
     .prologue
     const/16 v10, 0x384
@@ -1763,7 +1763,7 @@
     new-array v6, v7, [I
 
     .line 202
-    .local v6, textCompactionData:[I
+    .local v6, "textCompactionData":[I
     aget v7, p0, v9
 
     sub-int/2addr v7, p1
@@ -1773,15 +1773,15 @@
     new-array v0, v7, [I
 
     .line 204
-    .local v0, byteCompactionData:[I
+    .local v0, "byteCompactionData":[I
     const/4 v4, 0x0
 
     .line 205
-    .local v4, index:I
+    .local v4, "index":I
     const/4 v3, 0x0
 
     .line 206
-    .local v3, end:Z
+    .local v3, "end":Z
     :goto_0
     aget v7, p0, v9
 
@@ -1792,12 +1792,12 @@
     .line 207
     add-int/lit8 v2, p1, 0x1
 
-    .end local p1
-    .local v2, codeIndex:I
+    .end local p1    # "codeIndex":I
+    .local v2, "codeIndex":I
     aget v1, p0, p1
 
     .line 208
-    .local v1, code:I
+    .local v1, "code":I
     if-ge v1, v10, :cond_0
 
     .line 209
@@ -1817,116 +1817,116 @@
 
     move p1, v2
 
-    .end local v2           #codeIndex:I
-    .restart local p1
+    .end local v2    # "codeIndex":I
+    .restart local p1    # "codeIndex":I
     goto :goto_0
 
     .line 213
-    .end local p1
-    .restart local v2       #codeIndex:I
+    .end local p1    # "codeIndex":I
+    .restart local v2    # "codeIndex":I
     :cond_0
     sparse-switch v1, :sswitch_data_0
 
     move p1, v2
 
-    .end local v2           #codeIndex:I
-    .restart local p1
+    .end local v2    # "codeIndex":I
+    .restart local p1    # "codeIndex":I
     goto :goto_0
 
     .line 216
-    .end local p1
-    .restart local v2       #codeIndex:I
+    .end local p1    # "codeIndex":I
+    .restart local v2    # "codeIndex":I
     :sswitch_0
     add-int/lit8 v5, v4, 0x1
 
-    .end local v4           #index:I
-    .local v5, index:I
+    .end local v4    # "index":I
+    .local v5, "index":I
     aput v10, v6, v4
 
     move v4, v5
 
-    .end local v5           #index:I
-    .restart local v4       #index:I
+    .end local v5    # "index":I
+    .restart local v4    # "index":I
     move p1, v2
 
     .line 217
-    .end local v2           #codeIndex:I
-    .restart local p1
+    .end local v2    # "codeIndex":I
+    .restart local p1    # "codeIndex":I
     goto :goto_0
 
     .line 219
-    .end local p1
-    .restart local v2       #codeIndex:I
+    .end local p1    # "codeIndex":I
+    .restart local v2    # "codeIndex":I
     :sswitch_1
     add-int/lit8 p1, v2, -0x1
 
     .line 220
-    .end local v2           #codeIndex:I
-    .restart local p1
+    .end local v2    # "codeIndex":I
+    .restart local p1    # "codeIndex":I
     const/4 v3, 0x1
 
     .line 221
     goto :goto_0
 
     .line 223
-    .end local p1
-    .restart local v2       #codeIndex:I
+    .end local p1    # "codeIndex":I
+    .restart local v2    # "codeIndex":I
     :sswitch_2
     add-int/lit8 p1, v2, -0x1
 
     .line 224
-    .end local v2           #codeIndex:I
-    .restart local p1
+    .end local v2    # "codeIndex":I
+    .restart local p1    # "codeIndex":I
     const/4 v3, 0x1
 
     .line 225
     goto :goto_0
 
     .line 227
-    .end local p1
-    .restart local v2       #codeIndex:I
+    .end local p1    # "codeIndex":I
+    .restart local v2    # "codeIndex":I
     :sswitch_3
     add-int/lit8 p1, v2, -0x1
 
     .line 228
-    .end local v2           #codeIndex:I
-    .restart local p1
+    .end local v2    # "codeIndex":I
+    .restart local p1    # "codeIndex":I
     const/4 v3, 0x1
 
     .line 229
     goto :goto_0
 
     .line 231
-    .end local p1
-    .restart local v2       #codeIndex:I
+    .end local p1    # "codeIndex":I
+    .restart local v2    # "codeIndex":I
     :sswitch_4
     add-int/lit8 p1, v2, -0x1
 
     .line 232
-    .end local v2           #codeIndex:I
-    .restart local p1
+    .end local v2    # "codeIndex":I
+    .restart local p1    # "codeIndex":I
     const/4 v3, 0x1
 
     .line 233
     goto :goto_0
 
     .line 235
-    .end local p1
-    .restart local v2       #codeIndex:I
+    .end local p1    # "codeIndex":I
+    .restart local v2    # "codeIndex":I
     :sswitch_5
     add-int/lit8 p1, v2, -0x1
 
     .line 236
-    .end local v2           #codeIndex:I
-    .restart local p1
+    .end local v2    # "codeIndex":I
+    .restart local p1    # "codeIndex":I
     const/4 v3, 0x1
 
     .line 237
     goto :goto_0
 
     .line 245
-    .end local p1
-    .restart local v2       #codeIndex:I
+    .end local p1    # "codeIndex":I
+    .restart local v2    # "codeIndex":I
     :sswitch_6
     const/16 v7, 0x391
 
@@ -1935,8 +1935,8 @@
     .line 246
     add-int/lit8 p1, v2, 0x1
 
-    .end local v2           #codeIndex:I
-    .restart local p1
+    .end local v2    # "codeIndex":I
+    .restart local p1    # "codeIndex":I
     aget v1, p0, v2
 
     .line 247
@@ -1949,20 +1949,20 @@
     goto :goto_0
 
     .line 251
-    .end local p1
-    .restart local v2       #codeIndex:I
+    .end local p1    # "codeIndex":I
+    .restart local v2    # "codeIndex":I
     :sswitch_7
     add-int/lit8 p1, v2, -0x1
 
     .line 252
-    .end local v2           #codeIndex:I
-    .restart local p1
+    .end local v2    # "codeIndex":I
+    .restart local p1    # "codeIndex":I
     const/4 v3, 0x1
 
     goto :goto_0
 
     .line 257
-    .end local v1           #code:I
+    .end local v1    # "code":I
     :cond_1
     invoke-static {v6, v0, v4, p2}, Lcom/google/zxing/pdf417/decoder/DecodedBitStreamParser;->decodeTextCompaction([I[IILjava/lang/StringBuilder;)V
 

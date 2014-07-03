@@ -38,13 +38,13 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .parameter "v"
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 2813
     iget-object v0, p0, Lcom/android/camera/VideoCamera$4;->this$0:Lcom/android/camera/VideoCamera;
 
-    #calls: Lcom/android/camera/VideoCamera;->capture()Z
+    # invokes: Lcom/android/camera/VideoCamera;->capture()Z
     invoke-static {v0}, Lcom/android/camera/VideoCamera;->access$3000(Lcom/android/camera/VideoCamera;)Z
 
     .line 2814

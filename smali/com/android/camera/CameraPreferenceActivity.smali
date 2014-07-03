@@ -18,7 +18,7 @@
 # virtual methods
 .method protected getPreferenceXml(Z)I
     .locals 1
-    .parameter "isSimpleMode"
+    .param p1, "isSimpleMode"    # Z
 
     .prologue
     .line 7
@@ -37,7 +37,7 @@
 
 .method protected onSettingChanged(I)V
     .locals 1
-    .parameter "type"
+    .param p1, "type"    # I
 
     .prologue
     .line 12

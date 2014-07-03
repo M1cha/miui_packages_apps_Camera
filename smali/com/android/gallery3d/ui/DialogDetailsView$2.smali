@@ -38,13 +38,13 @@
 # virtual methods
 .method public onDismiss(Landroid/content/DialogInterface;)V
     .locals 1
-    .parameter "dialog"
+    .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
     .line 103
     iget-object v0, p0, Lcom/android/gallery3d/ui/DialogDetailsView$2;->this$0:Lcom/android/gallery3d/ui/DialogDetailsView;
 
-    #getter for: Lcom/android/gallery3d/ui/DialogDetailsView;->mListener:Lcom/android/gallery3d/ui/DetailsHelper$CloseListener;
+    # getter for: Lcom/android/gallery3d/ui/DialogDetailsView;->mListener:Lcom/android/gallery3d/ui/DetailsHelper$CloseListener;
     invoke-static {v0}, Lcom/android/gallery3d/ui/DialogDetailsView;->access$100(Lcom/android/gallery3d/ui/DialogDetailsView;)Lcom/android/gallery3d/ui/DetailsHelper$CloseListener;
 
     move-result-object v0
@@ -54,7 +54,7 @@
     .line 104
     iget-object v0, p0, Lcom/android/gallery3d/ui/DialogDetailsView$2;->this$0:Lcom/android/gallery3d/ui/DialogDetailsView;
 
-    #getter for: Lcom/android/gallery3d/ui/DialogDetailsView;->mListener:Lcom/android/gallery3d/ui/DetailsHelper$CloseListener;
+    # getter for: Lcom/android/gallery3d/ui/DialogDetailsView;->mListener:Lcom/android/gallery3d/ui/DetailsHelper$CloseListener;
     invoke-static {v0}, Lcom/android/gallery3d/ui/DialogDetailsView;->access$100(Lcom/android/gallery3d/ui/DialogDetailsView;)Lcom/android/gallery3d/ui/DetailsHelper$CloseListener;
 
     move-result-object v0

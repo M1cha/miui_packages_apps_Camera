@@ -43,7 +43,7 @@
     .line 632
     iget-object v0, p0, Lcom/android/camera/EffectsRecorder$3;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    #getter for: Lcom/android/camera/EffectsRecorder;->mLogVerbose:Z
+    # getter for: Lcom/android/camera/EffectsRecorder;->mLogVerbose:Z
     invoke-static {v0}, Lcom/android/camera/EffectsRecorder;->access$000(Lcom/android/camera/EffectsRecorder;)Z
 
     move-result v0
@@ -64,7 +64,7 @@
 
     const/4 v2, 0x4
 
-    #calls: Lcom/android/camera/EffectsRecorder;->sendMessage(II)V
+    # invokes: Lcom/android/camera/EffectsRecorder;->sendMessage(II)V
     invoke-static {v0, v1, v2}, Lcom/android/camera/EffectsRecorder;->access$500(Lcom/android/camera/EffectsRecorder;II)V
 
     .line 634

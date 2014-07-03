@@ -48,7 +48,7 @@
 # virtual methods
 .method public run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Landroid/graphics/Bitmap;
     .locals 1
-    .parameter "jc"
+    .param p1, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
 
     .prologue
     .line 42
@@ -59,7 +59,7 @@
 
 .method public bridge synthetic run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Ljava/lang/Object;
     .locals 1
-    .parameter "x0"
+    .param p1, "x0"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
 
     .prologue
     .line 40

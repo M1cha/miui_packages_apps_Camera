@@ -30,8 +30,8 @@
 
 .method private correctErrors([BI)V
     .locals 6
-    .parameter "codewordBytes"
-    .parameter "numDataCodewords"
+    .param p1, "codewordBytes"    # [B
+    .param p2, "numDataCodewords"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/ChecksumException;
@@ -43,14 +43,14 @@
     array-length v3, p1
 
     .line 129
-    .local v3, numCodewords:I
+    .local v3, "numCodewords":I
     new-array v0, v3, [I
 
     .line 130
-    .local v0, codewordsInts:[I
+    .local v0, "codewordsInts":[I
     const/4 v1, 0x0
 
-    .local v1, i:I
+    .local v1, "i":I
     :goto_0
     if-ge v1, v3, :cond_0
 
@@ -73,7 +73,7 @@
     sub-int v4, v5, p2
 
     .line 135
-    .local v4, numECCodewords:I
+    .local v4, "numECCodewords":I
     :try_start_0
     iget-object v5, p0, Lcom/google/zxing/qrcode/decoder/Decoder;->rsDecoder:Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;
 
@@ -104,7 +104,7 @@
     move-exception v2
 
     .line 137
-    .local v2, ignored:Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
+    .local v2, "ignored":Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
     invoke-static {}, Lcom/google/zxing/ChecksumException;->getChecksumInstance()Lcom/google/zxing/ChecksumException;
 
     move-result-object v5
@@ -112,7 +112,7 @@
     throw v5
 
     .line 144
-    .end local v2           #ignored:Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
+    .end local v2    # "ignored":Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
     :cond_1
     return-void
 .end method
@@ -121,7 +121,7 @@
 # virtual methods
 .method public decode(Lcom/google/zxing/common/BitMatrix;Ljava/util/Map;)Lcom/google/zxing/common/DecoderResult;
     .locals 19
-    .parameter "bits"
+    .param p1, "bits"    # Lcom/google/zxing/common/BitMatrix;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -143,7 +143,7 @@
 
     .prologue
     .line 87
-    .local p2, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p2, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     new-instance v12, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;
 
     move-object/from16 v0, p1
@@ -151,13 +151,13 @@
     invoke-direct {v12, v0}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;-><init>(Lcom/google/zxing/common/BitMatrix;)V
 
     .line 88
-    .local v12, parser:Lcom/google/zxing/qrcode/decoder/BitMatrixParser;
+    .local v12, "parser":Lcom/google/zxing/qrcode/decoder/BitMatrixParser;
     invoke-virtual {v12}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->readVersion()Lcom/google/zxing/qrcode/decoder/Version;
 
     move-result-object v17
 
     .line 89
-    .local v17, version:Lcom/google/zxing/qrcode/decoder/Version;
+    .local v17, "version":Lcom/google/zxing/qrcode/decoder/Version;
     invoke-virtual {v12}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->readFormatInformation()Lcom/google/zxing/qrcode/decoder/FormatInformation;
 
     move-result-object v18
@@ -167,13 +167,13 @@
     move-result-object v7
 
     .line 92
-    .local v7, ecLevel:Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
+    .local v7, "ecLevel":Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
     invoke-virtual {v12}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->readCodewords()[B
 
     move-result-object v4
 
     .line 94
-    .local v4, codewords:[B
+    .local v4, "codewords":[B
     move-object/from16 v0, v17
 
     invoke-static {v4, v0, v7}, Lcom/google/zxing/qrcode/decoder/DataBlock;->getDataBlocks([BLcom/google/zxing/qrcode/decoder/Version;Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;)[Lcom/google/zxing/qrcode/decoder/DataBlock;
@@ -181,27 +181,27 @@
     move-result-object v6
 
     .line 97
-    .local v6, dataBlocks:[Lcom/google/zxing/qrcode/decoder/DataBlock;
+    .local v6, "dataBlocks":[Lcom/google/zxing/qrcode/decoder/DataBlock;
     const/16 v16, 0x0
 
     .line 98
-    .local v16, totalBytes:I
+    .local v16, "totalBytes":I
     move-object v2, v6
 
-    .local v2, arr$:[Lcom/google/zxing/qrcode/decoder/DataBlock;
+    .local v2, "arr$":[Lcom/google/zxing/qrcode/decoder/DataBlock;
     array-length v10, v2
 
-    .local v10, len$:I
+    .local v10, "len$":I
     const/4 v9, 0x0
 
-    .local v9, i$:I
+    .local v9, "i$":I
     :goto_0
     if-ge v9, v10, :cond_0
 
     aget-object v5, v2, v9
 
     .line 99
-    .local v5, dataBlock:Lcom/google/zxing/qrcode/decoder/DataBlock;
+    .local v5, "dataBlock":Lcom/google/zxing/qrcode/decoder/DataBlock;
     invoke-virtual {v5}, Lcom/google/zxing/qrcode/decoder/DataBlock;->getNumDataCodewords()I
 
     move-result v18
@@ -214,18 +214,18 @@
     goto :goto_0
 
     .line 101
-    .end local v5           #dataBlock:Lcom/google/zxing/qrcode/decoder/DataBlock;
+    .end local v5    # "dataBlock":Lcom/google/zxing/qrcode/decoder/DataBlock;
     :cond_0
     move/from16 v0, v16
 
     new-array v13, v0, [B
 
     .line 102
-    .local v13, resultBytes:[B
+    .local v13, "resultBytes":[B
     const/4 v14, 0x0
 
     .line 105
-    .local v14, resultOffset:I
+    .local v14, "resultOffset":I
     move-object v2, v6
 
     array-length v10, v2
@@ -238,19 +238,19 @@
     aget-object v5, v2, v9
 
     .line 106
-    .restart local v5       #dataBlock:Lcom/google/zxing/qrcode/decoder/DataBlock;
+    .restart local v5    # "dataBlock":Lcom/google/zxing/qrcode/decoder/DataBlock;
     invoke-virtual {v5}, Lcom/google/zxing/qrcode/decoder/DataBlock;->getCodewords()[B
 
     move-result-object v3
 
     .line 107
-    .local v3, codewordBytes:[B
+    .local v3, "codewordBytes":[B
     invoke-virtual {v5}, Lcom/google/zxing/qrcode/decoder/DataBlock;->getNumDataCodewords()I
 
     move-result v11
 
     .line 108
-    .local v11, numDataCodewords:I
+    .local v11, "numDataCodewords":I
     move-object/from16 v0, p0
 
     invoke-direct {v0, v3, v11}, Lcom/google/zxing/qrcode/decoder/Decoder;->correctErrors([BI)V
@@ -258,19 +258,19 @@
     .line 109
     const/4 v8, 0x0
 
-    .local v8, i:I
+    .local v8, "i":I
     move v15, v14
 
-    .end local v14           #resultOffset:I
-    .local v15, resultOffset:I
+    .end local v14    # "resultOffset":I
+    .local v15, "resultOffset":I
     :goto_2
     if-ge v8, v11, :cond_1
 
     .line 110
     add-int/lit8 v14, v15, 0x1
 
-    .end local v15           #resultOffset:I
-    .restart local v14       #resultOffset:I
+    .end local v15    # "resultOffset":I
+    .restart local v14    # "resultOffset":I
     aget-byte v18, v3, v8
 
     aput-byte v18, v13, v15
@@ -280,8 +280,8 @@
 
     move v15, v14
 
-    .end local v14           #resultOffset:I
-    .restart local v15       #resultOffset:I
+    .end local v14    # "resultOffset":I
+    .restart local v15    # "resultOffset":I
     goto :goto_2
 
     .line 105
@@ -290,15 +290,15 @@
 
     move v14, v15
 
-    .end local v15           #resultOffset:I
-    .restart local v14       #resultOffset:I
+    .end local v15    # "resultOffset":I
+    .restart local v14    # "resultOffset":I
     goto :goto_1
 
     .line 115
-    .end local v3           #codewordBytes:[B
-    .end local v5           #dataBlock:Lcom/google/zxing/qrcode/decoder/DataBlock;
-    .end local v8           #i:I
-    .end local v11           #numDataCodewords:I
+    .end local v3    # "codewordBytes":[B
+    .end local v5    # "dataBlock":Lcom/google/zxing/qrcode/decoder/DataBlock;
+    .end local v8    # "i":I
+    .end local v11    # "numDataCodewords":I
     :cond_2
     move-object/from16 v0, v17
 

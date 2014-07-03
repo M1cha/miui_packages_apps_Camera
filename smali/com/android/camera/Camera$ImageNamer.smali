@@ -43,7 +43,7 @@
     invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
     .line 1159
-    invoke-virtual {p0}, Ljava/lang/Thread;->start()V
+    invoke-virtual {p0}, Lcom/android/camera/Camera$ImageNamer;->start()V
 
     .line 1160
     return-void
@@ -217,8 +217,8 @@
     :try_start_1
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
@@ -234,7 +234,7 @@
     iget-object v0, p0, Lcom/android/camera/Camera$ImageNamer;->mUri:Landroid/net/Uri;
 
     .line 1192
-    .local v0, uri:Landroid/net/Uri;
+    .local v0, "uri":Landroid/net/Uri;
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/camera/Camera$ImageNamer;->mUri:Landroid/net/Uri;
@@ -247,7 +247,7 @@
     return-object v0
 
     .line 1182
-    .end local v0           #uri:Landroid/net/Uri;
+    .end local v0    # "uri":Landroid/net/Uri;
     :catchall_0
     move-exception v1
 
@@ -258,12 +258,12 @@
 
 .method public declared-synchronized prepareUri(Landroid/content/ContentResolver;JIIILjava/lang/String;)V
     .locals 2
-    .parameter "resolver"
-    .parameter "dateTaken"
-    .parameter "width"
-    .parameter "height"
-    .parameter "rotation"
-    .parameter "suffix"
+    .param p1, "resolver"    # Landroid/content/ContentResolver;
+    .param p2, "dateTaken"    # J
+    .param p4, "width"    # I
+    .param p5, "height"    # I
+    .param p6, "rotation"    # I
+    .param p7, "suffix"    # Ljava/lang/String;
 
     .prologue
     .line 1165
@@ -278,14 +278,14 @@
     move v0, p4
 
     .line 1167
-    .local v0, tmp:I
+    .local v0, "tmp":I
     move p4, p5
 
     .line 1168
     move p5, v0
 
     .line 1170
-    .end local v0           #tmp:I
+    .end local v0    # "tmp":I
     :cond_0
     const/4 v1, 0x1
 
@@ -361,8 +361,8 @@
     :try_start_2
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     goto :goto_0
 

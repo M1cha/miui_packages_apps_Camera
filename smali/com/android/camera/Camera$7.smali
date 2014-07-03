@@ -43,7 +43,7 @@
     .line 2979
     iget-object v0, p0, Lcom/android/camera/Camera$7;->this$0:Lcom/android/camera/Camera;
 
-    invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->openSettingActivity()V
+    invoke-virtual {v0}, Lcom/android/camera/Camera;->openSettingActivity()V
 
     .line 2980
     return-void

@@ -47,8 +47,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 70
@@ -67,7 +67,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/ShutterButton;)Lcom/android/camera/ShutterButton$OnShutterButtonListener;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/camera/ShutterButton;
 
     .prologue
     .line 35
@@ -80,7 +80,7 @@
 # virtual methods
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 9
-    .parameter "event"
+    .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
     const/4 v7, 0x2
@@ -95,19 +95,19 @@
     move-result v0
 
     .line 117
-    .local v0, action:I
+    .local v0, "action":I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v2
 
     .line 118
-    .local v2, x:F
+    .local v2, "x":F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v3
 
     .line 120
-    .local v3, y:F
+    .local v3, "y":F
     packed-switch v0, :pswitch_data_0
 
     .line 149
@@ -136,7 +136,7 @@
     move v1, v5
 
     .line 124
-    .local v1, needClick:Z
+    .local v1, "needClick":Z
     :goto_1
     iget-object v6, p0, Lcom/android/camera/ShutterButton;->mHandler:Landroid/os/Handler;
 
@@ -179,7 +179,7 @@
 
     goto :goto_0
 
-    .end local v1           #needClick:Z
+    .end local v1    # "needClick":Z
     :cond_3
     move v1, v4
 
@@ -239,7 +239,7 @@
     .line 105
     iget-object v0, p0, Lcom/android/camera/ShutterButton;->mShutterButtonImageSource:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Lcom/android/camera/ui/RotateImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -273,7 +273,7 @@
     .line 85
     const v0, 0x7f0c0012
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ShutterButton;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -284,7 +284,7 @@
     .line 86
     const v0, 0x7f0c0013
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ShutterButton;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -293,7 +293,7 @@
     iput-object v0, p0, Lcom/android/camera/ShutterButton;->mShutterButtonImageSource:Lcom/android/camera/ui/RotateImageView;
 
     .line 87
-    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
+    invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
     .line 88
     return-void
@@ -301,13 +301,13 @@
 
 .method public setBackground(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .parameter "background"
+    .param p1, "background"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 97
     iget-object v0, p0, Lcom/android/camera/ShutterButton;->mShutterButtonBackGround:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, p1}, Lcom/android/camera/ui/RotateImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 98
     return-void
@@ -315,13 +315,13 @@
 
 .method public setBackgroundResource(I)V
     .locals 1
-    .parameter "resid"
+    .param p1, "resid"    # I
 
     .prologue
     .line 92
     iget-object v0, p0, Lcom/android/camera/ShutterButton;->mShutterButtonBackGround:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->setBackgroundResource(I)V
+    invoke-virtual {v0, p1}, Lcom/android/camera/ui/RotateImageView;->setBackgroundResource(I)V
 
     .line 93
     return-void
@@ -329,13 +329,13 @@
 
 .method public setImageResource(I)V
     .locals 1
-    .parameter "resid"
+    .param p1, "resid"    # I
 
     .prologue
     .line 101
     iget-object v0, p0, Lcom/android/camera/ShutterButton;->mShutterButtonImageSource:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v0, p1}, Lcom/android/camera/ui/RotateImageView;->setImageResource(I)V
 
     .line 102
     return-void
@@ -343,7 +343,7 @@
 
 .method public setLongClickable(Z)V
     .locals 0
-    .parameter "longClickable"
+    .param p1, "longClickable"    # Z
 
     .prologue
     .line 111
@@ -355,7 +355,7 @@
 
 .method public setOnShutterButtonListener(Lcom/android/camera/ShutterButton$OnShutterButtonListener;)V
     .locals 0
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/camera/ShutterButton$OnShutterButtonListener;
 
     .prologue
     .line 74
@@ -367,8 +367,8 @@
 
 .method public setOrientation(IZ)V
     .locals 1
-    .parameter "orientation"
-    .parameter "animation"
+    .param p1, "orientation"    # I
+    .param p2, "animation"    # Z
 
     .prologue
     .line 158
@@ -387,16 +387,16 @@
 
 .method public setPressed(Z)V
     .locals 1
-    .parameter "pressed"
+    .param p1, "pressed"    # Z
 
     .prologue
     .line 79
     iget-object v0, p0, Lcom/android/camera/ShutterButton;->mShutterButtonBackGround:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v0, p1}, Landroid/view/View;->setPressed(Z)V
+    invoke-virtual {v0, p1}, Lcom/android/camera/ui/RotateImageView;->setPressed(Z)V
 
     .line 80
-    invoke-super {p0, p1}, Landroid/view/View;->setPressed(Z)V
+    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->setPressed(Z)V
 
     .line 81
     return-void

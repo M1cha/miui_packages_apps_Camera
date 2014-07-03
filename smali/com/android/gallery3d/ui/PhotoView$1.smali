@@ -38,13 +38,13 @@
 # virtual methods
 .method public onClick(Lcom/android/gallery3d/ui/GLView;)V
     .locals 1
-    .parameter "v"
+    .param p1, "v"    # Lcom/android/gallery3d/ui/GLView;
 
     .prologue
     .line 250
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$1;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
+    # getter for: Lcom/android/gallery3d/ui/PhotoView;->mListener:Lcom/android/gallery3d/ui/PhotoView$Listener;
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$000(Lcom/android/gallery3d/ui/PhotoView;)Lcom/android/gallery3d/ui/PhotoView$Listener;
 
     move-result-object v0
@@ -54,7 +54,7 @@
     .line 251
     iget-object v0, p0, Lcom/android/gallery3d/ui/PhotoView$1;->this$0:Lcom/android/gallery3d/ui/PhotoView;
 
-    #calls: Lcom/android/gallery3d/ui/PhotoView;->hideUndoBar()V
+    # invokes: Lcom/android/gallery3d/ui/PhotoView;->hideUndoBar()V
     invoke-static {v0}, Lcom/android/gallery3d/ui/PhotoView;->access$100(Lcom/android/gallery3d/ui/PhotoView;)V
 
     .line 252

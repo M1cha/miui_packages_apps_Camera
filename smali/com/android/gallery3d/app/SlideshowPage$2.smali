@@ -21,8 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/SlideshowPage;Lcom/android/gallery3d/app/GalleryActivity;)V
     .locals 0
-    .parameter
-    .parameter "x0"
+    .param p2, "x0"    # Lcom/android/gallery3d/app/GalleryActivity;
 
     .prologue
     .line 117
@@ -37,7 +36,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .parameter "message"
+    .param p1, "message"    # Landroid/os/Message;
 
     .prologue
     .line 120
@@ -56,7 +55,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/gallery3d/app/SlideshowPage$2;->this$0:Lcom/android/gallery3d/app/SlideshowPage;
 
-    #calls: Lcom/android/gallery3d/app/SlideshowPage;->showPendingBitmap()V
+    # invokes: Lcom/android/gallery3d/app/SlideshowPage;->showPendingBitmap()V
     invoke-static {v0}, Lcom/android/gallery3d/app/SlideshowPage;->access$100(Lcom/android/gallery3d/app/SlideshowPage;)V
 
     .line 129
@@ -67,7 +66,7 @@
     :pswitch_1
     iget-object v0, p0, Lcom/android/gallery3d/app/SlideshowPage$2;->this$0:Lcom/android/gallery3d/app/SlideshowPage;
 
-    #calls: Lcom/android/gallery3d/app/SlideshowPage;->loadNextBitmap()V
+    # invokes: Lcom/android/gallery3d/app/SlideshowPage;->loadNextBitmap()V
     invoke-static {v0}, Lcom/android/gallery3d/app/SlideshowPage;->access$200(Lcom/android/gallery3d/app/SlideshowPage;)V
 
     goto :goto_0

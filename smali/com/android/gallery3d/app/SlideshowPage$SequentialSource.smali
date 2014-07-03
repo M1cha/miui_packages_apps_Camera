@@ -41,8 +41,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/data/MediaSet;Z)V
     .locals 2
-    .parameter "mediaSet"
-    .parameter "repeat"
+    .param p1, "mediaSet"    # Lcom/android/gallery3d/data/MediaSet;
+    .param p2, "repeat"    # Z
 
     .prologue
     .line 313
@@ -79,7 +79,7 @@
 # virtual methods
 .method public addContentListener(Lcom/android/gallery3d/data/ContentListener;)V
     .locals 1
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/gallery3d/data/ContentListener;
 
     .prologue
     .line 349
@@ -93,8 +93,8 @@
 
 .method public findItemIndex(Lcom/android/gallery3d/data/Path;I)I
     .locals 1
-    .parameter "path"
-    .parameter "hint"
+    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .param p2, "hint"    # I
 
     .prologue
     .line 319
@@ -109,7 +109,7 @@
 
 .method public getMediaItem(I)Lcom/android/gallery3d/data/MediaItem;
     .locals 5
-    .parameter "index"
+    .param p1, "index"    # I
 
     .prologue
     const/4 v2, 0x0
@@ -126,7 +126,7 @@
     add-int v1, v3, v4
 
     .line 325
-    .local v1, dataEnd:I
+    .local v1, "dataEnd":I
     iget-boolean v3, p0, Lcom/android/gallery3d/app/SlideshowPage$SequentialSource;->mRepeat:Z
 
     if-eqz v3, :cond_2
@@ -139,22 +139,22 @@
     move-result v0
 
     .line 327
-    .local v0, count:I
+    .local v0, "count":I
     if-nez v0, :cond_1
 
     .line 336
-    .end local v0           #count:I
+    .end local v0    # "count":I
     :cond_0
     :goto_0
     return-object v2
 
     .line 328
-    .restart local v0       #count:I
+    .restart local v0    # "count":I
     :cond_1
     rem-int/2addr p1, v0
 
     .line 330
-    .end local v0           #count:I
+    .end local v0    # "count":I
     :cond_2
     iget v3, p0, Lcom/android/gallery3d/app/SlideshowPage$SequentialSource;->mDataStart:I
 
@@ -221,7 +221,7 @@
     move-result-wide v0
 
     .line 341
-    .local v0, version:J
+    .local v0, "version":J
     iget-wide v2, p0, Lcom/android/gallery3d/app/SlideshowPage$SequentialSource;->mDataVersion:J
 
     cmp-long v2, v0, v2
@@ -245,7 +245,7 @@
 
 .method public removeContentListener(Lcom/android/gallery3d/data/ContentListener;)V
     .locals 1
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/gallery3d/data/ContentListener;
 
     .prologue
     .line 353

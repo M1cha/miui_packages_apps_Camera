@@ -230,7 +230,7 @@
 
 .method protected static getMassagedText(Lcom/google/zxing/Result;)Ljava/lang/String;
     .locals 2
-    .parameter "result"
+    .param p0, "result"    # Lcom/google/zxing/Result;
 
     .prologue
     .line 78
@@ -239,7 +239,7 @@
     move-result-object v0
 
     .line 79
-    .local v0, text:Ljava/lang/String;
+    .local v0, "text":Ljava/lang/String;
     const-string v1, "\ufeff"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -262,7 +262,7 @@
 
 .method protected static parseHexDigit(C)I
     .locals 1
-    .parameter "c"
+    .param p0, "c"    # C
 
     .prologue
     .line 137

@@ -15,8 +15,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 33
@@ -25,7 +25,7 @@
     .line 38
     const v0, 0x106000d
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->setBackgroundResource(I)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/RotateLayout;->setBackgroundResource(I)V
 
     .line 39
     return-void
@@ -42,7 +42,7 @@
     .line 43
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/RotateLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -64,11 +64,11 @@
 
 .method protected onLayout(ZIIII)V
     .locals 4
-    .parameter "change"
-    .parameter "left"
-    .parameter "top"
-    .parameter "right"
-    .parameter "bottom"
+    .param p1, "change"    # Z
+    .param p2, "left"    # I
+    .param p3, "top"    # I
+    .param p4, "right"    # I
+    .param p5, "bottom"    # I
 
     .prologue
     const/4 v3, 0x0
@@ -77,11 +77,11 @@
     sub-int v1, p4, p2
 
     .line 52
-    .local v1, width:I
+    .local v1, "width":I
     sub-int v0, p5, p3
 
     .line 53
-    .local v0, height:I
+    .local v0, "height":I
     iget v2, p0, Lcom/android/camera/ui/RotateLayout;->mOrientation:I
 
     sparse-switch v2, :sswitch_data_0
@@ -120,8 +120,8 @@
 
 .method protected onMeasure(II)V
     .locals 5
-    .parameter "widthSpec"
-    .parameter "heightSpec"
+    .param p1, "widthSpec"    # I
+    .param p2, "heightSpec"    # I
 
     .prologue
     const/4 v4, 0x0
@@ -129,18 +129,18 @@
     .line 67
     const/4 v1, 0x0
 
-    .local v1, w:I
+    .local v1, "w":I
     const/4 v0, 0x0
 
     .line 68
-    .local v0, h:I
+    .local v0, "h":I
     iget v2, p0, Lcom/android/camera/ui/RotateLayout;->mOrientation:I
 
     sparse-switch v2, :sswitch_data_0
 
     .line 82
     :goto_0
-    invoke-virtual {p0, v1, v0}, Landroid/view/View;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v1, v0}, Lcom/android/camera/ui/RotateLayout;->setMeasuredDimension(II)V
 
     .line 84
     iget v2, p0, Lcom/android/camera/ui/RotateLayout;->mOrientation:I
@@ -166,7 +166,7 @@
     :sswitch_0
     iget-object v2, p0, Lcom/android/camera/ui/RotateLayout;->mChild:Landroid/view/View;
 
-    invoke-virtual {p0, v2, p1, p2}, Landroid/view/ViewGroup;->measureChild(Landroid/view/View;II)V
+    invoke-virtual {p0, v2, p1, p2}, Lcom/android/camera/ui/RotateLayout;->measureChild(Landroid/view/View;II)V
 
     .line 72
     iget-object v2, p0, Lcom/android/camera/ui/RotateLayout;->mChild:Landroid/view/View;
@@ -189,7 +189,7 @@
     :sswitch_1
     iget-object v2, p0, Lcom/android/camera/ui/RotateLayout;->mChild:Landroid/view/View;
 
-    invoke-virtual {p0, v2, p2, p1}, Landroid/view/ViewGroup;->measureChild(Landroid/view/View;II)V
+    invoke-virtual {p0, v2, p2, p1}, Lcom/android/camera/ui/RotateLayout;->measureChild(Landroid/view/View;II)V
 
     .line 78
     iget-object v2, p0, Lcom/android/camera/ui/RotateLayout;->mChild:Landroid/view/View;
@@ -288,8 +288,8 @@
 
 .method public setOrientation(IZ)V
     .locals 1
-    .parameter "orientation"
-    .parameter "animation"
+    .param p1, "orientation"    # I
+    .param p2, "animation"    # Z
 
     .prologue
     .line 113
@@ -309,7 +309,7 @@
     iput p1, p0, Lcom/android/camera/ui/RotateLayout;->mOrientation:I
 
     .line 116
-    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/RotateLayout;->requestLayout()V
 
     goto :goto_0
 .end method

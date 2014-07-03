@@ -23,9 +23,8 @@
 # direct methods
 .method constructor <init>(Ljava/util/List;IZ)V
     .locals 1
-    .parameter
-    .parameter "rowNumber"
-    .parameter "wasReversed"
+    .param p2, "rowNumber"    # I
+    .param p3, "wasReversed"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -38,7 +37,7 @@
 
     .prologue
     .line 32
-    .local p1, pairs:Ljava/util/List;,"Ljava/util/List<Lcom/google/zxing/oned/rss/expanded/ExpandedPair;>;"
+    .local p1, "pairs":Ljava/util/List;, "Ljava/util/List<Lcom/google/zxing/oned/rss/expanded/ExpandedPair;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 33
@@ -62,7 +61,7 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .parameter "o"
+    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     const/4 v1, 0x0
@@ -84,7 +83,7 @@
     check-cast v0, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;
 
     .line 68
-    .local v0, that:Lcom/google/zxing/oned/rss/expanded/ExpandedRow;
+    .local v0, "that":Lcom/google/zxing/oned/rss/expanded/ExpandedRow;
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;->pairs:Ljava/util/List;
 
     invoke-virtual {v0}, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;->getPairs()Ljava/util/List;
@@ -177,7 +176,7 @@
 
     .prologue
     .line 51
-    .local p1, otherPairs:Ljava/util/List;,"Ljava/util/List<Lcom/google/zxing/oned/rss/expanded/ExpandedPair;>;"
+    .local p1, "otherPairs":Ljava/util/List;, "Ljava/util/List<Lcom/google/zxing/oned/rss/expanded/ExpandedPair;>;"
     iget-object v0, p0, Lcom/google/zxing/oned/rss/expanded/ExpandedRow;->pairs:Ljava/util/List;
 
     invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z

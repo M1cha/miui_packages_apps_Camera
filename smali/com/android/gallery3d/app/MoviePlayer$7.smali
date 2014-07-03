@@ -38,7 +38,7 @@
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
     .locals 1
-    .parameter "dialog"
+    .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
     .line 231

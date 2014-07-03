@@ -167,8 +167,8 @@
 
 .method public static instantiate(Landroid/content/Context;Ljava/lang/String;)Landroid/support/v4/app/Fragment;
     .locals 1
-    .parameter "context"
-    .parameter "fname"
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "fname"    # Ljava/lang/String;
 
     .prologue
     .line 363
@@ -183,9 +183,9 @@
 
 .method public static instantiate(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)Landroid/support/v4/app/Fragment;
     .locals 6
-    .parameter "context"
-    .parameter "fname"
-    .parameter "args"
+    .param p0, "context"    # Landroid/content/Context;
+    .param p1, "fname"    # Ljava/lang/String;
+    .param p2, "args"    # Landroid/os/Bundle;
 
     .prologue
     .line 382
@@ -199,7 +199,7 @@
     check-cast v0, Ljava/lang/Class;
 
     .line 383
-    .local v0, clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
+    .local v0, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     if-nez v0, :cond_0
 
     .line 385
@@ -225,7 +225,7 @@
     check-cast v2, Landroid/support/v4/app/Fragment;
 
     .line 389
-    .local v2, f:Landroid/support/v4/app/Fragment;
+    .local v2, "f":Landroid/support/v4/app/Fragment;
     if-eqz p2, :cond_1
 
     .line 390
@@ -251,13 +251,13 @@
     return-object v2
 
     .line 394
-    .end local v0           #clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
-    .end local v2           #f:Landroid/support/v4/app/Fragment;
+    .end local v0    # "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
+    .end local v2    # "f":Landroid/support/v4/app/Fragment;
     :catch_0
     move-exception v1
 
     .line 395
-    .local v1, e:Ljava/lang/ClassNotFoundException;
+    .local v1, "e":Ljava/lang/ClassNotFoundException;
     new-instance v3, Landroid/support/v4/app/Fragment$InstantiationException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -295,12 +295,12 @@
     throw v3
 
     .line 398
-    .end local v1           #e:Ljava/lang/ClassNotFoundException;
+    .end local v1    # "e":Ljava/lang/ClassNotFoundException;
     :catch_1
     move-exception v1
 
     .line 399
-    .local v1, e:Ljava/lang/InstantiationException;
+    .local v1, "e":Ljava/lang/InstantiationException;
     new-instance v3, Landroid/support/v4/app/Fragment$InstantiationException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -338,12 +338,12 @@
     throw v3
 
     .line 402
-    .end local v1           #e:Ljava/lang/InstantiationException;
+    .end local v1    # "e":Ljava/lang/InstantiationException;
     :catch_2
     move-exception v1
 
     .line 403
-    .local v1, e:Ljava/lang/IllegalAccessException;
+    .local v1, "e":Ljava/lang/IllegalAccessException;
     new-instance v3, Landroid/support/v4/app/Fragment$InstantiationException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -385,10 +385,10 @@
 # virtual methods
 .method public dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 3
-    .parameter "prefix"
-    .parameter "fd"
-    .parameter "writer"
-    .parameter "args"
+    .param p1, "prefix"    # Ljava/lang/String;
+    .param p2, "fd"    # Ljava/io/FileDescriptor;
+    .param p3, "writer"    # Ljava/io/PrintWriter;
+    .param p4, "args"    # [Ljava/lang/String;
 
     .prologue
     .line 1267
@@ -837,7 +837,7 @@
 
 .method public final equals(Ljava/lang/Object;)Z
     .locals 1
-    .parameter "o"
+    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     .line 429
@@ -860,13 +860,13 @@
 
 .method public getLayoutInflater(Landroid/os/Bundle;)Landroid/view/LayoutInflater;
     .locals 1
-    .parameter "savedInstanceState"
+    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     .line 824
     iget-object v0, p0, Landroid/support/v4/app/Fragment;->mActivity:Landroid/support/v4/app/FragmentActivity;
 
-    invoke-virtual {v0}, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v0
 
@@ -981,7 +981,7 @@
 
 .method public onActivityCreated(Landroid/os/Bundle;)V
     .locals 1
-    .parameter "savedInstanceState"
+    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     .line 967
@@ -995,9 +995,9 @@
 
 .method public onActivityResult(IILandroid/content/Intent;)V
     .locals 0
-    .parameter "requestCode"
-    .parameter "resultCode"
-    .parameter "data"
+    .param p1, "requestCode"    # I
+    .param p2, "resultCode"    # I
+    .param p3, "data"    # Landroid/content/Intent;
 
     .prologue
     .line 816
@@ -1006,7 +1006,7 @@
 
 .method public onAttach(Landroid/app/Activity;)V
     .locals 1
-    .parameter "activity"
+    .param p1, "activity"    # Landroid/app/Activity;
 
     .prologue
     .line 878
@@ -1020,7 +1020,7 @@
 
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 1
-    .parameter "newConfig"
+    .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
     .prologue
     .line 1023
@@ -1034,7 +1034,7 @@
 
 .method public onContextItemSelected(Landroid/view/MenuItem;)Z
     .locals 1
-    .parameter "item"
+    .param p1, "item"    # Landroid/view/MenuItem;
 
     .prologue
     .line 1254
@@ -1045,7 +1045,7 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .parameter "savedInstanceState"
+    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     .line 903
@@ -1059,9 +1059,9 @@
 
 .method public onCreateAnimation(IZI)Landroid/view/animation/Animation;
     .locals 1
-    .parameter "transit"
-    .parameter "enter"
-    .parameter "nextAnim"
+    .param p1, "transit"    # I
+    .param p2, "enter"    # Z
+    .param p3, "nextAnim"    # I
 
     .prologue
     .line 885
@@ -1072,9 +1072,9 @@
 
 .method public onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V
     .locals 1
-    .parameter "menu"
-    .parameter "v"
-    .parameter "menuInfo"
+    .param p1, "menu"    # Landroid/view/ContextMenu;
+    .param p2, "v"    # Landroid/view/View;
+    .param p3, "menuInfo"    # Landroid/view/ContextMenu$ContextMenuInfo;
 
     .prologue
     .line 1208
@@ -1082,7 +1082,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1, p2, p3}, Landroid/app/Activity;->onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V
+    invoke-virtual {v0, p1, p2, p3}, Landroid/support/v4/app/FragmentActivity;->onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V
 
     .line 1209
     return-void
@@ -1090,8 +1090,8 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;Landroid/view/MenuInflater;)V
     .locals 0
-    .parameter "menu"
-    .parameter "inflater"
+    .param p1, "menu"    # Landroid/view/Menu;
+    .param p2, "inflater"    # Landroid/view/MenuInflater;
 
     .prologue
     .line 1129
@@ -1100,9 +1100,9 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .locals 1
-    .parameter "inflater"
-    .parameter "container"
-    .parameter "savedInstanceState"
+    .param p1, "inflater"    # Landroid/view/LayoutInflater;
+    .param p2, "container"    # Landroid/view/ViewGroup;
+    .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     .line 927
@@ -1195,7 +1195,7 @@
 
 .method public onHiddenChanged(Z)V
     .locals 0
-    .parameter "hidden"
+    .param p1, "hidden"    # Z
 
     .prologue
     .line 677
@@ -1204,9 +1204,9 @@
 
 .method public onInflate(Landroid/app/Activity;Landroid/util/AttributeSet;Landroid/os/Bundle;)V
     .locals 1
-    .parameter "activity"
-    .parameter "attrs"
-    .parameter "savedInstanceState"
+    .param p1, "activity"    # Landroid/app/Activity;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     .line 870
@@ -1233,7 +1233,7 @@
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .locals 1
-    .parameter "item"
+    .param p1, "item"    # Landroid/view/MenuItem;
 
     .prologue
     .line 1177
@@ -1244,7 +1244,7 @@
 
 .method public onOptionsMenuClosed(Landroid/view/Menu;)V
     .locals 0
-    .parameter "menu"
+    .param p1, "menu"    # Landroid/view/Menu;
 
     .prologue
     .line 1188
@@ -1266,7 +1266,7 @@
 
 .method public onPrepareOptionsMenu(Landroid/view/Menu;)V
     .locals 0
-    .parameter "menu"
+    .param p1, "menu"    # Landroid/view/Menu;
 
     .prologue
     .line 1146
@@ -1288,7 +1288,7 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 0
-    .parameter "outState"
+    .param p1, "outState"    # Landroid/os/Bundle;
 
     .prologue
     .line 1020
@@ -1366,8 +1366,8 @@
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V
     .locals 0
-    .parameter "view"
-    .parameter "savedInstanceState"
+    .param p1, "view"    # Landroid/view/View;
+    .param p2, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     .line 941
@@ -1526,7 +1526,7 @@
 
 .method final setIndex(I)V
     .locals 2
-    .parameter "index"
+    .param p1, "index"    # I
 
     .prologue
     .line 417
@@ -1571,7 +1571,7 @@
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 442
-    .local v0, sb:Ljava/lang/StringBuilder;
+    .local v0, "sb":Ljava/lang/StringBuilder;
     invoke-static {p0, v0}, Landroid/support/v4/util/DebugUtils;->buildShortClassTag(Ljava/lang/Object;Ljava/lang/StringBuilder;)V
 
     .line 443

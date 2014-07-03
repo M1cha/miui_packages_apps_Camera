@@ -15,9 +15,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;Lcom/android/camera/CameraAppImpl;[Lcom/android/gallery3d/data/MediaSet;)V
     .locals 6
-    .parameter "path"
-    .parameter "application"
-    .parameter "mediaSets"
+    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .param p2, "application"    # Lcom/android/camera/CameraAppImpl;
+    .param p3, "mediaSets"    # [Lcom/android/gallery3d/data/MediaSet;
 
     .prologue
     .line 32
@@ -33,20 +33,20 @@
     .line 34
     iget-object v0, p0, Lcom/android/gallery3d/data/ComboAlbumSet;->mSets:[Lcom/android/gallery3d/data/MediaSet;
 
-    .local v0, arr$:[Lcom/android/gallery3d/data/MediaSet;
+    .local v0, "arr$":[Lcom/android/gallery3d/data/MediaSet;
     array-length v2, v0
 
-    .local v2, len$:I
+    .local v2, "len$":I
     const/4 v1, 0x0
 
-    .local v1, i$:I
+    .local v1, "i$":I
     :goto_0
     if-ge v1, v2, :cond_0
 
     aget-object v3, v0, v1
 
     .line 35
-    .local v3, set:Lcom/android/gallery3d/data/MediaSet;
+    .local v3, "set":Lcom/android/gallery3d/data/MediaSet;
     invoke-virtual {v3, p0}, Lcom/android/gallery3d/data/MediaSet;->addContentListener(Lcom/android/gallery3d/data/ContentListener;)V
 
     .line 34
@@ -55,9 +55,9 @@
     goto :goto_0
 
     .line 37
-    .end local v3           #set:Lcom/android/gallery3d/data/MediaSet;
+    .end local v3    # "set":Lcom/android/gallery3d/data/MediaSet;
     :cond_0
-    invoke-virtual {p2}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p2}, Lcom/android/camera/CameraAppImpl;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
 
@@ -87,32 +87,32 @@
 
 .method public getSubMediaSet(I)Lcom/android/gallery3d/data/MediaSet;
     .locals 6
-    .parameter "index"
+    .param p1, "index"    # I
 
     .prologue
     .line 43
     iget-object v0, p0, Lcom/android/gallery3d/data/ComboAlbumSet;->mSets:[Lcom/android/gallery3d/data/MediaSet;
 
-    .local v0, arr$:[Lcom/android/gallery3d/data/MediaSet;
+    .local v0, "arr$":[Lcom/android/gallery3d/data/MediaSet;
     array-length v2, v0
 
-    .local v2, len$:I
+    .local v2, "len$":I
     const/4 v1, 0x0
 
-    .local v1, i$:I
+    .local v1, "i$":I
     :goto_0
     if-ge v1, v2, :cond_1
 
     aget-object v3, v0, v1
 
     .line 44
-    .local v3, set:Lcom/android/gallery3d/data/MediaSet;
+    .local v3, "set":Lcom/android/gallery3d/data/MediaSet;
     invoke-virtual {v3}, Lcom/android/gallery3d/data/MediaSet;->getSubMediaSetCount()I
 
     move-result v4
 
     .line 45
-    .local v4, size:I
+    .local v4, "size":I
     if-ge p1, v4, :cond_0
 
     .line 46
@@ -121,14 +121,14 @@
     move-result-object v5
 
     .line 50
-    .end local v3           #set:Lcom/android/gallery3d/data/MediaSet;
-    .end local v4           #size:I
+    .end local v3    # "set":Lcom/android/gallery3d/data/MediaSet;
+    .end local v4    # "size":I
     :goto_1
     return-object v5
 
     .line 48
-    .restart local v3       #set:Lcom/android/gallery3d/data/MediaSet;
-    .restart local v4       #size:I
+    .restart local v3    # "set":Lcom/android/gallery3d/data/MediaSet;
+    .restart local v4    # "size":I
     :cond_0
     sub-int/2addr p1, v4
 
@@ -138,8 +138,8 @@
     goto :goto_0
 
     .line 50
-    .end local v3           #set:Lcom/android/gallery3d/data/MediaSet;
-    .end local v4           #size:I
+    .end local v3    # "set":Lcom/android/gallery3d/data/MediaSet;
+    .end local v4    # "size":I
     :cond_1
     const/4 v5, 0x0
 
@@ -154,23 +154,23 @@
     const/4 v1, 0x0
 
     .line 56
-    .local v1, count:I
+    .local v1, "count":I
     iget-object v0, p0, Lcom/android/gallery3d/data/ComboAlbumSet;->mSets:[Lcom/android/gallery3d/data/MediaSet;
 
-    .local v0, arr$:[Lcom/android/gallery3d/data/MediaSet;
+    .local v0, "arr$":[Lcom/android/gallery3d/data/MediaSet;
     array-length v3, v0
 
-    .local v3, len$:I
+    .local v3, "len$":I
     const/4 v2, 0x0
 
-    .local v2, i$:I
+    .local v2, "i$":I
     :goto_0
     if-ge v2, v3, :cond_0
 
     aget-object v4, v0, v2
 
     .line 57
-    .local v4, set:Lcom/android/gallery3d/data/MediaSet;
+    .local v4, "set":Lcom/android/gallery3d/data/MediaSet;
     invoke-virtual {v4}, Lcom/android/gallery3d/data/MediaSet;->getSubMediaSetCount()I
 
     move-result v5
@@ -183,7 +183,7 @@
     goto :goto_0
 
     .line 59
-    .end local v4           #set:Lcom/android/gallery3d/data/MediaSet;
+    .end local v4    # "set":Lcom/android/gallery3d/data/MediaSet;
     :cond_0
     return v1
 .end method
@@ -193,7 +193,7 @@
 
     .prologue
     .line 87
-    invoke-virtual {p0}, Lcom/android/gallery3d/data/MediaSet;->notifyContentChanged()V
+    invoke-virtual {p0}, Lcom/android/gallery3d/data/ComboAlbumSet;->notifyContentChanged()V
 
     .line 88
     return-void
@@ -207,15 +207,15 @@
     const/4 v0, 0x0
 
     .line 78
-    .local v0, changed:Z
+    .local v0, "changed":Z
     const/4 v1, 0x0
 
-    .local v1, i:I
+    .local v1, "i":I
     iget-object v5, p0, Lcom/android/gallery3d/data/ComboAlbumSet;->mSets:[Lcom/android/gallery3d/data/MediaSet;
 
     array-length v2, v5
 
-    .local v2, n:I
+    .local v2, "n":I
     :goto_0
     if-ge v1, v2, :cond_1
 
@@ -229,8 +229,8 @@
     move-result-wide v3
 
     .line 80
-    .local v3, version:J
-    iget-wide v5, p0, Lcom/android/gallery3d/data/MediaObject;->mDataVersion:J
+    .local v3, "version":J
+    iget-wide v5, p0, Lcom/android/gallery3d/data/ComboAlbumSet;->mDataVersion:J
 
     cmp-long v5, v3, v5
 
@@ -245,7 +245,7 @@
     goto :goto_0
 
     .line 82
-    .end local v3           #version:J
+    .end local v3    # "version":J
     :cond_1
     if-eqz v0, :cond_2
 
@@ -253,11 +253,11 @@
 
     move-result-wide v5
 
-    iput-wide v5, p0, Lcom/android/gallery3d/data/MediaObject;->mDataVersion:J
+    iput-wide v5, p0, Lcom/android/gallery3d/data/ComboAlbumSet;->mDataVersion:J
 
     .line 83
     :cond_2
-    iget-wide v5, p0, Lcom/android/gallery3d/data/MediaObject;->mDataVersion:J
+    iget-wide v5, p0, Lcom/android/gallery3d/data/ComboAlbumSet;->mDataVersion:J
 
     return-wide v5
 .end method

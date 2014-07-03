@@ -28,8 +28,8 @@
 
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;J)V
     .locals 0
-    .parameter "path"
-    .parameter "version"
+    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .param p2, "version"    # J
 
     .prologue
     .line 68
@@ -50,7 +50,7 @@
 
 .method public static getTypeFromString(Ljava/lang/String;)I
     .locals 1
-    .parameter "s"
+    .param p0, "s"    # Ljava/lang/String;
 
     .prologue
     .line 136
@@ -153,7 +153,7 @@
 
 .method public cache(I)V
     .locals 1
-    .parameter "flag"
+    .param p1, "flag"    # I
 
     .prologue
     .line 128
@@ -218,7 +218,7 @@
     invoke-direct {v0}, Lcom/android/gallery3d/data/MediaDetails;-><init>()V
 
     .line 108
-    .local v0, details:Lcom/android/gallery3d/data/MediaDetails;
+    .local v0, "details":Lcom/android/gallery3d/data/MediaDetails;
     return-object v0
 .end method
 
@@ -266,7 +266,7 @@
 
 .method public rotate(I)V
     .locals 1
-    .parameter "degrees"
+    .param p1, "degrees"    # I
 
     .prologue
     .line 87

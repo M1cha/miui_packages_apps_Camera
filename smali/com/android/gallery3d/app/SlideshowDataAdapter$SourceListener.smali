@@ -36,8 +36,8 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/app/SlideshowDataAdapter;Lcom/android/gallery3d/app/SlideshowDataAdapter$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Lcom/android/gallery3d/app/SlideshowDataAdapter;
+    .param p2, "x1"    # Lcom/android/gallery3d/app/SlideshowDataAdapter$1;
 
     .prologue
     .line 147
@@ -61,7 +61,7 @@
     :try_start_0
     iget-object v0, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$SourceListener;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    #getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mNeedReload:Ljava/util/concurrent/atomic/AtomicBoolean;
+    # getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mNeedReload:Ljava/util/concurrent/atomic/AtomicBoolean;
     invoke-static {v0}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$800(Lcom/android/gallery3d/app/SlideshowDataAdapter;)Ljava/util/concurrent/atomic/AtomicBoolean;
 
     move-result-object v0
@@ -75,7 +75,7 @@
 
     const/4 v2, 0x1
 
-    #setter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mDataReady:Z
+    # setter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mDataReady:Z
     invoke-static {v0, v2}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$202(Lcom/android/gallery3d/app/SlideshowDataAdapter;Z)Z
 
     .line 152

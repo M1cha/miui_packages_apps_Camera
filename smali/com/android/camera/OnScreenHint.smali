@@ -10,7 +10,7 @@
 # direct methods
 .method public constructor <init>(Landroid/view/ViewGroup;)V
     .locals 0
-    .parameter "view"
+    .param p1, "view"    # Landroid/view/ViewGroup;
 
     .prologue
     .line 37
@@ -25,8 +25,8 @@
 
 .method public static makeText(Landroid/app/Activity;Ljava/lang/CharSequence;)Lcom/android/camera/OnScreenHint;
     .locals 4
-    .parameter "activity"
-    .parameter "text"
+    .param p0, "activity"    # Landroid/app/Activity;
+    .param p1, "text"    # Ljava/lang/CharSequence;
 
     .prologue
     .line 55
@@ -39,23 +39,23 @@
     check-cast v0, Landroid/view/ViewGroup;
 
     .line 56
-    .local v0, hintView:Landroid/view/ViewGroup;
+    .local v0, "hintView":Landroid/view/ViewGroup;
     new-instance v1, Lcom/android/camera/OnScreenHint;
 
     invoke-direct {v1, v0}, Lcom/android/camera/OnScreenHint;-><init>(Landroid/view/ViewGroup;)V
 
     .line 57
-    .local v1, result:Lcom/android/camera/OnScreenHint;
+    .local v1, "result":Lcom/android/camera/OnScreenHint;
     const v3, 0x7f0c004a
 
-    invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Landroid/widget/TextView;
 
     .line 58
-    .local v2, tv:Landroid/widget/TextView;
+    .local v2, "tv":Landroid/widget/TextView;
     invoke-virtual {v2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 59
@@ -84,7 +84,7 @@
     .line 47
     iget-object v0, p0, Lcom/android/camera/OnScreenHint;->mHintView:Landroid/view/ViewGroup;
 
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
 
     move-result v0
 
@@ -93,7 +93,7 @@
 
 .method public setText(Ljava/lang/CharSequence;)V
     .locals 3
-    .parameter "s"
+    .param p1, "s"    # Ljava/lang/CharSequence;
 
     .prologue
     .line 63
@@ -116,14 +116,14 @@
 
     const v2, 0x7f0c004a
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/TextView;
 
     .line 68
-    .local v0, tv:Landroid/widget/TextView;
+    .local v0, "tv":Landroid/widget/TextView;
     if-nez v0, :cond_1
 
     .line 69

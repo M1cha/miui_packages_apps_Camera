@@ -84,7 +84,7 @@
 
 .method public static getQualityNumber(Ljava/lang/String;)I
     .locals 6
-    .parameter "jpegQuality"
+    .param p0, "jpegQuality"    # Ljava/lang/String;
 
     .prologue
     const/16 v2, 0x55
@@ -98,7 +98,7 @@
     move-result v1
 
     .line 3563
-    .local v1, qualityPercentile:I
+    .local v1, "qualityPercentile":I
     if-ltz v1, :cond_0
 
     const/16 v3, 0x64
@@ -106,11 +106,11 @@
     if-gt v1, v3, :cond_0
 
     .line 3575
-    .end local v1           #qualityPercentile:I
+    .end local v1    # "qualityPercentile":I
     :goto_0
     return v1
 
-    .restart local v1       #qualityPercentile:I
+    .restart local v1    # "qualityPercentile":I
     :cond_0
     move v1, v2
 
@@ -118,7 +118,7 @@
     goto :goto_0
 
     .line 3567
-    .end local v1           #qualityPercentile:I
+    .end local v1    # "qualityPercentile":I
     :catch_0
     move-exception v3
 
@@ -132,7 +132,7 @@
     check-cast v0, Ljava/lang/Integer;
 
     .line 3571
-    .local v0, quality:Ljava/lang/Integer;
+    .local v0, "quality":Ljava/lang/Integer;
     if-nez v0, :cond_1
 
     .line 3572

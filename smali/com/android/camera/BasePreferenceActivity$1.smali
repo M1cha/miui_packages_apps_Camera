@@ -43,7 +43,7 @@
     .line 250
     iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity$1;->this$0:Lcom/android/camera/BasePreferenceActivity;
 
-    #calls: Lcom/android/camera/BasePreferenceActivity;->restorePreferences()V
+    # invokes: Lcom/android/camera/BasePreferenceActivity;->restorePreferences()V
     invoke-static {v0}, Lcom/android/camera/BasePreferenceActivity;->access$000(Lcom/android/camera/BasePreferenceActivity;)V
 
     .line 251

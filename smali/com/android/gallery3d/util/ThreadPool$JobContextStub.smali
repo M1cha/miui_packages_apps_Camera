@@ -30,7 +30,7 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/util/ThreadPool$1;)V
     .locals 0
-    .parameter "x0"
+    .param p1, "x0"    # Lcom/android/gallery3d/util/ThreadPool$1;
 
     .prologue
     .line 51
@@ -53,7 +53,7 @@
 
 .method public setCancelListener(Lcom/android/gallery3d/util/ThreadPool$CancelListener;)V
     .locals 0
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/gallery3d/util/ThreadPool$CancelListener;
 
     .prologue
     .line 59
@@ -62,7 +62,7 @@
 
 .method public setMode(I)Z
     .locals 1
-    .parameter "mode"
+    .param p1, "mode"    # I
 
     .prologue
     .line 63

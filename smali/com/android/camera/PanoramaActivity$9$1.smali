@@ -49,7 +49,7 @@
 
     iget-object v0, v0, Lcom/android/camera/PanoramaActivity$9;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mSavingProgressBar:Lcom/android/camera/PanoProgressBar;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mSavingProgressBar:Lcom/android/camera/PanoProgressBar;
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$2600(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/PanoProgressBar;
 
     move-result-object v0

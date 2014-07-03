@@ -51,7 +51,7 @@
     move-result-object v0
 
     .line 22
-    .local v0, tzUTC:Ljava/util/TimeZone;
+    .local v0, "tzUTC":Ljava/util/TimeZone;
     sget-object v1, Lcom/android/camera/ExifHelper;->mGPSDateStampFormat:Ljava/text/DateFormat;
 
     invoke-virtual {v1, v0}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
@@ -77,10 +77,10 @@
 
 .method public static convertDoubleToLaLon(D)Ljava/lang/String;
     .locals 11
-    .parameter "value"
+    .param p0, "value"    # D
 
     .prologue
-    const-wide/high16 v9, 0x404e
+    const-wide/high16 v9, 0x404e000000000000L
 
     .line 77
     invoke-static {p0, p1}, Ljava/lang/Math;->abs(D)D
@@ -94,7 +94,7 @@
     double-to-int v0, v5
 
     .line 78
-    .local v0, degrees:I
+    .local v0, "degrees":I
     invoke-static {p0, p1}, Ljava/lang/Math;->abs(D)D
 
     move-result-wide v5
@@ -110,7 +110,7 @@
     move-result-wide v1
 
     .line 79
-    .local v1, minutes:D
+    .local v1, "minutes":D
     invoke-static {p0, p1}, Ljava/lang/Math;->abs(D)D
 
     move-result-wide v5
@@ -132,7 +132,7 @@
     move-result-wide v3
 
     .line 80
-    .local v3, seconds:D
+    .local v3, "seconds":D
     const-wide/16 v5, 0x0
 
     cmpg-double v5, p0, v5
@@ -232,7 +232,7 @@
 
 .method private static getExifOrientation(I)Ljava/lang/String;
     .locals 3
-    .parameter "orientation"
+    .param p0, "orientation"    # I
 
     .prologue
     .line 87
@@ -319,10 +319,10 @@
 
 .method public static writeExif(Ljava/lang/String;ILandroid/location/Location;J)V
     .locals 10
-    .parameter "filePath"
-    .parameter "orientation"
-    .parameter "location"
-    .parameter "timeTaken"
+    .param p0, "filePath"    # Ljava/lang/String;
+    .param p1, "orientation"    # I
+    .param p2, "location"    # Landroid/location/Location;
+    .param p3, "timeTaken"    # J
 
     .prologue
     const-wide/16 v8, 0x0
@@ -334,7 +334,7 @@
     invoke-direct {v0, p0}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
 
     .line 30
-    .local v0, exif:Landroid/media/ExifInterface;
+    .local v0, "exif":Landroid/media/ExifInterface;
     const-string v5, "GPSDateStamp"
 
     sget-object v6, Lcom/android/camera/ExifHelper;->mGPSDateStampFormat:Ljava/text/DateFormat;
@@ -343,7 +343,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v6, v7}, Ljava/text/Format;->format(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v6, v7}, Ljava/text/DateFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v6
 
@@ -358,7 +358,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v6, v7}, Ljava/text/Format;->format(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v6, v7}, Ljava/text/DateFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v6
 
@@ -373,7 +373,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v6, v7}, Ljava/text/Format;->format(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v6, v7}, Ljava/text/DateFormat;->format(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v6
 
@@ -404,13 +404,13 @@
     move-result-wide v1
 
     .line 41
-    .local v1, latValue:D
+    .local v1, "latValue":D
     invoke-virtual {p2}, Landroid/location/Location;->getLongitude()D
 
     move-result-wide v3
 
     .line 42
-    .local v3, longValue:D
+    .local v3, "longValue":D
     const-string v5, "GPSLatitude"
 
     invoke-static {v1, v2}, Lcom/android/camera/ExifHelper;->convertDoubleToLaLon(D)Ljava/lang/String;
@@ -454,8 +454,8 @@
     invoke-virtual {v0, v5, v6}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 55
-    .end local v1           #latValue:D
-    .end local v3           #longValue:D
+    .end local v1    # "latValue":D
+    .end local v3    # "longValue":D
     :cond_0
     :goto_1
     sget-boolean v5, Lcom/android/camera/Device;->IS_MIONE:Z
@@ -485,14 +485,14 @@
     invoke-virtual {v0}, Landroid/media/ExifInterface;->saveAttributes()V
 
     .line 70
-    .end local v0           #exif:Landroid/media/ExifInterface;
+    .end local v0    # "exif":Landroid/media/ExifInterface;
     :goto_3
     return-void
 
     .line 47
-    .restart local v0       #exif:Landroid/media/ExifInterface;
-    .restart local v1       #latValue:D
-    .restart local v3       #longValue:D
+    .restart local v0    # "exif":Landroid/media/ExifInterface;
+    .restart local v1    # "latValue":D
+    .restart local v3    # "longValue":D
     :cond_1
     const-string v5, "GPSLatitudeRef"
 
@@ -503,18 +503,18 @@
     goto :goto_0
 
     .line 67
-    .end local v0           #exif:Landroid/media/ExifInterface;
-    .end local v1           #latValue:D
-    .end local v3           #longValue:D
+    .end local v0    # "exif":Landroid/media/ExifInterface;
+    .end local v1    # "latValue":D
+    .end local v3    # "longValue":D
     :catch_0
     move-exception v5
 
     goto :goto_3
 
     .line 52
-    .restart local v0       #exif:Landroid/media/ExifInterface;
-    .restart local v1       #latValue:D
-    .restart local v3       #longValue:D
+    .restart local v0    # "exif":Landroid/media/ExifInterface;
+    .restart local v1    # "latValue":D
+    .restart local v3    # "longValue":D
     :cond_2
     const-string v5, "GPSLongitudeRef"
 
@@ -525,8 +525,8 @@
     goto :goto_1
 
     .line 59
-    .end local v1           #latValue:D
-    .end local v3           #longValue:D
+    .end local v1    # "latValue":D
+    .end local v3    # "longValue":D
     :cond_3
     sget-boolean v5, Lcom/android/camera/Device;->IS_MITWO:Z
 

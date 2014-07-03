@@ -31,10 +31,10 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/CameraAppImpl;Lcom/android/gallery3d/data/Path;II)V
     .locals 0
-    .parameter "application"
-    .parameter "path"
-    .parameter "type"
-    .parameter "targetSize"
+    .param p1, "application"    # Lcom/android/camera/CameraAppImpl;
+    .param p2, "path"    # Lcom/android/gallery3d/data/Path;
+    .param p3, "type"    # I
+    .param p4, "targetSize"    # I
 
     .prologue
     .line 37
@@ -63,7 +63,7 @@
 
 .method public run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Landroid/graphics/Bitmap;
     .locals 12
-    .parameter "jc"
+    .param p1, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
 
     .prologue
     const/4 v4, 0x2
@@ -105,7 +105,7 @@
     move-result-object v10
 
     .line 49
-    .local v10, debugTag:Ljava/lang/String;
+    .local v10, "debugTag":Ljava/lang/String;
     iget-object v0, p0, Lcom/android/gallery3d/data/ImageCacheRequest;->mApplication:Lcom/android/camera/CameraAppImpl;
 
     invoke-virtual {v0}, Lcom/android/camera/CameraAppImpl;->getImageCacheService()Lcom/android/gallery3d/data/ImageCacheService;
@@ -113,7 +113,7 @@
     move-result-object v9
 
     .line 51
-    .local v9, cacheService:Lcom/android/gallery3d/data/ImageCacheService;
+    .local v9, "cacheService":Lcom/android/gallery3d/data/ImageCacheService;
     invoke-static {}, Lcom/android/gallery3d/data/MediaItem;->getBytesBufferPool()Lcom/android/gallery3d/data/BytesBufferPool;
 
     move-result-object v0
@@ -123,7 +123,7 @@
     move-result-object v8
 
     .line 53
-    .local v8, buffer:Lcom/android/gallery3d/data/BytesBufferPool$BytesBuffer;
+    .local v8, "buffer":Lcom/android/gallery3d/data/BytesBufferPool$BytesBuffer;
     :try_start_0
     iget-object v0, p0, Lcom/android/gallery3d/data/ImageCacheRequest;->mPath:Lcom/android/gallery3d/data/Path;
 
@@ -134,7 +134,7 @@
     move-result v11
 
     .line 54
-    .local v11, found:Z
+    .local v11, "found":Z
     invoke-interface {p1}, Lcom/android/gallery3d/util/ThreadPool$JobContext;->isCancelled()Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -157,10 +157,10 @@
     return-object v7
 
     .line 46
-    .end local v8           #buffer:Lcom/android/gallery3d/data/BytesBufferPool$BytesBuffer;
-    .end local v9           #cacheService:Lcom/android/gallery3d/data/ImageCacheService;
-    .end local v10           #debugTag:Ljava/lang/String;
-    .end local v11           #found:Z
+    .end local v8    # "buffer":Lcom/android/gallery3d/data/BytesBufferPool$BytesBuffer;
+    .end local v9    # "cacheService":Lcom/android/gallery3d/data/ImageCacheService;
+    .end local v10    # "debugTag":Ljava/lang/String;
+    .end local v11    # "found":Z
     :cond_0
     iget v0, p0, Lcom/android/gallery3d/data/ImageCacheRequest;->mType:I
 
@@ -176,10 +176,10 @@
     goto :goto_0
 
     .line 55
-    .restart local v8       #buffer:Lcom/android/gallery3d/data/BytesBufferPool$BytesBuffer;
-    .restart local v9       #cacheService:Lcom/android/gallery3d/data/ImageCacheService;
-    .restart local v10       #debugTag:Ljava/lang/String;
-    .restart local v11       #found:Z
+    .restart local v8    # "buffer":Lcom/android/gallery3d/data/BytesBufferPool$BytesBuffer;
+    .restart local v9    # "cacheService":Lcom/android/gallery3d/data/ImageCacheService;
+    .restart local v10    # "debugTag":Ljava/lang/String;
+    .restart local v11    # "found":Z
     :cond_2
     if-eqz v11, :cond_5
 
@@ -190,7 +190,7 @@
     invoke-direct {v5}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
     .line 57
-    .local v5, options:Landroid/graphics/BitmapFactory$Options;
+    .local v5, "options":Landroid/graphics/BitmapFactory$Options;
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     iput-object v0, v5, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
@@ -218,7 +218,7 @@
     move-result-object v7
 
     .line 66
-    .local v7, bitmap:Landroid/graphics/Bitmap;
+    .local v7, "bitmap":Landroid/graphics/Bitmap;
     :goto_2
     if-nez v7, :cond_3
 
@@ -264,7 +264,7 @@
     goto :goto_1
 
     .line 63
-    .end local v7           #bitmap:Landroid/graphics/Bitmap;
+    .end local v7    # "bitmap":Landroid/graphics/Bitmap;
     :cond_4
     :try_start_2
     invoke-static {}, Lcom/android/gallery3d/data/MediaItem;->getThumbPool()Lcom/android/gallery3d/data/BitmapPool;
@@ -285,12 +285,12 @@
 
     move-result-object v7
 
-    .restart local v7       #bitmap:Landroid/graphics/Bitmap;
+    .restart local v7    # "bitmap":Landroid/graphics/Bitmap;
     goto :goto_2
 
     .line 72
-    .end local v5           #options:Landroid/graphics/BitmapFactory$Options;
-    .end local v7           #bitmap:Landroid/graphics/Bitmap;
+    .end local v5    # "options":Landroid/graphics/BitmapFactory$Options;
+    .end local v7    # "bitmap":Landroid/graphics/Bitmap;
     :cond_5
     invoke-static {}, Lcom/android/gallery3d/data/MediaItem;->getBytesBufferPool()Lcom/android/gallery3d/data/BytesBufferPool;
 
@@ -306,7 +306,7 @@
     move-result-object v7
 
     .line 75
-    .restart local v7       #bitmap:Landroid/graphics/Bitmap;
+    .restart local v7    # "bitmap":Landroid/graphics/Bitmap;
     invoke-interface {p1}, Lcom/android/gallery3d/util/ThreadPool$JobContext;->isCancelled()Z
 
     move-result v0
@@ -318,8 +318,8 @@
     goto :goto_1
 
     .line 72
-    .end local v7           #bitmap:Landroid/graphics/Bitmap;
-    .end local v11           #found:Z
+    .end local v7    # "bitmap":Landroid/graphics/Bitmap;
+    .end local v11    # "found":Z
     :catchall_0
     move-exception v0
 
@@ -332,8 +332,8 @@
     throw v0
 
     .line 77
-    .restart local v7       #bitmap:Landroid/graphics/Bitmap;
-    .restart local v11       #found:Z
+    .restart local v7    # "bitmap":Landroid/graphics/Bitmap;
+    .restart local v11    # "found":Z
     :cond_6
     if-nez v7, :cond_7
 
@@ -407,7 +407,7 @@
     move-result-object v6
 
     .line 90
-    .local v6, array:[B
+    .local v6, "array":[B
     invoke-interface {p1}, Lcom/android/gallery3d/util/ThreadPool$JobContext;->isCancelled()Z
 
     move-result v0
@@ -431,7 +431,7 @@
 
 .method public bridge synthetic run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Ljava/lang/Object;
     .locals 1
-    .parameter "x0"
+    .param p1, "x0"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
 
     .prologue
     .line 28

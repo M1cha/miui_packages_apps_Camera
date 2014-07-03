@@ -29,10 +29,9 @@
 # direct methods
 .method public constructor <init>([BLjava/lang/String;Ljava/util/List;Ljava/lang/String;)V
     .locals 0
-    .parameter "rawBytes"
-    .parameter "text"
-    .parameter
-    .parameter "ecLevel"
+    .param p1, "rawBytes"    # [B
+    .param p2, "text"    # Ljava/lang/String;
+    .param p4, "ecLevel"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B",
@@ -46,7 +45,7 @@
 
     .prologue
     .line 41
-    .local p3, byteSegments:Ljava/util/List;,"Ljava/util/List<[B>;"
+    .local p3, "byteSegments":Ljava/util/List;, "Ljava/util/List<[B>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 42
@@ -126,7 +125,7 @@
 
 .method public setErasures(Ljava/lang/Integer;)V
     .locals 0
-    .parameter "erasures"
+    .param p1, "erasures"    # Ljava/lang/Integer;
 
     .prologue
     .line 77
@@ -138,7 +137,7 @@
 
 .method public setErrorsCorrected(Ljava/lang/Integer;)V
     .locals 0
-    .parameter "errorsCorrected"
+    .param p1, "errorsCorrected"    # Ljava/lang/Integer;
 
     .prologue
     .line 69
@@ -150,7 +149,7 @@
 
 .method public setOther(Ljava/lang/Object;)V
     .locals 0
-    .parameter "other"
+    .param p1, "other"    # Ljava/lang/Object;
 
     .prologue
     .line 85

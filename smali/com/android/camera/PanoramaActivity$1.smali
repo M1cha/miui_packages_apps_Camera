@@ -43,7 +43,7 @@
     .line 224
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$1;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    iget-boolean v0, v0, Lcom/android/camera/ActivityBase;->mPaused:Z
+    iget-boolean v0, v0, Lcom/android/camera/PanoramaActivity;->mPaused:Z
 
     if-eqz v0, :cond_1
 
@@ -56,13 +56,13 @@
     :cond_1
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$1;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
+    invoke-virtual {v0}, Lcom/android/camera/PanoramaActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/gallery3d/ui/GLRootView;
 
-    invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+    invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLRootView;->getVisibility()I
 
     move-result v0
 
@@ -71,7 +71,7 @@
     .line 227
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$1;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mMosaicPreviewRenderer:Lcom/android/camera/MosaicPreviewRenderer;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mMosaicPreviewRenderer:Lcom/android/camera/MosaicPreviewRenderer;
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$300(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/MosaicPreviewRenderer;
 
     move-result-object v0
@@ -81,7 +81,7 @@
     .line 228
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$1;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mMainHandler:Landroid/os/Handler;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mMainHandler:Landroid/os/Handler;
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$400(Lcom/android/camera/PanoramaActivity;)Landroid/os/Handler;
 
     move-result-object v0
@@ -96,7 +96,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$1;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mCaptureState:I
+    # getter for: Lcom/android/camera/PanoramaActivity;->mCaptureState:I
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$500(Lcom/android/camera/PanoramaActivity;)I
 
     move-result v0
@@ -106,7 +106,7 @@
     .line 231
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$1;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mMosaicPreviewRenderer:Lcom/android/camera/MosaicPreviewRenderer;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mMosaicPreviewRenderer:Lcom/android/camera/MosaicPreviewRenderer;
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$300(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/MosaicPreviewRenderer;
 
     move-result-object v0
@@ -119,7 +119,7 @@
     :cond_3
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$1;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mMosaicPreviewRenderer:Lcom/android/camera/MosaicPreviewRenderer;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mMosaicPreviewRenderer:Lcom/android/camera/MosaicPreviewRenderer;
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$300(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/MosaicPreviewRenderer;
 
     move-result-object v0
@@ -129,7 +129,7 @@
     .line 234
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$1;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mMosaicPreviewRenderer:Lcom/android/camera/MosaicPreviewRenderer;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mMosaicPreviewRenderer:Lcom/android/camera/MosaicPreviewRenderer;
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$300(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/MosaicPreviewRenderer;
 
     move-result-object v0
@@ -143,7 +143,7 @@
     .line 235
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$1;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mMosaicFrameProcessor:Lcom/android/camera/MosaicFrameProcessor;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mMosaicFrameProcessor:Lcom/android/camera/MosaicFrameProcessor;
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$600(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/MosaicFrameProcessor;
 
     move-result-object v0

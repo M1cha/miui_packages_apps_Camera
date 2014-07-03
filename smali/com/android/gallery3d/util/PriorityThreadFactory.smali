@@ -17,8 +17,8 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;I)V
     .locals 1
-    .parameter "name"
-    .parameter "priority"
+    .param p1, "name"    # Ljava/lang/String;
+    .param p2, "priority"    # I
 
     .prologue
     .line 33
@@ -43,7 +43,7 @@
 
 .method static synthetic access$000(Lcom/android/gallery3d/util/PriorityThreadFactory;)I
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/util/PriorityThreadFactory;
 
     .prologue
     .line 27
@@ -56,7 +56,7 @@
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
     .locals 3
-    .parameter "r"
+    .param p1, "r"    # Ljava/lang/Runnable;
 
     .prologue
     .line 39

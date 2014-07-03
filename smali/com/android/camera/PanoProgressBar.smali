@@ -48,8 +48,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 3
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     const/4 v1, 0x0
@@ -160,7 +160,7 @@
 
 .method private setDirection(I)V
     .locals 2
-    .parameter "direction"
+    .param p1, "direction"    # I
 
     .prologue
     .line 75
@@ -185,7 +185,7 @@
 
     .line 80
     :cond_0
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
 
     .line 82
     :cond_1
@@ -196,12 +196,12 @@
 # virtual methods
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 9
-    .parameter "canvas"
+    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
-    const/high16 v8, 0x4000
+    const/high16 v8, 0x40000000
 
-    const/high16 v7, 0x3f80
+    const/high16 v7, 0x3f800000
 
     .line 179
     iget-object v0, p0, Lcom/android/camera/PanoProgressBar;->mDrawBounds:Landroid/graphics/RectF;
@@ -263,7 +263,7 @@
     move-result v6
 
     .line 193
-    .local v6, l:F
+    .local v6, "l":F
     :goto_0
     iget-object v0, p0, Lcom/android/camera/PanoProgressBar;->mIndicator:Landroid/graphics/Bitmap;
 
@@ -285,7 +285,7 @@
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     .line 199
-    .end local v6           #l:F
+    .end local v6    # "l":F
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/ImageView;->onDraw(Landroid/graphics/Canvas;)V
 
@@ -306,19 +306,19 @@
 
     move-result v6
 
-    .restart local v6       #l:F
+    .restart local v6    # "l":F
     goto :goto_0
 .end method
 
 .method protected onSizeChanged(IIII)V
     .locals 4
-    .parameter "w"
-    .parameter "h"
-    .parameter "oldw"
-    .parameter "oldh"
+    .param p1, "w"    # I
+    .param p2, "h"    # I
+    .param p3, "oldw"    # I
+    .param p4, "oldh"    # I
 
     .prologue
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     .line 111
     int-to-float v0, p1
@@ -370,7 +370,7 @@
     invoke-direct {p0, v0}, Lcom/android/camera/PanoProgressBar;->setDirection(I)V
 
     .line 173
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
 
     .line 174
     return-void
@@ -378,7 +378,7 @@
 
 .method public setBackgroundColor(I)V
     .locals 1
-    .parameter "color"
+    .param p1, "color"    # I
 
     .prologue
     .line 90
@@ -387,7 +387,7 @@
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 91
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
 
     .line 92
     return-void
@@ -395,7 +395,7 @@
 
 .method public setDoneColor(I)V
     .locals 1
-    .parameter "color"
+    .param p1, "color"    # I
 
     .prologue
     .line 95
@@ -404,7 +404,7 @@
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 96
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
 
     .line 97
     return-void
@@ -412,14 +412,14 @@
 
 .method public setIndicatorBitmap(Landroid/graphics/Bitmap;)V
     .locals 0
-    .parameter "bitmap"
+    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
     .line 106
     iput-object p1, p0, Lcom/android/camera/PanoProgressBar;->mIndicator:Landroid/graphics/Bitmap;
 
     .line 107
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
 
     .line 108
     return-void
@@ -427,7 +427,7 @@
 
 .method public setIndicatorColor(I)V
     .locals 1
-    .parameter "color"
+    .param p1, "color"    # I
 
     .prologue
     .line 100
@@ -436,7 +436,7 @@
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 101
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
 
     .line 102
     return-void
@@ -444,14 +444,14 @@
 
 .method public setIndicatorWidth(F)V
     .locals 0
-    .parameter "w"
+    .param p1, "w"    # F
 
     .prologue
     .line 122
     iput p1, p0, Lcom/android/camera/PanoProgressBar;->mIndicatorWidth:F
 
     .line 123
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
 
     .line 124
     return-void
@@ -459,7 +459,7 @@
 
 .method public setMaxProgress(I)V
     .locals 1
-    .parameter "progress"
+    .param p1, "progress"    # I
 
     .prologue
     .line 118
@@ -473,7 +473,7 @@
 
 .method public setOnDirectionChangeListener(Lcom/android/camera/PanoProgressBar$OnDirectionChangeListener;)V
     .locals 0
-    .parameter "l"
+    .param p1, "l"    # Lcom/android/camera/PanoProgressBar$OnDirectionChangeListener;
 
     .prologue
     .line 71
@@ -485,7 +485,7 @@
 
 .method public setProgress(I)V
     .locals 5
-    .parameter "progress"
+    .param p1, "progress"    # I
 
     .prologue
     const/4 v4, 0x2
@@ -579,7 +579,7 @@
 
     .line 165
     :cond_2
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
 
     .line 167
     :cond_3
@@ -601,7 +601,7 @@
 
 .method public setRightIncreasing(Z)V
     .locals 1
-    .parameter "rightIncreasing"
+    .param p1, "rightIncreasing"    # Z
 
     .prologue
     const/4 v0, 0x0
@@ -628,7 +628,7 @@
     iput-boolean p1, p0, Lcom/android/camera/PanoProgressBar;->mRightIncreasing:Z
 
     .line 139
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/PanoProgressBar;->invalidate()V
 
     .line 140
     return-void

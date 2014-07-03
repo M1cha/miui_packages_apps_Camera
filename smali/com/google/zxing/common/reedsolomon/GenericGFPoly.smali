@@ -12,8 +12,8 @@
 # direct methods
 .method constructor <init>(Lcom/google/zxing/common/reedsolomon/GenericGF;[I)V
     .locals 5
-    .parameter "field"
-    .parameter "coefficients"
+    .param p1, "field"    # Lcom/google/zxing/common/reedsolomon/GenericGF;
+    .param p2, "coefficients"    # [I
 
     .prologue
     const/4 v4, 0x0
@@ -41,7 +41,7 @@
     array-length v0, p2
 
     .line 48
-    .local v0, coefficientsLength:I
+    .local v0, "coefficientsLength":I
     const/4 v2, 0x1
 
     if-le v0, v2, :cond_3
@@ -54,7 +54,7 @@
     const/4 v1, 0x1
 
     .line 51
-    .local v1, firstNonZero:I
+    .local v1, "firstNonZero":I
     :goto_0
     if-ge v1, v0, :cond_1
 
@@ -81,12 +81,12 @@
     iput-object v2, p0, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->coefficients:[I
 
     .line 67
-    .end local v1           #firstNonZero:I
+    .end local v1    # "firstNonZero":I
     :goto_1
     return-void
 
     .line 57
-    .restart local v1       #firstNonZero:I
+    .restart local v1    # "firstNonZero":I
     :cond_2
     sub-int v2, v0, v1
 
@@ -106,7 +106,7 @@
     goto :goto_1
 
     .line 65
-    .end local v1           #firstNonZero:I
+    .end local v1    # "firstNonZero":I
     :cond_3
     iput-object p2, p0, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->coefficients:[I
 
@@ -117,7 +117,7 @@
 # virtual methods
 .method addOrSubtract(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     .locals 9
-    .parameter "other"
+    .param p1, "other"    # Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
     .prologue
     const/4 v8, 0x0
@@ -151,12 +151,12 @@
     if-eqz v6, :cond_1
 
     .line 145
-    .end local p1
+    .end local p1    # "other":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     :goto_0
     return-object p1
 
     .line 125
-    .restart local p1
+    .restart local p1    # "other":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     :cond_1
     invoke-virtual {p1}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->isZero()Z
 
@@ -174,11 +174,11 @@
     iget-object v3, p0, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->coefficients:[I
 
     .line 130
-    .local v3, smallerCoefficients:[I
+    .local v3, "smallerCoefficients":[I
     iget-object v1, p1, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->coefficients:[I
 
     .line 131
-    .local v1, largerCoefficients:[I
+    .local v1, "largerCoefficients":[I
     array-length v6, v3
 
     array-length v7, v1
@@ -189,21 +189,21 @@
     move-object v5, v3
 
     .line 133
-    .local v5, temp:[I
+    .local v5, "temp":[I
     move-object v3, v1
 
     .line 134
     move-object v1, v5
 
     .line 136
-    .end local v5           #temp:[I
+    .end local v5    # "temp":[I
     :cond_3
     array-length v6, v1
 
     new-array v4, v6, [I
 
     .line 137
-    .local v4, sumDiff:[I
+    .local v4, "sumDiff":[I
     array-length v6, v1
 
     array-length v7, v3
@@ -211,13 +211,13 @@
     sub-int v2, v6, v7
 
     .line 139
-    .local v2, lengthDiff:I
+    .local v2, "lengthDiff":I
     invoke-static {v1, v8, v4, v8, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 141
     move v0, v2
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_1
     array-length v6, v1
 
@@ -245,7 +245,7 @@
     :cond_4
     new-instance p1, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
-    .end local p1
+    .end local p1    # "other":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     iget-object v6, p0, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
     invoke-direct {p1, v6, v4}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;[I)V
@@ -255,7 +255,7 @@
 
 .method evaluateAt(I)I
     .locals 9
-    .parameter "a"
+    .param p1, "a"    # I
 
     .prologue
     const/4 v8, 0x0
@@ -279,7 +279,7 @@
     array-length v6, v7
 
     .line 103
-    .local v6, size:I
+    .local v6, "size":I
     const/4 v7, 0x1
 
     if-ne p1, v7, :cond_2
@@ -288,23 +288,23 @@
     const/4 v5, 0x0
 
     .line 106
-    .local v5, result:I
+    .local v5, "result":I
     iget-object v0, p0, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->coefficients:[I
 
-    .local v0, arr$:[I
+    .local v0, "arr$":[I
     array-length v4, v0
 
-    .local v4, len$:I
+    .local v4, "len$":I
     const/4 v3, 0x0
 
-    .local v3, i$:I
+    .local v3, "i$":I
     :goto_0
     if-ge v3, v4, :cond_0
 
     aget v1, v0, v3
 
     .line 107
-    .local v1, coefficient:I
+    .local v1, "coefficient":I
     invoke-static {v5, v1}, Lcom/google/zxing/common/reedsolomon/GenericGF;->addOrSubtract(II)I
 
     move-result v5
@@ -315,21 +315,21 @@
     goto :goto_0
 
     .line 111
-    .end local v0           #arr$:[I
-    .end local v1           #coefficient:I
-    .end local v3           #i$:I
-    .end local v4           #len$:I
-    .end local v5           #result:I
+    .end local v0    # "arr$":[I
+    .end local v1    # "coefficient":I
+    .end local v3    # "i$":I
+    .end local v4    # "len$":I
+    .end local v5    # "result":I
     :cond_2
     iget-object v7, p0, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->coefficients:[I
 
     aget v5, v7, v8
 
     .line 112
-    .restart local v5       #result:I
+    .restart local v5    # "result":I
     const/4 v2, 0x1
 
-    .local v2, i:I
+    .local v2, "i":I
     :goto_1
     if-ge v2, v6, :cond_0
 
@@ -356,7 +356,7 @@
 
 .method getCoefficient(I)I
     .locals 2
-    .parameter "degree"
+    .param p1, "degree"    # I
 
     .prologue
     .line 91
@@ -410,7 +410,7 @@
 
 .method multiply(I)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     .locals 5
-    .parameter "scalar"
+    .param p1, "scalar"    # I
 
     .prologue
     .line 171
@@ -424,13 +424,13 @@
     move-result-object p0
 
     .line 182
-    .end local p0
+    .end local p0    # "this":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     :cond_0
     :goto_0
     return-object p0
 
     .line 174
-    .restart local p0
+    .restart local p0    # "this":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     :cond_1
     const/4 v3, 0x1
 
@@ -442,14 +442,14 @@
     array-length v2, v3
 
     .line 178
-    .local v2, size:I
+    .local v2, "size":I
     new-array v1, v2, [I
 
     .line 179
-    .local v1, product:[I
+    .local v1, "product":[I
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_1
     if-ge v0, v2, :cond_2
 
@@ -486,7 +486,7 @@
 
 .method multiply(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     .locals 12
-    .parameter "other"
+    .param p1, "other"    # Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
     .prologue
     .line 149
@@ -540,19 +540,19 @@
     iget-object v1, p0, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->coefficients:[I
 
     .line 156
-    .local v1, aCoefficients:[I
+    .local v1, "aCoefficients":[I
     array-length v2, v1
 
     .line 157
-    .local v2, aLength:I
+    .local v2, "aLength":I
     iget-object v3, p1, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->coefficients:[I
 
     .line 158
-    .local v3, bCoefficients:[I
+    .local v3, "bCoefficients":[I
     array-length v4, v3
 
     .line 159
-    .local v4, bLength:I
+    .local v4, "bLength":I
     add-int v8, v2, v4
 
     add-int/lit8 v8, v8, -0x1
@@ -560,10 +560,10 @@
     new-array v7, v8, [I
 
     .line 160
-    .local v7, product:[I
+    .local v7, "product":[I
     const/4 v5, 0x0
 
-    .local v5, i:I
+    .local v5, "i":I
     :goto_1
     if-ge v5, v2, :cond_4
 
@@ -571,10 +571,10 @@
     aget v0, v1, v5
 
     .line 162
-    .local v0, aCoeff:I
+    .local v0, "aCoeff":I
     const/4 v6, 0x0
 
-    .local v6, j:I
+    .local v6, "j":I
     :goto_2
     if-ge v6, v4, :cond_3
 
@@ -611,8 +611,8 @@
     goto :goto_1
 
     .line 167
-    .end local v0           #aCoeff:I
-    .end local v6           #j:I
+    .end local v0    # "aCoeff":I
+    .end local v6    # "j":I
     :cond_4
     new-instance v8, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
@@ -625,8 +625,8 @@
 
 .method multiplyByMonomial(II)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     .locals 5
-    .parameter "degree"
-    .parameter "coefficient"
+    .param p1, "degree"    # I
+    .param p2, "coefficient"    # I
 
     .prologue
     .line 186
@@ -661,16 +661,16 @@
     array-length v2, v3
 
     .line 193
-    .local v2, size:I
+    .local v2, "size":I
     add-int v3, v2, p1
 
     new-array v1, v3, [I
 
     .line 194
-    .local v1, product:[I
+    .local v1, "product":[I
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_1
     if-ge v0, v2, :cond_2
 
@@ -721,12 +721,12 @@
     invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 229
-    .local v3, result:Ljava/lang/StringBuilder;
+    .local v3, "result":Ljava/lang/StringBuilder;
     invoke-virtual {p0}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
 
     move-result v2
 
-    .local v2, degree:I
+    .local v2, "degree":I
     :goto_0
     if-ltz v2, :cond_8
 
@@ -736,7 +736,7 @@
     move-result v1
 
     .line 231
-    .local v1, coefficient:I
+    .local v1, "coefficient":I
     if-eqz v1, :cond_3
 
     .line 232
@@ -766,7 +766,7 @@
     move-result v0
 
     .line 242
-    .local v0, alphaPower:I
+    .local v0, "alphaPower":I
     if-nez v0, :cond_5
 
     .line 243
@@ -775,7 +775,7 @@
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 251
-    .end local v0           #alphaPower:I
+    .end local v0    # "alphaPower":I
     :cond_2
     :goto_2
     if-eqz v2, :cond_3
@@ -811,7 +811,7 @@
     goto :goto_1
 
     .line 244
-    .restart local v0       #alphaPower:I
+    .restart local v0    # "alphaPower":I
     :cond_5
     if-ne v0, v5, :cond_6
 
@@ -834,7 +834,7 @@
     goto :goto_2
 
     .line 255
-    .end local v0           #alphaPower:I
+    .end local v0    # "alphaPower":I
     :cond_7
     const-string v4, "x^"
 
@@ -846,7 +846,7 @@
     goto :goto_3
 
     .line 261
-    .end local v1           #coefficient:I
+    .end local v1    # "coefficient":I
     :cond_8
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

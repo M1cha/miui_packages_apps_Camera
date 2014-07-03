@@ -55,8 +55,8 @@
 
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;J)V
     .locals 1
-    .parameter "path"
-    .parameter "version"
+    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .param p2, "version"    # J
 
     .prologue
     .line 57
@@ -77,7 +77,7 @@
 # virtual methods
 .method public addContentListener(Lcom/android/gallery3d/data/ContentListener;)V
     .locals 2
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/gallery3d/data/ContentListener;
 
     .prologue
     .line 152
@@ -110,8 +110,8 @@
 
 .method protected enumerateMediaItems(Lcom/android/gallery3d/data/MediaSet$ItemConsumer;I)I
     .locals 9
-    .parameter "consumer"
-    .parameter "startIndex"
+    .param p1, "consumer"    # Lcom/android/gallery3d/data/MediaSet$ItemConsumer;
+    .param p2, "startIndex"    # I
 
     .prologue
     .line 202
@@ -120,11 +120,11 @@
     move-result v6
 
     .line 203
-    .local v6, total:I
+    .local v6, "total":I
     const/4 v5, 0x0
 
     .line 204
-    .local v5, start:I
+    .local v5, "start":I
     :goto_0
     if-ge v5, v6, :cond_1
 
@@ -138,21 +138,21 @@
     move-result v0
 
     .line 206
-    .local v0, count:I
+    .local v0, "count":I
     invoke-virtual {p0, v5, v0}, Lcom/android/gallery3d/data/MediaSet;->getMediaItem(II)Ljava/util/ArrayList;
 
     move-result-object v3
 
     .line 207
-    .local v3, items:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .local v3, "items":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     const/4 v1, 0x0
 
-    .local v1, i:I
+    .local v1, "i":I
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    .local v4, n:I
+    .local v4, "n":I
     :goto_1
     if-ge v1, v4, :cond_0
 
@@ -164,7 +164,7 @@
     check-cast v2, Lcom/android/gallery3d/data/MediaItem;
 
     .line 209
-    .local v2, item:Lcom/android/gallery3d/data/MediaItem;
+    .local v2, "item":Lcom/android/gallery3d/data/MediaItem;
     add-int v7, p2, v5
 
     add-int/2addr v7, v1
@@ -177,7 +177,7 @@
     goto :goto_1
 
     .line 211
-    .end local v2           #item:Lcom/android/gallery3d/data/MediaItem;
+    .end local v2    # "item":Lcom/android/gallery3d/data/MediaItem;
     :cond_0
     add-int/2addr v5, v0
 
@@ -185,17 +185,17 @@
     goto :goto_0
 
     .line 213
-    .end local v0           #count:I
-    .end local v1           #i:I
-    .end local v3           #items:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
-    .end local v4           #n:I
+    .end local v0    # "count":I
+    .end local v1    # "i":I
+    .end local v3    # "items":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .end local v4    # "n":I
     :cond_1
     return v6
 .end method
 
 .method public enumerateMediaItems(Lcom/android/gallery3d/data/MediaSet$ItemConsumer;)V
     .locals 1
-    .parameter "consumer"
+    .param p1, "consumer"    # Lcom/android/gallery3d/data/MediaSet$ItemConsumer;
 
     .prologue
     .line 187
@@ -217,7 +217,7 @@
     move-result-object v0
 
     .line 179
-    .local v0, details:Lcom/android/gallery3d/data/MediaDetails;
+    .local v0, "details":Lcom/android/gallery3d/data/MediaDetails;
     const/4 v1, 0x1
 
     invoke-virtual {p0}, Lcom/android/gallery3d/data/MediaSet;->getName()Ljava/lang/String;
@@ -232,7 +232,7 @@
 
 .method protected getIndexOf(Lcom/android/gallery3d/data/Path;Ljava/util/ArrayList;)I
     .locals 3
-    .parameter "path"
+    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -246,15 +246,15 @@
 
     .prologue
     .line 137
-    .local p2, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .local p2, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .local v1, n:I
+    .local v1, "n":I
     :goto_0
     if-ge v0, v1, :cond_1
 
@@ -265,17 +265,17 @@
 
     check-cast v2, Lcom/android/gallery3d/data/MediaItem;
 
-    iget-object v2, v2, Lcom/android/gallery3d/data/MediaObject;->mPath:Lcom/android/gallery3d/data/Path;
+    iget-object v2, v2, Lcom/android/gallery3d/data/MediaItem;->mPath:Lcom/android/gallery3d/data/Path;
 
     if-ne v2, p1, :cond_0
 
     .line 140
-    .end local v0           #i:I
+    .end local v0    # "i":I
     :goto_1
     return v0
 
     .line 137
-    .restart local v0       #i:I
+    .restart local v0    # "i":I
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
@@ -290,8 +290,8 @@
 
 .method public getIndexOfItem(Lcom/android/gallery3d/data/Path;I)I
     .locals 7
-    .parameter "path"
-    .parameter "hint"
+    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .param p2, "hint"    # I
 
     .prologue
     const/4 v4, 0x0
@@ -308,19 +308,19 @@
     move-result v2
 
     .line 119
-    .local v2, start:I
+    .local v2, "start":I
     invoke-virtual {p0, v2, v3}, Lcom/android/gallery3d/data/MediaSet;->getMediaItem(II)Ljava/util/ArrayList;
 
     move-result-object v1
 
     .line 121
-    .local v1, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .local v1, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     invoke-virtual {p0, p1, v1}, Lcom/android/gallery3d/data/MediaSet;->getIndexOf(Lcom/android/gallery3d/data/Path;Ljava/util/ArrayList;)I
 
     move-result v0
 
     .line 122
-    .local v0, index:I
+    .local v0, "index":I
     if-eq v0, v5, :cond_0
 
     add-int v3, v2, v0
@@ -386,8 +386,8 @@
 
 .method public getMediaItem(II)Ljava/util/ArrayList;
     .locals 1
-    .parameter "start"
-    .parameter "count"
+    .param p1, "start"    # I
+    .param p2, "count"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -422,7 +422,7 @@
 
 .method public getSubMediaSet(I)Lcom/android/gallery3d/data/MediaSet;
     .locals 1
-    .parameter "index"
+    .param p1, "index"    # I
 
     .prologue
     .line 90
@@ -453,15 +453,15 @@
     move-result v2
 
     .line 107
-    .local v2, total:I
+    .local v2, "total":I
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     invoke-virtual {p0}, Lcom/android/gallery3d/data/MediaSet;->getSubMediaSetCount()I
 
     move-result v1
 
-    .local v1, n:I
+    .local v1, "n":I
     :goto_0
     if-ge v0, v1, :cond_0
 
@@ -501,7 +501,7 @@
 
     move-result-object v0
 
-    .local v0, i$:Ljava/util/Iterator;
+    .local v0, "i$":Ljava/util/Iterator;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -516,13 +516,13 @@
     check-cast v1, Lcom/android/gallery3d/data/ContentListener;
 
     .line 168
-    .local v1, listener:Lcom/android/gallery3d/data/ContentListener;
+    .local v1, "listener":Lcom/android/gallery3d/data/ContentListener;
     invoke-interface {v1}, Lcom/android/gallery3d/data/ContentListener;->onContentDirty()V
 
     goto :goto_0
 
     .line 170
-    .end local v1           #listener:Lcom/android/gallery3d/data/ContentListener;
+    .end local v1    # "listener":Lcom/android/gallery3d/data/ContentListener;
     :cond_0
     return-void
 .end method
@@ -532,7 +532,7 @@
 
 .method public removeContentListener(Lcom/android/gallery3d/data/ContentListener;)V
     .locals 1
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/gallery3d/data/ContentListener;
 
     .prologue
     .line 159

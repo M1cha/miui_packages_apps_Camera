@@ -53,7 +53,7 @@
 
 .method incrementPosition(I)V
     .locals 1
-    .parameter "delta"
+    .param p1, "delta"    # I
 
     .prologue
     .line 57
@@ -152,7 +152,7 @@
 
 .method setPosition(I)V
     .locals 0
-    .parameter "position"
+    .param p1, "position"    # I
 
     .prologue
     .line 53

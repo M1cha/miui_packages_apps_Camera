@@ -12,8 +12,8 @@
 # direct methods
 .method constructor <init>(Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;Z)V
     .locals 0
-    .parameter "information"
-    .parameter "finished"
+    .param p1, "information"    # Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
+    .param p2, "finished"    # Z
 
     .prologue
     .line 42
@@ -31,7 +31,7 @@
 
 .method constructor <init>(Z)V
     .locals 1
-    .parameter "finished"
+    .param p1, "finished"    # Z
 
     .prologue
     .line 39

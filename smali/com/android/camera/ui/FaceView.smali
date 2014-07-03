@@ -38,8 +38,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 61
@@ -77,7 +77,7 @@
     iput v0, p0, Lcom/android/camera/ui/FaceView;->mLatestFaceIndex:I
 
     .line 62
-    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/camera/ui/FaceView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
@@ -152,10 +152,10 @@
     aget-object v0, v2, v4
 
     .line 90
-    .local v0, face:Landroid/hardware/Camera$Face;
+    .local v0, "face":Landroid/hardware/Camera$Face;
     const/4 v1, 0x1
 
-    .local v1, i:I
+    .local v1, "i":I
     :goto_2
     iget-object v2, p0, Lcom/android/camera/ui/FaceView;->mFaces:[Landroid/hardware/Camera$Face;
 
@@ -236,7 +236,7 @@
     invoke-virtual {p0}, Lcom/android/camera/ui/FaceView;->clearPreivousFaces()V
 
     .line 223
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/FaceView;->invalidate()V
 
     .line 224
     return-void
@@ -254,7 +254,7 @@
     .line 234
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     iget-object v1, p0, Lcom/android/camera/ui/FaceView;->mLatestFaces:[Landroid/hardware/Camera$Face;
 
@@ -300,10 +300,10 @@
     iget v1, p0, Lcom/android/camera/ui/FaceView;->mLatestFaceIndex:I
 
     .line 184
-    .local v1, preIndex:I
+    .local v1, "preIndex":I
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_1
     const/4 v3, 0x3
 
@@ -378,8 +378,8 @@
     invoke-direct {v7}, Landroid/graphics/RectF;-><init>()V
 
     .line 102
-    .local v7, rect:Landroid/graphics/RectF;
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    .local v7, "rect":Landroid/graphics/RectF;
+    invoke-virtual {p0}, Lcom/android/camera/ui/FaceView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -390,7 +390,7 @@
     move-result-object v8
 
     .line 103
-    .local v8, screenNail:Lcom/android/camera/CameraScreenNail;
+    .local v8, "screenNail":Lcom/android/camera/CameraScreenNail;
     if-eqz v8, :cond_0
 
     iget v0, p0, Lcom/android/camera/ui/FaceView;->mLatestFaceIndex:I
@@ -415,21 +415,21 @@
 
     iget v2, p0, Lcom/android/camera/ui/FaceView;->mDisplayOrientation:I
 
-    invoke-virtual {v8}, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->getRenderWidth()I
+    invoke-virtual {v8}, Lcom/android/camera/CameraScreenNail;->getRenderWidth()I
 
     move-result v3
 
-    invoke-virtual {v8}, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->getRenderHeight()I
+    invoke-virtual {v8}, Lcom/android/camera/CameraScreenNail;->getRenderHeight()I
 
     move-result v4
 
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    invoke-virtual {p0}, Lcom/android/camera/ui/FaceView;->getWidth()I
 
     move-result v5
 
     div-int/lit8 v5, v5, 0x2
 
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+    invoke-virtual {p0}, Lcom/android/camera/ui/FaceView;->getHeight()I
 
     move-result v6
 
@@ -463,11 +463,11 @@
     invoke-virtual {v0, v7}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;)Z
 
     .line 114
-    .end local v7           #rect:Landroid/graphics/RectF;
+    .end local v7    # "rect":Landroid/graphics/RectF;
     :goto_0
     return-object v7
 
-    .restart local v7       #rect:Landroid/graphics/RectF;
+    .restart local v7    # "rect":Landroid/graphics/RectF;
     :cond_0
     const/4 v7, 0x0
 
@@ -492,39 +492,39 @@
     const/4 v5, 0x0
 
     .line 120
-    .local v5, emptyFacesCount:I
+    .local v5, "emptyFacesCount":I
     const/4 v4, 0x0
 
-    .local v4, averageWidth:I
+    .local v4, "averageWidth":I
     const/4 v1, 0x0
 
-    .local v1, averageHeight:I
+    .local v1, "averageHeight":I
     const/4 v2, 0x0
 
-    .local v2, averageLeft:I
+    .local v2, "averageLeft":I
     const/4 v3, 0x0
 
-    .local v3, averageTop:I
+    .local v3, "averageTop":I
     const/4 v7, 0x0
 
     .line 121
-    .local v7, faceCount:I
+    .local v7, "faceCount":I
     iget-object v0, p0, Lcom/android/camera/ui/FaceView;->mLatestFaces:[Landroid/hardware/Camera$Face;
 
-    .local v0, arr$:[Landroid/hardware/Camera$Face;
+    .local v0, "arr$":[Landroid/hardware/Camera$Face;
     array-length v10, v0
 
-    .local v10, len$:I
+    .local v10, "len$":I
     const/4 v9, 0x0
 
-    .local v9, i$:I
+    .local v9, "i$":I
     :goto_0
     if-ge v9, v10, :cond_2
 
     aget-object v6, v0, v9
 
     .line 123
-    .local v6, face:Landroid/hardware/Camera$Face;
+    .local v6, "face":Landroid/hardware/Camera$Face;
     if-nez v6, :cond_0
 
     .line 124
@@ -538,12 +538,12 @@
     const/4 v11, 0x0
 
     .line 155
-    .end local v6           #face:Landroid/hardware/Camera$Face;
+    .end local v6    # "face":Landroid/hardware/Camera$Face;
     :goto_1
     return v11
 
     .line 130
-    .restart local v6       #face:Landroid/hardware/Camera$Face;
+    .restart local v6    # "face":Landroid/hardware/Camera$Face;
     :cond_0
     iget-object v11, v6, Landroid/hardware/Camera$Face;->rect:Landroid/graphics/Rect;
 
@@ -591,7 +591,7 @@
     goto :goto_0
 
     .line 135
-    .end local v6           #face:Landroid/hardware/Camera$Face;
+    .end local v6    # "face":Landroid/hardware/Camera$Face;
     :cond_2
     iget-object v11, p0, Lcom/android/camera/ui/FaceView;->mLatestFaces:[Landroid/hardware/Camera$Face;
 
@@ -621,7 +621,7 @@
     div-int/lit8 v8, v4, 0x3
 
     .line 143
-    .local v8, faceWidthRestrict:I
+    .local v8, "faceWidthRestrict":I
     :goto_2
     iget-object v0, p0, Lcom/android/camera/ui/FaceView;->mLatestFaces:[Landroid/hardware/Camera$Face;
 
@@ -635,7 +635,7 @@
     aget-object v6, v0, v9
 
     .line 144
-    .restart local v6       #face:Landroid/hardware/Camera$Face;
+    .restart local v6    # "face":Landroid/hardware/Camera$Face;
     if-nez v6, :cond_5
 
     .line 143
@@ -645,16 +645,16 @@
     goto :goto_3
 
     .line 140
-    .end local v6           #face:Landroid/hardware/Camera$Face;
-    .end local v8           #faceWidthRestrict:I
+    .end local v6    # "face":Landroid/hardware/Camera$Face;
+    .end local v8    # "faceWidthRestrict":I
     :cond_4
     const/16 v8, 0x5a
 
     goto :goto_2
 
     .line 147
-    .restart local v6       #face:Landroid/hardware/Camera$Face;
-    .restart local v8       #faceWidthRestrict:I
+    .restart local v6    # "face":Landroid/hardware/Camera$Face;
+    .restart local v8    # "faceWidthRestrict":I
     :cond_5
     iget-object v11, v6, Landroid/hardware/Camera$Face;->rect:Landroid/graphics/Rect;
 
@@ -709,7 +709,7 @@
     goto :goto_1
 
     .line 154
-    .end local v6           #face:Landroid/hardware/Camera$Face;
+    .end local v6    # "face":Landroid/hardware/Camera$Face;
     :cond_7
     const/16 v11, 0x29e
 
@@ -739,11 +739,11 @@
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 9
-    .parameter "canvas"
+    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
     .line 245
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/android/camera/ui/FaceView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -754,7 +754,7 @@
     move-result-object v8
 
     .line 246
-    .local v8, screenNail:Lcom/android/camera/CameraScreenNail;
+    .local v8, "screenNail":Lcom/android/camera/CameraScreenNail;
     iget-object v0, p0, Lcom/android/camera/ui/FaceView;->mFaces:[Landroid/hardware/Camera$Face;
 
     if-eqz v0, :cond_1
@@ -779,21 +779,21 @@
 
     iget v2, p0, Lcom/android/camera/ui/FaceView;->mDisplayOrientation:I
 
-    invoke-virtual {v8}, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->getRenderWidth()I
+    invoke-virtual {v8}, Lcom/android/camera/CameraScreenNail;->getRenderWidth()I
 
     move-result v3
 
-    invoke-virtual {v8}, Lcom/android/gallery3d/ui/SurfaceTextureScreenNail;->getRenderHeight()I
+    invoke-virtual {v8}, Lcom/android/camera/CameraScreenNail;->getRenderHeight()I
 
     move-result v4
 
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+    invoke-virtual {p0}, Lcom/android/camera/ui/FaceView;->getWidth()I
 
     move-result v5
 
     div-int/lit8 v5, v5, 0x2
 
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+    invoke-virtual {p0}, Lcom/android/camera/ui/FaceView;->getHeight()I
 
     move-result v6
 
@@ -825,7 +825,7 @@
     .line 254
     const/4 v7, 0x0
 
-    .local v7, i:I
+    .local v7, "i":I
     :goto_0
     iget-object v0, p0, Lcom/android/camera/ui/FaceView;->mFaces:[Landroid/hardware/Camera$Face;
 
@@ -895,7 +895,7 @@
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     .line 264
-    .end local v7           #i:I
+    .end local v7    # "i":I
     :cond_1
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
@@ -934,7 +934,7 @@
 
 .method public setDisplayOrientation(I)V
     .locals 3
-    .parameter "orientation"
+    .param p1, "orientation"    # I
 
     .prologue
     .line 159
@@ -969,7 +969,7 @@
 
 .method public setFaces([Landroid/hardware/Camera$Face;)Z
     .locals 3
-    .parameter "faces"
+    .param p1, "faces"    # [Landroid/hardware/Camera$Face;
 
     .prologue
     .line 67
@@ -1016,7 +1016,7 @@
     invoke-direct {p0}, Lcom/android/camera/ui/FaceView;->updateLatestFaces()V
 
     .line 71
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/FaceView;->invalidate()V
 
     .line 72
     const/4 v0, 0x1
@@ -1026,7 +1026,7 @@
 
 .method public setMirror(Z)V
     .locals 3
-    .parameter "mirror"
+    .param p1, "mirror"    # Z
 
     .prologue
     .line 170
@@ -1061,15 +1061,15 @@
 
 .method public setOrientation(IZ)V
     .locals 0
-    .parameter "orientation"
-    .parameter "animation"
+    .param p1, "orientation"    # I
+    .param p2, "animation"    # Z
 
     .prologue
     .line 165
     iput p1, p0, Lcom/android/camera/ui/FaceView;->mOrientation:I
 
     .line 166
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/FaceView;->invalidate()V
 
     .line 167
     return-void
@@ -1077,7 +1077,7 @@
 
 .method public showFail(Z)V
     .locals 1
-    .parameter "timeout"
+    .param p1, "timeout"    # Z
 
     .prologue
     .line 212
@@ -1086,7 +1086,7 @@
     iput-object v0, p0, Lcom/android/camera/ui/FaceView;->mFaceIndicator:Landroid/graphics/drawable/Drawable;
 
     .line 213
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/FaceView;->invalidate()V
 
     .line 214
     return-void
@@ -1102,7 +1102,7 @@
     iput-object v0, p0, Lcom/android/camera/ui/FaceView;->mFaceIndicator:Landroid/graphics/drawable/Drawable;
 
     .line 199
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/FaceView;->invalidate()V
 
     .line 200
     return-void
@@ -1110,7 +1110,7 @@
 
 .method public showSuccess(Z)V
     .locals 1
-    .parameter "timeout"
+    .param p1, "timeout"    # Z
 
     .prologue
     .line 205
@@ -1119,7 +1119,7 @@
     iput-object v0, p0, Lcom/android/camera/ui/FaceView;->mFaceIndicator:Landroid/graphics/drawable/Drawable;
 
     .line 206
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/FaceView;->invalidate()V
 
     .line 207
     return-void

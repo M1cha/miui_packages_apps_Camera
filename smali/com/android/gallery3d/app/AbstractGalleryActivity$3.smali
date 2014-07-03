@@ -38,13 +38,13 @@
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
     .locals 1
-    .parameter "dialog"
+    .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
     .line 188
     iget-object v0, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity$3;->this$0:Lcom/android/gallery3d/app/AbstractGalleryActivity;
 
-    invoke-virtual {v0}, Landroid/app/Activity;->finish()V
+    invoke-virtual {v0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->finish()V
 
     .line 189
     return-void

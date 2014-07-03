@@ -30,8 +30,8 @@
 
 .method private correctErrors([BI)V
     .locals 6
-    .parameter "codewordBytes"
-    .parameter "numDataCodewords"
+    .param p1, "codewordBytes"    # [B
+    .param p2, "numDataCodewords"    # I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/ChecksumException;
@@ -43,14 +43,14 @@
     array-length v3, p1
 
     .line 119
-    .local v3, numCodewords:I
+    .local v3, "numCodewords":I
     new-array v0, v3, [I
 
     .line 120
-    .local v0, codewordsInts:[I
+    .local v0, "codewordsInts":[I
     const/4 v1, 0x0
 
-    .local v1, i:I
+    .local v1, "i":I
     :goto_0
     if-ge v1, v3, :cond_0
 
@@ -73,7 +73,7 @@
     sub-int v4, v5, p2
 
     .line 125
-    .local v4, numECCodewords:I
+    .local v4, "numECCodewords":I
     :try_start_0
     iget-object v5, p0, Lcom/google/zxing/datamatrix/decoder/Decoder;->rsDecoder:Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;
 
@@ -104,7 +104,7 @@
     move-exception v2
 
     .line 127
-    .local v2, ignored:Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
+    .local v2, "ignored":Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
     invoke-static {}, Lcom/google/zxing/ChecksumException;->getChecksumInstance()Lcom/google/zxing/ChecksumException;
 
     move-result-object v5
@@ -112,7 +112,7 @@
     throw v5
 
     .line 134
-    .end local v2           #ignored:Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
+    .end local v2    # "ignored":Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
     :cond_1
     return-void
 .end method
@@ -121,7 +121,7 @@
 # virtual methods
 .method public decode(Lcom/google/zxing/common/BitMatrix;)Lcom/google/zxing/common/DecoderResult;
     .locals 19
-    .parameter "bits"
+    .param p1, "bits"    # Lcom/google/zxing/common/BitMatrix;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;,
@@ -138,19 +138,19 @@
     invoke-direct {v13, v0}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;-><init>(Lcom/google/zxing/common/BitMatrix;)V
 
     .line 76
-    .local v13, parser:Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;
+    .local v13, "parser":Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;
     invoke-virtual {v13}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->getVersion()Lcom/google/zxing/datamatrix/decoder/Version;
 
     move-result-object v16
 
     .line 79
-    .local v16, version:Lcom/google/zxing/datamatrix/decoder/Version;
+    .local v16, "version":Lcom/google/zxing/datamatrix/decoder/Version;
     invoke-virtual {v13}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->readCodewords()[B
 
     move-result-object v3
 
     .line 81
-    .local v3, codewords:[B
+    .local v3, "codewords":[B
     move-object/from16 v0, v16
 
     invoke-static {v3, v0}, Lcom/google/zxing/datamatrix/decoder/DataBlock;->getDataBlocks([BLcom/google/zxing/datamatrix/decoder/Version;)[Lcom/google/zxing/datamatrix/decoder/DataBlock;
@@ -158,31 +158,31 @@
     move-result-object v5
 
     .line 83
-    .local v5, dataBlocks:[Lcom/google/zxing/datamatrix/decoder/DataBlock;
+    .local v5, "dataBlocks":[Lcom/google/zxing/datamatrix/decoder/DataBlock;
     array-length v6, v5
 
     .line 86
-    .local v6, dataBlocksCount:I
+    .local v6, "dataBlocksCount":I
     const/4 v15, 0x0
 
     .line 87
-    .local v15, totalBytes:I
+    .local v15, "totalBytes":I
     move-object v1, v5
 
-    .local v1, arr$:[Lcom/google/zxing/datamatrix/decoder/DataBlock;
+    .local v1, "arr$":[Lcom/google/zxing/datamatrix/decoder/DataBlock;
     array-length v11, v1
 
-    .local v11, len$:I
+    .local v11, "len$":I
     const/4 v9, 0x0
 
-    .local v9, i$:I
+    .local v9, "i$":I
     :goto_0
     if-ge v9, v11, :cond_0
 
     aget-object v7, v1, v9
 
     .line 88
-    .local v7, db:Lcom/google/zxing/datamatrix/decoder/DataBlock;
+    .local v7, "db":Lcom/google/zxing/datamatrix/decoder/DataBlock;
     invoke-virtual {v7}, Lcom/google/zxing/datamatrix/decoder/DataBlock;->getNumDataCodewords()I
 
     move-result v17
@@ -195,15 +195,15 @@
     goto :goto_0
 
     .line 90
-    .end local v7           #db:Lcom/google/zxing/datamatrix/decoder/DataBlock;
+    .end local v7    # "db":Lcom/google/zxing/datamatrix/decoder/DataBlock;
     :cond_0
     new-array v14, v15, [B
 
     .line 93
-    .local v14, resultBytes:[B
+    .local v14, "resultBytes":[B
     const/4 v10, 0x0
 
-    .local v10, j:I
+    .local v10, "j":I
     :goto_1
     if-ge v10, v6, :cond_2
 
@@ -211,19 +211,19 @@
     aget-object v4, v5, v10
 
     .line 95
-    .local v4, dataBlock:Lcom/google/zxing/datamatrix/decoder/DataBlock;
+    .local v4, "dataBlock":Lcom/google/zxing/datamatrix/decoder/DataBlock;
     invoke-virtual {v4}, Lcom/google/zxing/datamatrix/decoder/DataBlock;->getCodewords()[B
 
     move-result-object v2
 
     .line 96
-    .local v2, codewordBytes:[B
+    .local v2, "codewordBytes":[B
     invoke-virtual {v4}, Lcom/google/zxing/datamatrix/decoder/DataBlock;->getNumDataCodewords()I
 
     move-result v12
 
     .line 97
-    .local v12, numDataCodewords:I
+    .local v12, "numDataCodewords":I
     move-object/from16 v0, p0
 
     invoke-direct {v0, v2, v12}, Lcom/google/zxing/datamatrix/decoder/Decoder;->correctErrors([BI)V
@@ -231,7 +231,7 @@
     .line 98
     const/4 v8, 0x0
 
-    .local v8, i:I
+    .local v8, "i":I
     :goto_2
     if-ge v8, v12, :cond_1
 
@@ -256,10 +256,10 @@
     goto :goto_1
 
     .line 105
-    .end local v2           #codewordBytes:[B
-    .end local v4           #dataBlock:Lcom/google/zxing/datamatrix/decoder/DataBlock;
-    .end local v8           #i:I
-    .end local v12           #numDataCodewords:I
+    .end local v2    # "codewordBytes":[B
+    .end local v4    # "dataBlock":Lcom/google/zxing/datamatrix/decoder/DataBlock;
+    .end local v8    # "i":I
+    .end local v12    # "numDataCodewords":I
     :cond_2
     invoke-static {v14}, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser;->decode([B)Lcom/google/zxing/common/DecoderResult;
 

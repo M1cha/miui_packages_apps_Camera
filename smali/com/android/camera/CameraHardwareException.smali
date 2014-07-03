@@ -6,7 +6,7 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 0
-    .parameter "t"
+    .param p1, "t"    # Ljava/lang/Throwable;
 
     .prologue
     .line 26

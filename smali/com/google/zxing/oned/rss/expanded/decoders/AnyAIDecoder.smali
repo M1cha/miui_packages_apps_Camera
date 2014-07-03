@@ -6,7 +6,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/zxing/common/BitArray;)V
     .locals 0
-    .parameter "information"
+    .param p1, "information"    # Lcom/google/zxing/common/BitArray;
 
     .prologue
     .line 41
@@ -33,8 +33,8 @@
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 47
-    .local v0, buf:Ljava/lang/StringBuilder;
-    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
+    .local v0, "buf":Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Lcom/google/zxing/oned/rss/expanded/decoders/AnyAIDecoder;->getGeneralDecoder()Lcom/google/zxing/oned/rss/expanded/decoders/GeneralAppIdDecoder;
 
     move-result-object v1
 

@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 563
+    .line 577
     iput-object p1, p0, Lcom/android/camera/ActivityBase$HideCameraAppView;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,11 +36,11 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/ActivityBase;Lcom/android/camera/ActivityBase$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Lcom/android/camera/ActivityBase;
+    .param p2, "x1"    # Lcom/android/camera/ActivityBase$1;
 
     .prologue
-    .line 563
+    .line 577
     invoke-direct {p0, p1}, Lcom/android/camera/ActivityBase$HideCameraAppView;-><init>(Lcom/android/camera/ActivityBase;)V
 
     return-void
@@ -52,7 +52,7 @@
     .locals 2
 
     .prologue
-    .line 568
+    .line 582
     iget-object v0, p0, Lcom/android/camera/ActivityBase$HideCameraAppView;->this$0:Lcom/android/camera/ActivityBase;
 
     iget-object v0, v0, Lcom/android/camera/ActivityBase;->mCameraAppView:Landroid/view/View;
@@ -61,6 +61,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 569
+    .line 583
     return-void
 .end method

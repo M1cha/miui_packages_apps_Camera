@@ -33,7 +33,7 @@
 # direct methods
 .method public constructor <init>(Ljavax/microedition/khronos/opengles/GL11;)V
     .locals 6
-    .parameter "gl"
+    .param p1, "gl"    # Ljavax/microedition/khronos/opengles/GL11;
 
     .prologue
     const/16 v2, 0xde1
@@ -42,7 +42,7 @@
 
     const/4 v4, 0x0
 
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     const/4 v3, 0x0
 
@@ -135,7 +135,7 @@
 # virtual methods
 .method public setBlendEnabled(Z)V
     .locals 2
-    .parameter "enabled"
+    .param p1, "enabled"    # Z
 
     .prologue
     const/16 v1, 0xbe2
@@ -174,13 +174,13 @@
 
 .method public setColorMode(IF)V
     .locals 6
-    .parameter "color"
-    .parameter "alpha"
+    .param p1, "color"    # I
+    .param p2, "alpha"    # F
 
     .prologue
     const/4 v2, 0x0
 
-    const/high16 v5, 0x437f
+    const/high16 v5, 0x437f0000
 
     .line 604
     invoke-static {p1}, Lcom/android/gallery3d/common/Utils;->isOpaque(I)Z
@@ -202,7 +202,7 @@
     invoke-virtual {p0, v1}, Lcom/android/gallery3d/ui/GLCanvasImpl$GLState;->setBlendEnabled(Z)V
 
     .line 608
-    const/high16 v1, -0x4080
+    const/high16 v1, -0x40800000
 
     iput v1, p0, Lcom/android/gallery3d/ui/GLCanvasImpl$GLState;->mTextureAlpha:F
 
@@ -225,7 +225,7 @@
     div-float v0, v1, v5
 
     .line 613
-    .local v0, prealpha:F
+    .local v0, "prealpha":F
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLCanvasImpl$GLState;->mGL:Ljavax/microedition/khronos/opengles/GL11;
 
     shr-int/lit8 v2, p1, 0x10
@@ -273,7 +273,7 @@
     .line 618
     return-void
 
-    .end local v0           #prealpha:F
+    .end local v0    # "prealpha":F
     :cond_1
     move v1, v2
 
@@ -283,7 +283,7 @@
 
 .method public setTexEnvMode(I)V
     .locals 4
-    .parameter "mode"
+    .param p1, "mode"    # I
 
     .prologue
     .line 579
@@ -315,10 +315,10 @@
 
 .method public setTextureAlpha(F)V
     .locals 2
-    .parameter "alpha"
+    .param p1, "alpha"    # F
 
     .prologue
-    const/high16 v1, 0x3f80
+    const/high16 v1, 0x3f800000
 
     .line 591
     iget v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl$GLState;->mTextureAlpha:F
@@ -370,7 +370,7 @@
 
 .method public setTextureTarget(I)V
     .locals 2
-    .parameter "target"
+    .param p1, "target"    # I
 
     .prologue
     .line 622

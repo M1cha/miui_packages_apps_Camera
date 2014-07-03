@@ -33,7 +33,7 @@
     .locals 2
 
     .prologue
-    const/high16 v1, -0x4080
+    const/high16 v1, -0x40800000
 
     .line 179
     iput-object p1, p0, Lcom/android/camera/ui/ScreenView$GestureVelocityTracker;->this$0:Lcom/android/camera/ui/ScreenView;
@@ -59,8 +59,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/ui/ScreenView;Lcom/android/camera/ui/ScreenView$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Lcom/android/camera/ui/ScreenView;
+    .param p2, "x1"    # Lcom/android/camera/ui/ScreenView$1;
 
     .prologue
     .line 179
@@ -94,10 +94,10 @@
 # virtual methods
 .method public addMovement(Landroid/view/MotionEvent;)V
     .locals 6
-    .parameter "ev"
+    .param p1, "ev"    # Landroid/view/MotionEvent;
 
     .prologue
-    const/high16 v5, 0x4040
+    const/high16 v5, 0x40400000
 
     const/4 v4, -0x1
 
@@ -127,7 +127,7 @@
     move-result v0
 
     .line 205
-    .local v0, curX:F
+    .local v0, "curX":F
     iget v2, p0, Lcom/android/camera/ui/ScreenView$GestureVelocityTracker;->mPointerId:I
 
     if-eq v2, v4, :cond_1
@@ -140,7 +140,7 @@
     move-result v1
 
     .line 207
-    .local v1, pIndex:I
+    .local v1, "pIndex":I
     if-eq v1, v4, :cond_2
 
     .line 208
@@ -149,7 +149,7 @@
     move-result v0
 
     .line 213
-    .end local v1           #pIndex:I
+    .end local v1    # "pIndex":I
     :cond_1
     :goto_0
     iget v2, p0, Lcom/android/camera/ui/ScreenView$GestureVelocityTracker;->mStartX:F
@@ -166,14 +166,14 @@
     return-void
 
     .line 210
-    .restart local v1       #pIndex:I
+    .restart local v1    # "pIndex":I
     :cond_2
     iput v4, p0, Lcom/android/camera/ui/ScreenView$GestureVelocityTracker;->mPointerId:I
 
     goto :goto_0
 
     .line 217
-    .end local v1           #pIndex:I
+    .end local v1    # "pIndex":I
     :cond_3
     iget v2, p0, Lcom/android/camera/ui/ScreenView$GestureVelocityTracker;->mPrevX:F
 
@@ -319,7 +319,7 @@
 
 .method public getFlingDirection(F)I
     .locals 5
-    .parameter "velocity"
+    .param p1, "velocity"    # F
 
     .prologue
     const/4 v1, 0x2
@@ -329,7 +329,7 @@
     const/4 v2, 0x3
 
     .line 256
-    const/high16 v3, 0x4396
+    const/high16 v3, 0x43960000
 
     cmpl-float v3, p1, v3
 
@@ -377,7 +377,7 @@
     .line 261
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView$GestureVelocityTracker;->this$0:Lcom/android/camera/ui/ScreenView;
 
-    #getter for: Landroid/view/View;->mScrollX:I
+    # getter for: Lcom/android/camera/ui/ScreenView;->mScrollX:I
     invoke-static {v0}, Lcom/android/camera/ui/ScreenView;->access$100(Lcom/android/camera/ui/ScreenView;)I
 
     move-result v0
@@ -418,7 +418,7 @@
     .line 267
     iget-object v1, p0, Lcom/android/camera/ui/ScreenView$GestureVelocityTracker;->this$0:Lcom/android/camera/ui/ScreenView;
 
-    #getter for: Landroid/view/View;->mScrollX:I
+    # getter for: Lcom/android/camera/ui/ScreenView;->mScrollX:I
     invoke-static {v1}, Lcom/android/camera/ui/ScreenView;->access$200(Lcom/android/camera/ui/ScreenView;)I
 
     move-result v1
@@ -455,9 +455,9 @@
 
 .method public getXVelocity(III)F
     .locals 2
-    .parameter "units"
-    .parameter "maxVelocity"
-    .parameter "pointerId"
+    .param p1, "units"    # I
+    .param p2, "maxVelocity"    # I
+    .param p3, "pointerId"    # I
 
     .prologue
     .line 252
@@ -479,7 +479,7 @@
 
 .method public init(I)V
     .locals 1
-    .parameter "pointerId"
+    .param p1, "pointerId"    # I
 
     .prologue
     .line 243

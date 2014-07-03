@@ -38,9 +38,9 @@
 # virtual methods
 .method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
     .locals 0
-    .parameter "bar"
-    .parameter "progress"
-    .parameter "fromtouch"
+    .param p1, "bar"    # Landroid/widget/SeekBar;
+    .param p2, "progress"    # I
+    .param p3, "fromtouch"    # Z
 
     .prologue
     .line 921
@@ -49,7 +49,7 @@
 
 .method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
     .locals 0
-    .parameter "bar"
+    .param p1, "bar"    # Landroid/widget/SeekBar;
 
     .prologue
     .line 919
@@ -58,7 +58,7 @@
 
 .method public onStopTrackingTouch(Landroid/widget/SeekBar;)V
     .locals 0
-    .parameter "bar"
+    .param p1, "bar"    # Landroid/widget/SeekBar;
 
     .prologue
     .line 923

@@ -21,10 +21,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/CameraAppImpl;Lcom/android/gallery3d/data/Path;ILjava/lang/String;)V
     .locals 1
-    .parameter "application"
-    .parameter "path"
-    .parameter "type"
-    .parameter "localFilePath"
+    .param p1, "application"    # Lcom/android/camera/CameraAppImpl;
+    .param p2, "path"    # Lcom/android/gallery3d/data/Path;
+    .param p3, "type"    # I
+    .param p4, "localFilePath"    # Ljava/lang/String;
 
     .prologue
     .line 161
@@ -45,8 +45,8 @@
 # virtual methods
 .method public onDecodeOriginal(Lcom/android/gallery3d/util/ThreadPool$JobContext;I)Landroid/graphics/Bitmap;
     .locals 2
-    .parameter "jc"
-    .parameter "type"
+    .param p1, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
+    .param p2, "type"    # I
 
     .prologue
     .line 167
@@ -57,7 +57,7 @@
     move-result-object v0
 
     .line 168
-    .local v0, bitmap:Landroid/graphics/Bitmap;
+    .local v0, "bitmap":Landroid/graphics/Bitmap;
     if-eqz v0, :cond_0
 
     invoke-interface {p1}, Lcom/android/gallery3d/util/ThreadPool$JobContext;->isCancelled()Z
@@ -70,14 +70,14 @@
     const/4 v0, 0x0
 
     .line 169
-    .end local v0           #bitmap:Landroid/graphics/Bitmap;
+    .end local v0    # "bitmap":Landroid/graphics/Bitmap;
     :cond_1
     return-object v0
 .end method
 
 .method public bridge synthetic run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Landroid/graphics/Bitmap;
     .locals 1
-    .parameter "x0"
+    .param p1, "x0"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
 
     .prologue
     .line 156

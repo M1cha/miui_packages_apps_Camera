@@ -46,18 +46,18 @@
 # virtual methods
 .method public consume(ILcom/android/gallery3d/data/MediaItem;)V
     .locals 3
-    .parameter "index"
-    .parameter "item"
+    .param p1, "index"    # I
+    .param p2, "item"    # Lcom/android/gallery3d/data/MediaItem;
 
     .prologue
     .line 104
-    invoke-virtual {p2}, Lcom/android/gallery3d/data/MediaObject;->getMediaType()I
+    invoke-virtual {p2}, Lcom/android/gallery3d/data/MediaItem;->getMediaType()I
 
     move-result v1
 
     iget-object v2, p0, Lcom/android/gallery3d/data/FilterTypeSet$1;->this$0:Lcom/android/gallery3d/data/FilterTypeSet;
 
-    #getter for: Lcom/android/gallery3d/data/FilterTypeSet;->mMediaType:I
+    # getter for: Lcom/android/gallery3d/data/FilterTypeSet;->mMediaType:I
     invoke-static {v2}, Lcom/android/gallery3d/data/FilterTypeSet;->access$000(Lcom/android/gallery3d/data/FilterTypeSet;)I
 
     move-result v2
@@ -78,12 +78,12 @@
 
     .line 106
     :cond_1
-    invoke-virtual {p2}, Lcom/android/gallery3d/data/MediaObject;->getPath()Lcom/android/gallery3d/data/Path;
+    invoke-virtual {p2}, Lcom/android/gallery3d/data/MediaItem;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v0
 
     .line 107
-    .local v0, path:Lcom/android/gallery3d/data/Path;
+    .local v0, "path":Lcom/android/gallery3d/data/Path;
     iget-object v1, p0, Lcom/android/gallery3d/data/FilterTypeSet$1;->val$buf:[Lcom/android/gallery3d/data/Path;
 
     aput-object v0, v1, p1

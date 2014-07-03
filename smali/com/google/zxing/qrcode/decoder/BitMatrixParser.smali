@@ -14,7 +14,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/zxing/common/BitMatrix;)V
     .locals 3
-    .parameter "bitMatrix"
+    .param p1, "bitMatrix"    # Lcom/google/zxing/common/BitMatrix;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -31,7 +31,7 @@
     move-result v0
 
     .line 37
-    .local v0, dimension:I
+    .local v0, "dimension":I
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_0
@@ -60,9 +60,9 @@
 
 .method private copyBit(III)I
     .locals 1
-    .parameter "i"
-    .parameter "j"
-    .parameter "versionBits"
+    .param p1, "i"    # I
+    .param p2, "j"    # I
+    .param p3, "versionBits"    # I
 
     .prologue
     .line 140
@@ -104,13 +104,13 @@
     move-result-object v8
 
     .line 154
-    .local v8, formatInfo:Lcom/google/zxing/qrcode/decoder/FormatInformation;
+    .local v8, "formatInfo":Lcom/google/zxing/qrcode/decoder/FormatInformation;
     invoke-virtual/range {p0 .. p0}, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->readVersion()Lcom/google/zxing/qrcode/decoder/Version;
 
     move-result-object v16
 
     .line 158
-    .local v16, version:Lcom/google/zxing/qrcode/decoder/Version;
+    .local v16, "version":Lcom/google/zxing/qrcode/decoder/Version;
     invoke-virtual {v8}, Lcom/google/zxing/qrcode/decoder/FormatInformation;->getDataMask()B
 
     move-result v17
@@ -120,7 +120,7 @@
     move-result-object v6
 
     .line 159
-    .local v6, dataMask:Lcom/google/zxing/qrcode/decoder/DataMask;
+    .local v6, "dataMask":Lcom/google/zxing/qrcode/decoder/DataMask;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->bitMatrix:Lcom/google/zxing/common/BitMatrix;
@@ -132,7 +132,7 @@
     move-result v7
 
     .line 160
-    .local v7, dimension:I
+    .local v7, "dimension":I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/qrcode/decoder/BitMatrixParser;->bitMatrix:Lcom/google/zxing/common/BitMatrix;
@@ -149,11 +149,11 @@
     move-result-object v9
 
     .line 164
-    .local v9, functionPattern:Lcom/google/zxing/common/BitMatrix;
+    .local v9, "functionPattern":Lcom/google/zxing/common/BitMatrix;
     const/4 v12, 0x1
 
     .line 165
-    .local v12, readingUp:Z
+    .local v12, "readingUp":Z
     invoke-virtual/range {v16 .. v16}, Lcom/google/zxing/qrcode/decoder/Version;->getTotalCodewords()I
 
     move-result v17
@@ -163,22 +163,22 @@
     new-array v13, v0, [B
 
     .line 166
-    .local v13, result:[B
+    .local v13, "result":[B
     const/4 v14, 0x0
 
     .line 167
-    .local v14, resultOffset:I
+    .local v14, "resultOffset":I
     const/4 v5, 0x0
 
     .line 168
-    .local v5, currentByte:I
+    .local v5, "currentByte":I
     const/4 v2, 0x0
 
     .line 170
-    .local v2, bitsRead:I
+    .local v2, "bitsRead":I
     add-int/lit8 v11, v7, -0x1
 
-    .local v11, j:I
+    .local v11, "j":I
     :goto_0
     if-lez v11, :cond_5
 
@@ -196,7 +196,7 @@
     :cond_0
     const/4 v4, 0x0
 
-    .local v4, count:I
+    .local v4, "count":I
     :goto_1
     if-ge v4, v7, :cond_4
 
@@ -208,15 +208,15 @@
     sub-int v10, v17, v4
 
     .line 179
-    .local v10, i:I
+    .local v10, "i":I
     :goto_2
     const/4 v3, 0x0
 
-    .local v3, col:I
+    .local v3, "col":I
     move v15, v14
 
-    .end local v14           #resultOffset:I
-    .local v15, resultOffset:I
+    .end local v14    # "resultOffset":I
+    .local v15, "resultOffset":I
     :goto_3
     const/16 v17, 0x2
 
@@ -274,8 +274,8 @@
     .line 190
     add-int/lit8 v14, v15, 0x1
 
-    .end local v15           #resultOffset:I
-    .restart local v14       #resultOffset:I
+    .end local v15    # "resultOffset":I
+    .restart local v14    # "resultOffset":I
     int-to-byte v0, v5
 
     move/from16 v17, v0
@@ -294,14 +294,14 @@
 
     move v15, v14
 
-    .end local v14           #resultOffset:I
-    .restart local v15       #resultOffset:I
+    .end local v14    # "resultOffset":I
+    .restart local v15    # "resultOffset":I
     goto :goto_3
 
-    .end local v3           #col:I
-    .end local v10           #i:I
-    .end local v15           #resultOffset:I
-    .restart local v14       #resultOffset:I
+    .end local v3    # "col":I
+    .end local v10    # "i":I
+    .end local v15    # "resultOffset":I
+    .restart local v14    # "resultOffset":I
     :cond_2
     move v10, v4
 
@@ -309,22 +309,22 @@
     goto :goto_2
 
     .line 177
-    .end local v14           #resultOffset:I
-    .restart local v3       #col:I
-    .restart local v10       #i:I
-    .restart local v15       #resultOffset:I
+    .end local v14    # "resultOffset":I
+    .restart local v3    # "col":I
+    .restart local v10    # "i":I
+    .restart local v15    # "resultOffset":I
     :cond_3
     add-int/lit8 v4, v4, 0x1
 
     move v14, v15
 
-    .end local v15           #resultOffset:I
-    .restart local v14       #resultOffset:I
+    .end local v15    # "resultOffset":I
+    .restart local v14    # "resultOffset":I
     goto :goto_1
 
     .line 197
-    .end local v3           #col:I
-    .end local v10           #i:I
+    .end local v3    # "col":I
+    .end local v10    # "i":I
     :cond_4
     xor-int/lit8 v12, v12, 0x1
 
@@ -334,7 +334,7 @@
     goto :goto_0
 
     .line 199
-    .end local v4           #count:I
+    .end local v4    # "count":I
     :cond_5
     invoke-virtual/range {v16 .. v16}, Lcom/google/zxing/qrcode/decoder/Version;->getTotalCodewords()I
 
@@ -355,16 +355,16 @@
     :cond_6
     return-object v13
 
-    .end local v14           #resultOffset:I
-    .restart local v3       #col:I
-    .restart local v4       #count:I
-    .restart local v10       #i:I
-    .restart local v15       #resultOffset:I
+    .end local v14    # "resultOffset":I
+    .restart local v3    # "col":I
+    .restart local v4    # "count":I
+    .restart local v10    # "i":I
+    .restart local v15    # "resultOffset":I
     :cond_7
     move v14, v15
 
-    .end local v15           #resultOffset:I
-    .restart local v14       #resultOffset:I
+    .end local v15    # "resultOffset":I
+    .restart local v14    # "resultOffset":I
     goto :goto_4
 .end method
 
@@ -398,10 +398,10 @@
     const/4 v1, 0x0
 
     .line 58
-    .local v1, formatInfoBits1:I
+    .local v1, "formatInfoBits1":I
     const/4 v3, 0x0
 
-    .local v3, i:I
+    .local v3, "i":I
     :goto_1
     const/4 v6, 0x6
 
@@ -436,7 +436,7 @@
     .line 66
     const/4 v4, 0x5
 
-    .local v4, j:I
+    .local v4, "j":I
     :goto_2
     if-ltz v4, :cond_2
 
@@ -459,15 +459,15 @@
     move-result v0
 
     .line 72
-    .local v0, dimension:I
+    .local v0, "dimension":I
     const/4 v2, 0x0
 
     .line 73
-    .local v2, formatInfoBits2:I
+    .local v2, "formatInfoBits2":I
     add-int/lit8 v5, v0, -0x7
 
     .line 74
-    .local v5, jMin:I
+    .local v5, "jMin":I
     add-int/lit8 v4, v0, -0x1
 
     :goto_3
@@ -557,13 +557,13 @@
     move-result v0
 
     .line 103
-    .local v0, dimension:I
+    .local v0, "dimension":I
     add-int/lit8 v7, v0, -0x11
 
     shr-int/lit8 v4, v7, 0x2
 
     .line 104
-    .local v4, provisionalVersion:I
+    .local v4, "provisionalVersion":I
     const/4 v7, 0x6
 
     if-gt v4, v7, :cond_1
@@ -580,21 +580,21 @@
     const/4 v6, 0x0
 
     .line 110
-    .local v6, versionBits:I
+    .local v6, "versionBits":I
     add-int/lit8 v2, v0, -0xb
 
     .line 111
-    .local v2, ijMin:I
+    .local v2, "ijMin":I
     const/4 v3, 0x5
 
-    .local v3, j:I
+    .local v3, "j":I
     :goto_1
     if-ltz v3, :cond_3
 
     .line 112
     add-int/lit8 v1, v0, -0x9
 
-    .local v1, i:I
+    .local v1, "i":I
     :goto_2
     if-lt v1, v2, :cond_2
 
@@ -615,14 +615,14 @@
     goto :goto_1
 
     .line 117
-    .end local v1           #i:I
+    .end local v1    # "i":I
     :cond_3
     invoke-static {v6}, Lcom/google/zxing/qrcode/decoder/Version;->decodeVersionInformation(I)Lcom/google/zxing/qrcode/decoder/Version;
 
     move-result-object v5
 
     .line 118
-    .local v5, theParsedVersion:Lcom/google/zxing/qrcode/decoder/Version;
+    .local v5, "theParsedVersion":Lcom/google/zxing/qrcode/decoder/Version;
     if-eqz v5, :cond_4
 
     invoke-virtual {v5}, Lcom/google/zxing/qrcode/decoder/Version;->getDimensionForVersion()I
@@ -643,7 +643,7 @@
     .line 125
     const/4 v1, 0x5
 
-    .restart local v1       #i:I
+    .restart local v1    # "i":I
     :goto_3
     if-ltz v1, :cond_6
 

@@ -169,9 +169,9 @@
 
 .method private setupMosaicer(III)V
     .locals 4
-    .parameter "previewWidth"
-    .parameter "previewHeight"
-    .parameter "bufSize"
+    .param p1, "previewWidth"    # I
+    .param p2, "previewHeight"    # I
+    .param p3, "bufSize"    # I
 
     .prologue
     const/16 v3, 0x2c
@@ -247,7 +247,7 @@
 # virtual methods
 .method public calculateTranslationRate(J)V
     .locals 8
-    .parameter "now"
+    .param p1, "now"    # J
 
     .prologue
     .line 206
@@ -258,7 +258,7 @@
     move-result-object v0
 
     .line 207
-    .local v0, frameData:[F
+    .local v0, "frameData":[F
     const/16 v5, 0xa
 
     aget v5, v0, v5
@@ -266,7 +266,7 @@
     float-to-int v2, v5
 
     .line 208
-    .local v2, ret_code:I
+    .local v2, "ret_code":I
     const/16 v5, 0x9
 
     aget v5, v0, v5
@@ -281,13 +281,13 @@
     aget v3, v0, v5
 
     .line 210
-    .local v3, translationCurrX:F
+    .local v3, "translationCurrX":F
     const/4 v5, 0x5
 
     aget v4, v0, v5
 
     .line 212
-    .local v4, translationCurrY:F
+    .local v4, "translationCurrY":F
     iget-wide v5, p0, Lcom/android/camera/MosaicFrameProcessor;->mLastProcessedFrameTimestamp:J
 
     long-to-float v5, v5
@@ -316,7 +316,7 @@
     iget v1, p0, Lcom/android/camera/MosaicFrameProcessor;->mOldestIdx:I
 
     .line 223
-    .local v1, idx:I
+    .local v1, "idx":I
     iget v5, p0, Lcom/android/camera/MosaicFrameProcessor;->mTotalTranslationX:F
 
     iget-object v6, p0, Lcom/android/camera/MosaicFrameProcessor;->mDeltaX:[F
@@ -384,7 +384,7 @@
 
     long-to-float v6, v6
 
-    const/high16 v7, 0x447a
+    const/high16 v7, 0x447a0000
 
     div-float/2addr v6, v7
 
@@ -524,7 +524,7 @@
 
 .method public createMosaic(Z)I
     .locals 1
-    .parameter "highRes"
+    .param p1, "highRes"    # Z
 
     .prologue
     .line 151
@@ -553,9 +553,9 @@
 
 .method public initialize(III)V
     .locals 3
-    .parameter "previewWidth"
-    .parameter "previewHeight"
-    .parameter "bufSize"
+    .param p1, "previewWidth"    # I
+    .param p2, "previewHeight"    # I
+    .param p3, "bufSize"    # I
 
     .prologue
     .line 93
@@ -602,7 +602,7 @@
     .locals 11
 
     .prologue
-    const/high16 v10, 0x4080
+    const/high16 v10, 0x40800000
 
     .line 162
     iget-boolean v0, p0, Lcom/android/camera/MosaicFrameProcessor;->mIsMosaicMemoryAllocated:Z
@@ -621,7 +621,7 @@
     move-result-wide v6
 
     .line 169
-    .local v6, t1:J
+    .local v6, "t1":J
     iget-object v0, p0, Lcom/android/camera/MosaicFrameProcessor;->mFrameTimestamp:[J
 
     iget v1, p0, Lcom/android/camera/MosaicFrameProcessor;->mFillIn:I
@@ -662,7 +662,7 @@
     aget-wide v8, v0, v1
 
     .line 184
-    .local v8, timestamp:J
+    .local v8, "timestamp":J
     iget v0, p0, Lcom/android/camera/MosaicFrameProcessor;->mTotalFrameCount:I
 
     const/16 v1, 0x64
@@ -752,8 +752,8 @@
 
 .method public reportProgress(ZZ)I
     .locals 1
-    .parameter "hires"
-    .parameter "cancel"
+    .param p1, "hires"    # Z
+    .param p2, "cancel"    # Z
 
     .prologue
     .line 89
@@ -817,7 +817,7 @@
     .line 142
     const/4 v0, 0x0
 
-    .local v0, i:I
+    .local v0, "i":I
     :goto_0
     const/4 v1, 0x3
 
@@ -855,7 +855,7 @@
 
 .method public setProgressListener(Lcom/android/camera/MosaicFrameProcessor$ProgressListener;)V
     .locals 0
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/camera/MosaicFrameProcessor$ProgressListener;
 
     .prologue
     .line 85
@@ -867,7 +867,7 @@
 
 .method public setStripType(I)V
     .locals 1
-    .parameter "type"
+    .param p1, "type"    # I
 
     .prologue
     .line 116

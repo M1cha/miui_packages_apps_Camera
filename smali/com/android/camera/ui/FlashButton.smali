@@ -50,8 +50,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .parameter "context"
-    .parameter "attrs"
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 41
@@ -81,7 +81,7 @@
     move-result-object v0
 
     .line 192
-    .local v0, value:Ljava/lang/String;
+    .local v0, "value":Ljava/lang/String;
     iget-boolean v1, p0, Lcom/android/camera/ui/FlashButton;->mHDRStatus:Z
 
     if-eqz v1, :cond_0
@@ -93,7 +93,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/camera/ui/FlashButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1, v0}, Lcom/android/camera/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
+    invoke-virtual {v1, v0}, Lcom/android/camera/IconListPreference;->findIndexOfValue(Ljava/lang/String;)I
 
     move-result v1
 
@@ -110,7 +110,7 @@
     move-result-object v1
 
     .line 92
-    .local v1, value:Ljava/lang/String;
+    .local v1, "value":Ljava/lang/String;
     const-string v2, "auto"
 
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -123,9 +123,9 @@
     const v0, 0x7f0d012d
 
     .line 99
-    .local v0, resId:I
+    .local v0, "resId":I
     :goto_0
-    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Lcom/android/camera/ui/FlashButton;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
@@ -136,7 +136,7 @@
     return-object v2
 
     .line 94
-    .end local v0           #resId:I
+    .end local v0    # "resId":I
     :cond_0
     const-string v2, "off"
 
@@ -149,15 +149,15 @@
     .line 95
     const v0, 0x7f0d012e
 
-    .restart local v0       #resId:I
+    .restart local v0    # "resId":I
     goto :goto_0
 
     .line 97
-    .end local v0           #resId:I
+    .end local v0    # "resId":I
     :cond_1
     const v0, 0x7f0d012c
 
-    .restart local v0       #resId:I
+    .restart local v0    # "resId":I
     goto :goto_0
 .end method
 
@@ -168,12 +168,12 @@
     .line 221
     iget-object v1, p0, Lcom/android/camera/ui/FlashButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1}, Lcom/android/camera/ListPreference;->getEntries()[Ljava/lang/CharSequence;
+    invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v0
 
     .line 222
-    .local v0, entries:[Ljava/lang/CharSequence;
+    .local v0, "entries":[Ljava/lang/CharSequence;
     if-eqz v0, :cond_0
 
     array-length v1, v0
@@ -215,7 +215,7 @@
 # virtual methods
 .method public dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
     .locals 4
-    .parameter "event"
+    .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
 
     .prologue
     .line 79
@@ -224,7 +224,7 @@
     move-result v0
 
     .line 80
-    .local v0, ret:Z
+    .local v0, "ret":Z
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
 
     move-result v2
@@ -239,7 +239,7 @@
     move-result-object v1
 
     .line 82
-    .local v1, text:Ljava/lang/String;
+    .local v1, "text":Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -247,14 +247,14 @@
     if-nez v2, :cond_0
 
     .line 83
-    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityRecord;->getText()Ljava/util/List;
+    invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getText()Ljava/util/List;
 
     move-result-object v2
 
     invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 86
-    .end local v1           #text:Ljava/lang/String;
+    .end local v1    # "text":Ljava/lang/String;
     :cond_0
     return v0
 .end method
@@ -284,7 +284,7 @@
     .line 117
     iget-object v0, p0, Lcom/android/camera/ui/FlashButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v0}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/android/camera/IconListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
@@ -299,7 +299,7 @@
 
 .method public initialize(ILjava/util/List;)V
     .locals 2
-    .parameter "resId"
+    .param p1, "resId"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -312,15 +312,15 @@
 
     .prologue
     .line 54
-    .local p2, supported:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
+    .local p2, "supported":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     new-instance v0, Lcom/android/camera/PreferenceInflater;
 
-    iget-object v1, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/android/camera/ui/FlashButton;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Lcom/android/camera/PreferenceInflater;-><init>(Landroid/content/Context;)V
 
     .line 55
-    .local v0, inflater:Lcom/android/camera/PreferenceInflater;
+    .local v0, "inflater":Lcom/android/camera/PreferenceInflater;
     invoke-virtual {v0, p1}, Lcom/android/camera/PreferenceInflater;->inflate(I)Lcom/android/camera/CameraPreference;
 
     move-result-object v1
@@ -358,11 +358,11 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .parameter "v"
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 61
-    iget-object v0, p0, Landroid/view/View;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/android/camera/ui/FlashButton;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/android/camera/AutoLockManager;->getInstance(Landroid/content/Context;)Lcom/android/camera/AutoLockManager;
 
@@ -389,7 +389,7 @@
     :goto_0
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->sendAccessibilityEvent(I)V
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/FlashButton;->sendAccessibilityEvent(I)V
 
     .line 69
     return-void
@@ -406,12 +406,12 @@
 
     .prologue
     .line 46
-    invoke-super {p0}, Landroid/view/View;->onFinishInflate()V
+    invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
     .line 47
     const v0, 0x7f0c0017
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/android/camera/ui/FlashButton;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -420,13 +420,13 @@
     iput-object v0, p0, Lcom/android/camera/ui/FlashButton;->mFlashModeImage:Lcom/android/camera/ui/RotateImageView;
 
     .line 48
-    invoke-virtual {p0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p0, p0}, Lcom/android/camera/ui/FlashButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 49
     invoke-virtual {p0}, Lcom/android/camera/ui/FlashButton;->refreshValue()V
 
     .line 50
-    invoke-virtual {p0}, Landroid/widget/RelativeLayout;->requestLayout()V
+    invoke-virtual {p0}, Lcom/android/camera/ui/FlashButton;->requestLayout()V
 
     .line 51
     return-void
@@ -434,7 +434,7 @@
 
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
-    .parameter "info"
+    .param p1, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .prologue
     .line 73
@@ -453,8 +453,8 @@
 
 .method protected onMeasure(II)V
     .locals 2
-    .parameter "widthSpec"
-    .parameter "heightSpec"
+    .param p1, "widthSpec"    # I
+    .param p2, "heightSpec"    # I
 
     .prologue
     .line 104
@@ -487,7 +487,7 @@
     move-result v0
 
     .line 186
-    .local v0, index:I
+    .local v0, "index":I
     iget-object v1, p0, Lcom/android/camera/ui/FlashButton;->mFlashModeImage:Lcom/android/camera/ui/RotateImageView;
 
     iget-object v2, p0, Lcom/android/camera/ui/FlashButton;->mPreference:Lcom/android/camera/IconListPreference;
@@ -498,10 +498,10 @@
 
     aget v2, v2, v0
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v1, v2}, Lcom/android/camera/ui/RotateImageView;->setImageResource(I)V
 
     .line 188
-    .end local v0           #index:I
+    .end local v0    # "index":I
     :cond_0
     return-void
 .end method
@@ -518,7 +518,7 @@
     .line 178
     iget-object v0, p0, Lcom/android/camera/ui/FlashButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v0}, Lcom/android/camera/ListPreference;->reloadValue()V
+    invoke-virtual {v0}, Lcom/android/camera/IconListPreference;->reloadValue()V
 
     .line 179
     invoke-virtual {p0}, Lcom/android/camera/ui/FlashButton;->refreshValue()V
@@ -530,7 +530,7 @@
 
 .method public setCallback(Lcom/android/camera/ui/FlashButton$Callback;)V
     .locals 0
-    .parameter "callback"
+    .param p1, "callback"    # Lcom/android/camera/ui/FlashButton$Callback;
 
     .prologue
     .line 246
@@ -542,7 +542,7 @@
 
 .method public setEnabled(Z)V
     .locals 1
-    .parameter "enabled"
+    .param p1, "enabled"    # Z
 
     .prologue
     .line 228
@@ -562,7 +562,7 @@
 
     .line 234
     :cond_1
-    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
+    invoke-virtual {p0}, Lcom/android/camera/ui/FlashButton;->isEnabled()Z
 
     move-result v0
 
@@ -573,10 +573,10 @@
     .line 235
     iget-object v0, p0, Lcom/android/camera/ui/FlashButton;->mFlashModeImage:Lcom/android/camera/ui/RotateImageView;
 
-    invoke-virtual {v0, p1}, Lcom/android/camera/ui/TwoStateImageView;->setEnabled(Z)V
+    invoke-virtual {v0, p1}, Lcom/android/camera/ui/RotateImageView;->setEnabled(Z)V
 
     .line 236
-    invoke-super {p0, p1}, Landroid/view/View;->setEnabled(Z)V
+    invoke-super {p0, p1}, Landroid/widget/RelativeLayout;->setEnabled(Z)V
 
     .line 238
     :cond_2
@@ -585,7 +585,7 @@
 
 .method public setHDRStatus(Z)V
     .locals 0
-    .parameter "hdr"
+    .param p1, "hdr"    # Z
 
     .prologue
     .line 241
@@ -611,7 +611,7 @@
     .end annotation
 
     .prologue
-    .local p1, supported:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
+    .local p1, "supported":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     const/4 v3, 0x1
 
     const/4 v2, 0x0
@@ -642,7 +642,7 @@
     .line 157
     iget-object v1, p0, Lcom/android/camera/ui/FlashButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1}, Lcom/android/camera/ListPreference;->getEntries()[Ljava/lang/CharSequence;
+    invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v1
 
@@ -677,20 +677,20 @@
     invoke-virtual {p0, v3}, Lcom/android/camera/ui/FlashButton;->setEnabled(Z)V
 
     .line 168
-    invoke-virtual {p0, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p0, v2}, Lcom/android/camera/ui/FlashButton;->setVisibility(I)V
 
     .line 169
     iget-object v1, p0, Lcom/android/camera/ui/FlashButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1}, Lcom/android/camera/ListPreference;->getValue()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->getValue()Ljava/lang/String;
 
     move-result-object v0
 
     .line 170
-    .local v0, value:Ljava/lang/String;
+    .local v0, "value":Ljava/lang/String;
     iget-object v1, p0, Lcom/android/camera/ui/FlashButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1, v0}, Lcom/android/camera/ListPreference;->findIndexOfValue(Ljava/lang/String;)I
+    invoke-virtual {v1, v0}, Lcom/android/camera/IconListPreference;->findIndexOfValue(Ljava/lang/String;)I
 
     move-result v1
 
@@ -699,7 +699,7 @@
     .line 171
     iget-object v1, p0, Lcom/android/camera/ui/FlashButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1, v2}, Lcom/android/camera/ListPreference;->setValueIndex(I)V
+    invoke-virtual {v1, v2}, Lcom/android/camera/IconListPreference;->setValueIndex(I)V
 
     .line 173
     :cond_3
@@ -710,7 +710,7 @@
 
 .method public setListener(Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;)V
     .locals 0
-    .parameter "l"
+    .param p1, "l"    # Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
 
     .prologue
     .line 141
@@ -722,8 +722,8 @@
 
 .method public setOrientation(IZ)V
     .locals 1
-    .parameter "orientation"
-    .parameter "animation"
+    .param p1, "orientation"    # I
+    .param p2, "animation"    # Z
 
     .prologue
     .line 110
@@ -737,13 +737,13 @@
 
 .method public setValue(Ljava/lang/String;)V
     .locals 1
-    .parameter "value"
+    .param p1, "value"    # Ljava/lang/String;
 
     .prologue
     .line 212
     iget-object v0, p0, Lcom/android/camera/ui/FlashButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v0, p1}, Lcom/android/camera/ListPreference;->setValue(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Lcom/android/camera/IconListPreference;->setValue(Ljava/lang/String;)V
 
     .line 213
     invoke-virtual {p0}, Lcom/android/camera/ui/FlashButton;->refreshValue()V
@@ -775,7 +775,7 @@
     add-int/lit8 v0, v1, 0x1
 
     .line 128
-    .local v0, index:I
+    .local v0, "index":I
     invoke-direct {p0}, Lcom/android/camera/ui/FlashButton;->getPrefrenceSize()I
 
     move-result v1
@@ -789,7 +789,7 @@
     :cond_2
     iget-object v1, p0, Lcom/android/camera/ui/FlashButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v1, v0}, Lcom/android/camera/ListPreference;->setValueIndex(I)V
+    invoke-virtual {v1, v0}, Lcom/android/camera/IconListPreference;->setValueIndex(I)V
 
     .line 133
     invoke-virtual {p0}, Lcom/android/camera/ui/FlashButton;->refreshValue()V
@@ -814,7 +814,7 @@
 
     iget-object v3, p0, Lcom/android/camera/ui/FlashButton;->mPreference:Lcom/android/camera/IconListPreference;
 
-    invoke-virtual {v3}, Lcom/android/camera/ListPreference;->getEntries()[Ljava/lang/CharSequence;
+    invoke-virtual {v3}, Lcom/android/camera/IconListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v3
 

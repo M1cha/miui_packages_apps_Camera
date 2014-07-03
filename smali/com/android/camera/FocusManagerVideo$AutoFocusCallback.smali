@@ -36,8 +36,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/FocusManagerVideo;Lcom/android/camera/FocusManagerVideo$1;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p1, "x0"    # Lcom/android/camera/FocusManagerVideo;
+    .param p2, "x1"    # Lcom/android/camera/FocusManagerVideo$1;
 
     .prologue
     .line 776
@@ -50,8 +50,8 @@
 # virtual methods
 .method public onAutoFocus(ZLandroid/hardware/Camera;)V
     .locals 0
-    .parameter "focused"
-    .parameter "camera"
+    .param p1, "focused"    # Z
+    .param p2, "camera"    # Landroid/hardware/Camera;
 
     .prologue
     .line 780

@@ -23,8 +23,8 @@
 # direct methods
 .method constructor <init>(II)V
     .locals 0
-    .parameter "x"
-    .parameter "y"
+    .param p1, "x"    # I
+    .param p2, "y"    # I
 
     .prologue
     .line 619

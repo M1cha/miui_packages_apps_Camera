@@ -34,7 +34,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 284
-    #getter for: Lcom/android/camera/ui/ScreenView;->mOvershootTension:F
+    # getter for: Lcom/android/camera/ui/ScreenView;->mOvershootTension:F
     invoke-static {p1}, Lcom/android/camera/ui/ScreenView;->access$400(Lcom/android/camera/ui/ScreenView;)F
 
     move-result v0
@@ -62,10 +62,10 @@
 
 .method public getInterpolation(F)F
     .locals 4
-    .parameter "t"
+    .param p1, "t"    # F
 
     .prologue
-    const/high16 v3, 0x3f80
+    const/high16 v3, 0x3f800000
 
     .line 298
     sub-float/2addr p1, v3
@@ -92,8 +92,8 @@
 
 .method public setDistance(II)V
     .locals 2
-    .parameter "distance"
-    .parameter "velocity"
+    .param p1, "distance"    # I
+    .param p2, "velocity"    # I
 
     .prologue
     .line 288
@@ -101,7 +101,7 @@
 
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView$ScreenViewOvershootInterpolator;->this$0:Lcom/android/camera/ui/ScreenView;
 
-    #getter for: Lcom/android/camera/ui/ScreenView;->mOvershootTension:F
+    # getter for: Lcom/android/camera/ui/ScreenView;->mOvershootTension:F
     invoke-static {v0}, Lcom/android/camera/ui/ScreenView;->access$400(Lcom/android/camera/ui/ScreenView;)F
 
     move-result v0
@@ -120,7 +120,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView$ScreenViewOvershootInterpolator;->this$0:Lcom/android/camera/ui/ScreenView;
 
-    #getter for: Lcom/android/camera/ui/ScreenView;->mOvershootTension:F
+    # getter for: Lcom/android/camera/ui/ScreenView;->mOvershootTension:F
     invoke-static {v0}, Lcom/android/camera/ui/ScreenView;->access$400(Lcom/android/camera/ui/ScreenView;)F
 
     move-result v0

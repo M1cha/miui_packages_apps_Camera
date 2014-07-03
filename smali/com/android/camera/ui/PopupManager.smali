@@ -73,7 +73,7 @@
 
 .method public static getInstance(Landroid/content/Context;)Lcom/android/camera/ui/PopupManager;
     .locals 2
-    .parameter "context"
+    .param p0, "context"    # Landroid/content/Context;
 
     .prologue
     .line 54
@@ -86,17 +86,17 @@
     check-cast v0, Lcom/android/camera/ui/PopupManager;
 
     .line 55
-    .local v0, instance:Lcom/android/camera/ui/PopupManager;
+    .local v0, "instance":Lcom/android/camera/ui/PopupManager;
     if-nez v0, :cond_0
 
     .line 56
     new-instance v0, Lcom/android/camera/ui/PopupManager;
 
-    .end local v0           #instance:Lcom/android/camera/ui/PopupManager;
+    .end local v0    # "instance":Lcom/android/camera/ui/PopupManager;
     invoke-direct {v0}, Lcom/android/camera/ui/PopupManager;-><init>()V
 
     .line 57
-    .restart local v0       #instance:Lcom/android/camera/ui/PopupManager;
+    .restart local v0    # "instance":Lcom/android/camera/ui/PopupManager;
     sget-object v1, Lcom/android/camera/ui/PopupManager;->sMap:Ljava/util/HashMap;
 
     invoke-virtual {v1, p0, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -108,7 +108,7 @@
 
 .method public static removeInstance(Landroid/content/Context;)V
     .locals 2
-    .parameter "context"
+    .param p0, "context"    # Landroid/content/Context;
 
     .prologue
     .line 63
@@ -121,7 +121,7 @@
     check-cast v0, Lcom/android/camera/ui/PopupManager;
 
     .line 64
-    .local v0, instance:Lcom/android/camera/ui/PopupManager;
+    .local v0, "instance":Lcom/android/camera/ui/PopupManager;
     sget-object v1, Lcom/android/camera/ui/PopupManager;->sMap:Ljava/util/HashMap;
 
     invoke-virtual {v1, p0}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -134,7 +134,7 @@
 # virtual methods
 .method public notifyShowPopup(Landroid/view/View;)V
     .locals 3
-    .parameter "view"
+    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 42
@@ -144,7 +144,7 @@
 
     move-result-object v0
 
-    .local v0, i$:Ljava/util/Iterator;
+    .local v0, "i$":Ljava/util/Iterator;
     :cond_0
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -159,7 +159,7 @@
 
     check-cast v1, Lcom/android/camera/ui/PopupManager$OnOtherPopupShowedListener;
 
-    .local v1, listener:Lcom/android/camera/ui/PopupManager$OnOtherPopupShowedListener;
+    .local v1, "listener":Lcom/android/camera/ui/PopupManager$OnOtherPopupShowedListener;
     move-object v2, v1
 
     .line 43
@@ -173,14 +173,14 @@
     goto :goto_0
 
     .line 47
-    .end local v1           #listener:Lcom/android/camera/ui/PopupManager$OnOtherPopupShowedListener;
+    .end local v1    # "listener":Lcom/android/camera/ui/PopupManager$OnOtherPopupShowedListener;
     :cond_1
     return-void
 .end method
 
 .method public setOnOtherPopupShowedListener(Lcom/android/camera/ui/PopupManager$OnOtherPopupShowedListener;)V
     .locals 1
-    .parameter "listener"
+    .param p1, "listener"    # Lcom/android/camera/ui/PopupManager$OnOtherPopupShowedListener;
 
     .prologue
     .line 50

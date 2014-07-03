@@ -34,7 +34,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/app/GalleryActivity;)V
     .locals 2
-    .parameter "context"
+    .param p1, "context"    # Lcom/android/gallery3d/app/GalleryActivity;
 
     .prologue
     .line 56
@@ -60,7 +60,7 @@
 
 .method static synthetic access$000(Lcom/android/gallery3d/ui/DetailsAddressResolver;)Lcom/android/gallery3d/app/GalleryActivity;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/ui/DetailsAddressResolver;
 
     .prologue
     .line 33
@@ -71,8 +71,8 @@
 
 .method static synthetic access$102(Lcom/android/gallery3d/ui/DetailsAddressResolver;Lcom/android/gallery3d/util/Future;)Lcom/android/gallery3d/util/Future;
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/gallery3d/ui/DetailsAddressResolver;
+    .param p1, "x1"    # Lcom/android/gallery3d/util/Future;
 
     .prologue
     .line 33
@@ -83,8 +83,8 @@
 
 .method static synthetic access$200(Lcom/android/gallery3d/ui/DetailsAddressResolver;Landroid/location/Address;)V
     .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    .param p0, "x0"    # Lcom/android/gallery3d/ui/DetailsAddressResolver;
+    .param p1, "x1"    # Landroid/location/Address;
 
     .prologue
     .line 33
@@ -95,7 +95,7 @@
 
 .method static synthetic access$300(Lcom/android/gallery3d/ui/DetailsAddressResolver;)Landroid/os/Handler;
     .locals 1
-    .parameter "x0"
+    .param p0, "x0"    # Lcom/android/gallery3d/ui/DetailsAddressResolver;
 
     .prologue
     .line 33
@@ -106,7 +106,7 @@
 
 .method private updateLocation(Landroid/location/Address;)V
     .locals 11
-    .parameter "address"
+    .param p1, "address"    # Landroid/location/Address;
 
     .prologue
     const/4 v10, 0x4
@@ -128,7 +128,7 @@
     move-result-object v1
 
     .line 83
-    .local v1, context:Landroid/content/Context;
+    .local v1, "context":Landroid/content/Context;
     const/16 v5, 0x9
 
     new-array v3, v5, [Ljava/lang/String;
@@ -198,14 +198,14 @@
     aput-object v6, v3, v5
 
     .line 95
-    .local v3, parts:[Ljava/lang/String;
+    .local v3, "parts":[Ljava/lang/String;
     const-string v0, ""
 
     .line 96
-    .local v0, addressText:Ljava/lang/String;
+    .local v0, "addressText":Ljava/lang/String;
     const/4 v2, 0x0
 
-    .local v2, i:I
+    .local v2, "i":I
     :goto_0
     array-length v5, v3
 
@@ -299,17 +299,17 @@
     move-result-object v4
 
     .line 105
-    .local v4, text:Ljava/lang/String;
+    .local v4, "text":Ljava/lang/String;
     iget-object v5, p0, Lcom/android/gallery3d/ui/DetailsAddressResolver;->mListener:Lcom/android/gallery3d/ui/DetailsAddressResolver$AddressResolvingListener;
 
     invoke-interface {v5, v4}, Lcom/android/gallery3d/ui/DetailsAddressResolver$AddressResolvingListener;->onAddressAvailable(Ljava/lang/String;)V
 
     .line 107
-    .end local v0           #addressText:Ljava/lang/String;
-    .end local v1           #context:Landroid/content/Context;
-    .end local v2           #i:I
-    .end local v3           #parts:[Ljava/lang/String;
-    .end local v4           #text:Ljava/lang/String;
+    .end local v0    # "addressText":Ljava/lang/String;
+    .end local v1    # "context":Landroid/content/Context;
+    .end local v2    # "i":I
+    .end local v3    # "parts":[Ljava/lang/String;
+    .end local v4    # "text":Ljava/lang/String;
     :cond_4
     return-void
 .end method
@@ -342,8 +342,8 @@
 
 .method public resolveAddress([DLcom/android/gallery3d/ui/DetailsAddressResolver$AddressResolvingListener;)Ljava/lang/String;
     .locals 5
-    .parameter "latlng"
-    .parameter "listener"
+    .param p1, "latlng"    # [D
+    .param p2, "listener"    # Lcom/android/gallery3d/ui/DetailsAddressResolver$AddressResolvingListener;
 
     .prologue
     .line 62

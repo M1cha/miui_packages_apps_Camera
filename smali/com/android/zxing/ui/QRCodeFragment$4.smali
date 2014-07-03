@@ -38,13 +38,13 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .parameter "v"
+    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 346
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$4;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    invoke-virtual {v0}, Landroid/app/Fragment;->getActivity()Landroid/app/Activity;
+    invoke-virtual {v0}, Lcom/android/zxing/ui/QRCodeFragment;->getActivity()Landroid/app/Activity;
 
     move-result-object v0
 

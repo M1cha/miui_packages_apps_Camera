@@ -38,7 +38,7 @@
 # virtual methods
 .method public onDirectionChange(I)V
     .locals 7
-    .parameter "direction"
+    .param p1, "direction"    # I
 
     .prologue
     const/4 v6, 0x1
@@ -50,7 +50,7 @@
     .line 652
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$5;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mCaptureState:I
+    # getter for: Lcom/android/camera/PanoramaActivity;->mCaptureState:I
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$500(Lcom/android/camera/PanoramaActivity;)I
 
     move-result v2
@@ -60,7 +60,7 @@
     .line 653
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$5;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mProgressArea:Landroid/view/View;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mProgressArea:Landroid/view/View;
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$2000(Lcom/android/camera/PanoramaActivity;)Landroid/view/View;
 
     move-result-object v2
@@ -74,7 +74,7 @@
     .line 654
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$5;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mStartMoveHintArea:Landroid/view/View;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mStartMoveHintArea:Landroid/view/View;
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$2100(Lcom/android/camera/PanoramaActivity;)Landroid/view/View;
 
     move-result-object v2
@@ -84,7 +84,7 @@
     .line 655
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$5;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mProgressArea:Landroid/view/View;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mProgressArea:Landroid/view/View;
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$2000(Lcom/android/camera/PanoramaActivity;)Landroid/view/View;
 
     move-result-object v2
@@ -97,22 +97,22 @@
 
     const v3, 0x7f0c0051
 
-    invoke-virtual {v2, v3}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v2, v3}, Lcom/android/camera/PanoramaActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     .line 658
-    .local v0, leftIndicator:Landroid/view/View;
+    .local v0, "leftIndicator":Landroid/view/View;
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$5;->this$0:Lcom/android/camera/PanoramaActivity;
 
     const v3, 0x7f0c0052
 
-    invoke-virtual {v2, v3}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v2, v3}, Lcom/android/camera/PanoramaActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
     .line 659
-    .local v1, rightIndicator:Landroid/view/View;
+    .local v1, "rightIndicator":Landroid/view/View;
     if-ne p1, v6, :cond_2
 
     .line 660
@@ -122,15 +122,15 @@
     invoke-virtual {v1, v4}, Landroid/view/View;->setVisibility(I)V
 
     .line 667
-    .end local v0           #leftIndicator:Landroid/view/View;
-    .end local v1           #rightIndicator:Landroid/view/View;
+    .end local v0    # "leftIndicator":Landroid/view/View;
+    .end local v1    # "rightIndicator":Landroid/view/View;
     :cond_1
     :goto_0
     return-void
 
     .line 663
-    .restart local v0       #leftIndicator:Landroid/view/View;
-    .restart local v1       #rightIndicator:Landroid/view/View;
+    .restart local v0    # "leftIndicator":Landroid/view/View;
+    .restart local v1    # "rightIndicator":Landroid/view/View;
     :cond_2
     invoke-virtual {v0, v4}, Landroid/view/View;->setVisibility(I)V
 

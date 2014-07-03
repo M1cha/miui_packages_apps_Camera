@@ -38,12 +38,12 @@
 # virtual methods
 .method public consume(ILcom/android/gallery3d/data/MediaItem;)V
     .locals 1
-    .parameter "index"
-    .parameter "item"
+    .param p1, "index"    # I
+    .param p2, "item"    # Lcom/android/gallery3d/data/MediaItem;
 
     .prologue
     .line 127
-    invoke-virtual {p2}, Lcom/android/gallery3d/data/MediaObject;->getSupportedOperations()I
+    invoke-virtual {p2}, Lcom/android/gallery3d/data/MediaItem;->getSupportedOperations()I
 
     move-result v0
 
@@ -52,7 +52,7 @@
     if-eqz v0, :cond_0
 
     .line 128
-    invoke-virtual {p2}, Lcom/android/gallery3d/data/MediaObject;->delete()V
+    invoke-virtual {p2}, Lcom/android/gallery3d/data/MediaItem;->delete()V
 
     .line 130
     :cond_0

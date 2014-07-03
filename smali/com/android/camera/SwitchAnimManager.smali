@@ -36,7 +36,7 @@
 # virtual methods
 .method public continueAnimation(I)V
     .locals 2
-    .parameter "orientation"
+    .param p1, "orientation"    # I
 
     .prologue
     .line 72
@@ -55,13 +55,13 @@
 
 .method public drawAnimationFirst(Lcom/android/gallery3d/ui/GLCanvas;IIIILcom/android/camera/CameraScreenNail;Lcom/android/gallery3d/ui/RawTexture;)Z
     .locals 23
-    .parameter "canvas"
-    .parameter "x"
-    .parameter "y"
-    .parameter "width"
-    .parameter "height"
-    .parameter "preview"
-    .parameter "review"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .param p2, "x"    # I
+    .param p3, "y"    # I
+    .param p4, "width"    # I
+    .param p5, "height"    # I
+    .param p6, "preview"    # Lcom/android/camera/CameraScreenNail;
+    .param p7, "review"    # Lcom/android/gallery3d/ui/RawTexture;
 
     .prologue
     .line 81
@@ -76,12 +76,12 @@
     sub-long v21, v2, v6
 
     .line 82
-    .local v21, timeDiff:J
+    .local v21, "timeDiff":J
     move-wide/from16 v0, v21
 
     long-to-float v2, v0
 
-    const/high16 v3, 0x43c8
+    const/high16 v3, 0x43c80000
 
     cmpl-float v2, v2, v3
 
@@ -99,12 +99,12 @@
 
     long-to-float v2, v0
 
-    const/high16 v3, 0x43c8
+    const/high16 v3, 0x43c80000
 
     div-float v16, v2, v3
 
     .line 86
-    .local v16, fraction:F
+    .local v16, "fraction":F
     move/from16 v0, p2
 
     int-to-float v2, v0
@@ -113,14 +113,14 @@
 
     int-to-float v3, v0
 
-    const/high16 v6, 0x4000
+    const/high16 v6, 0x40000000
 
     div-float/2addr v3, v6
 
     add-float v14, v2, v3
 
     .line 87
-    .local v14, centerX:F
+    .local v14, "centerX":F
     move/from16 v0, p3
 
     int-to-float v2, v0
@@ -129,26 +129,26 @@
 
     int-to-float v3, v0
 
-    const/high16 v6, 0x4000
+    const/high16 v6, 0x40000000
 
     div-float/2addr v3, v6
 
     add-float v15, v2, v3
 
     .line 89
-    .local v15, centerY:F
-    const/high16 v2, 0x3f00
+    .local v15, "centerY":F
+    const/high16 v2, 0x3f000000
 
     cmpg-float v2, v16, v2
 
     if-gez v2, :cond_1
 
     .line 90
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     const v3, 0x3e4ccccd
 
-    const/high16 v6, 0x3f00
+    const/high16 v6, 0x3f000000
 
     div-float v6, v16, v6
 
@@ -157,7 +157,7 @@
     sub-float v17, v2, v3
 
     .line 91
-    .local v17, previewAnimScale:F
+    .local v17, "previewAnimScale":F
     move/from16 v0, p4
 
     int-to-float v2, v0
@@ -165,7 +165,7 @@
     mul-float v19, v2, v17
 
     .line 92
-    .local v19, previewWidth:F
+    .local v19, "previewWidth":F
     move/from16 v0, p5
 
     int-to-float v2, v0
@@ -173,8 +173,8 @@
     mul-float v18, v2, v17
 
     .line 93
-    .local v18, previewHeight:F
-    const/high16 v2, 0x4000
+    .local v18, "previewHeight":F
+    const/high16 v2, 0x40000000
 
     div-float v2, v19, v2
 
@@ -185,8 +185,8 @@
     move-result v4
 
     .line 94
-    .local v4, previewX:I
-    const/high16 v2, 0x4000
+    .local v4, "previewX":I
+    const/high16 v2, 0x40000000
 
     div-float v2, v18, v2
 
@@ -197,7 +197,7 @@
     move-result v5
 
     .line 96
-    .local v5, previewY:I
+    .local v5, "previewY":I
     invoke-static/range {v19 .. v19}, Ljava/lang/Math;->round(F)I
 
     move-result v6
@@ -213,17 +213,17 @@
     invoke-virtual/range {v2 .. v7}, Lcom/android/gallery3d/ui/RawTexture;->draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
 
     .line 127
-    .end local v17           #previewAnimScale:F
+    .end local v17    # "previewAnimScale":F
     :goto_1
     const/4 v2, 0x1
 
     goto :goto_0
 
     .line 99
-    .end local v4           #previewX:I
-    .end local v5           #previewY:I
-    .end local v18           #previewHeight:F
-    .end local v19           #previewWidth:F
+    .end local v4    # "previewX":I
+    .end local v5    # "previewY":I
+    .end local v18    # "previewHeight":F
+    .end local v19    # "previewWidth":F
     :cond_1
     move/from16 v0, p4
 
@@ -234,7 +234,7 @@
     mul-float v19, v2, v3
 
     .line 100
-    .restart local v19       #previewWidth:F
+    .restart local v19    # "previewWidth":F
     move/from16 v0, p5
 
     int-to-float v2, v0
@@ -244,8 +244,8 @@
     mul-float v18, v2, v3
 
     .line 102
-    .restart local v18       #previewHeight:F
-    const/high16 v2, 0x4000
+    .restart local v18    # "previewHeight":F
+    const/high16 v2, 0x40000000
 
     div-float v2, v19, v2
 
@@ -256,8 +256,8 @@
     move-result v4
 
     .line 103
-    .restart local v4       #previewX:I
-    const/high16 v2, 0x4000
+    .restart local v4    # "previewX":I
+    const/high16 v2, 0x40000000
 
     div-float v2, v18, v2
 
@@ -268,17 +268,17 @@
     move-result v5
 
     .line 105
-    .restart local v5       #previewY:I
-    const/high16 v2, 0x3f00
+    .restart local v5    # "previewY":I
+    const/high16 v2, 0x3f000000
 
     sub-float v2, v16, v2
 
-    const/high16 v3, 0x3f00
+    const/high16 v3, 0x3f000000
 
     div-float v20, v2, v3
 
     .line 106
-    .local v20, rate:F
+    .local v20, "rate":F
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/camera/SwitchAnimManager;->mOrientation:I
@@ -309,13 +309,13 @@
     if-nez v2, :cond_3
 
     .line 109
-    const/high16 v2, 0x42b4
+    const/high16 v2, 0x42b40000
 
     mul-float v7, v20, v2
 
     const/4 v8, 0x0
 
-    const/high16 v9, 0x3f80
+    const/high16 v9, 0x3f800000
 
     const/4 v10, 0x0
 
@@ -365,13 +365,13 @@
 
     neg-float v2, v0
 
-    const/high16 v3, 0x42b4
+    const/high16 v3, 0x42b40000
 
     mul-float v7, v2, v3
 
     const/4 v8, 0x0
 
-    const/high16 v9, 0x3f80
+    const/high16 v9, 0x3f800000
 
     const/4 v10, 0x0
 
@@ -407,11 +407,11 @@
     if-ne v2, v3, :cond_5
 
     .line 117
-    const/high16 v2, 0x42b4
+    const/high16 v2, 0x42b40000
 
     mul-float v7, v20, v2
 
-    const/high16 v8, 0x3f80
+    const/high16 v8, 0x3f800000
 
     const/4 v9, 0x0
 
@@ -447,11 +447,11 @@
 
     neg-float v2, v0
 
-    const/high16 v3, 0x42b4
+    const/high16 v3, 0x42b40000
 
     mul-float v7, v2, v3
 
-    const/high16 v8, 0x3f80
+    const/high16 v8, 0x3f800000
 
     const/4 v9, 0x0
 
@@ -474,13 +474,13 @@
 
 .method public drawAnimationNext(Lcom/android/gallery3d/ui/GLCanvas;IIIILcom/android/camera/CameraScreenNail;Lcom/android/gallery3d/ui/RawTexture;)Z
     .locals 21
-    .parameter "canvas"
-    .parameter "x"
-    .parameter "y"
-    .parameter "width"
-    .parameter "height"
-    .parameter "preview"
-    .parameter "reviewNext"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .param p2, "x"    # I
+    .param p3, "y"    # I
+    .param p4, "width"    # I
+    .param p5, "height"    # I
+    .param p6, "preview"    # Lcom/android/camera/CameraScreenNail;
+    .param p7, "reviewNext"    # Lcom/android/gallery3d/ui/RawTexture;
 
     .prologue
     .line 132
@@ -495,12 +495,12 @@
     sub-long v19, v2, v6
 
     .line 133
-    .local v19, timeDiff:J
+    .local v19, "timeDiff":J
     move-wide/from16 v0, v19
 
     long-to-float v2, v0
 
-    const/high16 v3, 0x43c8
+    const/high16 v3, 0x43c80000
 
     cmpl-float v2, v2, v3
 
@@ -518,12 +518,12 @@
 
     long-to-float v2, v0
 
-    const/high16 v3, 0x43c8
+    const/high16 v3, 0x43c80000
 
     div-float v12, v2, v3
 
     .line 137
-    .local v12, fraction:F
+    .local v12, "fraction":F
     move/from16 v0, p2
 
     int-to-float v2, v0
@@ -532,14 +532,14 @@
 
     int-to-float v3, v0
 
-    const/high16 v6, 0x4000
+    const/high16 v6, 0x40000000
 
     div-float/2addr v3, v6
 
     add-float v10, v2, v3
 
     .line 138
-    .local v10, centerX:F
+    .local v10, "centerX":F
     move/from16 v0, p3
 
     int-to-float v2, v0
@@ -548,15 +548,15 @@
 
     int-to-float v3, v0
 
-    const/high16 v6, 0x4000
+    const/high16 v6, 0x40000000
 
     div-float/2addr v3, v6
 
     add-float v11, v2, v3
 
     .line 140
-    .local v11, centerY:F
-    const/high16 v2, 0x3f00
+    .local v11, "centerY":F
+    const/high16 v2, 0x3f000000
 
     cmpg-float v2, v12, v2
 
@@ -572,7 +572,7 @@
     mul-float v15, v2, v3
 
     .line 142
-    .local v15, previewWidth:F
+    .local v15, "previewWidth":F
     move/from16 v0, p5
 
     int-to-float v2, v0
@@ -582,8 +582,8 @@
     mul-float v14, v2, v3
 
     .line 144
-    .local v14, previewHeight:F
-    const/high16 v2, 0x4000
+    .local v14, "previewHeight":F
+    const/high16 v2, 0x40000000
 
     div-float v2, v15, v2
 
@@ -594,8 +594,8 @@
     move-result v16
 
     .line 145
-    .local v16, previewX:I
-    const/high16 v2, 0x4000
+    .local v16, "previewX":I
+    const/high16 v2, 0x40000000
 
     div-float v2, v14, v2
 
@@ -606,13 +606,13 @@
     move-result v17
 
     .line 147
-    .local v17, previewY:I
-    const/high16 v2, 0x3f00
+    .local v17, "previewY":I
+    const/high16 v2, 0x3f000000
 
     div-float v18, v12, v2
 
     .line 148
-    .local v18, rate:F
+    .local v18, "rate":F
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/camera/SwitchAnimManager;->mOrientation:I
@@ -643,17 +643,17 @@
     if-nez v2, :cond_2
 
     .line 151
-    const/high16 v2, 0x42b4
+    const/high16 v2, 0x42b40000
 
     mul-float v2, v2, v18
 
-    const/high16 v3, 0x4387
+    const/high16 v3, 0x43870000
 
     add-float/2addr v3, v2
 
     const/4 v4, 0x0
 
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x3f800000
 
     const/4 v6, 0x0
 
@@ -700,24 +700,24 @@
     invoke-virtual/range {v2 .. v7}, Lcom/android/gallery3d/ui/RawTexture;->draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
 
     .line 177
-    .end local v16           #previewX:I
-    .end local v17           #previewY:I
-    .end local v18           #rate:F
+    .end local v16    # "previewX":I
+    .end local v17    # "previewY":I
+    .end local v18    # "rate":F
     :goto_3
     const/4 v2, 0x1
 
     goto/16 :goto_0
 
     .line 153
-    .restart local v16       #previewX:I
-    .restart local v17       #previewY:I
-    .restart local v18       #rate:F
+    .restart local v16    # "previewX":I
+    .restart local v17    # "previewY":I
+    .restart local v18    # "rate":F
     :cond_2
-    const/high16 v2, 0x42b4
+    const/high16 v2, 0x42b40000
 
     mul-float v2, v2, v18
 
-    const/high16 v3, 0x4387
+    const/high16 v3, 0x43870000
 
     add-float/2addr v2, v3
 
@@ -725,7 +725,7 @@
 
     const/4 v4, 0x0
 
-    const/high16 v5, 0x3f80
+    const/high16 v5, 0x3f800000
 
     const/4 v6, 0x0
 
@@ -761,15 +761,15 @@
     if-ne v2, v3, :cond_4
 
     .line 159
-    const/high16 v2, 0x42b4
+    const/high16 v2, 0x42b40000
 
     mul-float v2, v2, v18
 
-    const/high16 v3, 0x4387
+    const/high16 v3, 0x43870000
 
     add-float/2addr v3, v2
 
-    const/high16 v4, 0x3f80
+    const/high16 v4, 0x3f800000
 
     const/4 v5, 0x0
 
@@ -801,17 +801,17 @@
 
     .line 161
     :cond_4
-    const/high16 v2, 0x42b4
+    const/high16 v2, 0x42b40000
 
     mul-float v2, v2, v18
 
-    const/high16 v3, 0x4387
+    const/high16 v3, 0x43870000
 
     add-float/2addr v2, v3
 
     neg-float v3, v2
 
-    const/high16 v4, 0x3f80
+    const/high16 v4, 0x3f800000
 
     const/4 v5, 0x0
 
@@ -832,21 +832,21 @@
     goto :goto_4
 
     .line 168
-    .end local v14           #previewHeight:F
-    .end local v15           #previewWidth:F
-    .end local v16           #previewX:I
-    .end local v17           #previewY:I
-    .end local v18           #rate:F
+    .end local v14    # "previewHeight":F
+    .end local v15    # "previewWidth":F
+    .end local v16    # "previewX":I
+    .end local v17    # "previewY":I
+    .end local v18    # "rate":F
     :cond_5
-    const/high16 v2, 0x3f80
+    const/high16 v2, 0x3f800000
 
     const v3, 0x3e4ccccd
 
-    const/high16 v6, 0x3f80
+    const/high16 v6, 0x3f800000
 
     sub-float/2addr v6, v12
 
-    const/high16 v7, 0x3f00
+    const/high16 v7, 0x3f000000
 
     div-float/2addr v6, v7
 
@@ -855,7 +855,7 @@
     sub-float v13, v2, v3
 
     .line 169
-    .local v13, previewAnimScale:F
+    .local v13, "previewAnimScale":F
     move/from16 v0, p4
 
     int-to-float v2, v0
@@ -863,7 +863,7 @@
     mul-float v15, v2, v13
 
     .line 170
-    .restart local v15       #previewWidth:F
+    .restart local v15    # "previewWidth":F
     move/from16 v0, p5
 
     int-to-float v2, v0
@@ -871,8 +871,8 @@
     mul-float v14, v2, v13
 
     .line 171
-    .restart local v14       #previewHeight:F
-    const/high16 v2, 0x4000
+    .restart local v14    # "previewHeight":F
+    const/high16 v2, 0x40000000
 
     div-float v2, v15, v2
 
@@ -883,8 +883,8 @@
     move-result v4
 
     .line 172
-    .local v4, previewX:I
-    const/high16 v2, 0x4000
+    .local v4, "previewX":I
+    const/high16 v2, 0x40000000
 
     div-float v2, v14, v2
 
@@ -895,7 +895,7 @@
     move-result v5
 
     .line 174
-    .local v5, previewY:I
+    .local v5, "previewY":I
     invoke-static {v15}, Ljava/lang/Math;->round(F)I
 
     move-result v6
@@ -915,12 +915,12 @@
 
 .method public drawDarkPreview(Lcom/android/gallery3d/ui/GLCanvas;IIIILcom/android/gallery3d/ui/RawTexture;)Z
     .locals 13
-    .parameter "canvas"
-    .parameter "x"
-    .parameter "y"
-    .parameter "width"
-    .parameter "height"
-    .parameter "review"
+    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .param p2, "x"    # I
+    .param p3, "y"    # I
+    .param p4, "width"    # I
+    .param p5, "height"    # I
+    .param p6, "review"    # Lcom/android/gallery3d/ui/RawTexture;
 
     .prologue
     .line 183
@@ -930,14 +930,14 @@
 
     int-to-float v2, v0
 
-    const/high16 v5, 0x4000
+    const/high16 v5, 0x40000000
 
     div-float/2addr v2, v5
 
     add-float v8, v1, v2
 
     .line 184
-    .local v8, centerX:F
+    .local v8, "centerX":F
     move/from16 v0, p3
 
     int-to-float v1, v0
@@ -946,18 +946,18 @@
 
     int-to-float v2, v0
 
-    const/high16 v5, 0x4000
+    const/high16 v5, 0x40000000
 
     div-float/2addr v2, v5
 
     add-float v9, v1, v2
 
     .line 185
-    .local v9, centerY:F
-    const/high16 v12, 0x3f80
+    .local v9, "centerY":F
+    const/high16 v12, 0x3f800000
 
     .line 186
-    .local v12, scaleRatio:F
+    .local v12, "scaleRatio":F
     iget v1, p0, Lcom/android/camera/SwitchAnimManager;->mPreviewFrameLayoutWidth:I
 
     if-eqz v1, :cond_0
@@ -982,7 +982,7 @@
     mul-float v11, v1, v12
 
     .line 192
-    .local v11, reviewWidth:F
+    .local v11, "reviewWidth":F
     iget v1, p0, Lcom/android/camera/SwitchAnimManager;->mReviewDrawingHeight:I
 
     int-to-float v1, v1
@@ -990,8 +990,8 @@
     mul-float v10, v1, v12
 
     .line 193
-    .local v10, reviewHeight:F
-    const/high16 v1, 0x4000
+    .local v10, "reviewHeight":F
+    const/high16 v1, 0x40000000
 
     div-float v1, v11, v1
 
@@ -1002,8 +1002,8 @@
     move-result v3
 
     .line 194
-    .local v3, reviewX:I
-    const/high16 v1, 0x4000
+    .local v3, "reviewX":I
+    const/high16 v1, 0x40000000
 
     div-float v1, v10, v1
 
@@ -1014,13 +1014,13 @@
     move-result v4
 
     .line 197
-    .local v4, reviewY:I
+    .local v4, "reviewY":I
     invoke-interface {p1}, Lcom/android/gallery3d/ui/GLCanvas;->getAlpha()F
 
     move-result v7
 
     .line 198
-    .local v7, alpha:F
+    .local v7, "alpha":F
     invoke-static {v11}, Ljava/lang/Math;->round(F)I
 
     move-result v5
@@ -1044,11 +1044,11 @@
     return v1
 
     .line 189
-    .end local v3           #reviewX:I
-    .end local v4           #reviewY:I
-    .end local v7           #alpha:F
-    .end local v10           #reviewHeight:F
-    .end local v11           #reviewWidth:F
+    .end local v3    # "reviewX":I
+    .end local v4    # "reviewY":I
+    .end local v7    # "alpha":F
+    .end local v10    # "reviewHeight":F
+    .end local v11    # "reviewWidth":F
     :cond_0
     const-string v1, "SwitchAnimManager"
 
@@ -1061,8 +1061,8 @@
 
 .method public setPreviewFrameLayoutSize(II)V
     .locals 0
-    .parameter "width"
-    .parameter "height"
+    .param p1, "width"    # I
+    .param p2, "height"    # I
 
     .prologue
     .line 62
@@ -1074,8 +1074,8 @@
 
 .method public setReviewDrawingSize(II)V
     .locals 0
-    .parameter "width"
-    .parameter "height"
+    .param p1, "width"    # I
+    .param p2, "height"    # I
 
     .prologue
     .line 54
@@ -1090,7 +1090,7 @@
 
 .method public startAnimation(I)V
     .locals 2
-    .parameter "orientation"
+    .param p1, "orientation"    # I
 
     .prologue
     .line 67

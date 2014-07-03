@@ -21,8 +21,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/FocusManager;Landroid/os/Looper;)V
     .locals 0
-    .parameter
-    .parameter "looper"
+    .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
     .line 191
@@ -39,7 +38,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .parameter "msg"
+    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
     .line 197
@@ -60,19 +59,19 @@
     .line 201
     iget-object v0, p0, Lcom/android/camera/FocusManager$MainHandler;->this$0:Lcom/android/camera/FocusManager;
 
-    #calls: Lcom/android/camera/FocusManager;->unlockAeAwbLock()V
+    # invokes: Lcom/android/camera/FocusManager;->unlockAeAwbLock()V
     invoke-static {v0}, Lcom/android/camera/FocusManager;->access$000(Lcom/android/camera/FocusManager;)V
 
     .line 202
     iget-object v0, p0, Lcom/android/camera/FocusManager$MainHandler;->this$0:Lcom/android/camera/FocusManager;
 
-    #calls: Lcom/android/camera/FocusManager;->cancelAutoFocus()V
+    # invokes: Lcom/android/camera/FocusManager;->cancelAutoFocus()V
     invoke-static {v0}, Lcom/android/camera/FocusManager;->access$100(Lcom/android/camera/FocusManager;)V
 
     .line 203
     iget-object v0, p0, Lcom/android/camera/FocusManager$MainHandler;->this$0:Lcom/android/camera/FocusManager;
 
-    #getter for: Lcom/android/camera/FocusManager;->mFocusIndicatorRotateLayout:Lcom/android/camera/ui/FocusIndicatorRotateLayout;
+    # getter for: Lcom/android/camera/FocusManager;->mFocusIndicatorRotateLayout:Lcom/android/camera/ui/FocusIndicatorRotateLayout;
     invoke-static {v0}, Lcom/android/camera/FocusManager;->access$200(Lcom/android/camera/FocusManager;)Lcom/android/camera/ui/FocusIndicatorRotateLayout;
 
     move-result-object v0

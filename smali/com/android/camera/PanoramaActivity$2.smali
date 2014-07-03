@@ -35,14 +35,14 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 12
-    .parameter "msg"
+    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
     const/4 v5, 0x0
 
     const/4 v3, 0x0
 
-    const/high16 v2, 0x4320
+    const/high16 v2, 0x43200000
 
     .line 262
     iget v0, p1, Landroid/os/Message;->what:I
@@ -57,7 +57,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->onBackgroundThreadFinished()V
+    # invokes: Lcom/android/camera/PanoramaActivity;->onBackgroundThreadFinished()V
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$700(Lcom/android/camera/PanoramaActivity;)V
 
     .line 265
@@ -67,7 +67,7 @@
 
     check-cast v0, Landroid/graphics/Bitmap;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->showFinalMosaic(Landroid/graphics/Bitmap;)V
+    # invokes: Lcom/android/camera/PanoramaActivity;->showFinalMosaic(Landroid/graphics/Bitmap;)V
     invoke-static {v1, v0}, Lcom/android/camera/PanoramaActivity;->access$800(Lcom/android/camera/PanoramaActivity;Landroid/graphics/Bitmap;)V
 
     .line 266
@@ -81,35 +81,35 @@
     :pswitch_1
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->onBackgroundThreadFinished()V
+    # invokes: Lcom/android/camera/PanoramaActivity;->onBackgroundThreadFinished()V
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$700(Lcom/android/camera/PanoramaActivity;)V
 
     .line 272
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    iget-boolean v0, v0, Lcom/android/camera/ActivityBase;->mPaused:Z
+    iget-boolean v0, v0, Lcom/android/camera/PanoramaActivity;->mPaused:Z
 
     if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-virtual {v0}, Lcom/android/camera/ActivityBase;->saveThumbnailToFile()V
+    invoke-virtual {v0}, Lcom/android/camera/PanoramaActivity;->saveThumbnailToFile()V
 
     .line 275
     :cond_0
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    iget-object v0, v0, Lcom/android/camera/ActivityBase;->mThumbnail:Lcom/android/camera/Thumbnail;
+    iget-object v0, v0, Lcom/android/camera/PanoramaActivity;->mThumbnail:Lcom/android/camera/Thumbnail;
 
     if-eqz v0, :cond_1
 
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    iget-object v0, v0, Lcom/android/camera/ActivityBase;->mThumbnailView:Lcom/android/camera/ui/RotateImageView;
+    iget-object v0, v0, Lcom/android/camera/PanoramaActivity;->mThumbnailView:Lcom/android/camera/ui/RotateImageView;
 
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    iget-object v1, v1, Lcom/android/camera/ActivityBase;->mThumbnail:Lcom/android/camera/Thumbnail;
+    iget-object v1, v1, Lcom/android/camera/PanoramaActivity;->mThumbnail:Lcom/android/camera/Thumbnail;
 
     invoke-virtual {v1}, Lcom/android/camera/Thumbnail;->getBitmap()Landroid/graphics/Bitmap;
 
@@ -121,13 +121,13 @@
     :cond_1
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->resetToPreview()V
+    # invokes: Lcom/android/camera/PanoramaActivity;->resetToPreview()V
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$900(Lcom/android/camera/PanoramaActivity;)V
 
     .line 278
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->clearMosaicFrameProcessorIfNeeded()V
+    # invokes: Lcom/android/camera/PanoramaActivity;->clearMosaicFrameProcessorIfNeeded()V
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$1000(Lcom/android/camera/PanoramaActivity;)V
 
     goto :goto_0
@@ -136,27 +136,27 @@
     :pswitch_2
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->onBackgroundThreadFinished()V
+    # invokes: Lcom/android/camera/PanoramaActivity;->onBackgroundThreadFinished()V
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$700(Lcom/android/camera/PanoramaActivity;)V
 
     .line 282
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    iget-boolean v0, v0, Lcom/android/camera/ActivityBase;->mPaused:Z
+    iget-boolean v0, v0, Lcom/android/camera/PanoramaActivity;->mPaused:Z
 
     if-eqz v0, :cond_2
 
     .line 283
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->resetToPreview()V
+    # invokes: Lcom/android/camera/PanoramaActivity;->resetToPreview()V
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$900(Lcom/android/camera/PanoramaActivity;)V
 
     .line 294
     :goto_1
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->clearMosaicFrameProcessorIfNeeded()V
+    # invokes: Lcom/android/camera/PanoramaActivity;->clearMosaicFrameProcessorIfNeeded()V
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$1000(Lcom/android/camera/PanoramaActivity;)V
 
     goto :goto_0
@@ -165,28 +165,28 @@
     :cond_2
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mRotateDialog:Lcom/android/camera/RotateDialogController;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mRotateDialog:Lcom/android/camera/RotateDialogController;
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$1400(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/RotateDialogController;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mDialogTitle:Ljava/lang/String;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mDialogTitle:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/PanoramaActivity;->access$1100(Lcom/android/camera/PanoramaActivity;)Ljava/lang/String;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mDialogPanoramaFailedString:Ljava/lang/String;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mDialogPanoramaFailedString:Ljava/lang/String;
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$1200(Lcom/android/camera/PanoramaActivity;)Ljava/lang/String;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mDialogOkString:Ljava/lang/String;
+    # getter for: Lcom/android/camera/PanoramaActivity;->mDialogOkString:Ljava/lang/String;
     invoke-static {v3}, Lcom/android/camera/PanoramaActivity;->access$1300(Lcom/android/camera/PanoramaActivity;)Ljava/lang/String;
 
     move-result-object v3
@@ -205,19 +205,19 @@
     :pswitch_3
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->onBackgroundThreadFinished()V
+    # invokes: Lcom/android/camera/PanoramaActivity;->onBackgroundThreadFinished()V
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$700(Lcom/android/camera/PanoramaActivity;)V
 
     .line 298
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->resetToPreview()V
+    # invokes: Lcom/android/camera/PanoramaActivity;->resetToPreview()V
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$900(Lcom/android/camera/PanoramaActivity;)V
 
     .line 299
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->clearMosaicFrameProcessorIfNeeded()V
+    # invokes: Lcom/android/camera/PanoramaActivity;->clearMosaicFrameProcessorIfNeeded()V
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$1000(Lcom/android/camera/PanoramaActivity;)V
 
     goto/16 :goto_0
@@ -226,7 +226,7 @@
     :pswitch_4
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+    invoke-virtual {v0}, Lcom/android/camera/PanoramaActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
@@ -243,12 +243,12 @@
     check-cast v11, Lcom/android/camera/PanoramaActivity$ProgressData;
 
     .line 307
-    .local v11, pd:Lcom/android/camera/PanoramaActivity$ProgressData;
+    .local v11, "pd":Lcom/android/camera/PanoramaActivity$ProgressData;
     iget v0, v11, Lcom/android/camera/PanoramaActivity$ProgressData;->progressX:F
 
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mHorizontalViewAngle:F
+    # getter for: Lcom/android/camera/PanoramaActivity;->mHorizontalViewAngle:F
     invoke-static {v1}, Lcom/android/camera/PanoramaActivity;->access$1500(Lcom/android/camera/PanoramaActivity;)F
 
     move-result v1
@@ -256,12 +256,12 @@
     mul-float v7, v0, v1
 
     .line 308
-    .local v7, accumulatedHorizontalAngle:F
+    .local v7, "accumulatedHorizontalAngle":F
     iget v0, v11, Lcom/android/camera/PanoramaActivity$ProgressData;->progressY:F
 
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mVerticalViewAngle:F
+    # getter for: Lcom/android/camera/PanoramaActivity;->mVerticalViewAngle:F
     invoke-static {v1}, Lcom/android/camera/PanoramaActivity;->access$1600(Lcom/android/camera/PanoramaActivity;)F
 
     move-result v1
@@ -269,7 +269,7 @@
     mul-float v8, v0, v1
 
     .line 309
-    .local v8, accumulatedVerticalAngle:F
+    .local v8, "accumulatedVerticalAngle":F
     iget-boolean v0, v11, Lcom/android/camera/PanoramaActivity$ProgressData;->isFinished:Z
 
     if-nez v0, :cond_3
@@ -294,7 +294,7 @@
     :cond_3
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->stopCapture(Z)V
+    # invokes: Lcom/android/camera/PanoramaActivity;->stopCapture(Z)V
     invoke-static {v0, v3}, Lcom/android/camera/PanoramaActivity;->access$1700(Lcom/android/camera/PanoramaActivity;Z)V
 
     goto/16 :goto_0
@@ -305,7 +305,7 @@
 
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mHorizontalViewAngle:F
+    # getter for: Lcom/android/camera/PanoramaActivity;->mHorizontalViewAngle:F
     invoke-static {v1}, Lcom/android/camera/PanoramaActivity;->access$1500(Lcom/android/camera/PanoramaActivity;)F
 
     move-result v1
@@ -313,12 +313,12 @@
     mul-float v9, v0, v1
 
     .line 315
-    .local v9, panningRateXInDegree:F
+    .local v9, "panningRateXInDegree":F
     iget v0, v11, Lcom/android/camera/PanoramaActivity$ProgressData;->panningRateY:F
 
     iget-object v1, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #getter for: Lcom/android/camera/PanoramaActivity;->mVerticalViewAngle:F
+    # getter for: Lcom/android/camera/PanoramaActivity;->mVerticalViewAngle:F
     invoke-static {v1}, Lcom/android/camera/PanoramaActivity;->access$1600(Lcom/android/camera/PanoramaActivity;)F
 
     move-result v1
@@ -326,30 +326,30 @@
     mul-float v10, v0, v1
 
     .line 316
-    .local v10, panningRateYInDegree:F
+    .local v10, "panningRateYInDegree":F
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    #calls: Lcom/android/camera/PanoramaActivity;->updateProgress(FFFF)V
+    # invokes: Lcom/android/camera/PanoramaActivity;->updateProgress(FFFF)V
     invoke-static {v0, v9, v10, v7, v8}, Lcom/android/camera/PanoramaActivity;->access$1800(Lcom/android/camera/PanoramaActivity;FFFF)V
 
     goto/16 :goto_0
 
     .line 321
-    .end local v7           #accumulatedHorizontalAngle:F
-    .end local v8           #accumulatedVerticalAngle:F
-    .end local v9           #panningRateXInDegree:F
-    .end local v10           #panningRateYInDegree:F
-    .end local v11           #pd:Lcom/android/camera/PanoramaActivity$ProgressData;
+    .end local v7    # "accumulatedHorizontalAngle":F
+    .end local v8    # "accumulatedVerticalAngle":F
+    .end local v9    # "panningRateXInDegree":F
+    .end local v10    # "panningRateYInDegree":F
+    .end local v11    # "pd":Lcom/android/camera/PanoramaActivity$ProgressData;
     :pswitch_6
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$2;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    invoke-virtual {v0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
+    invoke-virtual {v0}, Lcom/android/camera/PanoramaActivity;->getGLRoot()Lcom/android/gallery3d/ui/GLRoot;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/gallery3d/ui/GLRootView;
 
-    invoke-virtual {v0, v3}, Landroid/view/SurfaceView;->setVisibility(I)V
+    invoke-virtual {v0, v3}, Lcom/android/gallery3d/ui/GLRootView;->setVisibility(I)V
 
     goto/16 :goto_0
 

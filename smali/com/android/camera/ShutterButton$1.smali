@@ -35,7 +35,7 @@
 # virtual methods
 .method public dispatchMessage(Landroid/os/Message;)V
     .locals 1
-    .parameter "msg"
+    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
     .line 60
@@ -52,7 +52,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/camera/ShutterButton$1;->this$0:Lcom/android/camera/ShutterButton;
 
-    #getter for: Lcom/android/camera/ShutterButton;->mListener:Lcom/android/camera/ShutterButton$OnShutterButtonListener;
+    # getter for: Lcom/android/camera/ShutterButton;->mListener:Lcom/android/camera/ShutterButton$OnShutterButtonListener;
     invoke-static {v0}, Lcom/android/camera/ShutterButton;->access$000(Lcom/android/camera/ShutterButton;)Lcom/android/camera/ShutterButton$OnShutterButtonListener;
 
     move-result-object v0
@@ -62,7 +62,7 @@
     .line 63
     iget-object v0, p0, Lcom/android/camera/ShutterButton$1;->this$0:Lcom/android/camera/ShutterButton;
 
-    #getter for: Lcom/android/camera/ShutterButton;->mListener:Lcom/android/camera/ShutterButton$OnShutterButtonListener;
+    # getter for: Lcom/android/camera/ShutterButton;->mListener:Lcom/android/camera/ShutterButton$OnShutterButtonListener;
     invoke-static {v0}, Lcom/android/camera/ShutterButton;->access$000(Lcom/android/camera/ShutterButton;)Lcom/android/camera/ShutterButton$OnShutterButtonListener;
 
     move-result-object v0

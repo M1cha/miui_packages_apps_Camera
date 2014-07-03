@@ -12,9 +12,9 @@
 # direct methods
 .method constructor <init>(III)V
     .locals 3
-    .parameter "newPosition"
-    .parameter "firstDigit"
-    .parameter "secondDigit"
+    .param p1, "newPosition"    # I
+    .param p2, "firstDigit"    # I
+    .param p3, "secondDigit"    # I
 
     .prologue
     const/16 v1, 0xa
