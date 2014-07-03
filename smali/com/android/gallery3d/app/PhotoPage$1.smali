@@ -21,6 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/PhotoPage;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 166
@@ -35,11 +36,11 @@
 # virtual methods
 .method protected onLayout(ZIIII)V
     .locals 4
-    .param p1, "changed"    # Z
-    .param p2, "left"    # I
-    .param p3, "top"    # I
-    .param p4, "right"    # I
-    .param p5, "bottom"    # I
+    .parameter "changed"
+    .parameter "left"
+    .parameter "top"
+    .parameter "right"
+    .parameter "bottom"
 
     .prologue
     const/4 v3, 0x0
@@ -47,7 +48,7 @@
     .line 176
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$1;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mPhotoView:Lcom/android/gallery3d/ui/PhotoView;
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mPhotoView:Lcom/android/gallery3d/ui/PhotoView;
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$200(Lcom/android/gallery3d/app/PhotoPage;)Lcom/android/gallery3d/ui/PhotoView;
 
     move-result-object v0
@@ -61,7 +62,7 @@
     .line 177
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$1;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mShowDetails:Z
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mShowDetails:Z
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$300(Lcom/android/gallery3d/app/PhotoPage;)Z
 
     move-result v0
@@ -71,14 +72,14 @@
     .line 178
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$1;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mDetailsHelper:Lcom/android/gallery3d/ui/DetailsHelper;
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mDetailsHelper:Lcom/android/gallery3d/ui/DetailsHelper;
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$500(Lcom/android/gallery3d/app/PhotoPage;)Lcom/android/gallery3d/ui/DetailsHelper;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/gallery3d/app/PhotoPage$1;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mActionBar:Lcom/android/gallery3d/app/GalleryActionBar;
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mActionBar:Lcom/android/gallery3d/app/GalleryActionBar;
     invoke-static {v1}, Lcom/android/gallery3d/app/PhotoPage;->access$400(Lcom/android/gallery3d/app/PhotoPage;)Lcom/android/gallery3d/app/GalleryActionBar;
 
     move-result-object v1
@@ -96,7 +97,7 @@
 
 .method protected renderBackground(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 0
-    .param p1, "view"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .parameter "view"
 
     .prologue
     .line 170

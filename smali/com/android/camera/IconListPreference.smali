@@ -16,8 +16,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     const/4 v3, 0x0
@@ -33,13 +33,13 @@
     move-result-object v0
 
     .line 39
-    .local v0, "a":Landroid/content/res/TypedArray;
+    .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
     .line 40
-    .local v1, "res":Landroid/content/res/Resources;
+    .local v1, res:Landroid/content/res/Resources;
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
@@ -94,8 +94,8 @@
 
 .method private getIds(Landroid/content/res/Resources;I)[I
     .locals 5
-    .param p1, "res"    # Landroid/content/res/Resources;
-    .param p2, "iconsRes"    # I
+    .parameter "res"
+    .parameter "iconsRes"
 
     .prologue
     .line 76
@@ -114,20 +114,20 @@
     move-result-object v0
 
     .line 78
-    .local v0, "array":Landroid/content/res/TypedArray;
+    .local v0, array:Landroid/content/res/TypedArray;
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->length()I
 
     move-result v3
 
     .line 79
-    .local v3, "n":I
+    .local v3, n:I
     new-array v2, v3, [I
 
     .line 80
-    .local v2, "ids":[I
+    .local v2, ids:[I
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_1
     if-ge v1, v3, :cond_1
 
@@ -156,6 +156,7 @@
 # virtual methods
 .method public filterUnsupported(Ljava/util/List;)V
     .locals 7
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -168,37 +169,37 @@
 
     .prologue
     .line 89
-    .local p1, "supported":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .local p1, supported:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {p0}, Lcom/android/camera/IconListPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
     move-result-object v0
 
     .line 90
-    .local v0, "entryValues":[Ljava/lang/CharSequence;
+    .local v0, entryValues:[Ljava/lang/CharSequence;
     new-instance v2, Lcom/android/camera/IntArray;
 
     invoke-direct {v2}, Lcom/android/camera/IntArray;-><init>()V
 
     .line 91
-    .local v2, "iconIds":Lcom/android/camera/IntArray;
+    .local v2, iconIds:Lcom/android/camera/IntArray;
     new-instance v4, Lcom/android/camera/IntArray;
 
     invoke-direct {v4}, Lcom/android/camera/IntArray;-><init>()V
 
     .line 92
-    .local v4, "largeIconIds":Lcom/android/camera/IntArray;
+    .local v4, largeIconIds:Lcom/android/camera/IntArray;
     new-instance v3, Lcom/android/camera/IntArray;
 
     invoke-direct {v3}, Lcom/android/camera/IntArray;-><init>()V
 
     .line 94
-    .local v3, "imageIds":Lcom/android/camera/IntArray;
+    .local v3, imageIds:Lcom/android/camera/IntArray;
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     array-length v5, v0
 
-    .local v5, "len":I
+    .local v5, len:I
     :goto_0
     if-ge v1, v5, :cond_3
 

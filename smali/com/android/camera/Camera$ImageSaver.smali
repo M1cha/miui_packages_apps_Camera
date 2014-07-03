@@ -38,6 +38,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/Camera;)V
     .locals 1
+    .parameter
 
     .prologue
     .line 986
@@ -68,22 +69,22 @@
 
 .method private storeImage([BLandroid/net/Uri;Ljava/lang/String;Landroid/location/Location;IIIIZ)V
     .locals 22
-    .param p1, "data"    # [B
-    .param p2, "uri"    # Landroid/net/Uri;
-    .param p3, "title"    # Ljava/lang/String;
-    .param p4, "loc"    # Landroid/location/Location;
-    .param p5, "width"    # I
-    .param p6, "height"    # I
-    .param p7, "thumbnailWidth"    # I
-    .param p8, "orientation"    # I
-    .param p9, "quickSave"    # Z
+    .parameter "data"
+    .parameter "uri"
+    .parameter "title"
+    .parameter "loc"
+    .parameter "width"
+    .parameter "height"
+    .parameter "thumbnailWidth"
+    .parameter "orientation"
+    .parameter "quickSave"
 
     .prologue
     .line 1097
     const/16 v19, 0x0
 
     .line 1098
-    .local v19, "ok":Z
+    .local v19, ok:Z
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/camera/Camera$ImageSaver;->this$0:Lcom/android/camera/Camera;
@@ -101,7 +102,7 @@
     move-result-wide v6
 
     .line 1101
-    .local v6, "currentTime":J
+    .local v6, currentTime:J
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/camera/Camera$ImageSaver;->this$0:Lcom/android/camera/Camera;
@@ -130,13 +131,13 @@
     const/16 v19, 0x1
 
     .line 1110
-    .end local v6    # "currentTime":J
+    .end local v6           #currentTime:J
     :goto_0
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/camera/Camera$ImageSaver;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/camera/Camera;->mHandler:Landroid/os/Handler;
     invoke-static {v4}, Lcom/android/camera/Camera;->access$1000(Lcom/android/camera/Camera;)Landroid/os/Handler;
 
     move-result-object v4
@@ -173,7 +174,7 @@
 
     iget-object v4, v0, Lcom/android/camera/Camera$ImageSaver;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mIsImageCaptureIntent:Z
+    #getter for: Lcom/android/camera/Camera;->mIsImageCaptureIntent:Z
     invoke-static {v4}, Lcom/android/camera/Camera;->access$3400(Lcom/android/camera/Camera;)Z
 
     move-result v4
@@ -183,7 +184,7 @@
     const/16 v18, 0x1
 
     .line 1125
-    .local v18, "needThumbnail":Z
+    .local v18, needThumbnail:Z
     :goto_1
     monitor-exit p0
     :try_end_0
@@ -212,18 +213,18 @@
     move/from16 v20, v0
 
     .line 1130
-    .local v20, "ratio":I
+    .local v20, ratio:I
     invoke-static/range {v20 .. v20}, Ljava/lang/Integer;->highestOneBit(I)I
 
     move-result v17
 
     .line 1131
-    .local v17, "inSampleSize":I
+    .local v17, inSampleSize:I
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/android/camera/Camera$ImageSaver;->this$0:Lcom/android/camera/Camera;
 
-    # invokes: Lcom/android/camera/Camera;->needMirrorInStorage()Z
+    #calls: Lcom/android/camera/Camera;->needMirrorInStorage()Z
     invoke-static {v4}, Lcom/android/camera/Camera;->access$4900(Lcom/android/camera/Camera;)Z
 
     move-result v4
@@ -241,7 +242,7 @@
     move-result-object v21
 
     .line 1134
-    .local v21, "t":Lcom/android/camera/Thumbnail;
+    .local v21, t:Lcom/android/camera/Thumbnail;
     move-object/from16 v0, p0
 
     iget-object v5, v0, Lcom/android/camera/Camera$ImageSaver;->mUpdateThumbnailLock:Ljava/lang/Object;
@@ -261,7 +262,7 @@
 
     iget-object v4, v0, Lcom/android/camera/Camera$ImageSaver;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/camera/Camera;->mHandler:Landroid/os/Handler;
     invoke-static {v4}, Lcom/android/camera/Camera;->access$1000(Lcom/android/camera/Camera;)Landroid/os/Handler;
 
     move-result-object v4
@@ -276,9 +277,9 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 1141
-    .end local v17    # "inSampleSize":I
-    .end local v20    # "ratio":I
-    .end local v21    # "t":Lcom/android/camera/Thumbnail;
+    .end local v17           #inSampleSize:I
+    .end local v20           #ratio:I
+    .end local v21           #t:Lcom/android/camera/Thumbnail;
     :cond_0
     move-object/from16 v0, p0
 
@@ -289,19 +290,19 @@
     invoke-static {v4, v0}, Lcom/android/camera/Util;->broadcastNewPicture(Landroid/content/Context;Landroid/net/Uri;)V
 
     .line 1145
-    .end local v18    # "needThumbnail":Z
+    .end local v18           #needThumbnail:Z
     :goto_2
     return-void
 
     .line 1103
-    .restart local v6    # "currentTime":J
+    .restart local v6       #currentTime:J
     :cond_1
     const/16 v19, 0x0
 
     goto :goto_0
 
     .line 1105
-    .end local v6    # "currentTime":J
+    .end local v6           #currentTime:J
     :cond_2
     move-object/from16 v0, p0
 
@@ -311,7 +312,7 @@
 
     iget-object v4, v0, Lcom/android/camera/Camera$ImageSaver;->this$0:Lcom/android/camera/Camera;
 
-    # invokes: Lcom/android/camera/Camera;->needMirrorInStorage()Z
+    #calls: Lcom/android/camera/Camera;->needMirrorInStorage()Z
     invoke-static {v4}, Lcom/android/camera/Camera;->access$4900(Lcom/android/camera/Camera;)Z
 
     move-result v16
@@ -354,10 +355,10 @@
     throw v4
 
     .line 1139
-    .restart local v17    # "inSampleSize":I
-    .restart local v18    # "needThumbnail":Z
-    .restart local v20    # "ratio":I
-    .restart local v21    # "t":Lcom/android/camera/Thumbnail;
+    .restart local v17       #inSampleSize:I
+    .restart local v18       #needThumbnail:Z
+    .restart local v20       #ratio:I
+    .restart local v21       #t:Lcom/android/camera/Thumbnail;
     :catchall_1
     move-exception v4
 
@@ -369,10 +370,10 @@
     throw v4
 
     .line 1143
-    .end local v17    # "inSampleSize":I
-    .end local v18    # "needThumbnail":Z
-    .end local v20    # "ratio":I
-    .end local v21    # "t":Lcom/android/camera/Thumbnail;
+    .end local v17           #inSampleSize:I
+    .end local v18           #needThumbnail:Z
+    .end local v20           #ratio:I
+    .end local v21           #t:Lcom/android/camera/Thumbnail;
     :cond_4
     move-object/from16 v0, p0
 
@@ -389,15 +390,15 @@
 # virtual methods
 .method public addImage([BLandroid/net/Uri;Ljava/lang/String;Landroid/location/Location;IIIIZ)V
     .locals 3
-    .param p1, "data"    # [B
-    .param p2, "uri"    # Landroid/net/Uri;
-    .param p3, "title"    # Ljava/lang/String;
-    .param p4, "loc"    # Landroid/location/Location;
-    .param p5, "width"    # I
-    .param p6, "height"    # I
-    .param p7, "thumbnailWidth"    # I
-    .param p8, "orientation"    # I
-    .param p9, "quickSave"    # Z
+    .parameter "data"
+    .parameter "uri"
+    .parameter "title"
+    .parameter "loc"
+    .parameter "width"
+    .parameter "height"
+    .parameter "thumbnailWidth"
+    .parameter "orientation"
+    .parameter "quickSave"
 
     .prologue
     const/4 v1, 0x0
@@ -408,7 +409,7 @@
     invoke-direct {v0, v1}, Lcom/android/camera/Camera$SaveRequest;-><init>(Lcom/android/camera/Camera$1;)V
 
     .line 996
-    .local v0, "r":Lcom/android/camera/Camera$SaveRequest;
+    .local v0, r:Lcom/android/camera/Camera$SaveRequest;
     iput-object p1, v0, Lcom/android/camera/Camera$SaveRequest;->data:[B
 
     .line 997
@@ -460,8 +461,8 @@
     :try_start_1
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
     :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_1
 
@@ -596,8 +597,8 @@
     :try_start_1
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
     :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 1036
     :goto_1
@@ -630,7 +631,7 @@
     check-cast v10, Lcom/android/camera/Camera$SaveRequest;
 
     .line 1039
-    .local v10, "r":Lcom/android/camera/Camera$SaveRequest;
+    .local v10, r:Lcom/android/camera/Camera$SaveRequest;
     monitor-exit p0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
@@ -687,7 +688,7 @@
     throw v0
 
     .line 1033
-    .end local v10    # "r":Lcom/android/camera/Camera$SaveRequest;
+    .end local v10           #r:Lcom/android/camera/Camera$SaveRequest;
     :catch_0
     move-exception v0
 
@@ -707,7 +708,7 @@
     :try_start_0
     iget-object v1, p0, Lcom/android/camera/Camera$ImageSaver;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/camera/Camera;->mHandler:Landroid/os/Handler;
     invoke-static {v1}, Lcom/android/camera/Camera;->access$1000(Lcom/android/camera/Camera;)Landroid/os/Handler;
 
     move-result-object v1
@@ -720,7 +721,7 @@
     iget-object v0, p0, Lcom/android/camera/Camera$ImageSaver;->mPendingThumbnail:Lcom/android/camera/Thumbnail;
 
     .line 1084
-    .local v0, "t":Lcom/android/camera/Thumbnail;
+    .local v0, t:Lcom/android/camera/Thumbnail;
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/camera/Camera$ImageSaver;->mPendingThumbnail:Lcom/android/camera/Thumbnail;
@@ -758,7 +759,7 @@
     return-void
 
     .line 1085
-    .end local v0    # "t":Lcom/android/camera/Thumbnail;
+    .end local v0           #t:Lcom/android/camera/Thumbnail;
     :catchall_0
     move-exception v1
 
@@ -794,8 +795,8 @@
     :try_start_1
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
     :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_0
 

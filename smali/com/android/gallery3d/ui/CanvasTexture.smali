@@ -12,8 +12,8 @@
 # direct methods
 .method public constructor <init>(II)V
     .locals 1
-    .param p1, "width"    # I
-    .param p2, "height"    # I
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 30
@@ -43,7 +43,7 @@
 
 .method protected onFreeBitmap(Landroid/graphics/Bitmap;)V
     .locals 1
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
+    .parameter "bitmap"
 
     .prologue
     .line 46
@@ -77,7 +77,7 @@
     move-result-object v0
 
     .line 39
-    .local v0, "bitmap":Landroid/graphics/Bitmap;
+    .local v0, bitmap:Landroid/graphics/Bitmap;
     new-instance v1, Landroid/graphics/Canvas;
 
     invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V

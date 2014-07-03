@@ -267,7 +267,7 @@
 # virtual methods
 .method public trackEvent(Ljava/lang/String;)V
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
+    .parameter "key"
 
     .prologue
     .line 116
@@ -281,8 +281,8 @@
 
 .method public trackEvent(Ljava/lang/String;J)V
     .locals 7
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "newValue"    # J
+    .parameter "key"
+    .parameter "newValue"
 
     .prologue
     .line 133
@@ -304,7 +304,7 @@
     check-cast v3, Ljava/lang/String;
 
     .line 135
-    .local v3, "trackEvent":Ljava/lang/String;
+    .local v3, trackEvent:Ljava/lang/String;
     iget-object v4, p0, Lcom/android/camera/CameraDataAnalytics;->mPreference:Landroid/content/SharedPreferences;
 
     if-eqz v4, :cond_0
@@ -319,7 +319,7 @@
     move-result-object v0
 
     .line 137
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
+    .local v0, editor:Landroid/content/SharedPreferences$Editor;
     iget-object v4, p0, Lcom/android/camera/CameraDataAnalytics;->mPreference:Landroid/content/SharedPreferences;
 
     const-wide/16 v5, 0x0
@@ -329,7 +329,7 @@
     move-result-wide v1
 
     .line 138
-    .local v1, "oldValue":J
+    .local v1, oldValue:J
     const-string v4, "pref_layout_mode_key"
 
     invoke-virtual {p1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -358,7 +358,7 @@
 
 .method public trackEventTime(Ljava/lang/String;)V
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
+    .parameter "key"
 
     .prologue
     .line 120
@@ -374,7 +374,7 @@
 
 .method public trackLayoutMode(Z)V
     .locals 3
-    .param p1, "isSimple"    # Z
+    .parameter "isSimple"
 
     .prologue
     .line 124
@@ -413,7 +413,7 @@
     move-result-wide v6
 
     .line 79
-    .local v6, "startTime":J
+    .local v6, startTime:J
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v10
@@ -421,7 +421,7 @@
     sub-long v4, v10, v6
 
     .line 80
-    .local v4, "lastTime":J
+    .local v4, lastTime:J
     const-wide/32 v10, 0x5265c00
 
     cmp-long v10, v4, v10
@@ -443,7 +443,7 @@
     move-result-object v0
 
     .line 82
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
+    .local v0, editor:Landroid/content/SharedPreferences$Editor;
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
 
     .line 83
@@ -454,7 +454,7 @@
     return-void
 
     .line 87
-    .end local v0    # "editor":Landroid/content/SharedPreferences$Editor;
+    .end local v0           #editor:Landroid/content/SharedPreferences$Editor;
     :cond_1
     iget-object v10, p0, Lcom/android/camera/CameraDataAnalytics;->mAnalytics:Lmiui/analytics/XiaomiAnalytics;
 
@@ -472,12 +472,12 @@
     move-result-object v3
 
     .line 89
-    .local v3, "keySet":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
+    .local v3, keySet:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     invoke-interface {v3}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .local v1, "i$":Ljava/util/Iterator;
+    .local v1, i$:Ljava/util/Iterator;
     :cond_2
     :goto_1
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
@@ -493,7 +493,7 @@
     check-cast v2, Ljava/lang/String;
 
     .line 90
-    .local v2, "key":Ljava/lang/String;
+    .local v2, key:Ljava/lang/String;
     iget-object v10, p0, Lcom/android/camera/CameraDataAnalytics;->mPreference:Landroid/content/SharedPreferences;
 
     invoke-interface {v10, v2, v12, v13}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
@@ -501,7 +501,7 @@
     move-result-wide v8
 
     .line 91
-    .local v8, "value":J
+    .local v8, value:J
     const-string v10, "pref_layout_mode_key"
 
     invoke-virtual {v2, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -581,8 +581,8 @@
     goto :goto_1
 
     .line 107
-    .end local v2    # "key":Ljava/lang/String;
-    .end local v8    # "value":J
+    .end local v2           #key:Ljava/lang/String;
+    .end local v8           #value:J
     :cond_6
     iget-object v10, p0, Lcom/android/camera/CameraDataAnalytics;->mAnalytics:Lmiui/analytics/XiaomiAnalytics;
 
@@ -603,7 +603,7 @@
     move-result-object v0
 
     .line 111
-    .restart local v0    # "editor":Landroid/content/SharedPreferences$Editor;
+    .restart local v0       #editor:Landroid/content/SharedPreferences$Editor;
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->clear()Landroid/content/SharedPreferences$Editor;
 
     .line 112

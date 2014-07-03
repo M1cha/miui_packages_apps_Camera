@@ -93,8 +93,8 @@
 
 .method static decode([BI)Lcom/google/zxing/common/DecoderResult;
     .locals 11
-    .param p0, "bytes"    # [B
-    .param p1, "mode"    # I
+    .parameter "bytes"
+    .parameter "mode"
 
     .prologue
     const/4 v7, 0x1
@@ -111,7 +111,7 @@
     invoke-direct {v4, v6}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 65
-    .local v4, "result":Ljava/lang/StringBuilder;
+    .local v4, result:Ljava/lang/StringBuilder;
     packed-switch p1, :pswitch_data_0
 
     .line 92
@@ -144,7 +144,7 @@
     move-result v2
 
     .line 71
-    .local v2, "pc":I
+    .local v2, pc:I
     new-instance v1, Ljava/text/DecimalFormat;
 
     const-string v6, "0000000000"
@@ -160,7 +160,7 @@
     invoke-direct {v1, v6}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
 
     .line 72
-    .local v1, "df":Ljava/text/NumberFormat;
+    .local v1, df:Ljava/text/NumberFormat;
     int-to-long v6, v2
 
     invoke-virtual {v1, v6, v7}, Ljava/text/NumberFormat;->format(J)Ljava/lang/String;
@@ -168,9 +168,9 @@
     move-result-object v3
 
     .line 76
-    .end local v1    # "df":Ljava/text/NumberFormat;
-    .end local v2    # "pc":I
-    .local v3, "postcode":Ljava/lang/String;
+    .end local v1           #df:Ljava/text/NumberFormat;
+    .end local v2           #pc:I
+    .local v3, postcode:Ljava/lang/String;
     :goto_1
     sget-object v6, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->THREE_DIGITS:Ljava/text/NumberFormat;
 
@@ -185,7 +185,7 @@
     move-result-object v0
 
     .line 77
-    .local v0, "country":Ljava/lang/String;
+    .local v0, country:Ljava/lang/String;
     sget-object v6, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->THREE_DIGITS:Ljava/text/NumberFormat;
 
     invoke-static {p0}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getServiceClass([B)I
@@ -199,7 +199,7 @@
     move-result-object v5
 
     .line 78
-    .local v5, "service":Ljava/lang/String;
+    .local v5, service:Ljava/lang/String;
     const/16 v6, 0xa
 
     const/16 v7, 0x54
@@ -263,20 +263,20 @@
     goto :goto_0
 
     .line 74
-    .end local v0    # "country":Ljava/lang/String;
-    .end local v3    # "postcode":Ljava/lang/String;
-    .end local v5    # "service":Ljava/lang/String;
+    .end local v0           #country:Ljava/lang/String;
+    .end local v3           #postcode:Ljava/lang/String;
+    .end local v5           #service:Ljava/lang/String;
     :cond_0
     invoke-static {p0}, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->getPostCode3([B)Ljava/lang/String;
 
     move-result-object v3
 
-    .restart local v3    # "postcode":Ljava/lang/String;
+    .restart local v3       #postcode:Ljava/lang/String;
     goto :goto_1
 
     .line 82
-    .restart local v0    # "country":Ljava/lang/String;
-    .restart local v5    # "service":Ljava/lang/String;
+    .restart local v0       #country:Ljava/lang/String;
+    .restart local v5       #service:Ljava/lang/String;
     :cond_1
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -315,9 +315,9 @@
     goto/16 :goto_0
 
     .line 86
-    .end local v0    # "country":Ljava/lang/String;
-    .end local v3    # "postcode":Ljava/lang/String;
-    .end local v5    # "service":Ljava/lang/String;
+    .end local v0           #country:Ljava/lang/String;
+    .end local v3           #postcode:Ljava/lang/String;
+    .end local v5           #service:Ljava/lang/String;
     :pswitch_1
     const/16 v6, 0x5d
 
@@ -355,8 +355,8 @@
 
 .method private static getBit(I[B)I
     .locals 3
-    .param p0, "bit"    # I
-    .param p1, "bytes"    # [B
+    .parameter "bit"
+    .parameter "bytes"
 
     .prologue
     const/4 v0, 0x1
@@ -387,7 +387,7 @@
 
 .method private static getCountry([B)I
     .locals 1
-    .param p0, "bytes"    # [B
+    .parameter "bytes"
 
     .prologue
     .line 109
@@ -404,7 +404,7 @@
     return v0
 
     :array_0
-    .array-data 1
+    .array-data 0x1
         0x35t
         0x36t
         0x2bt
@@ -420,18 +420,18 @@
 
 .method private static getInt([B[B)I
     .locals 4
-    .param p0, "bytes"    # [B
-    .param p1, "x"    # [B
+    .parameter "bytes"
+    .parameter "x"
 
     .prologue
     .line 101
     const/4 v1, 0x0
 
     .line 102
-    .local v1, "val":I
+    .local v1, val:I
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     array-length v2, p1
 
@@ -466,9 +466,9 @@
 
 .method private static getMessage([BII)Ljava/lang/String;
     .locals 11
-    .param p0, "bytes"    # [B
-    .param p1, "start"    # I
-    .param p2, "len"    # I
+    .parameter "bytes"
+    .parameter "start"
+    .parameter "len"
 
     .prologue
     .line 139
@@ -477,22 +477,22 @@
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 140
-    .local v4, "sb":Ljava/lang/StringBuilder;
+    .local v4, sb:Ljava/lang/StringBuilder;
     const/4 v6, -0x1
 
     .line 141
-    .local v6, "shift":I
+    .local v6, shift:I
     const/4 v5, 0x0
 
     .line 142
-    .local v5, "set":I
+    .local v5, set:I
     const/4 v2, 0x0
 
     .line 143
-    .local v2, "lastset":I
+    .local v2, lastset:I
     move v1, p1
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     add-int v8, p1, p2
 
@@ -510,7 +510,7 @@
     move-result v0
 
     .line 145
-    .local v0, "c":C
+    .local v0, c:C
     packed-switch v0, :pswitch_data_0
 
     .line 181
@@ -520,13 +520,13 @@
     move v7, v6
 
     .line 183
-    .end local v6    # "shift":I
-    .local v7, "shift":I
+    .end local v6           #shift:I
+    .local v7, shift:I
     :goto_1
     add-int/lit8 v6, v7, -0x1
 
-    .end local v7    # "shift":I
-    .restart local v6    # "shift":I
+    .end local v7           #shift:I
+    .restart local v6       #shift:I
     if-nez v7, :cond_0
 
     .line 184
@@ -548,13 +548,13 @@
     move v7, v6
 
     .line 149
-    .end local v6    # "shift":I
-    .restart local v7    # "shift":I
+    .end local v6           #shift:I
+    .restart local v7       #shift:I
     goto :goto_1
 
     .line 151
-    .end local v7    # "shift":I
-    .restart local v6    # "shift":I
+    .end local v7           #shift:I
+    .restart local v6       #shift:I
     :pswitch_2
     const/4 v5, 0x1
 
@@ -564,13 +564,13 @@
     move v7, v6
 
     .line 153
-    .end local v6    # "shift":I
-    .restart local v7    # "shift":I
+    .end local v6           #shift:I
+    .restart local v7       #shift:I
     goto :goto_1
 
     .line 159
-    .end local v7    # "shift":I
-    .restart local v6    # "shift":I
+    .end local v7           #shift:I
+    .restart local v6       #shift:I
     :pswitch_3
     move v2, v5
 
@@ -585,13 +585,13 @@
     move v7, v6
 
     .line 162
-    .end local v6    # "shift":I
-    .restart local v7    # "shift":I
+    .end local v6           #shift:I
+    .restart local v7       #shift:I
     goto :goto_1
 
     .line 164
-    .end local v7    # "shift":I
-    .restart local v6    # "shift":I
+    .end local v7           #shift:I
+    .restart local v6       #shift:I
     :pswitch_4
     move v2, v5
 
@@ -604,13 +604,13 @@
     move v7, v6
 
     .line 167
-    .end local v6    # "shift":I
-    .restart local v7    # "shift":I
+    .end local v6           #shift:I
+    .restart local v7       #shift:I
     goto :goto_1
 
     .line 169
-    .end local v7    # "shift":I
-    .restart local v6    # "shift":I
+    .end local v7           #shift:I
+    .restart local v6       #shift:I
     :pswitch_5
     move v2, v5
 
@@ -623,13 +623,13 @@
     move v7, v6
 
     .line 172
-    .end local v6    # "shift":I
-    .restart local v7    # "shift":I
+    .end local v6           #shift:I
+    .restart local v7       #shift:I
     goto :goto_1
 
     .line 174
-    .end local v7    # "shift":I
-    .restart local v6    # "shift":I
+    .end local v7           #shift:I
+    .restart local v6       #shift:I
     :pswitch_6
     add-int/lit8 v1, v1, 0x1
 
@@ -668,7 +668,7 @@
     add-int v3, v8, v9
 
     .line 175
-    .local v3, "nsval":I
+    .local v3, nsval:I
     sget-object v8, Lcom/google/zxing/maxicode/decoder/DecodedBitStreamParser;->NINE_DIGITS:Ljava/text/NumberFormat;
 
     int-to-long v9, v3
@@ -682,28 +682,28 @@
     move v7, v6
 
     .line 176
-    .end local v6    # "shift":I
-    .restart local v7    # "shift":I
+    .end local v6           #shift:I
+    .restart local v7       #shift:I
     goto :goto_1
 
     .line 178
-    .end local v3    # "nsval":I
-    .end local v7    # "shift":I
-    .restart local v6    # "shift":I
+    .end local v3           #nsval:I
+    .end local v7           #shift:I
+    .restart local v6       #shift:I
     :pswitch_7
     const/4 v6, -0x1
 
     move v7, v6
 
     .line 179
-    .end local v6    # "shift":I
-    .restart local v7    # "shift":I
+    .end local v6           #shift:I
+    .restart local v7       #shift:I
     goto :goto_1
 
     .line 187
-    .end local v0    # "c":C
-    .end local v7    # "shift":I
-    .restart local v6    # "shift":I
+    .end local v0           #c:C
+    .end local v7           #shift:I
+    .restart local v6       #shift:I
     :cond_1
     :goto_2
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->length()I
@@ -767,7 +767,7 @@
 
 .method private static getPostCode2([B)I
     .locals 1
-    .param p0, "bytes"    # [B
+    .parameter "bytes"
 
     .prologue
     .line 121
@@ -784,7 +784,7 @@
     return v0
 
     :array_0
-    .array-data 1
+    .array-data 0x1
         0x21t
         0x22t
         0x23t
@@ -820,7 +820,7 @@
 
 .method private static getPostCode2Length([B)I
     .locals 1
-    .param p0, "bytes"    # [B
+    .parameter "bytes"
 
     .prologue
     .line 117
@@ -839,7 +839,7 @@
     nop
 
     :array_0
-    .array-data 1
+    .array-data 0x1
         0x27t
         0x28t
         0x29t
@@ -851,7 +851,7 @@
 
 .method private static getPostCode3([B)Ljava/lang/String;
     .locals 6
-    .param p0, "bytes"    # [B
+    .parameter "bytes"
 
     .prologue
     const/4 v5, 0x6
@@ -986,7 +986,7 @@
     return-object v0
 
     :array_0
-    .array-data 1
+    .array-data 0x1
         0x27t
         0x28t
         0x29t
@@ -998,7 +998,7 @@
     nop
 
     :array_1
-    .array-data 1
+    .array-data 0x1
         0x21t
         0x22t
         0x23t
@@ -1010,7 +1010,7 @@
     nop
 
     :array_2
-    .array-data 1
+    .array-data 0x1
         0x1bt
         0x1ct
         0x1dt
@@ -1022,7 +1022,7 @@
     nop
 
     :array_3
-    .array-data 1
+    .array-data 0x1
         0x15t
         0x16t
         0x17t
@@ -1034,7 +1034,7 @@
     nop
 
     :array_4
-    .array-data 1
+    .array-data 0x1
         0xft
         0x10t
         0x11t
@@ -1046,7 +1046,7 @@
     nop
 
     :array_5
-    .array-data 1
+    .array-data 0x1
         0x9t
         0xat
         0xbt
@@ -1058,7 +1058,7 @@
 
 .method private static getServiceClass([B)I
     .locals 1
-    .param p0, "bytes"    # [B
+    .parameter "bytes"
 
     .prologue
     .line 113
@@ -1075,7 +1075,7 @@
     return v0
 
     :array_0
-    .array-data 1
+    .array-data 0x1
         0x37t
         0x38t
         0x39t

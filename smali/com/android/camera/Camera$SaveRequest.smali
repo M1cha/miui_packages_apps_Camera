@@ -47,7 +47,7 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/Camera$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/camera/Camera$1;
+    .parameter "x0"
 
     .prologue
     .line 951

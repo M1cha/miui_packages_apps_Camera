@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ui/HorizontalSettingPopup;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 60
@@ -38,7 +39,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 62
@@ -53,10 +54,10 @@
     move-result v0
 
     .line 63
-    .local v0, "index":I
+    .local v0, index:I
     iget-object v1, p0, Lcom/android/camera/ui/HorizontalSettingPopup$1;->this$0:Lcom/android/camera/ui/HorizontalSettingPopup;
 
-    # getter for: Lcom/android/camera/ui/HorizontalSettingPopup;->mSelectedIndex:I
+    #getter for: Lcom/android/camera/ui/HorizontalSettingPopup;->mSelectedIndex:I
     invoke-static {v1}, Lcom/android/camera/ui/HorizontalSettingPopup;->access$000(Lcom/android/camera/ui/HorizontalSettingPopup;)I
 
     move-result v1
@@ -72,7 +73,7 @@
     :cond_1
     iget-object v1, p0, Lcom/android/camera/ui/HorizontalSettingPopup$1;->this$0:Lcom/android/camera/ui/HorizontalSettingPopup;
 
-    # setter for: Lcom/android/camera/ui/HorizontalSettingPopup;->mSelectedIndex:I
+    #setter for: Lcom/android/camera/ui/HorizontalSettingPopup;->mSelectedIndex:I
     invoke-static {v1, v0}, Lcom/android/camera/ui/HorizontalSettingPopup;->access$002(Lcom/android/camera/ui/HorizontalSettingPopup;I)I
 
     .line 65
@@ -82,7 +83,7 @@
 
     iget-object v2, p0, Lcom/android/camera/ui/HorizontalSettingPopup$1;->this$0:Lcom/android/camera/ui/HorizontalSettingPopup;
 
-    # getter for: Lcom/android/camera/ui/HorizontalSettingPopup;->mSelectedIndex:I
+    #getter for: Lcom/android/camera/ui/HorizontalSettingPopup;->mSelectedIndex:I
     invoke-static {v2}, Lcom/android/camera/ui/HorizontalSettingPopup;->access$000(Lcom/android/camera/ui/HorizontalSettingPopup;)I
 
     move-result v2

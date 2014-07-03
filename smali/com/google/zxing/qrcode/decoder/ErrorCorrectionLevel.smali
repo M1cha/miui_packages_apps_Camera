@@ -130,7 +130,9 @@
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .locals 0
-    .param p3, "bits"    # I
+    .parameter
+    .parameter
+    .parameter "bits"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
@@ -150,7 +152,7 @@
 
 .method public static forBits(I)Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
     .locals 1
-    .param p0, "bits"    # I
+    .parameter "bits"
 
     .prologue
     .line 53
@@ -181,6 +183,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/zxing/qrcode/decoder/ErrorCorrectionLevel;
     .locals 1
+    .parameter
 
     .prologue
     .line 25

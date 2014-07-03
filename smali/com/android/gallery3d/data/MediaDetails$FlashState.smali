@@ -65,7 +65,7 @@
 
 .method public constructor <init>(I)V
     .locals 0
-    .param p1, "state"    # I
+    .parameter "state"
 
     .prologue
     .line 69

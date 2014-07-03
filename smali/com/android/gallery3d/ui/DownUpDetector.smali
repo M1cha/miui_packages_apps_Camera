@@ -20,7 +20,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/ui/DownUpDetector$DownUpListener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/gallery3d/ui/DownUpDetector$DownUpListener;
+    .parameter "listener"
 
     .prologue
     .line 30
@@ -35,8 +35,8 @@
 
 .method private setState(ZLandroid/view/MotionEvent;)V
     .locals 1
-    .param p1, "down"    # Z
-    .param p2, "e"    # Landroid/view/MotionEvent;
+    .parameter "down"
+    .parameter "e"
 
     .prologue
     .line 35
@@ -75,7 +75,7 @@
 # virtual methods
 .method public onTouchEvent(Landroid/view/MotionEvent;)V
     .locals 1
-    .param p1, "ev"    # Landroid/view/MotionEvent;
+    .parameter "ev"
 
     .prologue
     .line 45

@@ -21,7 +21,8 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/CameraManager;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "looper"    # Landroid/os/Looper;
+    .parameter
+    .parameter "looper"
 
     .prologue
     .line 91
@@ -38,7 +39,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 5
-    .param p1, "msg"    # Landroid/os/Message;
+    .parameter "msg"
 
     .prologue
     const/4 v4, 0x0
@@ -57,7 +58,7 @@
     :pswitch_0
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mSig:Landroid/os/ConditionVariable;
+    #getter for: Lcom/android/camera/CameraManager;->mSig:Landroid/os/ConditionVariable;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$400(Lcom/android/camera/CameraManager;)Landroid/os/ConditionVariable;
 
     move-result-object v2
@@ -73,7 +74,7 @@
     :try_start_1
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v2
@@ -85,7 +86,7 @@
 
     const/4 v3, 0x0
 
-    # setter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #setter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2, v3}, Lcom/android/camera/CameraManager;->access$002(Lcom/android/camera/CameraManager;Landroid/hardware/Camera;)Landroid/hardware/Camera;
 
     .line 102
@@ -93,7 +94,7 @@
 
     const/4 v3, 0x0
 
-    # setter for: Lcom/android/camera/CameraManager;->mCameraProxy:Lcom/android/camera/CameraManager$CameraProxy;
+    #setter for: Lcom/android/camera/CameraManager;->mCameraProxy:Lcom/android/camera/CameraManager$CameraProxy;
     invoke-static {v2, v3}, Lcom/android/camera/CameraManager;->access$102(Lcom/android/camera/CameraManager;Lcom/android/camera/CameraManager$CameraProxy;)Lcom/android/camera/CameraManager$CameraProxy;
     :try_end_1
     .catch Ljava/util/ConcurrentModificationException; {:try_start_1 .. :try_end_1} :catch_0
@@ -106,7 +107,7 @@
     move-exception v0
 
     .line 205
-    .local v0, "e":Ljava/util/ConcurrentModificationException;
+    .local v0, e:Ljava/util/ConcurrentModificationException;
     const-string v2, "CameraManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -136,14 +137,14 @@
     goto :goto_0
 
     .line 106
-    .end local v0    # "e":Ljava/util/ConcurrentModificationException;
+    .end local v0           #e:Ljava/util/ConcurrentModificationException;
     :pswitch_2
     :try_start_2
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
     const/4 v3, 0x0
 
-    # setter for: Lcom/android/camera/CameraManager;->mReconnectException:Ljava/io/IOException;
+    #setter for: Lcom/android/camera/CameraManager;->mReconnectException:Ljava/io/IOException;
     invoke-static {v2, v3}, Lcom/android/camera/CameraManager;->access$202(Lcom/android/camera/CameraManager;Ljava/io/IOException;)Ljava/io/IOException;
     :try_end_2
     .catch Ljava/util/ConcurrentModificationException; {:try_start_2 .. :try_end_2} :catch_0
@@ -153,7 +154,7 @@
     :try_start_3
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v2
@@ -171,11 +172,11 @@
     move-exception v1
 
     .line 110
-    .local v1, "ex":Ljava/io/IOException;
+    .local v1, ex:Ljava/io/IOException;
     :try_start_4
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # setter for: Lcom/android/camera/CameraManager;->mReconnectException:Ljava/io/IOException;
+    #setter for: Lcom/android/camera/CameraManager;->mReconnectException:Ljava/io/IOException;
     invoke-static {v2, v1}, Lcom/android/camera/CameraManager;->access$202(Lcom/android/camera/CameraManager;Ljava/io/IOException;)Ljava/io/IOException;
     :try_end_4
     .catch Ljava/util/ConcurrentModificationException; {:try_start_4 .. :try_end_4} :catch_0
@@ -184,12 +185,12 @@
     goto :goto_0
 
     .line 207
-    .end local v1    # "ex":Ljava/io/IOException;
+    .end local v1           #ex:Ljava/io/IOException;
     :catch_2
     move-exception v0
 
     .line 208
-    .local v0, "e":Ljava/lang/RuntimeException;
+    .local v0, e:Ljava/lang/RuntimeException;
     iget v2, p1, Landroid/os/Message;->what:I
 
     const/4 v3, 0x1
@@ -198,7 +199,7 @@
 
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v2
@@ -209,7 +210,7 @@
     :try_start_5
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v2
@@ -222,13 +223,13 @@
     :goto_2
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # setter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #setter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2, v4}, Lcom/android/camera/CameraManager;->access$002(Lcom/android/camera/CameraManager;Landroid/hardware/Camera;)Landroid/hardware/Camera;
 
     .line 215
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # setter for: Lcom/android/camera/CameraManager;->mCameraProxy:Lcom/android/camera/CameraManager$CameraProxy;
+    #setter for: Lcom/android/camera/CameraManager;->mCameraProxy:Lcom/android/camera/CameraManager$CameraProxy;
     invoke-static {v2, v4}, Lcom/android/camera/CameraManager;->access$102(Lcom/android/camera/CameraManager;Lcom/android/camera/CameraManager$CameraProxy;)Lcom/android/camera/CameraManager$CameraProxy;
 
     .line 217
@@ -236,12 +237,12 @@
     throw v0
 
     .line 115
-    .end local v0    # "e":Ljava/lang/RuntimeException;
+    .end local v0           #e:Ljava/lang/RuntimeException;
     :pswitch_3
     :try_start_6
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v2
@@ -254,7 +255,7 @@
     :pswitch_4
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v2
@@ -271,7 +272,7 @@
     :try_start_7
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v3
@@ -293,7 +294,7 @@
     move-exception v0
 
     .line 126
-    .local v0, "e":Ljava/io/IOException;
+    .local v0, e:Ljava/io/IOException;
     :try_start_8
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -302,11 +303,11 @@
     throw v2
 
     .line 131
-    .end local v0    # "e":Ljava/io/IOException;
+    .end local v0           #e:Ljava/io/IOException;
     :pswitch_6
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v2
@@ -319,7 +320,7 @@
     :pswitch_7
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v2
@@ -332,7 +333,7 @@
     :pswitch_8
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v3
@@ -349,7 +350,7 @@
     :pswitch_9
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v3
@@ -368,7 +369,7 @@
     :pswitch_a
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v3
@@ -385,7 +386,7 @@
     :pswitch_b
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v2
@@ -398,7 +399,7 @@
     :pswitch_c
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v3
@@ -415,7 +416,7 @@
     :pswitch_d
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v2
@@ -430,7 +431,7 @@
     :pswitch_e
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v3
@@ -447,7 +448,7 @@
     :pswitch_f
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v3
@@ -464,7 +465,7 @@
     :pswitch_10
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v2
@@ -477,7 +478,7 @@
     :pswitch_11
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v2
@@ -490,7 +491,7 @@
     :pswitch_12
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v3
@@ -507,7 +508,7 @@
     :pswitch_13
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v3
@@ -526,7 +527,7 @@
 
     iget-object v3, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v3}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v3
@@ -535,7 +536,7 @@
 
     move-result-object v3
 
-    # setter for: Lcom/android/camera/CameraManager;->mParameters:Landroid/hardware/Camera$Parameters;
+    #setter for: Lcom/android/camera/CameraManager;->mParameters:Landroid/hardware/Camera$Parameters;
     invoke-static {v2, v3}, Lcom/android/camera/CameraManager;->access$302(Lcom/android/camera/CameraManager;Landroid/hardware/Camera$Parameters;)Landroid/hardware/Camera$Parameters;
 
     goto/16 :goto_0
@@ -544,7 +545,7 @@
     :pswitch_15
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v3
@@ -561,7 +562,7 @@
     :pswitch_16
     iget-object v2, p0, Lcom/android/camera/CameraManager$CameraHandler;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v2}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v3
@@ -578,12 +579,12 @@
     goto/16 :goto_1
 
     .line 211
-    .local v0, "e":Ljava/lang/RuntimeException;
+    .local v0, e:Ljava/lang/RuntimeException;
     :catch_4
     move-exception v1
 
     .line 212
-    .local v1, "ex":Ljava/lang/Exception;
+    .local v1, ex:Ljava/lang/Exception;
     const-string v2, "CameraManager"
 
     const-string v3, "Fail to release the camera."

@@ -30,6 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ActivityBase;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 1058
@@ -42,8 +43,8 @@
 
 .method static synthetic access$100(Lcom/android/camera/ActivityBase$MyAppBridge;I)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/ActivityBase$MyAppBridge;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 1058
@@ -54,8 +55,8 @@
 
 .method static synthetic access$400(Lcom/android/camera/ActivityBase$MyAppBridge;Landroid/graphics/Rect;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/ActivityBase$MyAppBridge;
-    .param p1, "x1"    # Landroid/graphics/Rect;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 1058
@@ -66,8 +67,8 @@
 
 .method static synthetic access$500(Lcom/android/camera/ActivityBase$MyAppBridge;Z)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/ActivityBase$MyAppBridge;
-    .param p1, "x1"    # Z
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 1058
@@ -78,7 +79,7 @@
 
 .method static synthetic access$600(Lcom/android/camera/ActivityBase$MyAppBridge;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/ActivityBase$MyAppBridge;
+    .parameter "x0"
 
     .prologue
     .line 1058
@@ -107,7 +108,7 @@
 
 .method private setCameraRelativeFrame(Landroid/graphics/Rect;)V
     .locals 1
-    .param p1, "frame"    # Landroid/graphics/Rect;
+    .parameter "frame"
 
     .prologue
     .line 1141
@@ -126,7 +127,7 @@
 
 .method private setSwipingEnabled(Z)V
     .locals 1
-    .param p1, "enabled"    # Z
+    .parameter "enabled"
 
     .prologue
     .line 1149
@@ -145,7 +146,7 @@
 
 .method private switchWithCaptureAnimation(I)V
     .locals 1
-    .param p1, "offset"    # I
+    .parameter "offset"
 
     .prologue
     .line 1145
@@ -277,8 +278,8 @@
 
 .method public onDown(FF)V
     .locals 1
-    .param p1, "x"    # F
-    .param p2, "y"    # F
+    .parameter "x"
+    .parameter "y"
 
     .prologue
     .line 1185
@@ -292,13 +293,13 @@
 
 .method public onFullScreenChanged(Z)V
     .locals 1
-    .param p1, "full"    # Z
+    .parameter "full"
 
     .prologue
     .line 1117
     iget-object v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->this$0:Lcom/android/camera/ActivityBase;
 
-    # invokes: Lcom/android/camera/ActivityBase;->onFullScreenChanged(Z)V
+    #calls: Lcom/android/camera/ActivityBase;->onFullScreenChanged(Z)V
     invoke-static {v0, p1}, Lcom/android/camera/ActivityBase;->access$800(Lcom/android/camera/ActivityBase;Z)V
 
     .line 1118
@@ -307,7 +308,7 @@
 
 .method public onLongPress(Landroid/view/MotionEvent;)V
     .locals 1
-    .param p1, "e"    # Landroid/view/MotionEvent;
+    .parameter "e"
 
     .prologue
     .line 1170
@@ -334,9 +335,9 @@
 
 .method public onScale(FFF)Z
     .locals 2
-    .param p1, "focusX"    # F
-    .param p2, "focusY"    # F
-    .param p3, "scale"    # F
+    .parameter "focusX"
+    .parameter "focusY"
+    .parameter "scale"
 
     .prologue
     .line 1100
@@ -349,7 +350,7 @@
     .line 1101
     iget v0, p0, Lcom/android/camera/ActivityBase$MyAppBridge;->mZoomScaled:F
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f80
 
     sub-float v1, p3, v1
 
@@ -384,8 +385,8 @@
 
 .method public onScaleBegin(FF)Z
     .locals 1
-    .param p1, "focusX"    # F
-    .param p2, "focusY"    # F
+    .parameter "focusX"
+    .parameter "focusY"
 
     .prologue
     .line 1094
@@ -401,8 +402,8 @@
 
 .method public onSingleTapUp(II)Z
     .locals 1
-    .param p1, "x"    # I
-    .param p2, "y"    # I
+    .parameter "x"
+    .parameter "y"
 
     .prologue
     .line 1089
@@ -434,7 +435,7 @@
 
 .method public setSecure(Z)V
     .locals 1
-    .param p1, "isSecure"    # Z
+    .parameter "isSecure"
 
     .prologue
     .line 1157
@@ -453,7 +454,7 @@
 
 .method public setSecureSize(I)V
     .locals 1
-    .param p1, "size"    # I
+    .parameter "size"
 
     .prologue
     .line 1160
@@ -472,7 +473,7 @@
 
 .method public setServer(Lcom/android/gallery3d/app/AppBridge$Server;)V
     .locals 0
-    .param p1, "s"    # Lcom/android/gallery3d/app/AppBridge$Server;
+    .parameter "s"
 
     .prologue
     .line 1132

@@ -67,163 +67,163 @@
     nop
 
     :array_0
-    .array-data 2
-        0x2as
-        0x2as
-        0x2as
-        0x20s
-        0x30s
-        0x31s
-        0x32s
-        0x33s
-        0x34s
-        0x35s
-        0x36s
-        0x37s
-        0x38s
-        0x39s
-        0x41s
-        0x42s
-        0x43s
-        0x44s
-        0x45s
-        0x46s
-        0x47s
-        0x48s
-        0x49s
-        0x4as
-        0x4bs
-        0x4cs
-        0x4ds
-        0x4es
-        0x4fs
-        0x50s
-        0x51s
-        0x52s
-        0x53s
-        0x54s
-        0x55s
-        0x56s
-        0x57s
-        0x58s
-        0x59s
-        0x5as
+    .array-data 0x2
+        0x2at 0x0t
+        0x2at 0x0t
+        0x2at 0x0t
+        0x20t 0x0t
+        0x30t 0x0t
+        0x31t 0x0t
+        0x32t 0x0t
+        0x33t 0x0t
+        0x34t 0x0t
+        0x35t 0x0t
+        0x36t 0x0t
+        0x37t 0x0t
+        0x38t 0x0t
+        0x39t 0x0t
+        0x41t 0x0t
+        0x42t 0x0t
+        0x43t 0x0t
+        0x44t 0x0t
+        0x45t 0x0t
+        0x46t 0x0t
+        0x47t 0x0t
+        0x48t 0x0t
+        0x49t 0x0t
+        0x4at 0x0t
+        0x4bt 0x0t
+        0x4ct 0x0t
+        0x4dt 0x0t
+        0x4et 0x0t
+        0x4ft 0x0t
+        0x50t 0x0t
+        0x51t 0x0t
+        0x52t 0x0t
+        0x53t 0x0t
+        0x54t 0x0t
+        0x55t 0x0t
+        0x56t 0x0t
+        0x57t 0x0t
+        0x58t 0x0t
+        0x59t 0x0t
+        0x5at 0x0t
     .end array-data
 
     .line 59
     :array_1
-    .array-data 2
-        0x21s
-        0x22s
-        0x23s
-        0x24s
-        0x25s
-        0x26s
-        0x27s
-        0x28s
-        0x29s
-        0x2as
-        0x2bs
-        0x2cs
-        0x2ds
-        0x2es
-        0x2fs
-        0x3as
-        0x3bs
-        0x3cs
-        0x3ds
-        0x3es
-        0x3fs
-        0x40s
-        0x5bs
-        0x5cs
-        0x5ds
-        0x5es
-        0x5fs
+    .array-data 0x2
+        0x21t 0x0t
+        0x22t 0x0t
+        0x23t 0x0t
+        0x24t 0x0t
+        0x25t 0x0t
+        0x26t 0x0t
+        0x27t 0x0t
+        0x28t 0x0t
+        0x29t 0x0t
+        0x2at 0x0t
+        0x2bt 0x0t
+        0x2ct 0x0t
+        0x2dt 0x0t
+        0x2et 0x0t
+        0x2ft 0x0t
+        0x3at 0x0t
+        0x3bt 0x0t
+        0x3ct 0x0t
+        0x3dt 0x0t
+        0x3et 0x0t
+        0x3ft 0x0t
+        0x40t 0x0t
+        0x5bt 0x0t
+        0x5ct 0x0t
+        0x5dt 0x0t
+        0x5et 0x0t
+        0x5ft 0x0t
     .end array-data
 
     .line 68
     nop
 
     :array_2
-    .array-data 2
-        0x2as
-        0x2as
-        0x2as
-        0x20s
-        0x30s
-        0x31s
-        0x32s
-        0x33s
-        0x34s
-        0x35s
-        0x36s
-        0x37s
-        0x38s
-        0x39s
-        0x61s
-        0x62s
-        0x63s
-        0x64s
-        0x65s
-        0x66s
-        0x67s
-        0x68s
-        0x69s
-        0x6as
-        0x6bs
-        0x6cs
-        0x6ds
-        0x6es
-        0x6fs
-        0x70s
-        0x71s
-        0x72s
-        0x73s
-        0x74s
-        0x75s
-        0x76s
-        0x77s
-        0x78s
-        0x79s
-        0x7as
+    .array-data 0x2
+        0x2at 0x0t
+        0x2at 0x0t
+        0x2at 0x0t
+        0x20t 0x0t
+        0x30t 0x0t
+        0x31t 0x0t
+        0x32t 0x0t
+        0x33t 0x0t
+        0x34t 0x0t
+        0x35t 0x0t
+        0x36t 0x0t
+        0x37t 0x0t
+        0x38t 0x0t
+        0x39t 0x0t
+        0x61t 0x0t
+        0x62t 0x0t
+        0x63t 0x0t
+        0x64t 0x0t
+        0x65t 0x0t
+        0x66t 0x0t
+        0x67t 0x0t
+        0x68t 0x0t
+        0x69t 0x0t
+        0x6at 0x0t
+        0x6bt 0x0t
+        0x6ct 0x0t
+        0x6dt 0x0t
+        0x6et 0x0t
+        0x6ft 0x0t
+        0x70t 0x0t
+        0x71t 0x0t
+        0x72t 0x0t
+        0x73t 0x0t
+        0x74t 0x0t
+        0x75t 0x0t
+        0x76t 0x0t
+        0x77t 0x0t
+        0x78t 0x0t
+        0x79t 0x0t
+        0x7at 0x0t
     .end array-data
 
     .line 74
     :array_3
-    .array-data 2
-        0x27s
-        0x41s
-        0x42s
-        0x43s
-        0x44s
-        0x45s
-        0x46s
-        0x47s
-        0x48s
-        0x49s
-        0x4as
-        0x4bs
-        0x4cs
-        0x4ds
-        0x4es
-        0x4fs
-        0x50s
-        0x51s
-        0x52s
-        0x53s
-        0x54s
-        0x55s
-        0x56s
-        0x57s
-        0x58s
-        0x59s
-        0x5as
-        0x7bs
-        0x7cs
-        0x7ds
-        0x7es
-        0x7fs
+    .array-data 0x2
+        0x27t 0x0t
+        0x41t 0x0t
+        0x42t 0x0t
+        0x43t 0x0t
+        0x44t 0x0t
+        0x45t 0x0t
+        0x46t 0x0t
+        0x47t 0x0t
+        0x48t 0x0t
+        0x49t 0x0t
+        0x4at 0x0t
+        0x4bt 0x0t
+        0x4ct 0x0t
+        0x4dt 0x0t
+        0x4et 0x0t
+        0x4ft 0x0t
+        0x50t 0x0t
+        0x51t 0x0t
+        0x52t 0x0t
+        0x53t 0x0t
+        0x54t 0x0t
+        0x55t 0x0t
+        0x56t 0x0t
+        0x57t 0x0t
+        0x58t 0x0t
+        0x59t 0x0t
+        0x5at 0x0t
+        0x7bt 0x0t
+        0x7ct 0x0t
+        0x7dt 0x0t
+        0x7et 0x0t
+        0x7ft 0x0t
     .end array-data
 .end method
 
@@ -240,7 +240,7 @@
 
 .method static decode([B)Lcom/google/zxing/common/DecoderResult;
     .locals 9
-    .param p0, "bytes"    # [B
+    .parameter "bytes"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -256,7 +256,7 @@
     invoke-direct {v0, p0}, Lcom/google/zxing/common/BitSource;-><init>([B)V
 
     .line 84
-    .local v0, "bits":Lcom/google/zxing/common/BitSource;
+    .local v0, bits:Lcom/google/zxing/common/BitSource;
     new-instance v3, Ljava/lang/StringBuilder;
 
     const/16 v6, 0x64
@@ -264,7 +264,7 @@
     invoke-direct {v3, v6}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 85
-    .local v3, "result":Ljava/lang/StringBuilder;
+    .local v3, result:Ljava/lang/StringBuilder;
     new-instance v4, Ljava/lang/StringBuilder;
 
     const/4 v6, 0x0
@@ -272,7 +272,7 @@
     invoke-direct {v4, v6}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 86
-    .local v4, "resultTrailer":Ljava/lang/StringBuilder;
+    .local v4, resultTrailer:Ljava/lang/StringBuilder;
     new-instance v1, Ljava/util/ArrayList;
 
     const/4 v6, 0x1
@@ -280,11 +280,11 @@
     invoke-direct {v1, v6}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 87
-    .local v1, "byteSegments":Ljava/util/List;, "Ljava/util/List<[B>;"
+    .local v1, byteSegments:Ljava/util/List;,"Ljava/util/List<[B>;"
     sget-object v2, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;->ASCII_ENCODE:Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;
 
     .line 89
-    .local v2, "mode":Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;
+    .local v2, mode:Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;
     :cond_0
     sget-object v6, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;->ASCII_ENCODE:Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;
 
@@ -338,14 +338,14 @@
 
     move-object v1, v5
 
-    .end local v1    # "byteSegments":Ljava/util/List;, "Ljava/util/List<[B>;"
+    .end local v1           #byteSegments:Ljava/util/List;,"Ljava/util/List<[B>;"
     :cond_3
     invoke-direct {v6, p0, v7, v1, v5}, Lcom/google/zxing/common/DecoderResult;-><init>([BLjava/lang/String;Ljava/util/List;Ljava/lang/String;)V
 
     return-object v6
 
     .line 92
-    .restart local v1    # "byteSegments":Ljava/util/List;, "Ljava/util/List<[B>;"
+    .restart local v1       #byteSegments:Ljava/util/List;,"Ljava/util/List<[B>;"
     :cond_4
     sget-object v6, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$1;->$SwitchMap$com$google$zxing$datamatrix$decoder$DecodedBitStreamParser$Mode:[I
 
@@ -413,8 +413,8 @@
 
 .method private static decodeAnsiX12Segment(Lcom/google/zxing/common/BitSource;Ljava/lang/StringBuilder;)V
     .locals 7
-    .param p0, "bits"    # Lcom/google/zxing/common/BitSource;
-    .param p1, "result"    # Ljava/lang/StringBuilder;
+    .parameter "bits"
+    .parameter "result"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -430,7 +430,7 @@
     new-array v1, v5, [I
 
     .line 371
-    .local v1, "cValues":[I
+    .local v1, cValues:[I
     :cond_0
     invoke-virtual {p0}, Lcom/google/zxing/common/BitSource;->available()I
 
@@ -450,7 +450,7 @@
     move-result v2
 
     .line 375
-    .local v2, "firstByte":I
+    .local v2, firstByte:I
     const/16 v4, 0xfe
 
     if-eq v2, v4, :cond_1
@@ -465,7 +465,7 @@
     .line 381
     const/4 v3, 0x0
 
-    .local v3, "i":I
+    .local v3, i:I
     :goto_1
     if-ge v3, v5, :cond_9
 
@@ -473,7 +473,7 @@
     aget v0, v1, v3
 
     .line 383
-    .local v0, "cValue":I
+    .local v0, cValue:I
     if-nez v0, :cond_3
 
     .line 384
@@ -563,7 +563,7 @@
     throw v4
 
     .line 399
-    .end local v0    # "cValue":I
+    .end local v0           #cValue:I
     :cond_9
     invoke-virtual {p0}, Lcom/google/zxing/common/BitSource;->available()I
 
@@ -576,9 +576,9 @@
 
 .method private static decodeAsciiSegment(Lcom/google/zxing/common/BitSource;Ljava/lang/StringBuilder;Ljava/lang/StringBuilder;)Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser$Mode;
     .locals 5
-    .param p0, "bits"    # Lcom/google/zxing/common/BitSource;
-    .param p1, "result"    # Ljava/lang/StringBuilder;
-    .param p2, "resultTrailer"    # Ljava/lang/StringBuilder;
+    .parameter "bits"
+    .parameter "result"
+    .parameter "resultTrailer"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -592,7 +592,7 @@
     const/4 v1, 0x0
 
     .line 128
-    .local v1, "upperShift":Z
+    .local v1, upperShift:Z
     :cond_0
     const/16 v3, 0x8
 
@@ -601,7 +601,7 @@
     move-result v0
 
     .line 129
-    .local v0, "oneByte":I
+    .local v0, oneByte:I
     if-nez v0, :cond_1
 
     .line 130
@@ -659,7 +659,7 @@
     add-int/lit16 v2, v0, -0x82
 
     .line 142
-    .local v2, "value":I
+    .local v2, value:I
     const/16 v3, 0xa
 
     if-ge v2, v3, :cond_5
@@ -674,7 +674,7 @@
     invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 181
-    .end local v2    # "value":I
+    .end local v2           #value:I
     :cond_6
     :goto_1
     invoke-virtual {p0}, Lcom/google/zxing/common/BitSource;->available()I
@@ -845,8 +845,9 @@
 
 .method private static decodeBase256Segment(Lcom/google/zxing/common/BitSource;Ljava/lang/StringBuilder;Ljava/util/Collection;)V
     .locals 10
-    .param p0, "bits"    # Lcom/google/zxing/common/BitSource;
-    .param p1, "result"    # Ljava/lang/StringBuilder;
+    .parameter "bits"
+    .parameter "result"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -864,7 +865,7 @@
     .end annotation
 
     .prologue
-    .local p2, "byteSegments":Ljava/util/Collection;, "Ljava/util/Collection<[B>;"
+    .local p2, byteSegments:Ljava/util/Collection;,"Ljava/util/Collection<[B>;"
     const/16 v9, 0x8
 
     .line 451
@@ -875,21 +876,21 @@
     add-int/lit8 v1, v7, 0x1
 
     .line 452
-    .local v1, "codewordPosition":I
+    .local v1, codewordPosition:I
     invoke-virtual {p0, v9}, Lcom/google/zxing/common/BitSource;->readBits(I)I
 
     move-result v7
 
     add-int/lit8 v2, v1, 0x1
 
-    .end local v1    # "codewordPosition":I
-    .local v2, "codewordPosition":I
+    .end local v1           #codewordPosition:I
+    .local v2, codewordPosition:I
     invoke-static {v7, v1}, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser;->unrandomize255State(II)I
 
     move-result v4
 
     .line 454
-    .local v4, "d1":I
+    .local v4, d1:I
     if-nez v4, :cond_0
 
     .line 455
@@ -899,12 +900,12 @@
 
     div-int/lit8 v3, v7, 0x8
 
-    .local v3, "count":I
+    .local v3, count:I
     move v1, v2
 
     .line 463
-    .end local v2    # "codewordPosition":I
-    .restart local v1    # "codewordPosition":I
+    .end local v2           #codewordPosition:I
+    .restart local v1       #codewordPosition:I
     :goto_0
     if-gez v3, :cond_2
 
@@ -916,9 +917,9 @@
     throw v7
 
     .line 456
-    .end local v1    # "codewordPosition":I
-    .end local v3    # "count":I
-    .restart local v2    # "codewordPosition":I
+    .end local v1           #codewordPosition:I
+    .end local v3           #count:I
+    .restart local v2       #codewordPosition:I
     :cond_0
     const/16 v7, 0xfa
 
@@ -927,17 +928,17 @@
     .line 457
     move v3, v4
 
-    .restart local v3    # "count":I
+    .restart local v3       #count:I
     move v1, v2
 
-    .end local v2    # "codewordPosition":I
-    .restart local v1    # "codewordPosition":I
+    .end local v2           #codewordPosition:I
+    .restart local v1       #codewordPosition:I
     goto :goto_0
 
     .line 459
-    .end local v1    # "codewordPosition":I
-    .end local v3    # "count":I
-    .restart local v2    # "codewordPosition":I
+    .end local v1           #codewordPosition:I
+    .end local v3           #count:I
+    .restart local v2       #codewordPosition:I
     :cond_1
     add-int/lit16 v7, v4, -0xf9
 
@@ -949,15 +950,15 @@
 
     add-int/lit8 v1, v2, 0x1
 
-    .end local v2    # "codewordPosition":I
-    .restart local v1    # "codewordPosition":I
+    .end local v2           #codewordPosition:I
+    .restart local v1       #codewordPosition:I
     invoke-static {v8, v2}, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser;->unrandomize255State(II)I
 
     move-result v8
 
     add-int v3, v7, v8
 
-    .restart local v3    # "count":I
+    .restart local v3       #count:I
     goto :goto_0
 
     .line 467
@@ -965,14 +966,14 @@
     new-array v0, v3, [B
 
     .line 468
-    .local v0, "bytes":[B
+    .local v0, bytes:[B
     const/4 v5, 0x0
 
-    .local v5, "i":I
+    .local v5, i:I
     move v2, v1
 
-    .end local v1    # "codewordPosition":I
-    .restart local v2    # "codewordPosition":I
+    .end local v1           #codewordPosition:I
+    .restart local v2       #codewordPosition:I
     :goto_1
     if-ge v5, v3, :cond_4
 
@@ -998,8 +999,8 @@
 
     add-int/lit8 v1, v2, 0x1
 
-    .end local v2    # "codewordPosition":I
-    .restart local v1    # "codewordPosition":I
+    .end local v2           #codewordPosition:I
+    .restart local v1       #codewordPosition:I
     invoke-static {v7, v2}, Lcom/google/zxing/datamatrix/decoder/DecodedBitStreamParser;->unrandomize255State(II)I
 
     move-result v7
@@ -1013,8 +1014,8 @@
 
     move v2, v1
 
-    .end local v1    # "codewordPosition":I
-    .restart local v2    # "codewordPosition":I
+    .end local v1           #codewordPosition:I
+    .restart local v2       #codewordPosition:I
     goto :goto_1
 
     .line 476
@@ -1041,7 +1042,7 @@
     move-exception v6
 
     .line 480
-    .local v6, "uee":Ljava/io/UnsupportedEncodingException;
+    .local v6, uee:Ljava/io/UnsupportedEncodingException;
     new-instance v7, Ljava/lang/IllegalStateException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1069,8 +1070,8 @@
 
 .method private static decodeC40Segment(Lcom/google/zxing/common/BitSource;Ljava/lang/StringBuilder;)V
     .locals 10
-    .param p0, "bits"    # Lcom/google/zxing/common/BitSource;
-    .param p1, "result"    # Ljava/lang/StringBuilder;
+    .parameter "bits"
+    .parameter "result"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -1086,15 +1087,15 @@
     const/4 v6, 0x0
 
     .line 194
-    .local v6, "upperShift":Z
+    .local v6, upperShift:Z
     new-array v2, v8, [I
 
     .line 195
-    .local v2, "cValues":[I
+    .local v2, cValues:[I
     const/4 v5, 0x0
 
     .line 199
-    .local v5, "shift":I
+    .local v5, shift:I
     :cond_0
     invoke-virtual {p0}, Lcom/google/zxing/common/BitSource;->available()I
 
@@ -1114,7 +1115,7 @@
     move-result v3
 
     .line 203
-    .local v3, "firstByte":I
+    .local v3, firstByte:I
     const/16 v7, 0xfe
 
     if-eq v3, v7, :cond_1
@@ -1129,7 +1130,7 @@
     .line 209
     const/4 v4, 0x0
 
-    .local v4, "i":I
+    .local v4, i:I
     :goto_1
     if-ge v4, v8, :cond_c
 
@@ -1137,7 +1138,7 @@
     aget v1, v2, v4
 
     .line 211
-    .local v1, "cValue":I
+    .local v1, cValue:I
     packed-switch v5, :pswitch_data_0
 
     .line 264
@@ -1174,7 +1175,7 @@
     aget-char v0, v7, v1
 
     .line 217
-    .local v0, "c40char":C
+    .local v0, c40char:C
     if-eqz v6, :cond_4
 
     .line 218
@@ -1196,7 +1197,7 @@
     goto :goto_2
 
     .line 224
-    .end local v0    # "c40char":C
+    .end local v0           #c40char:C
     :cond_5
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
@@ -1247,7 +1248,7 @@
     aget-char v0, v7, v1
 
     .line 239
-    .restart local v0    # "c40char":C
+    .restart local v0       #c40char:C
     if-eqz v6, :cond_7
 
     .line 240
@@ -1261,7 +1262,7 @@
     const/4 v6, 0x0
 
     .line 252
-    .end local v0    # "c40char":C
+    .end local v0           #c40char:C
     :goto_4
     const/4 v5, 0x0
 
@@ -1269,14 +1270,14 @@
     goto :goto_2
 
     .line 243
-    .restart local v0    # "c40char":C
+    .restart local v0       #c40char:C
     :cond_7
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_4
 
     .line 245
-    .end local v0    # "c40char":C
+    .end local v0           #c40char:C
     :cond_8
     const/16 v7, 0x1b
 
@@ -1340,7 +1341,7 @@
     goto :goto_5
 
     .line 267
-    .end local v1    # "cValue":I
+    .end local v1           #cValue:I
     :cond_c
     invoke-virtual {p0}, Lcom/google/zxing/common/BitSource;->available()I
 
@@ -1362,8 +1363,8 @@
 
 .method private static decodeEdifactSegment(Lcom/google/zxing/common/BitSource;Ljava/lang/StringBuilder;)V
     .locals 5
-    .param p0, "bits"    # Lcom/google/zxing/common/BitSource;
-    .param p1, "result"    # Ljava/lang/StringBuilder;
+    .parameter "bits"
+    .parameter "result"
 
     .prologue
     .line 418
@@ -1385,7 +1386,7 @@
     :cond_2
     const/4 v2, 0x0
 
-    .local v2, "i":I
+    .local v2, i:I
     :goto_1
     const/4 v3, 0x4
 
@@ -1399,7 +1400,7 @@
     move-result v1
 
     .line 426
-    .local v1, "edifactValue":I
+    .local v1, edifactValue:I
     const/16 v3, 0x1f
 
     if-ne v1, v3, :cond_3
@@ -1412,7 +1413,7 @@
     rsub-int/lit8 v0, v3, 0x8
 
     .line 429
-    .local v0, "bitsLeft":I
+    .local v0, bitsLeft:I
     const/16 v3, 0x8
 
     if-eq v0, v3, :cond_1
@@ -1423,7 +1424,7 @@
     goto :goto_0
 
     .line 435
-    .end local v0    # "bitsLeft":I
+    .end local v0           #bitsLeft:I
     :cond_3
     and-int/lit8 v3, v1, 0x20
 
@@ -1444,7 +1445,7 @@
     goto :goto_1
 
     .line 440
-    .end local v1    # "edifactValue":I
+    .end local v1           #edifactValue:I
     :cond_5
     invoke-virtual {p0}, Lcom/google/zxing/common/BitSource;->available()I
 
@@ -1457,8 +1458,8 @@
 
 .method private static decodeTextSegment(Lcom/google/zxing/common/BitSource;Ljava/lang/StringBuilder;)V
     .locals 11
-    .param p0, "bits"    # Lcom/google/zxing/common/BitSource;
-    .param p1, "result"    # Ljava/lang/StringBuilder;
+    .parameter "bits"
+    .parameter "result"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -1474,15 +1475,15 @@
     const/4 v7, 0x0
 
     .line 279
-    .local v7, "upperShift":Z
+    .local v7, upperShift:Z
     new-array v2, v9, [I
 
     .line 280
-    .local v2, "cValues":[I
+    .local v2, cValues:[I
     const/4 v5, 0x0
 
     .line 283
-    .local v5, "shift":I
+    .local v5, shift:I
     :cond_0
     invoke-virtual {p0}, Lcom/google/zxing/common/BitSource;->available()I
 
@@ -1502,7 +1503,7 @@
     move-result v3
 
     .line 287
-    .local v3, "firstByte":I
+    .local v3, firstByte:I
     const/16 v8, 0xfe
 
     if-eq v3, v8, :cond_1
@@ -1517,7 +1518,7 @@
     .line 293
     const/4 v4, 0x0
 
-    .local v4, "i":I
+    .local v4, i:I
     :goto_1
     if-ge v4, v9, :cond_d
 
@@ -1525,7 +1526,7 @@
     aget v1, v2, v4
 
     .line 295
-    .local v1, "cValue":I
+    .local v1, cValue:I
     packed-switch v5, :pswitch_data_0
 
     .line 354
@@ -1562,7 +1563,7 @@
     aget-char v6, v8, v1
 
     .line 301
-    .local v6, "textChar":C
+    .local v6, textChar:C
     if-eqz v7, :cond_4
 
     .line 302
@@ -1584,7 +1585,7 @@
     goto :goto_2
 
     .line 308
-    .end local v6    # "textChar":C
+    .end local v6           #textChar:C
     :cond_5
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
@@ -1635,7 +1636,7 @@
     aget-char v0, v8, v1
 
     .line 324
-    .local v0, "c40char":C
+    .local v0, c40char:C
     if-eqz v7, :cond_7
 
     .line 325
@@ -1649,7 +1650,7 @@
     const/4 v7, 0x0
 
     .line 337
-    .end local v0    # "c40char":C
+    .end local v0           #c40char:C
     :goto_4
     const/4 v5, 0x0
 
@@ -1657,14 +1658,14 @@
     goto :goto_2
 
     .line 328
-    .restart local v0    # "c40char":C
+    .restart local v0       #c40char:C
     :cond_7
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_4
 
     .line 330
-    .end local v0    # "c40char":C
+    .end local v0           #c40char:C
     :cond_8
     const/16 v8, 0x1b
 
@@ -1710,7 +1711,7 @@
     aget-char v6, v8, v1
 
     .line 342
-    .restart local v6    # "textChar":C
+    .restart local v6       #textChar:C
     if-eqz v7, :cond_b
 
     .line 343
@@ -1737,7 +1738,7 @@
     goto :goto_5
 
     .line 350
-    .end local v6    # "textChar":C
+    .end local v6           #textChar:C
     :cond_c
     invoke-static {}, Lcom/google/zxing/FormatException;->getFormatInstance()Lcom/google/zxing/FormatException;
 
@@ -1746,7 +1747,7 @@
     throw v8
 
     .line 357
-    .end local v1    # "cValue":I
+    .end local v1           #cValue:I
     :cond_d
     invoke-virtual {p0}, Lcom/google/zxing/common/BitSource;->available()I
 
@@ -1770,9 +1771,9 @@
 
 .method private static parseTwoBytes(II[I)V
     .locals 4
-    .param p0, "firstByte"    # I
-    .param p1, "secondByte"    # I
-    .param p2, "result"    # [I
+    .parameter "firstByte"
+    .parameter "secondByte"
+    .parameter "result"
 
     .prologue
     .line 403
@@ -1783,11 +1784,11 @@
     add-int/lit8 v0, v2, -0x1
 
     .line 404
-    .local v0, "fullBitValue":I
+    .local v0, fullBitValue:I
     div-int/lit16 v1, v0, 0x640
 
     .line 405
-    .local v1, "temp":I
+    .local v1, temp:I
     const/4 v2, 0x0
 
     aput v1, p2, v2
@@ -1820,8 +1821,8 @@
 
 .method private static unrandomize255State(II)I
     .locals 3
-    .param p0, "randomizedBase256Codeword"    # I
-    .param p1, "base256CodewordPosition"    # I
+    .parameter "randomizedBase256Codeword"
+    .parameter "base256CodewordPosition"
 
     .prologue
     .line 489
@@ -1832,18 +1833,18 @@
     add-int/lit8 v0, v2, 0x1
 
     .line 490
-    .local v0, "pseudoRandomNumber":I
+    .local v0, pseudoRandomNumber:I
     sub-int v1, p0, v0
 
     .line 491
-    .local v1, "tempVariable":I
+    .local v1, tempVariable:I
     if-ltz v1, :cond_0
 
-    .end local v1    # "tempVariable":I
+    .end local v1           #tempVariable:I
     :goto_0
     return v1
 
-    .restart local v1    # "tempVariable":I
+    .restart local v1       #tempVariable:I
     :cond_0
     add-int/lit16 v1, v1, 0x100
 

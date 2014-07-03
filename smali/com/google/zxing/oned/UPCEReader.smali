@@ -56,42 +56,42 @@
 
     .line 39
     :array_0
-    .array-data 4
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
+    .array-data 0x4
+        0x1t 0x0t 0x0t 0x0t
+        0x1t 0x0t 0x0t 0x0t
+        0x1t 0x0t 0x0t 0x0t
+        0x1t 0x0t 0x0t 0x0t
+        0x1t 0x0t 0x0t 0x0t
+        0x1t 0x0t 0x0t 0x0t
     .end array-data
 
     .line 46
     :array_1
-    .array-data 4
-        0x38
-        0x34
-        0x32
-        0x31
-        0x2c
-        0x26
-        0x23
-        0x2a
-        0x29
-        0x25
+    .array-data 0x4
+        0x38t 0x0t 0x0t 0x0t
+        0x34t 0x0t 0x0t 0x0t
+        0x32t 0x0t 0x0t 0x0t
+        0x31t 0x0t 0x0t 0x0t
+        0x2ct 0x0t 0x0t 0x0t
+        0x26t 0x0t 0x0t 0x0t
+        0x23t 0x0t 0x0t 0x0t
+        0x2at 0x0t 0x0t 0x0t
+        0x29t 0x0t 0x0t 0x0t
+        0x25t 0x0t 0x0t 0x0t
     .end array-data
 
     :array_2
-    .array-data 4
-        0x7
-        0xb
-        0xd
-        0xe
-        0x13
-        0x19
-        0x1c
-        0x15
-        0x16
-        0x1a
+    .array-data 0x4
+        0x7t 0x0t 0x0t 0x0t
+        0xbt 0x0t 0x0t 0x0t
+        0xdt 0x0t 0x0t 0x0t
+        0xet 0x0t 0x0t 0x0t
+        0x13t 0x0t 0x0t 0x0t
+        0x19t 0x0t 0x0t 0x0t
+        0x1ct 0x0t 0x0t 0x0t
+        0x15t 0x0t 0x0t 0x0t
+        0x16t 0x0t 0x0t 0x0t
+        0x1at 0x0t 0x0t 0x0t
     .end array-data
 .end method
 
@@ -115,7 +115,7 @@
 
 .method public static convertUPCEtoUPCA(Ljava/lang/String;)Ljava/lang/String;
     .locals 10
-    .param p0, "upce"    # Ljava/lang/String;
+    .parameter "upce"
 
     .prologue
     const/4 v9, 0x5
@@ -134,7 +134,7 @@
     new-array v2, v3, [C
 
     .line 124
-    .local v2, "upceChars":[C
+    .local v2, upceChars:[C
     const/4 v3, 0x1
 
     const/4 v4, 0x7
@@ -149,7 +149,7 @@
     invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 126
-    .local v1, "result":Ljava/lang/StringBuilder;
+    .local v1, result:Ljava/lang/StringBuilder;
     invoke-virtual {p0, v5}, Ljava/lang/String;->charAt(I)C
 
     move-result v3
@@ -160,7 +160,7 @@
     aget-char v0, v2, v9
 
     .line 128
-    .local v0, "lastChar":C
+    .local v0, lastChar:C
     packed-switch v0, :pswitch_data_0
 
     .line 148
@@ -253,8 +253,8 @@
 
 .method private static determineNumSysAndCheckDigit(Ljava/lang/StringBuilder;I)V
     .locals 4
-    .param p0, "resultString"    # Ljava/lang/StringBuilder;
-    .param p1, "lgPatternFound"    # I
+    .parameter "resultString"
+    .parameter "lgPatternFound"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -265,7 +265,7 @@
     .line 99
     const/4 v1, 0x0
 
-    .local v1, "numSys":I
+    .local v1, numSys:I
     :goto_0
     const/4 v2, 0x1
 
@@ -274,7 +274,7 @@
     .line 100
     const/4 v0, 0x0
 
-    .local v0, "d":I
+    .local v0, d:I
     :goto_1
     const/16 v2, 0xa
 
@@ -321,7 +321,7 @@
     goto :goto_0
 
     .line 108
-    .end local v0    # "d":I
+    .end local v0           #d:I
     :cond_2
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
@@ -334,7 +334,7 @@
 # virtual methods
 .method protected checkChecksum(Ljava/lang/String;)Z
     .locals 1
-    .param p1, "s"    # Ljava/lang/String;
+    .parameter "s"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;,
@@ -357,8 +357,8 @@
 
 .method protected decodeEnd(Lcom/google/zxing/common/BitArray;I)[I
     .locals 2
-    .param p1, "row"    # Lcom/google/zxing/common/BitArray;
-    .param p2, "endStart"    # I
+    .parameter "row"
+    .parameter "endStart"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -380,9 +380,9 @@
 
 .method protected decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuilder;)I
     .locals 12
-    .param p1, "row"    # Lcom/google/zxing/common/BitArray;
-    .param p2, "startRange"    # [I
-    .param p3, "result"    # Ljava/lang/StringBuilder;
+    .parameter "row"
+    .parameter "startRange"
+    .parameter "result"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -394,7 +394,7 @@
     iget-object v3, p0, Lcom/google/zxing/oned/UPCEReader;->decodeMiddleCounters:[I
 
     .line 61
-    .local v3, "counters":[I
+    .local v3, counters:[I
     const/4 v10, 0x0
 
     const/4 v11, 0x0
@@ -428,20 +428,20 @@
     move-result v4
 
     .line 66
-    .local v4, "end":I
+    .local v4, end:I
     const/4 v10, 0x1
 
     aget v8, p2, v10
 
     .line 68
-    .local v8, "rowOffset":I
+    .local v8, rowOffset:I
     const/4 v7, 0x0
 
     .line 70
-    .local v7, "lgPatternFound":I
+    .local v7, lgPatternFound:I
     const/4 v9, 0x0
 
-    .local v9, "x":I
+    .local v9, x:I
     :goto_0
     const/4 v10, 0x6
 
@@ -457,7 +457,7 @@
     move-result v1
 
     .line 72
-    .local v1, "bestMatch":I
+    .local v1, bestMatch:I
     rem-int/lit8 v10, v1, 0xa
 
     add-int/lit8 v10, v10, 0x30
@@ -469,20 +469,20 @@
     .line 73
     move-object v0, v3
 
-    .local v0, "arr$":[I
+    .local v0, arr$:[I
     array-length v6, v0
 
-    .local v6, "len$":I
+    .local v6, len$:I
     const/4 v5, 0x0
 
-    .local v5, "i$":I
+    .local v5, i$:I
     :goto_1
     if-ge v5, v6, :cond_0
 
     aget v2, v0, v5
 
     .line 74
-    .local v2, "counter":I
+    .local v2, counter:I
     add-int/2addr v8, v2
 
     .line 73
@@ -491,7 +491,7 @@
     goto :goto_1
 
     .line 76
-    .end local v2    # "counter":I
+    .end local v2           #counter:I
     :cond_0
     const/16 v10, 0xa
 
@@ -513,10 +513,10 @@
     goto :goto_0
 
     .line 81
-    .end local v0    # "arr$":[I
-    .end local v1    # "bestMatch":I
-    .end local v5    # "i$":I
-    .end local v6    # "len$":I
+    .end local v0           #arr$:[I
+    .end local v1           #bestMatch:I
+    .end local v5           #i$:I
+    .end local v6           #len$:I
     :cond_2
     invoke-static {p3, v7}, Lcom/google/zxing/oned/UPCEReader;->determineNumSysAndCheckDigit(Ljava/lang/StringBuilder;I)V
 

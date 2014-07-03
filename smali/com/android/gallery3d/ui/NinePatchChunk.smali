@@ -33,7 +33,7 @@
 
 .method private static checkDivCount(I)V
     .locals 3
-    .param p0, "length"    # I
+    .parameter "length"
 
     .prologue
     .line 44
@@ -76,7 +76,7 @@
 
 .method public static deserialize([B)Lcom/android/gallery3d/ui/NinePatchChunk;
     .locals 5
-    .param p0, "data"    # [B
+    .parameter "data"
 
     .prologue
     .line 50
@@ -93,13 +93,13 @@
     move-result-object v0
 
     .line 53
-    .local v0, "byteBuffer":Ljava/nio/ByteBuffer;
+    .local v0, byteBuffer:Ljava/nio/ByteBuffer;
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->get()B
 
     move-result v2
 
     .line 54
-    .local v2, "wasSerialized":B
+    .local v2, wasSerialized:B
     if-nez v2, :cond_0
 
     const/4 v1, 0x0
@@ -115,7 +115,7 @@
     invoke-direct {v1}, Lcom/android/gallery3d/ui/NinePatchChunk;-><init>()V
 
     .line 57
-    .local v1, "chunk":Lcom/android/gallery3d/ui/NinePatchChunk;
+    .local v1, chunk:Lcom/android/gallery3d/ui/NinePatchChunk;
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->get()B
 
     move-result v3
@@ -221,17 +221,17 @@
 
 .method private static readIntArray([ILjava/nio/ByteBuffer;)V
     .locals 3
-    .param p0, "data"    # [I
-    .param p1, "buffer"    # Ljava/nio/ByteBuffer;
+    .parameter "data"
+    .parameter "buffer"
 
     .prologue
     .line 38
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     array-length v1, p0
 
-    .local v1, "n":I
+    .local v1, n:I
     :goto_0
     if-ge v0, v1, :cond_0
 

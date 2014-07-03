@@ -17,7 +17,7 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
     .locals 1
-    .param p1, "activity"    # Landroid/app/Activity;
+    .parameter "activity"
 
     .prologue
     .line 16
@@ -64,7 +64,7 @@
 # virtual methods
 .method protected getString(I)Ljava/lang/String;
     .locals 1
-    .param p1, "resId"    # I
+    .parameter "resId"
 
     .prologue
     .line 73
@@ -118,8 +118,8 @@
 
 .method public setOrientation(IZ)V
     .locals 1
-    .param p1, "orientation"    # I
-    .param p2, "animation"    # Z
+    .parameter "orientation"
+    .parameter "animation"
 
     .prologue
     .line 78
@@ -160,7 +160,7 @@
 
 .method protected updateColorEffectIndicator(Ljava/lang/String;)V
     .locals 2
-    .param p1, "value"    # Ljava/lang/String;
+    .parameter "value"
 
     .prologue
     .line 60
@@ -217,7 +217,7 @@
 
 .method protected updateWhiteBalanceOnScreenIndicator(Ljava/lang/String;)V
     .locals 3
-    .param p1, "value"    # Ljava/lang/String;
+    .parameter "value"
 
     .prologue
     const/4 v2, 0x0

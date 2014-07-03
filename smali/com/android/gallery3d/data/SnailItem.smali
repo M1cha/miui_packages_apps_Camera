@@ -10,7 +10,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;)V
     .locals 2
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .parameter "path"
 
     .prologue
     .line 34
@@ -58,7 +58,7 @@
 
 .method public requestImage(I)Lcom/android/gallery3d/util/ThreadPool$Job;
     .locals 1
-    .param p1, "type"    # I
+    .parameter "type"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -101,7 +101,7 @@
 
 .method public setScreenNail(Lcom/android/gallery3d/ui/ScreenNail;)V
     .locals 0
-    .param p1, "screenNail"    # Lcom/android/gallery3d/ui/ScreenNail;
+    .parameter "screenNail"
 
     .prologue
     .line 86

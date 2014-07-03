@@ -31,7 +31,7 @@
 # virtual methods
 .method public calculate(J)Z
     .locals 10
-    .param p1, "currentTimeMillis"    # J
+    .parameter "currentTimeMillis"
 
     .prologue
     const/4 v3, 0x0
@@ -71,7 +71,7 @@
     long-to-int v0, v4
 
     .line 84
-    .local v0, "elapse":I
+    .local v0, elapse:I
     int-to-float v4, v0
 
     iget v5, p0, Lcom/android/gallery3d/anim/Animation;->mDuration:I
@@ -82,25 +82,25 @@
 
     const/4 v5, 0x0
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f80
 
     invoke-static {v4, v5, v6}, Lcom/android/gallery3d/common/Utils;->clamp(FFF)F
 
     move-result v2
 
     .line 85
-    .local v2, "x":F
+    .local v2, x:F
     iget-object v1, p0, Lcom/android/gallery3d/anim/Animation;->mInterpolator:Landroid/view/animation/Interpolator;
 
     .line 86
-    .local v1, "i":Landroid/view/animation/Interpolator;
+    .local v1, i:Landroid/view/animation/Interpolator;
     if-eqz v1, :cond_3
 
     invoke-interface {v1, v2}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
 
     move-result v2
 
-    .end local v2    # "x":F
+    .end local v2           #x:F
     :cond_3
     invoke-virtual {p0, v2}, Lcom/android/gallery3d/anim/Animation;->onCalculate(F)V
 
@@ -129,7 +129,7 @@
 
 .method public setDuration(I)V
     .locals 0
-    .param p1, "duration"    # I
+    .parameter "duration"
 
     .prologue
     .line 61
@@ -141,7 +141,7 @@
 
 .method public setInterpolator(Landroid/view/animation/Interpolator;)V
     .locals 0
-    .param p1, "interpolator"    # Landroid/view/animation/Interpolator;
+    .parameter "interpolator"
 
     .prologue
     .line 57
@@ -153,7 +153,7 @@
 
 .method public setStartTime(J)V
     .locals 0
-    .param p1, "time"    # J
+    .parameter "time"
 
     .prologue
     .line 69

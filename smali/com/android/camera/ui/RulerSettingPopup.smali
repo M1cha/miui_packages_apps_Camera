@@ -34,8 +34,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 31
@@ -59,7 +59,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/ui/RulerSettingPopup;)Landroid/widget/ImageView;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/ui/RulerSettingPopup;
+    .parameter "x0"
 
     .prologue
     .line 15
@@ -70,7 +70,7 @@
 
 .method static synthetic access$100(Lcom/android/camera/ui/RulerSettingPopup;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/ui/RulerSettingPopup;
+    .parameter "x0"
 
     .prologue
     .line 15
@@ -81,8 +81,8 @@
 
 .method static synthetic access$102(Lcom/android/camera/ui/RulerSettingPopup;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/ui/RulerSettingPopup;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 15
@@ -93,8 +93,8 @@
 
 .method static synthetic access$200(Lcom/android/camera/ui/RulerSettingPopup;I)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/ui/RulerSettingPopup;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 15
@@ -107,8 +107,8 @@
 
 .method static synthetic access$300(Lcom/android/camera/ui/RulerSettingPopup;I)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/ui/RulerSettingPopup;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 15
@@ -121,7 +121,7 @@
 
 .method static synthetic access$400(Lcom/android/camera/ui/RulerSettingPopup;)[I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/ui/RulerSettingPopup;
+    .parameter "x0"
 
     .prologue
     .line 15
@@ -132,7 +132,7 @@
 
 .method static synthetic access$500(Lcom/android/camera/ui/RulerSettingPopup;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/ui/RulerSettingPopup;
+    .parameter "x0"
 
     .prologue
     .line 15
@@ -143,8 +143,8 @@
 
 .method static synthetic access$502(Lcom/android/camera/ui/RulerSettingPopup;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/ui/RulerSettingPopup;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 15
@@ -155,7 +155,7 @@
 
 .method static synthetic access$600(Lcom/android/camera/ui/RulerSettingPopup;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/ui/RulerSettingPopup;
+    .parameter "x0"
 
     .prologue
     .line 15
@@ -166,7 +166,7 @@
 
 .method private addBlankViewTo(Landroid/widget/LinearLayout;)V
     .locals 2
-    .param p1, "parent"    # Landroid/widget/LinearLayout;
+    .parameter "parent"
 
     .prologue
     .line 160
@@ -177,7 +177,7 @@
     invoke-direct {v0, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     .line 161
-    .local v0, "blank":Landroid/widget/ImageView;
+    .local v0, blank:Landroid/widget/ImageView;
     iget-object v1, p0, Lcom/android/camera/ui/RulerSettingPopup;->mParamBlank:Landroid/widget/LinearLayout$LayoutParams;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -191,8 +191,8 @@
 
 .method private addViewTo(Landroid/widget/LinearLayout;I)Landroid/widget/ImageView;
     .locals 2
-    .param p1, "parent"    # Landroid/widget/LinearLayout;
-    .param p2, "res"    # I
+    .parameter "parent"
+    .parameter "res"
 
     .prologue
     .line 152
@@ -203,7 +203,7 @@
     invoke-direct {v0, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     .line 153
-    .local v0, "img":Landroid/widget/ImageView;
+    .local v0, img:Landroid/widget/ImageView;
     invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setBackgroundResource(I)V
 
     .line 154
@@ -220,7 +220,7 @@
 
 .method private filterX(I)I
     .locals 2
-    .param p1, "x"    # I
+    .parameter "x"
 
     .prologue
     const/4 v1, 0x0
@@ -238,13 +238,13 @@
     aget p1, v0, v1
 
     .line 111
-    .end local p1    # "x":I
+    .end local p1
     :cond_0
     :goto_0
     return p1
 
     .line 108
-    .restart local p1    # "x":I
+    .restart local p1
     :cond_1
     iget-object v0, p0, Lcom/android/camera/ui/RulerSettingPopup;->mCursorPos:[I
 
@@ -274,17 +274,17 @@
 
 .method private indexOfPos(I)I
     .locals 5
-    .param p1, "x"    # I
+    .parameter "x"
 
     .prologue
     .line 116
     const/4 v1, 0x0
 
     .line 117
-    .local v1, "nearby":I
+    .local v1, nearby:I
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     iget-object v2, p0, Lcom/android/camera/ui/RulerSettingPopup;->mCursorPos:[I
 
@@ -324,12 +324,12 @@
 
     if-ge v2, v3, :cond_2
 
-    .end local v1    # "nearby":I
+    .end local v1           #nearby:I
     :goto_1
     return v1
 
     .line 117
-    .restart local v1    # "nearby":I
+    .restart local v1       #nearby:I
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
@@ -346,7 +346,7 @@
 # virtual methods
 .method public initialize(Lcom/android/camera/IconListPreference;)V
     .locals 8
-    .param p1, "preference"    # Lcom/android/camera/IconListPreference;
+    .parameter "preference"
 
     .prologue
     const/4 v6, -0x2
@@ -369,7 +369,7 @@
     move-result-object v0
 
     .line 66
-    .local v0, "entries":[Ljava/lang/CharSequence;
+    .local v0, entries:[Ljava/lang/CharSequence;
     iget-object v4, p0, Lcom/android/camera/ui/RulerSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
     invoke-virtual {v4}, Lcom/android/camera/IconListPreference;->getImageIds()[I
@@ -377,7 +377,7 @@
     move-result-object v2
 
     .line 67
-    .local v2, "iconIds":[I
+    .local v2, iconIds:[I
     if-nez v2, :cond_0
 
     .line 68
@@ -479,7 +479,7 @@
     .line 87
     iget-object v4, p0, Lcom/android/camera/ui/RulerSettingPopup;->mParamBlank:Landroid/widget/LinearLayout$LayoutParams;
 
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f80
 
     iput v5, v4, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
@@ -500,7 +500,7 @@
     check-cast v3, Landroid/widget/RelativeLayout$LayoutParams;
 
     .line 92
-    .local v3, "layout":Landroid/widget/RelativeLayout$LayoutParams;
+    .local v3, layout:Landroid/widget/RelativeLayout$LayoutParams;
     invoke-virtual {p0}, Lcom/android/camera/ui/RulerSettingPopup;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
@@ -525,7 +525,7 @@
     .line 94
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     array-length v4, v0
 
@@ -578,7 +578,7 @@
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 8
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
+    .parameter "canvas"
 
     .prologue
     const/4 v7, 0x1
@@ -597,7 +597,7 @@
     .line 132
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     iget-object v1, p0, Lcom/android/camera/ui/RulerSettingPopup;->mCursorPos:[I
 
@@ -700,7 +700,7 @@
     invoke-virtual {p0}, Lcom/android/camera/ui/RulerSettingPopup;->invalidate()V
 
     .line 144
-    .end local v0    # "i":I
+    .end local v0           #i:I
     :goto_1
     return-void
 
@@ -729,7 +729,7 @@
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "event"    # Landroid/view/MotionEvent;
+    .parameter "event"
 
     .prologue
     .line 148

@@ -87,15 +87,15 @@
 
     .line 96
     :array_0
-    .array-data 4
-        0x3024
-        0x3023
-        0x3022
-        0x3021
-        0x3025
-        0x3026
-        0x3028
-        0x3027
+    .array-data 0x4
+        0x24t 0x30t 0x0t 0x0t
+        0x23t 0x30t 0x0t 0x0t
+        0x22t 0x30t 0x0t 0x0t
+        0x21t 0x30t 0x0t 0x0t
+        0x25t 0x30t 0x0t 0x0t
+        0x26t 0x30t 0x0t 0x0t
+        0x28t 0x30t 0x0t 0x0t
+        0x27t 0x30t 0x0t 0x0t
     .end array-data
 .end method
 
@@ -120,24 +120,24 @@
     nop
 
     :array_0
-    .array-data 4
-        0x3024
-        0x5
-        0x3023
-        0x6
-        0x3022
-        0x5
-        0x3021
-        0x0
-        0x3038
+    .array-data 0x4
+        0x24t 0x30t 0x0t 0x0t
+        0x5t 0x0t 0x0t 0x0t
+        0x23t 0x30t 0x0t 0x0t
+        0x6t 0x0t 0x0t 0x0t
+        0x22t 0x30t 0x0t 0x0t
+        0x5t 0x0t 0x0t 0x0t
+        0x21t 0x30t 0x0t 0x0t
+        0x0t 0x0t 0x0t 0x0t
+        0x38t 0x30t 0x0t 0x0t
     .end array-data
 .end method
 
 .method private chooseConfig(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;[Ljavax/microedition/khronos/egl/EGLConfig;)Ljavax/microedition/khronos/egl/EGLConfig;
     .locals 9
-    .param p1, "egl"    # Ljavax/microedition/khronos/egl/EGL10;
-    .param p2, "display"    # Ljavax/microedition/khronos/egl/EGLDisplay;
-    .param p3, "configs"    # [Ljavax/microedition/khronos/egl/EGLConfig;
+    .parameter "egl"
+    .parameter "display"
+    .parameter "configs"
 
     .prologue
     const/16 v8, 0x3026
@@ -148,23 +148,23 @@
     const/4 v3, 0x0
 
     .line 65
-    .local v3, "result":Ljavax/microedition/khronos/egl/EGLConfig;
+    .local v3, result:Ljavax/microedition/khronos/egl/EGLConfig;
     const v1, 0x7fffffff
 
     .line 66
-    .local v1, "minStencil":I
+    .local v1, minStencil:I
     const/4 v5, 0x1
 
     new-array v4, v5, [I
 
     .line 71
-    .local v4, "value":[I
+    .local v4, value:[I
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     array-length v2, p3
 
-    .local v2, "n":I
+    .local v2, n:I
     :goto_0
     if-ge v0, v2, :cond_3
 
@@ -270,9 +270,9 @@
 
 .method private logConfig(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLConfig;)V
     .locals 6
-    .param p1, "egl"    # Ljavax/microedition/khronos/egl/EGL10;
-    .param p2, "display"    # Ljavax/microedition/khronos/egl/EGLDisplay;
-    .param p3, "config"    # Ljavax/microedition/khronos/egl/EGLConfig;
+    .parameter "egl"
+    .parameter "display"
+    .parameter "config"
 
     .prologue
     .line 112
@@ -281,16 +281,16 @@
     new-array v2, v3, [I
 
     .line 113
-    .local v2, "value":[I
+    .local v2, value:[I
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 114
-    .local v1, "sb":Ljava/lang/StringBuilder;
+    .local v1, sb:Ljava/lang/StringBuilder;
     const/4 v0, 0x0
 
-    .local v0, "j":I
+    .local v0, j:I
     :goto_0
     sget-object v3, Lcom/android/gallery3d/ui/GalleryEGLConfigChooser;->ATTR_ID:[I
 
@@ -379,8 +379,8 @@
 # virtual methods
 .method public chooseConfig(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;)Ljavax/microedition/khronos/egl/EGLConfig;
     .locals 6
-    .param p1, "egl"    # Ljavax/microedition/khronos/egl/EGL10;
-    .param p2, "display"    # Ljavax/microedition/khronos/egl/EGLDisplay;
+    .parameter "egl"
+    .parameter "display"
 
     .prologue
     const/4 v4, 0x0
@@ -391,7 +391,7 @@
     new-array v5, v0, [I
 
     .line 44
-    .local v5, "numConfig":[I
+    .local v5, numConfig:[I
     iget-object v2, p0, Lcom/android/gallery3d/ui/GalleryEGLConfigChooser;->mConfigSpec:[I
 
     const/4 v3, 0x0
@@ -437,7 +437,7 @@
     new-array v3, v0, [Ljavax/microedition/khronos/egl/EGLConfig;
 
     .line 53
-    .local v3, "configs":[Ljavax/microedition/khronos/egl/EGLConfig;
+    .local v3, configs:[Ljavax/microedition/khronos/egl/EGLConfig;
     iget-object v2, p0, Lcom/android/gallery3d/ui/GalleryEGLConfigChooser;->mConfigSpec:[I
 
     array-length v4, v3

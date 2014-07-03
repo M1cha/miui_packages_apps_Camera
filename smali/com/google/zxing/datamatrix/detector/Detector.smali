@@ -22,7 +22,7 @@
 # direct methods
 .method public constructor <init>(Lcom/google/zxing/common/BitMatrix;)V
     .locals 1
-    .param p1, "image"    # Lcom/google/zxing/common/BitMatrix;
+    .parameter "image"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -49,11 +49,11 @@
 
 .method private correctTopRight(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;I)Lcom/google/zxing/ResultPoint;
     .locals 12
-    .param p1, "bottomLeft"    # Lcom/google/zxing/ResultPoint;
-    .param p2, "bottomRight"    # Lcom/google/zxing/ResultPoint;
-    .param p3, "topLeft"    # Lcom/google/zxing/ResultPoint;
-    .param p4, "topRight"    # Lcom/google/zxing/ResultPoint;
-    .param p5, "dimension"    # I
+    .parameter "bottomLeft"
+    .parameter "bottomRight"
+    .parameter "topLeft"
+    .parameter "topRight"
+    .parameter "dimension"
 
     .prologue
     .line 273
@@ -70,13 +70,13 @@
     div-float v3, v9, v10
 
     .line 274
-    .local v3, "corr":F
+    .local v3, corr:F
     invoke-static/range {p3 .. p4}, Lcom/google/zxing/datamatrix/detector/Detector;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)I
 
     move-result v7
 
     .line 275
-    .local v7, "norm":I
+    .local v7, norm:I
     invoke-virtual/range {p4 .. p4}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v9
@@ -92,7 +92,7 @@
     div-float v4, v9, v10
 
     .line 276
-    .local v4, "cos":F
+    .local v4, cos:F
     invoke-virtual/range {p4 .. p4}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v9
@@ -108,7 +108,7 @@
     div-float v8, v9, v10
 
     .line 278
-    .local v8, "sin":F
+    .local v8, sin:F
     new-instance v1, Lcom/google/zxing/ResultPoint;
 
     invoke-virtual/range {p4 .. p4}, Lcom/google/zxing/ResultPoint;->getX()F
@@ -130,7 +130,7 @@
     invoke-direct {v1, v9, v10}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
     .line 280
-    .local v1, "c1":Lcom/google/zxing/ResultPoint;
+    .local v1, c1:Lcom/google/zxing/ResultPoint;
     invoke-static {p1, p3}, Lcom/google/zxing/datamatrix/detector/Detector;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)I
 
     move-result v9
@@ -202,7 +202,7 @@
     invoke-direct {v2, v9, v10}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
     .line 287
-    .local v2, "c2":Lcom/google/zxing/ResultPoint;
+    .local v2, c2:Lcom/google/zxing/ResultPoint;
     invoke-direct {p0, v1}, Lcom/google/zxing/datamatrix/detector/Detector;->isValid(Lcom/google/zxing/ResultPoint;)Z
 
     move-result v9
@@ -219,13 +219,13 @@
     move-object v1, v2
 
     .line 302
-    .end local v1    # "c1":Lcom/google/zxing/ResultPoint;
+    .end local v1           #c1:Lcom/google/zxing/ResultPoint;
     :cond_0
     :goto_0
     return-object v1
 
     .line 291
-    .restart local v1    # "c1":Lcom/google/zxing/ResultPoint;
+    .restart local v1       #c1:Lcom/google/zxing/ResultPoint;
     :cond_1
     const/4 v1, 0x0
 
@@ -263,7 +263,7 @@
     move-result v5
 
     .line 299
-    .local v5, "l1":I
+    .local v5, l1:I
     invoke-direct {p0, p3, v2}, Lcom/google/zxing/datamatrix/detector/Detector;->transitionsBetween(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 
     move-result-object v9
@@ -287,7 +287,7 @@
     move-result v6
 
     .line 302
-    .local v6, "l2":I
+    .local v6, l2:I
     if-le v5, v6, :cond_0
 
     move-object v1, v2
@@ -297,12 +297,12 @@
 
 .method private correctTopRightRectangular(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;II)Lcom/google/zxing/ResultPoint;
     .locals 12
-    .param p1, "bottomLeft"    # Lcom/google/zxing/ResultPoint;
-    .param p2, "bottomRight"    # Lcom/google/zxing/ResultPoint;
-    .param p3, "topLeft"    # Lcom/google/zxing/ResultPoint;
-    .param p4, "topRight"    # Lcom/google/zxing/ResultPoint;
-    .param p5, "dimensionTop"    # I
-    .param p6, "dimensionRight"    # I
+    .parameter "bottomLeft"
+    .parameter "bottomRight"
+    .parameter "topLeft"
+    .parameter "topRight"
+    .parameter "dimensionTop"
+    .parameter "dimensionRight"
 
     .prologue
     .line 227
@@ -319,13 +319,13 @@
     div-float v3, v9, v10
 
     .line 228
-    .local v3, "corr":F
+    .local v3, corr:F
     invoke-static/range {p3 .. p4}, Lcom/google/zxing/datamatrix/detector/Detector;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)I
 
     move-result v7
 
     .line 229
-    .local v7, "norm":I
+    .local v7, norm:I
     invoke-virtual/range {p4 .. p4}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v9
@@ -341,7 +341,7 @@
     div-float v4, v9, v10
 
     .line 230
-    .local v4, "cos":F
+    .local v4, cos:F
     invoke-virtual/range {p4 .. p4}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v9
@@ -357,7 +357,7 @@
     div-float v8, v9, v10
 
     .line 232
-    .local v8, "sin":F
+    .local v8, sin:F
     new-instance v1, Lcom/google/zxing/ResultPoint;
 
     invoke-virtual/range {p4 .. p4}, Lcom/google/zxing/ResultPoint;->getX()F
@@ -379,7 +379,7 @@
     invoke-direct {v1, v9, v10}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
     .line 234
-    .local v1, "c1":Lcom/google/zxing/ResultPoint;
+    .local v1, c1:Lcom/google/zxing/ResultPoint;
     invoke-static {p1, p3}, Lcom/google/zxing/datamatrix/detector/Detector;->distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)I
 
     move-result v9
@@ -451,7 +451,7 @@
     invoke-direct {v2, v9, v10}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
     .line 241
-    .local v2, "c2":Lcom/google/zxing/ResultPoint;
+    .local v2, c2:Lcom/google/zxing/ResultPoint;
     invoke-direct {p0, v1}, Lcom/google/zxing/datamatrix/detector/Detector;->isValid(Lcom/google/zxing/ResultPoint;)Z
 
     move-result v9
@@ -466,13 +466,13 @@
     if-eqz v9, :cond_1
 
     .line 260
-    .end local v2    # "c2":Lcom/google/zxing/ResultPoint;
+    .end local v2           #c2:Lcom/google/zxing/ResultPoint;
     :cond_0
     :goto_0
     return-object v2
 
     .line 245
-    .restart local v2    # "c2":Lcom/google/zxing/ResultPoint;
+    .restart local v2       #c2:Lcom/google/zxing/ResultPoint;
     :cond_1
     const/4 v2, 0x0
 
@@ -524,7 +524,7 @@
     add-int v5, v9, v10
 
     .line 253
-    .local v5, "l1":I
+    .local v5, l1:I
     invoke-direct {p0, p3, v2}, Lcom/google/zxing/datamatrix/detector/Detector;->transitionsBetween(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 
     move-result-object v9
@@ -556,7 +556,7 @@
     add-int v6, v9, v10
 
     .line 256
-    .local v6, "l2":I
+    .local v6, l2:I
     if-gt v5, v6, :cond_0
 
     move-object v2, v1
@@ -567,8 +567,8 @@
 
 .method private static distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)I
     .locals 1
-    .param p0, "a"    # Lcom/google/zxing/ResultPoint;
-    .param p1, "b"    # Lcom/google/zxing/ResultPoint;
+    .parameter "a"
+    .parameter "b"
 
     .prologue
     .line 310
@@ -585,7 +585,8 @@
 
 .method private static increment(Ljava/util/Map;Lcom/google/zxing/ResultPoint;)V
     .locals 2
-    .param p1, "key"    # Lcom/google/zxing/ResultPoint;
+    .parameter
+    .parameter "key"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -601,7 +602,7 @@
 
     .prologue
     .line 317
-    .local p0, "table":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultPoint;Ljava/lang/Integer;>;"
+    .local p0, table:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/ResultPoint;Ljava/lang/Integer;>;"
     invoke-interface {p0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -609,7 +610,7 @@
     check-cast v0, Ljava/lang/Integer;
 
     .line 318
-    .local v0, "value":Ljava/lang/Integer;
+    .local v0, value:Ljava/lang/Integer;
     if-nez v0, :cond_0
 
     const/4 v1, 0x1
@@ -637,7 +638,7 @@
 
 .method private isValid(Lcom/google/zxing/ResultPoint;)Z
     .locals 3
-    .param p1, "p"    # Lcom/google/zxing/ResultPoint;
+    .parameter "p"
 
     .prologue
     const/4 v2, 0x0
@@ -704,13 +705,13 @@
 
 .method private static sampleGrid(Lcom/google/zxing/common/BitMatrix;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;II)Lcom/google/zxing/common/BitMatrix;
     .locals 21
-    .param p0, "image"    # Lcom/google/zxing/common/BitMatrix;
-    .param p1, "topLeft"    # Lcom/google/zxing/ResultPoint;
-    .param p2, "bottomLeft"    # Lcom/google/zxing/ResultPoint;
-    .param p3, "bottomRight"    # Lcom/google/zxing/ResultPoint;
-    .param p4, "topRight"    # Lcom/google/zxing/ResultPoint;
-    .param p5, "dimensionX"    # I
-    .param p6, "dimensionY"    # I
+    .parameter "image"
+    .parameter "topLeft"
+    .parameter "bottomLeft"
+    .parameter "bottomRight"
+    .parameter "topRight"
+    .parameter "dimensionX"
+    .parameter "dimensionY"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -724,26 +725,26 @@
     move-result-object v1
 
     .line 331
-    .local v1, "sampler":Lcom/google/zxing/common/GridSampler;
-    const/high16 v5, 0x3f000000
+    .local v1, sampler:Lcom/google/zxing/common/GridSampler;
+    const/high16 v5, 0x3f00
 
-    const/high16 v6, 0x3f000000
+    const/high16 v6, 0x3f00
 
     move/from16 v0, p5
 
     int-to-float v2, v0
 
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f00
 
     sub-float v7, v2, v3
 
-    const/high16 v8, 0x3f000000
+    const/high16 v8, 0x3f00
 
     move/from16 v0, p5
 
     int-to-float v2, v0
 
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f00
 
     sub-float v9, v2, v3
 
@@ -751,17 +752,17 @@
 
     int-to-float v2, v0
 
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f00
 
     sub-float v10, v2, v3
 
-    const/high16 v11, 0x3f000000
+    const/high16 v11, 0x3f00
 
     move/from16 v0, p6
 
     int-to-float v2, v0
 
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f00
 
     sub-float v12, v2, v3
 
@@ -812,8 +813,8 @@
 
 .method private transitionsBetween(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
     .locals 23
-    .param p1, "from"    # Lcom/google/zxing/ResultPoint;
-    .param p2, "to"    # Lcom/google/zxing/ResultPoint;
+    .parameter "from"
+    .parameter "to"
 
     .prologue
     .line 357
@@ -826,7 +827,7 @@
     float-to-int v7, v0
 
     .line 358
-    .local v7, "fromX":I
+    .local v7, fromX:I
     invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v20
@@ -836,7 +837,7 @@
     float-to-int v8, v0
 
     .line 359
-    .local v8, "fromY":I
+    .local v8, fromY:I
     invoke-virtual/range {p2 .. p2}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v20
@@ -846,7 +847,7 @@
     float-to-int v13, v0
 
     .line 360
-    .local v13, "toX":I
+    .local v13, toX:I
     invoke-virtual/range {p2 .. p2}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v20
@@ -856,7 +857,7 @@
     float-to-int v14, v0
 
     .line 361
-    .local v14, "toY":I
+    .local v14, toY:I
     sub-int v20, v14, v8
 
     invoke-static/range {v20 .. v20}, Ljava/lang/Math;->abs(I)I
@@ -878,7 +879,7 @@
     const/4 v11, 0x1
 
     .line 362
-    .local v11, "steep":Z
+    .local v11, steep:Z
     :goto_0
     if-eqz v11, :cond_0
 
@@ -886,7 +887,7 @@
     move v12, v7
 
     .line 364
-    .local v12, "temp":I
+    .local v12, temp:I
     move v7, v8
 
     .line 365
@@ -902,7 +903,7 @@
     move v14, v12
 
     .line 371
-    .end local v12    # "temp":I
+    .end local v12           #temp:I
     :cond_0
     sub-int v20, v13, v7
 
@@ -911,7 +912,7 @@
     move-result v4
 
     .line 372
-    .local v4, "dx":I
+    .local v4, dx:I
     sub-int v20, v14, v8
 
     invoke-static/range {v20 .. v20}, Ljava/lang/Math;->abs(I)I
@@ -919,7 +920,7 @@
     move-result v5
 
     .line 373
-    .local v5, "dy":I
+    .local v5, dy:I
     neg-int v0, v4
 
     move/from16 v20, v0
@@ -927,25 +928,25 @@
     shr-int/lit8 v6, v20, 0x1
 
     .line 374
-    .local v6, "error":I
+    .local v6, error:I
     if-ge v8, v14, :cond_4
 
     const/16 v19, 0x1
 
     .line 375
-    .local v19, "ystep":I
+    .local v19, ystep:I
     :goto_1
     if-ge v7, v13, :cond_5
 
     const/16 v17, 0x1
 
     .line 376
-    .local v17, "xstep":I
+    .local v17, xstep:I
     :goto_2
     const/4 v15, 0x0
 
     .line 377
-    .local v15, "transitions":I
+    .local v15, transitions:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/datamatrix/detector/Detector;->image:Lcom/google/zxing/common/BitMatrix;
@@ -973,13 +974,13 @@
     move-result v9
 
     .line 378
-    .local v9, "inBlack":Z
+    .local v9, inBlack:Z
     move/from16 v16, v7
 
-    .local v16, "x":I
+    .local v16, x:I
     move/from16 v18, v8
 
-    .local v18, "y":I
+    .local v18, y:I
     :goto_5
     move/from16 v0, v16
 
@@ -1013,7 +1014,7 @@
     move-result v10
 
     .line 380
-    .local v10, "isBlack":Z
+    .local v10, isBlack:Z
     if-eq v10, v9, :cond_1
 
     .line 381
@@ -1035,7 +1036,7 @@
     if-ne v0, v14, :cond_a
 
     .line 393
-    .end local v10    # "isBlack":Z
+    .end local v10           #isBlack:Z
     :cond_2
     new-instance v20, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 
@@ -1054,40 +1055,40 @@
     return-object v20
 
     .line 361
-    .end local v4    # "dx":I
-    .end local v5    # "dy":I
-    .end local v6    # "error":I
-    .end local v9    # "inBlack":Z
-    .end local v11    # "steep":Z
-    .end local v15    # "transitions":I
-    .end local v16    # "x":I
-    .end local v17    # "xstep":I
-    .end local v18    # "y":I
-    .end local v19    # "ystep":I
+    .end local v4           #dx:I
+    .end local v5           #dy:I
+    .end local v6           #error:I
+    .end local v9           #inBlack:Z
+    .end local v11           #steep:Z
+    .end local v15           #transitions:I
+    .end local v16           #x:I
+    .end local v17           #xstep:I
+    .end local v18           #y:I
+    .end local v19           #ystep:I
     :cond_3
     const/4 v11, 0x0
 
     goto :goto_0
 
     .line 374
-    .restart local v4    # "dx":I
-    .restart local v5    # "dy":I
-    .restart local v6    # "error":I
-    .restart local v11    # "steep":Z
+    .restart local v4       #dx:I
+    .restart local v5       #dy:I
+    .restart local v6       #error:I
+    .restart local v11       #steep:Z
     :cond_4
     const/16 v19, -0x1
 
     goto :goto_1
 
     .line 375
-    .restart local v19    # "ystep":I
+    .restart local v19       #ystep:I
     :cond_5
     const/16 v17, -0x1
 
     goto :goto_2
 
-    .restart local v15    # "transitions":I
-    .restart local v17    # "xstep":I
+    .restart local v15       #transitions:I
+    .restart local v17       #xstep:I
     :cond_6
     move/from16 v21, v7
 
@@ -1099,9 +1100,9 @@
 
     goto :goto_4
 
-    .restart local v9    # "inBlack":Z
-    .restart local v16    # "x":I
-    .restart local v18    # "y":I
+    .restart local v9       #inBlack:Z
+    .restart local v16       #x:I
+    .restart local v18       #y:I
     :cond_8
     move/from16 v21, v16
 
@@ -1114,7 +1115,7 @@
     goto :goto_7
 
     .line 389
-    .restart local v10    # "isBlack":Z
+    .restart local v10       #isBlack:Z
     :cond_a
     add-int v18, v18, v19
 
@@ -1149,31 +1150,31 @@
     move-result-object v22
 
     .line 60
-    .local v22, "cornerPoints":[Lcom/google/zxing/ResultPoint;
+    .local v22, cornerPoints:[Lcom/google/zxing/ResultPoint;
     const/4 v3, 0x0
 
     aget-object v31, v22, v3
 
     .line 61
-    .local v31, "pointA":Lcom/google/zxing/ResultPoint;
+    .local v31, pointA:Lcom/google/zxing/ResultPoint;
     const/4 v3, 0x1
 
     aget-object v32, v22, v3
 
     .line 62
-    .local v32, "pointB":Lcom/google/zxing/ResultPoint;
+    .local v32, pointB:Lcom/google/zxing/ResultPoint;
     const/4 v3, 0x2
 
     aget-object v33, v22, v3
 
     .line 63
-    .local v33, "pointC":Lcom/google/zxing/ResultPoint;
+    .local v33, pointC:Lcom/google/zxing/ResultPoint;
     const/4 v3, 0x3
 
     aget-object v35, v22, v3
 
     .line 68
-    .local v35, "pointD":Lcom/google/zxing/ResultPoint;
+    .local v35, pointD:Lcom/google/zxing/ResultPoint;
     new-instance v36, Ljava/util/ArrayList;
 
     const/4 v3, 0x4
@@ -1183,7 +1184,7 @@
     invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 69
-    .local v36, "transitions":Ljava/util/List;, "Ljava/util/List<Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;>;"
+    .local v36, transitions:Ljava/util/List;,"Ljava/util/List<Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;>;"
     move-object/from16 v0, p0
 
     move-object/from16 v1, v31
@@ -1266,7 +1267,7 @@
     check-cast v26, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 
     .line 78
-    .local v26, "lSideOne":Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
+    .local v26, lSideOne:Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
     const/4 v3, 0x1
 
     move-object/from16 v0, v36
@@ -1278,13 +1279,13 @@
     check-cast v27, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
 
     .line 82
-    .local v27, "lSideTwo":Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
+    .local v27, lSideTwo:Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
     new-instance v34, Ljava/util/HashMap;
 
     invoke-direct/range {v34 .. v34}, Ljava/util/HashMap;-><init>()V
 
     .line 83
-    .local v34, "pointCount":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultPoint;Ljava/lang/Integer;>;"
+    .local v34, pointCount:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/ResultPoint;Ljava/lang/Integer;>;"
     invoke-virtual/range {v26 .. v26}, Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;->getFrom()Lcom/google/zxing/ResultPoint;
 
     move-result-object v3
@@ -1324,15 +1325,15 @@
     const/16 v29, 0x0
 
     .line 89
-    .local v29, "maybeTopLeft":Lcom/google/zxing/ResultPoint;
+    .local v29, maybeTopLeft:Lcom/google/zxing/ResultPoint;
     const/4 v4, 0x0
 
     .line 90
-    .local v4, "bottomLeft":Lcom/google/zxing/ResultPoint;
+    .local v4, bottomLeft:Lcom/google/zxing/ResultPoint;
     const/16 v28, 0x0
 
     .line 91
-    .local v28, "maybeBottomRight":Lcom/google/zxing/ResultPoint;
+    .local v28, maybeBottomRight:Lcom/google/zxing/ResultPoint;
     invoke-interface/range {v34 .. v34}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v3
@@ -1341,7 +1342,7 @@
 
     move-result-object v25
 
-    .local v25, "i$":Ljava/util/Iterator;
+    .local v25, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface/range {v25 .. v25}, Ljava/util/Iterator;->hasNext()Z
 
@@ -1356,7 +1357,7 @@
     check-cast v24, Ljava/util/Map$Entry;
 
     .line 92
-    .local v24, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/google/zxing/ResultPoint;Ljava/lang/Integer;>;"
+    .local v24, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Lcom/google/zxing/ResultPoint;Ljava/lang/Integer;>;"
     invoke-interface/range {v24 .. v24}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v30
@@ -1364,7 +1365,7 @@
     check-cast v30, Lcom/google/zxing/ResultPoint;
 
     .line 93
-    .local v30, "point":Lcom/google/zxing/ResultPoint;
+    .local v30, point:Lcom/google/zxing/ResultPoint;
     invoke-interface/range {v24 .. v24}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v37
@@ -1372,7 +1373,7 @@
     check-cast v37, Ljava/lang/Integer;
 
     .line 94
-    .local v37, "value":Ljava/lang/Integer;
+    .local v37, value:Ljava/lang/Integer;
     invoke-virtual/range {v37 .. v37}, Ljava/lang/Integer;->intValue()I
 
     move-result v3
@@ -1402,9 +1403,9 @@
     goto :goto_0
 
     .line 106
-    .end local v24    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Lcom/google/zxing/ResultPoint;Ljava/lang/Integer;>;"
-    .end local v30    # "point":Lcom/google/zxing/ResultPoint;
-    .end local v37    # "value":Ljava/lang/Integer;
+    .end local v24           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Lcom/google/zxing/ResultPoint;Ljava/lang/Integer;>;"
+    .end local v30           #point:Lcom/google/zxing/ResultPoint;
+    .end local v37           #value:Ljava/lang/Integer;
     :cond_2
     if-eqz v29, :cond_3
 
@@ -1441,7 +1442,7 @@
     aput-object v28, v23, v3
 
     .line 113
-    .local v23, "corners":[Lcom/google/zxing/ResultPoint;
+    .local v23, corners:[Lcom/google/zxing/ResultPoint;
     invoke-static/range {v23 .. v23}, Lcom/google/zxing/ResultPoint;->orderBestPatterns([Lcom/google/zxing/ResultPoint;)V
 
     .line 116
@@ -1450,7 +1451,7 @@
     aget-object v5, v23, v3
 
     .line 117
-    .local v5, "bottomRight":Lcom/google/zxing/ResultPoint;
+    .local v5, bottomRight:Lcom/google/zxing/ResultPoint;
     const/4 v3, 0x1
 
     aget-object v4, v23, v3
@@ -1461,7 +1462,7 @@
     aget-object v6, v23, v3
 
     .line 122
-    .local v6, "topLeft":Lcom/google/zxing/ResultPoint;
+    .local v6, topLeft:Lcom/google/zxing/ResultPoint;
     move-object/from16 v0, v34
 
     move-object/from16 v1, v31
@@ -1476,7 +1477,7 @@
     move-object/from16 v7, v31
 
     .line 141
-    .local v7, "topRight":Lcom/google/zxing/ResultPoint;
+    .local v7, topRight:Lcom/google/zxing/ResultPoint;
     :goto_1
     move-object/from16 v0, p0
 
@@ -1489,7 +1490,7 @@
     move-result v8
 
     .line 142
-    .local v8, "dimensionTop":I
+    .local v8, dimensionTop:I
     move-object/from16 v0, p0
 
     invoke-direct {v0, v5, v7}, Lcom/google/zxing/datamatrix/detector/Detector;->transitionsBetween(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)Lcom/google/zxing/datamatrix/detector/Detector$ResultPointsAndTransitions;
@@ -1501,7 +1502,7 @@
     move-result v9
 
     .line 144
-    .local v9, "dimensionRight":I
+    .local v9, dimensionRight:I
     and-int/lit8 v3, v8, 0x1
 
     const/4 v10, 0x1
@@ -1551,7 +1552,7 @@
     move-result-object v14
 
     .line 167
-    .local v14, "correctedTopRight":Lcom/google/zxing/ResultPoint;
+    .local v14, correctedTopRight:Lcom/google/zxing/ResultPoint;
     if-nez v14, :cond_8
 
     .line 168
@@ -1622,7 +1623,7 @@
     move-result-object v21
 
     .line 213
-    .local v21, "bits":Lcom/google/zxing/common/BitMatrix;
+    .local v21, bits:Lcom/google/zxing/common/BitMatrix;
     :goto_2
     new-instance v3, Lcom/google/zxing/common/DetectorResult;
 
@@ -1653,11 +1654,11 @@
     return-object v3
 
     .line 124
-    .end local v7    # "topRight":Lcom/google/zxing/ResultPoint;
-    .end local v8    # "dimensionTop":I
-    .end local v9    # "dimensionRight":I
-    .end local v14    # "correctedTopRight":Lcom/google/zxing/ResultPoint;
-    .end local v21    # "bits":Lcom/google/zxing/common/BitMatrix;
+    .end local v7           #topRight:Lcom/google/zxing/ResultPoint;
+    .end local v8           #dimensionTop:I
+    .end local v9           #dimensionRight:I
+    .end local v14           #correctedTopRight:Lcom/google/zxing/ResultPoint;
+    .end local v21           #bits:Lcom/google/zxing/common/BitMatrix;
     :cond_b
     move-object/from16 v0, v34
 
@@ -1672,11 +1673,11 @@
     .line 125
     move-object/from16 v7, v32
 
-    .restart local v7    # "topRight":Lcom/google/zxing/ResultPoint;
+    .restart local v7       #topRight:Lcom/google/zxing/ResultPoint;
     goto/16 :goto_1
 
     .line 126
-    .end local v7    # "topRight":Lcom/google/zxing/ResultPoint;
+    .end local v7           #topRight:Lcom/google/zxing/ResultPoint;
     :cond_c
     move-object/from16 v0, v34
 
@@ -1691,26 +1692,26 @@
     .line 127
     move-object/from16 v7, v33
 
-    .restart local v7    # "topRight":Lcom/google/zxing/ResultPoint;
+    .restart local v7       #topRight:Lcom/google/zxing/ResultPoint;
     goto/16 :goto_1
 
     .line 129
-    .end local v7    # "topRight":Lcom/google/zxing/ResultPoint;
+    .end local v7           #topRight:Lcom/google/zxing/ResultPoint;
     :cond_d
     move-object/from16 v7, v35
 
-    .restart local v7    # "topRight":Lcom/google/zxing/ResultPoint;
+    .restart local v7       #topRight:Lcom/google/zxing/ResultPoint;
     goto/16 :goto_1
 
     .line 189
-    .restart local v8    # "dimensionTop":I
-    .restart local v9    # "dimensionRight":I
+    .restart local v8       #dimensionTop:I
+    .restart local v9       #dimensionRight:I
     :cond_e
     invoke-static {v9, v8}, Ljava/lang/Math;->min(II)I
 
     move-result v20
 
-    .local v20, "dimension":I
+    .local v20, dimension:I
     move-object/from16 v15, p0
 
     move-object/from16 v16, v4
@@ -1727,7 +1728,7 @@
     move-result-object v14
 
     .line 192
-    .restart local v14    # "correctedTopRight":Lcom/google/zxing/ResultPoint;
+    .restart local v14       #correctedTopRight:Lcom/google/zxing/ResultPoint;
     if-nez v14, :cond_f
 
     .line 193
@@ -1760,7 +1761,7 @@
     move-result v15
 
     .line 199
-    .local v15, "dimensionCorrected":I
+    .local v15, dimensionCorrected:I
     add-int/lit8 v15, v15, 0x1
 
     .line 200
@@ -1791,6 +1792,6 @@
 
     move-result-object v21
 
-    .restart local v21    # "bits":Lcom/google/zxing/common/BitMatrix;
+    .restart local v21       #bits:Lcom/google/zxing/common/BitMatrix;
     goto :goto_2
 .end method

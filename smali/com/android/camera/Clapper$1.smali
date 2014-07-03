@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/Clapper;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 78
@@ -43,7 +44,7 @@
     .line 80
     iget-object v0, p0, Lcom/android/camera/Clapper$1;->this$0:Lcom/android/camera/Clapper;
 
-    # invokes: Lcom/android/camera/Clapper;->threadRecordClap()V
+    #calls: Lcom/android/camera/Clapper;->threadRecordClap()V
     invoke-static {v0}, Lcom/android/camera/Clapper;->access$000(Lcom/android/camera/Clapper;)V
 
     .line 81

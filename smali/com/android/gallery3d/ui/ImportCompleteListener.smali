@@ -13,7 +13,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/app/GalleryActivity;)V
     .locals 0
-    .param p1, "galleryActivity"    # Lcom/android/gallery3d/app/GalleryActivity;
+    .parameter "galleryActivity"
 
     .prologue
     .line 30
@@ -52,13 +52,13 @@
     move-result-object v1
 
     .line 52
-    .local v1, "pathOfImportedAlbum":Ljava/lang/String;
+    .local v1, pathOfImportedAlbum:Ljava/lang/String;
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     .line 55
-    .local v0, "data":Landroid/os/Bundle;
+    .local v0, data:Landroid/os/Bundle;
     return-void
 .end method
 
@@ -66,7 +66,7 @@
 # virtual methods
 .method public onConfirmDialogDismissed(Z)V
     .locals 0
-    .param p1, "confirmed"    # Z
+    .parameter "confirmed"
 
     .prologue
     .line 59
@@ -83,7 +83,7 @@
 
 .method public onProgressComplete(I)V
     .locals 3
-    .param p1, "result"    # I
+    .parameter "result"
 
     .prologue
     const/4 v2, 0x1
@@ -95,7 +95,7 @@
     const v0, 0x7f0d01ae
 
     .line 39
-    .local v0, "message":I
+    .local v0, message:I
     invoke-direct {p0}, Lcom/android/gallery3d/ui/ImportCompleteListener;->goToImportedAlbum()V
 
     .line 43
@@ -116,17 +116,17 @@
     return-void
 
     .line 41
-    .end local v0    # "message":I
+    .end local v0           #message:I
     :cond_0
     const v0, 0x7f0d01af
 
-    .restart local v0    # "message":I
+    .restart local v0       #message:I
     goto :goto_0
 .end method
 
 .method public onProgressUpdate(I)V
     .locals 0
-    .param p1, "index"    # I
+    .parameter "index"
 
     .prologue
     .line 48

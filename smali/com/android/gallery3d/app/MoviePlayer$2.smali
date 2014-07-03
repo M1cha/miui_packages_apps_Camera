@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/MoviePlayer;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 100
@@ -43,7 +44,7 @@
     .line 103
     iget-object v0, p0, Lcom/android/gallery3d/app/MoviePlayer$2;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    # getter for: Lcom/android/gallery3d/app/MoviePlayer;->mRootView:Landroid/view/View;
+    #getter for: Lcom/android/gallery3d/app/MoviePlayer;->mRootView:Landroid/view/View;
     invoke-static {v0}, Lcom/android/gallery3d/app/MoviePlayer;->access$400(Lcom/android/gallery3d/app/MoviePlayer;)Landroid/view/View;
 
     move-result-object v0

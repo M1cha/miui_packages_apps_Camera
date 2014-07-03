@@ -6,8 +6,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 12
@@ -21,9 +21,9 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyle"    # I
+    .parameter "context"
+    .parameter "attrs"
+    .parameter "defStyle"
 
     .prologue
     .line 16

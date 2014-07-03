@@ -49,7 +49,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/app/PhotoDataAdapter;Lcom/android/gallery3d/data/MediaItem;)V
     .locals 1
-    .param p2, "item"    # Lcom/android/gallery3d/data/MediaItem;
+    .parameter
+    .parameter "item"
 
     .prologue
     .line 834
@@ -72,6 +73,7 @@
 # virtual methods
 .method public onFutureDone(Lcom/android/gallery3d/util/Future;)V
     .locals 3
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -84,20 +86,20 @@
 
     .prologue
     .line 840
-    .local p1, "future":Lcom/android/gallery3d/util/Future;, "Lcom/android/gallery3d/util/Future<Landroid/graphics/BitmapRegionDecoder;>;"
+    .local p1, future:Lcom/android/gallery3d/util/Future;,"Lcom/android/gallery3d/util/Future<Landroid/graphics/BitmapRegionDecoder;>;"
     iput-object p1, p0, Lcom/android/gallery3d/app/PhotoDataAdapter$FullImageListener;->mFuture:Lcom/android/gallery3d/util/Future;
 
     .line 841
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoDataAdapter$FullImageListener;->this$0:Lcom/android/gallery3d/app/PhotoDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoDataAdapter;->mMainHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/gallery3d/app/PhotoDataAdapter;->mMainHandler:Landroid/os/Handler;
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoDataAdapter;->access$700(Lcom/android/gallery3d/app/PhotoDataAdapter;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/gallery3d/app/PhotoDataAdapter$FullImageListener;->this$0:Lcom/android/gallery3d/app/PhotoDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoDataAdapter;->mMainHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/gallery3d/app/PhotoDataAdapter;->mMainHandler:Landroid/os/Handler;
     invoke-static {v1}, Lcom/android/gallery3d/app/PhotoDataAdapter;->access$700(Lcom/android/gallery3d/app/PhotoDataAdapter;)Landroid/os/Handler;
 
     move-result-object v1
@@ -125,7 +127,7 @@
 
     iget-object v2, p0, Lcom/android/gallery3d/app/PhotoDataAdapter$FullImageListener;->mFuture:Lcom/android/gallery3d/util/Future;
 
-    # invokes: Lcom/android/gallery3d/app/PhotoDataAdapter;->updateFullImage(Lcom/android/gallery3d/data/Path;Lcom/android/gallery3d/util/Future;)V
+    #calls: Lcom/android/gallery3d/app/PhotoDataAdapter;->updateFullImage(Lcom/android/gallery3d/data/Path;Lcom/android/gallery3d/util/Future;)V
     invoke-static {v0, v1, v2}, Lcom/android/gallery3d/app/PhotoDataAdapter;->access$800(Lcom/android/gallery3d/app/PhotoDataAdapter;Lcom/android/gallery3d/data/Path;Lcom/android/gallery3d/util/Future;)V
 
     .line 848

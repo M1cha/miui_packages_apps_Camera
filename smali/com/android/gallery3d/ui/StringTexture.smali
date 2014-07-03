@@ -14,11 +14,11 @@
 # direct methods
 .method private constructor <init>(Ljava/lang/String;Landroid/text/TextPaint;Landroid/graphics/Paint$FontMetricsInt;II)V
     .locals 0
-    .param p1, "text"    # Ljava/lang/String;
-    .param p2, "paint"    # Landroid/text/TextPaint;
-    .param p3, "metrics"    # Landroid/graphics/Paint$FontMetricsInt;
-    .param p4, "width"    # I
-    .param p5, "height"    # I
+    .parameter "text"
+    .parameter "paint"
+    .parameter "metrics"
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 39
@@ -39,8 +39,8 @@
 
 .method public static getDefaultPaint(FI)Landroid/text/TextPaint;
     .locals 4
-    .param p0, "textSize"    # F
-    .param p1, "color"    # I
+    .parameter "textSize"
+    .parameter "color"
 
     .prologue
     const/4 v3, 0x0
@@ -51,7 +51,7 @@
     invoke-direct {v0}, Landroid/text/TextPaint;-><init>()V
 
     .line 47
-    .local v0, "paint":Landroid/text/TextPaint;
+    .local v0, paint:Landroid/text/TextPaint;
     invoke-virtual {v0, p0}, Landroid/text/TextPaint;->setTextSize(F)V
 
     .line 48
@@ -63,9 +63,9 @@
     invoke-virtual {v0, p1}, Landroid/text/TextPaint;->setColor(I)V
 
     .line 50
-    const/high16 v1, 0x40000000
+    const/high16 v1, 0x4000
 
-    const/high16 v2, -0x1000000
+    const/high16 v2, -0x100
 
     invoke-virtual {v0, v1, v3, v3, v2}, Landroid/text/TextPaint;->setShadowLayer(FFFI)V
 
@@ -75,9 +75,9 @@
 
 .method public static newInstance(Ljava/lang/String;FI)Lcom/android/gallery3d/ui/StringTexture;
     .locals 1
-    .param p0, "text"    # Ljava/lang/String;
-    .param p1, "textSize"    # F
-    .param p2, "color"    # I
+    .parameter "text"
+    .parameter "textSize"
+    .parameter "color"
 
     .prologue
     .line 56
@@ -94,11 +94,11 @@
 
 .method public static newInstance(Ljava/lang/String;FIFZ)Lcom/android/gallery3d/ui/StringTexture;
     .locals 2
-    .param p0, "text"    # Ljava/lang/String;
-    .param p1, "textSize"    # F
-    .param p2, "color"    # I
-    .param p3, "lengthLimit"    # F
-    .param p4, "isBold"    # Z
+    .parameter "text"
+    .parameter "textSize"
+    .parameter "color"
+    .parameter "lengthLimit"
+    .parameter "isBold"
 
     .prologue
     .line 62
@@ -107,7 +107,7 @@
     move-result-object v0
 
     .line 63
-    .local v0, "paint":Landroid/text/TextPaint;
+    .local v0, paint:Landroid/text/TextPaint;
     if-eqz p4, :cond_0
 
     .line 64
@@ -149,8 +149,8 @@
 
 .method private static newInstance(Ljava/lang/String;Landroid/text/TextPaint;)Lcom/android/gallery3d/ui/StringTexture;
     .locals 6
-    .param p0, "text"    # Ljava/lang/String;
-    .param p1, "paint"    # Landroid/text/TextPaint;
+    .parameter "text"
+    .parameter "paint"
 
     .prologue
     .line 74
@@ -159,7 +159,7 @@
     move-result-object v3
 
     .line 75
-    .local v3, "metrics":Landroid/graphics/Paint$FontMetricsInt;
+    .local v3, metrics:Landroid/graphics/Paint$FontMetricsInt;
     invoke-virtual {p1, p0}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
 
     move-result v0
@@ -171,7 +171,7 @@
     float-to-int v4, v0
 
     .line 76
-    .local v4, "width":I
+    .local v4, width:I
     iget v0, v3, Landroid/graphics/Paint$FontMetricsInt;->bottom:I
 
     iget v1, v3, Landroid/graphics/Paint$FontMetricsInt;->top:I
@@ -179,7 +179,7 @@
     sub-int v5, v0, v1
 
     .line 78
-    .local v5, "height":I
+    .local v5, height:I
     if-gtz v4, :cond_0
 
     const/4 v4, 0x1
@@ -207,8 +207,8 @@
 # virtual methods
 .method protected onDraw(Landroid/graphics/Canvas;Landroid/graphics/Bitmap;)V
     .locals 3
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
-    .param p2, "backing"    # Landroid/graphics/Bitmap;
+    .parameter "canvas"
+    .parameter "backing"
 
     .prologue
     const/4 v2, 0x0

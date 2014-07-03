@@ -21,6 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ActivityBase;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 178
@@ -35,8 +36,8 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
     .line 181
@@ -57,7 +58,7 @@
     move-result-object v0
 
     .line 183
-    .local v0, "action":Ljava/lang/String;
+    .local v0, action:Ljava/lang/String;
     const-string v1, "com.android.camera.action.DELETE_PICTURE"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -94,7 +95,7 @@
 
     const/4 v2, 0x1
 
-    # setter for: Lcom/android/camera/ActivityBase;->mUpdateThumbnailDelayed:Z
+    #setter for: Lcom/android/camera/ActivityBase;->mUpdateThumbnailDelayed:Z
     invoke-static {v1, v2}, Lcom/android/camera/ActivityBase;->access$002(Lcom/android/camera/ActivityBase;Z)Z
 
     goto :goto_1

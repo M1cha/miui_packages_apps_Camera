@@ -86,7 +86,7 @@
 
 .method public constructor <init>(Lcom/android/camera/CameraAppImpl;)V
     .locals 2
-    .param p1, "application"    # Lcom/android/camera/CameraAppImpl;
+    .parameter "application"
 
     .prologue
     .line 105
@@ -133,7 +133,7 @@
 # virtual methods
 .method addSource(Lcom/android/gallery3d/data/MediaSource;)V
     .locals 2
-    .param p1, "source"    # Lcom/android/gallery3d/data/MediaSource;
+    .parameter "source"
 
     .prologue
     .line 145
@@ -161,7 +161,7 @@
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 319
-    .local v0, "intent":Landroid/content/Intent;
+    .local v0, intent:Landroid/content/Intent;
     invoke-static {}, Lcom/android/camera/CameraAppImpl;->sGetAndroidContext()Landroid/content/Context;
 
     move-result-object v1
@@ -174,7 +174,7 @@
 
 .method public delete(Lcom/android/gallery3d/data/Path;)V
     .locals 1
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .parameter "path"
 
     .prologue
     .line 237
@@ -190,8 +190,8 @@
 
 .method public findPathByUri(Landroid/net/Uri;Ljava/lang/String;)Lcom/android/gallery3d/data/Path;
     .locals 5
-    .param p1, "uri"    # Landroid/net/Uri;
-    .param p2, "type"    # Ljava/lang/String;
+    .parameter "uri"
+    .parameter "type"
 
     .prologue
     const/4 v3, 0x0
@@ -217,7 +217,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :cond_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -232,19 +232,19 @@
     check-cast v2, Lcom/android/gallery3d/data/MediaSource;
 
     .line 255
-    .local v2, "source":Lcom/android/gallery3d/data/MediaSource;
+    .local v2, source:Lcom/android/gallery3d/data/MediaSource;
     invoke-virtual {v2, p1, p2}, Lcom/android/gallery3d/data/MediaSource;->findPathByUri(Landroid/net/Uri;Ljava/lang/String;)Lcom/android/gallery3d/data/Path;
 
     move-result-object v1
 
     .line 256
-    .local v1, "path":Lcom/android/gallery3d/data/Path;
+    .local v1, path:Lcom/android/gallery3d/data/Path;
     if-eqz v1, :cond_1
 
     goto :goto_0
 
-    .end local v1    # "path":Lcom/android/gallery3d/data/Path;
-    .end local v2    # "source":Lcom/android/gallery3d/data/MediaSource;
+    .end local v1           #path:Lcom/android/gallery3d/data/Path;
+    .end local v2           #source:Lcom/android/gallery3d/data/MediaSource;
     :cond_2
     move-object v1, v3
 
@@ -254,7 +254,7 @@
 
 .method public getContentUri(Lcom/android/gallery3d/data/Path;)Landroid/net/Uri;
     .locals 1
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .parameter "path"
 
     .prologue
     .line 245
@@ -271,7 +271,7 @@
 
 .method public getContentUriForExternal(Lcom/android/gallery3d/data/Path;)Landroid/net/Uri;
     .locals 1
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .parameter "path"
 
     .prologue
     .line 228
@@ -288,7 +288,7 @@
 
 .method public getMediaObject(Lcom/android/gallery3d/data/Path;)Lcom/android/gallery3d/data/MediaObject;
     .locals 8
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .parameter "path"
 
     .prologue
     const/4 v4, 0x0
@@ -299,16 +299,16 @@
     move-result-object v0
 
     .line 154
-    .local v0, "obj":Lcom/android/gallery3d/data/MediaObject;
+    .local v0, obj:Lcom/android/gallery3d/data/MediaObject;
     if-eqz v0, :cond_0
 
     .line 170
-    .end local v0    # "obj":Lcom/android/gallery3d/data/MediaObject;
+    .end local v0           #obj:Lcom/android/gallery3d/data/MediaObject;
     :goto_0
     return-object v0
 
     .line 156
-    .restart local v0    # "obj":Lcom/android/gallery3d/data/MediaObject;
+    .restart local v0       #obj:Lcom/android/gallery3d/data/MediaObject;
     :cond_0
     iget-object v5, p0, Lcom/android/gallery3d/data/DataManager;->mSourceMap:Ljava/util/HashMap;
 
@@ -323,7 +323,7 @@
     check-cast v2, Lcom/android/gallery3d/data/MediaSource;
 
     .line 157
-    .local v2, "source":Lcom/android/gallery3d/data/MediaSource;
+    .local v2, source:Lcom/android/gallery3d/data/MediaSource;
     if-nez v2, :cond_1
 
     .line 158
@@ -362,7 +362,7 @@
     move-result-object v1
 
     .line 164
-    .local v1, "object":Lcom/android/gallery3d/data/MediaObject;
+    .local v1, object:Lcom/android/gallery3d/data/MediaObject;
     if-nez v1, :cond_2
 
     .line 165
@@ -397,12 +397,12 @@
     goto :goto_0
 
     .line 168
-    .end local v1    # "object":Lcom/android/gallery3d/data/MediaObject;
+    .end local v1           #object:Lcom/android/gallery3d/data/MediaObject;
     :catch_0
     move-exception v3
 
     .line 169
-    .local v3, "t":Ljava/lang/Throwable;
+    .local v3, t:Ljava/lang/Throwable;
     const-string v5, "DataManager"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -433,7 +433,7 @@
 
 .method public getMediaObject(Ljava/lang/String;)Lcom/android/gallery3d/data/MediaObject;
     .locals 1
-    .param p1, "s"    # Ljava/lang/String;
+    .parameter "s"
 
     .prologue
     .line 175
@@ -450,7 +450,7 @@
 
 .method public getMediaSet(Lcom/android/gallery3d/data/Path;)Lcom/android/gallery3d/data/MediaSet;
     .locals 1
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .parameter "path"
 
     .prologue
     .line 179
@@ -465,7 +465,7 @@
 
 .method public getMediaSet(Ljava/lang/String;)Lcom/android/gallery3d/data/MediaSet;
     .locals 1
-    .param p1, "s"    # Ljava/lang/String;
+    .parameter "s"
 
     .prologue
     .line 183
@@ -480,7 +480,7 @@
 
 .method public getMediaSetsFromString(Ljava/lang/String;)[Lcom/android/gallery3d/data/MediaSet;
     .locals 5
-    .param p1, "segment"    # Ljava/lang/String;
+    .parameter "segment"
 
     .prologue
     .line 187
@@ -489,18 +489,18 @@
     move-result-object v2
 
     .line 188
-    .local v2, "seq":[Ljava/lang/String;
+    .local v2, seq:[Ljava/lang/String;
     array-length v1, v2
 
     .line 189
-    .local v1, "n":I
+    .local v1, n:I
     new-array v3, v1, [Lcom/android/gallery3d/data/MediaSet;
 
     .line 190
-    .local v3, "sets":[Lcom/android/gallery3d/data/MediaSet;
+    .local v3, sets:[Lcom/android/gallery3d/data/MediaSet;
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     if-ge v0, v1, :cond_0
 
@@ -525,7 +525,7 @@
 
 .method public getMediaType(Lcom/android/gallery3d/data/Path;)I
     .locals 1
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .parameter "path"
 
     .prologue
     .line 249
@@ -542,7 +542,7 @@
 
 .method public getSupportedOperations(Lcom/android/gallery3d/data/Path;)I
     .locals 1
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .parameter "path"
 
     .prologue
     .line 233
@@ -635,7 +635,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -650,7 +650,7 @@
     check-cast v1, Lcom/android/gallery3d/data/MediaSource;
 
     .line 125
-    .local v1, "source":Lcom/android/gallery3d/data/MediaSource;
+    .local v1, source:Lcom/android/gallery3d/data/MediaSource;
     invoke-virtual {v1}, Lcom/android/gallery3d/data/MediaSource;->resume()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -658,8 +658,8 @@
     goto :goto_0
 
     .line 111
-    .end local v0    # "i$":Ljava/util/Iterator;
-    .end local v1    # "source":Lcom/android/gallery3d/data/MediaSource;
+    .end local v0           #i$:Ljava/util/Iterator;
+    .end local v1           #source:Lcom/android/gallery3d/data/MediaSource;
     :catchall_0
     move-exception v2
 
@@ -670,8 +670,9 @@
 
 .method public mapMediaItems(Ljava/util/ArrayList;Lcom/android/gallery3d/data/MediaSet$ItemConsumer;I)V
     .locals 11
-    .param p2, "consumer"    # Lcom/android/gallery3d/data/MediaSet$ItemConsumer;
-    .param p3, "startIndex"    # I
+    .parameter
+    .parameter "consumer"
+    .parameter "startIndex"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -686,22 +687,22 @@
 
     .prologue
     .line 203
-    .local p1, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/Path;>;"
+    .local p1, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/Path;>;"
     new-instance v4, Ljava/util/HashMap;
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
     .line 207
-    .local v4, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSource$PathId;>;>;"
+    .local v4, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSource$PathId;>;>;"
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
     .line 208
-    .local v5, "n":I
+    .local v5, n:I
     const/4 v2, 0x0
 
-    .local v2, "i":I
+    .local v2, i:I
     :goto_0
     if-ge v2, v5, :cond_1
 
@@ -713,13 +714,13 @@
     check-cast v6, Lcom/android/gallery3d/data/Path;
 
     .line 210
-    .local v6, "path":Lcom/android/gallery3d/data/Path;
+    .local v6, path:Lcom/android/gallery3d/data/Path;
     invoke-virtual {v6}, Lcom/android/gallery3d/data/Path;->getPrefix()Ljava/lang/String;
 
     move-result-object v7
 
     .line 211
-    .local v7, "prefix":Ljava/lang/String;
+    .local v7, prefix:Ljava/lang/String;
     invoke-virtual {v4, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
@@ -727,17 +728,17 @@
     check-cast v1, Ljava/util/ArrayList;
 
     .line 212
-    .local v1, "group":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSource$PathId;>;"
+    .local v1, group:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSource$PathId;>;"
     if-nez v1, :cond_0
 
     .line 213
     new-instance v1, Ljava/util/ArrayList;
 
-    .end local v1    # "group":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSource$PathId;>;"
+    .end local v1           #group:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSource$PathId;>;"
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 214
-    .restart local v1    # "group":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSource$PathId;>;"
+    .restart local v1       #group:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSource$PathId;>;"
     invoke-virtual {v4, v7, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 216
@@ -756,9 +757,9 @@
     goto :goto_0
 
     .line 220
-    .end local v1    # "group":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSource$PathId;>;"
-    .end local v6    # "path":Lcom/android/gallery3d/data/Path;
-    .end local v7    # "prefix":Ljava/lang/String;
+    .end local v1           #group:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSource$PathId;>;"
+    .end local v6           #path:Lcom/android/gallery3d/data/Path;
+    .end local v7           #prefix:Ljava/lang/String;
     :cond_1
     invoke-virtual {v4}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
@@ -768,7 +769,7 @@
 
     move-result-object v3
 
-    .local v3, "i$":Ljava/util/Iterator;
+    .local v3, i$:Ljava/util/Iterator;
     :goto_1
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
@@ -783,7 +784,7 @@
     check-cast v0, Ljava/util/Map$Entry;
 
     .line 221
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSource$PathId;>;>;"
+    .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSource$PathId;>;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v7
@@ -791,7 +792,7 @@
     check-cast v7, Ljava/lang/String;
 
     .line 222
-    .restart local v7    # "prefix":Ljava/lang/String;
+    .restart local v7       #prefix:Ljava/lang/String;
     iget-object v9, p0, Lcom/android/gallery3d/data/DataManager;->mSourceMap:Ljava/util/HashMap;
 
     invoke-virtual {v9, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -801,7 +802,7 @@
     check-cast v8, Lcom/android/gallery3d/data/MediaSource;
 
     .line 223
-    .local v8, "source":Lcom/android/gallery3d/data/MediaSource;
+    .local v8, source:Lcom/android/gallery3d/data/MediaSource;
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v9
@@ -813,9 +814,9 @@
     goto :goto_1
 
     .line 225
-    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSource$PathId;>;>;"
-    .end local v7    # "prefix":Ljava/lang/String;
-    .end local v8    # "source":Lcom/android/gallery3d/data/MediaSource;
+    .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSource$PathId;>;>;"
+    .end local v7           #prefix:Ljava/lang/String;
+    .end local v8           #source:Lcom/android/gallery3d/data/MediaSource;
     :cond_2
     return-void
 .end method
@@ -844,7 +845,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -859,21 +860,21 @@
     check-cast v1, Lcom/android/gallery3d/data/MediaSource;
 
     .line 310
-    .local v1, "source":Lcom/android/gallery3d/data/MediaSource;
+    .local v1, source:Lcom/android/gallery3d/data/MediaSource;
     invoke-virtual {v1}, Lcom/android/gallery3d/data/MediaSource;->pause()V
 
     goto :goto_0
 
     .line 313
-    .end local v0    # "i$":Ljava/util/Iterator;
-    .end local v1    # "source":Lcom/android/gallery3d/data/MediaSource;
+    .end local v0           #i$:Ljava/util/Iterator;
+    .end local v1           #source:Lcom/android/gallery3d/data/MediaSource;
     :cond_0
     return-void
 .end method
 
 .method public peekMediaObject(Lcom/android/gallery3d/data/Path;)Lcom/android/gallery3d/data/MediaObject;
     .locals 1
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .parameter "path"
 
     .prologue
     .line 149
@@ -886,15 +887,15 @@
 
 .method public registerChangeNotifier(Landroid/net/Uri;Lcom/android/gallery3d/data/ChangeNotifier;)V
     .locals 6
-    .param p1, "uri"    # Landroid/net/Uri;
-    .param p2, "notifier"    # Lcom/android/gallery3d/data/ChangeNotifier;
+    .parameter "uri"
+    .parameter "notifier"
 
     .prologue
     .line 286
     const/4 v1, 0x0
 
     .line 287
-    .local v1, "broker":Lcom/android/gallery3d/data/DataManager$NotifyBroker;
+    .local v1, broker:Lcom/android/gallery3d/data/DataManager$NotifyBroker;
     iget-object v4, p0, Lcom/android/gallery3d/data/DataManager;->mNotifierMap:Ljava/util/HashMap;
 
     monitor-enter v4
@@ -926,8 +927,8 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 291
-    .end local v1    # "broker":Lcom/android/gallery3d/data/DataManager$NotifyBroker;
-    .local v2, "broker":Lcom/android/gallery3d/data/DataManager$NotifyBroker;
+    .end local v1           #broker:Lcom/android/gallery3d/data/DataManager$NotifyBroker;
+    .local v2, broker:Lcom/android/gallery3d/data/DataManager$NotifyBroker;
     :try_start_1
     iget-object v3, p0, Lcom/android/gallery3d/data/DataManager;->mApplication:Lcom/android/camera/CameraAppImpl;
 
@@ -949,8 +950,8 @@
     move-object v1, v2
 
     .line 295
-    .end local v2    # "broker":Lcom/android/gallery3d/data/DataManager$NotifyBroker;
-    .restart local v1    # "broker":Lcom/android/gallery3d/data/DataManager$NotifyBroker;
+    .end local v2           #broker:Lcom/android/gallery3d/data/DataManager$NotifyBroker;
+    .restart local v1       #broker:Lcom/android/gallery3d/data/DataManager$NotifyBroker;
     :cond_0
     :try_start_2
     monitor-exit v4
@@ -975,15 +976,15 @@
 
     throw v3
 
-    .end local v1    # "broker":Lcom/android/gallery3d/data/DataManager$NotifyBroker;
-    .restart local v2    # "broker":Lcom/android/gallery3d/data/DataManager$NotifyBroker;
+    .end local v1           #broker:Lcom/android/gallery3d/data/DataManager$NotifyBroker;
+    .restart local v2       #broker:Lcom/android/gallery3d/data/DataManager$NotifyBroker;
     :catchall_1
     move-exception v3
 
     move-object v1, v2
 
-    .end local v2    # "broker":Lcom/android/gallery3d/data/DataManager$NotifyBroker;
-    .restart local v1    # "broker":Lcom/android/gallery3d/data/DataManager$NotifyBroker;
+    .end local v2           #broker:Lcom/android/gallery3d/data/DataManager$NotifyBroker;
+    .restart local v1       #broker:Lcom/android/gallery3d/data/DataManager$NotifyBroker;
     goto :goto_0
 .end method
 
@@ -1013,7 +1014,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -1028,22 +1029,22 @@
     check-cast v1, Lcom/android/gallery3d/data/MediaSource;
 
     .line 302
-    .local v1, "source":Lcom/android/gallery3d/data/MediaSource;
+    .local v1, source:Lcom/android/gallery3d/data/MediaSource;
     invoke-virtual {v1}, Lcom/android/gallery3d/data/MediaSource;->resume()V
 
     goto :goto_0
 
     .line 305
-    .end local v0    # "i$":Ljava/util/Iterator;
-    .end local v1    # "source":Lcom/android/gallery3d/data/MediaSource;
+    .end local v0           #i$:Ljava/util/Iterator;
+    .end local v1           #source:Lcom/android/gallery3d/data/MediaSource;
     :cond_0
     return-void
 .end method
 
 .method public rotate(Lcom/android/gallery3d/data/Path;I)V
     .locals 1
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
-    .param p2, "degrees"    # I
+    .parameter "path"
+    .parameter "degrees"
 
     .prologue
     .line 241

@@ -45,9 +45,9 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/camera/MotionFocusManager$MotionFocusListener;Landroid/os/Looper;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "l"    # Lcom/android/camera/MotionFocusManager$MotionFocusListener;
-    .param p3, "looper"    # Landroid/os/Looper;
+    .parameter "context"
+    .parameter "l"
+    .parameter "looper"
 
     .prologue
     const-wide/16 v2, 0x0
@@ -134,7 +134,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/MotionFocusManager;)J
     .locals 2
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
+    .parameter "x0"
 
     .prologue
     .line 16
@@ -145,8 +145,8 @@
 
 .method static synthetic access$002(Lcom/android/camera/MotionFocusManager;J)J
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
-    .param p1, "x1"    # J
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 16
@@ -157,7 +157,7 @@
 
 .method static synthetic access$100(Lcom/android/camera/MotionFocusManager;)Lcom/android/camera/MotionFocusManager$MotionFocusListener;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
+    .parameter "x0"
 
     .prologue
     .line 16
@@ -168,7 +168,7 @@
 
 .method static synthetic access$1000(Lcom/android/camera/MotionFocusManager;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
+    .parameter "x0"
 
     .prologue
     .line 16
@@ -179,7 +179,7 @@
 
 .method static synthetic access$200(Lcom/android/camera/MotionFocusManager;)D
     .locals 2
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
+    .parameter "x0"
 
     .prologue
     .line 16
@@ -190,8 +190,8 @@
 
 .method static synthetic access$218(Lcom/android/camera/MotionFocusManager;D)D
     .locals 2
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
-    .param p1, "x1"    # D
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 16
@@ -206,7 +206,7 @@
 
 .method static synthetic access$300(Lcom/android/camera/MotionFocusManager;)Landroid/os/Handler;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
+    .parameter "x0"
 
     .prologue
     .line 16
@@ -217,7 +217,7 @@
 
 .method static synthetic access$400(Lcom/android/camera/MotionFocusManager;)J
     .locals 2
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
+    .parameter "x0"
 
     .prologue
     .line 16
@@ -228,8 +228,8 @@
 
 .method static synthetic access$402(Lcom/android/camera/MotionFocusManager;J)J
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
-    .param p1, "x1"    # J
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 16
@@ -240,7 +240,7 @@
 
 .method static synthetic access$500(Lcom/android/camera/MotionFocusManager;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
+    .parameter "x0"
 
     .prologue
     .line 16
@@ -251,8 +251,8 @@
 
 .method static synthetic access$502(Lcom/android/camera/MotionFocusManager;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
-    .param p1, "x1"    # Z
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 16
@@ -263,7 +263,7 @@
 
 .method static synthetic access$600(Lcom/android/camera/MotionFocusManager;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
+    .parameter "x0"
 
     .prologue
     .line 16
@@ -274,8 +274,8 @@
 
 .method static synthetic access$602(Lcom/android/camera/MotionFocusManager;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 16
@@ -286,8 +286,8 @@
 
 .method static synthetic access$612(Lcom/android/camera/MotionFocusManager;I)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 16
@@ -302,7 +302,7 @@
 
 .method static synthetic access$700(Lcom/android/camera/MotionFocusManager;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
+    .parameter "x0"
 
     .prologue
     .line 16
@@ -313,8 +313,8 @@
 
 .method static synthetic access$800(Lcom/android/camera/MotionFocusManager;D)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
-    .param p1, "x1"    # D
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 16
@@ -325,7 +325,7 @@
 
 .method static synthetic access$900(Lcom/android/camera/MotionFocusManager;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/MotionFocusManager;
+    .parameter "x0"
 
     .prologue
     .line 16
@@ -368,7 +368,7 @@
 
 .method private deviceKeepMoving(D)V
     .locals 1
-    .param p1, "a"    # D
+    .parameter "a"
 
     .prologue
     .line 211
@@ -499,7 +499,7 @@
 
 .method public setEnabled(Z)V
     .locals 0
-    .param p1, "enable"    # Z
+    .parameter "enable"
 
     .prologue
     .line 63

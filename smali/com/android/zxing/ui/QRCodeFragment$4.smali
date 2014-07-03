@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/zxing/ui/QRCodeFragment;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 343
@@ -38,7 +39,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 346

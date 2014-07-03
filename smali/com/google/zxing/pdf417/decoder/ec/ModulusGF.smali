@@ -40,8 +40,8 @@
 
 .method private constructor <init>(II)V
     .locals 6
-    .param p1, "modulus"    # I
-    .param p2, "generator"    # I
+    .parameter "modulus"
+    .parameter "generator"
 
     .prologue
     const/4 v5, 0x1
@@ -68,10 +68,10 @@
     const/4 v1, 0x1
 
     .line 42
-    .local v1, "x":I
+    .local v1, x:I
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     if-ge v0, p1, :cond_0
 
@@ -144,8 +144,8 @@
 # virtual methods
 .method add(II)I
     .locals 2
-    .param p1, "a"    # I
-    .param p2, "b"    # I
+    .parameter "a"
+    .parameter "b"
 
     .prologue
     .line 76
@@ -160,8 +160,8 @@
 
 .method buildMonomial(II)Lcom/google/zxing/pdf417/decoder/ec/ModulusPoly;
     .locals 2
-    .param p1, "degree"    # I
-    .param p2, "coefficient"    # I
+    .parameter "degree"
+    .parameter "coefficient"
 
     .prologue
     .line 64
@@ -192,7 +192,7 @@
     new-array v0, v1, [I
 
     .line 71
-    .local v0, "coefficients":[I
+    .local v0, coefficients:[I
     const/4 v1, 0x0
 
     aput p2, v0, v1
@@ -207,7 +207,7 @@
 
 .method exp(I)I
     .locals 1
-    .param p1, "a"    # I
+    .parameter "a"
 
     .prologue
     .line 84
@@ -250,7 +250,7 @@
 
 .method inverse(I)I
     .locals 3
-    .param p1, "a"    # I
+    .parameter "a"
 
     .prologue
     .line 95
@@ -284,7 +284,7 @@
 
 .method log(I)I
     .locals 1
-    .param p1, "a"    # I
+    .parameter "a"
 
     .prologue
     .line 88
@@ -308,8 +308,8 @@
 
 .method multiply(II)I
     .locals 3
-    .param p1, "a"    # I
-    .param p2, "b"    # I
+    .parameter "a"
+    .parameter "b"
 
     .prologue
     .line 102
@@ -351,8 +351,8 @@
 
 .method subtract(II)I
     .locals 2
-    .param p1, "a"    # I
-    .param p2, "b"    # I
+    .parameter "a"
+    .parameter "b"
 
     .prologue
     .line 80

@@ -134,9 +134,9 @@
 
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;Lcom/android/camera/CameraAppImpl;I)V
     .locals 6
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
-    .param p2, "application"    # Lcom/android/camera/CameraAppImpl;
-    .param p3, "id"    # I
+    .parameter "path"
+    .parameter "application"
+    .parameter "id"
 
     .prologue
     .line 92
@@ -157,11 +157,11 @@
     move-result-object v1
 
     .line 95
-    .local v1, "resolver":Landroid/content/ContentResolver;
+    .local v1, resolver:Landroid/content/ContentResolver;
     sget-object v2, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     .line 96
-    .local v2, "uri":Landroid/net/Uri;
+    .local v2, uri:Landroid/net/Uri;
     sget-object v3, Lcom/android/gallery3d/data/LocalImage;->PROJECTION:[Ljava/lang/String;
 
     invoke-static {v1, v2, v3, p3}, Lcom/android/gallery3d/data/LocalAlbum;->getItemCursor(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;I)Landroid/database/Cursor;
@@ -169,7 +169,7 @@
     move-result-object v0
 
     .line 97
-    .local v0, "cursor":Landroid/database/Cursor;
+    .local v0, cursor:Landroid/database/Cursor;
     if-nez v0, :cond_0
 
     .line 98
@@ -257,9 +257,9 @@
 
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;Lcom/android/camera/CameraAppImpl;Landroid/database/Cursor;)V
     .locals 2
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
-    .param p2, "application"    # Lcom/android/camera/CameraAppImpl;
-    .param p3, "cursor"    # Landroid/database/Cursor;
+    .parameter "path"
+    .parameter "application"
+    .parameter "cursor"
 
     .prologue
     .line 86
@@ -281,7 +281,7 @@
 
 .method private static getExifOrientation(I)Ljava/lang/String;
     .locals 3
-    .param p0, "orientation"    # I
+    .parameter "orientation"
 
     .prologue
     .line 238
@@ -368,7 +368,7 @@
 
 .method private loadFromCursor(Landroid/database/Cursor;)V
     .locals 2
-    .param p1, "cursor"    # Landroid/database/Cursor;
+    .parameter "cursor"
 
     .prologue
     .line 112
@@ -496,7 +496,7 @@
     sget-object v0, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     .line 232
-    .local v0, "baseUri":Landroid/net/Uri;
+    .local v0, baseUri:Landroid/net/Uri;
     iget-object v1, p0, Lcom/android/gallery3d/data/LocalImage;->mApplication:Lcom/android/camera/CameraAppImpl;
 
     invoke-virtual {v1}, Lcom/android/camera/CameraAppImpl;->getContentResolver()Landroid/content/ContentResolver;
@@ -542,7 +542,7 @@
     sget-object v0, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     .line 283
-    .local v0, "baseUri":Landroid/net/Uri;
+    .local v0, baseUri:Landroid/net/Uri;
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object v1
@@ -574,7 +574,7 @@
     move-result-object v0
 
     .line 294
-    .local v0, "details":Lcom/android/gallery3d/data/MediaDetails;
+    .local v0, details:Lcom/android/gallery3d/data/MediaDetails;
     const/4 v1, 0x7
 
     iget v2, p0, Lcom/android/gallery3d/data/LocalImage;->rotation:I
@@ -632,7 +632,7 @@
     const/16 v0, 0x62d
 
     .line 214
-    .local v0, "operation":I
+    .local v0, operation:I
     iget-object v1, p0, Lcom/android/gallery3d/data/LocalImage;->mimeType:Ljava/lang/String;
 
     invoke-static {v1}, Lcom/android/gallery3d/common/BitmapUtils;->isSupportedByRegionDecoder(Ljava/lang/String;)Z
@@ -689,7 +689,7 @@
 
 .method public requestImage(I)Lcom/android/gallery3d/util/ThreadPool$Job;
     .locals 4
-    .param p1, "type"    # I
+    .parameter "type"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -740,7 +740,7 @@
 
 .method public rotate(I)V
     .locals 10
-    .param p1, "degrees"    # I
+    .parameter "degrees"
 
     .prologue
     .line 254
@@ -750,13 +750,13 @@
     sget-object v0, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     .line 256
-    .local v0, "baseUri":Landroid/net/Uri;
+    .local v0, baseUri:Landroid/net/Uri;
     new-instance v4, Landroid/content/ContentValues;
 
     invoke-direct {v4}, Landroid/content/ContentValues;-><init>()V
 
     .line 257
-    .local v4, "values":Landroid/content/ContentValues;
+    .local v4, values:Landroid/content/ContentValues;
     iget v5, p0, Lcom/android/gallery3d/data/LocalImage;->rotation:I
 
     add-int/2addr v5, p1
@@ -764,7 +764,7 @@
     rem-int/lit16 v3, v5, 0x168
 
     .line 258
-    .local v3, "rotation":I
+    .local v3, rotation:I
     if-gez v3, :cond_0
 
     add-int/lit16 v3, v3, 0x168
@@ -790,7 +790,7 @@
     invoke-direct {v2, v5}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
 
     .line 263
-    .local v2, "exif":Landroid/media/ExifInterface;
+    .local v2, exif:Landroid/media/ExifInterface;
     const-string v5, "Orientation"
 
     invoke-static {v3}, Lcom/android/gallery3d/data/LocalImage;->getExifOrientation(I)Ljava/lang/String;
@@ -805,7 +805,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 271
-    .end local v2    # "exif":Landroid/media/ExifInterface;
+    .end local v2           #exif:Landroid/media/ExifInterface;
     :goto_0
     new-instance v5, Ljava/io/File;
 
@@ -873,7 +873,7 @@
     move-exception v1
 
     .line 267
-    .local v1, "e":Ljava/io/IOException;
+    .local v1, e:Ljava/io/IOException;
     const-string v5, "LocalImage"
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -903,7 +903,7 @@
 
 .method protected updateFromCursor(Landroid/database/Cursor;)Z
     .locals 5
-    .param p1, "cursor"    # Landroid/database/Cursor;
+    .parameter "cursor"
 
     .prologue
     .line 128
@@ -912,7 +912,7 @@
     invoke-direct {v0}, Lcom/android/gallery3d/util/UpdateHelper;-><init>()V
 
     .line 129
-    .local v0, "uh":Lcom/android/gallery3d/util/UpdateHelper;
+    .local v0, uh:Lcom/android/gallery3d/util/UpdateHelper;
     iget v1, p0, Lcom/android/gallery3d/data/LocalImage;->id:I
 
     const/4 v2, 0x0

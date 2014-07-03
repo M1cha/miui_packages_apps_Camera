@@ -29,11 +29,11 @@
 # direct methods
 .method public constructor <init>(JIJLandroid/net/Uri;Ljava/lang/String;)V
     .locals 0
-    .param p1, "id"    # J
-    .param p3, "orientation"    # I
-    .param p4, "dateTaken"    # J
-    .param p6, "uri"    # Landroid/net/Uri;
-    .param p7, "path"    # Ljava/lang/String;
+    .parameter "id"
+    .parameter "orientation"
+    .parameter "dateTaken"
+    .parameter "uri"
+    .parameter "path"
 
     .prologue
     .line 254

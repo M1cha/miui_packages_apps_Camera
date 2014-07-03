@@ -45,7 +45,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     const-wide/16 v2, 0x0
@@ -95,8 +95,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     const-wide/16 v2, 0x0
@@ -158,7 +158,7 @@
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 24
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
+    .parameter "canvas"
 
     .prologue
     .line 126
@@ -167,19 +167,19 @@
     move-result-object v8
 
     .line 127
-    .local v8, "drawable":Landroid/graphics/drawable/Drawable;
+    .local v8, drawable:Landroid/graphics/drawable/Drawable;
     new-instance v12, Landroid/graphics/Matrix;
 
     invoke-direct {v12}, Landroid/graphics/Matrix;-><init>()V
 
     .line 128
-    .local v12, "matrix":Landroid/graphics/Matrix;
+    .local v12, matrix:Landroid/graphics/Matrix;
     new-instance v5, Landroid/graphics/Camera;
 
     invoke-direct {v5}, Landroid/graphics/Camera;-><init>()V
 
     .line 129
-    .local v5, "camera":Landroid/graphics/Camera;
+    .local v5, camera:Landroid/graphics/Camera;
     if-nez v8, :cond_1
 
     .line 196
@@ -194,7 +194,7 @@
     move-result-object v4
 
     .line 131
-    .local v4, "bounds":Landroid/graphics/Rect;
+    .local v4, bounds:Landroid/graphics/Rect;
     iget v0, v4, Landroid/graphics/Rect;->right:I
 
     move/from16 v21, v0
@@ -206,7 +206,7 @@
     sub-int v19, v21, v22
 
     .line 132
-    .local v19, "w":I
+    .local v19, w:I
     iget v0, v4, Landroid/graphics/Rect;->bottom:I
 
     move/from16 v21, v0
@@ -218,7 +218,7 @@
     sub-int v9, v21, v22
 
     .line 134
-    .local v9, "h":I
+    .local v9, h:I
     if-eqz v19, :cond_0
 
     if-eqz v9, :cond_0
@@ -291,25 +291,25 @@
     move-result v11
 
     .line 167
-    .local v11, "left":I
+    .local v11, left:I
     invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/RotateImageView;->getPaddingTop()I
 
     move-result v18
 
     .line 168
-    .local v18, "top":I
+    .local v18, top:I
     invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/RotateImageView;->getPaddingRight()I
 
     move-result v14
 
     .line 169
-    .local v14, "right":I
+    .local v14, right:I
     invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/RotateImageView;->getPaddingBottom()I
 
     move-result v3
 
     .line 170
-    .local v3, "bottom":I
+    .local v3, bottom:I
     invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/RotateImageView;->getWidth()I
 
     move-result v21
@@ -319,7 +319,7 @@
     sub-int v20, v21, v14
 
     .line 171
-    .local v20, "width":I
+    .local v20, width:I
     invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/RotateImageView;->getHeight()I
 
     move-result v21
@@ -329,13 +329,13 @@
     sub-int v10, v21, v3
 
     .line 173
-    .local v10, "height":I
+    .local v10, height:I
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->getSaveCount()I
 
     move-result v15
 
     .line 174
-    .local v15, "saveCount":I
+    .local v15, saveCount:I
     invoke-virtual {v5}, Landroid/graphics/Camera;->save()V
 
     .line 175
@@ -501,14 +501,14 @@
     move-result v13
 
     .line 189
-    .local v13, "ratio":F
+    .local v13, ratio:F
     move/from16 v0, v20
 
     int-to-float v0, v0
 
     move/from16 v21, v0
 
-    const/high16 v22, 0x40000000
+    const/high16 v22, 0x4000
 
     div-float v21, v21, v22
 
@@ -516,7 +516,7 @@
 
     move/from16 v22, v0
 
-    const/high16 v23, 0x40000000
+    const/high16 v23, 0x4000
 
     div-float v22, v22, v23
 
@@ -529,7 +529,7 @@
     invoke-virtual {v0, v13, v13, v1, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     .line 191
-    .end local v13    # "ratio":F
+    .end local v13           #ratio:F
     :cond_5
     div-int/lit8 v21, v20, 0x2
 
@@ -632,13 +632,13 @@
     goto/16 :goto_0
 
     .line 144
-    .end local v3    # "bottom":I
-    .end local v10    # "height":I
-    .end local v11    # "left":I
-    .end local v14    # "right":I
-    .end local v15    # "saveCount":I
-    .end local v18    # "top":I
-    .end local v20    # "width":I
+    .end local v3           #bottom:I
+    .end local v10           #height:I
+    .end local v11           #left:I
+    .end local v14           #right:I
+    .end local v15           #saveCount:I
+    .end local v18           #top:I
+    .end local v20           #width:I
     :cond_6
     move-object/from16 v0, p0
 
@@ -685,7 +685,7 @@
     move-result-wide v16
 
     .line 150
-    .local v16, "time":J
+    .local v16, time:J
     move-object/from16 v0, p0
 
     iget-wide v0, v0, Lcom/android/camera/ui/RotateImageView;->mAnimationEndTime:J
@@ -710,7 +710,7 @@
     long-to-int v7, v0
 
     .line 152
-    .local v7, "deltaTime":I
+    .local v7, deltaTime:I
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/camera/ui/RotateImageView;->mPointStartDegree:I
@@ -725,7 +725,7 @@
 
     if-eqz v22, :cond_8
 
-    .end local v7    # "deltaTime":I
+    .end local v7           #deltaTime:I
     :goto_3
     mul-int/lit16 v0, v7, 0x10e
 
@@ -740,7 +740,7 @@
     add-int v6, v21, v22
 
     .line 154
-    .local v6, "degree":I
+    .local v6, degree:I
     if-ltz v6, :cond_9
 
     rem-int/lit16 v6, v6, 0x168
@@ -757,16 +757,16 @@
     goto/16 :goto_1
 
     .line 152
-    .end local v6    # "degree":I
-    .restart local v7    # "deltaTime":I
+    .end local v6           #degree:I
+    .restart local v7       #deltaTime:I
     :cond_8
     neg-int v7, v7
 
     goto :goto_3
 
     .line 154
-    .end local v7    # "deltaTime":I
-    .restart local v6    # "degree":I
+    .end local v7           #deltaTime:I
+    .restart local v6       #degree:I
     :cond_9
     rem-int/lit16 v0, v6, 0x168
 
@@ -779,7 +779,7 @@
     goto :goto_4
 
     .line 158
-    .end local v6    # "degree":I
+    .end local v6           #degree:I
     :cond_a
     move-object/from16 v0, p0
 
@@ -814,14 +814,14 @@
     goto/16 :goto_1
 
     .line 178
-    .end local v16    # "time":J
-    .restart local v3    # "bottom":I
-    .restart local v10    # "height":I
-    .restart local v11    # "left":I
-    .restart local v14    # "right":I
-    .restart local v15    # "saveCount":I
-    .restart local v18    # "top":I
-    .restart local v20    # "width":I
+    .end local v16           #time:J
+    .restart local v3       #bottom:I
+    .restart local v10       #height:I
+    .restart local v11       #left:I
+    .restart local v14       #right:I
+    .restart local v15       #saveCount:I
+    .restart local v18       #top:I
+    .restart local v20       #width:I
     :cond_b
     move-object/from16 v0, p0
 
@@ -860,7 +860,7 @@
 
 .method public setBitmap(Landroid/graphics/Bitmap;)V
     .locals 9
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
+    .parameter "bitmap"
 
     .prologue
     const/4 v8, 0x0
@@ -897,7 +897,7 @@
     move-result-object v2
 
     .line 214
-    .local v2, "param":Landroid/view/ViewGroup$LayoutParams;
+    .local v2, param:Landroid/view/ViewGroup$LayoutParams;
     iget v3, v2, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     invoke-virtual {p0}, Lcom/android/camera/ui/RotateImageView;->getPaddingLeft()I
@@ -913,7 +913,7 @@
     sub-int v1, v3, v4
 
     .line 216
-    .local v1, "miniThumbWidth":I
+    .local v1, miniThumbWidth:I
     iget v3, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-virtual {p0}, Lcom/android/camera/ui/RotateImageView;->getPaddingTop()I
@@ -929,7 +929,7 @@
     sub-int v0, v3, v4
 
     .line 218
-    .local v0, "miniThumbHeight":I
+    .local v0, miniThumbHeight:I
     invoke-static {p1, v1, v0}, Landroid/media/ThumbnailUtils;->extractThumbnail(Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
 
     move-result-object v3
@@ -1040,7 +1040,7 @@
 
 .method public setOnRotateFinishedListener(Lcom/android/camera/ui/RotateImageView$OnRotateFinishedListener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/camera/ui/RotateImageView$OnRotateFinishedListener;
+    .parameter "listener"
 
     .prologue
     .line 65
@@ -1052,7 +1052,7 @@
 
 .method public setOrientation(I)V
     .locals 1
-    .param p1, "degree"    # I
+    .parameter "degree"
 
     .prologue
     .line 91
@@ -1066,8 +1066,8 @@
 
 .method public setOrientation(IZ)V
     .locals 5
-    .param p1, "degree"    # I
-    .param p2, "animation"    # Z
+    .parameter "degree"
+    .parameter "animation"
 
     .prologue
     .line 97
@@ -1125,7 +1125,7 @@
     sub-int v0, v1, v2
 
     .line 108
-    .local v0, "diff":I
+    .local v0, diff:I
     if-ltz v0, :cond_3
 
     .line 112
@@ -1163,14 +1163,14 @@
     iput-wide v1, p0, Lcom/android/camera/ui/RotateImageView;->mAnimationEndTime:J
 
     .line 121
-    .end local v0    # "diff":I
+    .end local v0           #diff:I
     :goto_4
     invoke-virtual {p0}, Lcom/android/camera/ui/RotateImageView;->invalidate()V
 
     goto :goto_1
 
     .line 108
-    .restart local v0    # "diff":I
+    .restart local v0       #diff:I
     :cond_3
     add-int/lit16 v0, v0, 0x168
 
@@ -1183,7 +1183,7 @@
     goto :goto_3
 
     .line 118
-    .end local v0    # "diff":I
+    .end local v0           #diff:I
     :cond_5
     iget v1, p0, Lcom/android/camera/ui/RotateImageView;->mPointTargetDegree:I
 

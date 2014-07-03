@@ -21,6 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/SlideshowPage;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 86
@@ -35,11 +36,11 @@
 # virtual methods
 .method protected onLayout(ZIIII)V
     .locals 4
-    .param p1, "changed"    # Z
-    .param p2, "left"    # I
-    .param p3, "top"    # I
-    .param p4, "right"    # I
-    .param p5, "bottom"    # I
+    .parameter "changed"
+    .parameter "left"
+    .parameter "top"
+    .parameter "right"
+    .parameter "bottom"
 
     .prologue
     const/4 v3, 0x0
@@ -47,7 +48,7 @@
     .line 89
     iget-object v0, p0, Lcom/android/gallery3d/app/SlideshowPage$1;->this$0:Lcom/android/gallery3d/app/SlideshowPage;
 
-    # getter for: Lcom/android/gallery3d/app/SlideshowPage;->mSlideshowView:Lcom/android/gallery3d/ui/SlideshowView;
+    #getter for: Lcom/android/gallery3d/app/SlideshowPage;->mSlideshowView:Lcom/android/gallery3d/ui/SlideshowView;
     invoke-static {v0}, Lcom/android/gallery3d/app/SlideshowPage;->access$000(Lcom/android/gallery3d/app/SlideshowPage;)Lcom/android/gallery3d/ui/SlideshowView;
 
     move-result-object v0
@@ -64,7 +65,7 @@
 
 .method protected onTouch(Landroid/view/MotionEvent;)Z
     .locals 2
-    .param p1, "event"    # Landroid/view/MotionEvent;
+    .parameter "event"
 
     .prologue
     const/4 v1, 0x1
@@ -88,7 +89,7 @@
 
 .method protected renderBackground(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 0
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .parameter "canvas"
 
     .prologue
     .line 102

@@ -26,6 +26,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/gallery3d/app/PhotoPage;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 1084
@@ -38,8 +39,8 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/app/PhotoPage;Lcom/android/gallery3d/app/PhotoPage$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/app/PhotoPage;
-    .param p2, "x1"    # Lcom/android/gallery3d/app/PhotoPage$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 1084
@@ -52,7 +53,7 @@
 # virtual methods
 .method public findIndex(I)I
     .locals 0
-    .param p1, "indexHint"    # I
+    .parameter "indexHint"
 
     .prologue
     .line 1099
@@ -69,7 +70,7 @@
     .line 1089
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$MyDetailsSource;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mModel:Lcom/android/gallery3d/app/PhotoPage$Model;
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mModel:Lcom/android/gallery3d/app/PhotoPage$Model;
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$700(Lcom/android/gallery3d/app/PhotoPage;)Lcom/android/gallery3d/app/PhotoPage$Model;
 
     move-result-object v0
@@ -104,7 +105,7 @@
     .line 1094
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$MyDetailsSource;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mMediaSet:Lcom/android/gallery3d/data/FilterDeleteSet;
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mMediaSet:Lcom/android/gallery3d/data/FilterDeleteSet;
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$1100(Lcom/android/gallery3d/app/PhotoPage;)Lcom/android/gallery3d/data/FilterDeleteSet;
 
     move-result-object v0
@@ -113,7 +114,7 @@
 
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$MyDetailsSource;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mMediaSet:Lcom/android/gallery3d/data/FilterDeleteSet;
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mMediaSet:Lcom/android/gallery3d/data/FilterDeleteSet;
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$1100(Lcom/android/gallery3d/app/PhotoPage;)Lcom/android/gallery3d/data/FilterDeleteSet;
 
     move-result-object v0

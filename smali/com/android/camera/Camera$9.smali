@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 3480
@@ -43,7 +44,7 @@
     .line 3484
     iget-object v0, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mCameraState:I
+    #getter for: Lcom/android/camera/Camera;->mCameraState:I
     invoke-static {v0}, Lcom/android/camera/Camera;->access$6500(Lcom/android/camera/Camera;)I
 
     move-result v0
@@ -76,7 +77,7 @@
     .line 3489
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mFocusAreaSupported:Z
+    #getter for: Lcom/android/camera/Camera;->mFocusAreaSupported:Z
     invoke-static {v1}, Lcom/android/camera/Camera;->access$6600(Lcom/android/camera/Camera;)Z
 
     move-result v1
@@ -85,7 +86,7 @@
 
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mMeteringAreaSupported:Z
+    #getter for: Lcom/android/camera/Camera;->mMeteringAreaSupported:Z
     invoke-static {v1}, Lcom/android/camera/Camera;->access$6700(Lcom/android/camera/Camera;)Z
 
     move-result v1
@@ -101,7 +102,7 @@
     :cond_1
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
-    # invokes: Lcom/android/camera/Camera;->isSelectingCapturedImage()Z
+    #calls: Lcom/android/camera/Camera;->isSelectingCapturedImage()Z
     invoke-static {v1}, Lcom/android/camera/Camera;->access$6800(Lcom/android/camera/Camera;)Z
 
     move-result v1
@@ -143,7 +144,7 @@
     .line 3502
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mCameraState:I
+    #getter for: Lcom/android/camera/Camera;->mCameraState:I
     invoke-static {v1}, Lcom/android/camera/Camera;->access$6500(Lcom/android/camera/Camera;)I
 
     move-result v1
@@ -154,7 +155,7 @@
 
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
+    #getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
     invoke-static {v1}, Lcom/android/camera/Camera;->access$700(Lcom/android/camera/Camera;)Lcom/android/camera/FocusManager;
 
     move-result-object v1
@@ -163,7 +164,7 @@
 
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mMultiSnapStatus:Z
+    #getter for: Lcom/android/camera/Camera;->mMultiSnapStatus:Z
     invoke-static {v1}, Lcom/android/camera/Camera;->access$6900(Lcom/android/camera/Camera;)Z
 
     move-result v1
@@ -203,7 +204,7 @@
     move-result-object v0
 
     .line 3512
-    .local v0, "flashMode":Ljava/lang/String;
+    .local v0, flashMode:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
     iget-boolean v1, v1, Lcom/android/camera/Camera;->mHDRStatus:Z
@@ -239,11 +240,11 @@
     invoke-virtual {v1, v2}, Lcom/android/camera/CameraManager$CameraProxy;->setParameters(Landroid/hardware/Camera$Parameters;)V
 
     .line 3518
-    .end local v0    # "flashMode":Ljava/lang/String;
+    .end local v0           #flashMode:Ljava/lang/String;
     :cond_2
     iget-object v1, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
+    #getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
     invoke-static {v1}, Lcom/android/camera/Camera;->access$700(Lcom/android/camera/Camera;)Lcom/android/camera/FocusManager;
 
     move-result-object v1
@@ -263,13 +264,13 @@
 
 .method public onDeviceKeepMoving(D)V
     .locals 1
-    .param p1, "a"    # D
+    .parameter "a"
 
     .prologue
     .line 3524
     iget-object v0, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
+    #getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
     invoke-static {v0}, Lcom/android/camera/Camera;->access$700(Lcom/android/camera/Camera;)Lcom/android/camera/FocusManager;
 
     move-result-object v0
@@ -278,7 +279,7 @@
 
     iget-object v0, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mMultiSnapStatus:Z
+    #getter for: Lcom/android/camera/Camera;->mMultiSnapStatus:Z
     invoke-static {v0}, Lcom/android/camera/Camera;->access$6900(Lcom/android/camera/Camera;)Z
 
     move-result v0
@@ -288,7 +289,7 @@
     .line 3525
     iget-object v0, p0, Lcom/android/camera/Camera$9;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
+    #getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
     invoke-static {v0}, Lcom/android/camera/Camera;->access$700(Lcom/android/camera/Camera;)Lcom/android/camera/FocusManager;
 
     move-result-object v0

@@ -12,7 +12,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     .line 16
@@ -24,8 +24,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 24
@@ -37,9 +37,9 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyle"    # I
+    .parameter "context"
+    .parameter "attrs"
+    .parameter "defStyle"
 
     .prologue
     .line 20
@@ -53,8 +53,8 @@
 # virtual methods
 .method public initialize(II)V
     .locals 0
-    .param p1, "row"    # I
-    .param p2, "column"    # I
+    .parameter "row"
+    .parameter "column"
 
     .prologue
     .line 28
@@ -69,7 +69,7 @@
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 9
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
+    .parameter "canvas"
 
     .prologue
     .line 34
@@ -78,7 +78,7 @@
     invoke-direct {v5}, Landroid/graphics/Paint;-><init>()V
 
     .line 35
-    .local v5, "paint":Landroid/graphics/Paint;
+    .local v5, paint:Landroid/graphics/Paint;
     const v0, 0x15ffffff
 
     invoke-virtual {v5, v0}, Landroid/graphics/Paint;->setColor(I)V
@@ -88,16 +88,16 @@
 
     move-result v8
 
-    .local v8, "w":I
+    .local v8, w:I
     invoke-virtual {p0}, Lcom/android/camera/ui/SplitLineDrawer;->getHeight()I
 
     move-result v6
 
     .line 37
-    .local v6, "h":I
+    .local v6, h:I
     const/4 v7, 0x1
 
-    .local v7, "i":I
+    .local v7, i:I
     :goto_0
     iget v0, p0, Lcom/android/camera/ui/SplitLineDrawer;->mColumnCount:I
 
@@ -112,7 +112,7 @@
 
     int-to-float v1, v0
 
-    const/high16 v2, 0x40000000
+    const/high16 v2, 0x4000
 
     mul-int v0, v7, v8
 
@@ -145,7 +145,7 @@
     if-ge v7, v0, :cond_1
 
     .line 41
-    const/high16 v1, 0x40000000
+    const/high16 v1, 0x4000
 
     mul-int v0, v7, v6
 

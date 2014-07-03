@@ -21,7 +21,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/Camera;Landroid/content/Context;)V
     .locals 0
-    .param p2, "context"    # Landroid/content/Context;
+    .parameter
+    .parameter "context"
 
     .prologue
     .line 1552
@@ -38,7 +39,7 @@
 # virtual methods
 .method public onOrientationChanged(I)V
     .locals 5
-    .param p1, "orientation"    # I
+    .parameter "orientation"
 
     .prologue
     .line 1561
@@ -47,7 +48,7 @@
     iget v0, v2, Lcom/android/camera/Camera;->mOrientation:I
 
     .line 1562
-    .local v0, "oldOrientation":I
+    .local v0, oldOrientation:I
     const/4 v2, -0x1
 
     if-ne p1, v2, :cond_1
@@ -139,7 +140,7 @@
     rem-int/lit16 v1, v2, 0x168
 
     .line 1576
-    .local v1, "orientationCompensation":I
+    .local v1, orientationCompensation:I
     iget-object v2, p0, Lcom/android/camera/Camera$MyOrientationEventListener;->this$0:Lcom/android/camera/Camera;
 
     iget v2, v2, Lcom/android/camera/Camera;->mOrientationCompensation:I

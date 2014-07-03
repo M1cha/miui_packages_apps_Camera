@@ -146,14 +146,14 @@
 # virtual methods
 .method public calculateTapArea(IIFIIIILandroid/graphics/Rect;)V
     .locals 10
-    .param p1, "focusWidth"    # I
-    .param p2, "focusHeight"    # I
-    .param p3, "areaMultiple"    # F
-    .param p4, "x"    # I
-    .param p5, "y"    # I
-    .param p6, "previewWidth"    # I
-    .param p7, "previewHeight"    # I
-    .param p8, "rect"    # Landroid/graphics/Rect;
+    .parameter "focusWidth"
+    .parameter "focusHeight"
+    .parameter "areaMultiple"
+    .parameter "x"
+    .parameter "y"
+    .parameter "previewWidth"
+    .parameter "previewHeight"
+    .parameter "rect"
 
     .prologue
     .line 109
@@ -164,7 +164,7 @@
     float-to-int v2, v6
 
     .line 110
-    .local v2, "areaWidth":I
+    .local v2, areaWidth:I
     int-to-float v6, p2
 
     mul-float/2addr v6, p3
@@ -172,7 +172,7 @@
     float-to-int v1, v6
 
     .line 111
-    .local v1, "areaHeight":I
+    .local v1, areaHeight:I
     div-int/lit8 v6, v2, 0x2
 
     sub-int v6, p4, v6
@@ -186,7 +186,7 @@
     move-result v3
 
     .line 112
-    .local v3, "left":I
+    .local v3, left:I
     div-int/lit8 v6, v1, 0x2
 
     sub-int v6, p5, v6
@@ -200,7 +200,7 @@
     move-result v5
 
     .line 114
-    .local v5, "top":I
+    .local v5, top:I
     new-instance v4, Landroid/graphics/RectF;
 
     int-to-float v6, v3
@@ -218,7 +218,7 @@
     invoke-direct {v4, v6, v7, v8, v9}, Landroid/graphics/RectF;-><init>(FFFF)V
 
     .line 115
-    .local v4, "rectF":Landroid/graphics/RectF;
+    .local v4, rectF:Landroid/graphics/RectF;
     iget-object v6, p0, Lcom/android/camera/AbstractFocusManager;->mMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v6, v4}, Landroid/graphics/Matrix;->mapRect(Landroid/graphics/RectF;)Z
@@ -234,7 +234,7 @@
 
 .method public setDisplayOrientation(I)V
     .locals 0
-    .param p1, "displayOrientation"    # I
+    .parameter "displayOrientation"
 
     .prologue
     .line 125
@@ -266,7 +266,7 @@
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     .line 89
-    .local v0, "matrix":Landroid/graphics/Matrix;
+    .local v0, matrix:Landroid/graphics/Matrix;
     iget-boolean v1, p0, Lcom/android/camera/AbstractFocusManager;->mMirror:Z
 
     iget v2, p0, Lcom/android/camera/AbstractFocusManager;->mDisplayOrientation:I
@@ -296,14 +296,14 @@
     iput-boolean v1, p0, Lcom/android/camera/AbstractFocusManager;->mInitialized:Z
 
     .line 97
-    .end local v0    # "matrix":Landroid/graphics/Matrix;
+    .end local v0           #matrix:Landroid/graphics/Matrix;
     :cond_0
     return-void
 .end method
 
 .method public setMirror(Z)V
     .locals 0
-    .param p1, "mirror"    # Z
+    .parameter "mirror"
 
     .prologue
     .line 120
@@ -318,8 +318,8 @@
 
 .method protected setRenderSize(II)V
     .locals 1
-    .param p1, "width"    # I
-    .param p2, "height"    # I
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 100

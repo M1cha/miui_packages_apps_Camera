@@ -27,7 +27,7 @@
 # virtual methods
 .method public check(I)Z
     .locals 1
-    .param p1, "type"    # I
+    .parameter "type"
 
     .prologue
     .line 17
@@ -50,7 +50,7 @@
 
 .method public clear(I)V
     .locals 2
-    .param p1, "type"    # I
+    .parameter "type"
 
     .prologue
     .line 21
@@ -68,7 +68,7 @@
 
 .method public request(I)V
     .locals 1
-    .param p1, "type"    # I
+    .parameter "type"
 
     .prologue
     .line 13

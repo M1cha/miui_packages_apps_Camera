@@ -13,7 +13,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/zxing/ui/ViewFinderView;)V
     .locals 0
-    .param p1, "viewfinderView"    # Lcom/android/zxing/ui/ViewFinderView;
+    .parameter "viewfinderView"
 
     .prologue
     .line 11
@@ -30,7 +30,7 @@
 # virtual methods
 .method public foundPossibleResultPoint(Lcom/google/zxing/ResultPoint;)V
     .locals 1
-    .param p1, "point"    # Lcom/google/zxing/ResultPoint;
+    .parameter "point"
 
     .prologue
     .line 16

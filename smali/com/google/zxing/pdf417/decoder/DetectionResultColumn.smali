@@ -12,7 +12,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/zxing/pdf417/decoder/BoundingBox;)V
     .locals 2
-    .param p1, "boundingBox"    # Lcom/google/zxing/pdf417/decoder/BoundingBox;
+    .parameter "boundingBox"
 
     .prologue
     .line 31
@@ -60,7 +60,7 @@
 
 .method final getCodeword(I)Lcom/google/zxing/pdf417/decoder/Codeword;
     .locals 2
-    .param p1, "imageRow"    # I
+    .parameter "imageRow"
 
     .prologue
     .line 73
@@ -77,7 +77,7 @@
 
 .method final getCodewordNearby(I)Lcom/google/zxing/pdf417/decoder/Codeword;
     .locals 4
-    .param p1, "imageRow"    # I
+    .parameter "imageRow"
 
     .prologue
     .line 37
@@ -86,7 +86,7 @@
     move-result-object v0
 
     .line 38
-    .local v0, "codeword":Lcom/google/zxing/pdf417/decoder/Codeword;
+    .local v0, codeword:Lcom/google/zxing/pdf417/decoder/Codeword;
     if-eqz v0, :cond_0
 
     move-object v3, v0
@@ -99,7 +99,7 @@
     :cond_0
     const/4 v1, 0x1
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_1
     const/4 v3, 0x5
 
@@ -113,7 +113,7 @@
     sub-int v2, v3, v1
 
     .line 43
-    .local v2, "nearImageRow":I
+    .local v2, nearImageRow:I
     if-ltz v2, :cond_1
 
     .line 44
@@ -164,7 +164,7 @@
     goto :goto_1
 
     .line 57
-    .end local v2    # "nearImageRow":I
+    .end local v2           #nearImageRow:I
     :cond_3
     const/4 v3, 0x0
 
@@ -183,7 +183,7 @@
 
 .method final imageRowToCodewordIndex(I)I
     .locals 1
-    .param p1, "imageRow"    # I
+    .parameter "imageRow"
 
     .prologue
     .line 61
@@ -200,8 +200,8 @@
 
 .method final setCodeword(ILcom/google/zxing/pdf417/decoder/Codeword;)V
     .locals 2
-    .param p1, "imageRow"    # I
-    .param p2, "codeword"    # Lcom/google/zxing/pdf417/decoder/Codeword;
+    .parameter "imageRow"
+    .parameter "codeword"
 
     .prologue
     .line 69
@@ -231,31 +231,31 @@
     invoke-direct {v2}, Ljava/util/Formatter;-><init>()V
 
     .line 87
-    .local v2, "formatter":Ljava/util/Formatter;
+    .local v2, formatter:Ljava/util/Formatter;
     const/4 v6, 0x0
 
     .line 88
-    .local v6, "row":I
+    .local v6, row:I
     iget-object v0, p0, Lcom/google/zxing/pdf417/decoder/DetectionResultColumn;->codewords:[Lcom/google/zxing/pdf417/decoder/Codeword;
 
-    .local v0, "arr$":[Lcom/google/zxing/pdf417/decoder/Codeword;
+    .local v0, arr$:[Lcom/google/zxing/pdf417/decoder/Codeword;
     array-length v4, v0
 
-    .local v4, "len$":I
+    .local v4, len$:I
     const/4 v3, 0x0
 
-    .local v3, "i$":I
+    .local v3, i$:I
     move v7, v6
 
-    .end local v6    # "row":I
-    .local v7, "row":I
+    .end local v6           #row:I
+    .local v7, row:I
     :goto_0
     if-ge v3, v4, :cond_1
 
     aget-object v1, v0, v3
 
     .line 89
-    .local v1, "codeword":Lcom/google/zxing/pdf417/decoder/Codeword;
+    .local v1, codeword:Lcom/google/zxing/pdf417/decoder/Codeword;
     if-nez v1, :cond_0
 
     .line 90
@@ -265,8 +265,8 @@
 
     add-int/lit8 v6, v7, 0x1
 
-    .end local v7    # "row":I
-    .restart local v6    # "row":I
+    .end local v7           #row:I
+    .restart local v6       #row:I
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
@@ -281,8 +281,8 @@
 
     move v7, v6
 
-    .end local v6    # "row":I
-    .restart local v7    # "row":I
+    .end local v6           #row:I
+    .restart local v7       #row:I
     goto :goto_0
 
     .line 93
@@ -295,8 +295,8 @@
 
     add-int/lit8 v6, v7, 0x1
 
-    .end local v7    # "row":I
-    .restart local v6    # "row":I
+    .end local v7           #row:I
+    .restart local v6       #row:I
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
@@ -330,16 +330,16 @@
     goto :goto_1
 
     .line 95
-    .end local v1    # "codeword":Lcom/google/zxing/pdf417/decoder/Codeword;
-    .end local v6    # "row":I
-    .restart local v7    # "row":I
+    .end local v1           #codeword:Lcom/google/zxing/pdf417/decoder/Codeword;
+    .end local v6           #row:I
+    .restart local v7       #row:I
     :cond_1
     invoke-virtual {v2}, Ljava/util/Formatter;->toString()Ljava/lang/String;
 
     move-result-object v5
 
     .line 96
-    .local v5, "result":Ljava/lang/String;
+    .local v5, result:Ljava/lang/String;
     invoke-virtual {v2}, Ljava/util/Formatter;->close()V
 
     .line 97

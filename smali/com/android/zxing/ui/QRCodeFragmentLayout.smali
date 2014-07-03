@@ -14,8 +14,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 35
@@ -34,7 +34,7 @@
 # virtual methods
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
-    .param p1, "ev"    # Landroid/view/MotionEvent;
+    .parameter "ev"
 
     .prologue
     .line 40
@@ -43,17 +43,17 @@
     move-result v0
 
     .line 41
-    .local v0, "result":Z
+    .local v0, result:Z
     iget-boolean v1, p0, Lcom/android/zxing/ui/QRCodeFragmentLayout;->mDispatchTouchEvent:Z
 
     if-eqz v1, :cond_0
 
     .line 45
-    .end local v0    # "result":Z
+    .end local v0           #result:Z
     :goto_0
     return v0
 
-    .restart local v0    # "result":Z
+    .restart local v0       #result:Z
     :cond_0
     const/4 v0, 0x1
 
@@ -116,7 +116,7 @@
 
 .method public setDispatchTouchEvent(Z)V
     .locals 0
-    .param p1, "toOther"    # Z
+    .parameter "toOther"
 
     .prologue
     .line 49

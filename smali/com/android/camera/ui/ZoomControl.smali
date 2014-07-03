@@ -35,8 +35,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 54
@@ -50,8 +50,8 @@
 # virtual methods
 .method protected addImageView(Landroid/content/Context;I)Landroid/widget/ImageView;
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "iconResourceId"    # I
+    .parameter "context"
+    .parameter "iconResourceId"
 
     .prologue
     .line 63
@@ -60,7 +60,7 @@
     invoke-direct {v0, p1}, Lcom/android/camera/ui/RotateImageView;-><init>(Landroid/content/Context;)V
 
     .line 64
-    .local v0, "image":Landroid/widget/ImageView;
+    .local v0, image:Landroid/widget/ImageView;
     invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 65
@@ -135,7 +135,7 @@
 
 .method protected performZoom(D)V
     .locals 3
-    .param p1, "zoomPercentage"    # D
+    .parameter "zoomPercentage"
 
     .prologue
     .line 109
@@ -148,7 +148,7 @@
     double-to-int v0, v1
 
     .line 110
-    .local v0, "index":I
+    .local v0, index:I
     iget v1, p0, Lcom/android/camera/ui/ZoomControl;->mZoomIndex:I
 
     if-ne v1, v0, :cond_1
@@ -191,7 +191,7 @@
 
 .method public scaleZoomIndex(F)Z
     .locals 3
-    .param p1, "contrast"    # F
+    .parameter "contrast"
 
     .prologue
     .line 142
@@ -208,7 +208,7 @@
     add-int v0, v1, v2
 
     .line 143
-    .local v0, "zoomIndex":I
+    .local v0, zoomIndex:I
     iget v1, p0, Lcom/android/camera/ui/ZoomControl;->mZoomIndex:I
 
     if-ne v0, v1, :cond_0
@@ -248,7 +248,7 @@
     if-le v0, v1, :cond_2
 
     .line 149
-    const/high16 p1, 0x3f800000
+    const/high16 p1, 0x3f80
 
     goto :goto_1
 
@@ -267,7 +267,7 @@
 
 .method public setActivated(Z)V
     .locals 1
-    .param p1, "activated"    # Z
+    .parameter "activated"
 
     .prologue
     .line 133
@@ -289,7 +289,7 @@
 
 .method public setOnZoomChangeListener(Lcom/android/camera/ui/ZoomControl$OnZoomChangedListener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/camera/ui/ZoomControl$OnZoomChangedListener;
+    .parameter "listener"
 
     .prologue
     .line 93
@@ -301,8 +301,8 @@
 
 .method public setOrientation(IZ)V
     .locals 4
-    .param p1, "orientation"    # I
-    .param p2, "animation"    # Z
+    .parameter "orientation"
+    .parameter "animation"
 
     .prologue
     .line 121
@@ -314,10 +314,10 @@
     move-result v0
 
     .line 123
-    .local v0, "count":I
+    .local v0, count:I
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     if-ge v1, v0, :cond_1
 
@@ -327,7 +327,7 @@
     move-result-object v2
 
     .line 125
-    .local v2, "view":Landroid/view/View;
+    .local v2, view:Landroid/view/View;
     instance-of v3, v2, Lcom/android/camera/ui/RotateImageView;
 
     if-eqz v3, :cond_0
@@ -335,7 +335,7 @@
     .line 126
     check-cast v2, Lcom/android/camera/ui/RotateImageView;
 
-    .end local v2    # "view":Landroid/view/View;
+    .end local v2           #view:Landroid/view/View;
     invoke-virtual {v2, p1, p2}, Lcom/android/camera/ui/RotateImageView;->setOrientation(IZ)V
 
     .line 123
@@ -351,7 +351,7 @@
 
 .method public setZoomIndex(I)V
     .locals 3
-    .param p1, "index"    # I
+    .parameter "index"
 
     .prologue
     .line 101
@@ -400,7 +400,7 @@
 
 .method public setZoomMax(I)V
     .locals 0
-    .param p1, "zoomMax"    # I
+    .parameter "zoomMax"
 
     .prologue
     .line 85

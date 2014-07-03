@@ -19,7 +19,7 @@
 
     .prologue
     .line 67
-    const/high16 v0, -0x40800000
+    const/high16 v0, -0x4080
 
     sput v0, Lcom/android/gallery3d/util/GalleryUtils;->sPixelDensity:F
 
@@ -82,7 +82,7 @@
 
 .method public static dpToPixel(F)F
     .locals 1
-    .param p0, "dp"    # F
+    .parameter "dp"
 
     .prologue
     .line 82
@@ -95,7 +95,7 @@
 
 .method public static dpToPixel(I)I
     .locals 1
-    .param p0, "dp"    # I
+    .parameter "dp"
 
     .prologue
     .line 86
@@ -114,8 +114,8 @@
 
 .method public static formatDuration(Landroid/content/Context;I)Ljava/lang/String;
     .locals 10
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "duration"    # I
+    .parameter "context"
+    .parameter "duration"
 
     .prologue
     const/4 v9, 0x2
@@ -128,7 +128,7 @@
     div-int/lit16 v1, p1, 0xe10
 
     .line 284
-    .local v1, "h":I
+    .local v1, h:I
     mul-int/lit16 v4, v1, 0xe10
 
     sub-int v4, p1, v4
@@ -136,7 +136,7 @@
     div-int/lit8 v2, v4, 0x3c
 
     .line 285
-    .local v2, "m":I
+    .local v2, m:I
     mul-int/lit16 v4, v1, 0xe10
 
     mul-int/lit8 v5, v2, 0x3c
@@ -146,7 +146,7 @@
     sub-int v3, p1, v4
 
     .line 287
-    .local v3, "s":I
+    .local v3, s:I
     if-nez v1, :cond_0
 
     .line 288
@@ -175,12 +175,12 @@
     move-result-object v0
 
     .line 292
-    .local v0, "durationValue":Ljava/lang/String;
+    .local v0, durationValue:Ljava/lang/String;
     :goto_0
     return-object v0
 
     .line 290
-    .end local v0    # "durationValue":Ljava/lang/String;
+    .end local v0           #durationValue:Ljava/lang/String;
     :cond_0
     const v4, 0x7f0d01ad
 
@@ -214,15 +214,15 @@
 
     move-result-object v0
 
-    .restart local v0    # "durationValue":Ljava/lang/String;
+    .restart local v0       #durationValue:Ljava/lang/String;
     goto :goto_0
 .end method
 
 .method public static formatLatitudeLongitude(Ljava/lang/String;DD)Ljava/lang/String;
     .locals 4
-    .param p0, "format"    # Ljava/lang/String;
-    .param p1, "latitude"    # D
-    .param p3, "longitude"    # D
+    .parameter "format"
+    .parameter "latitude"
+    .parameter "longitude"
 
     .prologue
     .line 238
@@ -257,7 +257,7 @@
 
 .method public static getBucketId(Ljava/lang/String;)I
     .locals 1
-    .param p0, "path"    # Ljava/lang/String;
+    .parameter "path"
 
     .prologue
     .line 278
@@ -274,7 +274,7 @@
 
 .method public static getBytes(Ljava/lang/String;)[B
     .locals 8
-    .param p0, "in"    # Ljava/lang/String;
+    .parameter "in"
 
     .prologue
     .line 95
@@ -287,37 +287,37 @@
     new-array v6, v7, [B
 
     .line 96
-    .local v6, "result":[B
+    .local v6, result:[B
     const/4 v4, 0x0
 
     .line 97
-    .local v4, "output":I
+    .local v4, output:I
     invoke-virtual {p0}, Ljava/lang/String;->toCharArray()[C
 
     move-result-object v0
 
-    .local v0, "arr$":[C
+    .local v0, arr$:[C
     array-length v3, v0
 
-    .local v3, "len$":I
+    .local v3, len$:I
     const/4 v2, 0x0
 
-    .local v2, "i$":I
+    .local v2, i$:I
     move v5, v4
 
-    .end local v4    # "output":I
-    .local v5, "output":I
+    .end local v4           #output:I
+    .local v5, output:I
     :goto_0
     if-ge v2, v3, :cond_0
 
     aget-char v1, v0, v2
 
     .line 98
-    .local v1, "ch":C
+    .local v1, ch:C
     add-int/lit8 v4, v5, 0x1
 
-    .end local v5    # "output":I
-    .restart local v4    # "output":I
+    .end local v5           #output:I
+    .restart local v4       #output:I
     and-int/lit16 v7, v1, 0xff
 
     int-to-byte v7, v7
@@ -327,8 +327,8 @@
     .line 99
     add-int/lit8 v5, v4, 0x1
 
-    .end local v4    # "output":I
-    .restart local v5    # "output":I
+    .end local v4           #output:I
+    .restart local v5       #output:I
     shr-int/lit8 v7, v1, 0x8
 
     int-to-byte v7, v7
@@ -341,14 +341,14 @@
     goto :goto_0
 
     .line 101
-    .end local v1    # "ch":C
+    .end local v1           #ch:C
     :cond_0
     return-object v6
 .end method
 
 .method public static initialize(Landroid/content/Context;)V
     .locals 4
-    .param p0, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     .line 72
@@ -366,7 +366,7 @@
     invoke-direct {v0}, Landroid/util/DisplayMetrics;-><init>()V
 
     .line 74
-    .local v0, "metrics":Landroid/util/DisplayMetrics;
+    .local v0, metrics:Landroid/util/DisplayMetrics;
     const-string v2, "window"
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -376,7 +376,7 @@
     check-cast v1, Landroid/view/WindowManager;
 
     .line 76
-    .local v1, "wm":Landroid/view/WindowManager;
+    .local v1, wm:Landroid/view/WindowManager;
     invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v2
@@ -389,16 +389,16 @@
     sput v2, Lcom/android/gallery3d/util/GalleryUtils;->sPixelDensity:F
 
     .line 79
-    .end local v0    # "metrics":Landroid/util/DisplayMetrics;
-    .end local v1    # "wm":Landroid/view/WindowManager;
+    .end local v0           #metrics:Landroid/util/DisplayMetrics;
+    .end local v1           #wm:Landroid/view/WindowManager;
     :cond_0
     return-void
 .end method
 
 .method public static isEditorAvailable(Landroid/content/Context;Ljava/lang/String;)Z
     .locals 1
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "mimeType"    # Ljava/lang/String;
+    .parameter "context"
+    .parameter "mimeType"
 
     .prologue
     .line 192
@@ -409,8 +409,8 @@
 
 .method public static isValidLocation(DD)Z
     .locals 3
-    .param p0, "latitude"    # D
-    .param p2, "longitude"    # D
+    .parameter "latitude"
+    .parameter "longitude"
 
     .prologue
     const-wide/16 v1, 0x0
@@ -453,9 +453,9 @@
 
 .method public static showOnMap(Landroid/content/Context;DD)V
     .locals 8
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "latitude"    # D
-    .param p3, "longitude"    # D
+    .parameter "context"
+    .parameter "latitude"
+    .parameter "longitude"
 
     .prologue
     .line 247
@@ -467,7 +467,7 @@
     move-result-object v3
 
     .line 249
-    .local v3, "uri":Ljava/lang/String;
+    .local v3, uri:Ljava/lang/String;
     new-instance v0, Landroid/content/ComponentName;
 
     const-string v5, "com.google.android.apps.maps"
@@ -477,7 +477,7 @@
     invoke-direct {v0, v5, v6}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 251
-    .local v0, "compName":Landroid/content/ComponentName;
+    .local v0, compName:Landroid/content/ComponentName;
     new-instance v5, Landroid/content/Intent;
 
     const-string v6, "android.intent.action.VIEW"
@@ -493,24 +493,24 @@
     move-result-object v2
 
     .line 253
-    .local v2, "mapsIntent":Landroid/content/Intent;
+    .local v2, mapsIntent:Landroid/content/Intent;
     invoke-virtual {p0, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 261
-    .end local v0    # "compName":Landroid/content/ComponentName;
-    .end local v3    # "uri":Ljava/lang/String;
+    .end local v0           #compName:Landroid/content/ComponentName;
+    .end local v3           #uri:Ljava/lang/String;
     :goto_0
     return-void
 
     .line 254
-    .end local v2    # "mapsIntent":Landroid/content/Intent;
+    .end local v2           #mapsIntent:Landroid/content/Intent;
     :catch_0
     move-exception v1
 
     .line 256
-    .local v1, "e":Landroid/content/ActivityNotFoundException;
+    .local v1, e:Landroid/content/ActivityNotFoundException;
     const-string v5, "GalleryUtils"
 
     const-string v6, "GMM activity not found!"
@@ -525,7 +525,7 @@
     move-result-object v4
 
     .line 258
-    .local v4, "url":Ljava/lang/String;
+    .local v4, url:Ljava/lang/String;
     new-instance v2, Landroid/content/Intent;
 
     const-string v5, "android.intent.action.VIEW"
@@ -537,7 +537,7 @@
     invoke-direct {v2, v5, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
     .line 259
-    .restart local v2    # "mapsIntent":Landroid/content/Intent;
+    .restart local v2       #mapsIntent:Landroid/content/Intent;
     invoke-virtual {p0, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_0

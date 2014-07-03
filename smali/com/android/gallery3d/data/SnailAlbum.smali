@@ -12,8 +12,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;Lcom/android/gallery3d/data/MediaItem;)V
     .locals 2
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
-    .param p2, "item"    # Lcom/android/gallery3d/data/MediaItem;
+    .parameter "path"
+    .parameter "item"
 
     .prologue
     .line 29
@@ -35,7 +35,7 @@
     .line 30
     check-cast p2, Lcom/android/gallery3d/data/SnailItem;
 
-    .end local p2    # "item":Lcom/android/gallery3d/data/MediaItem;
+    .end local p2
     iput-object p2, p0, Lcom/android/gallery3d/data/SnailAlbum;->mItem:Lcom/android/gallery3d/data/SnailItem;
 
     .line 31
@@ -46,8 +46,8 @@
 # virtual methods
 .method public getMediaItem(II)Ljava/util/ArrayList;
     .locals 2
-    .param p1, "start"    # I
-    .param p2, "count"    # I
+    .parameter "start"
+    .parameter "count"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -65,7 +65,7 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 43
-    .local v0, "result":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .local v0, result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     if-gtz p1, :cond_0
 
     add-int v1, p1, p2

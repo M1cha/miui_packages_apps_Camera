@@ -50,9 +50,9 @@
 
 .method public drawAnimation(Lcom/android/gallery3d/ui/GLCanvas;Lcom/android/camera/CameraScreenNail;Lcom/android/gallery3d/ui/RawTexture;)Z
     .locals 11
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
-    .param p2, "preview"    # Lcom/android/camera/CameraScreenNail;
-    .param p3, "review"    # Lcom/android/gallery3d/ui/RawTexture;
+    .parameter "canvas"
+    .parameter "preview"
+    .parameter "review"
 
     .prologue
     .line 103
@@ -65,7 +65,7 @@
     sub-long v7, v0, v2
 
     .line 105
-    .local v7, "timeDiff":J
+    .local v7, timeDiff:J
     iget v0, p0, Lcom/android/camera/CaptureAnimManager;->mAnimType:I
 
     const/4 v1, 0x3
@@ -107,7 +107,7 @@
     iget v6, p0, Lcom/android/camera/CaptureAnimManager;->mAnimType:I
 
     .line 109
-    .local v6, "animStep":I
+    .local v6, animStep:I
     iget v0, p0, Lcom/android/camera/CaptureAnimManager;->mAnimType:I
 
     const/4 v1, 0x1
@@ -236,7 +236,7 @@
 
 .method public setOrientation(I)V
     .locals 0
-    .param p1, "animOrientation"    # I
+    .parameter "animOrientation"
 
     .prologue
     .line 53
@@ -248,10 +248,10 @@
 
 .method public startAnimation(IIII)V
     .locals 2
-    .param p1, "x"    # I
-    .param p2, "y"    # I
-    .param p3, "w"    # I
-    .param p4, "h"    # I
+    .parameter "x"
+    .parameter "y"
+    .parameter "w"
+    .parameter "h"
 
     .prologue
     .line 58

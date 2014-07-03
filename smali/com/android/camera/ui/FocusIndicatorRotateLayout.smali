@@ -27,8 +27,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     const/4 v1, 0x0
@@ -56,7 +56,7 @@
 
 .method static synthetic access$200(Lcom/android/camera/ui/FocusIndicatorRotateLayout;)Ljava/lang/Runnable;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/ui/FocusIndicatorRotateLayout;
+    .parameter "x0"
 
     .prologue
     .line 25
@@ -67,8 +67,8 @@
 
 .method static synthetic access$302(Lcom/android/camera/ui/FocusIndicatorRotateLayout;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/ui/FocusIndicatorRotateLayout;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 25
@@ -79,7 +79,7 @@
 
 .method private setDrawable(I)V
     .locals 2
-    .param p1, "resid"    # I
+    .parameter "resid"
 
     .prologue
     .line 44
@@ -105,7 +105,7 @@
     .locals 2
 
     .prologue
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f80
 
     .line 75
     invoke-virtual {p0}, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -136,7 +136,7 @@
 
 .method public showFail(Z)V
     .locals 2
-    .param p1, "timeout"    # Z
+    .parameter "timeout"
 
     .prologue
     .line 67
@@ -165,7 +165,7 @@
     .locals 4
 
     .prologue
-    const/high16 v3, 0x3f400000
+    const/high16 v3, 0x3f40
 
     .line 49
     iget v0, p0, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->mState:I
@@ -210,7 +210,7 @@
 
 .method public showSuccess(Z)V
     .locals 2
-    .param p1, "timeout"    # Z
+    .parameter "timeout"
 
     .prologue
     .line 59

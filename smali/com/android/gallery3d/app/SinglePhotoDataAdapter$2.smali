@@ -34,6 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/SinglePhotoDataAdapter;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 86
@@ -48,6 +49,7 @@
 # virtual methods
 .method public onFutureDone(Lcom/android/gallery3d/util/Future;)V
     .locals 9
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,7 +61,7 @@
     .end annotation
 
     .prologue
-    .local p1, "future":Lcom/android/gallery3d/util/Future;, "Lcom/android/gallery3d/util/Future<Landroid/graphics/BitmapRegionDecoder;>;"
+    .local p1, future:Lcom/android/gallery3d/util/Future;,"Lcom/android/gallery3d/util/Future<Landroid/graphics/BitmapRegionDecoder;>;"
     const/4 v7, 0x0
 
     .line 88
@@ -70,7 +72,7 @@
     check-cast v1, Landroid/graphics/BitmapRegionDecoder;
 
     .line 89
-    .local v1, "decoder":Landroid/graphics/BitmapRegionDecoder;
+    .local v1, decoder:Landroid/graphics/BitmapRegionDecoder;
     if-nez v1, :cond_0
 
     .line 98
@@ -84,20 +86,20 @@
     move-result v4
 
     .line 91
-    .local v4, "width":I
+    .local v4, width:I
     invoke-virtual {v1}, Landroid/graphics/BitmapRegionDecoder;->getHeight()I
 
     move-result v2
 
     .line 92
-    .local v2, "height":I
+    .local v2, height:I
     new-instance v3, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v3}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
     .line 93
-    .local v3, "options":Landroid/graphics/BitmapFactory$Options;
-    const/high16 v5, 0x44800000
+    .local v3, options:Landroid/graphics/BitmapFactory$Options;
+    const/high16 v5, 0x4480
 
     invoke-static {v4, v2}, Ljava/lang/Math;->max(II)I
 
@@ -123,17 +125,17 @@
     move-result-object v0
 
     .line 96
-    .local v0, "bitmap":Landroid/graphics/Bitmap;
+    .local v0, bitmap:Landroid/graphics/Bitmap;
     iget-object v5, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter$2;->this$0:Lcom/android/gallery3d/app/SinglePhotoDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mHandler:Landroid/os/Handler;
     invoke-static {v5}, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->access$300(Lcom/android/gallery3d/app/SinglePhotoDataAdapter;)Landroid/os/Handler;
 
     move-result-object v5
 
     iget-object v6, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter$2;->this$0:Lcom/android/gallery3d/app/SinglePhotoDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mHandler:Landroid/os/Handler;
     invoke-static {v6}, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->access$300(Lcom/android/gallery3d/app/SinglePhotoDataAdapter;)Landroid/os/Handler;
 
     move-result-object v6

@@ -10,7 +10,7 @@
 # direct methods
 .method protected constructor <init>(Lcom/google/zxing/LuminanceSource;)V
     .locals 0
-    .param p1, "source"    # Lcom/google/zxing/LuminanceSource;
+    .parameter "source"
 
     .prologue
     .line 34

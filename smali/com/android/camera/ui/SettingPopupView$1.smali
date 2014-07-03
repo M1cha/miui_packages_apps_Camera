@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ui/SettingPopupView;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 202
@@ -38,7 +39,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 205
@@ -49,7 +50,7 @@
     check-cast v0, Ljava/lang/String;
 
     .line 206
-    .local v0, "key":Ljava/lang/String;
+    .local v0, key:Ljava/lang/String;
     const-string v1, "pref_camera_coloreffect_key"
 
     iget-object v2, p0, Lcom/android/camera/ui/SettingPopupView$1;->this$0:Lcom/android/camera/ui/SettingPopupView;

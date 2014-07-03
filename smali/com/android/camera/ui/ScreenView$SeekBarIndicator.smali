@@ -24,7 +24,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/ui/ScreenView;Landroid/content/Context;)V
     .locals 1
-    .param p2, "context"    # Landroid/content/Context;
+    .parameter
+    .parameter "context"
 
     .prologue
     .line 454
@@ -46,7 +47,7 @@
 # virtual methods
 .method public fastOffset(I)V
     .locals 2
-    .param p1, "offset"    # I
+    .parameter "offset"
 
     .prologue
     .line 461

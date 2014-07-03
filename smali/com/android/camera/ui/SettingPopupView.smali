@@ -70,7 +70,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     .line 59
@@ -108,8 +108,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 55
@@ -147,8 +147,8 @@
 
 .method static synthetic access$002(Lcom/android/camera/ui/SettingPopupView;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/ui/SettingPopupView;
-    .param p1, "x1"    # Z
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 27
@@ -159,7 +159,7 @@
 
 .method static synthetic access$100(Lcom/android/camera/ui/SettingPopupView;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/ui/SettingPopupView;
+    .parameter "x0"
 
     .prologue
     .line 27
@@ -216,7 +216,7 @@
     iget v4, v5, Landroid/util/DisplayMetrics;->widthPixels:I
 
     .line 188
-    .local v4, "w":I
+    .local v4, w:I
     invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
@@ -228,13 +228,13 @@
     iget v0, v5, Landroid/util/DisplayMetrics;->heightPixels:I
 
     .line 189
-    .local v0, "h":I
+    .local v0, h:I
     if-ge v4, v0, :cond_0
 
     move v3, v4
 
     .line 191
-    .local v3, "viewWidth":I
+    .local v3, viewWidth:I
     :goto_0
     invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
 
@@ -251,7 +251,7 @@
     move-result v2
 
     .line 192
-    .local v2, "top":I
+    .local v2, top:I
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mSplitLineDrawer:Lcom/android/camera/ui/SplitLineDrawer;
 
     invoke-virtual {v5}, Lcom/android/camera/ui/SplitLineDrawer;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -261,7 +261,7 @@
     check-cast v1, Landroid/widget/RelativeLayout$LayoutParams;
 
     .line 193
-    .local v1, "layout":Landroid/widget/RelativeLayout$LayoutParams;
+    .local v1, layout:Landroid/widget/RelativeLayout$LayoutParams;
     iget v5, p0, Lcom/android/camera/ui/SettingPopupView;->mBackShadeWidth:I
 
     iput v5, v1, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
@@ -323,9 +323,9 @@
     .line 200
     return-void
 
-    .end local v1    # "layout":Landroid/widget/RelativeLayout$LayoutParams;
-    .end local v2    # "top":I
-    .end local v3    # "viewWidth":I
+    .end local v1           #layout:Landroid/widget/RelativeLayout$LayoutParams;
+    .end local v2           #top:I
+    .end local v3           #viewWidth:I
     :cond_0
     move v3, v0
 
@@ -341,7 +341,7 @@
 
     const-wide/16 v9, 0x12c
 
-    const/high16 v8, 0x3f800000
+    const/high16 v8, 0x3f80
 
     .line 251
     invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getContext()Landroid/content/Context;
@@ -357,7 +357,7 @@
     check-cast v1, Landroid/view/LayoutInflater;
 
     .line 253
-    .local v1, "inflater":Landroid/view/LayoutInflater;
+    .local v1, inflater:Landroid/view/LayoutInflater;
     const v5, 0x7f040003
 
     iget-object v6, p0, Lcom/android/camera/ui/SettingPopupView;->mLinearContent:Landroid/widget/LinearLayout;
@@ -446,7 +446,7 @@
     sub-int v0, v5, v6
 
     .line 276
-    .local v0, "diffW":I
+    .local v0, diffW:I
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mHorizontalSettingPopup:Lcom/android/camera/ui/HorizontalSettingPopup;
 
     invoke-virtual {v5}, Lcom/android/camera/ui/HorizontalSettingPopup;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -460,7 +460,7 @@
     check-cast v2, Landroid/widget/LinearLayout$LayoutParams;
 
     .line 277
-    .local v2, "layout":Landroid/widget/LinearLayout$LayoutParams;
+    .local v2, layout:Landroid/widget/LinearLayout$LayoutParams;
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mPopupGridView:Lcom/android/camera/ui/PopupGridView;
 
     invoke-virtual {v5}, Lcom/android/camera/ui/PopupGridView;->getWidth()I
@@ -527,7 +527,7 @@
     move-result-object v3
 
     .line 287
-    .local v3, "layoutAnchor":Landroid/view/ViewGroup$LayoutParams;
+    .local v3, layoutAnchor:Landroid/view/ViewGroup$LayoutParams;
     invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
@@ -569,7 +569,7 @@
     div-float v4, v5, v6
 
     .line 292
-    .local v4, "sx":F
+    .local v4, sx:F
     iget-object v5, p0, Lcom/android/camera/ui/SettingPopupView;->mTopView:Landroid/view/View;
 
     invoke-virtual {v5, v4}, Landroid/view/View;->setScaleX(F)V
@@ -676,7 +676,7 @@
     .locals 3
 
     .prologue
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f80
 
     const/4 v1, 0x0
 
@@ -724,7 +724,7 @@
     move-result v1
 
     .line 310
-    .local v1, "margin":I
+    .local v1, margin:I
     invoke-virtual {p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
@@ -740,13 +740,13 @@
     move-result v0
 
     .line 311
-    .local v0, "drawableHeigh":I
+    .local v0, drawableHeigh:I
     mul-int/lit8 v4, v1, 0x2
 
     add-int v2, v4, v0
 
     .line 312
-    .local v2, "newH":I
+    .local v2, newH:I
     iget-object v4, p0, Lcom/android/camera/ui/SettingPopupView;->mPopupGridView:Lcom/android/camera/ui/PopupGridView;
 
     invoke-virtual {v4}, Lcom/android/camera/ui/PopupGridView;->getHeight()I
@@ -754,7 +754,7 @@
     move-result v3
 
     .line 313
-    .local v3, "oldH":I
+    .local v3, oldH:I
     iget-object v4, p0, Lcom/android/camera/ui/SettingPopupView;->mTopView:Landroid/view/View;
 
     invoke-virtual {v4}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -874,7 +874,7 @@
 
     int-to-float v5, v5
 
-    const/high16 v6, 0x40000000
+    const/high16 v6, 0x4000
 
     div-float/2addr v5, v6
 
@@ -894,9 +894,10 @@
 
 .method public initializeSettingScreen(Lcom/android/camera/PreferenceGroup;Ljava/util/List;Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;I)V
     .locals 19
-    .param p1, "preferenceGroup"    # Lcom/android/camera/PreferenceGroup;
-    .param p3, "indicatorClickListener"    # Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
-    .param p4, "columns"    # I
+    .parameter "preferenceGroup"
+    .parameter
+    .parameter "indicatorClickListener"
+    .parameter "columns"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -912,7 +913,7 @@
 
     .prologue
     .line 91
-    .local p2, "keys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .local p2, keys:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingPopupView;->getRootView()Landroid/view/View;
 
     move-result-object v2
@@ -1006,7 +1007,7 @@
     check-cast v13, Landroid/widget/RelativeLayout$LayoutParams;
 
     .line 103
-    .local v13, "layout":Landroid/widget/RelativeLayout$LayoutParams;
+    .local v13, layout:Landroid/widget/RelativeLayout$LayoutParams;
     iget v2, v13, Landroid/widget/RelativeLayout$LayoutParams;->width:I
 
     move-object/from16 v0, p0
@@ -1038,7 +1039,7 @@
     move/from16 v18, v0
 
     .line 107
-    .local v18, "w":I
+    .local v18, w:I
     invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -1050,7 +1051,7 @@
     iget v8, v2, Landroid/util/DisplayMetrics;->heightPixels:I
 
     .line 108
-    .local v8, "h":I
+    .local v8, h:I
     move/from16 v0, v18
 
     if-ge v0, v8, :cond_2
@@ -1058,7 +1059,7 @@
     move/from16 v17, v18
 
     .line 110
-    .local v17, "viewWidth":I
+    .local v17, viewWidth:I
     :goto_1
     move-object/from16 v0, p0
 
@@ -1081,7 +1082,7 @@
     div-int v6, v2, v3
 
     .line 111
-    .local v6, "childWidth":I
+    .local v6, childWidth:I
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/android/camera/ui/SettingPopupView;->mMarginHorizon:I
@@ -1149,7 +1150,7 @@
     check-cast v11, Landroid/view/LayoutInflater;
 
     .line 122
-    .local v11, "inflater":Landroid/view/LayoutInflater;
+    .local v11, inflater:Landroid/view/LayoutInflater;
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/camera/ui/SettingPopupView;->mRotatables:Ljava/util/ArrayList;
@@ -1159,7 +1160,7 @@
     .line 123
     const/4 v9, 0x0
 
-    .local v9, "i":I
+    .local v9, i:I
     :goto_3
     invoke-interface/range {p2 .. p2}, Ljava/util/List;->size()I
 
@@ -1187,7 +1188,7 @@
     check-cast v15, Lcom/android/camera/IconListPreference;
 
     .line 126
-    .local v15, "pref":Lcom/android/camera/IconListPreference;
+    .local v15, pref:Lcom/android/camera/IconListPreference;
     if-eqz v15, :cond_0
 
     .line 127
@@ -1204,7 +1205,7 @@
     check-cast v12, Lcom/android/camera/ui/PopupMenuItem;
 
     .line 129
-    .local v12, "item":Lcom/android/camera/ui/PopupMenuItem;
+    .local v12, item:Lcom/android/camera/ui/PopupMenuItem;
     const v2, 0x7f0c0038
 
     invoke-virtual {v12, v2}, Lcom/android/camera/ui/PopupMenuItem;->findViewById(I)Landroid/view/View;
@@ -1214,7 +1215,7 @@
     check-cast v10, Landroid/widget/ImageView;
 
     .line 130
-    .local v10, "image":Landroid/widget/ImageView;
+    .local v10, image:Landroid/widget/ImageView;
     const v2, 0x7f0c0039
 
     invoke-virtual {v12, v2}, Lcom/android/camera/ui/PopupMenuItem;->findViewById(I)Landroid/view/View;
@@ -1224,7 +1225,7 @@
     check-cast v16, Landroid/widget/TextView;
 
     .line 132
-    .local v16, "text":Landroid/widget/TextView;
+    .local v16, text:Landroid/widget/TextView;
     invoke-virtual {v15}, Lcom/android/camera/IconListPreference;->getSingleIcon()I
 
     move-result v2
@@ -1269,31 +1270,31 @@
     invoke-virtual {v2, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 123
-    .end local v10    # "image":Landroid/widget/ImageView;
-    .end local v12    # "item":Lcom/android/camera/ui/PopupMenuItem;
-    .end local v16    # "text":Landroid/widget/TextView;
+    .end local v10           #image:Landroid/widget/ImageView;
+    .end local v12           #item:Lcom/android/camera/ui/PopupMenuItem;
+    .end local v16           #text:Landroid/widget/TextView;
     :cond_0
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_3
 
     .line 98
-    .end local v6    # "childWidth":I
-    .end local v8    # "h":I
-    .end local v9    # "i":I
-    .end local v11    # "inflater":Landroid/view/LayoutInflater;
-    .end local v13    # "layout":Landroid/widget/RelativeLayout$LayoutParams;
-    .end local v15    # "pref":Lcom/android/camera/IconListPreference;
-    .end local v17    # "viewWidth":I
-    .end local v18    # "w":I
+    .end local v6           #childWidth:I
+    .end local v8           #h:I
+    .end local v9           #i:I
+    .end local v11           #inflater:Landroid/view/LayoutInflater;
+    .end local v13           #layout:Landroid/widget/RelativeLayout$LayoutParams;
+    .end local v15           #pref:Lcom/android/camera/IconListPreference;
+    .end local v17           #viewWidth:I
+    .end local v18           #w:I
     :cond_1
     const/4 v2, 0x1
 
     goto/16 :goto_0
 
-    .restart local v8    # "h":I
-    .restart local v13    # "layout":Landroid/widget/RelativeLayout$LayoutParams;
-    .restart local v18    # "w":I
+    .restart local v8       #h:I
+    .restart local v13       #layout:Landroid/widget/RelativeLayout$LayoutParams;
+    .restart local v18       #w:I
     :cond_2
     move/from16 v17, v8
 
@@ -1301,8 +1302,8 @@
     goto/16 :goto_1
 
     .line 117
-    .restart local v6    # "childWidth":I
-    .restart local v17    # "viewWidth":I
+    .restart local v6       #childWidth:I
+    .restart local v17       #viewWidth:I
     :cond_3
     move-object/from16 v0, p0
 
@@ -1332,8 +1333,8 @@
     goto/16 :goto_2
 
     .line 140
-    .restart local v9    # "i":I
-    .restart local v11    # "inflater":Landroid/view/LayoutInflater;
+    .restart local v9       #i:I
+    .restart local v11       #inflater:Landroid/view/LayoutInflater;
     :cond_4
     move-object/from16 v0, p0
 
@@ -1376,7 +1377,7 @@
     move-result-object v14
 
     .line 146
-    .local v14, "layoutAnchor":Landroid/view/ViewGroup$LayoutParams;
+    .local v14, layoutAnchor:Landroid/view/ViewGroup$LayoutParams;
     invoke-virtual/range {p0 .. p0}, Lcom/android/camera/ui/SettingPopupView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -1529,8 +1530,8 @@
 
 .method public onIndicatorClick(Landroid/view/View;Ljava/lang/String;)V
     .locals 0
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "key"    # Ljava/lang/String;
+    .parameter "view"
+    .parameter "key"
 
     .prologue
     .line 64
@@ -1539,11 +1540,11 @@
 
 .method protected onLayout(ZIIII)V
     .locals 0
-    .param p1, "changed"    # Z
-    .param p2, "l"    # I
-    .param p3, "t"    # I
-    .param p4, "r"    # I
-    .param p5, "b"    # I
+    .parameter "changed"
+    .parameter "l"
+    .parameter "t"
+    .parameter "r"
+    .parameter "b"
 
     .prologue
     .line 375
@@ -1555,8 +1556,8 @@
 
 .method protected onMeasure(II)V
     .locals 0
-    .param p1, "widthMeasureSpec"    # I
-    .param p2, "heightMeasureSpec"    # I
+    .parameter "widthMeasureSpec"
+    .parameter "heightMeasureSpec"
 
     .prologue
     .line 370
@@ -1587,7 +1588,7 @@
 
 .method public resetSettings(Lcom/android/camera/ComboPreferences;)V
     .locals 2
-    .param p1, "preferences"    # Lcom/android/camera/ComboPreferences;
+    .parameter "preferences"
 
     .prologue
     .line 379
@@ -1640,8 +1641,8 @@
 
 .method public setEnabled(Ljava/lang/String;Z)V
     .locals 3
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "enabled"    # Z
+    .parameter "key"
+    .parameter "enabled"
 
     .prologue
     .line 162
@@ -1651,7 +1652,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -1666,7 +1667,7 @@
     check-cast v1, Lcom/android/camera/ui/Rotatable;
 
     .line 163
-    .local v1, "r":Lcom/android/camera/ui/Rotatable;
+    .local v1, r:Lcom/android/camera/ui/Rotatable;
     instance-of v2, v1, Lcom/android/camera/ui/PopupMenuItem;
 
     if-eqz v2, :cond_0
@@ -1688,7 +1689,7 @@
     .line 164
     check-cast v1, Lcom/android/camera/ui/PopupMenuItem;
 
-    .end local v1    # "r":Lcom/android/camera/ui/Rotatable;
+    .end local v1           #r:Lcom/android/camera/ui/Rotatable;
     invoke-virtual {v1, p2}, Lcom/android/camera/ui/PopupMenuItem;->setEnabled(Z)V
 
     .line 165
@@ -1703,7 +1704,7 @@
 
 .method public setEnabled(Z)V
     .locals 4
-    .param p1, "enabled"    # Z
+    .parameter "enabled"
 
     .prologue
     .line 153
@@ -1713,7 +1714,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :cond_0
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -1729,7 +1730,7 @@
     check-cast v1, Lcom/android/camera/ui/Rotatable;
 
     .line 154
-    .local v1, "r":Lcom/android/camera/ui/Rotatable;
+    .local v1, r:Lcom/android/camera/ui/Rotatable;
     instance-of v2, v1, Lcom/android/camera/ui/PopupMenuItem;
 
     if-eqz v2, :cond_0
@@ -1753,7 +1754,7 @@
     .line 155
     check-cast v1, Lcom/android/camera/ui/PopupMenuItem;
 
-    .end local v1    # "r":Lcom/android/camera/ui/Rotatable;
+    .end local v1           #r:Lcom/android/camera/ui/Rotatable;
     invoke-virtual {v1, p1}, Lcom/android/camera/ui/PopupMenuItem;->setEnabled(Z)V
 
     goto :goto_0
@@ -1768,7 +1769,7 @@
 
 .method public setVisibility(I)V
     .locals 1
-    .param p1, "visibility"    # I
+    .parameter "visibility"
 
     .prologue
     .line 173
@@ -1815,7 +1816,7 @@
 
 .method public updateExitLayout(Z)V
     .locals 3
-    .param p1, "isMenuShow"    # Z
+    .parameter "isMenuShow"
 
     .prologue
     .line 358
@@ -1843,7 +1844,7 @@
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
     .line 360
-    .local v0, "layout":Landroid/widget/RelativeLayout$LayoutParams;
+    .local v0, layout:Landroid/widget/RelativeLayout$LayoutParams;
     const/4 v2, 0x2
 
     if-eqz p1, :cond_2
@@ -1887,7 +1888,7 @@
 
 .method public updateExitView(Landroid/widget/TextView;)V
     .locals 2
-    .param p1, "view"    # Landroid/widget/TextView;
+    .parameter "view"
 
     .prologue
     .line 336

@@ -26,6 +26,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 858
@@ -38,8 +39,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/Camera;Lcom/android/camera/Camera$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/camera/Camera;
-    .param p2, "x1"    # Lcom/android/camera/Camera$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 858
@@ -55,7 +56,7 @@
     .line 867
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mBurstShotTitle:Ljava/lang/String;
+    #getter for: Lcom/android/camera/Camera;->mBurstShotTitle:Ljava/lang/String;
     invoke-static {v0}, Lcom/android/camera/Camera;->access$5400(Lcom/android/camera/Camera;)Ljava/lang/String;
 
     move-result-object v0
@@ -73,7 +74,7 @@
 
     move-result-object v1
 
-    # setter for: Lcom/android/camera/Camera;->mBurstShotTitle:Ljava/lang/String;
+    #setter for: Lcom/android/camera/Camera;->mBurstShotTitle:Ljava/lang/String;
     invoke-static {v0, v1}, Lcom/android/camera/Camera;->access$5402(Lcom/android/camera/Camera;Ljava/lang/String;)Ljava/lang/String;
 
     .line 870
@@ -84,7 +85,7 @@
 
     iget-object v1, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mBurstShotTitle:Ljava/lang/String;
+    #getter for: Lcom/android/camera/Camera;->mBurstShotTitle:Ljava/lang/String;
     invoke-static {v1}, Lcom/android/camera/Camera;->access$5400(Lcom/android/camera/Camera;)Ljava/lang/String;
 
     move-result-object v1
@@ -101,7 +102,7 @@
 
     iget-object v1, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mMultiSnappedCount:I
+    #getter for: Lcom/android/camera/Camera;->mMultiSnappedCount:I
     invoke-static {v1}, Lcom/android/camera/Camera;->access$2300(Lcom/android/camera/Camera;)I
 
     move-result v1
@@ -121,8 +122,8 @@
 # virtual methods
 .method public onPictureTaken([BLandroid/hardware/Camera;)V
     .locals 11
-    .param p1, "jpegData"    # [B
-    .param p2, "camera"    # Landroid/hardware/Camera;
+    .parameter "jpegData"
+    .parameter "camera"
 
     .prologue
     .line 875
@@ -143,13 +144,12 @@
     :cond_1
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # ++operator for: Lcom/android/camera/Camera;->mMultiSnappedCount:I
     invoke-static {v0}, Lcom/android/camera/Camera;->access$2304(Lcom/android/camera/Camera;)I
 
     .line 880
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mTextMulitSnapNumber:Landroid/widget/TextView;
+    #getter for: Lcom/android/camera/Camera;->mTextMulitSnapNumber:Landroid/widget/TextView;
     invoke-static {v0}, Lcom/android/camera/Camera;->access$2400(Lcom/android/camera/Camera;)Landroid/widget/TextView;
 
     move-result-object v0
@@ -166,7 +166,7 @@
 
     iget-object v2, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mMultiSnappedCount:I
+    #getter for: Lcom/android/camera/Camera;->mMultiSnappedCount:I
     invoke-static {v2}, Lcom/android/camera/Camera;->access$2300(Lcom/android/camera/Camera;)I
 
     move-result v2
@@ -187,10 +187,10 @@
     move-result v8
 
     .line 883
-    .local v8, "orientation":I
+    .local v8, orientation:I
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mJpegRotation:I
+    #getter for: Lcom/android/camera/Camera;->mJpegRotation:I
     invoke-static {v0}, Lcom/android/camera/Camera;->access$4300(Lcom/android/camera/Camera;)I
 
     move-result v0
@@ -204,7 +204,7 @@
     .line 884
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mMultiSnapPictureSize:Landroid/hardware/Camera$Size;
+    #getter for: Lcom/android/camera/Camera;->mMultiSnapPictureSize:Landroid/hardware/Camera$Size;
     invoke-static {v0}, Lcom/android/camera/Camera;->access$5500(Lcom/android/camera/Camera;)Landroid/hardware/Camera$Size;
 
     move-result-object v0
@@ -212,10 +212,10 @@
     iget v5, v0, Landroid/hardware/Camera$Size;->width:I
 
     .line 885
-    .local v5, "width":I
+    .local v5, width:I
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mMultiSnapPictureSize:Landroid/hardware/Camera$Size;
+    #getter for: Lcom/android/camera/Camera;->mMultiSnapPictureSize:Landroid/hardware/Camera$Size;
     invoke-static {v0}, Lcom/android/camera/Camera;->access$5500(Lcom/android/camera/Camera;)Landroid/hardware/Camera$Size;
 
     move-result-object v0
@@ -223,11 +223,11 @@
     iget v6, v0, Landroid/hardware/Camera$Size;->height:I
 
     .line 890
-    .local v6, "height":I
+    .local v6, height:I
     :goto_1
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
+    #getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
     invoke-static {v0}, Lcom/android/camera/Camera;->access$700(Lcom/android/camera/Camera;)Lcom/android/camera/FocusManager;
 
     move-result-object v0
@@ -240,17 +240,17 @@
     move-result-object v3
 
     .line 892
-    .local v3, "title":Ljava/lang/String;
+    .local v3, title:Ljava/lang/String;
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mImageSaver:Lcom/android/camera/Camera$ImageSaver;
+    #getter for: Lcom/android/camera/Camera;->mImageSaver:Lcom/android/camera/Camera$ImageSaver;
     invoke-static {v0}, Lcom/android/camera/Camera;->access$1700(Lcom/android/camera/Camera;)Lcom/android/camera/Camera$ImageSaver;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mImageNamer:Lcom/android/camera/Camera$ImageNamer;
+    #getter for: Lcom/android/camera/Camera;->mImageNamer:Lcom/android/camera/Camera$ImageNamer;
     invoke-static {v1}, Lcom/android/camera/Camera;->access$4400(Lcom/android/camera/Camera;)Lcom/android/camera/Camera$ImageNamer;
 
     move-result-object v1
@@ -274,7 +274,7 @@
     .line 896
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mMultiSnappedCount:I
+    #getter for: Lcom/android/camera/Camera;->mMultiSnappedCount:I
     invoke-static {v0}, Lcom/android/camera/Camera;->access$2300(Lcom/android/camera/Camera;)I
 
     move-result v0
@@ -285,7 +285,7 @@
 
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mMutliSnapStopRequest:Z
+    #getter for: Lcom/android/camera/Camera;->mMutliSnapStopRequest:Z
     invoke-static {v0}, Lcom/android/camera/Camera;->access$5600(Lcom/android/camera/Camera;)Z
 
     move-result v0
@@ -302,7 +302,7 @@
 
     iget-object v2, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mMultiSnappedCount:I
+    #getter for: Lcom/android/camera/Camera;->mMultiSnappedCount:I
     invoke-static {v2}, Lcom/android/camera/Camera;->access$2300(Lcom/android/camera/Camera;)I
 
     move-result v2
@@ -314,19 +314,19 @@
     .line 899
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # invokes: Lcom/android/camera/Camera;->handleMultiSnapDone()V
+    #calls: Lcom/android/camera/Camera;->handleMultiSnapDone()V
     invoke-static {v0}, Lcom/android/camera/Camera;->access$5700(Lcom/android/camera/Camera;)V
 
     goto/16 :goto_0
 
     .line 887
-    .end local v3    # "title":Ljava/lang/String;
-    .end local v5    # "width":I
-    .end local v6    # "height":I
+    .end local v3           #title:Ljava/lang/String;
+    .end local v5           #width:I
+    .end local v6           #height:I
     :cond_3
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mMultiSnapPictureSize:Landroid/hardware/Camera$Size;
+    #getter for: Lcom/android/camera/Camera;->mMultiSnapPictureSize:Landroid/hardware/Camera$Size;
     invoke-static {v0}, Lcom/android/camera/Camera;->access$5500(Lcom/android/camera/Camera;)Landroid/hardware/Camera$Size;
 
     move-result-object v0
@@ -334,21 +334,21 @@
     iget v5, v0, Landroid/hardware/Camera$Size;->height:I
 
     .line 888
-    .restart local v5    # "width":I
+    .restart local v5       #width:I
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mMultiSnapPictureSize:Landroid/hardware/Camera$Size;
+    #getter for: Lcom/android/camera/Camera;->mMultiSnapPictureSize:Landroid/hardware/Camera$Size;
     invoke-static {v0}, Lcom/android/camera/Camera;->access$5500(Lcom/android/camera/Camera;)Landroid/hardware/Camera$Size;
 
     move-result-object v0
 
     iget v6, v0, Landroid/hardware/Camera$Size;->width:I
 
-    .restart local v6    # "height":I
+    .restart local v6       #height:I
     goto :goto_1
 
     .line 910
-    .restart local v3    # "title":Ljava/lang/String;
+    .restart local v3       #title:Ljava/lang/String;
     :cond_4
     iget-object v0, p0, Lcom/android/camera/Camera$JpegQuickPictureCallback;->this$0:Lcom/android/camera/Camera;
 
@@ -361,7 +361,7 @@
 
 .method public reset(Landroid/location/Location;)Lcom/android/camera/Camera$JpegQuickPictureCallback;
     .locals 0
-    .param p1, "loc"    # Landroid/location/Location;
+    .parameter "loc"
 
     .prologue
     .line 862

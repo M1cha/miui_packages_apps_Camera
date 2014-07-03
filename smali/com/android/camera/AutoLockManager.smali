@@ -46,7 +46,7 @@
 
 .method private constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     .line 24
@@ -96,7 +96,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/AutoLockManager;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/AutoLockManager;
+    .parameter "x0"
 
     .prologue
     .line 13
@@ -107,7 +107,7 @@
 
 .method public static getInstance(Landroid/content/Context;)Lcom/android/camera/AutoLockManager;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     .line 36
@@ -120,17 +120,17 @@
     check-cast v0, Lcom/android/camera/AutoLockManager;
 
     .line 37
-    .local v0, "instance":Lcom/android/camera/AutoLockManager;
+    .local v0, instance:Lcom/android/camera/AutoLockManager;
     if-nez v0, :cond_0
 
     .line 38
     new-instance v0, Lcom/android/camera/AutoLockManager;
 
-    .end local v0    # "instance":Lcom/android/camera/AutoLockManager;
+    .end local v0           #instance:Lcom/android/camera/AutoLockManager;
     invoke-direct {v0, p0}, Lcom/android/camera/AutoLockManager;-><init>(Landroid/content/Context;)V
 
     .line 39
-    .restart local v0    # "instance":Lcom/android/camera/AutoLockManager;
+    .restart local v0       #instance:Lcom/android/camera/AutoLockManager;
     sget-object v1, Lcom/android/camera/AutoLockManager;->sMap:Ljava/util/HashMap;
 
     invoke-virtual {v1, p0, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -157,7 +157,7 @@
     invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
     .line 74
-    .local v0, "handlerThread":Landroid/os/HandlerThread;
+    .local v0, handlerThread:Landroid/os/HandlerThread;
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
     .line 75
@@ -172,7 +172,7 @@
     iput-object v1, p0, Lcom/android/camera/AutoLockManager;->mHandler:Landroid/os/Handler;
 
     .line 84
-    .end local v0    # "handlerThread":Landroid/os/HandlerThread;
+    .end local v0           #handlerThread:Landroid/os/HandlerThread;
     :cond_0
     return-void
 .end method
@@ -198,20 +198,20 @@
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 89
-    .local v0, "intent":Landroid/content/Intent;
+    .local v0, intent:Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/camera/AutoLockManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     .line 91
-    .end local v0    # "intent":Landroid/content/Intent;
+    .end local v0           #intent:Landroid/content/Intent;
     :cond_0
     return-void
 .end method
 
 .method public static removeInstance(Landroid/content/Context;)V
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     .line 45
@@ -224,7 +224,7 @@
     check-cast v0, Lcom/android/camera/AutoLockManager;
 
     .line 46
-    .local v0, "instance":Lcom/android/camera/AutoLockManager;
+    .local v0, instance:Lcom/android/camera/AutoLockManager;
     if-eqz v0, :cond_0
 
     iget-object v1, v0, Lcom/android/camera/AutoLockManager;->mHandler:Landroid/os/Handler;

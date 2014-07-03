@@ -10,7 +10,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     .line 27
@@ -24,8 +24,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 20
@@ -52,7 +52,7 @@
 
 .method private findSupportedDefaultValue([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 11
-    .param p1, "values"    # [Ljava/lang/CharSequence;
+    .parameter "values"
 
     .prologue
     const/4 v9, 0x0
@@ -63,7 +63,7 @@
     move-result-object v6
 
     .line 56
-    .local v6, "supportedValues":[Ljava/lang/CharSequence;
+    .local v6, supportedValues:[Ljava/lang/CharSequence;
     if-nez v6, :cond_1
 
     move-object v8, v9
@@ -77,43 +77,43 @@
     :cond_1
     move-object v0, v6
 
-    .local v0, "arr$":[Ljava/lang/CharSequence;
+    .local v0, arr$:[Ljava/lang/CharSequence;
     array-length v4, v0
 
-    .local v4, "len$":I
+    .local v4, len$:I
     const/4 v2, 0x0
 
-    .local v2, "i$":I
+    .local v2, i$:I
     move v3, v2
 
-    .end local v0    # "arr$":[Ljava/lang/CharSequence;
-    .end local v2    # "i$":I
-    .end local v4    # "len$":I
-    .local v3, "i$":I
+    .end local v0           #arr$:[Ljava/lang/CharSequence;
+    .end local v2           #i$:I
+    .end local v4           #len$:I
+    .local v3, i$:I
     :goto_1
     if-ge v3, v4, :cond_4
 
     aget-object v7, v0, v3
 
     .line 61
-    .local v7, "sv":Ljava/lang/CharSequence;
+    .local v7, sv:Ljava/lang/CharSequence;
     move-object v1, p1
 
-    .local v1, "arr$":[Ljava/lang/CharSequence;
+    .local v1, arr$:[Ljava/lang/CharSequence;
     array-length v5, v1
 
-    .local v5, "len$":I
+    .local v5, len$:I
     const/4 v2, 0x0
 
-    .end local v3    # "i$":I
-    .restart local v2    # "i$":I
+    .end local v3           #i$:I
+    .restart local v2       #i$:I
     :goto_2
     if-ge v2, v5, :cond_3
 
     aget-object v8, v1, v2
 
     .line 62
-    .local v8, "v":Ljava/lang/CharSequence;
+    .local v8, v:Ljava/lang/CharSequence;
     if-eqz v7, :cond_2
 
     invoke-virtual {v7, v8}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
@@ -129,19 +129,19 @@
     goto :goto_2
 
     .line 60
-    .end local v8    # "v":Ljava/lang/CharSequence;
+    .end local v8           #v:Ljava/lang/CharSequence;
     :cond_3
     add-int/lit8 v2, v3, 0x1
 
     move v3, v2
 
-    .end local v2    # "i$":I
-    .restart local v3    # "i$":I
+    .end local v2           #i$:I
+    .restart local v3       #i$:I
     goto :goto_1
 
-    .end local v1    # "arr$":[Ljava/lang/CharSequence;
-    .end local v5    # "len$":I
-    .end local v7    # "sv":Ljava/lang/CharSequence;
+    .end local v1           #arr$:[Ljava/lang/CharSequence;
+    .end local v5           #len$:I
+    .end local v7           #sv:Ljava/lang/CharSequence;
     :cond_4
     move-object v8, v9
 
@@ -153,6 +153,7 @@
 # virtual methods
 .method public filterUnsupported(Ljava/util/List;)V
     .locals 8
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -165,37 +166,37 @@
 
     .prologue
     .line 72
-    .local p1, "supported":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .local p1, supported:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {p0}, Lcom/android/camera/ui/PreviewListPreference;->getEntries()[Ljava/lang/CharSequence;
 
     move-result-object v4
 
     .line 73
-    .local v4, "oldEntries":[Ljava/lang/CharSequence;
+    .local v4, oldEntries:[Ljava/lang/CharSequence;
     invoke-virtual {p0}, Lcom/android/camera/ui/PreviewListPreference;->getEntryValues()[Ljava/lang/CharSequence;
 
     move-result-object v5
 
     .line 74
-    .local v5, "oldEntriyValues":[Ljava/lang/CharSequence;
+    .local v5, oldEntriyValues:[Ljava/lang/CharSequence;
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 75
-    .local v0, "entries":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
+    .local v0, entries:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 76
-    .local v1, "entryValues":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
+    .local v1, entryValues:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
     const/4 v2, 0x0
 
-    .local v2, "i":I
+    .local v2, i:I
     array-length v3, v4
 
-    .local v3, "len":I
+    .local v3, len:I
     :goto_0
     if-ge v2, v3, :cond_1
 
@@ -235,7 +236,7 @@
     move-result v6
 
     .line 83
-    .local v6, "size":I
+    .local v6, size:I
     new-array v7, v6, [Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v7}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
@@ -263,8 +264,8 @@
 
 .method protected onGetDefaultValue(Landroid/content/res/TypedArray;I)Ljava/lang/Object;
     .locals 3
-    .param p1, "a"    # Landroid/content/res/TypedArray;
-    .param p2, "index"    # I
+    .parameter "a"
+    .parameter "index"
 
     .prologue
     .line 38
@@ -273,7 +274,7 @@
     move-result-object v0
 
     .line 39
-    .local v0, "tv":Landroid/util/TypedValue;
+    .local v0, tv:Landroid/util/TypedValue;
     if-eqz v0, :cond_0
 
     iget v1, v0, Landroid/util/TypedValue;->type:I
@@ -314,7 +315,7 @@
 
 .method public setEntryValues([Ljava/lang/CharSequence;)V
     .locals 1
-    .param p1, "entryValues"    # [Ljava/lang/CharSequence;
+    .parameter "entryValues"
 
     .prologue
     .line 48
@@ -341,7 +342,7 @@
 
 .method public setValue(Ljava/lang/String;)V
     .locals 1
-    .param p1, "value"    # Ljava/lang/String;
+    .parameter "value"
 
     .prologue
     .line 32

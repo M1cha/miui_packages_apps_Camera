@@ -34,6 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/SinglePhotoDataAdapter;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 102
@@ -48,6 +49,7 @@
 # virtual methods
 .method public onFutureDone(Lcom/android/gallery3d/util/Future;)V
     .locals 3
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -60,17 +62,17 @@
 
     .prologue
     .line 104
-    .local p1, "future":Lcom/android/gallery3d/util/Future;, "Lcom/android/gallery3d/util/Future<Landroid/graphics/Bitmap;>;"
+    .local p1, future:Lcom/android/gallery3d/util/Future;,"Lcom/android/gallery3d/util/Future<Landroid/graphics/Bitmap;>;"
     iget-object v0, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter$3;->this$0:Lcom/android/gallery3d/app/SinglePhotoDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mHandler:Landroid/os/Handler;
     invoke-static {v0}, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->access$300(Lcom/android/gallery3d/app/SinglePhotoDataAdapter;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter$3;->this$0:Lcom/android/gallery3d/app/SinglePhotoDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mHandler:Landroid/os/Handler;
     invoke-static {v1}, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->access$300(Lcom/android/gallery3d/app/SinglePhotoDataAdapter;)Landroid/os/Handler;
 
     move-result-object v1

@@ -29,6 +29,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/PanoramaActivity;)V
     .locals 2
+    .parameter
 
     .prologue
     const/4 v1, 0x0
@@ -58,9 +59,10 @@
 
 .method public constructor <init>(Lcom/android/camera/PanoramaActivity;[BII)V
     .locals 1
-    .param p2, "data"    # [B
-    .param p3, "width"    # I
-    .param p4, "height"    # I
+    .parameter
+    .parameter "data"
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 166

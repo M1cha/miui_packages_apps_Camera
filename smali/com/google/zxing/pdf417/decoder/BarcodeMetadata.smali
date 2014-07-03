@@ -18,10 +18,10 @@
 # direct methods
 .method constructor <init>(IIII)V
     .locals 1
-    .param p1, "columnCount"    # I
-    .param p2, "rowCountUpperPart"    # I
-    .param p3, "rowCountLowerPart"    # I
-    .param p4, "errorCorrectionLevel"    # I
+    .parameter "columnCount"
+    .parameter "rowCountUpperPart"
+    .parameter "rowCountLowerPart"
+    .parameter "errorCorrectionLevel"
 
     .prologue
     .line 30

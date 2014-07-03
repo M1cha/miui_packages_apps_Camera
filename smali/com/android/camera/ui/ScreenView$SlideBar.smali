@@ -28,7 +28,7 @@
 # virtual methods
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 2
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
+    .parameter "canvas"
 
     .prologue
     .line 502
@@ -53,7 +53,7 @@
 
 .method public fastOffset(I)V
     .locals 2
-    .param p1, "offset"    # I
+    .parameter "offset"
 
     .prologue
     .line 529
@@ -100,10 +100,10 @@
 
 .method protected setFrame(IIII)Z
     .locals 4
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
+    .parameter "left"
+    .parameter "top"
+    .parameter "right"
+    .parameter "bottom"
 
     .prologue
     .line 510
@@ -112,7 +112,7 @@
     move-result v0
 
     .line 511
-    .local v0, "r":Z
+    .local v0, r:Z
     iget-object v1, p0, Lcom/android/camera/ui/ScreenView$SlideBar;->mSlidePoint:Landroid/graphics/NinePatch;
 
     if-eqz v1, :cond_0
@@ -154,8 +154,8 @@
 
 .method public setPosition(II)V
     .locals 2
-    .param p1, "left"    # I
-    .param p2, "right"    # I
+    .parameter "left"
+    .parameter "right"
 
     .prologue
     .line 519

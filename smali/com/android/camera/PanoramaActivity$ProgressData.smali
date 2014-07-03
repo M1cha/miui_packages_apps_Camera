@@ -31,6 +31,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/PanoramaActivity;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 504
@@ -43,8 +44,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/PanoramaActivity;Lcom/android/camera/PanoramaActivity$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/camera/PanoramaActivity;
-    .param p2, "x1"    # Lcom/android/camera/PanoramaActivity$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 504

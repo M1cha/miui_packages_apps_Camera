@@ -10,7 +10,7 @@
 # direct methods
 .method constructor <init>(I)V
     .locals 0
-    .param p1, "newPosition"    # I
+    .parameter "newPosition"
 
     .prologue
     .line 36

@@ -24,6 +24,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/ui/FocusIndicatorRotateLayout;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 82
@@ -36,8 +37,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/ui/FocusIndicatorRotateLayout;Lcom/android/camera/ui/FocusIndicatorRotateLayout$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/camera/ui/FocusIndicatorRotateLayout;
-    .param p2, "x1"    # Lcom/android/camera/ui/FocusIndicatorRotateLayout$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 82
@@ -57,7 +58,7 @@
 
     iget-object v1, p0, Lcom/android/camera/ui/FocusIndicatorRotateLayout$EndAction;->this$0:Lcom/android/camera/ui/FocusIndicatorRotateLayout;
 
-    # getter for: Lcom/android/camera/ui/FocusIndicatorRotateLayout;->mDisappear:Ljava/lang/Runnable;
+    #getter for: Lcom/android/camera/ui/FocusIndicatorRotateLayout;->mDisappear:Ljava/lang/Runnable;
     invoke-static {v1}, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->access$200(Lcom/android/camera/ui/FocusIndicatorRotateLayout;)Ljava/lang/Runnable;
 
     move-result-object v1

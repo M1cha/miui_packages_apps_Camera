@@ -95,6 +95,8 @@
 
 .method private constructor <init>(Ljava/lang/String;I)V
     .locals 0
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()V"
@@ -110,6 +112,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/zxing/oned/rss/expanded/decoders/CurrentParsingState$State;
     .locals 1
+    .parameter
 
     .prologue
     .line 37

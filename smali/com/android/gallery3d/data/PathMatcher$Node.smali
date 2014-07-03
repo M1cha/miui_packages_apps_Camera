@@ -48,7 +48,7 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/data/PathMatcher$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/data/PathMatcher$1;
+    .parameter "x0"
 
     .prologue
     .line 72
@@ -61,7 +61,7 @@
 # virtual methods
 .method addChild(Ljava/lang/String;)Lcom/android/gallery3d/data/PathMatcher$Node;
     .locals 3
-    .param p1, "segment"    # Ljava/lang/String;
+    .parameter "segment"
 
     .prologue
     .line 77
@@ -83,7 +83,7 @@
     invoke-direct {v0}, Lcom/android/gallery3d/data/PathMatcher$Node;-><init>()V
 
     .line 85
-    .local v0, "n":Lcom/android/gallery3d/data/PathMatcher$Node;
+    .local v0, n:Lcom/android/gallery3d/data/PathMatcher$Node;
     iget-object v2, p0, Lcom/android/gallery3d/data/PathMatcher$Node;->mMap:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -91,7 +91,7 @@
     move-object v1, v0
 
     .line 86
-    .end local v0    # "n":Lcom/android/gallery3d/data/PathMatcher$Node;
+    .end local v0           #n:Lcom/android/gallery3d/data/PathMatcher$Node;
     :goto_0
     return-object v1
 
@@ -106,7 +106,7 @@
     check-cast v1, Lcom/android/gallery3d/data/PathMatcher$Node;
 
     .line 81
-    .local v1, "node":Lcom/android/gallery3d/data/PathMatcher$Node;
+    .local v1, node:Lcom/android/gallery3d/data/PathMatcher$Node;
     if-eqz v1, :cond_0
 
     goto :goto_0
@@ -114,7 +114,7 @@
 
 .method getChild(Ljava/lang/String;)Lcom/android/gallery3d/data/PathMatcher$Node;
     .locals 1
-    .param p1, "segment"    # Ljava/lang/String;
+    .parameter "segment"
 
     .prologue
     .line 90
@@ -152,7 +152,7 @@
 
 .method setKind(I)V
     .locals 0
-    .param p1, "kind"    # I
+    .parameter "kind"
 
     .prologue
     .line 95

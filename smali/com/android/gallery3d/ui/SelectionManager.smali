@@ -43,8 +43,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/app/GalleryContext;Z)V
     .locals 1
-    .param p1, "galleryContext"    # Lcom/android/gallery3d/app/GalleryContext;
-    .param p2, "isAlbumSet"    # Z
+    .parameter "galleryContext"
+    .parameter "isAlbumSet"
 
     .prologue
     .line 52
@@ -83,7 +83,8 @@
 
 .method private static expandMediaSet(Ljava/util/ArrayList;Lcom/android/gallery3d/data/MediaSet;)V
     .locals 10
-    .param p1, "set"    # Lcom/android/gallery3d/data/MediaSet;
+    .parameter
+    .parameter "set"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -98,16 +99,16 @@
 
     .prologue
     .line 150
-    .local p0, "items":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/Path;>;"
+    .local p0, items:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/Path;>;"
     invoke-virtual {p1}, Lcom/android/gallery3d/data/MediaSet;->getSubMediaSetCount()I
 
     move-result v7
 
     .line 151
-    .local v7, "subCount":I
+    .local v7, subCount:I
     const/4 v2, 0x0
 
-    .local v2, "i":I
+    .local v2, i:I
     :goto_0
     if-ge v2, v7, :cond_0
 
@@ -130,15 +131,15 @@
     move-result v8
 
     .line 155
-    .local v8, "total":I
+    .local v8, total:I
     const/16 v0, 0x32
 
     .line 156
-    .local v0, "batch":I
+    .local v0, batch:I
     const/4 v4, 0x0
 
     .line 158
-    .local v4, "index":I
+    .local v4, index:I
     :goto_1
     if-ge v4, v8, :cond_3
 
@@ -150,19 +151,19 @@
     move v1, v0
 
     .line 162
-    .local v1, "count":I
+    .local v1, count:I
     :goto_2
     invoke-virtual {p1, v4, v1}, Lcom/android/gallery3d/data/MediaSet;->getMediaItem(II)Ljava/util/ArrayList;
 
     move-result-object v6
 
     .line 163
-    .local v6, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .local v6, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     invoke-virtual {v6}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    .local v3, "i$":Ljava/util/Iterator;
+    .local v3, i$:Ljava/util/Iterator;
     :goto_3
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
@@ -177,7 +178,7 @@
     check-cast v5, Lcom/android/gallery3d/data/MediaItem;
 
     .line 164
-    .local v5, "item":Lcom/android/gallery3d/data/MediaItem;
+    .local v5, item:Lcom/android/gallery3d/data/MediaItem;
     invoke-virtual {v5}, Lcom/android/gallery3d/data/MediaItem;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v9
@@ -187,19 +188,19 @@
     goto :goto_3
 
     .line 159
-    .end local v1    # "count":I
-    .end local v3    # "i$":Ljava/util/Iterator;
-    .end local v5    # "item":Lcom/android/gallery3d/data/MediaItem;
-    .end local v6    # "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .end local v1           #count:I
+    .end local v3           #i$:Ljava/util/Iterator;
+    .end local v5           #item:Lcom/android/gallery3d/data/MediaItem;
+    .end local v6           #list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     :cond_1
     sub-int v1, v8, v4
 
     goto :goto_2
 
     .line 166
-    .restart local v1    # "count":I
-    .restart local v3    # "i$":Ljava/util/Iterator;
-    .restart local v6    # "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .restart local v1       #count:I
+    .restart local v3       #i$:Ljava/util/Iterator;
+    .restart local v6       #list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     :cond_2
     add-int/2addr v4, v0
 
@@ -207,9 +208,9 @@
     goto :goto_1
 
     .line 168
-    .end local v1    # "count":I
-    .end local v3    # "i$":Ljava/util/Iterator;
-    .end local v6    # "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .end local v1           #count:I
+    .end local v3           #i$:Ljava/util/Iterator;
+    .end local v6           #list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     :cond_3
     return-void
 .end method
@@ -323,7 +324,7 @@
 
 .method public getSelected(Z)Ljava/util/ArrayList;
     .locals 12
-    .param p1, "expandSet"    # Z
+    .parameter "expandSet"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
@@ -341,7 +342,7 @@
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
     .line 172
-    .local v7, "selected":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/Path;>;"
+    .local v7, selected:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/Path;>;"
     iget-boolean v10, p0, Lcom/android/gallery3d/ui/SelectionManager;->mIsAlbumSet:Z
 
     if-eqz v10, :cond_4
@@ -357,10 +358,10 @@
     move-result v9
 
     .line 175
-    .local v9, "total":I
+    .local v9, total:I
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     if-ge v1, v9, :cond_8
 
@@ -372,13 +373,13 @@
     move-result-object v8
 
     .line 177
-    .local v8, "set":Lcom/android/gallery3d/data/MediaSet;
+    .local v8, set:Lcom/android/gallery3d/data/MediaSet;
     invoke-virtual {v8}, Lcom/android/gallery3d/data/MediaSet;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v3
 
     .line 178
-    .local v3, "id":Lcom/android/gallery3d/data/Path;
+    .local v3, id:Lcom/android/gallery3d/data/Path;
     iget-object v10, p0, Lcom/android/gallery3d/ui/SelectionManager;->mClickedSet:Ljava/util/Set;
 
     invoke-interface {v10, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -407,10 +408,10 @@
     goto :goto_1
 
     .line 187
-    .end local v1    # "i":I
-    .end local v3    # "id":Lcom/android/gallery3d/data/Path;
-    .end local v8    # "set":Lcom/android/gallery3d/data/MediaSet;
-    .end local v9    # "total":I
+    .end local v1           #i:I
+    .end local v3           #id:Lcom/android/gallery3d/data/Path;
+    .end local v8           #set:Lcom/android/gallery3d/data/MediaSet;
+    .end local v9           #total:I
     :cond_2
     iget-object v10, p0, Lcom/android/gallery3d/ui/SelectionManager;->mClickedSet:Ljava/util/Set;
 
@@ -418,7 +419,7 @@
 
     move-result-object v2
 
-    .local v2, "i$":Ljava/util/Iterator;
+    .local v2, i$:Ljava/util/Iterator;
     :goto_2
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -433,7 +434,7 @@
     check-cast v3, Lcom/android/gallery3d/data/Path;
 
     .line 188
-    .restart local v3    # "id":Lcom/android/gallery3d/data/Path;
+    .restart local v3       #id:Lcom/android/gallery3d/data/Path;
     if-eqz p1, :cond_3
 
     .line 189
@@ -454,8 +455,8 @@
     goto :goto_2
 
     .line 196
-    .end local v2    # "i$":Ljava/util/Iterator;
-    .end local v3    # "id":Lcom/android/gallery3d/data/Path;
+    .end local v2           #i$:Ljava/util/Iterator;
+    .end local v3           #id:Lcom/android/gallery3d/data/Path;
     :cond_4
     iget-boolean v10, p0, Lcom/android/gallery3d/ui/SelectionManager;->mInverseSelection:Z
 
@@ -467,11 +468,11 @@
     move-result v9
 
     .line 198
-    .restart local v9    # "total":I
+    .restart local v9       #total:I
     const/4 v4, 0x0
 
     .line 199
-    .local v4, "index":I
+    .local v4, index:I
     :goto_3
     if-ge v4, v9, :cond_8
 
@@ -485,7 +486,7 @@
     move-result v0
 
     .line 201
-    .local v0, "count":I
+    .local v0, count:I
     iget-object v10, p0, Lcom/android/gallery3d/ui/SelectionManager;->mSourceMediaSet:Lcom/android/gallery3d/data/MediaSet;
 
     invoke-virtual {v10, v4, v0}, Lcom/android/gallery3d/data/MediaSet;->getMediaItem(II)Ljava/util/ArrayList;
@@ -493,12 +494,12 @@
     move-result-object v6
 
     .line 202
-    .local v6, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .local v6, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     invoke-virtual {v6}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .restart local v2    # "i$":Ljava/util/Iterator;
+    .restart local v2       #i$:Ljava/util/Iterator;
     :cond_5
     :goto_4
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
@@ -514,13 +515,13 @@
     check-cast v5, Lcom/android/gallery3d/data/MediaItem;
 
     .line 203
-    .local v5, "item":Lcom/android/gallery3d/data/MediaItem;
+    .local v5, item:Lcom/android/gallery3d/data/MediaItem;
     invoke-virtual {v5}, Lcom/android/gallery3d/data/MediaItem;->getPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v3
 
     .line 204
-    .restart local v3    # "id":Lcom/android/gallery3d/data/Path;
+    .restart local v3       #id:Lcom/android/gallery3d/data/Path;
     iget-object v10, p0, Lcom/android/gallery3d/ui/SelectionManager;->mClickedSet:Ljava/util/Set;
 
     invoke-interface {v10, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -534,8 +535,8 @@
     goto :goto_4
 
     .line 206
-    .end local v3    # "id":Lcom/android/gallery3d/data/Path;
-    .end local v5    # "item":Lcom/android/gallery3d/data/MediaItem;
+    .end local v3           #id:Lcom/android/gallery3d/data/Path;
+    .end local v5           #item:Lcom/android/gallery3d/data/MediaItem;
     :cond_6
     add-int/2addr v4, v0
 
@@ -543,11 +544,11 @@
     goto :goto_3
 
     .line 209
-    .end local v0    # "count":I
-    .end local v2    # "i$":Ljava/util/Iterator;
-    .end local v4    # "index":I
-    .end local v6    # "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
-    .end local v9    # "total":I
+    .end local v0           #count:I
+    .end local v2           #i$:Ljava/util/Iterator;
+    .end local v4           #index:I
+    .end local v6           #list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .end local v9           #total:I
     :cond_7
     iget-object v10, p0, Lcom/android/gallery3d/ui/SelectionManager;->mClickedSet:Ljava/util/Set;
 
@@ -555,7 +556,7 @@
 
     move-result-object v2
 
-    .restart local v2    # "i$":Ljava/util/Iterator;
+    .restart local v2       #i$:Ljava/util/Iterator;
     :goto_5
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -570,14 +571,14 @@
     check-cast v3, Lcom/android/gallery3d/data/Path;
 
     .line 210
-    .restart local v3    # "id":Lcom/android/gallery3d/data/Path;
+    .restart local v3       #id:Lcom/android/gallery3d/data/Path;
     invoke-virtual {v7, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_5
 
     .line 214
-    .end local v2    # "i$":Ljava/util/Iterator;
-    .end local v3    # "id":Lcom/android/gallery3d/data/Path;
+    .end local v2           #i$:Ljava/util/Iterator;
+    .end local v3           #id:Lcom/android/gallery3d/data/Path;
     :cond_8
     return-object v7
 .end method
@@ -594,7 +595,7 @@
     move-result v0
 
     .line 123
-    .local v0, "count":I
+    .local v0, count:I
     iget-boolean v1, p0, Lcom/android/gallery3d/ui/SelectionManager;->mInverseSelection:Z
 
     if-eqz v1, :cond_0
@@ -623,7 +624,7 @@
 
 .method public isItemSelected(Lcom/android/gallery3d/data/Path;)Z
     .locals 2
-    .param p1, "itemId"    # Lcom/android/gallery3d/data/Path;
+    .parameter "itemId"
 
     .prologue
     .line 107
@@ -717,7 +718,7 @@
 
 .method public setSourceMediaSet(Lcom/android/gallery3d/data/MediaSet;)V
     .locals 1
-    .param p1, "set"    # Lcom/android/gallery3d/data/MediaSet;
+    .parameter "set"
 
     .prologue
     .line 218
@@ -734,7 +735,7 @@
 
 .method public toggle(Lcom/android/gallery3d/data/Path;)V
     .locals 3
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .parameter "path"
 
     .prologue
     .line 130
@@ -758,7 +759,7 @@
     move-result v0
 
     .line 139
-    .local v0, "count":I
+    .local v0, count:I
     invoke-direct {p0}, Lcom/android/gallery3d/ui/SelectionManager;->getTotalCount()I
 
     move-result v1
@@ -798,7 +799,7 @@
     return-void
 
     .line 133
-    .end local v0    # "count":I
+    .end local v0           #count:I
     :cond_3
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/SelectionManager;->enterSelectionMode()V
 

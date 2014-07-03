@@ -21,8 +21,8 @@
 # direct methods
 .method public constructor <init>(II)V
     .locals 2
-    .param p1, "width"    # I
-    .param p2, "height"    # I
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 59
@@ -42,7 +42,7 @@
 
 .method public constructor <init>(Landroid/graphics/Bitmap;)V
     .locals 2
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
+    .parameter "bitmap"
 
     .prologue
     .line 51
@@ -78,7 +78,7 @@
     .locals 6
 
     .prologue
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f80
 
     .line 194
     invoke-static {}, Lcom/android/gallery3d/ui/BitmapScreenNail;->now()J
@@ -91,12 +91,12 @@
 
     long-to-float v1, v1
 
-    const/high16 v2, 0x43340000
+    const/high16 v2, 0x4334
 
     div-float v0, v1, v2
 
     .line 195
-    .local v0, "r":F
+    .local v0, r:F
     sub-float v1, v5, v0
 
     const/4 v2, 0x0
@@ -122,8 +122,8 @@
 
 .method private setSize(II)V
     .locals 4
-    .param p1, "width"    # I
-    .param p2, "height"    # I
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 64
@@ -140,9 +140,9 @@
 
     .line 68
     :cond_1
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f80
 
-    const/high16 v2, 0x44200000
+    const/high16 v2, 0x4420
 
     invoke-static {p1, p2}, Ljava/lang/Math;->max(II)I
 
@@ -157,7 +157,7 @@
     move-result v0
 
     .line 69
-    .local v0, "scale":F
+    .local v0, scale:F
     int-to-float v1, p1
 
     mul-float/2addr v1, v0
@@ -187,7 +187,7 @@
 # virtual methods
 .method public combine(Lcom/android/gallery3d/ui/ScreenNail;)Lcom/android/gallery3d/ui/ScreenNail;
     .locals 4
-    .param p1, "other"    # Lcom/android/gallery3d/ui/ScreenNail;
+    .parameter "other"
 
     .prologue
     const/4 v3, 0x0
@@ -196,12 +196,12 @@
     if-nez p1, :cond_0
 
     .line 104
-    .end local p0    # "this":Lcom/android/gallery3d/ui/BitmapScreenNail;
+    .end local p0
     :goto_0
     return-object p0
 
     .line 80
-    .restart local p0    # "this":Lcom/android/gallery3d/ui/BitmapScreenNail;
+    .restart local p0
     :cond_0
     instance-of v1, p1, Lcom/android/gallery3d/ui/BitmapScreenNail;
 
@@ -222,7 +222,7 @@
     check-cast v0, Lcom/android/gallery3d/ui/BitmapScreenNail;
 
     .line 88
-    .local v0, "newer":Lcom/android/gallery3d/ui/BitmapScreenNail;
+    .local v0, newer:Lcom/android/gallery3d/ui/BitmapScreenNail;
     iget v1, v0, Lcom/android/gallery3d/ui/BitmapScreenNail;->mWidth:I
 
     iput v1, p0, Lcom/android/gallery3d/ui/BitmapScreenNail;->mWidth:I
@@ -282,11 +282,11 @@
 
 .method public draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
     .locals 8
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
-    .param p2, "x"    # I
-    .param p3, "y"    # I
-    .param p4, "width"    # I
-    .param p5, "height"    # I
+    .parameter "canvas"
+    .parameter "x"
+    .parameter "y"
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 141
@@ -412,9 +412,9 @@
 
 .method public draw(Lcom/android/gallery3d/ui/GLCanvas;Landroid/graphics/RectF;Landroid/graphics/RectF;)V
     .locals 6
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
-    .param p2, "source"    # Landroid/graphics/RectF;
-    .param p3, "dest"    # Landroid/graphics/RectF;
+    .parameter "canvas"
+    .parameter "source"
+    .parameter "dest"
 
     .prologue
     .line 167
@@ -617,8 +617,8 @@
 
 .method public updatePlaceholderSize(II)V
     .locals 1
-    .param p1, "width"    # I
-    .param p2, "height"    # I
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 108

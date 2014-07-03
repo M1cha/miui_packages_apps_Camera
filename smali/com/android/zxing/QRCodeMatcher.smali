@@ -133,8 +133,8 @@
 
 .method public static contactsCardSpliter(Ljava/lang/String;Lcom/android/zxing/QRCodeType;)Ljava/util/HashMap;
     .locals 1
-    .param p0, "s"    # Ljava/lang/String;
-    .param p1, "type"    # Lcom/android/zxing/QRCodeType;
+    .parameter "s"
+    .parameter "type"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -174,7 +174,7 @@
 
 .method public static match(Ljava/lang/String;)Lcom/android/zxing/QRCodeType;
     .locals 6
-    .param p0, "original"    # Ljava/lang/String;
+    .parameter "original"
 
     .prologue
     const/4 v5, 0x0
@@ -190,7 +190,7 @@
     move-result-object v0
 
     .line 50
-    .local v0, "lowerCase":Ljava/lang/String;
+    .local v0, lowerCase:Ljava/lang/String;
     sget-object v4, Lcom/android/zxing/QRCodeMatcher;->WECHAT:Ljava/util/regex/Pattern;
 
     invoke-virtual {v4, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -198,7 +198,7 @@
     move-result-object v1
 
     .line 51
-    .local v1, "match":Ljava/util/regex/Matcher;
+    .local v1, match:Ljava/util/regex/Matcher;
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v4
@@ -343,7 +343,7 @@
     invoke-direct {v2, p0, v5, v5, v5}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
 
     .line 86
-    .local v2, "result":Lcom/google/zxing/Result;
+    .local v2, result:Lcom/google/zxing/Result;
     sget-object v4, Lcom/android/zxing/QRCodeMatcher;->VCARDPARSER:Lcom/google/zxing/client/result/VCardResultParser;
 
     invoke-virtual {v4, v2}, Lcom/google/zxing/client/result/VCardResultParser;->parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/AddressBookParsedResult;
@@ -351,7 +351,7 @@
     move-result-object v3
 
     .line 87
-    .local v3, "vcard":Lcom/google/zxing/client/result/AddressBookParsedResult;
+    .local v3, vcard:Lcom/google/zxing/client/result/AddressBookParsedResult;
     if-eqz v3, :cond_7
 
     .line 88
@@ -395,7 +395,7 @@
 
 .method private static meCardSpliter(Ljava/lang/String;)Ljava/util/HashMap;
     .locals 10
-    .param p0, "s"    # Ljava/lang/String;
+    .parameter "s"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -418,7 +418,7 @@
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
     .line 142
-    .local v3, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
+    .local v3, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     sget-object v6, Lcom/android/zxing/QRCodeMatcher;->MECARDHEAD:Ljava/util/regex/Pattern;
 
     invoke-virtual {v6, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -426,7 +426,7 @@
     move-result-object v1
 
     .line 143
-    .local v1, "head":Ljava/util/regex/Matcher;
+    .local v1, head:Ljava/util/regex/Matcher;
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v6
@@ -443,7 +443,7 @@
     move-result-object v0
 
     .line 145
-    .local v0, "content":Ljava/lang/String;
+    .local v0, content:Ljava/lang/String;
     sget-object v6, Lcom/android/zxing/QRCodeMatcher;->MECARDSPLIT:Ljava/util/regex/Pattern;
 
     invoke-virtual {v6, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -451,7 +451,7 @@
     move-result-object v5
 
     .line 146
-    .local v5, "split":Ljava/util/regex/Matcher;
+    .local v5, split:Ljava/util/regex/Matcher;
     :cond_0
     :goto_0
     invoke-virtual {v5}, Ljava/util/regex/Matcher;->find()Z
@@ -466,7 +466,7 @@
     move-result-object v4
 
     .line 148
-    .local v4, "pair":Ljava/lang/String;
+    .local v4, pair:Ljava/lang/String;
     if-eqz v4, :cond_0
 
     .line 149
@@ -477,7 +477,7 @@
     move-result v2
 
     .line 150
-    .local v2, "index":I
+    .local v2, index:I
     invoke-virtual {v4, v9, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v6
@@ -507,17 +507,17 @@
     goto :goto_0
 
     .line 155
-    .end local v0    # "content":Ljava/lang/String;
-    .end local v2    # "index":I
-    .end local v4    # "pair":Ljava/lang/String;
-    .end local v5    # "split":Ljava/util/regex/Matcher;
+    .end local v0           #content:Ljava/lang/String;
+    .end local v2           #index:I
+    .end local v4           #pair:Ljava/lang/String;
+    .end local v5           #split:Ljava/util/regex/Matcher;
     :cond_1
     return-object v3
 .end method
 
 .method private static vCardSpliter(Ljava/lang/String;)Ljava/util/HashMap;
     .locals 6
-    .param p0, "s"    # Ljava/lang/String;
+    .parameter "s"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -542,13 +542,13 @@
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     .line 109
-    .local v0, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
+    .local v0, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     new-instance v1, Lcom/google/zxing/Result;
 
     invoke-direct {v1, p0, v3, v3, v3}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
 
     .line 110
-    .local v1, "result":Lcom/google/zxing/Result;
+    .local v1, result:Lcom/google/zxing/Result;
     sget-object v3, Lcom/android/zxing/QRCodeMatcher;->VCARDPARSER:Lcom/google/zxing/client/result/VCardResultParser;
 
     invoke-virtual {v3, v1}, Lcom/google/zxing/client/result/VCardResultParser;->parse(Lcom/google/zxing/Result;)Lcom/google/zxing/client/result/AddressBookParsedResult;
@@ -556,7 +556,7 @@
     move-result-object v2
 
     .line 111
-    .local v2, "vcard":Lcom/google/zxing/client/result/AddressBookParsedResult;
+    .local v2, vcard:Lcom/google/zxing/client/result/AddressBookParsedResult;
     if-eqz v2, :cond_6
 
     .line 112
@@ -716,7 +716,7 @@
 
 .method public static wifiSpliter(Ljava/lang/String;)Ljava/util/HashMap;
     .locals 10
-    .param p0, "s"    # Ljava/lang/String;
+    .parameter "s"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -739,7 +739,7 @@
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
     .line 160
-    .local v3, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
+    .local v3, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     sget-object v6, Lcom/android/zxing/QRCodeMatcher;->WIFIHEAD:Ljava/util/regex/Pattern;
 
     invoke-virtual {v6, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -747,7 +747,7 @@
     move-result-object v1
 
     .line 161
-    .local v1, "head":Ljava/util/regex/Matcher;
+    .local v1, head:Ljava/util/regex/Matcher;
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v6
@@ -764,7 +764,7 @@
     move-result-object v0
 
     .line 163
-    .local v0, "content":Ljava/lang/String;
+    .local v0, content:Ljava/lang/String;
     sget-object v6, Lcom/android/zxing/QRCodeMatcher;->WIFISPLIT:Ljava/util/regex/Pattern;
 
     invoke-virtual {v6, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -772,7 +772,7 @@
     move-result-object v5
 
     .line 164
-    .local v5, "split":Ljava/util/regex/Matcher;
+    .local v5, split:Ljava/util/regex/Matcher;
     :cond_0
     :goto_0
     invoke-virtual {v5}, Ljava/util/regex/Matcher;->find()Z
@@ -787,7 +787,7 @@
     move-result-object v4
 
     .line 166
-    .local v4, "pair":Ljava/lang/String;
+    .local v4, pair:Ljava/lang/String;
     if-eqz v4, :cond_0
 
     .line 167
@@ -798,7 +798,7 @@
     move-result v2
 
     .line 168
-    .local v2, "index":I
+    .local v2, index:I
     invoke-virtual {v4, v9, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v6
@@ -832,10 +832,10 @@
     goto :goto_0
 
     .line 173
-    .end local v0    # "content":Ljava/lang/String;
-    .end local v2    # "index":I
-    .end local v4    # "pair":Ljava/lang/String;
-    .end local v5    # "split":Ljava/util/regex/Matcher;
+    .end local v0           #content:Ljava/lang/String;
+    .end local v2           #index:I
+    .end local v4           #pair:Ljava/lang/String;
+    .end local v5           #split:Ljava/util/regex/Matcher;
     :cond_1
     return-object v3
 .end method

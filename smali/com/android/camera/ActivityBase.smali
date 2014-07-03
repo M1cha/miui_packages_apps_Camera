@@ -216,8 +216,8 @@
 
 .method static synthetic access$002(Lcom/android/camera/ActivityBase;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/ActivityBase;
-    .param p1, "x1"    # Z
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 71
@@ -228,8 +228,8 @@
 
 .method static synthetic access$800(Lcom/android/camera/ActivityBase;Z)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/ActivityBase;
-    .param p1, "x1"    # Z
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 71
@@ -240,8 +240,8 @@
 
 .method private initializeFlashModeButton(Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;I)V
     .locals 2
-    .param p1, "listener"    # Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
-    .param p2, "flashResId"    # I
+    .parameter "listener"
+    .parameter "flashResId"
 
     .prologue
     .line 754
@@ -283,7 +283,7 @@
 
 .method private initializeSkinBeautifyButton(Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;)V
     .locals 1
-    .param p1, "listener"    # Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
+    .parameter "listener"
 
     .prologue
     .line 746
@@ -333,7 +333,7 @@
     move-result-object v0
 
     .line 276
-    .local v0, "myExtras":Landroid/os/Bundle;
+    .local v0, myExtras:Landroid/os/Bundle;
     if-eqz v0, :cond_0
 
     .line 277
@@ -350,7 +350,7 @@
 
 .method private onFullScreenChanged(Z)V
     .locals 2
-    .param p1, "full"    # Z
+    .parameter "full"
 
     .prologue
     .line 609
@@ -431,6 +431,7 @@
 # virtual methods
 .method protected addMuteToParameters(Landroid/hardware/Camera$Parameters;)V
     .locals 2
+    .parameter
 
     .prologue
     .line 953
@@ -446,7 +447,7 @@
 
 .method protected addSecureNum(I)V
     .locals 2
-    .param p1, "num"    # I
+    .parameter "num"
 
     .prologue
     .line 1035
@@ -566,6 +567,7 @@
 
 .method protected createCameraScreenNail(Z)V
     .locals 4
+    .parameter
 
     .prologue
     .line 547
@@ -754,7 +756,7 @@
 
 .method protected enableCameraControls(Z)V
     .locals 2
-    .param p1, "enable"    # Z
+    .parameter "enable"
 
     .prologue
     .line 902
@@ -871,7 +873,7 @@
 
 .method protected exitHDRMode(Z)V
     .locals 3
-    .param p1, "changeSettings"    # Z
+    .parameter "changeSettings"
 
     .prologue
     const/16 v2, 0x8
@@ -1038,6 +1040,7 @@
 
 .method protected getMarginValue(Landroid/view/View;)I
     .locals 2
+    .parameter
 
     .prologue
     .line 1022
@@ -1129,7 +1132,7 @@
 
     const/4 v1, 0x1
 
-    # invokes: Lcom/android/camera/ActivityBase$MyAppBridge;->switchWithCaptureAnimation(I)V
+    #calls: Lcom/android/camera/ActivityBase$MyAppBridge;->switchWithCaptureAnimation(I)V
     invoke-static {v0, v1}, Lcom/android/camera/ActivityBase$MyAppBridge;->access$100(Lcom/android/camera/ActivityBase$MyAppBridge;I)V
 
     .line 525
@@ -1138,7 +1141,7 @@
 
 .method public handleControllerEvent(Ljava/lang/String;)V
     .locals 1
-    .param p1, "action"    # Ljava/lang/String;
+    .parameter "action"
 
     .prologue
     .line 197
@@ -1176,6 +1179,8 @@
 
 .method protected handleVolumeKeyEvent(ZI)Z
     .locals 4
+    .parameter
+    .parameter
 
     .prologue
     const/4 v0, 0x1
@@ -1404,8 +1409,8 @@
 
 .method protected initializeCameraControls(Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;I)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
-    .param p2, "flashResId"    # I
+    .parameter "listener"
+    .parameter "flashResId"
 
     .prologue
     .line 732
@@ -1423,7 +1428,7 @@
 
 .method protected initializeCameraPickerButton(Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;)V
     .locals 2
-    .param p1, "listener"    # Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
+    .parameter "listener"
 
     .prologue
     .line 762
@@ -1665,7 +1670,7 @@
     .line 699
     iget-object v0, p0, Lcom/android/camera/ActivityBase;->mAppBridge:Lcom/android/camera/ActivityBase$MyAppBridge;
 
-    # invokes: Lcom/android/camera/ActivityBase$MyAppBridge;->notifyScreenNailChanged()V
+    #calls: Lcom/android/camera/ActivityBase$MyAppBridge;->notifyScreenNailChanged()V
     invoke-static {v0}, Lcom/android/camera/ActivityBase$MyAppBridge;->access$600(Lcom/android/camera/ActivityBase$MyAppBridge;)V
 
     .line 700
@@ -1674,7 +1679,7 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "icicle"    # Landroid/os/Bundle;
+    .parameter "icicle"
 
     .prologue
     .line 221
@@ -1711,7 +1716,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x80000
+    const/high16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->addFlags(I)V
 
@@ -1885,7 +1890,7 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;)Z
     .locals 1
-    .param p1, "menu"    # Landroid/view/Menu;
+    .parameter "menu"
 
     .prologue
     .line 433
@@ -1961,8 +1966,8 @@
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z
     .locals 3
-    .param p1, "keyCode"    # I
-    .param p2, "event"    # Landroid/view/KeyEvent;
+    .parameter "keyCode"
+    .parameter "event"
 
     .prologue
     const/4 v0, 0x1
@@ -2035,15 +2040,15 @@
 
 .method public onLayoutChange(Landroid/view/View;IIIIIIII)V
     .locals 15
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "left"    # I
-    .param p3, "top"    # I
-    .param p4, "right"    # I
-    .param p5, "bottom"    # I
-    .param p6, "oldLeft"    # I
-    .param p7, "oldTop"    # I
-    .param p8, "oldRight"    # I
-    .param p9, "oldBottom"    # I
+    .parameter "v"
+    .parameter "left"
+    .parameter "top"
+    .parameter "right"
+    .parameter "bottom"
+    .parameter "oldLeft"
+    .parameter "oldTop"
+    .parameter "oldRight"
+    .parameter "oldBottom"
 
     .prologue
     .line 637
@@ -2087,11 +2092,11 @@
     sub-int v11, p4, p2
 
     .line 644
-    .local v11, "width":I
+    .local v11, width:I
     sub-int v4, p5, p3
 
     .line 645
-    .local v4, "height":I
+    .local v4, height:I
     invoke-static {p0}, Lcom/android/camera/Util;->getDisplayRotation(Landroid/app/Activity;)I
 
     move-result v12
@@ -2114,19 +2119,19 @@
     check-cast v7, Landroid/view/View;
 
     .line 656
-    .local v7, "root":Landroid/view/View;
+    .local v7, root:Landroid/view/View;
     const/4 v12, 0x2
 
     new-array v8, v12, [I
 
     .line 657
-    .local v8, "rootLocation":[I
+    .local v8, rootLocation:[I
     const/4 v12, 0x2
 
     new-array v10, v12, [I
 
     .line 658
-    .local v10, "viewLocation":[I
+    .local v10, viewLocation:[I
     invoke-virtual {v7, v8}, Landroid/view/View;->getLocationInWindow([I)V
 
     .line 659
@@ -2146,7 +2151,7 @@
     sub-int v5, v12, v13
 
     .line 662
-    .local v5, "l":I
+    .local v5, l:I
     const/4 v12, 0x1
 
     aget v12, v10, v12
@@ -2158,21 +2163,21 @@
     sub-int v9, v12, v13
 
     .line 663
-    .local v9, "t":I
+    .local v9, t:I
     add-int v6, v5, v11
 
     .line 664
-    .local v6, "r":I
+    .local v6, r:I
     add-int v2, v9, v4
 
     .line 665
-    .local v2, "b":I
+    .local v2, b:I
     new-instance v3, Landroid/graphics/Rect;
 
     invoke-direct {v3, v5, v9, v6, v2}, Landroid/graphics/Rect;-><init>(IIII)V
 
     .line 666
-    .local v3, "frame":Landroid/graphics/Rect;
+    .local v3, frame:Landroid/graphics/Rect;
     const-string v12, "ActivityBase"
 
     new-instance v13, Ljava/lang/StringBuilder;
@@ -2198,20 +2203,20 @@
     .line 667
     iget-object v12, p0, Lcom/android/camera/ActivityBase;->mAppBridge:Lcom/android/camera/ActivityBase$MyAppBridge;
 
-    # invokes: Lcom/android/camera/ActivityBase$MyAppBridge;->setCameraRelativeFrame(Landroid/graphics/Rect;)V
+    #calls: Lcom/android/camera/ActivityBase$MyAppBridge;->setCameraRelativeFrame(Landroid/graphics/Rect;)V
     invoke-static {v12, v3}, Lcom/android/camera/ActivityBase$MyAppBridge;->access$400(Lcom/android/camera/ActivityBase$MyAppBridge;Landroid/graphics/Rect;)V
 
     goto :goto_0
 
     .line 650
-    .end local v2    # "b":I
-    .end local v3    # "frame":Landroid/graphics/Rect;
-    .end local v5    # "l":I
-    .end local v6    # "r":I
-    .end local v7    # "root":Landroid/view/View;
-    .end local v8    # "rootLocation":[I
-    .end local v9    # "t":I
-    .end local v10    # "viewLocation":[I
+    .end local v2           #b:I
+    .end local v3           #frame:Landroid/graphics/Rect;
+    .end local v5           #l:I
+    .end local v6           #r:I
+    .end local v7           #root:Landroid/view/View;
+    .end local v8           #rootLocation:[I
+    .end local v9           #t:I
+    .end local v10           #viewLocation:[I
     :cond_3
     iget-object v12, p0, Lcom/android/camera/ActivityBase;->mCameraScreenNail:Lcom/android/camera/CameraScreenNail;
 
@@ -2222,7 +2227,7 @@
 
 .method protected onLongPress(Landroid/view/MotionEvent;)V
     .locals 0
-    .param p1, "e"    # Landroid/view/MotionEvent;
+    .parameter "e"
 
     .prologue
     .line 799
@@ -2281,9 +2286,9 @@
 
 .method protected onSingleTapUp(Landroid/view/View;II)V
     .locals 0
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "x"    # I
-    .param p3, "y"    # I
+    .parameter "view"
+    .parameter "x"
+    .parameter "y"
 
     .prologue
     .line 692
@@ -2292,8 +2297,8 @@
 
 .method protected onSingleTapUp(II)Z
     .locals 5
-    .param p1, "x"    # I
-    .param p2, "y"    # I
+    .parameter "x"
+    .parameter "y"
 
     .prologue
     const/4 v2, 0x1
@@ -2334,7 +2339,7 @@
     move-result-object v0
 
     .line 681
-    .local v0, "relativeLocation":[I
+    .local v0, relativeLocation:[I
     aget v1, v0, v3
 
     sub-int/2addr p1, v1
@@ -2531,7 +2536,7 @@
 
 .method protected playCameraSound(I)V
     .locals 1
-    .param p1, "soundId"    # I
+    .parameter "soundId"
 
     .prologue
     .line 957
@@ -2565,7 +2570,7 @@
 
 .method protected registerMotionFocusManager(Z)V
     .locals 0
-    .param p1, "b"    # Z
+    .parameter "b"
 
     .prologue
     .line 706
@@ -2642,7 +2647,7 @@
     move-result v0
 
     .line 304
-    .local v0, "recordLocation":Z
+    .local v0, recordLocation:Z
     iget-object v1, p0, Lcom/android/camera/ActivityBase;->mLocationManager:Lcom/android/camera/LocationManager;
 
     invoke-virtual {v1, v0}, Lcom/android/camera/LocationManager;->recordLocation(Z)V
@@ -2719,7 +2724,7 @@
 
 .method public setContentView(I)V
     .locals 1
-    .param p1, "layoutResID"    # I
+    .parameter "layoutResID"
 
     .prologue
     .line 368
@@ -2743,8 +2748,8 @@
 
 .method protected setOrientationIndicator(IZ)V
     .locals 7
-    .param p1, "orientation"    # I
-    .param p2, "animation"    # Z
+    .parameter "orientation"
+    .parameter "animation"
 
     .prologue
     .line 1015
@@ -2765,23 +2770,23 @@
     aput-object v6, v4, v5
 
     .line 1016
-    .local v4, "views":[Landroid/view/View;
+    .local v4, views:[Landroid/view/View;
     move-object v0, v4
 
-    .local v0, "arr$":[Landroid/view/View;
+    .local v0, arr$:[Landroid/view/View;
     array-length v2, v0
 
-    .local v2, "len$":I
+    .local v2, len$:I
     const/4 v1, 0x0
 
-    .local v1, "i$":I
+    .local v1, i$:I
     :goto_0
     if-ge v1, v2, :cond_0
 
     aget-object v3, v0, v1
 
     .line 1017
-    .local v3, "v":Landroid/view/View;
+    .local v3, v:Landroid/view/View;
     invoke-virtual {p0, v3}, Lcom/android/camera/ActivityBase;->getMarginValue(Landroid/view/View;)I
 
     move-result v5
@@ -2794,14 +2799,14 @@
     goto :goto_0
 
     .line 1019
-    .end local v3    # "v":Landroid/view/View;
+    .end local v3           #v:Landroid/view/View;
     :cond_0
     return-void
 .end method
 
 .method protected setResultEx(I)V
     .locals 0
-    .param p1, "resultCode"    # I
+    .parameter "resultCode"
 
     .prologue
     .line 397
@@ -2816,8 +2821,8 @@
 
 .method protected setResultEx(ILandroid/content/Intent;)V
     .locals 0
-    .param p1, "resultCode"    # I
-    .param p2, "data"    # Landroid/content/Intent;
+    .parameter "resultCode"
+    .parameter "data"
 
     .prologue
     .line 402
@@ -2835,7 +2840,7 @@
 
 .method protected setSingleTapUpListener(Landroid/view/View;)V
     .locals 0
-    .param p1, "singleTapArea"    # Landroid/view/View;
+    .parameter "singleTapArea"
 
     .prologue
     .line 671
@@ -2847,13 +2852,13 @@
 
 .method protected setSwipingEnabled(Z)V
     .locals 1
-    .param p1, "enabled"    # Z
+    .parameter "enabled"
 
     .prologue
     .line 695
     iget-object v0, p0, Lcom/android/camera/ActivityBase;->mAppBridge:Lcom/android/camera/ActivityBase$MyAppBridge;
 
-    # invokes: Lcom/android/camera/ActivityBase$MyAppBridge;->setSwipingEnabled(Z)V
+    #calls: Lcom/android/camera/ActivityBase$MyAppBridge;->setSwipingEnabled(Z)V
     invoke-static {v0, p1}, Lcom/android/camera/ActivityBase$MyAppBridge;->access$500(Lcom/android/camera/ActivityBase$MyAppBridge;Z)V
 
     .line 696
@@ -2872,6 +2877,7 @@
 
 .method protected showIndicators(Z)V
     .locals 2
+    .parameter
 
     .prologue
     .line 963
@@ -3009,7 +3015,7 @@
 
     move-result-object v0
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f80
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
@@ -3151,9 +3157,9 @@
 
 .method protected updateRotateLayout(ILandroid/view/View;I)V
     .locals 3
-    .param p1, "degree"    # I
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "marginValue"    # I
+    .parameter "degree"
+    .parameter "view"
+    .parameter "marginValue"
 
     .prologue
     const/4 v2, -0x1
@@ -3164,7 +3170,7 @@
     invoke-direct {v0, v2, v2}, Landroid/widget/RelativeLayout$LayoutParams;-><init>(II)V
 
     .line 920
-    .local v0, "params":Landroid/widget/RelativeLayout$LayoutParams;
+    .local v0, params:Landroid/widget/RelativeLayout$LayoutParams;
     sparse-switch p1, :sswitch_data_0
 
     .line 938
@@ -3289,14 +3295,14 @@
     div-int/lit8 v0, v1, 0xc
 
     .line 853
-    .local v0, "delValue":I
+    .local v0, delValue:I
     iget v1, p0, Lcom/android/camera/ActivityBase;->mZoomValue:I
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    .end local v0    # "delValue":I
+    .end local v0           #delValue:I
     :cond_0
     add-int/2addr v1, v0
 
@@ -3350,14 +3356,14 @@
     div-int/lit8 v0, v1, 0xc
 
     .line 864
-    .local v0, "delValue":I
+    .local v0, delValue:I
     iget v1, p0, Lcom/android/camera/ActivityBase;->mZoomValue:I
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    .end local v0    # "delValue":I
+    .end local v0           #delValue:I
     :cond_0
     sub-int/2addr v1, v0
 

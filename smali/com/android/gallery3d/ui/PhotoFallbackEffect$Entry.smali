@@ -25,9 +25,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;Landroid/graphics/Rect;Lcom/android/gallery3d/ui/RawTexture;)V
     .locals 0
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
-    .param p2, "source"    # Landroid/graphics/Rect;
-    .param p3, "texture"    # Lcom/android/gallery3d/ui/RawTexture;
+    .parameter "path"
+    .parameter "source"
+    .parameter "texture"
 
     .prologue
     .line 42

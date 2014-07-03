@@ -45,16 +45,16 @@
     nop
 
     :array_0
-    .array-data 4
-        0x7f020037
-        0x7f020038
+    .array-data 0x4
+        0x37t 0x0t 0x2t 0x7ft
+        0x38t 0x0t 0x2t 0x7ft
     .end array-data
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 24
@@ -69,7 +69,7 @@
 
 .method private getSettingPanelState(Z)Ljava/lang/String;
     .locals 2
-    .param p1, "isFocused"    # Z
+    .parameter "isFocused"
 
     .prologue
     .line 74
@@ -85,7 +85,7 @@
     const v0, 0x7f0d0130
 
     .line 81
-    .local v0, "resId":I
+    .local v0, resId:I
     :goto_0
     invoke-virtual {p0}, Lcom/android/camera/ui/SettingButton;->getResources()Landroid/content/res/Resources;
 
@@ -98,7 +98,7 @@
     return-object v1
 
     .line 75
-    .end local v0    # "resId":I
+    .end local v0           #resId:I
     :cond_0
     const v0, 0x7f0d0132
 
@@ -110,11 +110,11 @@
 
     const v0, 0x7f0d012f
 
-    .restart local v0    # "resId":I
+    .restart local v0       #resId:I
     :goto_1
     goto :goto_0
 
-    .end local v0    # "resId":I
+    .end local v0           #resId:I
     :cond_2
     const v0, 0x7f0d0131
 
@@ -190,7 +190,7 @@
 # virtual methods
 .method public dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
     .locals 4
-    .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
+    .parameter "event"
 
     .prologue
     .line 61
@@ -199,7 +199,7 @@
     move-result v0
 
     .line 62
-    .local v0, "ret":Z
+    .local v0, ret:Z
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
 
     move-result v2
@@ -216,7 +216,7 @@
     move-result-object v1
 
     .line 64
-    .local v1, "text":Ljava/lang/String;
+    .local v1, text:Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -231,14 +231,14 @@
     invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 68
-    .end local v1    # "text":Ljava/lang/String;
+    .end local v1           #text:Ljava/lang/String;
     :cond_0
     return v0
 .end method
 
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 42
@@ -258,7 +258,7 @@
 
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
-    .param p1, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
+    .parameter "info"
 
     .prologue
     .line 55
@@ -279,7 +279,7 @@
 
 .method public setOnSettingButtonListener(Lcom/android/camera/ui/SettingButton$OnSettingButtonListener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/camera/ui/SettingButton$OnSettingButtonListener;
+    .parameter "listener"
 
     .prologue
     .line 50

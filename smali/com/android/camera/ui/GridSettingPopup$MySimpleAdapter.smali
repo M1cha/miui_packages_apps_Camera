@@ -21,10 +21,12 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/ui/GridSettingPopup;Landroid/content/Context;Ljava/util/List;I[Ljava/lang/String;[I)V
     .locals 6
-    .param p2, "context"    # Landroid/content/Context;
-    .param p4, "resource"    # I
-    .param p5, "from"    # [Ljava/lang/String;
-    .param p6, "to"    # [I
+    .parameter
+    .parameter "context"
+    .parameter
+    .parameter "resource"
+    .parameter "from"
+    .parameter "to"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -42,7 +44,7 @@
 
     .prologue
     .line 73
-    .local p3, "data":Ljava/util/List;, "Ljava/util/List<+Ljava/util/Map<Ljava/lang/String;*>;>;"
+    .local p3, data:Ljava/util/List;,"Ljava/util/List<+Ljava/util/Map<Ljava/lang/String;*>;>;"
     iput-object p1, p0, Lcom/android/camera/ui/GridSettingPopup$MySimpleAdapter;->this$0:Lcom/android/camera/ui/GridSettingPopup;
 
     move-object v0, p0
@@ -68,9 +70,9 @@
 # virtual methods
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 4
-    .param p1, "position"    # I
-    .param p2, "convertView"    # Landroid/view/View;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
+    .parameter "position"
+    .parameter "convertView"
+    .parameter "parent"
 
     .prologue
     .line 79
@@ -79,7 +81,7 @@
     move-result-object v0
 
     .line 80
-    .local v0, "v":Landroid/view/View;
+    .local v0, v:Landroid/view/View;
     iget-object v1, p0, Lcom/android/camera/ui/GridSettingPopup$MySimpleAdapter;->this$0:Lcom/android/camera/ui/GridSettingPopup;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
@@ -103,7 +105,7 @@
 
     iget-object v2, p0, Lcom/android/camera/ui/GridSettingPopup$MySimpleAdapter;->this$0:Lcom/android/camera/ui/GridSettingPopup;
 
-    # getter for: Lcom/android/camera/ui/GridSettingPopup;->mOrientation:I
+    #getter for: Lcom/android/camera/ui/GridSettingPopup;->mOrientation:I
     invoke-static {v2}, Lcom/android/camera/ui/GridSettingPopup;->access$000(Lcom/android/camera/ui/GridSettingPopup;)I
 
     move-result v2

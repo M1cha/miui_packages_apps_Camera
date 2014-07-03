@@ -35,7 +35,7 @@
 
 .method public constructor <init>(I)V
     .locals 1
-    .param p1, "size"    # I
+    .parameter "size"
 
     .prologue
     .line 34
@@ -57,7 +57,7 @@
 
 .method private static makeArray(I)[I
     .locals 1
-    .param p0, "size"    # I
+    .parameter "size"
 
     .prologue
     .line 306
@@ -82,10 +82,10 @@
     array-length v1, v2
 
     .line 174
-    .local v1, "max":I
+    .local v1, max:I
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     if-ge v0, v1, :cond_0
 
@@ -108,7 +108,7 @@
 
 .method public get(I)Z
     .locals 3
-    .param p1, "i"    # I
+    .parameter "i"
 
     .prologue
     const/4 v0, 0x1
@@ -149,7 +149,7 @@
 
 .method public getNextSet(I)I
     .locals 5
-    .param p1, "from"    # I
+    .parameter "from"
 
     .prologue
     .line 88
@@ -170,13 +170,13 @@
     shr-int/lit8 v0, p1, 0x5
 
     .line 92
-    .local v0, "bitsOffset":I
+    .local v0, bitsOffset:I
     iget-object v3, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
     aget v1, v3, v0
 
     .line 94
-    .local v1, "currentBits":I
+    .local v1, currentBits:I
     const/4 v3, 0x1
 
     and-int/lit8 v4, p1, 0x1f
@@ -226,7 +226,7 @@
     add-int v2, v3, v4
 
     .line 102
-    .local v2, "result":I
+    .local v2, result:I
     iget v3, p0, Lcom/google/zxing/common/BitArray;->size:I
 
     if-le v2, v3, :cond_0
@@ -238,7 +238,7 @@
 
 .method public getNextUnset(I)I
     .locals 5
-    .param p1, "from"    # I
+    .parameter "from"
 
     .prologue
     .line 109
@@ -259,7 +259,7 @@
     shr-int/lit8 v0, p1, 0x5
 
     .line 113
-    .local v0, "bitsOffset":I
+    .local v0, bitsOffset:I
     iget-object v3, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
     aget v3, v3, v0
@@ -267,7 +267,7 @@
     xor-int/lit8 v1, v3, -0x1
 
     .line 115
-    .local v1, "currentBits":I
+    .local v1, currentBits:I
     const/4 v3, 0x1
 
     and-int/lit8 v4, p1, 0x1f
@@ -319,7 +319,7 @@
     add-int v2, v3, v4
 
     .line 123
-    .local v2, "result":I
+    .local v2, result:I
     iget v3, p0, Lcom/google/zxing/common/BitArray;->size:I
 
     if-le v2, v3, :cond_0
@@ -341,9 +341,9 @@
 
 .method public isRange(IIZ)Z
     .locals 11
-    .param p1, "start"    # I
-    .param p2, "end"    # I
-    .param p3, "value"    # Z
+    .parameter "start"
+    .parameter "end"
+    .parameter "value"
 
     .prologue
     const/16 v9, 0x1f
@@ -379,14 +379,14 @@
     shr-int/lit8 v1, p1, 0x5
 
     .line 197
-    .local v1, "firstInt":I
+    .local v1, firstInt:I
     shr-int/lit8 v5, p2, 0x5
 
     .line 198
-    .local v5, "lastInt":I
+    .local v5, lastInt:I
     move v2, v1
 
-    .local v2, "i":I
+    .local v2, i:I
     :goto_1
     if-gt v2, v5, :cond_1
 
@@ -396,14 +396,14 @@
     move v0, v8
 
     .line 200
-    .local v0, "firstBit":I
+    .local v0, firstBit:I
     :goto_2
     if-ge v2, v5, :cond_5
 
     move v4, v9
 
     .line 202
-    .local v4, "lastBit":I
+    .local v4, lastBit:I
     :goto_3
     if-nez v0, :cond_6
 
@@ -413,7 +413,7 @@
     const/4 v6, -0x1
 
     .line 213
-    .local v6, "mask":I
+    .local v6, mask:I
     :cond_3
     iget-object v10, p0, Lcom/google/zxing/common/BitArray;->bits:[I
 
@@ -423,7 +423,7 @@
 
     if-eqz p3, :cond_7
 
-    .end local v6    # "mask":I
+    .end local v6           #mask:I
     :goto_4
     if-eq v10, v6, :cond_8
 
@@ -433,30 +433,30 @@
     goto :goto_0
 
     .line 199
-    .end local v0    # "firstBit":I
-    .end local v4    # "lastBit":I
+    .end local v0           #firstBit:I
+    .end local v4           #lastBit:I
     :cond_4
     and-int/lit8 v0, p1, 0x1f
 
     goto :goto_2
 
     .line 200
-    .restart local v0    # "firstBit":I
+    .restart local v0       #firstBit:I
     :cond_5
     and-int/lit8 v4, p2, 0x1f
 
     goto :goto_3
 
     .line 205
-    .restart local v4    # "lastBit":I
+    .restart local v4       #lastBit:I
     :cond_6
     const/4 v6, 0x0
 
     .line 206
-    .restart local v6    # "mask":I
+    .restart local v6       #mask:I
     move v3, v0
 
-    .local v3, "j":I
+    .local v3, j:I
     :goto_5
     if-gt v3, v4, :cond_3
 
@@ -470,7 +470,7 @@
 
     goto :goto_5
 
-    .end local v3    # "j":I
+    .end local v3           #j:I
     :cond_7
     move v6, v8
 
@@ -478,7 +478,7 @@
     goto :goto_4
 
     .line 198
-    .end local v6    # "mask":I
+    .end local v6           #mask:I
     :cond_8
     add-int/lit8 v2, v2, 0x1
 
@@ -497,14 +497,14 @@
     new-array v1, v3, [I
 
     .line 296
-    .local v1, "newBits":[I
+    .local v1, newBits:[I
     iget v2, p0, Lcom/google/zxing/common/BitArray;->size:I
 
     .line 297
-    .local v2, "size":I
+    .local v2, size:I
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     if-ge v0, v2, :cond_1
 
@@ -550,7 +550,7 @@
 
 .method public set(I)V
     .locals 5
-    .param p1, "i"    # I
+    .parameter "i"
 
     .prologue
     .line 69
@@ -576,8 +576,8 @@
 
 .method public setBulk(II)V
     .locals 2
-    .param p1, "i"    # I
-    .param p2, "newBits"    # I
+    .parameter "i"
+    .parameter "newBits"
 
     .prologue
     .line 134
@@ -603,10 +603,10 @@
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 312
-    .local v1, "result":Ljava/lang/StringBuilder;
+    .local v1, result:Ljava/lang/StringBuilder;
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     iget v2, p0, Lcom/google/zxing/common/BitArray;->size:I
 

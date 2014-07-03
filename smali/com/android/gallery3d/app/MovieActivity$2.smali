@@ -23,7 +23,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/MovieActivity;Landroid/content/ContentResolver;Landroid/app/ActionBar;)V
     .locals 0
-    .param p2, "x0"    # Landroid/content/ContentResolver;
+    .parameter
+    .parameter "x0"
+    .parameter
 
     .prologue
     .line 124
@@ -40,9 +42,9 @@
 # virtual methods
 .method protected onQueryComplete(ILjava/lang/Object;Landroid/database/Cursor;)V
     .locals 2
-    .param p1, "token"    # I
-    .param p2, "cookie"    # Ljava/lang/Object;
-    .param p3, "cursor"    # Landroid/database/Cursor;
+    .parameter "token"
+    .parameter "cookie"
+    .parameter "cursor"
 
     .prologue
     .line 129
@@ -63,14 +65,14 @@
     move-result-object v0
 
     .line 134
-    .local v0, "displayName":Ljava/lang/String;
+    .local v0, displayName:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/gallery3d/app/MovieActivity$2;->val$actionBar:Landroid/app/ActionBar;
 
     if-nez v0, :cond_0
 
     const-string v0, ""
 
-    .end local v0    # "displayName":Ljava/lang/String;
+    .end local v0           #displayName:Ljava/lang/String;
     :cond_0
     invoke-virtual {v1, v0}, Landroid/app/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
     :try_end_0

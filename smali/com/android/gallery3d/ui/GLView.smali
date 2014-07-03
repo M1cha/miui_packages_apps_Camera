@@ -112,10 +112,10 @@
 
 .method private setBounds(IIII)Z
     .locals 4
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
+    .parameter "left"
+    .parameter "top"
+    .parameter "right"
+    .parameter "bottom"
 
     .prologue
     .line 321
@@ -151,7 +151,7 @@
     const/4 v0, 0x1
 
     .line 323
-    .local v0, "sizeChanged":Z
+    .local v0, sizeChanged:Z
     :goto_0
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLView;->mBounds:Landroid/graphics/Rect;
 
@@ -161,7 +161,7 @@
     return v0
 
     .line 321
-    .end local v0    # "sizeChanged":Z
+    .end local v0           #sizeChanged:Z
     :cond_1
     const/4 v0, 0x0
 
@@ -172,7 +172,7 @@
 # virtual methods
 .method public addComponent(Lcom/android/gallery3d/ui/GLView;)V
     .locals 1
-    .param p1, "component"    # Lcom/android/gallery3d/ui/GLView;
+    .parameter "component"
 
     .prologue
     .line 137
@@ -225,7 +225,7 @@
 
 .method public attachToRoot(Lcom/android/gallery3d/ui/GLRoot;)V
     .locals 1
-    .param p1, "root"    # Lcom/android/gallery3d/ui/GLRoot;
+    .parameter "root"
 
     .prologue
     .line 111
@@ -298,7 +298,7 @@
 
 .method protected dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 12
-    .param p1, "event"    # Landroid/view/MotionEvent;
+    .parameter "event"
 
     .prologue
     .line 274
@@ -309,7 +309,7 @@
     float-to-int v2, v0
 
     .line 275
-    .local v2, "x":I
+    .local v2, x:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
@@ -317,13 +317,13 @@
     float-to-int v3, v0
 
     .line 276
-    .local v3, "y":I
+    .local v3, y:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v10
 
     .line 277
-    .local v10, "action":I
+    .local v10, action:I
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLView;->mMotionTarget:Lcom/android/gallery3d/ui/GLView;
 
     if-eqz v0, :cond_0
@@ -337,7 +337,7 @@
     move-result-object v1
 
     .line 280
-    .local v1, "cancel":Landroid/view/MotionEvent;
+    .local v1, cancel:Landroid/view/MotionEvent;
     const/4 v0, 0x3
 
     invoke-virtual {v1, v0}, Landroid/view/MotionEvent;->setAction(I)V
@@ -357,7 +357,7 @@
     iput-object v0, p0, Lcom/android/gallery3d/ui/GLView;->mMotionTarget:Lcom/android/gallery3d/ui/GLView;
 
     .line 292
-    .end local v1    # "cancel":Landroid/view/MotionEvent;
+    .end local v1           #cancel:Landroid/view/MotionEvent;
     :cond_0
     if-nez v10, :cond_6
 
@@ -368,7 +368,7 @@
 
     add-int/lit8 v11, v0, -0x1
 
-    .local v11, "i":I
+    .local v11, i:I
     :goto_0
     if-ltz v11, :cond_6
 
@@ -378,7 +378,7 @@
     move-result-object v8
 
     .line 296
-    .local v8, "component":Lcom/android/gallery3d/ui/GLView;
+    .local v8, component:Lcom/android/gallery3d/ui/GLView;
     invoke-virtual {v8}, Lcom/android/gallery3d/ui/GLView;->getVisibility()I
 
     move-result v0
@@ -392,8 +392,8 @@
     goto :goto_0
 
     .line 284
-    .end local v8    # "component":Lcom/android/gallery3d/ui/GLView;
-    .end local v11    # "i":I
+    .end local v8           #component:Lcom/android/gallery3d/ui/GLView;
+    .end local v11           #i:I
     :cond_2
     iget-object v8, p0, Lcom/android/gallery3d/ui/GLView;->mMotionTarget:Lcom/android/gallery3d/ui/GLView;
 
@@ -433,8 +433,8 @@
     return v0
 
     .line 297
-    .restart local v8    # "component":Lcom/android/gallery3d/ui/GLView;
-    .restart local v11    # "i":I
+    .restart local v8       #component:Lcom/android/gallery3d/ui/GLView;
+    .restart local v11       #i:I
     :cond_5
     const/4 v9, 0x1
 
@@ -461,8 +461,8 @@
     goto :goto_1
 
     .line 303
-    .end local v8    # "component":Lcom/android/gallery3d/ui/GLView;
-    .end local v11    # "i":I
+    .end local v8           #component:Lcom/android/gallery3d/ui/GLView;
+    .end local v11           #i:I
     :cond_6
     invoke-virtual {p0, p1}, Lcom/android/gallery3d/ui/GLView;->onTouch(Landroid/view/MotionEvent;)Z
 
@@ -473,26 +473,26 @@
 
 .method protected dispatchTouchEvent(Landroid/view/MotionEvent;IILcom/android/gallery3d/ui/GLView;Z)Z
     .locals 5
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "x"    # I
-    .param p3, "y"    # I
-    .param p4, "component"    # Lcom/android/gallery3d/ui/GLView;
-    .param p5, "checkBounds"    # Z
+    .parameter "event"
+    .parameter "x"
+    .parameter "y"
+    .parameter "component"
+    .parameter "checkBounds"
 
     .prologue
     .line 259
     iget-object v1, p4, Lcom/android/gallery3d/ui/GLView;->mBounds:Landroid/graphics/Rect;
 
     .line 260
-    .local v1, "rect":Landroid/graphics/Rect;
+    .local v1, rect:Landroid/graphics/Rect;
     iget v0, v1, Landroid/graphics/Rect;->left:I
 
     .line 261
-    .local v0, "left":I
+    .local v0, left:I
     iget v2, v1, Landroid/graphics/Rect;->top:I
 
     .line 262
-    .local v2, "top":I
+    .local v2, top:I
     if-eqz p5, :cond_0
 
     invoke-virtual {v1, p2, p3}, Landroid/graphics/Rect;->contains(II)Z
@@ -551,23 +551,23 @@
 
 .method public getBoundsOf(Lcom/android/gallery3d/ui/GLView;Landroid/graphics/Rect;)Z
     .locals 6
-    .param p1, "descendant"    # Lcom/android/gallery3d/ui/GLView;
-    .param p2, "out"    # Landroid/graphics/Rect;
+    .parameter "descendant"
+    .parameter "out"
 
     .prologue
     .line 369
     const/4 v2, 0x0
 
     .line 370
-    .local v2, "xoffset":I
+    .local v2, xoffset:I
     const/4 v3, 0x0
 
     .line 371
-    .local v3, "yoffset":I
+    .local v3, yoffset:I
     move-object v1, p1
 
     .line 372
-    .local v1, "view":Lcom/android/gallery3d/ui/GLView;
+    .local v1, view:Lcom/android/gallery3d/ui/GLView;
     :goto_0
     if-eq v1, p0, :cond_1
 
@@ -585,7 +585,7 @@
     iget-object v0, v1, Lcom/android/gallery3d/ui/GLView;->mBounds:Landroid/graphics/Rect;
 
     .line 375
-    .local v0, "bounds":Landroid/graphics/Rect;
+    .local v0, bounds:Landroid/graphics/Rect;
     iget v4, v0, Landroid/graphics/Rect;->left:I
 
     add-int/2addr v2, v4
@@ -602,7 +602,7 @@
     goto :goto_0
 
     .line 379
-    .end local v0    # "bounds":Landroid/graphics/Rect;
+    .end local v0           #bounds:Landroid/graphics/Rect;
     :cond_1
     invoke-virtual {p1}, Lcom/android/gallery3d/ui/GLView;->getWidth()I
 
@@ -626,7 +626,7 @@
 
 .method public getComponent(I)Lcom/android/gallery3d/ui/GLView;
     .locals 1
-    .param p1, "index"    # I
+    .parameter "index"
 
     .prologue
     .line 128
@@ -776,7 +776,7 @@
     move-result-object v0
 
     .line 202
-    .local v0, "root":Lcom/android/gallery3d/ui/GLRoot;
+    .local v0, root:Lcom/android/gallery3d/ui/GLRoot;
     if-eqz v0, :cond_0
 
     invoke-interface {v0}, Lcom/android/gallery3d/ui/GLRoot;->requestRender()V
@@ -788,10 +788,10 @@
 
 .method public layout(IIII)V
     .locals 6
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
+    .parameter "left"
+    .parameter "top"
+    .parameter "right"
+    .parameter "bottom"
 
     .prologue
     .line 311
@@ -800,7 +800,7 @@
     move-result v1
 
     .line 312
-    .local v1, "sizeChanged":Z
+    .local v1, sizeChanged:Z
     iget v0, p0, Lcom/android/gallery3d/ui/GLView;->mViewFlags:I
 
     and-int/lit8 v0, v0, -0x5
@@ -826,8 +826,8 @@
 
 .method public measure(II)V
     .locals 3
-    .param p1, "widthSpec"    # I
-    .param p2, "heightSpec"    # I
+    .parameter "widthSpec"
+    .parameter "heightSpec"
 
     .prologue
     .line 328
@@ -909,7 +909,7 @@
 
 .method protected onAttachToRoot(Lcom/android/gallery3d/ui/GLRoot;)V
     .locals 3
-    .param p1, "root"    # Lcom/android/gallery3d/ui/GLRoot;
+    .parameter "root"
 
     .prologue
     .line 394
@@ -918,12 +918,12 @@
     .line 395
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->getComponentCount()I
 
     move-result v1
 
-    .local v1, "n":I
+    .local v1, n:I
     :goto_0
     if-ge v0, v1, :cond_0
 
@@ -951,12 +951,12 @@
     .line 401
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->getComponentCount()I
 
     move-result v1
 
-    .local v1, "n":I
+    .local v1, n:I
     :goto_0
     if-ge v0, v1, :cond_0
 
@@ -984,11 +984,11 @@
 
 .method protected onLayout(ZIIII)V
     .locals 0
-    .param p1, "changeSize"    # Z
-    .param p2, "left"    # I
-    .param p3, "top"    # I
-    .param p4, "right"    # I
-    .param p5, "bottom"    # I
+    .parameter "changeSize"
+    .parameter "left"
+    .parameter "top"
+    .parameter "right"
+    .parameter "bottom"
 
     .prologue
     .line 363
@@ -997,8 +997,8 @@
 
 .method protected onMeasure(II)V
     .locals 0
-    .param p1, "widthSpec"    # I
-    .param p2, "heightSpec"    # I
+    .parameter "widthSpec"
+    .parameter "heightSpec"
 
     .prologue
     .line 345
@@ -1007,7 +1007,7 @@
 
 .method protected onTouch(Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "event"    # Landroid/view/MotionEvent;
+    .parameter "event"
 
     .prologue
     .line 254
@@ -1018,18 +1018,18 @@
 
 .method protected onVisibilityChanged(I)V
     .locals 4
-    .param p1, "visibility"    # I
+    .parameter "visibility"
 
     .prologue
     .line 385
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->getComponentCount()I
 
     move-result v2
 
-    .local v2, "n":I
+    .local v2, n:I
     :goto_0
     if-ge v1, v2, :cond_1
 
@@ -1039,7 +1039,7 @@
     move-result-object v0
 
     .line 387
-    .local v0, "child":Lcom/android/gallery3d/ui/GLView;
+    .local v0, child:Lcom/android/gallery3d/ui/GLView;
     invoke-virtual {v0}, Lcom/android/gallery3d/ui/GLView;->getVisibility()I
 
     move-result v3
@@ -1056,14 +1056,14 @@
     goto :goto_0
 
     .line 391
-    .end local v0    # "child":Lcom/android/gallery3d/ui/GLView;
+    .end local v0           #child:Lcom/android/gallery3d/ui/GLView;
     :cond_1
     return-void
 .end method
 
 .method protected render(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 3
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .parameter "canvas"
 
     .prologue
     .line 220
@@ -1072,12 +1072,12 @@
     .line 221
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLView;->getComponentCount()I
 
     move-result v1
 
-    .local v1, "n":I
+    .local v1, n:I
     :goto_0
     if-ge v0, v1, :cond_0
 
@@ -1100,7 +1100,7 @@
 
 .method protected renderBackground(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 0
-    .param p1, "view"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .parameter "view"
 
     .prologue
     .line 227
@@ -1109,8 +1109,8 @@
 
 .method protected renderChild(Lcom/android/gallery3d/ui/GLCanvas;Lcom/android/gallery3d/ui/GLView;)V
     .locals 5
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
-    .param p2, "component"    # Lcom/android/gallery3d/ui/GLView;
+    .parameter "canvas"
+    .parameter "component"
 
     .prologue
     .line 230
@@ -1139,7 +1139,7 @@
     sub-int v1, v3, v4
 
     .line 234
-    .local v1, "xoffset":I
+    .local v1, xoffset:I
     iget-object v3, p2, Lcom/android/gallery3d/ui/GLView;->mBounds:Landroid/graphics/Rect;
 
     iget v3, v3, Landroid/graphics/Rect;->top:I
@@ -1149,7 +1149,7 @@
     sub-int v2, v3, v4
 
     .line 236
-    .local v2, "yoffset":I
+    .local v2, yoffset:I
     int-to-float v3, v1
 
     int-to-float v4, v2
@@ -1160,7 +1160,7 @@
     iget-object v0, p2, Lcom/android/gallery3d/ui/GLView;->mAnimation:Lcom/android/gallery3d/anim/CanvasAnimation;
 
     .line 239
-    .local v0, "anim":Lcom/android/gallery3d/anim/CanvasAnimation;
+    .local v0, anim:Lcom/android/gallery3d/anim/CanvasAnimation;
     if-eqz v0, :cond_1
 
     .line 240
@@ -1222,8 +1222,8 @@
 
 .method protected setMeasuredSize(II)V
     .locals 1
-    .param p1, "width"    # I
-    .param p2, "height"    # I
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 348
@@ -1245,7 +1245,7 @@
 
 .method public setVisibility(I)V
     .locals 1
-    .param p1, "visibility"    # I
+    .parameter "visibility"
 
     .prologue
     .line 94

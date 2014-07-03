@@ -55,36 +55,36 @@
 
     .line 50
     :array_0
-    .array-data 4
-        0x3
-        0x6
-        0x9
-        0x60
-        0x12
-        0x42
-        0x21
-        0x24
-        0x30
-        0x48
-        0xc
-        0x18
-        0x45
-        0x51
-        0x54
-        0x15
-        0x1a
-        0x29
-        0xb
-        0xe
+    .array-data 0x4
+        0x3t 0x0t 0x0t 0x0t
+        0x6t 0x0t 0x0t 0x0t
+        0x9t 0x0t 0x0t 0x0t
+        0x60t 0x0t 0x0t 0x0t
+        0x12t 0x0t 0x0t 0x0t
+        0x42t 0x0t 0x0t 0x0t
+        0x21t 0x0t 0x0t 0x0t
+        0x24t 0x0t 0x0t 0x0t
+        0x30t 0x0t 0x0t 0x0t
+        0x48t 0x0t 0x0t 0x0t
+        0xct 0x0t 0x0t 0x0t
+        0x18t 0x0t 0x0t 0x0t
+        0x45t 0x0t 0x0t 0x0t
+        0x51t 0x0t 0x0t 0x0t
+        0x54t 0x0t 0x0t 0x0t
+        0x15t 0x0t 0x0t 0x0t
+        0x1at 0x0t 0x0t 0x0t
+        0x29t 0x0t 0x0t 0x0t
+        0xbt 0x0t 0x0t 0x0t
+        0xet 0x0t 0x0t 0x0t
     .end array-data
 
     .line 61
     :array_1
-    .array-data 2
-        0x41s
-        0x42s
-        0x43s
-        0x44s
+    .array-data 0x2
+        0x41t 0x0t
+        0x42t 0x0t
+        0x43t 0x0t
+        0x44t 0x0t
     .end array-data
 .end method
 
@@ -122,8 +122,8 @@
 
 .method static arrayContains([CC)Z
     .locals 5
-    .param p0, "array"    # [C
-    .param p1, "key"    # C
+    .parameter "array"
+    .parameter "key"
 
     .prologue
     .line 280
@@ -132,48 +132,48 @@
     .line 281
     move-object v0, p0
 
-    .local v0, "arr$":[C
+    .local v0, arr$:[C
     array-length v3, v0
 
-    .local v3, "len$":I
+    .local v3, len$:I
     const/4 v2, 0x0
 
-    .local v2, "i$":I
+    .local v2, i$:I
     :goto_0
     if-ge v2, v3, :cond_1
 
     aget-char v1, v0, v2
 
     .line 282
-    .local v1, "c":C
+    .local v1, c:C
     if-ne v1, p1, :cond_0
 
     .line 283
     const/4 v4, 0x1
 
     .line 287
-    .end local v0    # "arr$":[C
-    .end local v1    # "c":C
-    .end local v2    # "i$":I
-    .end local v3    # "len$":I
+    .end local v0           #arr$:[C
+    .end local v1           #c:C
+    .end local v2           #i$:I
+    .end local v3           #len$:I
     :goto_1
     return v4
 
     .line 281
-    .restart local v0    # "arr$":[C
-    .restart local v1    # "c":C
-    .restart local v2    # "i$":I
-    .restart local v3    # "len$":I
+    .restart local v0       #arr$:[C
+    .restart local v1       #c:C
+    .restart local v2       #i$:I
+    .restart local v3       #len$:I
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
     .line 287
-    .end local v0    # "arr$":[C
-    .end local v1    # "c":C
-    .end local v2    # "i$":I
-    .end local v3    # "len$":I
+    .end local v0           #arr$:[C
+    .end local v1           #c:C
+    .end local v2           #i$:I
+    .end local v3           #len$:I
     :cond_1
     const/4 v4, 0x0
 
@@ -182,7 +182,7 @@
 
 .method private counterAppend(I)V
     .locals 4
-    .param p1, "e"    # I
+    .parameter "e"
 
     .prologue
     const/4 v3, 0x0
@@ -218,7 +218,7 @@
     new-array v0, v1, [I
 
     .line 256
-    .local v0, "temp":[I
+    .local v0, temp:[I
     iget-object v1, p0, Lcom/google/zxing/oned/CodaBarReader;->counters:[I
 
     iget v2, p0, Lcom/google/zxing/oned/CodaBarReader;->counterLength:I
@@ -229,7 +229,7 @@
     iput-object v0, p0, Lcom/google/zxing/oned/CodaBarReader;->counters:[I
 
     .line 259
-    .end local v0    # "temp":[I
+    .end local v0           #temp:[I
     :cond_0
     return-void
 .end method
@@ -246,7 +246,7 @@
     .line 262
     const/4 v1, 0x1
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     iget v4, p0, Lcom/google/zxing/oned/CodaBarReader;->counterLength:I
 
@@ -258,7 +258,7 @@
     move-result v0
 
     .line 264
-    .local v0, "charOffset":I
+    .local v0, charOffset:I
     const/4 v4, -0x1
 
     if-eq v0, v4, :cond_2
@@ -279,10 +279,10 @@
     const/4 v3, 0x0
 
     .line 268
-    .local v3, "patternSize":I
+    .local v3, patternSize:I
     move v2, v1
 
-    .local v2, "j":I
+    .local v2, j:I
     :goto_1
     add-int/lit8 v4, v1, 0x7
 
@@ -321,15 +321,15 @@
     return v1
 
     .line 262
-    .end local v2    # "j":I
-    .end local v3    # "patternSize":I
+    .end local v2           #j:I
+    .end local v3           #patternSize:I
     :cond_2
     add-int/lit8 v1, v1, 0x2
 
     goto :goto_0
 
     .line 276
-    .end local v0    # "charOffset":I
+    .end local v0           #charOffset:I
     :cond_3
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
@@ -340,7 +340,7 @@
 
 .method private setCounters(Lcom/google/zxing/common/BitArray;)V
     .locals 6
-    .param p1, "row"    # Lcom/google/zxing/common/BitArray;
+    .parameter "row"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -359,13 +359,13 @@
     move-result v2
 
     .line 233
-    .local v2, "i":I
+    .local v2, i:I
     invoke-virtual {p1}, Lcom/google/zxing/common/BitArray;->getSize()I
 
     move-result v1
 
     .line 234
-    .local v1, "end":I
+    .local v1, end:I
     if-lt v2, v1, :cond_0
 
     .line 235
@@ -380,11 +380,11 @@
     const/4 v3, 0x1
 
     .line 238
-    .local v3, "isWhite":Z
+    .local v3, isWhite:Z
     const/4 v0, 0x0
 
     .line 239
-    .local v0, "count":I
+    .local v0, count:I
     :goto_0
     if-ge v2, v1, :cond_3
 
@@ -436,14 +436,14 @@
 
 .method private toNarrowWidePattern(I)I
     .locals 15
-    .param p1, "position"    # I
+    .parameter "position"
 
     .prologue
     .line 292
     add-int/lit8 v2, p1, 0x7
 
     .line 293
-    .local v2, "end":I
+    .local v2, end:I
     iget v14, p0, Lcom/google/zxing/oned/CodaBarReader;->counterLength:I
 
     if-lt v2, v14, :cond_1
@@ -461,18 +461,18 @@
     iget-object v10, p0, Lcom/google/zxing/oned/CodaBarReader;->counters:[I
 
     .line 299
-    .local v10, "theCounters":[I
+    .local v10, theCounters:[I
     const/4 v5, 0x0
 
     .line 300
-    .local v5, "maxBar":I
+    .local v5, maxBar:I
     const v7, 0x7fffffff
 
     .line 301
-    .local v7, "minBar":I
+    .local v7, minBar:I
     move/from16 v4, p1
 
-    .local v4, "j":I
+    .local v4, j:I
     :goto_1
     if-ge v4, v2, :cond_4
 
@@ -480,7 +480,7 @@
     aget v1, v10, v4
 
     .line 303
-    .local v1, "currentCounter":I
+    .local v1, currentCounter:I
     if-ge v1, v7, :cond_2
 
     .line 304
@@ -500,22 +500,22 @@
     goto :goto_1
 
     .line 310
-    .end local v1    # "currentCounter":I
+    .end local v1           #currentCounter:I
     :cond_4
     add-int v14, v7, v5
 
     div-int/lit8 v12, v14, 0x2
 
     .line 312
-    .local v12, "thresholdBar":I
+    .local v12, thresholdBar:I
     const/4 v6, 0x0
 
     .line 313
-    .local v6, "maxSpace":I
+    .local v6, maxSpace:I
     const v8, 0x7fffffff
 
     .line 314
-    .local v8, "minSpace":I
+    .local v8, minSpace:I
     add-int/lit8 v4, p1, 0x1
 
     :goto_2
@@ -525,7 +525,7 @@
     aget v1, v10, v4
 
     .line 316
-    .restart local v1    # "currentCounter":I
+    .restart local v1       #currentCounter:I
     if-ge v1, v8, :cond_5
 
     .line 317
@@ -545,25 +545,25 @@
     goto :goto_2
 
     .line 323
-    .end local v1    # "currentCounter":I
+    .end local v1           #currentCounter:I
     :cond_7
     add-int v14, v8, v6
 
     div-int/lit8 v13, v14, 0x2
 
     .line 325
-    .local v13, "thresholdSpace":I
+    .local v13, thresholdSpace:I
     const/16 v0, 0x80
 
     .line 326
-    .local v0, "bitmask":I
+    .local v0, bitmask:I
     const/4 v9, 0x0
 
     .line 327
-    .local v9, "pattern":I
+    .local v9, pattern:I
     const/4 v3, 0x0
 
-    .local v3, "i":I
+    .local v3, i:I
     :goto_3
     const/4 v14, 0x7
 
@@ -577,7 +577,7 @@
     move v11, v12
 
     .line 329
-    .local v11, "threshold":I
+    .local v11, threshold:I
     :goto_4
     shr-int/lit8 v0, v0, 0x1
 
@@ -597,7 +597,7 @@
 
     goto :goto_3
 
-    .end local v11    # "threshold":I
+    .end local v11           #threshold:I
     :cond_9
     move v11, v13
 
@@ -638,8 +638,9 @@
 # virtual methods
 .method public decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 20
-    .param p1, "rowNumber"    # I
-    .param p2, "row"    # Lcom/google/zxing/common/BitArray;
+    .parameter "rowNumber"
+    .parameter "row"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -660,7 +661,7 @@
 
     .prologue
     .line 82
-    .local p3, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p3, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/google/zxing/oned/CodaBarReader;->counters:[I
@@ -682,11 +683,11 @@
     move-result v10
 
     .line 85
-    .local v10, "startOffset":I
+    .local v10, startOffset:I
     move v7, v10
 
     .line 87
-    .local v7, "nextStart":I
+    .local v7, nextStart:I
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/google/zxing/oned/CodaBarReader;->decodeRowResult:Ljava/lang/StringBuilder;
@@ -704,7 +705,7 @@
     move-result v2
 
     .line 90
-    .local v2, "charOffset":I
+    .local v2, charOffset:I
     const/4 v13, -0x1
 
     if-ne v2, v13, :cond_1
@@ -765,14 +766,14 @@
     aget v12, v13, v14
 
     .line 107
-    .local v12, "trailingWhitespace":I
+    .local v12, trailingWhitespace:I
     const/4 v5, 0x0
 
     .line 108
-    .local v5, "lastPatternSize":I
+    .local v5, lastPatternSize:I
     const/4 v4, -0x8
 
-    .local v4, "i":I
+    .local v4, i:I
     :goto_1
     const/4 v13, -0x1
 
@@ -795,9 +796,9 @@
     goto :goto_1
 
     .line 103
-    .end local v4    # "i":I
-    .end local v5    # "lastPatternSize":I
-    .end local v12    # "trailingWhitespace":I
+    .end local v4           #i:I
+    .end local v5           #lastPatternSize:I
+    .end local v12           #trailingWhitespace:I
     :cond_2
     move-object/from16 v0, p0
 
@@ -808,9 +809,9 @@
     goto :goto_0
 
     .line 115
-    .restart local v4    # "i":I
-    .restart local v5    # "lastPatternSize":I
-    .restart local v12    # "trailingWhitespace":I
+    .restart local v4       #i:I
+    .restart local v5       #lastPatternSize:I
+    .restart local v12       #trailingWhitespace:I
     :cond_3
     move-object/from16 v0, p0
 
@@ -886,7 +887,7 @@
     move-result v11
 
     .line 127
-    .local v11, "startchar":C
+    .local v11, startchar:C
     sget-object v13, Lcom/google/zxing/oned/CodaBarReader;->STARTEND_ENCODING:[C
 
     invoke-static {v13, v11}, Lcom/google/zxing/oned/CodaBarReader;->arrayContains([CC)Z
@@ -923,7 +924,7 @@
     move-result v3
 
     .line 131
-    .local v3, "endchar":C
+    .local v3, endchar:C
     sget-object v13, Lcom/google/zxing/oned/CodaBarReader;->STARTEND_ENCODING:[C
 
     invoke-static {v13, v3}, Lcom/google/zxing/oned/CodaBarReader;->arrayContains([CC)Z
@@ -991,7 +992,7 @@
     const/4 v9, 0x0
 
     .line 145
-    .local v9, "runningCount":I
+    .local v9, runningCount:I
     const/4 v4, 0x0
 
     :goto_3
@@ -1016,7 +1017,7 @@
     int-to-float v6, v9
 
     .line 149
-    .local v6, "left":F
+    .local v6, left:F
     move v4, v10
 
     :goto_4
@@ -1043,7 +1044,7 @@
     int-to-float v8, v9
 
     .line 153
-    .local v8, "right":F
+    .local v8, right:F
     new-instance v13, Lcom/google/zxing/Result;
 
     move-object/from16 v0, p0
@@ -1109,7 +1110,7 @@
 
 .method validatePattern(I)V
     .locals 15
-    .param p1, "start"    # I
+    .parameter "start"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -1125,7 +1126,7 @@
     fill-array-data v10, :array_0
 
     .line 165
-    .local v10, "sizes":[I
+    .local v10, sizes:[I
     const/4 v11, 0x4
 
     new-array v1, v11, [I
@@ -1133,7 +1134,7 @@
     fill-array-data v1, :array_1
 
     .line 166
-    .local v1, "counts":[I
+    .local v1, counts:[I
     iget-object v11, p0, Lcom/google/zxing/oned/CodaBarReader;->decodeRowResult:Ljava/lang/StringBuilder;
 
     invoke-virtual {v11}, Ljava/lang/StringBuilder;->length()I
@@ -1143,15 +1144,15 @@
     add-int/lit8 v2, v11, -0x1
 
     .line 170
-    .local v2, "end":I
+    .local v2, end:I
     move/from16 v8, p1
 
     .line 171
-    .local v8, "pos":I
+    .local v8, pos:I
     const/4 v3, 0x0
 
     .line 172
-    .local v3, "i":I
+    .local v3, i:I
     :goto_0
     sget-object v11, Lcom/google/zxing/oned/CodaBarReader;->CHARACTER_ENCODINGS:[I
 
@@ -1164,10 +1165,10 @@
     aget v7, v11, v12
 
     .line 173
-    .local v7, "pattern":I
+    .local v7, pattern:I
     const/4 v4, 0x6
 
-    .local v4, "j":I
+    .local v4, j:I
     :goto_1
     if-ltz v4, :cond_0
 
@@ -1181,7 +1182,7 @@
     add-int v0, v11, v12
 
     .line 177
-    .local v0, "category":I
+    .local v0, category:I
     aget v11, v10, v0
 
     iget-object v12, p0, Lcom/google/zxing/oned/CodaBarReader;->counters:[I
@@ -1210,7 +1211,7 @@
     goto :goto_1
 
     .line 181
-    .end local v0    # "category":I
+    .end local v0           #category:I
     :cond_0
     if-lt v3, v2, :cond_1
 
@@ -1220,13 +1221,13 @@
     new-array v5, v11, [I
 
     .line 190
-    .local v5, "maxes":[I
+    .local v5, maxes:[I
     const/4 v11, 0x4
 
     new-array v6, v11, [I
 
     .line 194
-    .local v6, "mins":[I
+    .local v6, mins:[I
     const/4 v3, 0x0
 
     :goto_2
@@ -1300,8 +1301,8 @@
     goto :goto_2
 
     .line 185
-    .end local v5    # "maxes":[I
-    .end local v6    # "mins":[I
+    .end local v5           #maxes:[I
+    .end local v6           #mins:[I
     :cond_1
     add-int/lit8 v8, v8, 0x8
 
@@ -1311,8 +1312,8 @@
     goto :goto_0
 
     .line 203
-    .restart local v5    # "maxes":[I
-    .restart local v6    # "mins":[I
+    .restart local v5       #maxes:[I
+    .restart local v6       #mins:[I
     :cond_2
     move/from16 v8, p1
 
@@ -1347,7 +1348,7 @@
     add-int v0, v11, v12
 
     .line 210
-    .restart local v0    # "category":I
+    .restart local v0       #category:I
     iget-object v11, p0, Lcom/google/zxing/oned/CodaBarReader;->counters:[I
 
     add-int v12, v8, v4
@@ -1357,7 +1358,7 @@
     shl-int/lit8 v9, v11, 0x8
 
     .line 211
-    .local v9, "size":I
+    .local v9, size:I
     aget v11, v6, v0
 
     if-lt v9, v11, :cond_3
@@ -1384,8 +1385,8 @@
     goto :goto_4
 
     .line 216
-    .end local v0    # "category":I
-    .end local v9    # "size":I
+    .end local v0           #category:I
+    .end local v9           #size:I
     :cond_5
     if-lt v3, v2, :cond_6
 
@@ -1405,19 +1406,19 @@
     nop
 
     :array_0
-    .array-data 4
-        0x0
-        0x0
-        0x0
-        0x0
+    .array-data 0x4
+        0x0t 0x0t 0x0t 0x0t
+        0x0t 0x0t 0x0t 0x0t
+        0x0t 0x0t 0x0t 0x0t
+        0x0t 0x0t 0x0t 0x0t
     .end array-data
 
     .line 165
     :array_1
-    .array-data 4
-        0x0
-        0x0
-        0x0
-        0x0
+    .array-data 0x4
+        0x0t 0x0t 0x0t 0x0t
+        0x0t 0x0t 0x0t 0x0t
+        0x0t 0x0t 0x0t 0x0t
+        0x0t 0x0t 0x0t 0x0t
     .end array-data
 .end method

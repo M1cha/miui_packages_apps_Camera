@@ -21,6 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/ActivityState;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 102
@@ -35,8 +36,8 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
     const/4 v1, 0x0
@@ -47,7 +48,7 @@
     move-result-object v0
 
     .line 106
-    .local v0, "action":Ljava/lang/String;
+    .local v0, action:Ljava/lang/String;
     const-string v2, "android.intent.action.BATTERY_CHANGED"
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -68,11 +69,11 @@
     const/4 v1, 0x1
 
     .line 109
-    .local v1, "plugged":Z
+    .local v1, plugged:Z
     :cond_0
     iget-object v2, p0, Lcom/android/gallery3d/app/ActivityState$1;->this$0:Lcom/android/gallery3d/app/ActivityState;
 
-    # getter for: Lcom/android/gallery3d/app/ActivityState;->mPlugged:Z
+    #getter for: Lcom/android/gallery3d/app/ActivityState;->mPlugged:Z
     invoke-static {v2}, Lcom/android/gallery3d/app/ActivityState;->access$000(Lcom/android/gallery3d/app/ActivityState;)Z
 
     move-result v2
@@ -82,7 +83,7 @@
     .line 110
     iget-object v2, p0, Lcom/android/gallery3d/app/ActivityState$1;->this$0:Lcom/android/gallery3d/app/ActivityState;
 
-    # setter for: Lcom/android/gallery3d/app/ActivityState;->mPlugged:Z
+    #setter for: Lcom/android/gallery3d/app/ActivityState;->mPlugged:Z
     invoke-static {v2, v1}, Lcom/android/gallery3d/app/ActivityState;->access$002(Lcom/android/gallery3d/app/ActivityState;Z)Z
 
     .line 111
@@ -91,7 +92,7 @@
     invoke-virtual {v2}, Lcom/android/gallery3d/app/ActivityState;->setScreenOnFlags()V
 
     .line 114
-    .end local v1    # "plugged":Z
+    .end local v1           #plugged:Z
     :cond_1
     return-void
 .end method

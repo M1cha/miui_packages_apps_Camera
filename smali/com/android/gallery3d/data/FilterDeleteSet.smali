@@ -46,8 +46,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;Lcom/android/gallery3d/data/MediaSet;)V
     .locals 2
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
-    .param p2, "baseSet"    # Lcom/android/gallery3d/data/MediaSet;
+    .parameter "path"
+    .parameter "baseSet"
 
     .prologue
     .line 68
@@ -83,9 +83,9 @@
 
 .method private sendRequest(ILcom/android/gallery3d/data/Path;I)V
     .locals 3
-    .param p1, "type"    # I
-    .param p2, "path"    # Lcom/android/gallery3d/data/Path;
-    .param p3, "indexHint"    # I
+    .parameter "type"
+    .parameter "path"
+    .parameter "indexHint"
 
     .prologue
     .line 223
@@ -94,7 +94,7 @@
     invoke-direct {v0, p1, p2, p3}, Lcom/android/gallery3d/data/FilterDeleteSet$Request;-><init>(ILcom/android/gallery3d/data/Path;I)V
 
     .line 224
-    .local v0, "r":Lcom/android/gallery3d/data/FilterDeleteSet$Request;
+    .local v0, r:Lcom/android/gallery3d/data/FilterDeleteSet$Request;
     iget-object v2, p0, Lcom/android/gallery3d/data/FilterDeleteSet;->mRequests:Ljava/util/ArrayList;
 
     monitor-enter v2
@@ -132,8 +132,8 @@
 # virtual methods
 .method public addDeletion(Lcom/android/gallery3d/data/Path;I)V
     .locals 1
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
-    .param p2, "indexHint"    # I
+    .parameter "path"
+    .parameter "indexHint"
 
     .prologue
     .line 236
@@ -164,8 +164,8 @@
 
 .method public getMediaItem(II)Ljava/util/ArrayList;
     .locals 11
-    .param p1, "start"    # I
-    .param p2, "count"    # I
+    .parameter "start"
+    .parameter "count"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -195,7 +195,7 @@
     add-int/lit8 v2, v8, -0x1
 
     .line 112
-    .local v2, "end":I
+    .local v2, end:I
     iget-object v8, p0, Lcom/android/gallery3d/data/FilterDeleteSet;->mCurrent:Ljava/util/ArrayList;
 
     invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
@@ -203,11 +203,11 @@
     move-result v7
 
     .line 115
-    .local v7, "n":I
+    .local v7, n:I
     const/4 v3, 0x0
 
     .line 116
-    .local v3, "i":I
+    .local v3, i:I
     const/4 v3, 0x0
 
     :goto_0
@@ -223,7 +223,7 @@
     check-cast v1, Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
 
     .line 118
-    .local v1, "d":Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
+    .local v1, d:Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
     iget v8, v1, Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;->index:I
 
     sub-int/2addr v8, v3
@@ -231,12 +231,12 @@
     if-le v8, p1, :cond_4
 
     .line 121
-    .end local v1    # "d":Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
+    .end local v1           #d:Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
     :cond_2
     move v4, v3
 
     .line 122
-    .local v4, "j":I
+    .local v4, j:I
     :goto_1
     if-ge v4, v7, :cond_3
 
@@ -250,7 +250,7 @@
     check-cast v1, Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
 
     .line 124
-    .restart local v1    # "d":Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
+    .restart local v1       #d:Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
     iget v8, v1, Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;->index:I
 
     sub-int/2addr v8, v4
@@ -258,7 +258,7 @@
     if-le v8, v2, :cond_5
 
     .line 128
-    .end local v1    # "d":Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
+    .end local v1           #d:Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
     :cond_3
     iget-object v8, p0, Lcom/android/gallery3d/data/FilterDeleteSet;->mBaseSet:Lcom/android/gallery3d/data/MediaSet;
 
@@ -273,10 +273,10 @@
     move-result-object v0
 
     .line 131
-    .local v0, "base":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .local v0, base:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     add-int/lit8 v6, v4, -0x1
 
-    .local v6, "m":I
+    .local v6, m:I
     :goto_2
     if-lt v6, v3, :cond_0
 
@@ -290,7 +290,7 @@
     check-cast v1, Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
 
     .line 133
-    .restart local v1    # "d":Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
+    .restart local v1       #d:Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
     iget v8, v1, Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;->index:I
 
     add-int v9, p1, v3
@@ -298,7 +298,7 @@
     sub-int v5, v8, v9
 
     .line 134
-    .local v5, "k":I
+    .local v5, k:I
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     .line 131
@@ -307,17 +307,17 @@
     goto :goto_2
 
     .line 116
-    .end local v0    # "base":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
-    .end local v4    # "j":I
-    .end local v5    # "k":I
-    .end local v6    # "m":I
+    .end local v0           #base:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .end local v4           #j:I
+    .end local v5           #k:I
+    .end local v6           #m:I
     :cond_4
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     .line 122
-    .restart local v4    # "j":I
+    .restart local v4       #j:I
     :cond_5
     add-int/lit8 v4, v4, 0x1
 
@@ -401,7 +401,7 @@
     const/4 v12, 0x1
 
     .line 143
-    .local v12, "newData":Z
+    .local v12, newData:Z
     :goto_0
     move-object/from16 v0, p0
 
@@ -441,18 +441,18 @@
     return-wide v17
 
     .line 142
-    .end local v12    # "newData":Z
+    .end local v12           #newData:Z
     :cond_0
     const/4 v12, 0x0
 
     goto :goto_0
 
     .line 147
-    .restart local v12    # "newData":Z
+    .restart local v12       #newData:Z
     :cond_1
     const/4 v5, 0x0
 
-    .local v5, "i":I
+    .local v5, i:I
     :goto_2
     move-object/from16 v0, p0
 
@@ -484,7 +484,7 @@
     check-cast v14, Lcom/android/gallery3d/data/FilterDeleteSet$Request;
 
     .line 149
-    .local v14, "r":Lcom/android/gallery3d/data/FilterDeleteSet$Request;
+    .local v14, r:Lcom/android/gallery3d/data/FilterDeleteSet$Request;
     iget v0, v14, Lcom/android/gallery3d/data/FilterDeleteSet$Request;->type:I
 
     move/from16 v17, v0
@@ -511,10 +511,10 @@
     move-result v11
 
     .line 154
-    .local v11, "n":I
+    .local v11, n:I
     const/4 v8, 0x0
 
-    .local v8, "j":I
+    .local v8, j:I
     :goto_4
     if-ge v8, v11, :cond_3
 
@@ -583,10 +583,10 @@
     goto :goto_3
 
     .line 180
-    .end local v5    # "i":I
-    .end local v8    # "j":I
-    .end local v11    # "n":I
-    .end local v14    # "r":Lcom/android/gallery3d/data/FilterDeleteSet$Request;
+    .end local v5           #i:I
+    .end local v8           #j:I
+    .end local v11           #n:I
+    .end local v14           #r:Lcom/android/gallery3d/data/FilterDeleteSet$Request;
     :catchall_0
     move-exception v17
 
@@ -597,18 +597,18 @@
     throw v17
 
     .line 154
-    .restart local v5    # "i":I
-    .restart local v8    # "j":I
-    .restart local v11    # "n":I
-    .restart local v14    # "r":Lcom/android/gallery3d/data/FilterDeleteSet$Request;
+    .restart local v5       #i:I
+    .restart local v8       #j:I
+    .restart local v11       #n:I
+    .restart local v14       #r:Lcom/android/gallery3d/data/FilterDeleteSet$Request;
     :cond_4
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_4
 
     .line 164
-    .end local v8    # "j":I
-    .end local v11    # "n":I
+    .end local v8           #j:I
+    .end local v11           #n:I
     :pswitch_1
     :try_start_1
     move-object/from16 v0, p0
@@ -622,10 +622,10 @@
     move-result v11
 
     .line 165
-    .restart local v11    # "n":I
+    .restart local v11       #n:I
     const/4 v8, 0x0
 
-    .restart local v8    # "j":I
+    .restart local v8       #j:I
     :goto_5
     if-ge v8, v11, :cond_2
 
@@ -680,8 +680,8 @@
     goto :goto_5
 
     .line 174
-    .end local v8    # "j":I
-    .end local v11    # "n":I
+    .end local v8           #j:I
+    .end local v11           #n:I
     :pswitch_2
     move-object/from16 v0, p0
 
@@ -694,7 +694,7 @@
     goto/16 :goto_3
 
     .line 179
-    .end local v14    # "r":Lcom/android/gallery3d/data/FilterDeleteSet$Request;
+    .end local v14           #r:Lcom/android/gallery3d/data/FilterDeleteSet$Request;
     :cond_6
     move-object/from16 v0, p0
 
@@ -742,11 +742,11 @@
     iget v10, v0, Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;->index:I
 
     .line 187
-    .local v10, "minIndex":I
+    .local v10, minIndex:I
     move v9, v10
 
     .line 188
-    .local v9, "maxIndex":I
+    .local v9, maxIndex:I
     const/4 v5, 0x1
 
     :goto_6
@@ -780,7 +780,7 @@
     check-cast v3, Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
 
     .line 190
-    .local v3, "d":Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
+    .local v3, d:Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
     iget v0, v3, Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;->index:I
 
     move/from16 v17, v0
@@ -808,7 +808,7 @@
     goto :goto_6
 
     .line 194
-    .end local v3    # "d":Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
+    .end local v3           #d:Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
     :cond_7
     move-object/from16 v0, p0
 
@@ -821,7 +821,7 @@
     move-result v11
 
     .line 195
-    .restart local v11    # "n":I
+    .restart local v11       #n:I
     add-int/lit8 v17, v10, -0x5
 
     const/16 v18, 0x0
@@ -831,7 +831,7 @@
     move-result v4
 
     .line 196
-    .local v4, "from":I
+    .local v4, from:I
     add-int/lit8 v17, v9, 0x5
 
     move/from16 v0, v17
@@ -841,7 +841,7 @@
     move-result v16
 
     .line 197
-    .local v16, "to":I
+    .local v16, to:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/gallery3d/data/FilterDeleteSet;->mBaseSet:Lcom/android/gallery3d/data/MediaSet;
@@ -859,13 +859,13 @@
     move-result-object v7
 
     .line 198
-    .local v7, "items":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .local v7, items:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     new-instance v15, Ljava/util/ArrayList;
 
     invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
 
     .line 199
-    .local v15, "result":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;>;"
+    .local v15, result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;>;"
     const/4 v5, 0x0
 
     :goto_7
@@ -885,7 +885,7 @@
     check-cast v6, Lcom/android/gallery3d/data/MediaItem;
 
     .line 201
-    .local v6, "item":Lcom/android/gallery3d/data/MediaItem;
+    .local v6, item:Lcom/android/gallery3d/data/MediaItem;
     if-nez v6, :cond_9
 
     .line 199
@@ -902,10 +902,10 @@
     move-result-object v13
 
     .line 204
-    .local v13, "p":Lcom/android/gallery3d/data/Path;
+    .local v13, p:Lcom/android/gallery3d/data/Path;
     const/4 v8, 0x0
 
-    .restart local v8    # "j":I
+    .restart local v8       #j:I
     :goto_9
     move-object/from16 v0, p0
 
@@ -937,7 +937,7 @@
     check-cast v3, Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
 
     .line 206
-    .restart local v3    # "d":Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
+    .restart local v3       #d:Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
     iget-object v0, v3, Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;->path:Lcom/android/gallery3d/data/Path;
 
     move-object/from16 v17, v0
@@ -976,23 +976,23 @@
     goto :goto_9
 
     .line 214
-    .end local v3    # "d":Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
-    .end local v6    # "item":Lcom/android/gallery3d/data/MediaItem;
-    .end local v8    # "j":I
-    .end local v13    # "p":Lcom/android/gallery3d/data/Path;
+    .end local v3           #d:Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;
+    .end local v6           #item:Lcom/android/gallery3d/data/MediaItem;
+    .end local v8           #j:I
+    .end local v13           #p:Lcom/android/gallery3d/data/Path;
     :cond_b
     move-object/from16 v0, p0
 
     iput-object v15, v0, Lcom/android/gallery3d/data/FilterDeleteSet;->mCurrent:Ljava/util/ArrayList;
 
     .line 217
-    .end local v4    # "from":I
-    .end local v7    # "items":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
-    .end local v9    # "maxIndex":I
-    .end local v10    # "minIndex":I
-    .end local v11    # "n":I
-    .end local v15    # "result":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;>;"
-    .end local v16    # "to":I
+    .end local v4           #from:I
+    .end local v7           #items:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .end local v9           #maxIndex:I
+    .end local v10           #minIndex:I
+    .end local v11           #n:I
+    .end local v15           #result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/FilterDeleteSet$Deletion;>;"
+    .end local v16           #to:I
     :cond_c
     move-object/from16 v0, p0
 
@@ -1053,7 +1053,7 @@
 
 .method public removeDeletion(Lcom/android/gallery3d/data/Path;)V
     .locals 2
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .parameter "path"
 
     .prologue
     .line 240

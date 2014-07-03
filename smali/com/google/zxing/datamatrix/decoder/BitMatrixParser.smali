@@ -14,7 +14,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/zxing/common/BitMatrix;)V
     .locals 4
-    .param p1, "bitMatrix"    # Lcom/google/zxing/common/BitMatrix;
+    .parameter "bitMatrix"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -31,7 +31,7 @@
     move-result v0
 
     .line 37
-    .local v0, "dimension":I
+    .local v0, dimension:I
     const/16 v1, 0x8
 
     if-lt v0, v1, :cond_0
@@ -92,7 +92,7 @@
 
 .method private static readVersion(Lcom/google/zxing/common/BitMatrix;)Lcom/google/zxing/datamatrix/decoder/Version;
     .locals 3
-    .param p0, "bitMatrix"    # Lcom/google/zxing/common/BitMatrix;
+    .parameter "bitMatrix"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -106,13 +106,13 @@
     move-result v1
 
     .line 63
-    .local v1, "numRows":I
+    .local v1, numRows:I
     invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getWidth()I
 
     move-result v0
 
     .line 64
-    .local v0, "numColumns":I
+    .local v0, numColumns:I
     invoke-static {v1, v0}, Lcom/google/zxing/datamatrix/decoder/Version;->getVersionForDimensions(II)Lcom/google/zxing/datamatrix/decoder/Version;
 
     move-result-object v2
@@ -124,7 +124,7 @@
 # virtual methods
 .method extractDataRegion(Lcom/google/zxing/common/BitMatrix;)Lcom/google/zxing/common/BitMatrix;
     .locals 23
-    .param p1, "bitMatrix"    # Lcom/google/zxing/common/BitMatrix;
+    .parameter "bitMatrix"
 
     .prologue
     .line 403
@@ -139,7 +139,7 @@
     move-result v18
 
     .line 404
-    .local v18, "symbolSizeRows":I
+    .local v18, symbolSizeRows:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->version:Lcom/google/zxing/datamatrix/decoder/Version;
@@ -151,7 +151,7 @@
     move-result v17
 
     .line 406
-    .local v17, "symbolSizeColumns":I
+    .local v17, symbolSizeColumns:I
     invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
 
     move-result v21
@@ -184,7 +184,7 @@
     move-result v8
 
     .line 411
-    .local v8, "dataRegionSizeRows":I
+    .local v8, dataRegionSizeRows:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->version:Lcom/google/zxing/datamatrix/decoder/Version;
@@ -196,23 +196,23 @@
     move-result v7
 
     .line 413
-    .local v7, "dataRegionSizeColumns":I
+    .local v7, dataRegionSizeColumns:I
     div-int v12, v18, v8
 
     .line 414
-    .local v12, "numDataRegionsRow":I
+    .local v12, numDataRegionsRow:I
     div-int v11, v17, v7
 
     .line 416
-    .local v11, "numDataRegionsColumn":I
+    .local v11, numDataRegionsColumn:I
     mul-int v16, v12, v8
 
     .line 417
-    .local v16, "sizeDataRegionRow":I
+    .local v16, sizeDataRegionRow:I
     mul-int v15, v11, v7
 
     .line 419
-    .local v15, "sizeDataRegionColumn":I
+    .local v15, sizeDataRegionColumn:I
     new-instance v2, Lcom/google/zxing/common/BitMatrix;
 
     move/from16 v0, v16
@@ -220,10 +220,10 @@
     invoke-direct {v2, v15, v0}, Lcom/google/zxing/common/BitMatrix;-><init>(II)V
 
     .line 420
-    .local v2, "bitMatrixWithoutAlignment":Lcom/google/zxing/common/BitMatrix;
+    .local v2, bitMatrixWithoutAlignment:Lcom/google/zxing/common/BitMatrix;
     const/4 v5, 0x0
 
-    .local v5, "dataRegionRow":I
+    .local v5, dataRegionRow:I
     :goto_0
     if-ge v5, v12, :cond_5
 
@@ -231,10 +231,10 @@
     mul-int v6, v5, v8
 
     .line 422
-    .local v6, "dataRegionRowOffset":I
+    .local v6, dataRegionRowOffset:I
     const/4 v3, 0x0
 
-    .local v3, "dataRegionColumn":I
+    .local v3, dataRegionColumn:I
     :goto_1
     if-ge v3, v11, :cond_4
 
@@ -242,10 +242,10 @@
     mul-int v4, v3, v7
 
     .line 424
-    .local v4, "dataRegionColumnOffset":I
+    .local v4, dataRegionColumnOffset:I
     const/4 v9, 0x0
 
-    .local v9, "i":I
+    .local v9, i:I
     :goto_2
     if-ge v9, v8, :cond_3
 
@@ -259,14 +259,14 @@
     add-int v14, v21, v9
 
     .line 426
-    .local v14, "readRowOffset":I
+    .local v14, readRowOffset:I
     add-int v20, v6, v9
 
     .line 427
-    .local v20, "writeRowOffset":I
+    .local v20, writeRowOffset:I
     const/4 v10, 0x0
 
-    .local v10, "j":I
+    .local v10, j:I
     :goto_3
     if-ge v10, v7, :cond_2
 
@@ -280,7 +280,7 @@
     add-int v13, v21, v10
 
     .line 429
-    .local v13, "readColumnOffset":I
+    .local v13, readColumnOffset:I
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v13, v14}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
@@ -293,7 +293,7 @@
     add-int v19, v4, v10
 
     .line 431
-    .local v19, "writeColumnOffset":I
+    .local v19, writeColumnOffset:I
     move/from16 v0, v19
 
     move/from16 v1, v20
@@ -301,39 +301,39 @@
     invoke-virtual {v2, v0, v1}, Lcom/google/zxing/common/BitMatrix;->set(II)V
 
     .line 427
-    .end local v19    # "writeColumnOffset":I
+    .end local v19           #writeColumnOffset:I
     :cond_1
     add-int/lit8 v10, v10, 0x1
 
     goto :goto_3
 
     .line 424
-    .end local v13    # "readColumnOffset":I
+    .end local v13           #readColumnOffset:I
     :cond_2
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_2
 
     .line 422
-    .end local v10    # "j":I
-    .end local v14    # "readRowOffset":I
-    .end local v20    # "writeRowOffset":I
+    .end local v10           #j:I
+    .end local v14           #readRowOffset:I
+    .end local v20           #writeRowOffset:I
     :cond_3
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
     .line 420
-    .end local v4    # "dataRegionColumnOffset":I
-    .end local v9    # "i":I
+    .end local v4           #dataRegionColumnOffset:I
+    .end local v9           #i:I
     :cond_4
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
     .line 437
-    .end local v3    # "dataRegionColumn":I
-    .end local v6    # "dataRegionRowOffset":I
+    .end local v3           #dataRegionColumn:I
+    .end local v6           #dataRegionRowOffset:I
     :cond_5
     return-object v2
 .end method
@@ -367,19 +367,19 @@
     new-array v7, v11, [B
 
     .line 78
-    .local v7, "result":[B
+    .local v7, result:[B
     const/4 v8, 0x0
 
     .line 80
-    .local v8, "resultOffset":I
+    .local v8, resultOffset:I
     const/4 v10, 0x4
 
     .line 81
-    .local v10, "row":I
+    .local v10, row:I
     const/4 v0, 0x0
 
     .line 83
-    .local v0, "column":I
+    .local v0, column:I
     iget-object v11, p0, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->mappingBitMatrix:Lcom/google/zxing/common/BitMatrix;
 
     invoke-virtual {v11}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
@@ -387,7 +387,7 @@
     move-result v6
 
     .line 84
-    .local v6, "numRows":I
+    .local v6, numRows:I
     iget-object v11, p0, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->mappingBitMatrix:Lcom/google/zxing/common/BitMatrix;
 
     invoke-virtual {v11}, Lcom/google/zxing/common/BitMatrix;->getWidth()I
@@ -395,27 +395,27 @@
     move-result v5
 
     .line 86
-    .local v5, "numColumns":I
+    .local v5, numColumns:I
     const/4 v1, 0x0
 
     .line 87
-    .local v1, "corner1Read":Z
+    .local v1, corner1Read:Z
     const/4 v2, 0x0
 
     .line 88
-    .local v2, "corner2Read":Z
+    .local v2, corner2Read:Z
     const/4 v3, 0x0
 
     .line 89
-    .local v3, "corner3Read":Z
+    .local v3, corner3Read:Z
     const/4 v4, 0x0
 
-    .local v4, "corner4Read":Z
+    .local v4, corner4Read:Z
     move v9, v8
 
     .line 94
-    .end local v8    # "resultOffset":I
-    .local v9, "resultOffset":I
+    .end local v8           #resultOffset:I
+    .local v9, resultOffset:I
     :goto_0
     if-ne v10, v6, :cond_0
 
@@ -426,8 +426,8 @@
     .line 95
     add-int/lit8 v8, v9, 0x1
 
-    .end local v9    # "resultOffset":I
-    .restart local v8    # "resultOffset":I
+    .end local v9           #resultOffset:I
+    .restart local v8       #resultOffset:I
     invoke-virtual {p0, v6, v5}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->readCorner1(II)I
 
     move-result v11
@@ -468,8 +468,8 @@
     throw v11
 
     .line 99
-    .end local v8    # "resultOffset":I
-    .restart local v9    # "resultOffset":I
+    .end local v8           #resultOffset:I
+    .restart local v9       #resultOffset:I
     :cond_0
     add-int/lit8 v11, v6, -0x2
 
@@ -486,8 +486,8 @@
     .line 100
     add-int/lit8 v8, v9, 0x1
 
-    .end local v9    # "resultOffset":I
-    .restart local v8    # "resultOffset":I
+    .end local v9           #resultOffset:I
+    .restart local v8       #resultOffset:I
     invoke-virtual {p0, v6, v5}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->readCorner2(II)I
 
     move-result v11
@@ -508,8 +508,8 @@
     goto :goto_1
 
     .line 104
-    .end local v8    # "resultOffset":I
-    .restart local v9    # "resultOffset":I
+    .end local v8           #resultOffset:I
+    .restart local v9       #resultOffset:I
     :cond_1
     add-int/lit8 v11, v6, 0x4
 
@@ -528,8 +528,8 @@
     .line 105
     add-int/lit8 v8, v9, 0x1
 
-    .end local v9    # "resultOffset":I
-    .restart local v8    # "resultOffset":I
+    .end local v9           #resultOffset:I
+    .restart local v8       #resultOffset:I
     invoke-virtual {p0, v6, v5}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->readCorner3(II)I
 
     move-result v11
@@ -550,8 +550,8 @@
     goto :goto_1
 
     .line 109
-    .end local v8    # "resultOffset":I
-    .restart local v9    # "resultOffset":I
+    .end local v8           #resultOffset:I
+    .restart local v9       #resultOffset:I
     :cond_2
     add-int/lit8 v11, v6, -0x2
 
@@ -570,8 +570,8 @@
     .line 110
     add-int/lit8 v8, v9, 0x1
 
-    .end local v9    # "resultOffset":I
-    .restart local v8    # "resultOffset":I
+    .end local v9           #resultOffset:I
+    .restart local v8       #resultOffset:I
     invoke-virtual {p0, v6, v5}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->readCorner4(II)I
 
     move-result v11
@@ -595,8 +595,8 @@
     move v9, v8
 
     .line 117
-    .end local v8    # "resultOffset":I
-    .restart local v9    # "resultOffset":I
+    .end local v8           #resultOffset:I
+    .restart local v9       #resultOffset:I
     :cond_4
     if-ge v10, v6, :cond_b
 
@@ -613,8 +613,8 @@
     .line 118
     add-int/lit8 v8, v9, 0x1
 
-    .end local v9    # "resultOffset":I
-    .restart local v8    # "resultOffset":I
+    .end local v9           #resultOffset:I
+    .restart local v8       #resultOffset:I
     invoke-virtual {p0, v10, v0, v6, v5}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->readUtah(IIII)I
 
     move-result v11
@@ -645,8 +645,8 @@
     move v9, v8
 
     .line 128
-    .end local v8    # "resultOffset":I
-    .restart local v9    # "resultOffset":I
+    .end local v8           #resultOffset:I
+    .restart local v9       #resultOffset:I
     :goto_3
     if-ltz v10, :cond_a
 
@@ -663,8 +663,8 @@
     .line 129
     add-int/lit8 v8, v9, 0x1
 
-    .end local v9    # "resultOffset":I
-    .restart local v8    # "resultOffset":I
+    .end local v9           #resultOffset:I
+    .restart local v8       #resultOffset:I
     invoke-virtual {p0, v10, v0, v6, v5}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->readUtah(IIII)I
 
     move-result v11
@@ -701,40 +701,40 @@
     :cond_8
     move v9, v8
 
-    .end local v8    # "resultOffset":I
-    .restart local v9    # "resultOffset":I
+    .end local v8           #resultOffset:I
+    .restart local v9       #resultOffset:I
     goto/16 :goto_0
 
-    .end local v9    # "resultOffset":I
-    .restart local v8    # "resultOffset":I
+    .end local v9           #resultOffset:I
+    .restart local v8       #resultOffset:I
     :cond_9
     move v9, v8
 
-    .end local v8    # "resultOffset":I
-    .restart local v9    # "resultOffset":I
+    .end local v8           #resultOffset:I
+    .restart local v9       #resultOffset:I
     goto :goto_3
 
     :cond_a
     move v8, v9
 
-    .end local v9    # "resultOffset":I
-    .restart local v8    # "resultOffset":I
+    .end local v9           #resultOffset:I
+    .restart local v8       #resultOffset:I
     goto :goto_4
 
-    .end local v8    # "resultOffset":I
-    .restart local v9    # "resultOffset":I
+    .end local v8           #resultOffset:I
+    .restart local v9       #resultOffset:I
     :cond_b
     move v8, v9
 
-    .end local v9    # "resultOffset":I
-    .restart local v8    # "resultOffset":I
+    .end local v9           #resultOffset:I
+    .restart local v8       #resultOffset:I
     goto :goto_2
 .end method
 
 .method readCorner1(II)I
     .locals 5
-    .param p1, "numRows"    # I
-    .param p2, "numColumns"    # I
+    .parameter "numRows"
+    .parameter "numColumns"
 
     .prologue
     const/4 v4, 0x2
@@ -747,7 +747,7 @@
     const/4 v0, 0x0
 
     .line 226
-    .local v0, "currentByte":I
+    .local v0, currentByte:I
     add-int/lit8 v1, p1, -0x1
 
     invoke-virtual {p0, v1, v2, p1, p2}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->readModule(IIII)Z
@@ -880,8 +880,8 @@
 
 .method readCorner2(II)I
     .locals 3
-    .param p1, "numRows"    # I
-    .param p2, "numColumns"    # I
+    .parameter "numRows"
+    .parameter "numColumns"
 
     .prologue
     const/4 v2, 0x0
@@ -890,7 +890,7 @@
     const/4 v0, 0x0
 
     .line 271
-    .local v0, "currentByte":I
+    .local v0, currentByte:I
     add-int/lit8 v1, p1, -0x3
 
     invoke-virtual {p0, v1, v2, p1, p2}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->readModule(IIII)Z
@@ -1023,8 +1023,8 @@
 
 .method readCorner3(II)I
     .locals 5
-    .param p1, "numRows"    # I
-    .param p2, "numColumns"    # I
+    .parameter "numRows"
+    .parameter "numColumns"
 
     .prologue
     const/4 v4, 0x1
@@ -1035,7 +1035,7 @@
     const/4 v0, 0x0
 
     .line 316
-    .local v0, "currentByte":I
+    .local v0, currentByte:I
     add-int/lit8 v1, p1, -0x1
 
     invoke-virtual {p0, v1, v3, p1, p2}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->readModule(IIII)Z
@@ -1168,8 +1168,8 @@
 
 .method readCorner4(II)I
     .locals 3
-    .param p1, "numRows"    # I
-    .param p2, "numColumns"    # I
+    .parameter "numRows"
+    .parameter "numColumns"
 
     .prologue
     const/4 v2, 0x0
@@ -1178,7 +1178,7 @@
     const/4 v0, 0x0
 
     .line 361
-    .local v0, "currentByte":I
+    .local v0, currentByte:I
     add-int/lit8 v1, p1, -0x3
 
     invoke-virtual {p0, v1, v2, p1, p2}, Lcom/google/zxing/datamatrix/decoder/BitMatrixParser;->readModule(IIII)Z
@@ -1315,10 +1315,10 @@
 
 .method readModule(IIII)Z
     .locals 1
-    .param p1, "row"    # I
-    .param p2, "column"    # I
-    .param p3, "numRows"    # I
-    .param p4, "numColumns"    # I
+    .parameter "row"
+    .parameter "column"
+    .parameter "numRows"
+    .parameter "numColumns"
 
     .prologue
     .line 156
@@ -1370,17 +1370,17 @@
 
 .method readUtah(IIII)I
     .locals 3
-    .param p1, "row"    # I
-    .param p2, "column"    # I
-    .param p3, "numRows"    # I
-    .param p4, "numColumns"    # I
+    .parameter "row"
+    .parameter "column"
+    .parameter "numRows"
+    .parameter "numColumns"
 
     .prologue
     .line 180
     const/4 v0, 0x0
 
     .line 181
-    .local v0, "currentByte":I
+    .local v0, currentByte:I
     add-int/lit8 v1, p1, -0x2
 
     add-int/lit8 v2, p2, -0x2

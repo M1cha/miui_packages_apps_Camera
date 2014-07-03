@@ -24,9 +24,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/app/GalleryActivity;Lcom/android/gallery3d/ui/GLView;Lcom/android/gallery3d/ui/DetailsHelper$DetailsSource;)V
     .locals 1
-    .param p1, "activity"    # Lcom/android/gallery3d/app/GalleryActivity;
-    .param p2, "rootPane"    # Lcom/android/gallery3d/ui/GLView;
-    .param p3, "source"    # Lcom/android/gallery3d/ui/DetailsHelper$DetailsSource;
+    .parameter "activity"
+    .parameter "rootPane"
+    .parameter "source"
 
     .prologue
     .line 48
@@ -45,8 +45,8 @@
 
 .method public static getDetailsName(Landroid/content/Context;I)Ljava/lang/String;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "key"    # I
+    .parameter "context"
+    .parameter "key"
 
     .prologue
     .line 92
@@ -309,9 +309,9 @@
 
 .method public static resolveAddress(Lcom/android/gallery3d/app/GalleryActivity;[DLcom/android/gallery3d/ui/DetailsAddressResolver$AddressResolvingListener;)Ljava/lang/String;
     .locals 1
-    .param p0, "activity"    # Lcom/android/gallery3d/app/GalleryActivity;
-    .param p1, "latlng"    # [D
-    .param p2, "listener"    # Lcom/android/gallery3d/ui/DetailsAddressResolver$AddressResolvingListener;
+    .parameter "activity"
+    .parameter "latlng"
+    .parameter "listener"
 
     .prologue
     .line 71
@@ -362,10 +362,10 @@
 
 .method public layout(IIII)V
     .locals 4
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
+    .parameter "left"
+    .parameter "top"
+    .parameter "right"
+    .parameter "bottom"
 
     .prologue
     const/4 v3, 0x0
@@ -383,10 +383,10 @@
     check-cast v0, Lcom/android/gallery3d/ui/GLView;
 
     .line 55
-    .local v0, "view":Lcom/android/gallery3d/ui/GLView;
+    .local v0, view:Lcom/android/gallery3d/ui/GLView;
     sub-int v1, p4, p2
 
-    const/high16 v2, -0x80000000
+    const/high16 v2, -0x8000
 
     invoke-static {v1, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -408,14 +408,14 @@
     invoke-virtual {v0, v3, p2, v1, v2}, Lcom/android/gallery3d/ui/GLView;->layout(IIII)V
 
     .line 59
-    .end local v0    # "view":Lcom/android/gallery3d/ui/GLView;
+    .end local v0           #view:Lcom/android/gallery3d/ui/GLView;
     :cond_0
     return-void
 .end method
 
 .method public reloadDetails(I)V
     .locals 1
-    .param p1, "indexHint"    # I
+    .parameter "indexHint"
 
     .prologue
     .line 62
@@ -429,7 +429,7 @@
 
 .method public setCloseListener(Lcom/android/gallery3d/ui/DetailsHelper$CloseListener;)V
     .locals 1
-    .param p1, "listener"    # Lcom/android/gallery3d/ui/DetailsHelper$CloseListener;
+    .parameter "listener"
 
     .prologue
     .line 66

@@ -52,8 +52,8 @@
 
 .method private add([ILjava/lang/String;)V
     .locals 1
-    .param p1, "range"    # [I
-    .param p2, "id"    # Ljava/lang/String;
+    .parameter "range"
+    .parameter "id"
 
     .prologue
     .line 55
@@ -1596,184 +1596,184 @@
 
     .line 63
     :array_0
-    .array-data 4
-        0x0
-        0x13
+    .array-data 0x4
+        0x0t 0x0t 0x0t 0x0t
+        0x13t 0x0t 0x0t 0x0t
     .end array-data
 
     .line 64
     :array_1
-    .array-data 4
-        0x1e
-        0x27
+    .array-data 0x4
+        0x1et 0x0t 0x0t 0x0t
+        0x27t 0x0t 0x0t 0x0t
     .end array-data
 
     .line 65
     :array_2
-    .array-data 4
-        0x3c
-        0x8b
+    .array-data 0x4
+        0x3ct 0x0t 0x0t 0x0t
+        0x8bt 0x0t 0x0t 0x0t
     .end array-data
 
     .line 66
     :array_3
-    .array-data 4
-        0x12c
-        0x17b
+    .array-data 0x4
+        0x2ct 0x1t 0x0t 0x0t
+        0x7bt 0x1t 0x0t 0x0t
     .end array-data
 
     .line 71
     :array_4
-    .array-data 4
-        0x190
-        0x1b8
+    .array-data 0x4
+        0x90t 0x1t 0x0t 0x0t
+        0xb8t 0x1t 0x0t 0x0t
     .end array-data
 
     .line 72
     :array_5
-    .array-data 4
-        0x1c2
-        0x1cb
+    .array-data 0x4
+        0xc2t 0x1t 0x0t 0x0t
+        0xcbt 0x1t 0x0t 0x0t
     .end array-data
 
     .line 73
     :array_6
-    .array-data 4
-        0x1cc
-        0x1d5
+    .array-data 0x4
+        0xcct 0x1t 0x0t 0x0t
+        0xd5t 0x1t 0x0t 0x0t
     .end array-data
 
     .line 89
     :array_7
-    .array-data 4
-        0x1ea
-        0x1f3
+    .array-data 0x4
+        0xeat 0x1t 0x0t 0x0t
+        0xf3t 0x1t 0x0t 0x0t
     .end array-data
 
     .line 90
     :array_8
-    .array-data 4
-        0x1f4
-        0x1fd
+    .array-data 0x4
+        0xf4t 0x1t 0x0t 0x0t
+        0xfdt 0x1t 0x0t 0x0t
     .end array-data
 
     .line 97
     :array_9
-    .array-data 4
-        0x21c
-        0x225
+    .array-data 0x4
+        0x1ct 0x2t 0x0t 0x0t
+        0x25t 0x2t 0x0t 0x0t
     .end array-data
 
     .line 100
     :array_a
-    .array-data 4
-        0x23a
-        0x243
+    .array-data 0x4
+        0x3at 0x2t 0x0t 0x0t
+        0x43t 0x2t 0x0t 0x0t
     .end array-data
 
     .line 104
     :array_b
-    .array-data 4
-        0x258
-        0x259
+    .array-data 0x4
+        0x58t 0x2t 0x0t 0x0t
+        0x59t 0x2t 0x0t 0x0t
     .end array-data
 
     .line 121
     :array_c
-    .array-data 4
-        0x280
-        0x289
+    .array-data 0x4
+        0x80t 0x2t 0x0t 0x0t
+        0x89t 0x2t 0x0t 0x0t
     .end array-data
 
     .line 122
     :array_d
-    .array-data 4
-        0x2b2
-        0x2b7
+    .array-data 0x4
+        0xb2t 0x2t 0x0t 0x0t
+        0xb7t 0x2t 0x0t 0x0t
     .end array-data
 
     .line 123
     :array_e
-    .array-data 4
-        0x2bc
-        0x2c5
+    .array-data 0x4
+        0xbct 0x2t 0x0t 0x0t
+        0xc5t 0x2t 0x0t 0x0t
     .end array-data
 
     .line 125
     :array_f
-    .array-data 4
-        0x2da
-        0x2e3
+    .array-data 0x4
+        0xdat 0x2t 0x0t 0x0t
+        0xe3t 0x2t 0x0t 0x0t
     .end array-data
 
     .line 134
     :array_10
-    .array-data 4
-        0x2f2
-        0x2f3
+    .array-data 0x4
+        0xf2t 0x2t 0x0t 0x0t
+        0xf3t 0x2t 0x0t 0x0t
     .end array-data
 
     .line 136
     :array_11
-    .array-data 4
-        0x2f8
-        0x301
+    .array-data 0x4
+        0xf8t 0x2t 0x0t 0x0t
+        0x1t 0x3t 0x0t 0x0t
     .end array-data
 
     .line 146
     :array_12
-    .array-data 4
-        0x315
-        0x316
+    .array-data 0x4
+        0x15t 0x3t 0x0t 0x0t
+        0x16t 0x3t 0x0t 0x0t
     .end array-data
 
     .line 147
     :array_13
-    .array-data 4
-        0x320
-        0x347
+    .array-data 0x4
+        0x20t 0x3t 0x0t 0x0t
+        0x47t 0x3t 0x0t 0x0t
     .end array-data
 
     .line 148
     :array_14
-    .array-data 4
-        0x348
-        0x351
+    .array-data 0x4
+        0x48t 0x3t 0x0t 0x0t
+        0x51t 0x3t 0x0t 0x0t
     .end array-data
 
     .line 155
     :array_15
-    .array-data 4
-        0x364
-        0x365
+    .array-data 0x4
+        0x64t 0x3t 0x0t 0x0t
+        0x65t 0x3t 0x0t 0x0t
     .end array-data
 
     .line 156
     :array_16
-    .array-data 4
-        0x366
-        0x36f
+    .array-data 0x4
+        0x66t 0x3t 0x0t 0x0t
+        0x6ft 0x3t 0x0t 0x0t
     .end array-data
 
     .line 164
     :array_17
-    .array-data 4
-        0x384
-        0x397
+    .array-data 0x4
+        0x84t 0x3t 0x0t 0x0t
+        0x97t 0x3t 0x0t 0x0t
     .end array-data
 
     .line 165
     :array_18
-    .array-data 4
-        0x3a2
-        0x3ab
+    .array-data 0x4
+        0xa2t 0x3t 0x0t 0x0t
+        0xabt 0x3t 0x0t 0x0t
     .end array-data
 
     .line 166
     :array_19
-    .array-data 4
-        0x3ac
-        0x3b5
+    .array-data 0x4
+        0xact 0x3t 0x0t 0x0t
+        0xb5t 0x3t 0x0t 0x0t
     .end array-data
 .end method
 
@@ -1781,7 +1781,7 @@
 # virtual methods
 .method lookupCountryIdentifier(Ljava/lang/String;)Ljava/lang/String;
     .locals 10
-    .param p1, "productCode"    # Ljava/lang/String;
+    .parameter "productCode"
 
     .prologue
     const/4 v6, 0x0
@@ -1805,7 +1805,7 @@
     move-result v3
 
     .line 39
-    .local v3, "prefix":I
+    .local v3, prefix:I
     iget-object v7, p0, Lcom/google/zxing/oned/EANManufacturerOrgSupport;->ranges:Ljava/util/List;
 
     invoke-interface {v7}, Ljava/util/List;->size()I
@@ -1813,10 +1813,10 @@
     move-result v2
 
     .line 40
-    .local v2, "max":I
+    .local v2, max:I
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     if-ge v1, v2, :cond_0
 
@@ -1830,23 +1830,23 @@
     check-cast v4, [I
 
     .line 42
-    .local v4, "range":[I
+    .local v4, range:[I
     aget v5, v4, v8
 
     .line 43
-    .local v5, "start":I
+    .local v5, start:I
     if-ge v3, v5, :cond_1
 
     .line 51
-    .end local v4    # "range":[I
-    .end local v5    # "start":I
+    .end local v4           #range:[I
+    .end local v5           #start:I
     :cond_0
     :goto_1
     return-object v6
 
     .line 46
-    .restart local v4    # "range":[I
-    .restart local v5    # "start":I
+    .restart local v4       #range:[I
+    .restart local v5       #start:I
     :cond_1
     array-length v7, v4
 
@@ -1855,7 +1855,7 @@
     move v0, v5
 
     .line 47
-    .local v0, "end":I
+    .local v0, end:I
     :goto_2
     if-gt v3, v0, :cond_3
 
@@ -1871,14 +1871,14 @@
     goto :goto_1
 
     .line 46
-    .end local v0    # "end":I
+    .end local v0           #end:I
     :cond_2
     aget v0, v4, v9
 
     goto :goto_2
 
     .line 40
-    .restart local v0    # "end":I
+    .restart local v0       #end:I
     :cond_3
     add-int/lit8 v1, v1, 0x1
 

@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ui/SettingPopupView;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 314
@@ -43,7 +44,7 @@
     .line 317
     iget-object v0, p0, Lcom/android/camera/ui/SettingPopupView$4;->this$0:Lcom/android/camera/ui/SettingPopupView;
 
-    # invokes: Lcom/android/camera/ui/SettingPopupView;->popupColorEffectView()V
+    #calls: Lcom/android/camera/ui/SettingPopupView;->popupColorEffectView()V
     invoke-static {v0}, Lcom/android/camera/ui/SettingPopupView;->access$100(Lcom/android/camera/ui/SettingPopupView;)V
 
     .line 318

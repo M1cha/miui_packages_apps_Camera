@@ -22,8 +22,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 39
@@ -59,10 +59,10 @@
 
 .method protected onSizeChanged(IIII)V
     .locals 1
-    .param p1, "w"    # I
-    .param p2, "h"    # I
-    .param p3, "oldw"    # I
-    .param p4, "oldh"    # I
+    .parameter "w"
+    .parameter "h"
+    .parameter "oldw"
+    .parameter "oldh"
 
     .prologue
     .line 75
@@ -81,7 +81,7 @@
 
 .method public setAspectRatio(D)V
     .locals 2
-    .param p1, "ratio"    # D
+    .parameter "ratio"
 
     .prologue
     .line 49
@@ -114,7 +114,7 @@
     if-ne v0, v1, :cond_1
 
     .line 53
-    const-wide/high16 v0, 0x3ff0000000000000L
+    const-wide/high16 v0, 0x3ff0
 
     div-double p1, v0, p1
 
@@ -139,7 +139,7 @@
 
 .method public setOnSizeChangedListener(Lcom/android/camera/PreviewFrameLayout$OnSizeChangedListener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/camera/PreviewFrameLayout$OnSizeChangedListener;
+    .parameter "listener"
 
     .prologue
     .line 70
@@ -151,7 +151,7 @@
 
 .method public showBorder(Z)V
     .locals 2
-    .param p1, "enabled"    # Z
+    .parameter "enabled"
 
     .prologue
     .line 62

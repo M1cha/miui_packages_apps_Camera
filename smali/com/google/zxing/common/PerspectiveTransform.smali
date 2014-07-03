@@ -26,15 +26,15 @@
 # direct methods
 .method private constructor <init>(FFFFFFFFF)V
     .locals 0
-    .param p1, "a11"    # F
-    .param p2, "a21"    # F
-    .param p3, "a31"    # F
-    .param p4, "a12"    # F
-    .param p5, "a22"    # F
-    .param p6, "a32"    # F
-    .param p7, "a13"    # F
-    .param p8, "a23"    # F
-    .param p9, "a33"    # F
+    .parameter "a11"
+    .parameter "a21"
+    .parameter "a31"
+    .parameter "a12"
+    .parameter "a22"
+    .parameter "a32"
+    .parameter "a13"
+    .parameter "a23"
+    .parameter "a33"
 
     .prologue
     .line 40
@@ -73,22 +73,22 @@
 
 .method public static quadrilateralToQuadrilateral(FFFFFFFFFFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
     .locals 3
-    .param p0, "x0"    # F
-    .param p1, "y0"    # F
-    .param p2, "x1"    # F
-    .param p3, "y1"    # F
-    .param p4, "x2"    # F
-    .param p5, "y2"    # F
-    .param p6, "x3"    # F
-    .param p7, "y3"    # F
-    .param p8, "x0p"    # F
-    .param p9, "y0p"    # F
-    .param p10, "x1p"    # F
-    .param p11, "y1p"    # F
-    .param p12, "x2p"    # F
-    .param p13, "y2p"    # F
-    .param p14, "x3p"    # F
-    .param p15, "y3p"    # F
+    .parameter "x0"
+    .parameter "y0"
+    .parameter "x1"
+    .parameter "y1"
+    .parameter "x2"
+    .parameter "y2"
+    .parameter "x3"
+    .parameter "y3"
+    .parameter "x0p"
+    .parameter "y0p"
+    .parameter "x1p"
+    .parameter "y1p"
+    .parameter "x2p"
+    .parameter "y2p"
+    .parameter "x3p"
+    .parameter "y3p"
 
     .prologue
     .line 61
@@ -97,13 +97,13 @@
     move-result-object v0
 
     .line 62
-    .local v0, "qToS":Lcom/google/zxing/common/PerspectiveTransform;
+    .local v0, qToS:Lcom/google/zxing/common/PerspectiveTransform;
     invoke-static/range {p8 .. p15}, Lcom/google/zxing/common/PerspectiveTransform;->squareToQuadrilateral(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
 
     move-result-object v1
 
     .line 63
-    .local v1, "sToQ":Lcom/google/zxing/common/PerspectiveTransform;
+    .local v1, sToQ:Lcom/google/zxing/common/PerspectiveTransform;
     invoke-virtual {v1, v0}, Lcom/google/zxing/common/PerspectiveTransform;->times(Lcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/PerspectiveTransform;
 
     move-result-object v2
@@ -113,14 +113,14 @@
 
 .method public static quadrilateralToSquare(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
     .locals 1
-    .param p0, "x0"    # F
-    .param p1, "y0"    # F
-    .param p2, "x1"    # F
-    .param p3, "y1"    # F
-    .param p4, "x2"    # F
-    .param p5, "y2"    # F
-    .param p6, "x3"    # F
-    .param p7, "y3"    # F
+    .parameter "x0"
+    .parameter "y0"
+    .parameter "x1"
+    .parameter "y1"
+    .parameter "x2"
+    .parameter "y2"
+    .parameter "x3"
+    .parameter "y3"
 
     .prologue
     .line 128
@@ -137,14 +137,14 @@
 
 .method public static squareToQuadrilateral(FFFFFFFF)Lcom/google/zxing/common/PerspectiveTransform;
     .locals 17
-    .param p0, "x0"    # F
-    .param p1, "y0"    # F
-    .param p2, "x1"    # F
-    .param p3, "y1"    # F
-    .param p4, "x2"    # F
-    .param p5, "y2"    # F
-    .param p6, "x3"    # F
-    .param p7, "y3"    # F
+    .parameter "x0"
+    .parameter "y0"
+    .parameter "x1"
+    .parameter "y1"
+    .parameter "x2"
+    .parameter "y2"
+    .parameter "x3"
+    .parameter "y3"
 
     .prologue
     .line 102
@@ -155,7 +155,7 @@
     sub-float v13, v0, p6
 
     .line 103
-    .local v13, "dx3":F
+    .local v13, dx3:F
     sub-float v0, p1, p3
 
     add-float v0, v0, p5
@@ -163,7 +163,7 @@
     sub-float v16, v0, p7
 
     .line 104
-    .local v16, "dy3":F
+    .local v16, dy3:F
     const/4 v0, 0x0
 
     cmpl-float v0, v13, v0
@@ -191,7 +191,7 @@
 
     const/4 v8, 0x0
 
-    const/high16 v9, 0x3f800000
+    const/high16 v9, 0x3f80
 
     move/from16 v3, p0
 
@@ -208,19 +208,19 @@
     sub-float v11, p2, p4
 
     .line 111
-    .local v11, "dx1":F
+    .local v11, dx1:F
     sub-float v12, p6, p4
 
     .line 112
-    .local v12, "dx2":F
+    .local v12, dx2:F
     sub-float v14, p3, p5
 
     .line 113
-    .local v14, "dy1":F
+    .local v14, dy1:F
     sub-float v15, p7, p5
 
     .line 114
-    .local v15, "dy2":F
+    .local v15, dy2:F
     mul-float v0, v11, v15
 
     mul-float v1, v12, v14
@@ -228,7 +228,7 @@
     sub-float v10, v0, v1
 
     .line 115
-    .local v10, "denominator":F
+    .local v10, denominator:F
     mul-float v0, v13, v15
 
     mul-float v1, v12, v16
@@ -238,7 +238,7 @@
     div-float v7, v0, v10
 
     .line 116
-    .local v7, "a13":F
+    .local v7, a13:F
     mul-float v0, v11, v16
 
     mul-float v1, v13, v14
@@ -248,7 +248,7 @@
     div-float v8, v0, v10
 
     .line 117
-    .local v8, "a23":F
+    .local v8, a23:F
     new-instance v0, Lcom/google/zxing/common/PerspectiveTransform;
 
     sub-float v1, p2, p0
@@ -275,7 +275,7 @@
 
     add-float/2addr v5, v3
 
-    const/high16 v9, 0x3f800000
+    const/high16 v9, 0x3f80
 
     move/from16 v3, p0
 
@@ -428,7 +428,7 @@
 
 .method times(Lcom/google/zxing/common/PerspectiveTransform;)Lcom/google/zxing/common/PerspectiveTransform;
     .locals 12
-    .param p1, "other"    # Lcom/google/zxing/common/PerspectiveTransform;
+    .parameter "other"
 
     .prologue
     .line 145
@@ -639,7 +639,7 @@
 
 .method public transformPoints([F)V
     .locals 18
-    .param p1, "points"    # [F
+    .parameter "points"
 
     .prologue
     .line 67
@@ -648,64 +648,64 @@
     array-length v12, v0
 
     .line 68
-    .local v12, "max":I
+    .local v12, max:I
     move-object/from16 v0, p0
 
     iget v1, v0, Lcom/google/zxing/common/PerspectiveTransform;->a11:F
 
     .line 69
-    .local v1, "a11":F
+    .local v1, a11:F
     move-object/from16 v0, p0
 
     iget v2, v0, Lcom/google/zxing/common/PerspectiveTransform;->a12:F
 
     .line 70
-    .local v2, "a12":F
+    .local v2, a12:F
     move-object/from16 v0, p0
 
     iget v3, v0, Lcom/google/zxing/common/PerspectiveTransform;->a13:F
 
     .line 71
-    .local v3, "a13":F
+    .local v3, a13:F
     move-object/from16 v0, p0
 
     iget v4, v0, Lcom/google/zxing/common/PerspectiveTransform;->a21:F
 
     .line 72
-    .local v4, "a21":F
+    .local v4, a21:F
     move-object/from16 v0, p0
 
     iget v5, v0, Lcom/google/zxing/common/PerspectiveTransform;->a22:F
 
     .line 73
-    .local v5, "a22":F
+    .local v5, a22:F
     move-object/from16 v0, p0
 
     iget v6, v0, Lcom/google/zxing/common/PerspectiveTransform;->a23:F
 
     .line 74
-    .local v6, "a23":F
+    .local v6, a23:F
     move-object/from16 v0, p0
 
     iget v7, v0, Lcom/google/zxing/common/PerspectiveTransform;->a31:F
 
     .line 75
-    .local v7, "a31":F
+    .local v7, a31:F
     move-object/from16 v0, p0
 
     iget v8, v0, Lcom/google/zxing/common/PerspectiveTransform;->a32:F
 
     .line 76
-    .local v8, "a32":F
+    .local v8, a32:F
     move-object/from16 v0, p0
 
     iget v9, v0, Lcom/google/zxing/common/PerspectiveTransform;->a33:F
 
     .line 77
-    .local v9, "a33":F
+    .local v9, a33:F
     const/4 v11, 0x0
 
-    .local v11, "i":I
+    .local v11, i:I
     :goto_0
     if-ge v11, v12, :cond_0
 
@@ -713,13 +713,13 @@
     aget v13, p1, v11
 
     .line 79
-    .local v13, "x":F
+    .local v13, x:F
     add-int/lit8 v15, v11, 0x1
 
     aget v14, p1, v15
 
     .line 80
-    .local v14, "y":F
+    .local v14, y:F
     mul-float v15, v3, v13
 
     mul-float v16, v6, v14
@@ -729,7 +729,7 @@
     add-float v10, v15, v9
 
     .line 81
-    .local v10, "denominator":F
+    .local v10, denominator:F
     mul-float v15, v1, v13
 
     mul-float v16, v4, v14
@@ -763,9 +763,9 @@
     goto :goto_0
 
     .line 84
-    .end local v10    # "denominator":F
-    .end local v13    # "x":F
-    .end local v14    # "y":F
+    .end local v10           #denominator:F
+    .end local v13           #x:F
+    .end local v14           #y:F
     :cond_0
     return-void
 .end method

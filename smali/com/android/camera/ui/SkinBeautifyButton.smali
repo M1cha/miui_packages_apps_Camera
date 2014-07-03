@@ -18,8 +18,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 29
@@ -41,7 +41,7 @@
     move-result-object v0
 
     .line 64
-    .local v0, "entries":[Ljava/lang/CharSequence;
+    .local v0, entries:[Ljava/lang/CharSequence;
     if-eqz v0, :cond_0
 
     array-length v1, v0
@@ -78,7 +78,7 @@
     const v0, 0x7f0d0134
 
     .line 125
-    .local v0, "resId":I
+    .local v0, resId:I
     :goto_0
     invoke-virtual {p0}, Lcom/android/camera/ui/SkinBeautifyButton;->getResources()Landroid/content/res/Resources;
 
@@ -91,11 +91,11 @@
     return-object v1
 
     .line 123
-    .end local v0    # "resId":I
+    .end local v0           #resId:I
     :cond_0
     const v0, 0x7f0d0133
 
-    .restart local v0    # "resId":I
+    .restart local v0       #resId:I
     goto :goto_0
 .end method
 
@@ -130,7 +130,7 @@
     add-int/lit8 v0, v1, 0x1
 
     .line 78
-    .local v0, "index":I
+    .local v0, index:I
     invoke-direct {p0}, Lcom/android/camera/ui/SkinBeautifyButton;->getPrefrenceSize()I
 
     move-result v1
@@ -166,7 +166,7 @@
 # virtual methods
 .method public dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
     .locals 4
-    .param p1, "event"    # Landroid/view/accessibility/AccessibilityEvent;
+    .parameter "event"
 
     .prologue
     .line 109
@@ -175,7 +175,7 @@
     move-result v0
 
     .line 110
-    .local v0, "ret":Z
+    .local v0, ret:Z
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityEvent;->getEventType()I
 
     move-result v2
@@ -190,7 +190,7 @@
     move-result-object v1
 
     .line 112
-    .local v1, "text":Ljava/lang/String;
+    .local v1, text:Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -205,7 +205,7 @@
     invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 115
-    .end local v1    # "text":Ljava/lang/String;
+    .end local v1           #text:Ljava/lang/String;
     :cond_0
     return v0
 .end method
@@ -222,7 +222,7 @@
     invoke-direct {v0, v1}, Lcom/android/camera/PreferenceInflater;-><init>(Landroid/content/Context;)V
 
     .line 58
-    .local v0, "inflater":Lcom/android/camera/PreferenceInflater;
+    .local v0, inflater:Lcom/android/camera/PreferenceInflater;
     const v1, 0x7f060005
 
     invoke-virtual {v0, v1}, Lcom/android/camera/PreferenceInflater;->inflate(I)Lcom/android/camera/CameraPreference;
@@ -242,7 +242,7 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 48
@@ -290,7 +290,7 @@
 
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
-    .param p1, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
+    .parameter "info"
 
     .prologue
     .line 103
@@ -324,7 +324,7 @@
     move-result-object v2
 
     .line 92
-    .local v2, "value":Ljava/lang/String;
+    .local v2, value:Ljava/lang/String;
     iget-object v3, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mPreference:Lcom/android/camera/IconListPreference;
 
     invoke-virtual {v3, v2}, Lcom/android/camera/IconListPreference;->findIndexOfValue(Ljava/lang/String;)I
@@ -349,7 +349,7 @@
     move-result v1
 
     .line 96
-    .local v1, "index":I
+    .local v1, index:I
     iget-object v3, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mPreference:Lcom/android/camera/IconListPreference;
 
     invoke-virtual {v3}, Lcom/android/camera/IconListPreference;->getIconIds()[I
@@ -359,22 +359,22 @@
     aget v0, v3, v1
 
     .line 97
-    .local v0, "iconId":I
+    .local v0, iconId:I
     iget-object v3, p0, Lcom/android/camera/ui/SkinBeautifyButton;->mBeautifyImage:Lcom/android/camera/ui/RotateImageView;
 
     invoke-virtual {v3, v0}, Lcom/android/camera/ui/RotateImageView;->setImageResource(I)V
 
     .line 99
-    .end local v0    # "iconId":I
-    .end local v1    # "index":I
-    .end local v2    # "value":Ljava/lang/String;
+    .end local v0           #iconId:I
+    .end local v1           #index:I
+    .end local v2           #value:Ljava/lang/String;
     :cond_1
     return-void
 .end method
 
 .method public setListener(Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;)V
     .locals 0
-    .param p1, "l"    # Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
+    .parameter "l"
 
     .prologue
     .line 53
@@ -386,8 +386,8 @@
 
 .method public setOrientation(IZ)V
     .locals 1
-    .param p1, "orientation"    # I
-    .param p2, "animation"    # Z
+    .parameter "orientation"
+    .parameter "animation"
 
     .prologue
     .line 43

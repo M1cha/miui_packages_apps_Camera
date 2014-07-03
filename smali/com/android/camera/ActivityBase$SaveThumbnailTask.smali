@@ -32,6 +32,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/ActivityBase;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 533
@@ -44,8 +45,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/ActivityBase;Lcom/android/camera/ActivityBase$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/camera/ActivityBase;
-    .param p2, "x1"    # Lcom/android/camera/ActivityBase$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 533
@@ -58,13 +59,13 @@
 # virtual methods
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # [Ljava/lang/Object;
+    .parameter "x0"
 
     .prologue
     .line 533
     check-cast p1, [Lcom/android/camera/Thumbnail;
 
-    .end local p1    # "x0":[Ljava/lang/Object;
+    .end local p1
     invoke-virtual {p0, p1}, Lcom/android/camera/ActivityBase$SaveThumbnailTask;->doInBackground([Lcom/android/camera/Thumbnail;)Ljava/lang/Void;
 
     move-result-object v0
@@ -74,14 +75,14 @@
 
 .method protected varargs doInBackground([Lcom/android/camera/Thumbnail;)Ljava/lang/Void;
     .locals 4
-    .param p1, "params"    # [Lcom/android/camera/Thumbnail;
+    .parameter "params"
 
     .prologue
     .line 536
     array-length v2, p1
 
     .line 537
-    .local v2, "n":I
+    .local v2, n:I
     iget-object v3, p0, Lcom/android/camera/ActivityBase$SaveThumbnailTask;->this$0:Lcom/android/camera/ActivityBase;
 
     invoke-virtual {v3}, Lcom/android/camera/ActivityBase;->getFilesDir()Ljava/io/File;
@@ -89,10 +90,10 @@
     move-result-object v0
 
     .line 538
-    .local v0, "filesDir":Ljava/io/File;
+    .local v0, filesDir:Ljava/io/File;
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     if-ge v1, v2, :cond_0
 

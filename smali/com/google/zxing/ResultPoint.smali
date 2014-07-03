@@ -12,8 +12,8 @@
 # direct methods
 .method public constructor <init>(FF)V
     .locals 0
-    .param p1, "x"    # F
-    .param p2, "y"    # F
+    .parameter "x"
+    .parameter "y"
 
     .prologue
     .line 32
@@ -31,20 +31,20 @@
 
 .method private static crossProductZ(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
     .locals 5
-    .param p0, "pointA"    # Lcom/google/zxing/ResultPoint;
-    .param p1, "pointB"    # Lcom/google/zxing/ResultPoint;
-    .param p2, "pointC"    # Lcom/google/zxing/ResultPoint;
+    .parameter "pointA"
+    .parameter "pointB"
+    .parameter "pointC"
 
     .prologue
     .line 128
     iget v0, p1, Lcom/google/zxing/ResultPoint;->x:F
 
     .line 129
-    .local v0, "bX":F
+    .local v0, bX:F
     iget v1, p1, Lcom/google/zxing/ResultPoint;->y:F
 
     .line 130
-    .local v1, "bY":F
+    .local v1, bY:F
     iget v2, p2, Lcom/google/zxing/ResultPoint;->x:F
 
     sub-float/2addr v2, v0
@@ -72,8 +72,8 @@
 
 .method public static distance(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
     .locals 4
-    .param p0, "pattern1"    # Lcom/google/zxing/ResultPoint;
-    .param p1, "pattern2"    # Lcom/google/zxing/ResultPoint;
+    .parameter "pattern1"
+    .parameter "pattern2"
 
     .prologue
     .line 119
@@ -94,7 +94,7 @@
 
 .method public static orderBestPatterns([Lcom/google/zxing/ResultPoint;)V
     .locals 12
-    .param p0, "patterns"    # [Lcom/google/zxing/ResultPoint;
+    .parameter "patterns"
 
     .prologue
     const/4 v11, 0x2
@@ -113,7 +113,7 @@
     move-result v5
 
     .line 78
-    .local v5, "zeroOneDistance":F
+    .local v5, zeroOneDistance:F
     aget-object v7, p0, v10
 
     aget-object v8, p0, v11
@@ -123,7 +123,7 @@
     move-result v0
 
     .line 79
-    .local v0, "oneTwoDistance":F
+    .local v0, oneTwoDistance:F
     aget-object v7, p0, v9
 
     aget-object v8, p0, v11
@@ -133,7 +133,7 @@
     move-result v6
 
     .line 85
-    .local v6, "zeroTwoDistance":F
+    .local v6, zeroTwoDistance:F
     cmpl-float v7, v0, v5
 
     if-ltz v7, :cond_1
@@ -146,15 +146,15 @@
     aget-object v2, p0, v9
 
     .line 87
-    .local v2, "pointB":Lcom/google/zxing/ResultPoint;
+    .local v2, pointB:Lcom/google/zxing/ResultPoint;
     aget-object v1, p0, v10
 
     .line 88
-    .local v1, "pointA":Lcom/google/zxing/ResultPoint;
+    .local v1, pointA:Lcom/google/zxing/ResultPoint;
     aget-object v3, p0, v11
 
     .line 103
-    .local v3, "pointC":Lcom/google/zxing/ResultPoint;
+    .local v3, pointC:Lcom/google/zxing/ResultPoint;
     :goto_0
     invoke-static {v1, v2, v3}, Lcom/google/zxing/ResultPoint;->crossProductZ(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)F
 
@@ -170,14 +170,14 @@
     move-object v4, v1
 
     .line 105
-    .local v4, "temp":Lcom/google/zxing/ResultPoint;
+    .local v4, temp:Lcom/google/zxing/ResultPoint;
     move-object v1, v3
 
     .line 106
     move-object v3, v4
 
     .line 109
-    .end local v4    # "temp":Lcom/google/zxing/ResultPoint;
+    .end local v4           #temp:Lcom/google/zxing/ResultPoint;
     :cond_0
     aput-object v1, p0, v9
 
@@ -191,9 +191,9 @@
     return-void
 
     .line 89
-    .end local v1    # "pointA":Lcom/google/zxing/ResultPoint;
-    .end local v2    # "pointB":Lcom/google/zxing/ResultPoint;
-    .end local v3    # "pointC":Lcom/google/zxing/ResultPoint;
+    .end local v1           #pointA:Lcom/google/zxing/ResultPoint;
+    .end local v2           #pointB:Lcom/google/zxing/ResultPoint;
+    .end local v3           #pointC:Lcom/google/zxing/ResultPoint;
     :cond_1
     cmpl-float v7, v6, v0
 
@@ -207,32 +207,32 @@
     aget-object v2, p0, v10
 
     .line 91
-    .restart local v2    # "pointB":Lcom/google/zxing/ResultPoint;
+    .restart local v2       #pointB:Lcom/google/zxing/ResultPoint;
     aget-object v1, p0, v9
 
     .line 92
-    .restart local v1    # "pointA":Lcom/google/zxing/ResultPoint;
+    .restart local v1       #pointA:Lcom/google/zxing/ResultPoint;
     aget-object v3, p0, v11
 
-    .restart local v3    # "pointC":Lcom/google/zxing/ResultPoint;
+    .restart local v3       #pointC:Lcom/google/zxing/ResultPoint;
     goto :goto_0
 
     .line 94
-    .end local v1    # "pointA":Lcom/google/zxing/ResultPoint;
-    .end local v2    # "pointB":Lcom/google/zxing/ResultPoint;
-    .end local v3    # "pointC":Lcom/google/zxing/ResultPoint;
+    .end local v1           #pointA:Lcom/google/zxing/ResultPoint;
+    .end local v2           #pointB:Lcom/google/zxing/ResultPoint;
+    .end local v3           #pointC:Lcom/google/zxing/ResultPoint;
     :cond_2
     aget-object v2, p0, v11
 
     .line 95
-    .restart local v2    # "pointB":Lcom/google/zxing/ResultPoint;
+    .restart local v2       #pointB:Lcom/google/zxing/ResultPoint;
     aget-object v1, p0, v9
 
     .line 96
-    .restart local v1    # "pointA":Lcom/google/zxing/ResultPoint;
+    .restart local v1       #pointA:Lcom/google/zxing/ResultPoint;
     aget-object v3, p0, v10
 
-    .restart local v3    # "pointC":Lcom/google/zxing/ResultPoint;
+    .restart local v3       #pointC:Lcom/google/zxing/ResultPoint;
     goto :goto_0
 .end method
 
@@ -240,7 +240,7 @@
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "other"    # Ljava/lang/Object;
+    .parameter "other"
 
     .prologue
     const/4 v1, 0x0
@@ -256,7 +256,7 @@
     check-cast v0, Lcom/google/zxing/ResultPoint;
 
     .line 49
-    .local v0, "otherPoint":Lcom/google/zxing/ResultPoint;
+    .local v0, otherPoint:Lcom/google/zxing/ResultPoint;
     iget v2, p0, Lcom/google/zxing/ResultPoint;->x:F
 
     iget v3, v0, Lcom/google/zxing/ResultPoint;->x:F
@@ -276,7 +276,7 @@
     const/4 v1, 0x1
 
     .line 51
-    .end local v0    # "otherPoint":Lcom/google/zxing/ResultPoint;
+    .end local v0           #otherPoint:Lcom/google/zxing/ResultPoint;
     :cond_0
     return v1
 .end method
@@ -337,7 +337,7 @@
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 62
-    .local v0, "result":Ljava/lang/StringBuilder;
+    .local v0, result:Ljava/lang/StringBuilder;
     const/16 v1, 0x28
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;

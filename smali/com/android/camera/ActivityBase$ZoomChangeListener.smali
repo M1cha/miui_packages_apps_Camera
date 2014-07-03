@@ -24,6 +24,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/ActivityBase;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 1189
@@ -36,8 +37,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/ActivityBase;Lcom/android/camera/ActivityBase$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/camera/ActivityBase;
-    .param p2, "x1"    # Lcom/android/camera/ActivityBase$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 1189
@@ -50,7 +51,7 @@
 # virtual methods
 .method public onZoomValueChanged(I)V
     .locals 2
-    .param p1, "index"    # I
+    .parameter "index"
 
     .prologue
     .line 1193

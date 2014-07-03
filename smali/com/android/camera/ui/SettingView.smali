@@ -59,7 +59,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     const/4 v1, 0x0
@@ -104,8 +104,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     const/4 v1, 0x0
@@ -150,9 +150,9 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyle"    # I
+    .parameter "context"
+    .parameter "attrs"
+    .parameter "defStyle"
 
     .prologue
     const/4 v1, 0x0
@@ -197,7 +197,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/ui/SettingView;)Ljava/lang/Runnable;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/ui/SettingView;
+    .parameter "x0"
 
     .prologue
     .line 19
@@ -208,8 +208,8 @@
 
 .method static synthetic access$002(Lcom/android/camera/ui/SettingView;Ljava/lang/Runnable;)Ljava/lang/Runnable;
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/ui/SettingView;
-    .param p1, "x1"    # Ljava/lang/Runnable;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 19
@@ -247,7 +247,7 @@
     iget-object v0, p0, Lcom/android/camera/ui/SettingView;->mRunnable:Ljava/lang/Runnable;
 
     .line 139
-    .local v0, "runnalbe":Ljava/lang/Runnable;
+    .local v0, runnalbe:Ljava/lang/Runnable;
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/camera/ui/SettingView;->mRunnable:Ljava/lang/Runnable;
@@ -256,7 +256,7 @@
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     .line 149
-    .end local v0    # "runnalbe":Ljava/lang/Runnable;
+    .end local v0           #runnalbe:Ljava/lang/Runnable;
     :cond_1
     :goto_0
     return-void
@@ -293,7 +293,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -308,7 +308,7 @@
     check-cast v1, Lcom/android/camera/ui/AbstractIndicatorButton;
 
     .line 77
-    .local v1, "v":Lcom/android/camera/ui/AbstractIndicatorButton;
+    .local v1, v:Lcom/android/camera/ui/AbstractIndicatorButton;
     invoke-virtual {v1}, Lcom/android/camera/ui/AbstractIndicatorButton;->dismissPopup()Z
 
     move-result v2
@@ -322,7 +322,7 @@
     const/4 v2, 0x1
 
     .line 82
-    .end local v1    # "v":Lcom/android/camera/ui/AbstractIndicatorButton;
+    .end local v1           #v:Lcom/android/camera/ui/AbstractIndicatorButton;
     :goto_0
     return v2
 
@@ -343,7 +343,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -358,18 +358,18 @@
     check-cast v2, Lcom/android/camera/ui/AbstractIndicatorButton;
 
     .line 87
-    .local v2, "v":Lcom/android/camera/ui/AbstractIndicatorButton;
+    .local v2, v:Lcom/android/camera/ui/AbstractIndicatorButton;
     invoke-virtual {v2}, Lcom/android/camera/ui/AbstractIndicatorButton;->getPopupWindow()Lcom/android/camera/ui/AbstractSettingPopup;
 
     move-result-object v1
 
     .line 88
-    .local v1, "result":Landroid/view/View;
+    .local v1, result:Landroid/view/View;
     if-eqz v1, :cond_0
 
     .line 90
-    .end local v1    # "result":Landroid/view/View;
-    .end local v2    # "v":Lcom/android/camera/ui/AbstractIndicatorButton;
+    .end local v1           #result:Landroid/view/View;
+    .end local v2           #v:Lcom/android/camera/ui/AbstractIndicatorButton;
     :goto_0
     return-object v1
 
@@ -406,11 +406,11 @@
 
 .method protected onLayout(ZIIII)V
     .locals 2
-    .param p1, "changed"    # Z
-    .param p2, "l"    # I
-    .param p3, "t"    # I
-    .param p4, "r"    # I
-    .param p5, "b"    # I
+    .parameter "changed"
+    .parameter "l"
+    .parameter "t"
+    .parameter "r"
+    .parameter "b"
 
     .prologue
     const/4 v1, 0x0
@@ -450,7 +450,7 @@
 
 .method public varargs overrideSettings([Ljava/lang/String;)V
     .locals 3
-    .param p1, "keyvalues"    # [Ljava/lang/String;
+    .parameter "keyvalues"
 
     .prologue
     .line 111
@@ -475,7 +475,7 @@
 
     move-result-object v1
 
-    .local v1, "i$":Ljava/util/Iterator;
+    .local v1, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -490,20 +490,20 @@
     check-cast v0, Lcom/android/camera/ui/AbstractIndicatorButton;
 
     .line 116
-    .local v0, "b":Lcom/android/camera/ui/AbstractIndicatorButton;
+    .local v0, b:Lcom/android/camera/ui/AbstractIndicatorButton;
     invoke-virtual {v0, p1}, Lcom/android/camera/ui/AbstractIndicatorButton;->overrideSettings([Ljava/lang/String;)V
 
     goto :goto_0
 
     .line 118
-    .end local v0    # "b":Lcom/android/camera/ui/AbstractIndicatorButton;
+    .end local v0           #b:Lcom/android/camera/ui/AbstractIndicatorButton;
     :cond_1
     return-void
 .end method
 
 .method public popup(Z)V
     .locals 3
-    .param p1, "animate"    # Z
+    .parameter "animate"
 
     .prologue
     const/4 v2, 0x1
@@ -572,7 +572,7 @@
 
     move-result-object v1
 
-    .local v1, "i$":Ljava/util/Iterator;
+    .local v1, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -587,20 +587,20 @@
     check-cast v0, Lcom/android/camera/ui/AbstractIndicatorButton;
 
     .line 67
-    .local v0, "b":Lcom/android/camera/ui/AbstractIndicatorButton;
+    .local v0, b:Lcom/android/camera/ui/AbstractIndicatorButton;
     invoke-virtual {v0}, Lcom/android/camera/ui/AbstractIndicatorButton;->reloadPreference()V
 
     goto :goto_0
 
     .line 69
-    .end local v0    # "b":Lcom/android/camera/ui/AbstractIndicatorButton;
+    .end local v0           #b:Lcom/android/camera/ui/AbstractIndicatorButton;
     :cond_0
     return-void
 .end method
 
 .method public resetSettings(Lcom/android/camera/ComboPreferences;)V
     .locals 0
-    .param p1, "preferences"    # Lcom/android/camera/ComboPreferences;
+    .parameter "preferences"
 
     .prologue
     .line 263
@@ -609,7 +609,7 @@
 
 .method public runAfterDismiss(Ljava/lang/Runnable;)V
     .locals 0
-    .param p1, "run"    # Ljava/lang/Runnable;
+    .parameter "run"
 
     .prologue
     .line 152
@@ -624,7 +624,7 @@
 
 .method public sendClickTo(Ljava/lang/String;)V
     .locals 4
-    .param p1, "key"    # Ljava/lang/String;
+    .parameter "key"
 
     .prologue
     .line 244
@@ -634,7 +634,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :cond_0
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -650,7 +650,7 @@
     check-cast v2, Lcom/android/camera/ui/Rotatable;
 
     .line 245
-    .local v2, "r":Lcom/android/camera/ui/Rotatable;
+    .local v2, r:Lcom/android/camera/ui/Rotatable;
     instance-of v3, v2, Lcom/android/camera/ui/PopupMenuItem;
 
     if-eqz v3, :cond_0
@@ -661,7 +661,7 @@
     check-cast v1, Lcom/android/camera/ui/PopupMenuItem;
 
     .line 247
-    .local v1, "item":Lcom/android/camera/ui/PopupMenuItem;
+    .local v1, item:Lcom/android/camera/ui/PopupMenuItem;
     invoke-virtual {v1}, Lcom/android/camera/ui/PopupMenuItem;->getTag()Ljava/lang/Object;
 
     move-result-object v3
@@ -678,15 +678,15 @@
     goto :goto_0
 
     .line 252
-    .end local v1    # "item":Lcom/android/camera/ui/PopupMenuItem;
-    .end local v2    # "r":Lcom/android/camera/ui/Rotatable;
+    .end local v1           #item:Lcom/android/camera/ui/PopupMenuItem;
+    .end local v2           #r:Lcom/android/camera/ui/Rotatable;
     :cond_1
     return-void
 .end method
 
 .method public setCurrentMode(Ljava/lang/String;)V
     .locals 0
-    .param p1, "currentMode"    # Ljava/lang/String;
+    .parameter "currentMode"
 
     .prologue
     .line 240
@@ -698,8 +698,8 @@
 
 .method public setIndicatorImage(Ljava/lang/String;I)V
     .locals 3
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "resId"    # I
+    .parameter "key"
+    .parameter "resId"
 
     .prologue
     .line 94
@@ -718,7 +718,7 @@
 
     move-result-object v1
 
-    .local v1, "i$":Ljava/util/Iterator;
+    .local v1, i$:Ljava/util/Iterator;
     :cond_2
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -733,7 +733,7 @@
     check-cast v0, Lcom/android/camera/ui/AbstractIndicatorButton;
 
     .line 98
-    .local v0, "b":Lcom/android/camera/ui/AbstractIndicatorButton;
+    .local v0, b:Lcom/android/camera/ui/AbstractIndicatorButton;
     invoke-virtual {v0}, Lcom/android/camera/ui/AbstractIndicatorButton;->getKey()Ljava/lang/String;
 
     move-result-object v2
@@ -755,7 +755,7 @@
 
 .method public setListener(Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
+    .parameter "listener"
 
     .prologue
     .line 107
@@ -767,8 +767,8 @@
 
 .method public setOrientation(IZ)V
     .locals 3
-    .param p1, "orientation"    # I
-    .param p2, "animation"    # Z
+    .parameter "orientation"
+    .parameter "animation"
 
     .prologue
     .line 56
@@ -790,7 +790,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :goto_1
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -805,14 +805,14 @@
     check-cast v1, Lcom/android/camera/ui/Rotatable;
 
     .line 60
-    .local v1, "v":Lcom/android/camera/ui/Rotatable;
+    .local v1, v:Lcom/android/camera/ui/Rotatable;
     invoke-interface {v1, p1, p2}, Lcom/android/camera/ui/Rotatable;->setOrientation(IZ)V
 
     goto :goto_1
 
     .line 58
-    .end local v0    # "i$":Ljava/util/Iterator;
-    .end local v1    # "v":Lcom/android/camera/ui/Rotatable;
+    .end local v0           #i$:Ljava/util/Iterator;
+    .end local v1           #v:Lcom/android/camera/ui/Rotatable;
     :cond_0
     rem-int/lit16 v2, p1, 0x168
 
@@ -821,14 +821,14 @@
     goto :goto_0
 
     .line 62
-    .restart local v0    # "i$":Ljava/util/Iterator;
+    .restart local v0       #i$:Ljava/util/Iterator;
     :cond_1
     return-void
 .end method
 
 .method protected setPressed(Ljava/lang/String;)V
     .locals 3
-    .param p1, "key"    # Ljava/lang/String;
+    .parameter "key"
 
     .prologue
     .line 220
@@ -838,7 +838,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :cond_0
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -854,7 +854,7 @@
     check-cast v1, Lcom/android/camera/ui/Rotatable;
 
     .line 221
-    .local v1, "v":Lcom/android/camera/ui/Rotatable;
+    .local v1, v:Lcom/android/camera/ui/Rotatable;
     instance-of v2, v1, Lcom/android/camera/ui/PopupMenuItem;
 
     if-eqz v2, :cond_0
@@ -877,7 +877,7 @@
     .line 223
     check-cast v1, Lcom/android/camera/ui/PopupMenuItem;
 
-    .end local v1    # "v":Lcom/android/camera/ui/Rotatable;
+    .end local v1           #v:Lcom/android/camera/ui/Rotatable;
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Lcom/android/camera/ui/PopupMenuItem;->setPressed(Z)V
@@ -885,11 +885,11 @@
     goto :goto_0
 
     .line 225
-    .restart local v1    # "v":Lcom/android/camera/ui/Rotatable;
+    .restart local v1       #v:Lcom/android/camera/ui/Rotatable;
     :cond_1
     check-cast v1, Lcom/android/camera/ui/PopupMenuItem;
 
-    .end local v1    # "v":Lcom/android/camera/ui/Rotatable;
+    .end local v1           #v:Lcom/android/camera/ui/Rotatable;
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/android/camera/ui/PopupMenuItem;->setPressed(Z)V
@@ -916,7 +916,7 @@
 
 .method public showPopup(Ljava/lang/String;)V
     .locals 0
-    .param p1, "key"    # Ljava/lang/String;
+    .parameter "key"
 
     .prologue
     .line 262
@@ -925,12 +925,12 @@
 
 .method protected startAnim(Z)V
     .locals 13
-    .param p1, "isPopup"    # Z
+    .parameter "isPopup"
 
     .prologue
-    const/high16 v7, 0x40000000
+    const/high16 v7, 0x4000
 
-    const/high16 v12, 0x3f800000
+    const/high16 v12, 0x3f80
 
     const v11, 0x3f7d70a4
 
@@ -950,7 +950,7 @@
     div-float v3, v5, v7
 
     .line 158
-    .local v3, "moveY":F
+    .local v3, moveY:F
     invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
@@ -966,7 +966,7 @@
     move-result v4
 
     .line 159
-    .local v4, "rightW":I
+    .local v4, rightW:I
     invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
@@ -982,7 +982,7 @@
     move-result v1
 
     .line 160
-    .local v1, "anchorW":I
+    .local v1, anchorW:I
     iget-object v5, p0, Lcom/android/camera/ui/SettingView;->mAnchor:Landroid/widget/ImageView;
 
     invoke-virtual {v5}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -992,7 +992,7 @@
     iget v0, v5, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 161
-    .local v0, "anchorActualW":I
+    .local v0, anchorActualW:I
     invoke-virtual {p0}, Lcom/android/camera/ui/SettingView;->getWidth()I
 
     move-result v5
@@ -1014,7 +1014,7 @@
     sub-float v2, v5, v6
 
     .line 162
-    .local v2, "moveX":F
+    .local v2, moveX:F
     if-eqz p1, :cond_1
 
     .line 163
@@ -1233,7 +1233,7 @@
 
 .method public updateExitLayout(Z)V
     .locals 0
-    .param p1, "isMenuShow"    # Z
+    .parameter "isMenuShow"
 
     .prologue
     .line 259
@@ -1242,7 +1242,7 @@
 
 .method public updateExitView(Landroid/widget/TextView;)V
     .locals 0
-    .param p1, "view"    # Landroid/widget/TextView;
+    .parameter "view"
 
     .prologue
     .line 257

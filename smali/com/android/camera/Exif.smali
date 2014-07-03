@@ -16,7 +16,7 @@
 
 .method public static getOrientation([B)I
     .locals 15
-    .param p0, "jpeg"    # [B
+    .parameter "jpeg"
 
     .prologue
     const/16 v14, 0x8
@@ -42,11 +42,11 @@
     const/4 v5, 0x0
 
     .line 31
-    .local v5, "offset":I
+    .local v5, offset:I
     const/4 v2, 0x0
 
     .line 34
-    .local v2, "length":I
+    .local v2, length:I
     :cond_1
     :goto_1
     add-int/lit8 v10, v5, 0x3
@@ -57,8 +57,8 @@
 
     add-int/lit8 v6, v5, 0x1
 
-    .end local v5    # "offset":I
-    .local v6, "offset":I
+    .end local v5           #offset:I
+    .local v6, offset:I
     aget-byte v10, p0, v5
 
     and-int/lit16 v10, v10, 0xff
@@ -73,7 +73,7 @@
     and-int/lit16 v4, v10, 0xff
 
     .line 38
-    .local v4, "marker":I
+    .local v4, marker:I
     const/16 v10, 0xff
 
     if-ne v4, v10, :cond_2
@@ -81,19 +81,19 @@
     move v5, v6
 
     .line 39
-    .end local v6    # "offset":I
-    .restart local v5    # "offset":I
+    .end local v6           #offset:I
+    .restart local v5       #offset:I
     goto :goto_1
 
     .line 41
-    .end local v5    # "offset":I
-    .restart local v6    # "offset":I
+    .end local v5           #offset:I
+    .restart local v6       #offset:I
     :cond_2
     add-int/lit8 v5, v6, 0x1
 
     .line 44
-    .end local v6    # "offset":I
-    .restart local v5    # "offset":I
+    .end local v6           #offset:I
+    .restart local v5       #offset:I
     const/16 v10, 0xd8
 
     if-eq v4, v10, :cond_1
@@ -110,7 +110,7 @@
     if-ne v4, v10, :cond_4
 
     .line 74
-    .end local v4    # "marker":I
+    .end local v4           #marker:I
     :cond_3
     :goto_2
     if-le v2, v14, :cond_d
@@ -121,7 +121,7 @@
     move-result v8
 
     .line 77
-    .local v8, "tag":I
+    .local v8, tag:I
     const v10, 0x49492a00
 
     if-eq v8, v10, :cond_8
@@ -140,8 +140,8 @@
     goto :goto_0
 
     .line 53
-    .end local v8    # "tag":I
-    .restart local v4    # "marker":I
+    .end local v8           #tag:I
+    .restart local v4       #marker:I
     :cond_4
     invoke-static {p0, v5, v12, v9}, Lcom/android/camera/Exif;->pack([BIIZ)I
 
@@ -212,15 +212,15 @@
     goto :goto_1
 
     .line 81
-    .end local v4    # "marker":I
-    .restart local v8    # "tag":I
+    .end local v4           #marker:I
+    .restart local v8       #tag:I
     :cond_8
     const v10, 0x49492a00
 
     if-ne v8, v10, :cond_a
 
     .line 84
-    .local v3, "littleEndian":Z
+    .local v3, littleEndian:Z
     :goto_3
     add-int/lit8 v10, v5, 0x4
 
@@ -231,7 +231,7 @@
     add-int/lit8 v0, v10, 0x2
 
     .line 85
-    .local v0, "count":I
+    .local v0, count:I
     const/16 v10, 0xa
 
     if-lt v0, v10, :cond_9
@@ -248,8 +248,8 @@
 
     goto/16 :goto_0
 
-    .end local v0    # "count":I
-    .end local v3    # "littleEndian":Z
+    .end local v0           #count:I
+    .end local v3           #littleEndian:Z
     :cond_a
     move v3, v9
 
@@ -257,8 +257,8 @@
     goto :goto_3
 
     .line 89
-    .restart local v0    # "count":I
-    .restart local v3    # "littleEndian":Z
+    .restart local v0       #count:I
+    .restart local v3       #littleEndian:Z
     :cond_b
     add-int/2addr v5, v0
 
@@ -275,13 +275,13 @@
     move v1, v0
 
     .line 94
-    .end local v0    # "count":I
-    .local v1, "count":I
+    .end local v0           #count:I
+    .local v1, count:I
     :goto_4
     add-int/lit8 v0, v1, -0x1
 
-    .end local v1    # "count":I
-    .restart local v0    # "count":I
+    .end local v1           #count:I
+    .restart local v0       #count:I
     if-lez v1, :cond_d
 
     const/16 v10, 0xc
@@ -306,7 +306,7 @@
     move-result v7
 
     .line 100
-    .local v7, "orientation":I
+    .local v7, orientation:I
     packed-switch v7, :pswitch_data_0
 
     .line 110
@@ -338,7 +338,7 @@
     goto/16 :goto_0
 
     .line 113
-    .end local v7    # "orientation":I
+    .end local v7           #orientation:I
     :cond_c
     add-int/lit8 v5, v5, 0xc
 
@@ -347,14 +347,14 @@
 
     move v1, v0
 
-    .end local v0    # "count":I
-    .restart local v1    # "count":I
+    .end local v0           #count:I
+    .restart local v1       #count:I
     goto :goto_4
 
     .line 118
-    .end local v1    # "count":I
-    .end local v3    # "littleEndian":Z
-    .end local v8    # "tag":I
+    .end local v1           #count:I
+    .end local v3           #littleEndian:Z
+    .end local v8           #tag:I
     :cond_d
     const-string v10, "CameraExif"
 
@@ -364,13 +364,13 @@
 
     goto/16 :goto_0
 
-    .end local v5    # "offset":I
-    .restart local v6    # "offset":I
+    .end local v5           #offset:I
+    .restart local v6       #offset:I
     :cond_e
     move v5, v6
 
-    .end local v6    # "offset":I
-    .restart local v5    # "offset":I
+    .end local v6           #offset:I
+    .restart local v5       #offset:I
     goto/16 :goto_2
 
     .line 100
@@ -391,17 +391,17 @@
 
 .method private static pack([BIIZ)I
     .locals 5
-    .param p0, "bytes"    # [B
-    .param p1, "offset"    # I
-    .param p2, "length"    # I
-    .param p3, "littleEndian"    # Z
+    .parameter "bytes"
+    .parameter "offset"
+    .parameter "length"
+    .parameter "littleEndian"
 
     .prologue
     .line 124
     const/4 v1, 0x1
 
     .line 125
-    .local v1, "step":I
+    .local v1, step:I
     if-eqz p3, :cond_0
 
     .line 126
@@ -416,17 +416,17 @@
     :cond_0
     const/4 v2, 0x0
 
-    .local v2, "value":I
+    .local v2, value:I
     move v0, p2
 
     .line 131
-    .end local p2    # "length":I
-    .local v0, "length":I
+    .end local p2
+    .local v0, length:I
     :goto_0
     add-int/lit8 p2, v0, -0x1
 
-    .end local v0    # "length":I
-    .restart local p2    # "length":I
+    .end local v0           #length:I
+    .restart local p2
     if-lez v0, :cond_1
 
     .line 132
@@ -443,13 +443,13 @@
 
     move v0, p2
 
-    .end local p2    # "length":I
-    .restart local v0    # "length":I
+    .end local p2
+    .restart local v0       #length:I
     goto :goto_0
 
     .line 135
-    .end local v0    # "length":I
-    .restart local p2    # "length":I
+    .end local v0           #length:I
+    .restart local p2
     :cond_1
     return v2
 .end method

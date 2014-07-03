@@ -6,7 +6,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/zxing/common/BitArray;)V
     .locals 0
-    .param p1, "information"    # Lcom/google/zxing/common/BitArray;
+    .parameter "information"
 
     .prologue
     .line 41
@@ -54,7 +54,7 @@
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 52
-    .local v0, "buf":Ljava/lang/StringBuilder;
+    .local v0, buf:Ljava/lang/StringBuilder;
     const/16 v3, 0x8
 
     invoke-virtual {p0, v0, v3}, Lcom/google/zxing/oned/rss/expanded/decoders/AI01392xDecoder;->encodeCompressedGtin(Ljava/lang/StringBuilder;I)V
@@ -71,7 +71,7 @@
     move-result v2
 
     .line 56
-    .local v2, "lastAIdigit":I
+    .local v2, lastAIdigit:I
     const-string v3, "(392"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -98,7 +98,7 @@
     move-result-object v1
 
     .line 62
-    .local v1, "decodedInformation":Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
+    .local v1, decodedInformation:Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;
     invoke-virtual {v1}, Lcom/google/zxing/oned/rss/expanded/decoders/DecodedInformation;->getNewString()Ljava/lang/String;
 
     move-result-object v3

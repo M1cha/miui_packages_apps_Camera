@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/zxing/ui/QRCodeFragment;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 268
@@ -38,13 +39,13 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 271
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
+    #getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$000(Lcom/android/zxing/ui/QRCodeFragment;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v0
@@ -56,7 +57,7 @@
     .line 272
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # invokes: Lcom/android/zxing/ui/QRCodeFragment;->launchBrowser()V
+    #calls: Lcom/android/zxing/ui/QRCodeFragment;->launchBrowser()V
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$100(Lcom/android/zxing/ui/QRCodeFragment;)V
 
     .line 297
@@ -67,7 +68,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
+    #getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$000(Lcom/android/zxing/ui/QRCodeFragment;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v0
@@ -79,7 +80,7 @@
     .line 274
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # getter for: Lcom/android/zxing/ui/QRCodeFragment;->mWeChatInstalled:Z
+    #getter for: Lcom/android/zxing/ui/QRCodeFragment;->mWeChatInstalled:Z
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$200(Lcom/android/zxing/ui/QRCodeFragment;)Z
 
     move-result v0
@@ -89,7 +90,7 @@
     .line 275
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # invokes: Lcom/android/zxing/ui/QRCodeFragment;->launchWeChat()V
+    #calls: Lcom/android/zxing/ui/QRCodeFragment;->launchWeChat()V
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$300(Lcom/android/zxing/ui/QRCodeFragment;)V
 
     goto :goto_0
@@ -98,12 +99,11 @@
     :cond_1
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # getter for: Lcom/android/zxing/ui/QRCodeFragment;->DOWNLOAD_WECHAT_URI:Landroid/net/Uri;
     invoke-static {}, Lcom/android/zxing/ui/QRCodeFragment;->access$400()Landroid/net/Uri;
 
     move-result-object v1
 
-    # invokes: Lcom/android/zxing/ui/QRCodeFragment;->downloadFromUri(Landroid/net/Uri;)V
+    #calls: Lcom/android/zxing/ui/QRCodeFragment;->downloadFromUri(Landroid/net/Uri;)V
     invoke-static {v0, v1}, Lcom/android/zxing/ui/QRCodeFragment;->access$500(Lcom/android/zxing/ui/QRCodeFragment;Landroid/net/Uri;)V
 
     goto :goto_0
@@ -112,7 +112,7 @@
     :cond_2
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
+    #getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$000(Lcom/android/zxing/ui/QRCodeFragment;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v0
@@ -124,7 +124,7 @@
     .line 280
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # invokes: Lcom/android/zxing/ui/QRCodeFragment;->launchMIUIMartket()V
+    #calls: Lcom/android/zxing/ui/QRCodeFragment;->launchMIUIMartket()V
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$600(Lcom/android/zxing/ui/QRCodeFragment;)V
 
     goto :goto_0
@@ -133,7 +133,7 @@
     :cond_3
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
+    #getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$000(Lcom/android/zxing/ui/QRCodeFragment;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v0
@@ -144,7 +144,7 @@
 
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
+    #getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$000(Lcom/android/zxing/ui/QRCodeFragment;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v0
@@ -157,7 +157,7 @@
     :cond_4
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # invokes: Lcom/android/zxing/ui/QRCodeFragment;->insertContact()V
+    #calls: Lcom/android/zxing/ui/QRCodeFragment;->insertContact()V
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$700(Lcom/android/zxing/ui/QRCodeFragment;)V
 
     goto :goto_0
@@ -166,7 +166,7 @@
     :cond_5
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
+    #getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$000(Lcom/android/zxing/ui/QRCodeFragment;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v0
@@ -178,7 +178,7 @@
     .line 285
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # invokes: Lcom/android/zxing/ui/QRCodeFragment;->connectWiFi()V
+    #calls: Lcom/android/zxing/ui/QRCodeFragment;->connectWiFi()V
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$800(Lcom/android/zxing/ui/QRCodeFragment;)V
 
     goto :goto_0
@@ -187,7 +187,7 @@
     :cond_6
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
+    #getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$000(Lcom/android/zxing/ui/QRCodeFragment;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v0
@@ -199,7 +199,7 @@
     .line 287
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # getter for: Lcom/android/zxing/ui/QRCodeFragment;->mQQInstalled:Z
+    #getter for: Lcom/android/zxing/ui/QRCodeFragment;->mQQInstalled:Z
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$900(Lcom/android/zxing/ui/QRCodeFragment;)Z
 
     move-result v0
@@ -209,7 +209,7 @@
     .line 288
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # invokes: Lcom/android/zxing/ui/QRCodeFragment;->launchBrowser()V
+    #calls: Lcom/android/zxing/ui/QRCodeFragment;->launchBrowser()V
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$100(Lcom/android/zxing/ui/QRCodeFragment;)V
 
     goto :goto_0
@@ -218,12 +218,11 @@
     :cond_7
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # getter for: Lcom/android/zxing/ui/QRCodeFragment;->DOWNLOAD_QQ_URI:Landroid/net/Uri;
     invoke-static {}, Lcom/android/zxing/ui/QRCodeFragment;->access$1000()Landroid/net/Uri;
 
     move-result-object v1
 
-    # invokes: Lcom/android/zxing/ui/QRCodeFragment;->downloadFromUri(Landroid/net/Uri;)V
+    #calls: Lcom/android/zxing/ui/QRCodeFragment;->downloadFromUri(Landroid/net/Uri;)V
     invoke-static {v0, v1}, Lcom/android/zxing/ui/QRCodeFragment;->access$500(Lcom/android/zxing/ui/QRCodeFragment;Landroid/net/Uri;)V
 
     goto :goto_0
@@ -232,7 +231,7 @@
     :cond_8
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
+    #getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$000(Lcom/android/zxing/ui/QRCodeFragment;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v0
@@ -244,7 +243,7 @@
     .line 293
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # invokes: Lcom/android/zxing/ui/QRCodeFragment;->visitCloudAlbum()V
+    #calls: Lcom/android/zxing/ui/QRCodeFragment;->visitCloudAlbum()V
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$1100(Lcom/android/zxing/ui/QRCodeFragment;)V
 
     goto/16 :goto_0
@@ -253,7 +252,7 @@
     :cond_9
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$2;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # invokes: Lcom/android/zxing/ui/QRCodeFragment;->copyToClipboard()V
+    #calls: Lcom/android/zxing/ui/QRCodeFragment;->copyToClipboard()V
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$1200(Lcom/android/zxing/ui/QRCodeFragment;)V
 
     goto/16 :goto_0

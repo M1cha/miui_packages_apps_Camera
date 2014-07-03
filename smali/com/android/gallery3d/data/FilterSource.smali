@@ -12,7 +12,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/CameraAppImpl;)V
     .locals 3
-    .param p1, "application"    # Lcom/android/camera/CameraAppImpl;
+    .parameter "application"
 
     .prologue
     .line 30
@@ -56,7 +56,7 @@
 # virtual methods
 .method public createMediaObject(Lcom/android/gallery3d/data/Path;)Lcom/android/gallery3d/data/MediaObject;
     .locals 8
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .parameter "path"
 
     .prologue
     const/4 v7, 0x0
@@ -69,7 +69,7 @@
     move-result v1
 
     .line 43
-    .local v1, "matchType":I
+    .local v1, matchType:I
     iget-object v5, p0, Lcom/android/gallery3d/data/FilterSource;->mApplication:Lcom/android/camera/CameraAppImpl;
 
     invoke-virtual {v5}, Lcom/android/camera/CameraAppImpl;->getDataManager()Lcom/android/gallery3d/data/DataManager;
@@ -77,7 +77,7 @@
     move-result-object v0
 
     .line 44
-    .local v0, "dataManager":Lcom/android/gallery3d/data/DataManager;
+    .local v0, dataManager:Lcom/android/gallery3d/data/DataManager;
     packed-switch v1, :pswitch_data_0
 
     .line 57
@@ -114,7 +114,7 @@
     move-result v2
 
     .line 47
-    .local v2, "mediaType":I
+    .local v2, mediaType:I
     iget-object v5, p0, Lcom/android/gallery3d/data/FilterSource;->mMatcher:Lcom/android/gallery3d/data/PathMatcher;
 
     const/4 v6, 0x1
@@ -124,13 +124,13 @@
     move-result-object v4
 
     .line 48
-    .local v4, "setsName":Ljava/lang/String;
+    .local v4, setsName:Ljava/lang/String;
     invoke-virtual {v0, v4}, Lcom/android/gallery3d/data/DataManager;->getMediaSetsFromString(Ljava/lang/String;)[Lcom/android/gallery3d/data/MediaSet;
 
     move-result-object v3
 
     .line 49
-    .local v3, "sets":[Lcom/android/gallery3d/data/MediaSet;
+    .local v3, sets:[Lcom/android/gallery3d/data/MediaSet;
     new-instance v5, Lcom/android/gallery3d/data/FilterTypeSet;
 
     aget-object v6, v3, v7
@@ -138,13 +138,13 @@
     invoke-direct {v5, p1, v0, v6, v2}, Lcom/android/gallery3d/data/FilterTypeSet;-><init>(Lcom/android/gallery3d/data/Path;Lcom/android/gallery3d/data/DataManager;Lcom/android/gallery3d/data/MediaSet;I)V
 
     .line 54
-    .end local v2    # "mediaType":I
+    .end local v2           #mediaType:I
     :goto_0
     return-object v5
 
     .line 52
-    .end local v3    # "sets":[Lcom/android/gallery3d/data/MediaSet;
-    .end local v4    # "setsName":Ljava/lang/String;
+    .end local v3           #sets:[Lcom/android/gallery3d/data/MediaSet;
+    .end local v4           #setsName:Ljava/lang/String;
     :pswitch_1
     iget-object v5, p0, Lcom/android/gallery3d/data/FilterSource;->mMatcher:Lcom/android/gallery3d/data/PathMatcher;
 
@@ -153,13 +153,13 @@
     move-result-object v4
 
     .line 53
-    .restart local v4    # "setsName":Ljava/lang/String;
+    .restart local v4       #setsName:Ljava/lang/String;
     invoke-virtual {v0, v4}, Lcom/android/gallery3d/data/DataManager;->getMediaSetsFromString(Ljava/lang/String;)[Lcom/android/gallery3d/data/MediaSet;
 
     move-result-object v3
 
     .line 54
-    .restart local v3    # "sets":[Lcom/android/gallery3d/data/MediaSet;
+    .restart local v3       #sets:[Lcom/android/gallery3d/data/MediaSet;
     new-instance v5, Lcom/android/gallery3d/data/FilterDeleteSet;
 
     aget-object v6, v3, v7

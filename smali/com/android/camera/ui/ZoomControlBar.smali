@@ -53,8 +53,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 53
@@ -117,7 +117,7 @@
 
 .method private getSliderPosition(I)I
     .locals 3
-    .param p1, "offset"    # I
+    .parameter "offset"
 
     .prologue
     .line 81
@@ -152,7 +152,7 @@
     sub-int v0, v1, v2
 
     .line 95
-    .local v0, "pos":I
+    .local v0, pos:I
     :goto_0
     if-gez v0, :cond_0
 
@@ -171,7 +171,7 @@
     return v0
 
     .line 86
-    .end local v0    # "pos":I
+    .end local v0           #pos:I
     :cond_2
     iget v1, p0, Lcom/android/camera/ui/ZoomControlBar;->mSize:I
 
@@ -185,11 +185,11 @@
 
     sub-int v0, v1, v2
 
-    .restart local v0    # "pos":I
+    .restart local v0       #pos:I
     goto :goto_0
 
     .line 89
-    .end local v0    # "pos":I
+    .end local v0           #pos:I
     :cond_3
     iget v1, p0, Lcom/android/camera/ui/ZoomControlBar;->mOrientation:I
 
@@ -210,11 +210,11 @@
 
     sub-int v0, v1, v2
 
-    .restart local v0    # "pos":I
+    .restart local v0       #pos:I
     goto :goto_0
 
     .line 92
-    .end local v0    # "pos":I
+    .end local v0           #pos:I
     :cond_4
     iget v1, p0, Lcom/android/camera/ui/ZoomControlBar;->mTotalIconSize:I
 
@@ -224,7 +224,7 @@
 
     sub-int v0, v1, v2
 
-    .restart local v0    # "pos":I
+    .restart local v0       #pos:I
     goto :goto_0
 .end method
 
@@ -232,7 +232,7 @@
 # virtual methods
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 10
-    .param p1, "event"    # Landroid/view/MotionEvent;
+    .parameter "event"
 
     .prologue
     const/4 v5, 0x1
@@ -262,7 +262,7 @@
     move-result v0
 
     .line 119
-    .local v0, "action":I
+    .local v0, action:I
     packed-switch v0, :pswitch_data_0
 
     :goto_1
@@ -306,7 +306,7 @@
     move v2, v5
 
     .line 133
-    .local v2, "isLandscape":Z
+    .local v2, isLandscape:Z
     :goto_2
     if-eqz v2, :cond_6
 
@@ -322,7 +322,7 @@
     move-result v3
 
     .line 135
-    .local v3, "pos":I
+    .local v3, pos:I
     iget-boolean v4, p0, Lcom/android/camera/ui/ZoomControlBar;->mStartChanging:Z
 
     if-nez v4, :cond_3
@@ -333,7 +333,7 @@
     sub-int v1, v4, v3
 
     .line 139
-    .local v1, "delta":I
+    .local v1, delta:I
     sget v4, Lcom/android/camera/ui/ZoomControlBar;->THRESHOLD_FIRST_MOVE:I
 
     if-gt v1, v4, :cond_2
@@ -349,14 +349,14 @@
     iput-boolean v5, p0, Lcom/android/camera/ui/ZoomControlBar;->mStartChanging:Z
 
     .line 144
-    .end local v1    # "delta":I
+    .end local v1           #delta:I
     :cond_3
     iget-boolean v4, p0, Lcom/android/camera/ui/ZoomControlBar;->mStartChanging:Z
 
     if-eqz v4, :cond_4
 
     .line 145
-    const-wide/high16 v6, 0x3ff0000000000000L
+    const-wide/high16 v6, 0x3ff0
 
     int-to-double v8, v3
 
@@ -379,8 +379,8 @@
 
     goto :goto_1
 
-    .end local v2    # "isLandscape":Z
-    .end local v3    # "pos":I
+    .end local v2           #isLandscape:Z
+    .end local v3           #pos:I
     :cond_5
     move v2, v4
 
@@ -388,7 +388,7 @@
     goto :goto_2
 
     .line 133
-    .restart local v2    # "isLandscape":Z
+    .restart local v2       #isLandscape:Z
     :cond_6
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -409,11 +409,11 @@
 
 .method protected onLayout(ZIIII)V
     .locals 11
-    .param p1, "changed"    # Z
-    .param p2, "left"    # I
-    .param p3, "top"    # I
-    .param p4, "right"    # I
-    .param p5, "bottom"    # I
+    .parameter "changed"
+    .parameter "left"
+    .parameter "top"
+    .parameter "right"
+    .parameter "bottom"
 
     .prologue
     .line 163
@@ -434,7 +434,7 @@
     const/4 v0, 0x1
 
     .line 165
-    .local v0, "isLandscape":Z
+    .local v0, isLandscape:Z
     :goto_0
     iget v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomMax:I
 
@@ -445,19 +445,19 @@
     return-void
 
     .line 163
-    .end local v0    # "isLandscape":Z
+    .end local v0           #isLandscape:Z
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
     .line 166
-    .restart local v0    # "isLandscape":Z
+    .restart local v0       #isLandscape:Z
     :cond_1
     const/4 v2, 0x0
 
     .line 167
-    .local v2, "size":I
+    .local v2, size:I
     if-eqz v0, :cond_2
 
     .line 168
@@ -507,7 +507,7 @@
     double-to-int v4, v6
 
     .line 180
-    .local v4, "sliderPosition":I
+    .local v4, sliderPosition:I
     if-eqz v0, :cond_4
 
     .line 181
@@ -565,7 +565,7 @@
     add-int v1, v6, v4
 
     .line 190
-    .local v1, "pos":I
+    .local v1, pos:I
     :goto_3
     iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomSlider:Landroid/widget/ImageView;
 
@@ -574,7 +574,7 @@
     move-result v3
 
     .line 191
-    .local v3, "sliderHeight":I
+    .local v3, sliderHeight:I
     iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomSlider:Landroid/widget/ImageView;
 
     const/4 v7, 0x0
@@ -592,9 +592,9 @@
     goto :goto_1
 
     .line 171
-    .end local v1    # "pos":I
-    .end local v3    # "sliderHeight":I
-    .end local v4    # "sliderPosition":I
+    .end local v1           #pos:I
+    .end local v3           #sliderHeight:I
+    .end local v4           #sliderPosition:I
     :cond_2
     sub-int v2, p5, p3
 
@@ -624,7 +624,7 @@
     goto :goto_2
 
     .line 186
-    .restart local v4    # "sliderPosition":I
+    .restart local v4       #sliderPosition:I
     :cond_3
     iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomIn:Landroid/widget/ImageView;
 
@@ -672,11 +672,11 @@
 
     sub-int v1, v6, v4
 
-    .restart local v1    # "pos":I
+    .restart local v1       #pos:I
     goto :goto_3
 
     .line 194
-    .end local v1    # "pos":I
+    .end local v1           #pos:I
     :cond_4
     iget v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mOrientation:I
 
@@ -732,7 +732,7 @@
     sub-int v1, v6, v4
 
     .line 203
-    .restart local v1    # "pos":I
+    .restart local v1       #pos:I
     :goto_4
     iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomSlider:Landroid/widget/ImageView;
 
@@ -741,7 +741,7 @@
     move-result v5
 
     .line 204
-    .local v5, "sliderWidth":I
+    .local v5, sliderWidth:I
     iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomSlider:Landroid/widget/ImageView;
 
     div-int/lit8 v7, v5, 0x2
@@ -759,8 +759,8 @@
     goto/16 :goto_1
 
     .line 199
-    .end local v1    # "pos":I
-    .end local v5    # "sliderWidth":I
+    .end local v1           #pos:I
+    .end local v5           #sliderWidth:I
     :cond_5
     iget-object v6, p0, Lcom/android/camera/ui/ZoomControlBar;->mZoomOut:Landroid/widget/ImageView;
 
@@ -808,14 +808,14 @@
 
     add-int v1, v6, v4
 
-    .restart local v1    # "pos":I
+    .restart local v1       #pos:I
     goto :goto_4
 .end method
 
 .method protected onMeasure(II)V
     .locals 2
-    .param p1, "widthMeasureSpec"    # I
-    .param p2, "heightMeasureSpec"    # I
+    .parameter "widthMeasureSpec"
+    .parameter "heightMeasureSpec"
 
     .prologue
     .line 70
@@ -829,7 +829,7 @@
 
     move-result v0
 
-    const/high16 v1, 0x40000000
+    const/high16 v1, 0x4000
 
     invoke-static {v0, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -843,10 +843,10 @@
 
 .method protected onSizeChanged(IIII)V
     .locals 3
-    .param p1, "w"    # I
-    .param p2, "h"    # I
-    .param p3, "oldw"    # I
-    .param p4, "oldh"    # I
+    .parameter "w"
+    .parameter "h"
+    .parameter "oldw"
+    .parameter "oldh"
 
     .prologue
     .line 102
@@ -926,7 +926,7 @@
 
 .method public setActivated(Z)V
     .locals 1
-    .param p1, "activated"    # Z
+    .parameter "activated"
 
     .prologue
     .line 64
@@ -943,8 +943,8 @@
 
 .method public setOrientation(IZ)V
     .locals 0
-    .param p1, "orientation"    # I
-    .param p2, "animation"    # Z
+    .parameter "orientation"
+    .parameter "animation"
 
     .prologue
     .line 158
@@ -953,7 +953,7 @@
 
 .method public setZoomIndex(I)V
     .locals 1
-    .param p1, "index"    # I
+    .parameter "index"
 
     .prologue
     .line 211

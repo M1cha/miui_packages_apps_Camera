@@ -28,7 +28,7 @@
 # virtual methods
 .method public setFileId(Ljava/lang/String;)V
     .locals 0
-    .param p1, "fileId"    # Ljava/lang/String;
+    .parameter "fileId"
 
     .prologue
     .line 42
@@ -40,7 +40,7 @@
 
 .method public setLastSegment(Z)V
     .locals 0
-    .param p1, "lastSegment"    # Z
+    .parameter "lastSegment"
 
     .prologue
     .line 58
@@ -52,7 +52,7 @@
 
 .method public setOptionalData([I)V
     .locals 0
-    .param p1, "optionalData"    # [I
+    .parameter "optionalData"
 
     .prologue
     .line 50
@@ -64,7 +64,7 @@
 
 .method public setSegmentIndex(I)V
     .locals 0
-    .param p1, "segmentIndex"    # I
+    .parameter "segmentIndex"
 
     .prologue
     .line 34

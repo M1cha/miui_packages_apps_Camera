@@ -66,7 +66,7 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     const/16 v3, 0xc
@@ -296,7 +296,7 @@
     div-float v0, v1, v2
 
     .line 194
-    .local v0, "delta":F
+    .local v0, delta:F
     iget v1, p0, Lcom/android/gallery3d/ui/UndoBarView;->mFromAlpha:F
 
     iget v2, p0, Lcom/android/gallery3d/ui/UndoBarView;->mToAlpha:F
@@ -307,7 +307,7 @@
 
     if-lez v2, :cond_2
 
-    .end local v0    # "delta":F
+    .end local v0           #delta:F
     :goto_1
     add-float/2addr v1, v0
 
@@ -316,7 +316,7 @@
     .line 195
     iget v1, p0, Lcom/android/gallery3d/ui/UndoBarView;->mAlpha:F
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f80
 
     invoke-static {v1, v5, v2}, Lcom/android/gallery3d/common/Utils;->clamp(FFF)F
 
@@ -355,7 +355,7 @@
     goto :goto_0
 
     .line 194
-    .restart local v0    # "delta":F
+    .restart local v0       #delta:F
     :cond_2
     neg-float v0, v0
 
@@ -364,13 +364,13 @@
 
 .method private static getTargetAlpha(I)F
     .locals 1
-    .param p0, "visibility"    # I
+    .parameter "visibility"
 
     .prologue
     .line 166
     if-nez p0, :cond_0
 
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f80
 
     :goto_0
     return v0
@@ -383,7 +383,7 @@
 
 .method private inUndoButton(Landroid/view/MotionEvent;)Z
     .locals 5
-    .param p1, "event"    # Landroid/view/MotionEvent;
+    .parameter "event"
 
     .prologue
     .line 148
@@ -392,25 +392,25 @@
     move-result v2
 
     .line 149
-    .local v2, "x":F
+    .local v2, x:F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v3
 
     .line 150
-    .local v3, "y":F
+    .local v3, y:F
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/UndoBarView;->getWidth()I
 
     move-result v1
 
     .line 151
-    .local v1, "w":I
+    .local v1, w:I
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/UndoBarView;->getHeight()I
 
     move-result v0
 
     .line 152
-    .local v0, "h":I
+    .local v0, h:I
     iget v4, p0, Lcom/android/gallery3d/ui/UndoBarView;->mClickRegion:I
 
     sub-int v4, v1, v4
@@ -454,7 +454,7 @@
 # virtual methods
 .method public animateVisibility(I)V
     .locals 5
-    .param p1, "visibility"    # I
+    .parameter "visibility"
 
     .prologue
     const-wide/16 v3, -0x1
@@ -465,7 +465,7 @@
     move-result v0
 
     .line 178
-    .local v0, "target":F
+    .local v0, target:F
     iget-wide v1, p0, Lcom/android/gallery3d/ui/UndoBarView;->mAnimationStartTime:J
 
     cmp-long v1, v1, v3
@@ -526,8 +526,8 @@
 
 .method protected onMeasure(II)V
     .locals 2
-    .param p1, "widthSpec"    # I
-    .param p2, "heightSpec"    # I
+    .parameter "widthSpec"
+    .parameter "heightSpec"
 
     .prologue
     .line 87
@@ -543,7 +543,7 @@
 
 .method protected onTouch(Landroid/view/MotionEvent;)Z
     .locals 2
-    .param p1, "event"    # Landroid/view/MotionEvent;
+    .parameter "event"
 
     .prologue
     const/4 v1, 0x0
@@ -619,7 +619,7 @@
 
 .method protected render(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 12
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .parameter "canvas"
 
     .prologue
     .line 92
@@ -644,13 +644,13 @@
     move-result v11
 
     .line 99
-    .local v11, "w":I
+    .local v11, w:I
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/UndoBarView;->getHeight()I
 
     move-result v10
 
     .line 100
-    .local v10, "h":I
+    .local v10, h:I
     iget-object v0, p0, Lcom/android/gallery3d/ui/UndoBarView;->mPanel:Lcom/android/gallery3d/ui/NinePatchTexture;
 
     iget v2, p0, Lcom/android/gallery3d/ui/UndoBarView;->mBarMargin:I
@@ -675,7 +675,7 @@
     sub-int v2, v11, v0
 
     .line 105
-    .local v2, "x":I
+    .local v2, x:I
     iget v0, p0, Lcom/android/gallery3d/ui/UndoBarView;->mUndoTextMargin:I
 
     iget-object v1, p0, Lcom/android/gallery3d/ui/UndoBarView;->mUndoText:Lcom/android/gallery3d/ui/StringTexture;
@@ -702,7 +702,7 @@
     div-int/lit8 v3, v0, 0x2
 
     .line 107
-    .local v3, "y":I
+    .local v3, y:I
     iget-object v0, p0, Lcom/android/gallery3d/ui/UndoBarView;->mUndoText:Lcom/android/gallery3d/ui/StringTexture;
 
     invoke-virtual {v0, p1, v2, v3}, Lcom/android/gallery3d/ui/StringTexture;->draw(Lcom/android/gallery3d/ui/GLCanvas;II)V
@@ -809,7 +809,7 @@
 
 .method public setOnClickListener(Lcom/android/gallery3d/ui/GLView$OnClickListener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/gallery3d/ui/GLView$OnClickListener;
+    .parameter "listener"
 
     .prologue
     .line 82
@@ -821,7 +821,7 @@
 
 .method public setVisibility(I)V
     .locals 2
-    .param p1, "visibility"    # I
+    .parameter "visibility"
 
     .prologue
     .line 170

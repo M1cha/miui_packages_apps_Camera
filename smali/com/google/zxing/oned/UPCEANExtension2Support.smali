@@ -36,6 +36,7 @@
 
 .method private static parseExtensionString(Ljava/lang/String;)Ljava/util/Map;
     .locals 3
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -90,9 +91,9 @@
 # virtual methods
 .method decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuilder;)I
     .locals 12
-    .param p1, "row"    # Lcom/google/zxing/common/BitArray;
-    .param p2, "startRange"    # [I
-    .param p3, "resultString"    # Ljava/lang/StringBuilder;
+    .parameter "row"
+    .parameter "startRange"
+    .parameter "resultString"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -104,7 +105,7 @@
     iget-object v4, p0, Lcom/google/zxing/oned/UPCEANExtension2Support;->decodeMiddleCounters:[I
 
     .line 62
-    .local v4, "counters":[I
+    .local v4, counters:[I
     const/4 v10, 0x0
 
     const/4 v11, 0x0
@@ -138,20 +139,20 @@
     move-result v5
 
     .line 67
-    .local v5, "end":I
+    .local v5, end:I
     const/4 v10, 0x1
 
     aget v8, p2, v10
 
     .line 69
-    .local v8, "rowOffset":I
+    .local v8, rowOffset:I
     const/4 v2, 0x0
 
     .line 71
-    .local v2, "checkParity":I
+    .local v2, checkParity:I
     const/4 v9, 0x0
 
-    .local v9, "x":I
+    .local v9, x:I
     :goto_0
     const/4 v10, 0x2
 
@@ -167,7 +168,7 @@
     move-result v1
 
     .line 73
-    .local v1, "bestMatch":I
+    .local v1, bestMatch:I
     rem-int/lit8 v10, v1, 0xa
 
     add-int/lit8 v10, v10, 0x30
@@ -179,20 +180,20 @@
     .line 74
     move-object v0, v4
 
-    .local v0, "arr$":[I
+    .local v0, arr$:[I
     array-length v7, v0
 
-    .local v7, "len$":I
+    .local v7, len$:I
     const/4 v6, 0x0
 
-    .local v6, "i$":I
+    .local v6, i$:I
     :goto_1
     if-ge v6, v7, :cond_0
 
     aget v3, v0, v6
 
     .line 75
-    .local v3, "counter":I
+    .local v3, counter:I
     add-int/2addr v8, v3
 
     .line 74
@@ -201,7 +202,7 @@
     goto :goto_1
 
     .line 77
-    .end local v3    # "counter":I
+    .end local v3           #counter:I
     :cond_0
     const/16 v10, 0xa
 
@@ -239,10 +240,10 @@
     goto :goto_0
 
     .line 87
-    .end local v0    # "arr$":[I
-    .end local v1    # "bestMatch":I
-    .end local v6    # "i$":I
-    .end local v7    # "len$":I
+    .end local v0           #arr$:[I
+    .end local v1           #bestMatch:I
+    .end local v6           #i$:I
+    .end local v7           #len$:I
     :cond_3
     invoke-virtual {p3}, Ljava/lang/StringBuilder;->length()I
 
@@ -287,9 +288,9 @@
 
 .method decodeRow(ILcom/google/zxing/common/BitArray;[I)Lcom/google/zxing/Result;
     .locals 12
-    .param p1, "rowNumber"    # I
-    .param p2, "row"    # Lcom/google/zxing/common/BitArray;
-    .param p3, "extensionStartRange"    # [I
+    .parameter "rowNumber"
+    .parameter "row"
+    .parameter "extensionStartRange"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -305,7 +306,7 @@
     iget-object v3, p0, Lcom/google/zxing/oned/UPCEANExtension2Support;->decodeRowStringBuffer:Ljava/lang/StringBuilder;
 
     .line 40
-    .local v3, "result":Ljava/lang/StringBuilder;
+    .local v3, result:Ljava/lang/StringBuilder;
     invoke-virtual {v3, v10}, Ljava/lang/StringBuilder;->setLength(I)V
 
     .line 41
@@ -314,19 +315,19 @@
     move-result v0
 
     .line 43
-    .local v0, "end":I
+    .local v0, end:I
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
 
     .line 44
-    .local v4, "resultString":Ljava/lang/String;
+    .local v4, resultString:Ljava/lang/String;
     invoke-static {v4}, Lcom/google/zxing/oned/UPCEANExtension2Support;->parseExtensionString(Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v1
 
     .line 46
-    .local v1, "extensionData":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;>;"
+    .local v1, extensionData:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;>;"
     new-instance v2, Lcom/google/zxing/Result;
 
     const/4 v5, 0x0
@@ -345,7 +346,7 @@
 
     int-to-float v8, v8
 
-    const/high16 v9, 0x40000000
+    const/high16 v9, 0x4000
 
     div-float/2addr v8, v9
 
@@ -370,7 +371,7 @@
     invoke-direct {v2, v4, v5, v6, v7}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
 
     .line 54
-    .local v2, "extensionResult":Lcom/google/zxing/Result;
+    .local v2, extensionResult:Lcom/google/zxing/Result;
     if-eqz v1, :cond_0
 
     .line 55

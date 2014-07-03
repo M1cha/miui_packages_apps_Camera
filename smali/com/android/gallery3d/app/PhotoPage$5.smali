@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/PhotoPage;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 739
@@ -43,7 +44,7 @@
     .line 742
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$5;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # invokes: Lcom/android/gallery3d/app/PhotoPage;->hideDetails()V
+    #calls: Lcom/android/gallery3d/app/PhotoPage;->hideDetails()V
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$1900(Lcom/android/gallery3d/app/PhotoPage;)V
 
     .line 743

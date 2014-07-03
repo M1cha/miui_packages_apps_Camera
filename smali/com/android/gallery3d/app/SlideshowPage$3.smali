@@ -34,6 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/SlideshowPage;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 136
@@ -48,6 +49,7 @@
 # virtual methods
 .method public onFutureDone(Lcom/android/gallery3d/util/Future;)V
     .locals 2
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -60,7 +62,7 @@
 
     .prologue
     .line 138
-    .local p1, "future":Lcom/android/gallery3d/util/Future;, "Lcom/android/gallery3d/util/Future<Lcom/android/gallery3d/app/SlideshowPage$Slide;>;"
+    .local p1, future:Lcom/android/gallery3d/util/Future;,"Lcom/android/gallery3d/util/Future<Lcom/android/gallery3d/app/SlideshowPage$Slide;>;"
     iget-object v1, p0, Lcom/android/gallery3d/app/SlideshowPage$3;->this$0:Lcom/android/gallery3d/app/SlideshowPage;
 
     invoke-interface {p1}, Lcom/android/gallery3d/util/Future;->get()Ljava/lang/Object;
@@ -69,13 +71,13 @@
 
     check-cast v0, Lcom/android/gallery3d/app/SlideshowPage$Slide;
 
-    # setter for: Lcom/android/gallery3d/app/SlideshowPage;->mPendingSlide:Lcom/android/gallery3d/app/SlideshowPage$Slide;
+    #setter for: Lcom/android/gallery3d/app/SlideshowPage;->mPendingSlide:Lcom/android/gallery3d/app/SlideshowPage$Slide;
     invoke-static {v1, v0}, Lcom/android/gallery3d/app/SlideshowPage;->access$302(Lcom/android/gallery3d/app/SlideshowPage;Lcom/android/gallery3d/app/SlideshowPage$Slide;)Lcom/android/gallery3d/app/SlideshowPage$Slide;
 
     .line 139
     iget-object v0, p0, Lcom/android/gallery3d/app/SlideshowPage$3;->this$0:Lcom/android/gallery3d/app/SlideshowPage;
 
-    # getter for: Lcom/android/gallery3d/app/SlideshowPage;->mHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/gallery3d/app/SlideshowPage;->mHandler:Landroid/os/Handler;
     invoke-static {v0}, Lcom/android/gallery3d/app/SlideshowPage;->access$400(Lcom/android/gallery3d/app/SlideshowPage;)Landroid/os/Handler;
 
     move-result-object v0

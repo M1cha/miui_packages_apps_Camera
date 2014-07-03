@@ -6,10 +6,10 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;ZLcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;)V
     .locals 0
-    .param p1, "activity"    # Landroid/app/Activity;
-    .param p2, "captureIntent"    # Z
-    .param p3, "indicatorClickListener"    # Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
-    .param p4, "preferenceChangedListener"    # Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;
+    .parameter "activity"
+    .parameter "captureIntent"
+    .parameter "indicatorClickListener"
+    .parameter "preferenceChangedListener"
 
     .prologue
     .line 18
@@ -23,10 +23,10 @@
 # virtual methods
 .method protected initializeSettingScreen(ZZLandroid/hardware/Camera$Parameters;Z)V
     .locals 3
-    .param p1, "frontCamera"    # Z
-    .param p2, "mode"    # Z
-    .param p3, "parameters"    # Landroid/hardware/Camera$Parameters;
-    .param p4, "isSecure"    # Z
+    .parameter "frontCamera"
+    .parameter "mode"
+    .parameter "parameters"
+    .parameter "isSecure"
 
     .prologue
     const/4 v2, 0x0
@@ -60,7 +60,7 @@
 
 .method protected loadCameraPreferences(Landroid/hardware/Camera$Parameters;)V
     .locals 4
-    .param p1, "parameters"    # Landroid/hardware/Camera$Parameters;
+    .parameter "parameters"
 
     .prologue
     .line 31
@@ -71,7 +71,7 @@
     const/4 v0, 0x1
 
     .line 32
-    .local v0, "cameraId":I
+    .local v0, cameraId:I
     :goto_0
     new-instance v1, Lcom/android/camera/CameraSettings;
 
@@ -88,7 +88,7 @@
     invoke-direct {v1, v2, p1, v0, v3}, Lcom/android/camera/CameraSettings;-><init>(Landroid/app/Activity;Landroid/hardware/Camera$Parameters;I[Landroid/hardware/Camera$CameraInfo;)V
 
     .line 34
-    .local v1, "settings":Lcom/android/camera/CameraSettings;
+    .local v1, settings:Lcom/android/camera/CameraSettings;
     iget-boolean v2, p0, Lcom/android/camera/CameraModeManager;->mIsSimpleMode:Z
 
     if-eqz v2, :cond_1
@@ -106,16 +106,16 @@
     return-void
 
     .line 31
-    .end local v0    # "cameraId":I
-    .end local v1    # "settings":Lcom/android/camera/CameraSettings;
+    .end local v0           #cameraId:I
+    .end local v1           #settings:Lcom/android/camera/CameraSettings;
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
     .line 34
-    .restart local v0    # "cameraId":I
-    .restart local v1    # "settings":Lcom/android/camera/CameraSettings;
+    .restart local v0       #cameraId:I
+    .restart local v1       #settings:Lcom/android/camera/CameraSettings;
     :cond_1
     const v2, 0x7f060003
 
@@ -124,7 +124,7 @@
 
 .method protected updateSettingScreen(Z)V
     .locals 5
-    .param p1, "isSecure"    # Z
+    .parameter "isSecure"
 
     .prologue
     .line 39
@@ -139,7 +139,7 @@
     move-result-object v0
 
     .line 42
-    .local v0, "indicatorKeys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .local v0, indicatorKeys:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     :goto_0
     invoke-virtual {p0}, Lcom/android/camera/CameraModeManager;->getSettingView()Lcom/android/camera/ui/SettingView;
 
@@ -159,7 +159,7 @@
     return-void
 
     .line 39
-    .end local v0    # "indicatorKeys":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .end local v0           #indicatorKeys:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     :cond_0
     iget-boolean v1, p0, Lcom/android/camera/CameraModeManager;->mIsSimpleMode:Z
 

@@ -225,6 +225,9 @@
 
 .method private constructor <init>(Ljava/lang/String;ILjava/lang/Class;)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -235,7 +238,7 @@
 
     .prologue
     .line 97
-    .local p3, "valueType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
+    .local p3, valueType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 98
@@ -247,6 +250,7 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/zxing/DecodeHintType;
     .locals 1
+    .parameter
 
     .prologue
     .line 30

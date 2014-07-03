@@ -20,7 +20,7 @@
 # virtual methods
 .method public fastOffset(I)V
     .locals 2
-    .param p1, "offset"    # I
+    .parameter "offset"
 
     .prologue
     .line 447

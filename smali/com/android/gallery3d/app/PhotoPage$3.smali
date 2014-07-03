@@ -21,7 +21,8 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/PhotoPage;Lcom/android/gallery3d/app/GalleryActivity;)V
     .locals 0
-    .param p2, "x0"    # Lcom/android/gallery3d/app/GalleryActivity;
+    .parameter
+    .parameter "x0"
 
     .prologue
     .line 287
@@ -36,7 +37,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 3
-    .param p1, "message"    # Landroid/os/Message;
+    .parameter "message"
 
     .prologue
     const/4 v0, 0x1
@@ -59,7 +60,7 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$3;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # invokes: Lcom/android/gallery3d/app/PhotoPage;->hideBars()V
+    #calls: Lcom/android/gallery3d/app/PhotoPage;->hideBars()V
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$1200(Lcom/android/gallery3d/app/PhotoPage;)V
 
     .line 321
@@ -70,7 +71,7 @@
     :pswitch_1
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$3;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mOrientationManager:Lcom/android/gallery3d/app/OrientationManager;
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mOrientationManager:Lcom/android/gallery3d/app/OrientationManager;
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$1300(Lcom/android/gallery3d/app/PhotoPage;)Lcom/android/gallery3d/app/OrientationManager;
 
     move-result-object v0
@@ -83,7 +84,7 @@
     :pswitch_2
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$3;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mOrientationManager:Lcom/android/gallery3d/app/OrientationManager;
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mOrientationManager:Lcom/android/gallery3d/app/OrientationManager;
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$1300(Lcom/android/gallery3d/app/PhotoPage;)Lcom/android/gallery3d/app/OrientationManager;
 
     move-result-object v0
@@ -96,7 +97,7 @@
     :pswitch_3
     iget-object v1, p0, Lcom/android/gallery3d/app/PhotoPage$3;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mAppBridge:Lcom/android/gallery3d/app/AppBridge;
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mAppBridge:Lcom/android/gallery3d/app/AppBridge;
     invoke-static {v1}, Lcom/android/gallery3d/app/PhotoPage;->access$1400(Lcom/android/gallery3d/app/PhotoPage;)Lcom/android/gallery3d/app/AppBridge;
 
     move-result-object v1
@@ -119,7 +120,7 @@
     :pswitch_4
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$3;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # invokes: Lcom/android/gallery3d/app/PhotoPage;->updateBars()V
+    #calls: Lcom/android/gallery3d/app/PhotoPage;->updateBars()V
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$900(Lcom/android/gallery3d/app/PhotoPage;)V
 
     goto :goto_0
@@ -128,7 +129,7 @@
     :pswitch_5
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$3;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # invokes: Lcom/android/gallery3d/app/PhotoPage;->wantBars()V
+    #calls: Lcom/android/gallery3d/app/PhotoPage;->wantBars()V
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$1500(Lcom/android/gallery3d/app/PhotoPage;)V
 
     goto :goto_0

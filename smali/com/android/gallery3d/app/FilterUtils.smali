@@ -16,25 +16,25 @@
 
 .method public static newFilterPath(Ljava/lang/String;I)Ljava/lang/String;
     .locals 3
-    .param p0, "base"    # Ljava/lang/String;
-    .param p1, "filterType"    # I
+    .parameter "base"
+    .parameter "filterType"
 
     .prologue
     .line 174
     packed-switch p1, :pswitch_data_0
 
     .line 185
-    .end local p0    # "base":Ljava/lang/String;
+    .end local p0
     :goto_0
     return-object p0
 
     .line 176
-    .restart local p0    # "base":Ljava/lang/String;
+    .restart local p0
     :pswitch_0
     const/4 v0, 0x2
 
     .line 185
-    .local v0, "mediaType":I
+    .local v0, mediaType:I
     :goto_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -73,12 +73,12 @@
     goto :goto_0
 
     .line 179
-    .end local v0    # "mediaType":I
+    .end local v0           #mediaType:I
     :pswitch_1
     const/4 v0, 0x4
 
     .line 180
-    .restart local v0    # "mediaType":I
+    .restart local v0       #mediaType:I
     goto :goto_1
 
     .line 174

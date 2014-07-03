@@ -34,6 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/data/SnailItem;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 50
@@ -48,7 +49,7 @@
 # virtual methods
 .method public run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Landroid/graphics/BitmapRegionDecoder;
     .locals 1
-    .param p1, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
+    .parameter "jc"
 
     .prologue
     .line 52
@@ -59,7 +60,7 @@
 
 .method public bridge synthetic run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
+    .parameter "x0"
 
     .prologue
     .line 50

@@ -25,7 +25,7 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 1
-    .param p1, "format"    # Ljava/lang/String;
+    .parameter "format"
 
     .prologue
     .line 725
@@ -46,7 +46,7 @@
 # virtual methods
 .method public generateName(J)Ljava/lang/String;
     .locals 8
-    .param p1, "dateTaken"    # J
+    .parameter "dateTaken"
 
     .prologue
     const-wide/16 v6, 0x3e8
@@ -57,7 +57,7 @@
     invoke-direct {v0, p1, p2}, Ljava/util/Date;-><init>(J)V
 
     .line 731
-    .local v0, "date":Ljava/util/Date;
+    .local v0, date:Ljava/util/Date;
     iget-object v2, p0, Lcom/android/camera/Util$ImageFileNamer;->mFormat:Ljava/text/SimpleDateFormat;
 
     invoke-virtual {v2, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
@@ -65,7 +65,7 @@
     move-result-object v1
 
     .line 735
-    .local v1, "result":Ljava/lang/String;
+    .local v1, result:Ljava/lang/String;
     div-long v2, p1, v6
 
     iget-wide v4, p0, Lcom/android/camera/Util$ImageFileNamer;->mLastDate:J

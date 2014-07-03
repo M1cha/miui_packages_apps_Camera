@@ -24,6 +24,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/ui/ScreenView;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 1637
@@ -36,8 +37,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/ui/ScreenView;Lcom/android/camera/ui/ScreenView$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/camera/ui/ScreenView;
-    .param p2, "x1"    # Lcom/android/camera/ui/ScreenView$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 1637
@@ -50,7 +51,7 @@
 # virtual methods
 .method public onScale(Landroid/view/ScaleGestureDetector;)Z
     .locals 5
-    .param p1, "detector"    # Landroid/view/ScaleGestureDetector;
+    .parameter "detector"
 
     .prologue
     const/4 v1, 0x1
@@ -61,10 +62,10 @@
     move-result v0
 
     .line 1655
-    .local v0, "scale":F
+    .local v0, scale:F
     iget-object v2, p0, Lcom/android/camera/ui/ScreenView$ScaleDetectorListener;->this$0:Lcom/android/camera/ui/ScreenView;
 
-    # getter for: Lcom/android/camera/ui/ScreenView;->mTouchState:I
+    #getter for: Lcom/android/camera/ui/ScreenView;->mTouchState:I
     invoke-static {v2}, Lcom/android/camera/ui/ScreenView;->access$800(Lcom/android/camera/ui/ScreenView;)I
 
     move-result v2
@@ -77,7 +78,7 @@
 
     long-to-float v2, v2
 
-    const/high16 v3, 0x43480000
+    const/high16 v3, 0x4348
 
     cmpl-float v2, v2, v3
 
@@ -146,13 +147,13 @@
 
 .method public onScaleBegin(Landroid/view/ScaleGestureDetector;)Z
     .locals 1
-    .param p1, "detector"    # Landroid/view/ScaleGestureDetector;
+    .parameter "detector"
 
     .prologue
     .line 1645
     iget-object v0, p0, Lcom/android/camera/ui/ScreenView$ScaleDetectorListener;->this$0:Lcom/android/camera/ui/ScreenView;
 
-    # getter for: Lcom/android/camera/ui/ScreenView;->mTouchState:I
+    #getter for: Lcom/android/camera/ui/ScreenView;->mTouchState:I
     invoke-static {v0}, Lcom/android/camera/ui/ScreenView;->access$800(Lcom/android/camera/ui/ScreenView;)I
 
     move-result v0
@@ -172,7 +173,7 @@
 
 .method public onScaleEnd(Landroid/view/ScaleGestureDetector;)V
     .locals 1
-    .param p1, "detector"    # Landroid/view/ScaleGestureDetector;
+    .parameter "detector"
 
     .prologue
     .line 1649

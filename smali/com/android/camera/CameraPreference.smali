@@ -22,8 +22,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     const/4 v2, 0x0
@@ -42,7 +42,7 @@
     move-result-object v0
 
     .line 45
-    .local v0, "a":Landroid/content/res/TypedArray;
+    .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v1

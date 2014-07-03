@@ -26,6 +26,8 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/ui/DetailsAddressResolver$1;Lcom/android/gallery3d/util/Future;)V
     .locals 0
+    .parameter
+    .parameter
 
     .prologue
     .line 69
@@ -57,7 +59,7 @@
 
     check-cast v0, Landroid/location/Address;
 
-    # invokes: Lcom/android/gallery3d/ui/DetailsAddressResolver;->updateLocation(Landroid/location/Address;)V
+    #calls: Lcom/android/gallery3d/ui/DetailsAddressResolver;->updateLocation(Landroid/location/Address;)V
     invoke-static {v1, v0}, Lcom/android/gallery3d/ui/DetailsAddressResolver;->access$200(Lcom/android/gallery3d/ui/DetailsAddressResolver;Landroid/location/Address;)V
 
     .line 72

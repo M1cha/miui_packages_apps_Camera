@@ -28,14 +28,14 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
+    .parameter "dialog"
+    .parameter "which"
 
     .prologue
     .line 212
     iget-object v0, p0, Lcom/android/gallery3d/app/GalleryActionBar$1;->this$0:Lcom/android/gallery3d/app/GalleryActionBar;
 
-    # getter for: Lcom/android/gallery3d/app/GalleryActionBar;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
+    #getter for: Lcom/android/gallery3d/app/GalleryActionBar;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
     invoke-static {v0}, Lcom/android/gallery3d/app/GalleryActionBar;->access$300(Lcom/android/gallery3d/app/GalleryActionBar;)Lcom/android/gallery3d/app/GalleryActivity;
 
     move-result-object v0
@@ -69,7 +69,7 @@
     .line 216
     iget-object v0, p0, Lcom/android/gallery3d/app/GalleryActionBar$1;->this$0:Lcom/android/gallery3d/app/GalleryActionBar;
 
-    # getter for: Lcom/android/gallery3d/app/GalleryActionBar;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
+    #getter for: Lcom/android/gallery3d/app/GalleryActionBar;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
     invoke-static {v0}, Lcom/android/gallery3d/app/GalleryActionBar;->access$300(Lcom/android/gallery3d/app/GalleryActionBar;)Lcom/android/gallery3d/app/GalleryActivity;
 
     move-result-object v0
@@ -89,7 +89,7 @@
 
     iget-object v1, p0, Lcom/android/gallery3d/app/GalleryActionBar$1;->this$0:Lcom/android/gallery3d/app/GalleryActionBar;
 
-    # getter for: Lcom/android/gallery3d/app/GalleryActionBar;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
+    #getter for: Lcom/android/gallery3d/app/GalleryActionBar;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
     invoke-static {v1}, Lcom/android/gallery3d/app/GalleryActionBar;->access$300(Lcom/android/gallery3d/app/GalleryActionBar;)Lcom/android/gallery3d/app/GalleryActivity;
 
     move-result-object v1

@@ -127,9 +127,9 @@
 
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;Lcom/android/camera/CameraAppImpl;I)V
     .locals 6
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
-    .param p2, "context"    # Lcom/android/camera/CameraAppImpl;
-    .param p3, "id"    # I
+    .parameter "path"
+    .parameter "context"
+    .parameter "id"
 
     .prologue
     .line 82
@@ -150,11 +150,11 @@
     move-result-object v1
 
     .line 85
-    .local v1, "resolver":Landroid/content/ContentResolver;
+    .local v1, resolver:Landroid/content/ContentResolver;
     sget-object v2, Landroid/provider/MediaStore$Video$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     .line 86
-    .local v2, "uri":Landroid/net/Uri;
+    .local v2, uri:Landroid/net/Uri;
     sget-object v3, Lcom/android/gallery3d/data/LocalVideo;->PROJECTION:[Ljava/lang/String;
 
     invoke-static {v1, v2, v3, p3}, Lcom/android/gallery3d/data/LocalAlbum;->getItemCursor(Landroid/content/ContentResolver;Landroid/net/Uri;[Ljava/lang/String;I)Landroid/database/Cursor;
@@ -162,7 +162,7 @@
     move-result-object v0
 
     .line 87
-    .local v0, "cursor":Landroid/database/Cursor;
+    .local v0, cursor:Landroid/database/Cursor;
     if-nez v0, :cond_0
 
     .line 88
@@ -250,9 +250,9 @@
 
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;Lcom/android/camera/CameraAppImpl;Landroid/database/Cursor;)V
     .locals 2
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
-    .param p2, "application"    # Lcom/android/camera/CameraAppImpl;
-    .param p3, "cursor"    # Landroid/database/Cursor;
+    .parameter "path"
+    .parameter "application"
+    .parameter "cursor"
 
     .prologue
     .line 76
@@ -274,7 +274,7 @@
 
 .method private loadFromCursor(Landroid/database/Cursor;)V
     .locals 2
-    .param p1, "cursor"    # Landroid/database/Cursor;
+    .parameter "cursor"
 
     .prologue
     .line 102
@@ -384,7 +384,7 @@
 
 .method private parseResolution(Ljava/lang/String;)V
     .locals 5
-    .param p1, "resolution"    # Ljava/lang/String;
+    .parameter "resolution"
 
     .prologue
     .line 116
@@ -404,7 +404,7 @@
     move-result v1
 
     .line 118
-    .local v1, "m":I
+    .local v1, m:I
     const/4 v4, -0x1
 
     if-eq v1, v4, :cond_0
@@ -422,7 +422,7 @@
     move-result v3
 
     .line 121
-    .local v3, "w":I
+    .local v3, w:I
     add-int/lit8 v4, v1, 0x1
 
     invoke-virtual {p1, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -434,7 +434,7 @@
     move-result v0
 
     .line 122
-    .local v0, "h":I
+    .local v0, h:I
     iput v3, p0, Lcom/android/gallery3d/data/LocalVideo;->width:I
 
     .line 123
@@ -445,13 +445,13 @@
     goto :goto_0
 
     .line 124
-    .end local v0    # "h":I
-    .end local v3    # "w":I
+    .end local v0           #h:I
+    .end local v3           #w:I
     :catch_0
     move-exception v2
 
     .line 125
-    .local v2, "t":Ljava/lang/Throwable;
+    .local v2, t:Ljava/lang/Throwable;
     const-string v4, "LocalVideo"
 
     invoke-static {v4, v2}, Lcom/android/gallery3d/data/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
@@ -472,7 +472,7 @@
     sget-object v0, Landroid/provider/MediaStore$Video$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     .line 188
-    .local v0, "baseUri":Landroid/net/Uri;
+    .local v0, baseUri:Landroid/net/Uri;
     iget-object v1, p0, Lcom/android/gallery3d/data/LocalVideo;->mApplication:Lcom/android/camera/CameraAppImpl;
 
     invoke-virtual {v1}, Lcom/android/camera/CameraAppImpl;->getContentResolver()Landroid/content/ContentResolver;
@@ -518,7 +518,7 @@
     sget-object v0, Landroid/provider/MediaStore$Video$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     .line 201
-    .local v0, "baseUri":Landroid/net/Uri;
+    .local v0, baseUri:Landroid/net/Uri;
     invoke-virtual {v0}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
 
     move-result-object v1
@@ -550,11 +550,11 @@
     move-result-object v0
 
     .line 217
-    .local v0, "details":Lcom/android/gallery3d/data/MediaDetails;
+    .local v0, details:Lcom/android/gallery3d/data/MediaDetails;
     iget v1, p0, Lcom/android/gallery3d/data/LocalVideo;->durationInSec:I
 
     .line 218
-    .local v1, "s":I
+    .local v1, s:I
     if-lez v1, :cond_0
 
     .line 219
@@ -631,7 +631,7 @@
 
 .method public requestImage(I)Lcom/android/gallery3d/util/ThreadPool$Job;
     .locals 4
-    .param p1, "type"    # I
+    .parameter "type"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -684,7 +684,7 @@
 
 .method public rotate(I)V
     .locals 0
-    .param p1, "degrees"    # I
+    .parameter "degrees"
 
     .prologue
     .line 196
@@ -693,7 +693,7 @@
 
 .method protected updateFromCursor(Landroid/database/Cursor;)Z
     .locals 5
-    .param p1, "cursor"    # Landroid/database/Cursor;
+    .parameter "cursor"
 
     .prologue
     .line 131
@@ -702,7 +702,7 @@
     invoke-direct {v0}, Lcom/android/gallery3d/util/UpdateHelper;-><init>()V
 
     .line 132
-    .local v0, "uh":Lcom/android/gallery3d/util/UpdateHelper;
+    .local v0, uh:Lcom/android/gallery3d/util/UpdateHelper;
     iget v1, p0, Lcom/android/gallery3d/data/LocalVideo;->id:I
 
     const/4 v2, 0x0

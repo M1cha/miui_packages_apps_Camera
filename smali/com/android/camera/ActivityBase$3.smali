@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ActivityBase;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 712
@@ -72,7 +73,7 @@
     iget-object v0, v1, Lcom/android/camera/ActivityBase;->mSettingView:Lcom/android/camera/ui/SettingView;
 
     .line 719
-    .local v0, "view":Lcom/android/camera/ui/SettingView;
+    .local v0, view:Lcom/android/camera/ui/SettingView;
     if-nez v0, :cond_1
 
     .line 726

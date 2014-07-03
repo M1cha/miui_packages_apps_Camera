@@ -24,6 +24,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/gallery3d/app/PhotoPage;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 158
@@ -36,8 +37,8 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/app/PhotoPage;Lcom/android/gallery3d/app/PhotoPage$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/app/PhotoPage;
-    .param p2, "x1"    # Lcom/android/gallery3d/app/PhotoPage$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 158
@@ -50,19 +51,19 @@
 # virtual methods
 .method public onMenuVisibilityChanged(Z)V
     .locals 1
-    .param p1, "isVisible"    # Z
+    .parameter "isVisible"
 
     .prologue
     .line 161
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$MyMenuVisibilityListener;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # setter for: Lcom/android/gallery3d/app/PhotoPage;->mIsMenuVisible:Z
+    #setter for: Lcom/android/gallery3d/app/PhotoPage;->mIsMenuVisible:Z
     invoke-static {v0, p1}, Lcom/android/gallery3d/app/PhotoPage;->access$002(Lcom/android/gallery3d/app/PhotoPage;Z)Z
 
     .line 162
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$MyMenuVisibilityListener;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # invokes: Lcom/android/gallery3d/app/PhotoPage;->refreshHidingMessage()V
+    #calls: Lcom/android/gallery3d/app/PhotoPage;->refreshHidingMessage()V
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$100(Lcom/android/gallery3d/app/PhotoPage;)V
 
     .line 163

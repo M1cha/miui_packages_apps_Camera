@@ -39,10 +39,10 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;Lcom/android/gallery3d/data/DataManager;Lcom/android/gallery3d/data/MediaSet;I)V
     .locals 2
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
-    .param p2, "dataManager"    # Lcom/android/gallery3d/data/DataManager;
-    .param p3, "baseSet"    # Lcom/android/gallery3d/data/MediaSet;
-    .param p4, "mediaType"    # I
+    .parameter "path"
+    .parameter "dataManager"
+    .parameter "baseSet"
+    .parameter "mediaType"
 
     .prologue
     .line 34
@@ -84,7 +84,7 @@
 
 .method static synthetic access$000(Lcom/android/gallery3d/data/FilterTypeSet;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/data/FilterTypeSet;
+    .parameter "x0"
 
     .prologue
     .line 22
@@ -124,17 +124,17 @@
     move-result-object v0
 
     .line 86
-    .local v0, "basePath":Ljava/lang/String;
+    .local v0, basePath:Ljava/lang/String;
     const/4 v4, 0x0
 
-    .local v4, "i":I
+    .local v4, i:I
     iget-object v8, p0, Lcom/android/gallery3d/data/FilterTypeSet;->mBaseSet:Lcom/android/gallery3d/data/MediaSet;
 
     invoke-virtual {v8}, Lcom/android/gallery3d/data/MediaSet;->getSubMediaSetCount()I
 
     move-result v5
 
-    .local v5, "n":I
+    .local v5, n:I
     :goto_0
     if-ge v4, v5, :cond_2
 
@@ -146,7 +146,7 @@
     move-result-object v6
 
     .line 88
-    .local v6, "set":Lcom/android/gallery3d/data/MediaSet;
+    .local v6, set:Lcom/android/gallery3d/data/MediaSet;
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -184,7 +184,7 @@
     move-result-object v2
 
     .line 89
-    .local v2, "filteredPath":Ljava/lang/String;
+    .local v2, filteredPath:Ljava/lang/String;
     iget-object v8, p0, Lcom/android/gallery3d/data/FilterTypeSet;->mDataManager:Lcom/android/gallery3d/data/DataManager;
 
     invoke-virtual {v8, v2}, Lcom/android/gallery3d/data/DataManager;->getMediaSet(Ljava/lang/String;)Lcom/android/gallery3d/data/MediaSet;
@@ -192,7 +192,7 @@
     move-result-object v3
 
     .line 90
-    .local v3, "filteredSet":Lcom/android/gallery3d/data/MediaSet;
+    .local v3, filteredSet:Lcom/android/gallery3d/data/MediaSet;
     invoke-virtual {v3}, Lcom/android/gallery3d/data/MediaSet;->reload()J
 
     .line 91
@@ -221,9 +221,9 @@
     goto :goto_0
 
     .line 98
-    .end local v2    # "filteredPath":Ljava/lang/String;
-    .end local v3    # "filteredSet":Lcom/android/gallery3d/data/MediaSet;
-    .end local v6    # "set":Lcom/android/gallery3d/data/MediaSet;
+    .end local v2           #filteredPath:Ljava/lang/String;
+    .end local v3           #filteredSet:Lcom/android/gallery3d/data/MediaSet;
+    .end local v6           #set:Lcom/android/gallery3d/data/MediaSet;
     :cond_2
     iget-object v8, p0, Lcom/android/gallery3d/data/FilterTypeSet;->mPaths:Ljava/util/ArrayList;
 
@@ -237,11 +237,11 @@
     move-result v7
 
     .line 100
-    .local v7, "total":I
+    .local v7, total:I
     new-array v1, v7, [Lcom/android/gallery3d/data/Path;
 
     .line 102
-    .local v1, "buf":[Lcom/android/gallery3d/data/Path;
+    .local v1, buf:[Lcom/android/gallery3d/data/Path;
     iget-object v8, p0, Lcom/android/gallery3d/data/FilterTypeSet;->mBaseSet:Lcom/android/gallery3d/data/MediaSet;
 
     new-instance v9, Lcom/android/gallery3d/data/FilterTypeSet$1;
@@ -291,7 +291,7 @@
     invoke-direct {v0, p0}, Lcom/android/gallery3d/data/FilterTypeSet$2;-><init>(Lcom/android/gallery3d/data/FilterTypeSet;)V
 
     .line 133
-    .local v0, "consumer":Lcom/android/gallery3d/data/MediaSet$ItemConsumer;
+    .local v0, consumer:Lcom/android/gallery3d/data/MediaSet$ItemConsumer;
     iget-object v1, p0, Lcom/android/gallery3d/data/FilterTypeSet;->mDataManager:Lcom/android/gallery3d/data/DataManager;
 
     iget-object v2, p0, Lcom/android/gallery3d/data/FilterTypeSet;->mPaths:Ljava/util/ArrayList;
@@ -306,8 +306,8 @@
 
 .method public getMediaItem(II)Ljava/util/ArrayList;
     .locals 2
-    .param p1, "start"    # I
-    .param p2, "count"    # I
+    .parameter "start"
+    .parameter "count"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -361,7 +361,7 @@
 
 .method public getSubMediaSet(I)Lcom/android/gallery3d/data/MediaSet;
     .locals 1
-    .param p1, "index"    # I
+    .parameter "index"
 
     .prologue
     .line 48

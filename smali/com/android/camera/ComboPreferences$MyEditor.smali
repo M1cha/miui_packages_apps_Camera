@@ -30,6 +30,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ComboPreferences;)V
     .locals 1
+    .parameter
 
     .prologue
     .line 207
@@ -38,7 +39,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 208
-    # getter for: Lcom/android/camera/ComboPreferences;->mPrefGlobal:Landroid/content/SharedPreferences;
+    #getter for: Lcom/android/camera/ComboPreferences;->mPrefGlobal:Landroid/content/SharedPreferences;
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->access$000(Lcom/android/camera/ComboPreferences;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -50,7 +51,7 @@
     iput-object v0, p0, Lcom/android/camera/ComboPreferences$MyEditor;->mEditorGlobal:Landroid/content/SharedPreferences$Editor;
 
     .line 209
-    # getter for: Lcom/android/camera/ComboPreferences;->mPrefModeGlobal:Landroid/content/SharedPreferences;
+    #getter for: Lcom/android/camera/ComboPreferences;->mPrefModeGlobal:Landroid/content/SharedPreferences;
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->access$100(Lcom/android/camera/ComboPreferences;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -62,7 +63,7 @@
     iput-object v0, p0, Lcom/android/camera/ComboPreferences$MyEditor;->mEditorModeGlobal:Landroid/content/SharedPreferences$Editor;
 
     .line 210
-    # getter for: Lcom/android/camera/ComboPreferences;->mPrefLocal:Landroid/content/SharedPreferences;
+    #getter for: Lcom/android/camera/ComboPreferences;->mPrefLocal:Landroid/content/SharedPreferences;
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->access$200(Lcom/android/camera/ComboPreferences;)Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -137,7 +138,7 @@
     move-result v0
 
     .line 216
-    .local v0, "result1":Z
+    .local v0, result1:Z
     iget-object v3, p0, Lcom/android/camera/ComboPreferences$MyEditor;->mEditorModeGlobal:Landroid/content/SharedPreferences$Editor;
 
     invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->commit()Z
@@ -145,7 +146,7 @@
     move-result v1
 
     .line 217
-    .local v1, "result2":Z
+    .local v1, result2:Z
     iget-object v3, p0, Lcom/android/camera/ComboPreferences$MyEditor;->mEditorLocal:Landroid/content/SharedPreferences$Editor;
 
     invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->commit()Z
@@ -153,7 +154,7 @@
     move-result v2
 
     .line 218
-    .local v2, "result3":Z
+    .local v2, result3:Z
     if-eqz v0, :cond_0
 
     if-eqz v1, :cond_0
@@ -173,12 +174,12 @@
 
 .method public putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Z
+    .parameter "key"
+    .parameter "value"
 
     .prologue
     .line 295
-    # invokes: Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
+    #calls: Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->access$300(Ljava/lang/String;)Z
 
     move-result v0
@@ -196,7 +197,7 @@
 
     .line 297
     :cond_0
-    # invokes: Lcom/android/camera/ComboPreferences;->isModeGlobal(Ljava/lang/String;)Z
+    #calls: Lcom/android/camera/ComboPreferences;->isModeGlobal(Ljava/lang/String;)Z
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->access$400(Ljava/lang/String;)Z
 
     move-result v0
@@ -221,12 +222,12 @@
 
 .method public putFloat(Ljava/lang/String;F)Landroid/content/SharedPreferences$Editor;
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # F
+    .parameter "key"
+    .parameter "value"
 
     .prologue
     .line 283
-    # invokes: Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
+    #calls: Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->access$300(Ljava/lang/String;)Z
 
     move-result v0
@@ -244,7 +245,7 @@
 
     .line 285
     :cond_0
-    # invokes: Lcom/android/camera/ComboPreferences;->isModeGlobal(Ljava/lang/String;)Z
+    #calls: Lcom/android/camera/ComboPreferences;->isModeGlobal(Ljava/lang/String;)Z
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->access$400(Ljava/lang/String;)Z
 
     move-result v0
@@ -269,12 +270,12 @@
 
 .method public putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # I
+    .parameter "key"
+    .parameter "value"
 
     .prologue
     .line 259
-    # invokes: Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
+    #calls: Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->access$300(Ljava/lang/String;)Z
 
     move-result v0
@@ -292,7 +293,7 @@
 
     .line 261
     :cond_0
-    # invokes: Lcom/android/camera/ComboPreferences;->isModeGlobal(Ljava/lang/String;)Z
+    #calls: Lcom/android/camera/ComboPreferences;->isModeGlobal(Ljava/lang/String;)Z
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->access$400(Ljava/lang/String;)Z
 
     move-result v0
@@ -317,12 +318,12 @@
 
 .method public putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # J
+    .parameter "key"
+    .parameter "value"
 
     .prologue
     .line 271
-    # invokes: Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
+    #calls: Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->access$300(Ljava/lang/String;)Z
 
     move-result v0
@@ -340,7 +341,7 @@
 
     .line 273
     :cond_0
-    # invokes: Lcom/android/camera/ComboPreferences;->isModeGlobal(Ljava/lang/String;)Z
+    #calls: Lcom/android/camera/ComboPreferences;->isModeGlobal(Ljava/lang/String;)Z
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->access$400(Ljava/lang/String;)Z
 
     move-result v0
@@ -365,12 +366,12 @@
 
 .method public putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/String;
+    .parameter "key"
+    .parameter "value"
 
     .prologue
     .line 247
-    # invokes: Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
+    #calls: Lcom/android/camera/ComboPreferences;->isGlobal(Ljava/lang/String;)Z
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->access$300(Ljava/lang/String;)Z
 
     move-result v0
@@ -388,7 +389,7 @@
 
     .line 249
     :cond_0
-    # invokes: Lcom/android/camera/ComboPreferences;->isModeGlobal(Ljava/lang/String;)Z
+    #calls: Lcom/android/camera/ComboPreferences;->isModeGlobal(Ljava/lang/String;)Z
     invoke-static {p1}, Lcom/android/camera/ComboPreferences;->access$400(Ljava/lang/String;)Z
 
     move-result v0
@@ -413,7 +414,8 @@
 
 .method public putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
+    .parameter "key"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -428,7 +430,7 @@
 
     .prologue
     .line 308
-    .local p2, "values":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
+    .local p2, values:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -438,7 +440,7 @@
 
 .method public remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
+    .parameter "key"
 
     .prologue
     .line 239

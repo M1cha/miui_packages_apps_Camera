@@ -57,51 +57,51 @@
 
     .line 47
     :array_0
-    .array-data 4
-        0x34
-        0x121
-        0x61
-        0x160
-        0x31
-        0x130
-        0x70
-        0x25
-        0x124
-        0x64
-        0x109
-        0x49
-        0x148
-        0x19
-        0x118
-        0x58
-        0xd
-        0x10c
-        0x4c
-        0x1c
-        0x103
-        0x43
-        0x142
-        0x13
-        0x112
-        0x52
-        0x7
-        0x106
-        0x46
-        0x16
-        0x181
-        0xc1
-        0x1c0
-        0x91
-        0x190
-        0xd0
-        0x85
-        0x184
-        0xc4
-        0x94
-        0xa8
-        0xa2
-        0x8a
-        0x2a
+    .array-data 0x4
+        0x34t 0x0t 0x0t 0x0t
+        0x21t 0x1t 0x0t 0x0t
+        0x61t 0x0t 0x0t 0x0t
+        0x60t 0x1t 0x0t 0x0t
+        0x31t 0x0t 0x0t 0x0t
+        0x30t 0x1t 0x0t 0x0t
+        0x70t 0x0t 0x0t 0x0t
+        0x25t 0x0t 0x0t 0x0t
+        0x24t 0x1t 0x0t 0x0t
+        0x64t 0x0t 0x0t 0x0t
+        0x9t 0x1t 0x0t 0x0t
+        0x49t 0x0t 0x0t 0x0t
+        0x48t 0x1t 0x0t 0x0t
+        0x19t 0x0t 0x0t 0x0t
+        0x18t 0x1t 0x0t 0x0t
+        0x58t 0x0t 0x0t 0x0t
+        0xdt 0x0t 0x0t 0x0t
+        0xct 0x1t 0x0t 0x0t
+        0x4ct 0x0t 0x0t 0x0t
+        0x1ct 0x0t 0x0t 0x0t
+        0x3t 0x1t 0x0t 0x0t
+        0x43t 0x0t 0x0t 0x0t
+        0x42t 0x1t 0x0t 0x0t
+        0x13t 0x0t 0x0t 0x0t
+        0x12t 0x1t 0x0t 0x0t
+        0x52t 0x0t 0x0t 0x0t
+        0x7t 0x0t 0x0t 0x0t
+        0x6t 0x1t 0x0t 0x0t
+        0x46t 0x0t 0x0t 0x0t
+        0x16t 0x0t 0x0t 0x0t
+        0x81t 0x1t 0x0t 0x0t
+        0xc1t 0x0t 0x0t 0x0t
+        0xc0t 0x1t 0x0t 0x0t
+        0x91t 0x0t 0x0t 0x0t
+        0x90t 0x1t 0x0t 0x0t
+        0xd0t 0x0t 0x0t 0x0t
+        0x85t 0x0t 0x0t 0x0t
+        0x84t 0x1t 0x0t 0x0t
+        0xc4t 0x0t 0x0t 0x0t
+        0x94t 0x0t 0x0t 0x0t
+        0xa8t 0x0t 0x0t 0x0t
+        0xa2t 0x0t 0x0t 0x0t
+        0x8at 0x0t 0x0t 0x0t
+        0x2at 0x0t 0x0t 0x0t
     .end array-data
 .end method
 
@@ -120,7 +120,7 @@
 
 .method public constructor <init>(Z)V
     .locals 1
-    .param p1, "usingCheckDigit"    # Z
+    .parameter "usingCheckDigit"
 
     .prologue
     .line 78
@@ -134,8 +134,8 @@
 
 .method public constructor <init>(ZZ)V
     .locals 2
-    .param p1, "usingCheckDigit"    # Z
-    .param p2, "extendedMode"    # Z
+    .parameter "usingCheckDigit"
+    .parameter "extendedMode"
 
     .prologue
     .line 91
@@ -169,7 +169,7 @@
 
 .method private static decodeExtended(Ljava/lang/CharSequence;)Ljava/lang/String;
     .locals 9
-    .param p0, "encoded"    # Ljava/lang/CharSequence;
+    .parameter "encoded"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -187,16 +187,16 @@
     move-result v4
 
     .line 269
-    .local v4, "length":I
+    .local v4, length:I
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 270
-    .local v1, "decoded":Ljava/lang/StringBuilder;
+    .local v1, decoded:Ljava/lang/StringBuilder;
     const/4 v3, 0x0
 
-    .local v3, "i":I
+    .local v3, i:I
     :goto_0
     if-ge v3, v4, :cond_8
 
@@ -206,7 +206,7 @@
     move-result v0
 
     .line 272
-    .local v0, "c":C
+    .local v0, c:C
     const/16 v6, 0x2b
 
     if-eq v0, v6, :cond_0
@@ -232,11 +232,11 @@
     move-result v5
 
     .line 274
-    .local v5, "next":C
+    .local v5, next:C
     const/4 v2, 0x0
 
     .line 275
-    .local v2, "decodedChar":C
+    .local v2, decodedChar:C
     sparse-switch v0, :sswitch_data_0
 
     .line 313
@@ -247,16 +247,16 @@
     add-int/lit8 v3, v3, 0x1
 
     .line 270
-    .end local v2    # "decodedChar":C
-    .end local v5    # "next":C
+    .end local v2           #decodedChar:C
+    .end local v5           #next:C
     :goto_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
     .line 278
-    .restart local v2    # "decodedChar":C
-    .restart local v5    # "next":C
+    .restart local v2       #decodedChar:C
+    .restart local v5       #next:C
     :sswitch_0
     if-lt v5, v7, :cond_1
 
@@ -371,15 +371,15 @@
     throw v6
 
     .line 317
-    .end local v2    # "decodedChar":C
-    .end local v5    # "next":C
+    .end local v2           #decodedChar:C
+    .end local v5           #next:C
     :cond_7
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_2
 
     .line 320
-    .end local v0    # "c":C
+    .end local v0           #c:C
     :cond_8
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -399,8 +399,8 @@
 
 .method private static findAsteriskPattern(Lcom/google/zxing/common/BitArray;[I)[I
     .locals 12
-    .param p0, "row"    # Lcom/google/zxing/common/BitArray;
-    .param p1, "counters"    # [I
+    .parameter "row"
+    .parameter "counters"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -420,32 +420,32 @@
     move-result v6
 
     .line 181
-    .local v6, "width":I
+    .local v6, width:I
     invoke-virtual {p0, v8}, Lcom/google/zxing/common/BitArray;->getNextSet(I)I
 
     move-result v5
 
     .line 183
-    .local v5, "rowOffset":I
+    .local v5, rowOffset:I
     const/4 v0, 0x0
 
     .line 184
-    .local v0, "counterPosition":I
+    .local v0, counterPosition:I
     move v4, v5
 
     .line 185
-    .local v4, "patternStart":I
+    .local v4, patternStart:I
     const/4 v2, 0x0
 
     .line 186
-    .local v2, "isWhite":Z
+    .local v2, isWhite:Z
     array-length v3, p1
 
     .line 188
-    .local v3, "patternLength":I
+    .local v3, patternLength:I
     move v1, v5
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     if-ge v1, v6, :cond_4
 
@@ -574,7 +574,7 @@
 
 .method private static patternToChar(I)C
     .locals 2
-    .param p0, "pattern"    # I
+    .parameter "pattern"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -585,7 +585,7 @@
     .line 259
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     sget-object v1, Lcom/google/zxing/oned/Code39Reader;->CHARACTER_ENCODINGS:[I
 
@@ -624,7 +624,7 @@
 
 .method private static toNarrowWidePattern([I)I
     .locals 15
-    .param p0, "counters"    # [I
+    .parameter "counters"
 
     .prologue
     const/4 v14, 0x3
@@ -635,32 +635,32 @@
     array-length v7, p0
 
     .line 217
-    .local v7, "numCounters":I
+    .local v7, numCounters:I
     const/4 v5, 0x0
 
     .line 220
-    .local v5, "maxNarrowCounter":I
+    .local v5, maxNarrowCounter:I
     :cond_0
     const v6, 0x7fffffff
 
     .line 221
-    .local v6, "minCounter":I
+    .local v6, minCounter:I
     move-object v0, p0
 
-    .local v0, "arr$":[I
+    .local v0, arr$:[I
     array-length v4, v0
 
-    .local v4, "len$":I
+    .local v4, len$:I
     const/4 v3, 0x0
 
-    .local v3, "i$":I
+    .local v3, i$:I
     :goto_0
     if-ge v3, v4, :cond_2
 
     aget v1, v0, v3
 
     .line 222
-    .local v1, "counter":I
+    .local v1, counter:I
     if-ge v1, v6, :cond_1
 
     if-le v1, v5, :cond_1
@@ -675,7 +675,7 @@
     goto :goto_0
 
     .line 226
-    .end local v1    # "counter":I
+    .end local v1           #counter:I
     :cond_2
     move v5, v6
 
@@ -683,18 +683,18 @@
     const/4 v10, 0x0
 
     .line 228
-    .local v10, "wideCounters":I
+    .local v10, wideCounters:I
     const/4 v9, 0x0
 
     .line 229
-    .local v9, "totalWideCountersWidth":I
+    .local v9, totalWideCountersWidth:I
     const/4 v8, 0x0
 
     .line 230
-    .local v8, "pattern":I
+    .local v8, pattern:I
     const/4 v2, 0x0
 
-    .local v2, "i":I
+    .local v2, i:I
     :goto_1
     if-ge v2, v7, :cond_4
 
@@ -702,7 +702,7 @@
     aget v1, p0, v2
 
     .line 232
-    .restart local v1    # "counter":I
+    .restart local v1       #counter:I
     if-le v1, v5, :cond_3
 
     .line 233
@@ -729,7 +729,7 @@
     goto :goto_1
 
     .line 238
-    .end local v1    # "counter":I
+    .end local v1           #counter:I
     :cond_4
     if-ne v10, v14, :cond_7
 
@@ -745,7 +745,7 @@
     aget v1, p0, v2
 
     .line 244
-    .restart local v1    # "counter":I
+    .restart local v1       #counter:I
     if-le v1, v5, :cond_6
 
     .line 245
@@ -759,22 +759,22 @@
     move v8, v11
 
     .line 255
-    .end local v1    # "counter":I
-    .end local v8    # "pattern":I
+    .end local v1           #counter:I
+    .end local v8           #pattern:I
     :cond_5
     :goto_3
     return v8
 
     .line 242
-    .restart local v1    # "counter":I
-    .restart local v8    # "pattern":I
+    .restart local v1       #counter:I
+    .restart local v8       #pattern:I
     :cond_6
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
     .line 254
-    .end local v1    # "counter":I
+    .end local v1           #counter:I
     :cond_7
     if-gt v10, v14, :cond_0
 
@@ -788,8 +788,9 @@
 # virtual methods
 .method public decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 31
-    .param p1, "rowNumber"    # I
-    .param p2, "row"    # Lcom/google/zxing/common/BitArray;
+    .parameter "rowNumber"
+    .parameter "row"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -812,7 +813,7 @@
 
     .prologue
     .line 102
-    .local p3, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p3, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/oned/Code39Reader;->counters:[I
@@ -820,7 +821,7 @@
     move-object/from16 v22, v0
 
     .line 103
-    .local v22, "theCounters":[I
+    .local v22, theCounters:[I
     const/16 v25, 0x0
 
     move-object/from16 v0, v22
@@ -837,7 +838,7 @@
     move-object/from16 v18, v0
 
     .line 105
-    .local v18, "result":Ljava/lang/StringBuilder;
+    .local v18, result:Ljava/lang/StringBuilder;
     const/16 v25, 0x0
 
     move-object/from16 v0, v18
@@ -856,7 +857,7 @@
     move-result-object v21
 
     .line 109
-    .local v21, "start":[I
+    .local v21, start:[I
     const/16 v25, 0x1
 
     aget v25, v21, v25
@@ -870,13 +871,13 @@
     move-result v16
 
     .line 110
-    .local v16, "nextStart":I
+    .local v16, nextStart:I
     invoke-virtual/range {p2 .. p2}, Lcom/google/zxing/common/BitArray;->getSize()I
 
     move-result v8
 
     .line 115
-    .local v8, "end":I
+    .local v8, end:I
     :cond_0
     move-object/from16 v0, p2
 
@@ -892,7 +893,7 @@
     move-result v17
 
     .line 117
-    .local v17, "pattern":I
+    .local v17, pattern:I
     if-gez v17, :cond_1
 
     .line 118
@@ -909,7 +910,7 @@
     move-result v7
 
     .line 121
-    .local v7, "decodedChar":C
+    .local v7, decodedChar:C
     move-object/from16 v0, v18
 
     invoke-virtual {v0, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -918,23 +919,23 @@
     move/from16 v12, v16
 
     .line 123
-    .local v12, "lastStart":I
+    .local v12, lastStart:I
     move-object/from16 v5, v22
 
-    .local v5, "arr$":[I
+    .local v5, arr$:[I
     array-length v14, v5
 
-    .local v14, "len$":I
+    .local v14, len$:I
     const/4 v10, 0x0
 
-    .local v10, "i$":I
+    .local v10, i$:I
     :goto_0
     if-ge v10, v14, :cond_2
 
     aget v6, v5, v10
 
     .line 124
-    .local v6, "counter":I
+    .local v6, counter:I
     add-int v16, v16, v6
 
     .line 123
@@ -943,7 +944,7 @@
     goto :goto_0
 
     .line 127
-    .end local v6    # "counter":I
+    .end local v6           #counter:I
     :cond_2
     move-object/from16 v0, p2
 
@@ -977,7 +978,7 @@
     const/4 v11, 0x0
 
     .line 133
-    .local v11, "lastPatternSize":I
+    .local v11, lastPatternSize:I
     move-object/from16 v5, v22
 
     array-length v14, v5
@@ -990,7 +991,7 @@
     aget v6, v5, v10
 
     .line 134
-    .restart local v6    # "counter":I
+    .restart local v6       #counter:I
     add-int/2addr v11, v6
 
     .line 133
@@ -999,14 +1000,14 @@
     goto :goto_1
 
     .line 136
-    .end local v6    # "counter":I
+    .end local v6           #counter:I
     :cond_3
     sub-int v25, v16, v12
 
     sub-int v24, v25, v11
 
     .line 139
-    .local v24, "whiteSpaceAfterEnd":I
+    .local v24, whiteSpaceAfterEnd:I
     move/from16 v0, v16
 
     if-eq v0, v8, :cond_4
@@ -1042,14 +1043,14 @@
     add-int/lit8 v15, v25, -0x1
 
     .line 145
-    .local v15, "max":I
+    .local v15, max:I
     const/16 v23, 0x0
 
     .line 146
-    .local v23, "total":I
+    .local v23, total:I
     const/4 v9, 0x0
 
-    .local v9, "i":I
+    .local v9, i:I
     :goto_2
     if-ge v9, v15, :cond_5
 
@@ -1113,9 +1114,9 @@
     invoke-virtual {v0, v15}, Ljava/lang/StringBuilder;->setLength(I)V
 
     .line 155
-    .end local v9    # "i":I
-    .end local v15    # "max":I
-    .end local v23    # "total":I
+    .end local v9           #i:I
+    .end local v15           #max:I
+    .end local v23           #total:I
     :cond_7
     invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->length()I
 
@@ -1146,7 +1147,7 @@
     move-result-object v19
 
     .line 167
-    .local v19, "resultString":Ljava/lang/String;
+    .local v19, resultString:Ljava/lang/String;
     :goto_3
     const/16 v25, 0x1
 
@@ -1164,12 +1165,12 @@
 
     move/from16 v25, v0
 
-    const/high16 v26, 0x40000000
+    const/high16 v26, 0x4000
 
     div-float v13, v25, v26
 
     .line 168
-    .local v13, "left":F
+    .local v13, left:F
     add-int v25, v16, v12
 
     move/from16 v0, v25
@@ -1178,12 +1179,12 @@
 
     move/from16 v25, v0
 
-    const/high16 v26, 0x40000000
+    const/high16 v26, 0x4000
 
     div-float v20, v25, v26
 
     .line 169
-    .local v20, "right":F
+    .local v20, right:F
     new-instance v25, Lcom/google/zxing/Result;
 
     const/16 v26, 0x0
@@ -1251,14 +1252,14 @@
     return-object v25
 
     .line 164
-    .end local v13    # "left":F
-    .end local v19    # "resultString":Ljava/lang/String;
-    .end local v20    # "right":F
+    .end local v13           #left:F
+    .end local v19           #resultString:Ljava/lang/String;
+    .end local v20           #right:F
     :cond_9
     invoke-virtual/range {v18 .. v18}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v19
 
-    .restart local v19    # "resultString":Ljava/lang/String;
+    .restart local v19       #resultString:Ljava/lang/String;
     goto :goto_3
 .end method

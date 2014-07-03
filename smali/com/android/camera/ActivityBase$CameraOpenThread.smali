@@ -21,6 +21,7 @@
 # direct methods
 .method protected constructor <init>(Lcom/android/camera/ActivityBase;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 204
@@ -89,7 +90,7 @@
     move-exception v0
 
     .line 212
-    .local v0, "e":Lcom/android/camera/CameraHardwareException;
+    .local v0, e:Lcom/android/camera/CameraHardwareException;
     iget-object v1, p0, Lcom/android/camera/ActivityBase$CameraOpenThread;->this$0:Lcom/android/camera/ActivityBase;
 
     iput-boolean v4, v1, Lcom/android/camera/ActivityBase;->mOpenCameraFail:Z
@@ -97,12 +98,12 @@
     goto :goto_0
 
     .line 213
-    .end local v0    # "e":Lcom/android/camera/CameraHardwareException;
+    .end local v0           #e:Lcom/android/camera/CameraHardwareException;
     :catch_1
     move-exception v0
 
     .line 214
-    .local v0, "e":Lcom/android/camera/CameraDisabledException;
+    .local v0, e:Lcom/android/camera/CameraDisabledException;
     iget-object v1, p0, Lcom/android/camera/ActivityBase$CameraOpenThread;->this$0:Lcom/android/camera/ActivityBase;
 
     iput-boolean v4, v1, Lcom/android/camera/ActivityBase;->mCameraDisabled:Z

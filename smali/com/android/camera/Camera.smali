@@ -357,7 +357,7 @@
 
 .method static synthetic access$1000(Lcom/android/camera/Camera;)Landroid/os/Handler;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -368,7 +368,7 @@
 
 .method static synthetic access$1100(Lcom/android/camera/Camera;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -379,7 +379,7 @@
 
 .method static synthetic access$1200(Lcom/android/camera/Camera;)J
     .locals 2
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -390,8 +390,8 @@
 
 .method static synthetic access$1202(Lcom/android/camera/Camera;J)J
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # J
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -402,7 +402,7 @@
 
 .method static synthetic access$1300(Lcom/android/camera/Camera;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -413,8 +413,8 @@
 
 .method static synthetic access$1400(Lcom/android/camera/Camera;I)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -425,7 +425,7 @@
 
 .method static synthetic access$1500(Lcom/android/camera/Camera;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -436,7 +436,7 @@
 
 .method static synthetic access$1600(Lcom/android/camera/Camera;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -447,7 +447,7 @@
 
 .method static synthetic access$1700(Lcom/android/camera/Camera;)Lcom/android/camera/Camera$ImageSaver;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -458,7 +458,7 @@
 
 .method static synthetic access$1800(Lcom/android/camera/Camera;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -469,7 +469,7 @@
 
 .method static synthetic access$1900(Lcom/android/camera/Camera;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -480,8 +480,8 @@
 
 .method static synthetic access$2000(Lcom/android/camera/Camera;I)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -492,7 +492,7 @@
 
 .method static synthetic access$2100(Lcom/android/camera/Camera;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -503,7 +503,7 @@
 
 .method static synthetic access$2200(Lcom/android/camera/Camera;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -514,7 +514,7 @@
 
 .method static synthetic access$2300(Lcom/android/camera/Camera;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -525,7 +525,7 @@
 
 .method static synthetic access$2304(Lcom/android/camera/Camera;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -540,7 +540,7 @@
 
 .method static synthetic access$2400(Lcom/android/camera/Camera;)Landroid/widget/TextView;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -551,7 +551,7 @@
 
 .method static synthetic access$2500(Lcom/android/camera/Camera;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -564,7 +564,7 @@
 
 .method static synthetic access$2600(Lcom/android/camera/Camera;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -575,7 +575,7 @@
 
 .method static synthetic access$2700(Lcom/android/camera/Camera;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -586,7 +586,7 @@
 
 .method static synthetic access$2708(Lcom/android/camera/Camera;)I
     .locals 2
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -601,7 +601,7 @@
 
 .method static synthetic access$2800(Lcom/android/camera/Camera;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -612,8 +612,8 @@
 
 .method static synthetic access$2802(Lcom/android/camera/Camera;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # Z
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -624,7 +624,7 @@
 
 .method static synthetic access$2900(Lcom/android/camera/Camera;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -635,7 +635,7 @@
 
 .method static synthetic access$3000(Lcom/android/camera/Camera;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -646,9 +646,9 @@
 
 .method static synthetic access$3100(Lcom/android/camera/Camera;II)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # I
-    .param p2, "x2"    # I
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
 
     .prologue
     .line 89
@@ -659,7 +659,7 @@
 
 .method static synthetic access$3200(Lcom/android/camera/Camera;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -670,8 +670,8 @@
 
 .method static synthetic access$3302(Lcom/android/camera/Camera;Landroid/graphics/SurfaceTexture;)Landroid/graphics/SurfaceTexture;
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # Landroid/graphics/SurfaceTexture;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -682,7 +682,7 @@
 
 .method static synthetic access$3400(Lcom/android/camera/Camera;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -693,7 +693,7 @@
 
 .method static synthetic access$3500(Lcom/android/camera/Camera;)J
     .locals 2
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -704,8 +704,8 @@
 
 .method static synthetic access$3502(Lcom/android/camera/Camera;J)J
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # J
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -716,7 +716,7 @@
 
 .method static synthetic access$3600(Lcom/android/camera/Camera;)J
     .locals 2
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -727,8 +727,8 @@
 
 .method static synthetic access$3602(Lcom/android/camera/Camera;J)J
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # J
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -739,7 +739,7 @@
 
 .method static synthetic access$3700(Lcom/android/camera/Camera;)J
     .locals 2
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -750,8 +750,8 @@
 
 .method static synthetic access$3702(Lcom/android/camera/Camera;J)J
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # J
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -762,7 +762,7 @@
 
 .method static synthetic access$3800(Lcom/android/camera/Camera;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -773,8 +773,8 @@
 
 .method static synthetic access$3802(Lcom/android/camera/Camera;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -785,7 +785,7 @@
 
 .method static synthetic access$3900(Lcom/android/camera/Camera;)J
     .locals 2
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -796,8 +796,8 @@
 
 .method static synthetic access$3902(Lcom/android/camera/Camera;J)J
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # J
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -808,7 +808,7 @@
 
 .method static synthetic access$4000(Lcom/android/camera/Camera;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -819,7 +819,7 @@
 
 .method static synthetic access$4100(Lcom/android/camera/Camera;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -830,7 +830,7 @@
 
 .method static synthetic access$4200(Lcom/android/camera/Camera;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -841,8 +841,8 @@
 
 .method static synthetic access$4202(Lcom/android/camera/Camera;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # Z
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -853,7 +853,7 @@
 
 .method static synthetic access$4300(Lcom/android/camera/Camera;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -864,7 +864,7 @@
 
 .method static synthetic access$4400(Lcom/android/camera/Camera;)Lcom/android/camera/Camera$ImageNamer;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -875,8 +875,8 @@
 
 .method static synthetic access$4502(Lcom/android/camera/Camera;[B)[B
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # [B
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -887,7 +887,7 @@
 
 .method static synthetic access$4600(Lcom/android/camera/Camera;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -898,7 +898,7 @@
 
 .method static synthetic access$4700(Lcom/android/camera/Camera;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -909,7 +909,7 @@
 
 .method static synthetic access$4800(Lcom/android/camera/Camera;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -922,7 +922,7 @@
 
 .method static synthetic access$4900(Lcom/android/camera/Camera;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -935,7 +935,7 @@
 
 .method static synthetic access$5000(Lcom/android/camera/Camera;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -946,8 +946,8 @@
 
 .method static synthetic access$5100(Lcom/android/camera/Camera;Z)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # Z
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -958,7 +958,7 @@
 
 .method static synthetic access$5200(Lcom/android/camera/Camera;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -969,8 +969,8 @@
 
 .method static synthetic access$5202(Lcom/android/camera/Camera;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # Z
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -981,7 +981,7 @@
 
 .method static synthetic access$5300(Lcom/android/camera/Camera;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -992,7 +992,7 @@
 
 .method static synthetic access$5400(Lcom/android/camera/Camera;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -1003,8 +1003,8 @@
 
 .method static synthetic access$5402(Lcom/android/camera/Camera;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # Ljava/lang/String;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -1015,7 +1015,7 @@
 
 .method static synthetic access$5500(Lcom/android/camera/Camera;)Landroid/hardware/Camera$Size;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -1026,7 +1026,7 @@
 
 .method static synthetic access$5600(Lcom/android/camera/Camera;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -1037,7 +1037,7 @@
 
 .method static synthetic access$5700(Lcom/android/camera/Camera;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -1048,7 +1048,7 @@
 
 .method static synthetic access$5800(Lcom/android/camera/Camera;)J
     .locals 2
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -1059,7 +1059,7 @@
 
 .method static synthetic access$5900(Lcom/android/camera/Camera;)Lcom/android/camera/MotionFocusManager;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -1070,7 +1070,7 @@
 
 .method static synthetic access$600(Lcom/android/camera/Camera;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -1081,8 +1081,8 @@
 
 .method static synthetic access$6300(Lcom/android/camera/Camera;I)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -1093,7 +1093,7 @@
 
 .method static synthetic access$6500(Lcom/android/camera/Camera;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -1104,7 +1104,7 @@
 
 .method static synthetic access$6600(Lcom/android/camera/Camera;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -1115,7 +1115,7 @@
 
 .method static synthetic access$6700(Lcom/android/camera/Camera;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -1126,7 +1126,7 @@
 
 .method static synthetic access$6800(Lcom/android/camera/Camera;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -1139,7 +1139,7 @@
 
 .method static synthetic access$6900(Lcom/android/camera/Camera;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -1150,7 +1150,7 @@
 
 .method static synthetic access$700(Lcom/android/camera/Camera;)Lcom/android/camera/FocusManager;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -1161,7 +1161,7 @@
 
 .method static synthetic access$800(Lcom/android/camera/Camera;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
+    .parameter "x0"
 
     .prologue
     .line 89
@@ -1172,8 +1172,8 @@
 
 .method static synthetic access$900(Lcom/android/camera/Camera;I)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/Camera;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 89
@@ -1192,7 +1192,7 @@
     move-result-object v0
 
     .line 598
-    .local v0, "queue":Landroid/os/MessageQueue;
+    .local v0, queue:Landroid/os/MessageQueue;
     new-instance v1, Lcom/android/camera/Camera$2;
 
     invoke-direct {v1, p0}, Lcom/android/camera/Camera$2;-><init>(Lcom/android/camera/Camera;)V
@@ -1426,8 +1426,8 @@
 
     invoke-virtual {v2, v3}, Landroid/content/ContentResolver;->openOutputStream(Landroid/net/Uri;)Ljava/io/OutputStream;
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
     move-result-object v0
 
@@ -1446,8 +1446,8 @@
     .line 1706
     invoke-virtual {p0}, Lcom/android/camera/Camera;->finish()V
     :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_3
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
     .line 1710
     invoke-static {v0}, Lcom/android/camera/Util;->closeSilently(Ljava/io/Closeable;)V
@@ -1529,9 +1529,9 @@
 
     invoke-virtual {p0, v3, v4}, Lcom/android/camera/Camera;->openFileOutput(Ljava/lang/String;I)Ljava/io/FileOutputStream;
     :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
     .catch Ljava/io/FileNotFoundException; {:try_start_3 .. :try_end_3} :catch_1
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
     move-result-object v0
 
@@ -1545,9 +1545,9 @@
     .line 1729
     invoke-static {v2}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
     :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_2
     .catch Ljava/io/FileNotFoundException; {:try_start_4 .. :try_end_4} :catch_1
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
     move-result-object v1
 
@@ -1873,9 +1873,9 @@
 
 .method private doSettingSwitch(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "onValue"    # Ljava/lang/String;
-    .param p3, "offValue"    # Ljava/lang/String;
+    .parameter "key"
+    .parameter "onValue"
+    .parameter "offValue"
 
     .prologue
     .line 3035
@@ -1886,7 +1886,7 @@
     move-result-object v1
 
     .line 3036
-    .local v1, "value":Ljava/lang/String;
+    .local v1, value:Ljava/lang/String;
     iget-object v2, p0, Lcom/android/camera/Camera;->mPreferences:Lcom/android/camera/ComboPreferences;
 
     invoke-virtual {v2}, Lcom/android/camera/ComboPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -1894,7 +1894,7 @@
     move-result-object v0
 
     .line 3038
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
+    .local v0, editor:Landroid/content/SharedPreferences$Editor;
     invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -1943,7 +1943,7 @@
 
 .method private getPreferredCameraId(Lcom/android/camera/ComboPreferences;)I
     .locals 4
-    .param p1, "preferences"    # Lcom/android/camera/ComboPreferences;
+    .parameter "preferences"
 
     .prologue
     .line 1390
@@ -1952,7 +1952,7 @@
     move-result v0
 
     .line 1391
-    .local v0, "intentCameraId":I
+    .local v0, intentCameraId:I
     const/4 v2, -0x1
 
     if-eq v0, v2, :cond_0
@@ -1960,14 +1960,14 @@
     move v1, v0
 
     .line 1404
-    .end local v0    # "intentCameraId":I
-    .local v1, "intentCameraId":I
+    .end local v0           #intentCameraId:I
+    .local v1, intentCameraId:I
     :goto_0
     return v1
 
     .line 1399
-    .end local v1    # "intentCameraId":I
-    .restart local v0    # "intentCameraId":I
+    .end local v1           #intentCameraId:I
+    .restart local v0       #intentCameraId:I
     :cond_0
     const/4 v0, 0x0
 
@@ -2000,8 +2000,8 @@
     move v1, v0
 
     .line 1404
-    .end local v0    # "intentCameraId":I
-    .restart local v1    # "intentCameraId":I
+    .end local v0           #intentCameraId:I
+    .restart local v1       #intentCameraId:I
     goto :goto_0
 .end method
 
@@ -2992,7 +2992,7 @@
     invoke-virtual {v1, v3, v2}, Lcom/android/camera/ui/SettingView;->setOrientation(IZ)V
 
     .line 1516
-    const/high16 v1, 0x7f060000
+    const/high16 v1, 0x7f06
 
     invoke-virtual {p0, p0, v1}, Lcom/android/camera/Camera;->initializeCameraControls(Lcom/android/camera/CameraPreference$OnPreferenceChangedListener;I)V
 
@@ -3432,7 +3432,8 @@
 
 .method private static isSupported(Ljava/lang/String;Ljava/util/List;)Z
     .locals 2
-    .param p0, "value"    # Ljava/lang/String;
+    .parameter "value"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -3445,7 +3446,7 @@
     .end annotation
 
     .prologue
-    .local p1, "supported":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .local p1, supported:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     const/4 v0, 0x0
 
     .line 2404
@@ -3651,7 +3652,7 @@
     sget-object v0, Lcom/android/camera/CameraSettings;->sCameraChangeManager:Lcom/android/camera/ChangeManager;
 
     .line 3177
-    .local v0, "cm":Lcom/android/camera/ChangeManager;
+    .local v0, cm:Lcom/android/camera/ChangeManager;
     invoke-virtual {v0, v4}, Lcom/android/camera/ChangeManager;->check(I)Z
 
     move-result v1
@@ -3707,6 +3708,9 @@
 
 .method private overrideCameraSettings(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 4
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
     .line 1484
@@ -5221,6 +5225,7 @@
 
 .method private saveJpegData([B)V
     .locals 10
+    .parameter
 
     .prologue
     const/4 v7, 0x0
@@ -5357,7 +5362,7 @@
 
 .method private setCameraParameters(I)V
     .locals 2
-    .param p1, "updateSet"    # I
+    .parameter "updateSet"
 
     .prologue
     .line 2914
@@ -5400,6 +5405,7 @@
 
 .method private setCameraParametersWhenIdle(I)V
     .locals 5
+    .parameter
 
     .prologue
     const/4 v4, 0x4
@@ -5512,7 +5518,7 @@
 
 .method private setCameraState(I)V
     .locals 1
-    .param p1, "state"    # I
+    .parameter "state"
 
     .prologue
     .line 1246
@@ -5664,7 +5670,7 @@
 
 .method private showHDRExit(Z)V
     .locals 4
-    .param p1, "show"    # Z
+    .parameter "show"
 
     .prologue
     const/16 v1, 0x8
@@ -6355,6 +6361,7 @@
 
 .method private switchToOtherMode(I)V
     .locals 3
+    .parameter
 
     .prologue
     .line 3134
@@ -7522,8 +7529,8 @@
 
 .method private updateCameraScreenNailSize(II)V
     .locals 4
-    .param p1, "width"    # I
-    .param p2, "height"    # I
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 2893
@@ -7537,14 +7544,14 @@
     move v0, p1
 
     .line 2895
-    .local v0, "tmp":I
+    .local v0, tmp:I
     move p1, p2
 
     .line 2896
     move p2, v0
 
     .line 2899
-    .end local v0    # "tmp":I
+    .end local v0           #tmp:I
     :cond_0
     invoke-virtual {p0}, Lcom/android/camera/Camera;->getCameraScreenNail()Lcom/android/camera/CameraScreenNail;
 
@@ -7606,6 +7613,7 @@
 
 .method private updatePreviewGrid(Z)V
     .locals 2
+    .parameter
 
     .prologue
     .line 3390
@@ -7910,11 +7918,11 @@
     move-result-object v9
 
     .line 1274
-    .local v9, "pictureFormat":Ljava/lang/String;
+    .local v9, pictureFormat:Ljava/lang/String;
     const/4 v8, 0x0
 
     .line 1275
-    .local v8, "loc":Landroid/location/Location;
+    .local v8, loc:Landroid/location/Location;
     if-eqz v9, :cond_3
 
     const-string v0, "jpeg"
@@ -8002,7 +8010,7 @@
     move-result-object v10
 
     .line 1296
-    .local v10, "size":Landroid/hardware/Camera$Size;
+    .local v10, size:Landroid/hardware/Camera$Size;
     iget-boolean v0, p0, Lcom/android/camera/Camera;->mHDRStatus:Z
 
     if-eqz v0, :cond_6
@@ -8014,7 +8022,7 @@
     const-string v7, "_HHT"
 
     .line 1297
-    .local v7, "suffix":Ljava/lang/String;
+    .local v7, suffix:Ljava/lang/String;
     :cond_6
     :goto_2
     iget-object v0, p0, Lcom/android/camera/Camera;->mImageNamer:Lcom/android/camera/Camera$ImageNamer;
@@ -8080,8 +8088,8 @@
     goto/16 :goto_0
 
     .line 1283
-    .end local v7    # "suffix":Ljava/lang/String;
-    .end local v10    # "size":Landroid/hardware/Camera$Size;
+    .end local v7           #suffix:Ljava/lang/String;
+    .end local v10           #size:Landroid/hardware/Camera$Size;
     :cond_8
     iget-object v0, p0, Lcom/android/camera/Camera;->mFlashModeButton:Lcom/android/camera/ui/FlashButton;
 
@@ -8092,13 +8100,13 @@
     goto :goto_1
 
     .line 1296
-    .restart local v10    # "size":Landroid/hardware/Camera$Size;
+    .restart local v10       #size:Landroid/hardware/Camera$Size;
     :cond_9
     const-string v7, "_HDR"
 
     goto :goto_2
 
-    .restart local v7    # "suffix":Ljava/lang/String;
+    .restart local v7       #suffix:Ljava/lang/String;
     :cond_a
     move v0, v11
 
@@ -8108,7 +8116,7 @@
 
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 5
-    .param p1, "m"    # Landroid/view/MotionEvent;
+    .parameter "m"
 
     .prologue
     .line 657
@@ -8138,13 +8146,13 @@
     move-result v1
 
     .line 662
-    .local v1, "x":F
+    .local v1, x:F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v2
 
     .line 665
-    .local v2, "y":F
+    .local v2, y:F
     iget-object v3, p0, Lcom/android/camera/Camera;->mModeManager:Lcom/android/camera/ModeManager;
 
     if-eqz v3, :cond_1
@@ -8157,7 +8165,7 @@
     move-result-object v0
 
     .line 667
-    .local v0, "popup":Landroid/view/View;
+    .local v0, popup:Landroid/view/View;
     if-eqz v0, :cond_1
 
     .line 671
@@ -8189,9 +8197,9 @@
     invoke-virtual {v3}, Lcom/android/camera/ModeManager;->dismissSettingPopup()Z
 
     .line 679
-    .end local v0    # "popup":Landroid/view/View;
-    .end local v1    # "x":F
-    .end local v2    # "y":F
+    .end local v0           #popup:Landroid/view/View;
+    .end local v1           #x:F
+    .end local v2           #y:F
     :cond_1
     invoke-super {p0, p1}, Lcom/android/camera/ActivityWithAudioCapture;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -8388,11 +8396,11 @@
     move-result-object v1
 
     .line 1344
-    .local v1, "pictureFormat":Ljava/lang/String;
+    .local v1, pictureFormat:Ljava/lang/String;
     const/4 v0, 0x0
 
     .line 1345
-    .local v0, "loc":Landroid/location/Location;
+    .local v0, loc:Landroid/location/Location;
     if-eqz v1, :cond_5
 
     const-string v3, "jpeg"
@@ -8510,6 +8518,9 @@
 
 .method protected onActivityResult(IILandroid/content/Intent;)V
     .locals 2
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
     .line 2133
@@ -8679,6 +8690,7 @@
 
 .method public onCameraPickerClicked(I)V
     .locals 3
+    .parameter
 
     .prologue
     .line 3192
@@ -8751,6 +8763,7 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 4
+    .parameter
 
     .prologue
     const/4 v1, 0x0
@@ -9006,8 +9019,8 @@
 
 .method public onFaceDetection([Landroid/hardware/Camera$Face;Landroid/hardware/Camera;)V
     .locals 6
-    .param p1, "faces"    # [Landroid/hardware/Camera$Face;
-    .param p2, "camera"    # Landroid/hardware/Camera;
+    .parameter "faces"
+    .parameter "camera"
 
     .prologue
     .line 3339
@@ -9042,7 +9055,7 @@
     move-result-wide v0
 
     .line 3346
-    .local v0, "time":J
+    .local v0, time:J
     iget-boolean v2, p0, Lcom/android/camera/Camera;->mFoundFace:Z
 
     if-nez v2, :cond_2
@@ -9126,6 +9139,8 @@
 
 .method public onIndicatorClick(Landroid/view/View;Ljava/lang/String;)V
     .locals 5
+    .parameter
+    .parameter
 
     .prologue
     const/4 v3, 0x2
@@ -9372,8 +9387,8 @@
 
 .method public onKeyDown(ILandroid/view/KeyEvent;)Z
     .locals 3
-    .param p1, "keyCode"    # I
-    .param p2, "event"    # Landroid/view/KeyEvent;
+    .parameter "keyCode"
+    .parameter "event"
 
     .prologue
     const/4 v2, 0x0
@@ -9472,15 +9487,15 @@
 
 .method public onLayoutChange(Landroid/view/View;IIIIIIII)V
     .locals 3
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "l"    # I
-    .param p3, "t"    # I
-    .param p4, "r"    # I
-    .param p5, "b"    # I
-    .param p6, "oldl"    # I
-    .param p7, "oldt"    # I
-    .param p8, "oldr"    # I
-    .param p9, "oldb"    # I
+    .parameter "v"
+    .parameter "l"
+    .parameter "t"
+    .parameter "r"
+    .parameter "b"
+    .parameter "oldl"
+    .parameter "oldt"
+    .parameter "oldr"
+    .parameter "oldb"
 
     .prologue
     .line 2882
@@ -9556,11 +9571,12 @@
 
 .method protected onLongPress(Landroid/view/MotionEvent;)V
     .locals 7
+    .parameter
 
     .prologue
     const/4 v6, 0x1
 
-    const/high16 v5, 0x3f000000
+    const/high16 v5, 0x3f00
 
     const/4 v4, 0x0
 
@@ -9639,7 +9655,7 @@
 
 .method public onModeChanged(I)Z
     .locals 1
-    .param p1, "mode"    # I
+    .parameter "mode"
 
     .prologue
     .line 3149
@@ -10083,7 +10099,7 @@
 
 .method public onReviewCancelClicked(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 1637
@@ -10126,7 +10142,7 @@
 
 .method public onReviewDoneClicked(Landroid/view/View;)V
     .locals 0
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 1651
@@ -10250,8 +10266,8 @@
 
 .method public onShutterButtonFocus(ZI)V
     .locals 2
-    .param p1, "pressed"    # Z
-    .param p2, "fromWhat"    # I
+    .parameter "pressed"
+    .parameter "fromWhat"
 
     .prologue
     const/16 v1, 0xf
@@ -10428,9 +10444,9 @@
 
 .method protected onSingleTapUp(Landroid/view/View;II)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "x"    # I
-    .param p3, "y"    # I
+    .parameter "view"
+    .parameter "x"
+    .parameter "y"
 
     .prologue
     .line 2183
@@ -10521,8 +10537,8 @@
 
 .method public onSizeChanged(II)V
     .locals 1
-    .param p1, "width"    # I
-    .param p2, "height"    # I
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 3379
@@ -10568,7 +10584,7 @@
 
 .method public onThumbnailClicked(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 1615
@@ -10616,7 +10632,7 @@
 
 .method public onWindowFocusChanged(Z)V
     .locals 1
-    .param p1, "hasFocus"    # Z
+    .parameter "hasFocus"
 
     .prologue
     .line 1907
@@ -10676,7 +10692,7 @@
 
 .method public playSound(I)V
     .locals 1
-    .param p1, "soundId"    # I
+    .parameter "soundId"
 
     .prologue
     .line 1384
@@ -10711,7 +10727,7 @@
     move-result-wide v0
 
     .line 843
-    .local v0, "now":J
+    .local v0, now:J
     iget v2, p0, Lcom/android/camera/Camera;->mCameraState:I
 
     const/4 v3, 0x2
@@ -10744,7 +10760,7 @@
     if-eqz v2, :cond_2
 
     .line 846
-    .local v6, "ready":Z
+    .local v6, ready:Z
     :goto_0
     if-eqz v6, :cond_1
 
@@ -10756,7 +10772,7 @@
     return v6
 
     .line 843
-    .end local v6    # "ready":Z
+    .end local v6           #ready:Z
     :cond_2
     const/4 v6, 0x0
 
@@ -10800,7 +10816,7 @@
 
 .method protected registerMotionFocusManager(Z)V
     .locals 1
-    .param p1, "b"    # Z
+    .parameter "b"
 
     .prologue
     .line 1918
@@ -10987,8 +11003,8 @@
 
 .method protected sendDelayedCaptureMessage(II)V
     .locals 3
-    .param p1, "period"    # I
-    .param p2, "times"    # I
+    .parameter "period"
+    .parameter "times"
 
     .prologue
     const/16 v2, 0x17
@@ -11010,11 +11026,11 @@
     move-result-object v0
 
     .line 3462
-    .local v0, "msg":Landroid/os/Message;
+    .local v0, msg:Landroid/os/Message;
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
     .line 3464
-    .end local v0    # "msg":Landroid/os/Message;
+    .end local v0           #msg:Landroid/os/Message;
     :cond_0
     return-void
 .end method
@@ -11074,8 +11090,8 @@
 
 .method protected setOrientationIndicator(IZ)V
     .locals 7
-    .param p1, "orientation"    # I
-    .param p2, "animation"    # Z
+    .parameter "orientation"
+    .parameter "animation"
 
     .prologue
     .line 1584
@@ -11204,23 +11220,23 @@
     aput-object v5, v3, v6
 
     .line 1589
-    .local v3, "indicators":[Lcom/android/camera/ui/Rotatable;
+    .local v3, indicators:[Lcom/android/camera/ui/Rotatable;
     move-object v0, v3
 
-    .local v0, "arr$":[Lcom/android/camera/ui/Rotatable;
+    .local v0, arr$:[Lcom/android/camera/ui/Rotatable;
     array-length v4, v0
 
-    .local v4, "len$":I
+    .local v4, len$:I
     const/4 v1, 0x0
 
-    .local v1, "i$":I
+    .local v1, i$:I
     :goto_0
     if-ge v1, v4, :cond_1
 
     aget-object v2, v0, v1
 
     .line 1590
-    .local v2, "indicator":Lcom/android/camera/ui/Rotatable;
+    .local v2, indicator:Lcom/android/camera/ui/Rotatable;
     if-eqz v2, :cond_0
 
     invoke-interface {v2, p1, p2}, Lcom/android/camera/ui/Rotatable;->setOrientation(IZ)V
@@ -11232,7 +11248,7 @@
     goto :goto_0
 
     .line 1597
-    .end local v2    # "indicator":Lcom/android/camera/ui/Rotatable;
+    .end local v2           #indicator:Lcom/android/camera/ui/Rotatable;
     :cond_1
     iget-object v5, p0, Lcom/android/camera/Camera;->mReviewCancelButton:Lcom/android/camera/ui/Rotatable;
 
@@ -11265,7 +11281,7 @@
     move-result-object v0
 
     .line 3405
-    .local v0, "size":Landroid/hardware/Camera$Size;
+    .local v0, size:Landroid/hardware/Camera$Size;
     iget-object v1, p0, Lcom/android/camera/Camera;->mPreviewFrameLayout:Lcom/android/camera/PreviewFrameLayout;
 
     iget v2, v0, Landroid/hardware/Camera$Size;->width:I
@@ -11363,7 +11379,7 @@
     aget-object v0, v3, v4
 
     .line 635
-    .local v0, "info":Landroid/hardware/Camera$CameraInfo;
+    .local v0, info:Landroid/hardware/Camera$CameraInfo;
     iget-object v3, p0, Lcom/android/camera/Camera;->mFaceView:Lcom/android/camera/ui/FaceView;
 
     iget v4, v0, Landroid/hardware/Camera$CameraInfo;->facing:I
@@ -11406,7 +11422,7 @@
 
 .method public stopFaceDetection(Z)V
     .locals 2
-    .param p1, "clearFaces"    # Z
+    .parameter "clearFaces"
 
     .prologue
     .line 645

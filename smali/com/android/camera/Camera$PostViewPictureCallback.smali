@@ -24,6 +24,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 711
@@ -36,8 +37,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/Camera;Lcom/android/camera/Camera$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/camera/Camera;
-    .param p2, "x1"    # Lcom/android/camera/Camera$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 711
@@ -50,8 +51,8 @@
 # virtual methods
 .method public onPictureTaken([BLandroid/hardware/Camera;)V
     .locals 6
-    .param p1, "data"    # [B
-    .param p2, "camera"    # Landroid/hardware/Camera;
+    .parameter "data"
+    .parameter "camera"
 
     .prologue
     .line 715
@@ -61,7 +62,7 @@
 
     move-result-wide v1
 
-    # setter for: Lcom/android/camera/Camera;->mPostViewPictureCallbackTime:J
+    #setter for: Lcom/android/camera/Camera;->mPostViewPictureCallbackTime:J
     invoke-static {v0, v1, v2}, Lcom/android/camera/Camera;->access$3602(Lcom/android/camera/Camera;J)J
 
     .line 716
@@ -79,14 +80,14 @@
 
     iget-object v2, p0, Lcom/android/camera/Camera$PostViewPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mPostViewPictureCallbackTime:J
+    #getter for: Lcom/android/camera/Camera;->mPostViewPictureCallbackTime:J
     invoke-static {v2}, Lcom/android/camera/Camera;->access$3600(Lcom/android/camera/Camera;)J
 
     move-result-wide v2
 
     iget-object v4, p0, Lcom/android/camera/Camera$PostViewPictureCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mShutterCallbackTime:J
+    #getter for: Lcom/android/camera/Camera;->mShutterCallbackTime:J
     invoke-static {v4}, Lcom/android/camera/Camera;->access$3500(Lcom/android/camera/Camera;)J
 
     move-result-wide v4

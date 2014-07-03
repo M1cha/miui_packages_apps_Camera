@@ -25,9 +25,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/data/MediaItem;ILandroid/graphics/Bitmap;)V
     .locals 0
-    .param p1, "item"    # Lcom/android/gallery3d/data/MediaItem;
-    .param p2, "index"    # I
-    .param p3, "bitmap"    # Landroid/graphics/Bitmap;
+    .parameter "item"
+    .parameter "index"
+    .parameter "bitmap"
 
     .prologue
     .line 71

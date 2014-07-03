@@ -32,6 +32,11 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/CameraManager$CameraProxy;Landroid/hardware/Camera$ShutterCallback;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
     .line 337
@@ -61,7 +66,7 @@
 
     iget-object v0, v0, Lcom/android/camera/CameraManager$CameraProxy;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
+    #getter for: Lcom/android/camera/CameraManager;->mCamera:Landroid/hardware/Camera;
     invoke-static {v0}, Lcom/android/camera/CameraManager;->access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
 
     move-result-object v0
@@ -81,7 +86,7 @@
 
     iget-object v0, v0, Lcom/android/camera/CameraManager$CameraProxy;->this$0:Lcom/android/camera/CameraManager;
 
-    # getter for: Lcom/android/camera/CameraManager;->mSig:Landroid/os/ConditionVariable;
+    #getter for: Lcom/android/camera/CameraManager;->mSig:Landroid/os/ConditionVariable;
     invoke-static {v0}, Lcom/android/camera/CameraManager;->access$400(Lcom/android/camera/CameraManager;)Landroid/os/ConditionVariable;
 
     move-result-object v0

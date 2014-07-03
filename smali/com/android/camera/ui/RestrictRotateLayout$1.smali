@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ui/RestrictRotateLayout;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 35
@@ -38,7 +39,7 @@
 # virtual methods
 .method public visit(Landroid/view/View;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
+    .parameter "view"
 
     .prologue
     .line 38
@@ -53,7 +54,7 @@
     .line 39
     check-cast p1, Lcom/android/camera/ui/Rotatable;
 
-    .end local p1    # "view":Landroid/view/View;
+    .end local p1
     iget-object v0, p0, Lcom/android/camera/ui/RestrictRotateLayout$1;->this$0:Lcom/android/camera/ui/RestrictRotateLayout;
 
     iget v0, v0, Lcom/android/camera/ui/RestrictRotateLayout;->mOrientation:I

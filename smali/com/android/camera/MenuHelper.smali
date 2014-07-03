@@ -16,8 +16,8 @@
 
 .method public static copySecureData(Landroid/content/Intent;Landroid/content/Intent;)V
     .locals 5
-    .param p0, "intentFrom"    # Landroid/content/Intent;
-    .param p1, "intentTo"    # Landroid/content/Intent;
+    .parameter "intentFrom"
+    .parameter "intentTo"
 
     .prologue
     .line 97
@@ -26,7 +26,7 @@
     move-result-object v0
 
     .line 98
-    .local v0, "myExtras":Landroid/os/Bundle;
+    .local v0, myExtras:Landroid/os/Bundle;
     if-eqz v0, :cond_0
 
     .line 99
@@ -39,7 +39,7 @@
     move-result v2
 
     .line 100
-    .local v2, "show":Z
+    .local v2, show:Z
     if-eqz v2, :cond_0
 
     .line 101
@@ -52,7 +52,7 @@
     move-result v1
 
     .line 102
-    .local v1, "num":I
+    .local v1, num:I
     const-string v3, "ShowCameraWhenLocked"
 
     invoke-virtual {p1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
@@ -63,16 +63,16 @@
     invoke-virtual {p1, v3, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     .line 106
-    .end local v1    # "num":I
-    .end local v2    # "show":Z
+    .end local v1           #num:I
+    .end local v2           #show:Z
     :cond_0
     return-void
 .end method
 
 .method public static gotoMode(ILandroid/app/Activity;)V
     .locals 6
-    .param p0, "mode"    # I
-    .param p1, "activity"    # Landroid/app/Activity;
+    .parameter "mode"
+    .parameter "activity"
 
     .prologue
     .line 62
@@ -110,18 +110,18 @@
     const-string v0, "com.android.camera.PanoramaActivity"
 
     .line 65
-    .local v0, "action":Ljava/lang/String;
+    .local v0, action:Ljava/lang/String;
     const-string v1, "com.android.camera.PanoramaActivity"
 
     .line 81
-    .local v1, "className":Ljava/lang/String;
+    .local v1, className:Ljava/lang/String;
     :goto_1
     new-instance v2, Landroid/content/Intent;
 
     invoke-direct {v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 83
-    .local v2, "it":Landroid/content/Intent;
+    .local v2, it:Landroid/content/Intent;
     invoke-virtual {p1}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object v3
@@ -141,32 +141,32 @@
     goto :goto_0
 
     .line 68
-    .end local v0    # "action":Ljava/lang/String;
-    .end local v1    # "className":Ljava/lang/String;
-    .end local v2    # "it":Landroid/content/Intent;
+    .end local v0           #action:Ljava/lang/String;
+    .end local v1           #className:Ljava/lang/String;
+    .end local v2           #it:Landroid/content/Intent;
     :pswitch_1
     const-string v0, "android.media.action.VIDEO_CAMERA"
 
     .line 69
-    .restart local v0    # "action":Ljava/lang/String;
+    .restart local v0       #action:Ljava/lang/String;
     const-string v1, "com.android.camera.VideoCamera"
 
     .line 70
-    .restart local v1    # "className":Ljava/lang/String;
+    .restart local v1       #className:Ljava/lang/String;
     goto :goto_1
 
     .line 72
-    .end local v0    # "action":Ljava/lang/String;
-    .end local v1    # "className":Ljava/lang/String;
+    .end local v0           #action:Ljava/lang/String;
+    .end local v1           #className:Ljava/lang/String;
     :pswitch_2
     const-string v0, "android.media.action.STILL_IMAGE_CAMERA"
 
     .line 73
-    .restart local v0    # "action":Ljava/lang/String;
+    .restart local v0       #action:Ljava/lang/String;
     const-string v1, "com.android.camera.Camera"
 
     .line 74
-    .restart local v1    # "className":Ljava/lang/String;
+    .restart local v1       #className:Ljava/lang/String;
     goto :goto_1
 
     .line 62
@@ -180,8 +180,8 @@
 
 .method public static gotoSimpleModeCamera(Landroid/app/Activity;Ljava/lang/String;)V
     .locals 3
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "mode"    # Ljava/lang/String;
+    .parameter "activity"
+    .parameter "mode"
 
     .prologue
     .line 89
@@ -192,7 +192,7 @@
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 90
-    .local v0, "it":Landroid/content/Intent;
+    .local v0, it:Landroid/content/Intent;
     const-string v1, "camera_mode_change"
 
     const/4 v2, 0x1
@@ -222,18 +222,18 @@
 
 .method private static startCameraActivity(Landroid/app/Activity;Landroid/content/Intent;Ljava/lang/String;)V
     .locals 3
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "className"    # Ljava/lang/String;
+    .parameter "activity"
+    .parameter "intent"
+    .parameter "className"
 
     .prologue
     .line 43
-    const/high16 v1, 0x4000000
+    const/high16 v1, 0x400
 
     invoke-virtual {p1, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     .line 44
-    const/high16 v1, 0x2000000
+    const/high16 v1, 0x200
 
     invoke-virtual {p1, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
@@ -259,7 +259,7 @@
 
     .line 57
     :goto_0
-    const/high16 v1, 0x10a0000
+    const/high16 v1, 0x10a
 
     const v2, 0x10a0001
 
@@ -273,7 +273,7 @@
     move-exception v0
 
     .line 54
-    .local v0, "e":Landroid/content/ActivityNotFoundException;
+    .local v0, e:Landroid/content/ActivityNotFoundException;
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;

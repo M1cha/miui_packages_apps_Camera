@@ -1,4 +1,4 @@
-version: 2.0.0-Beta8
+version: 1.5.2
 apkFileName: Camera.apk
 isFrameworkApk: false
 usesFramework:
@@ -10,9 +10,5 @@ sdkInfo:
   targetSdkVersion: '16'
 packageInfo:
   cur_package: com.android.camera
-  cur_package_id: '127'
   orig_package: com.android.camera
-versionInfo:
-  versionCode: '1'
-  versionName: '1'
 compressionType: false

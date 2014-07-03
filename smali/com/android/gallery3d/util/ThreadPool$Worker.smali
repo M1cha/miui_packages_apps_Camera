@@ -75,6 +75,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/util/ThreadPool;Lcom/android/gallery3d/util/ThreadPool$Job;Lcom/android/gallery3d/util/FutureListener;)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -87,9 +90,9 @@
 
     .prologue
     .line 120
-    .local p0, "this":Lcom/android/gallery3d/util/ThreadPool$Worker;, "Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
-    .local p2, "job":Lcom/android/gallery3d/util/ThreadPool$Job;, "Lcom/android/gallery3d/util/ThreadPool$Job<TT;>;"
-    .local p3, "listener":Lcom/android/gallery3d/util/FutureListener;, "Lcom/android/gallery3d/util/FutureListener<TT;>;"
+    .local p0, this:Lcom/android/gallery3d/util/ThreadPool$Worker;,"Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
+    .local p2, job:Lcom/android/gallery3d/util/ThreadPool$Job;,"Lcom/android/gallery3d/util/ThreadPool$Job<TT;>;"
+    .local p3, listener:Lcom/android/gallery3d/util/FutureListener;,"Lcom/android/gallery3d/util/FutureListener<TT;>;"
     iput-object p1, p0, Lcom/android/gallery3d/util/ThreadPool$Worker;->this$0:Lcom/android/gallery3d/util/ThreadPool;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -106,8 +109,8 @@
 
 .method static synthetic access$102(Lcom/android/gallery3d/util/ThreadPool$Worker;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
-    .param p0, "x0"    # Lcom/android/gallery3d/util/ThreadPool$Worker;
-    .param p1, "x1"    # Ljava/lang/Object;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 109
@@ -118,8 +121,8 @@
 
 .method static synthetic access$202(Lcom/android/gallery3d/util/ThreadPool$Worker;Z)Z
     .locals 0
-    .param p0, "x0"    # Lcom/android/gallery3d/util/ThreadPool$Worker;
-    .param p1, "x1"    # Z
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 109
@@ -130,11 +133,11 @@
 
 .method private acquireResource(Lcom/android/gallery3d/util/ThreadPool$ResourceCounter;)Z
     .locals 1
-    .param p1, "counter"    # Lcom/android/gallery3d/util/ThreadPool$ResourceCounter;
+    .parameter "counter"
 
     .prologue
     .line 225
-    .local p0, "this":Lcom/android/gallery3d/util/ThreadPool$Worker;, "Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
+    .local p0, this:Lcom/android/gallery3d/util/ThreadPool$Worker;,"Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
     :goto_0
     monitor-enter p0
 
@@ -223,8 +226,8 @@
     :try_start_4
     invoke-virtual {p1}, Ljava/lang/Object;->wait()V
     :try_end_4
-    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_0
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    .catch Ljava/lang/InterruptedException; {:try_start_4 .. :try_end_4} :catch_0
 
     .line 244
     :goto_2
@@ -262,11 +265,11 @@
 
 .method private modeToCounter(I)Lcom/android/gallery3d/util/ThreadPool$ResourceCounter;
     .locals 1
-    .param p1, "mode"    # I
+    .parameter "mode"
 
     .prologue
     .line 214
-    .local p0, "this":Lcom/android/gallery3d/util/ThreadPool$Worker;, "Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
+    .local p0, this:Lcom/android/gallery3d/util/ThreadPool$Worker;,"Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_0
@@ -302,11 +305,11 @@
 
 .method private releaseResource(Lcom/android/gallery3d/util/ThreadPool$ResourceCounter;)V
     .locals 1
-    .param p1, "counter"    # Lcom/android/gallery3d/util/ThreadPool$ResourceCounter;
+    .parameter "counter"
 
     .prologue
     .line 255
-    .local p0, "this":Lcom/android/gallery3d/util/ThreadPool$Worker;, "Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
+    .local p0, this:Lcom/android/gallery3d/util/ThreadPool$Worker;,"Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
     monitor-enter p1
 
     .line 256
@@ -344,7 +347,7 @@
 
     .prologue
     .line 150
-    .local p0, "this":Lcom/android/gallery3d/util/ThreadPool$Worker;, "Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
+    .local p0, this:Lcom/android/gallery3d/util/ThreadPool$Worker;,"Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
     monitor-enter p0
 
     :try_start_0
@@ -440,7 +443,7 @@
 
     .prologue
     .line 171
-    .local p0, "this":Lcom/android/gallery3d/util/ThreadPool$Worker;, "Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
+    .local p0, this:Lcom/android/gallery3d/util/ThreadPool$Worker;,"Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
     monitor-enter p0
 
     :goto_0
@@ -455,8 +458,8 @@
     :try_start_1
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_0
 
@@ -465,7 +468,7 @@
     move-exception v0
 
     .line 175
-    .local v0, "ex":Ljava/lang/Exception;
+    .local v0, ex:Ljava/lang/Exception;
     :try_start_2
     const-string v1, "Worker"
 
@@ -478,7 +481,7 @@
     goto :goto_0
 
     .line 171
-    .end local v0    # "ex":Ljava/lang/Exception;
+    .end local v0           #ex:Ljava/lang/Exception;
     :catchall_0
     move-exception v1
 
@@ -503,7 +506,7 @@
 
     .prologue
     .line 163
-    .local p0, "this":Lcom/android/gallery3d/util/ThreadPool$Worker;, "Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
+    .local p0, this:Lcom/android/gallery3d/util/ThreadPool$Worker;,"Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
     iget-boolean v0, p0, Lcom/android/gallery3d/util/ThreadPool$Worker;->mIsCancelled:Z
 
     return v0
@@ -513,14 +516,14 @@
     .locals 4
 
     .prologue
-    .local p0, "this":Lcom/android/gallery3d/util/ThreadPool$Worker;, "Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
+    .local p0, this:Lcom/android/gallery3d/util/ThreadPool$Worker;,"Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
     const/4 v2, 0x1
 
     .line 127
     const/4 v1, 0x0
 
     .line 131
-    .local v1, "result":Ljava/lang/Object;, "TT;"
+    .local v1, result:Ljava/lang/Object;,"TT;"
     invoke-virtual {p0, v2}, Lcom/android/gallery3d/util/ThreadPool$Worker;->setMode(I)Z
 
     move-result v2
@@ -538,7 +541,7 @@
     move-result-object v1
 
     .line 139
-    .end local v1    # "result":Ljava/lang/Object;, "TT;"
+    .end local v1           #result:Ljava/lang/Object;,"TT;"
     :cond_0
     :goto_0
     monitor-enter p0
@@ -579,12 +582,12 @@
     return-void
 
     .line 134
-    .restart local v1    # "result":Ljava/lang/Object;, "TT;"
+    .restart local v1       #result:Ljava/lang/Object;,"TT;"
     :catch_0
     move-exception v0
 
     .line 135
-    .local v0, "ex":Ljava/lang/Throwable;
+    .local v0, ex:Ljava/lang/Throwable;
     const-string v2, "Worker"
 
     const-string v3, "Exception in running a job"
@@ -594,8 +597,8 @@
     goto :goto_0
 
     .line 144
-    .end local v0    # "ex":Ljava/lang/Throwable;
-    .end local v1    # "result":Ljava/lang/Object;, "TT;"
+    .end local v0           #ex:Ljava/lang/Throwable;
+    .end local v1           #result:Ljava/lang/Object;,"TT;"
     :catchall_0
     move-exception v2
 
@@ -609,11 +612,11 @@
 
 .method public declared-synchronized setCancelListener(Lcom/android/gallery3d/util/ThreadPool$CancelListener;)V
     .locals 1
-    .param p1, "listener"    # Lcom/android/gallery3d/util/ThreadPool$CancelListener;
+    .parameter "listener"
 
     .prologue
     .line 189
-    .local p0, "this":Lcom/android/gallery3d/util/ThreadPool$Worker;, "Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
+    .local p0, this:Lcom/android/gallery3d/util/ThreadPool$Worker;,"Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
     monitor-enter p0
 
     :try_start_0
@@ -652,10 +655,10 @@
 
 .method public setMode(I)Z
     .locals 3
-    .param p1, "mode"    # I
+    .parameter "mode"
 
     .prologue
-    .local p0, "this":Lcom/android/gallery3d/util/ThreadPool$Worker;, "Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
+    .local p0, this:Lcom/android/gallery3d/util/ThreadPool$Worker;,"Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
     const/4 v1, 0x0
 
     .line 197
@@ -666,7 +669,7 @@
     move-result-object v0
 
     .line 198
-    .local v0, "rc":Lcom/android/gallery3d/util/ThreadPool$ResourceCounter;
+    .local v0, rc:Lcom/android/gallery3d/util/ThreadPool$ResourceCounter;
     if-eqz v0, :cond_0
 
     invoke-direct {p0, v0}, Lcom/android/gallery3d/util/ThreadPool$Worker;->releaseResource(Lcom/android/gallery3d/util/ThreadPool$ResourceCounter;)V
@@ -710,7 +713,7 @@
 
     .prologue
     .line 183
-    .local p0, "this":Lcom/android/gallery3d/util/ThreadPool$Worker;, "Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
+    .local p0, this:Lcom/android/gallery3d/util/ThreadPool$Worker;,"Lcom/android/gallery3d/util/ThreadPool$Worker<TT;>;"
     invoke-virtual {p0}, Lcom/android/gallery3d/util/ThreadPool$Worker;->get()Ljava/lang/Object;
 
     .line 184

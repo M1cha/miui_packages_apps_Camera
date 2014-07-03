@@ -21,7 +21,7 @@
 # direct methods
 .method public constructor <init>(F)V
     .locals 0
-    .param p1, "foc"    # F
+    .parameter "foc"
 
     .prologue
     .line 1725
@@ -38,10 +38,10 @@
 # virtual methods
 .method public getInterpolation(F)F
     .locals 4
-    .param p1, "input"    # F
+    .parameter "input"
 
     .prologue
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f80
 
     .line 1730
     iget v0, p0, Lcom/android/gallery3d/ui/PhotoView$ZInterpolator;->focalLength:F

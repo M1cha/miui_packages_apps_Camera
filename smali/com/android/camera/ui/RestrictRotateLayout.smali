@@ -15,8 +15,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 17
@@ -37,8 +37,8 @@
 # virtual methods
 .method protected onMeasure(II)V
     .locals 1
-    .param p1, "widthSpec"    # I
-    .param p2, "heightSpec"    # I
+    .parameter "widthSpec"
+    .parameter "heightSpec"
 
     .prologue
     .line 22
@@ -54,8 +54,8 @@
 
 .method public setOrientation(IZ)V
     .locals 1
-    .param p1, "orientation"    # I
-    .param p2, "animation"    # Z
+    .parameter "orientation"
+    .parameter "animation"
 
     .prologue
     .line 27

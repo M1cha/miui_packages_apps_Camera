@@ -25,7 +25,7 @@
 
     .prologue
     .line 86
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f80
 
     sput v0, Lcom/android/camera/Util;->sPixelDensity:F
 
@@ -54,7 +54,7 @@
 
 .method public static Assert(Z)V
     .locals 1
-    .param p0, "cond"    # Z
+    .parameter "cond"
 
     .prologue
     .line 251
@@ -74,8 +74,8 @@
 
 .method public static broadcastNewPicture(Landroid/content/Context;Landroid/net/Uri;)V
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "uri"    # Landroid/net/Uri;
+    .parameter "context"
+    .parameter "uri"
 
     .prologue
     .line 613
@@ -102,6 +102,7 @@
 
 .method public static checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -112,7 +113,7 @@
 
     .prologue
     .line 296
-    .local p0, "object":Ljava/lang/Object;, "TT;"
+    .local p0, object:Ljava/lang/Object;,"TT;"
     if-nez p0, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -128,21 +129,21 @@
 
 .method public static clamp(III)I
     .locals 0
-    .param p0, "x"    # I
-    .param p1, "min"    # I
-    .param p2, "max"    # I
+    .parameter "x"
+    .parameter "min"
+    .parameter "max"
 
     .prologue
     .line 321
     if-le p0, p2, :cond_0
 
     .line 323
-    .end local p2    # "max":I
+    .end local p2
     :goto_0
     return p2
 
     .line 322
-    .restart local p2    # "max":I
+    .restart local p2
     :cond_0
     if-ge p0, p1, :cond_1
 
@@ -159,7 +160,7 @@
 
 .method public static closeSilently(Ljava/io/Closeable;)V
     .locals 1
-    .param p0, "c"    # Ljava/io/Closeable;
+    .parameter "c"
 
     .prologue
     .line 242
@@ -187,9 +188,9 @@
 
 .method private static computeInitialSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
     .locals 11
-    .param p0, "options"    # Landroid/graphics/BitmapFactory$Options;
-    .param p1, "minSideLength"    # I
-    .param p2, "maxNumOfPixels"    # I
+    .parameter "options"
+    .parameter "minSideLength"
+    .parameter "maxNumOfPixels"
 
     .prologue
     const/4 v6, 0x1
@@ -200,37 +201,37 @@
     int-to-double v4, v7
 
     .line 195
-    .local v4, "w":D
+    .local v4, w:D
     iget v7, p0, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
     int-to-double v0, v7
 
     .line 197
-    .local v0, "h":D
+    .local v0, h:D
     if-gez p2, :cond_1
 
     move v2, v6
 
     .line 199
-    .local v2, "lowerBound":I
+    .local v2, lowerBound:I
     :goto_0
     if-gez p1, :cond_2
 
     const/16 v3, 0x80
 
     .line 203
-    .local v3, "upperBound":I
+    .local v3, upperBound:I
     :goto_1
     if-ge v3, v2, :cond_3
 
     .line 213
-    .end local v2    # "lowerBound":I
+    .end local v2           #lowerBound:I
     :cond_0
     :goto_2
     return v2
 
     .line 197
-    .end local v3    # "upperBound":I
+    .end local v3           #upperBound:I
     :cond_1
     mul-double v7, v4, v0
 
@@ -251,7 +252,7 @@
     goto :goto_0
 
     .line 199
-    .restart local v2    # "lowerBound":I
+    .restart local v2       #lowerBound:I
     :cond_2
     int-to-double v7, p1
 
@@ -278,7 +279,7 @@
     goto :goto_1
 
     .line 208
-    .restart local v3    # "upperBound":I
+    .restart local v3       #upperBound:I
     :cond_3
     if-gez p2, :cond_4
 
@@ -301,9 +302,9 @@
 
 .method public static computeSampleSize(Landroid/graphics/BitmapFactory$Options;II)I
     .locals 3
-    .param p0, "options"    # Landroid/graphics/BitmapFactory$Options;
-    .param p1, "minSideLength"    # I
-    .param p2, "maxNumOfPixels"    # I
+    .parameter "options"
+    .parameter "minSideLength"
+    .parameter "maxNumOfPixels"
 
     .prologue
     .line 176
@@ -312,7 +313,7 @@
     move-result v0
 
     .line 180
-    .local v0, "initialSize":I
+    .local v0, initialSize:I
     const/16 v2, 0x8
 
     if-gt v0, v2, :cond_0
@@ -321,7 +322,7 @@
     const/4 v1, 0x1
 
     .line 182
-    .local v1, "roundedSize":I
+    .local v1, roundedSize:I
     :goto_0
     if-ge v1, v0, :cond_1
 
@@ -331,7 +332,7 @@
     goto :goto_0
 
     .line 186
-    .end local v1    # "roundedSize":I
+    .end local v1           #roundedSize:I
     :cond_0
     add-int/lit8 v2, v0, 0x7
 
@@ -340,14 +341,14 @@
     mul-int/lit8 v1, v2, 0x8
 
     .line 189
-    .restart local v1    # "roundedSize":I
+    .restart local v1       #roundedSize:I
     :cond_1
     return v1
 .end method
 
 .method public static createJpegName(J)Ljava/lang/String;
     .locals 2
-    .param p0, "dateTaken"    # J
+    .parameter "dateTaken"
 
     .prologue
     .line 607
@@ -380,7 +381,7 @@
 
 .method public static dpToPixel(I)I
     .locals 2
-    .param p0, "dp"    # I
+    .parameter "dp"
 
     .prologue
     .line 108
@@ -399,8 +400,8 @@
 
 .method public static equals(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 1
-    .param p0, "a"    # Ljava/lang/Object;
-    .param p1, "b"    # Ljava/lang/Object;
+    .parameter "a"
+    .parameter "b"
 
     .prologue
     .line 301
@@ -429,7 +430,7 @@
 
 .method public static fadeIn(Landroid/view/View;)V
     .locals 3
-    .param p0, "view"    # Landroid/view/View;
+    .parameter "view"
 
     .prologue
     .line 619
@@ -457,12 +458,12 @@
 
     const/4 v1, 0x0
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f80
 
     invoke-direct {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
 
     .line 623
-    .local v0, "animation":Landroid/view/animation/Animation;
+    .local v0, animation:Landroid/view/animation/Animation;
     const-wide/16 v1, 0x190
 
     invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
@@ -475,7 +476,7 @@
 
 .method public static fadeOut(Landroid/view/View;)V
     .locals 3
-    .param p0, "view"    # Landroid/view/View;
+    .parameter "view"
 
     .prologue
     .line 628
@@ -496,14 +497,14 @@
     :cond_1
     new-instance v0, Landroid/view/animation/AlphaAnimation;
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f80
 
     const/4 v2, 0x0
 
     invoke-direct {v0, v1, v2}, Landroid/view/animation/AlphaAnimation;-><init>(FF)V
 
     .line 631
-    .local v0, "animation":Landroid/view/animation/Animation;
+    .local v0, animation:Landroid/view/animation/Animation;
     const-wide/16 v1, 0x190
 
     invoke-virtual {v0, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
@@ -521,7 +522,7 @@
 
 .method public static getCameraFacingIntentExtras(Landroid/app/Activity;)I
     .locals 7
-    .param p0, "currentActivity"    # Landroid/app/Activity;
+    .parameter "currentActivity"
 
     .prologue
     const/4 v6, -0x1
@@ -530,7 +531,7 @@
     const/4 v1, -0x1
 
     .line 498
-    .local v1, "cameraId":I
+    .local v1, cameraId:I
     invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
     move-result-object v4
@@ -542,7 +543,7 @@
     move-result v3
 
     .line 501
-    .local v3, "intentCameraId":I
+    .local v3, intentCameraId:I
     invoke-static {v3}, Lcom/android/camera/Util;->isFrontCameraIntent(I)Z
 
     move-result v4
@@ -559,14 +560,14 @@
     move-result v2
 
     .line 504
-    .local v2, "frontCameraId":I
+    .local v2, frontCameraId:I
     if-eq v2, v6, :cond_0
 
     .line 505
     move v1, v2
 
     .line 514
-    .end local v2    # "frontCameraId":I
+    .end local v2           #frontCameraId:I
     :cond_0
     :goto_0
     return v1
@@ -589,7 +590,7 @@
     move-result v0
 
     .line 510
-    .local v0, "backCameraId":I
+    .local v0, backCameraId:I
     if-eq v0, v6, :cond_0
 
     .line 511
@@ -600,7 +601,7 @@
 
 .method public static getCameraOrientation(I)I
     .locals 2
-    .param p0, "cameraId"    # I
+    .parameter "cameraId"
 
     .prologue
     .line 354
@@ -609,7 +610,7 @@
     invoke-direct {v0}, Landroid/hardware/Camera$CameraInfo;-><init>()V
 
     .line 355
-    .local v0, "info":Landroid/hardware/Camera$CameraInfo;
+    .local v0, info:Landroid/hardware/Camera$CameraInfo;
     invoke-static {p0, v0}, Landroid/hardware/Camera;->getCameraInfo(ILandroid/hardware/Camera$CameraInfo;)V
 
     .line 356
@@ -620,8 +621,8 @@
 
 .method public static getDisplayOrientation(II)I
     .locals 4
-    .param p0, "degrees"    # I
-    .param p1, "cameraId"    # I
+    .parameter "degrees"
+    .parameter "cameraId"
 
     .prologue
     .line 341
@@ -630,7 +631,7 @@
     invoke-direct {v0}, Landroid/hardware/Camera$CameraInfo;-><init>()V
 
     .line 342
-    .local v0, "info":Landroid/hardware/Camera$CameraInfo;
+    .local v0, info:Landroid/hardware/Camera$CameraInfo;
     invoke-static {p1, v0}, Landroid/hardware/Camera;->getCameraInfo(ILandroid/hardware/Camera$CameraInfo;)V
 
     .line 344
@@ -648,7 +649,7 @@
     rem-int/lit16 v1, v2, 0x168
 
     .line 346
-    .local v1, "result":I
+    .local v1, result:I
     rsub-int v2, v1, 0x168
 
     rem-int/lit16 v1, v2, 0x168
@@ -658,7 +659,7 @@
     return v1
 
     .line 348
-    .end local v1    # "result":I
+    .end local v1           #result:I
     :cond_0
     iget v2, v0, Landroid/hardware/Camera$CameraInfo;->orientation:I
 
@@ -668,13 +669,13 @@
 
     rem-int/lit16 v1, v2, 0x168
 
-    .restart local v1    # "result":I
+    .restart local v1       #result:I
     goto :goto_0
 .end method
 
 .method public static getDisplayRotation(Landroid/app/Activity;)I
     .locals 3
-    .param p0, "activity"    # Landroid/app/Activity;
+    .parameter "activity"
 
     .prologue
     const/4 v1, 0x0
@@ -693,7 +694,7 @@
     move-result v0
 
     .line 329
-    .local v0, "rotation":I
+    .local v0, rotation:I
     packed-switch v0, :pswitch_data_0
 
     .line 335
@@ -731,15 +732,15 @@
 
 .method public static getJpegRotation(II)I
     .locals 4
-    .param p0, "cameraId"    # I
-    .param p1, "orientation"    # I
+    .parameter "cameraId"
+    .parameter "orientation"
 
     .prologue
     .line 639
     const/4 v1, 0x0
 
     .line 640
-    .local v1, "rotation":I
+    .local v1, rotation:I
     invoke-static {}, Lcom/android/camera/CameraHolder;->instance()Lcom/android/camera/CameraHolder;
 
     move-result-object v2
@@ -751,7 +752,7 @@
     aget-object v0, v2, p0
 
     .line 641
-    .local v0, "info":Landroid/hardware/Camera$CameraInfo;
+    .local v0, info:Landroid/hardware/Camera$CameraInfo;
     const/4 v2, -0x1
 
     if-eq p1, v2, :cond_1
@@ -795,9 +796,10 @@
 
 .method public static getOptimalPreviewSize(Landroid/app/Activity;Ljava/util/List;DZ)Landroid/hardware/Camera$Size;
     .locals 14
-    .param p0, "currentActivity"    # Landroid/app/Activity;
-    .param p2, "targetRatio"    # D
-    .param p4, "captrueIntent"    # Z
+    .parameter "currentActivity"
+    .parameter
+    .parameter "targetRatio"
+    .parameter "captrueIntent"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -812,7 +814,7 @@
 
     .prologue
     .line 377
-    .local p1, "sizes":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/Camera$Size;>;"
+    .local p1, sizes:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Size;>;"
     if-nez p1, :cond_1
 
     const/4 v5, 0x0
@@ -827,11 +829,11 @@
     const/4 v5, 0x0
 
     .line 380
-    .local v5, "optimalSize":Landroid/hardware/Camera$Size;
+    .local v5, optimalSize:Landroid/hardware/Camera$Size;
     const-wide v3, 0x7fefffffffffffffL
 
     .line 387
-    .local v3, "minDiff":D
+    .local v3, minDiff:D
     invoke-virtual {p0}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
 
     move-result-object v10
@@ -841,13 +843,13 @@
     move-result-object v1
 
     .line 388
-    .local v1, "display":Landroid/view/Display;
+    .local v1, display:Landroid/view/Display;
     new-instance v6, Landroid/graphics/Point;
 
     invoke-direct {v6}, Landroid/graphics/Point;-><init>()V
 
     .line 389
-    .local v6, "point":Landroid/graphics/Point;
+    .local v6, point:Landroid/graphics/Point;
     invoke-virtual {v1, v6}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
 
     .line 392
@@ -855,7 +857,7 @@
 
     move-result-object v2
 
-    .local v2, "i$":Ljava/util/Iterator;
+    .local v2, i$:Ljava/util/Iterator;
     :cond_2
     :goto_1
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
@@ -871,7 +873,7 @@
     check-cast v9, Landroid/hardware/Camera$Size;
 
     .line 393
-    .local v9, "size":Landroid/hardware/Camera$Size;
+    .local v9, size:Landroid/hardware/Camera$Size;
     iget v10, v9, Landroid/hardware/Camera$Size;->width:I
 
     int-to-double v10, v10
@@ -883,7 +885,7 @@
     div-double v7, v10, v12
 
     .line 394
-    .local v7, "ratio":D
+    .local v7, ratio:D
     sub-double v10, v7, p2
 
     invoke-static {v10, v11}, Ljava/lang/Math;->abs(D)D
@@ -920,16 +922,16 @@
     add-int v0, v10, v11
 
     .line 398
-    .local v0, "diff":I
+    .local v0, diff:I
     if-nez v0, :cond_5
 
     .line 399
     move-object v5, v9
 
     .line 409
-    .end local v0    # "diff":I
-    .end local v7    # "ratio":D
-    .end local v9    # "size":Landroid/hardware/Camera$Size;
+    .end local v0           #diff:I
+    .end local v7           #ratio:D
+    .end local v9           #size:Landroid/hardware/Camera$Size;
     :cond_3
     if-nez v5, :cond_6
 
@@ -963,7 +965,7 @@
     check-cast v9, Landroid/hardware/Camera$Size;
 
     .line 413
-    .restart local v9    # "size":Landroid/hardware/Camera$Size;
+    .restart local v9       #size:Landroid/hardware/Camera$Size;
     iget v10, v6, Landroid/graphics/Point;->x:I
 
     iget v11, v9, Landroid/hardware/Camera$Size;->height:I
@@ -987,7 +989,7 @@
     add-int v0, v10, v11
 
     .line 414
-    .restart local v0    # "diff":I
+    .restart local v0       #diff:I
     int-to-double v10, v0
 
     cmpg-double v10, v10, v3
@@ -1003,7 +1005,7 @@
     goto :goto_2
 
     .line 401
-    .restart local v7    # "ratio":D
+    .restart local v7       #ratio:D
     :cond_5
     int-to-double v10, v0
 
@@ -1020,9 +1022,9 @@
     goto :goto_1
 
     .line 420
-    .end local v0    # "diff":I
-    .end local v7    # "ratio":D
-    .end local v9    # "size":Landroid/hardware/Camera$Size;
+    .end local v0           #diff:I
+    .end local v7           #ratio:D
+    .end local v9           #size:Landroid/hardware/Camera$Size;
     :cond_6
     if-nez p4, :cond_0
 
@@ -1034,7 +1036,8 @@
 
 .method public static getOptimalVideoSnapshotPictureSize(Ljava/util/List;D)Landroid/hardware/Camera$Size;
     .locals 9
-    .param p1, "targetRatio"    # D
+    .parameter
+    .parameter "targetRatio"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1048,7 +1051,7 @@
 
     .prologue
     .line 430
-    .local p0, "sizes":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/Camera$Size;>;"
+    .local p0, sizes:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Size;>;"
     if-nez p0, :cond_1
 
     const/4 v1, 0x0
@@ -1062,12 +1065,12 @@
     const/4 v1, 0x0
 
     .line 435
-    .local v1, "optimalSize":Landroid/hardware/Camera$Size;
+    .local v1, optimalSize:Landroid/hardware/Camera$Size;
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :cond_2
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -1083,7 +1086,7 @@
     check-cast v4, Landroid/hardware/Camera$Size;
 
     .line 436
-    .local v4, "size":Landroid/hardware/Camera$Size;
+    .local v4, size:Landroid/hardware/Camera$Size;
     iget v5, v4, Landroid/hardware/Camera$Size;->width:I
 
     int-to-double v5, v5
@@ -1095,7 +1098,7 @@
     div-double v2, v5, v7
 
     .line 437
-    .local v2, "ratio":D
+    .local v2, ratio:D
     sub-double v5, v2, p1
 
     invoke-static {v5, v6}, Ljava/lang/Math;->abs(D)D
@@ -1124,8 +1127,8 @@
     goto :goto_0
 
     .line 445
-    .end local v2    # "ratio":D
-    .end local v4    # "size":Landroid/hardware/Camera$Size;
+    .end local v2           #ratio:D
+    .end local v4           #size:Landroid/hardware/Camera$Size;
     :cond_4
     if-nez v1, :cond_0
 
@@ -1156,7 +1159,7 @@
     check-cast v4, Landroid/hardware/Camera$Size;
 
     .line 448
-    .restart local v4    # "size":Landroid/hardware/Camera$Size;
+    .restart local v4       #size:Landroid/hardware/Camera$Size;
     if-eqz v1, :cond_6
 
     iget v5, v4, Landroid/hardware/Camera$Size;->width:I
@@ -1174,8 +1177,8 @@
 
 .method public static getRelativeLocation(Landroid/view/View;Landroid/view/View;)[I
     .locals 6
-    .param p0, "reference"    # Landroid/view/View;
-    .param p1, "view"    # Landroid/view/View;
+    .parameter "reference"
+    .parameter "view"
 
     .prologue
     const/4 v5, 0x1
@@ -1188,18 +1191,18 @@
     new-array v0, v3, [I
 
     .line 534
-    .local v0, "location":[I
+    .local v0, location:[I
     invoke-virtual {p0, v0}, Landroid/view/View;->getLocationInWindow([I)V
 
     .line 535
     aget v1, v0, v4
 
     .line 536
-    .local v1, "referenceX":I
+    .local v1, referenceX:I
     aget v2, v0, v5
 
     .line 537
-    .local v2, "referenceY":I
+    .local v2, referenceY:I
     invoke-virtual {p1, v0}, Landroid/view/View;->getLocationInWindow([I)V
 
     .line 538
@@ -1222,7 +1225,7 @@
 
 .method public static initialize(Landroid/content/Context;)V
     .locals 4
-    .param p0, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     .line 98
@@ -1231,7 +1234,7 @@
     invoke-direct {v0}, Landroid/util/DisplayMetrics;-><init>()V
 
     .line 99
-    .local v0, "metrics":Landroid/util/DisplayMetrics;
+    .local v0, metrics:Landroid/util/DisplayMetrics;
     const-string v2, "window"
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1241,7 +1244,7 @@
     check-cast v1, Landroid/view/WindowManager;
 
     .line 101
-    .local v1, "wm":Landroid/view/WindowManager;
+    .local v1, wm:Landroid/view/WindowManager;
     invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v2
@@ -1272,7 +1275,7 @@
 
 .method private static isBackCameraIntent(I)Z
     .locals 1
-    .param p0, "intentCameraId"    # I
+    .parameter "intentCameraId"
 
     .prologue
     .line 522
@@ -1291,7 +1294,7 @@
 
 .method private static isFrontCameraIntent(I)Z
     .locals 1
-    .param p0, "intentCameraId"    # I
+    .parameter "intentCameraId"
 
     .prologue
     const/4 v0, 0x1
@@ -1310,9 +1313,9 @@
 
 .method public static isTimeout(JJJ)Z
     .locals 2
-    .param p0, "now"    # J
-    .param p2, "last"    # J
-    .param p4, "gap"    # J
+    .parameter "now"
+    .parameter "last"
+    .parameter "gap"
 
     .prologue
     .line 780
@@ -1340,8 +1343,8 @@
 
 .method public static isUriValid(Landroid/net/Uri;Landroid/content/ContentResolver;)Z
     .locals 6
-    .param p0, "uri"    # Landroid/net/Uri;
-    .param p1, "resolver"    # Landroid/content/ContentResolver;
+    .parameter "uri"
+    .parameter "resolver"
 
     .prologue
     const/4 v2, 0x0
@@ -1363,7 +1366,7 @@
     move-result-object v1
 
     .line 548
-    .local v1, "pfd":Landroid/os/ParcelFileDescriptor;
+    .local v1, pfd:Landroid/os/ParcelFileDescriptor;
     if-nez v1, :cond_1
 
     .line 549
@@ -1392,17 +1395,17 @@
     goto :goto_0
 
     .line 553
-    .end local v1    # "pfd":Landroid/os/ParcelFileDescriptor;
+    .end local v1           #pfd:Landroid/os/ParcelFileDescriptor;
     :catch_0
     move-exception v0
 
     .line 554
-    .local v0, "ex":Ljava/io/IOException;
+    .local v0, ex:Ljava/io/IOException;
     goto :goto_0
 
     .line 552
-    .end local v0    # "ex":Ljava/io/IOException;
-    .restart local v1    # "pfd":Landroid/os/ParcelFileDescriptor;
+    .end local v0           #ex:Ljava/io/IOException;
+    .restart local v1       #pfd:Landroid/os/ParcelFileDescriptor;
     :cond_1
     invoke-virtual {v1}, Landroid/os/ParcelFileDescriptor;->close()V
     :try_end_0
@@ -1416,8 +1419,8 @@
 
 .method public static makeBitmap([BI)Landroid/graphics/Bitmap;
     .locals 6
-    .param p0, "jpegData"    # [B
-    .param p1, "maxNumOfPixels"    # I
+    .parameter "jpegData"
+    .parameter "maxNumOfPixels"
 
     .prologue
     const/4 v2, 0x0
@@ -1431,7 +1434,7 @@
     invoke-direct {v1}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
     .line 220
-    .local v1, "options":Landroid/graphics/BitmapFactory$Options;
+    .local v1, options:Landroid/graphics/BitmapFactory$Options;
     const/4 v3, 0x1
 
     iput-boolean v3, v1, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
@@ -1457,13 +1460,13 @@
     if-ne v3, v5, :cond_1
 
     .line 237
-    .end local v1    # "options":Landroid/graphics/BitmapFactory$Options;
+    .end local v1           #options:Landroid/graphics/BitmapFactory$Options;
     :cond_0
     :goto_0
     return-object v2
 
     .line 227
-    .restart local v1    # "options":Landroid/graphics/BitmapFactory$Options;
+    .restart local v1       #options:Landroid/graphics/BitmapFactory$Options;
     :cond_1
     const/4 v3, -0x1
 
@@ -1502,12 +1505,12 @@
     goto :goto_0
 
     .line 235
-    .end local v1    # "options":Landroid/graphics/BitmapFactory$Options;
+    .end local v1           #options:Landroid/graphics/BitmapFactory$Options;
     :catch_0
     move-exception v0
 
     .line 236
-    .local v0, "ex":Ljava/lang/OutOfMemoryError;
+    .local v0, ex:Ljava/lang/OutOfMemoryError;
     const-string v3, "Util"
 
     const-string v4, "Got oom exception "
@@ -1519,10 +1522,10 @@
 
 .method public static mkdirs(Ljava/io/File;III)Z
     .locals 3
-    .param p0, "file"    # Ljava/io/File;
-    .param p1, "mode"    # I
-    .param p2, "uid"    # I
-    .param p3, "gid"    # I
+    .parameter "file"
+    .parameter "mode"
+    .parameter "uid"
+    .parameter "gid"
 
     .prologue
     const/4 v1, 0x0
@@ -1546,7 +1549,7 @@
     move-result-object v0
 
     .line 765
-    .local v0, "parentDir":Ljava/lang/String;
+    .local v0, parentDir:Ljava/lang/String;
     if-eqz v0, :cond_2
 
     .line 766
@@ -1579,8 +1582,8 @@
 
 .method public static openCamera(Landroid/app/Activity;I)Lcom/android/camera/CameraManager$CameraProxy;
     .locals 4
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "cameraId"    # I
+    .parameter "activity"
+    .parameter "cameraId"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/android/camera/CameraHardwareException;,
@@ -1599,7 +1602,7 @@
     check-cast v0, Landroid/app/admin/DevicePolicyManager;
 
     .line 261
-    .local v0, "dpm":Landroid/app/admin/DevicePolicyManager;
+    .local v0, dpm:Landroid/app/admin/DevicePolicyManager;
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Landroid/app/admin/DevicePolicyManager;->getCameraDisabled(Landroid/content/ComponentName;)Z
@@ -1635,7 +1638,7 @@
     move-exception v1
 
     .line 270
-    .local v1, "e":Lcom/android/camera/CameraHardwareException;
+    .local v1, e:Lcom/android/camera/CameraHardwareException;
     const-string v2, "eng"
 
     sget-object v3, Landroid/os/Build;->TYPE:Ljava/lang/String;
@@ -1662,9 +1665,9 @@
 
 .method public static pointInView(FFLandroid/view/View;)Z
     .locals 5
-    .param p0, "x"    # F
-    .param p1, "y"    # F
-    .param p2, "v"    # Landroid/view/View;
+    .parameter "x"
+    .parameter "y"
+    .parameter "v"
 
     .prologue
     const/4 v1, 0x1
@@ -1677,7 +1680,7 @@
     new-array v0, v3, [I
 
     .line 527
-    .local v0, "location":[I
+    .local v0, location:[I
     invoke-virtual {p2, v0}, Landroid/view/View;->getLocationInWindow([I)V
 
     .line 528
@@ -1736,23 +1739,23 @@
 
 .method public static prepareMatrix(Landroid/graphics/Matrix;ZIIIII)V
     .locals 3
-    .param p0, "matrix"    # Landroid/graphics/Matrix;
-    .param p1, "mirror"    # Z
-    .param p2, "displayOrientation"    # I
-    .param p3, "viewWidth"    # I
-    .param p4, "viewHeight"    # I
-    .param p5, "centerX"    # I
-    .param p6, "centerY"    # I
+    .parameter "matrix"
+    .parameter "mirror"
+    .parameter "displayOrientation"
+    .parameter "viewWidth"
+    .parameter "viewHeight"
+    .parameter "centerX"
+    .parameter "centerY"
 
     .prologue
-    const/high16 v2, 0x44fa0000
+    const/high16 v2, 0x44fa
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f80
 
     .line 597
     if-eqz p1, :cond_0
 
-    const/high16 v0, -0x40800000
+    const/high16 v0, -0x4080
 
     :goto_0
     invoke-virtual {p0, v0, v1}, Landroid/graphics/Matrix;->setScale(FF)V
@@ -1792,8 +1795,8 @@
 
 .method public static rectFToRect(Landroid/graphics/RectF;Landroid/graphics/Rect;)V
     .locals 1
-    .param p0, "rectF"    # Landroid/graphics/RectF;
-    .param p1, "rect"    # Landroid/graphics/Rect;
+    .parameter "rectF"
+    .parameter "rect"
 
     .prologue
     .line 582
@@ -1838,8 +1841,8 @@
 
 .method public static rotate(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
     .locals 1
-    .param p0, "b"    # Landroid/graphics/Bitmap;
-    .param p1, "degrees"    # I
+    .parameter "b"
+    .parameter "degrees"
 
     .prologue
     .line 114
@@ -1854,12 +1857,12 @@
 
 .method public static rotateAndMirror(Landroid/graphics/Bitmap;IZ)Landroid/graphics/Bitmap;
     .locals 8
-    .param p0, "b"    # Landroid/graphics/Bitmap;
-    .param p1, "degrees"    # I
-    .param p2, "mirror"    # Z
+    .parameter "b"
+    .parameter "degrees"
+    .parameter "mirror"
 
     .prologue
-    const/high16 v3, 0x40000000
+    const/high16 v3, 0x4000
 
     const/4 v2, 0x0
 
@@ -1877,13 +1880,13 @@
     invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
 
     .line 124
-    .local v5, "m":Landroid/graphics/Matrix;
+    .local v5, m:Landroid/graphics/Matrix;
     if-eqz p2, :cond_2
 
     .line 125
-    const/high16 v0, -0x40800000
+    const/high16 v0, -0x4080
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f80
 
     invoke-virtual {v5, v0, v1}, Landroid/graphics/Matrix;->postScale(FF)Z
 
@@ -1959,7 +1962,7 @@
     move-result-object v7
 
     .line 144
-    .local v7, "b2":Landroid/graphics/Bitmap;
+    .local v7, b2:Landroid/graphics/Bitmap;
     if-eq p0, v7, :cond_4
 
     .line 145
@@ -1971,14 +1974,14 @@
     move-object p0, v7
 
     .line 152
-    .end local v5    # "m":Landroid/graphics/Matrix;
-    .end local v7    # "b2":Landroid/graphics/Bitmap;
+    .end local v5           #m:Landroid/graphics/Matrix;
+    .end local v7           #b2:Landroid/graphics/Bitmap;
     :cond_4
     :goto_1
     return-object p0
 
     .line 129
-    .restart local v5    # "m":Landroid/graphics/Matrix;
+    .restart local v5       #m:Landroid/graphics/Matrix;
     :cond_5
     const/16 v0, 0x5a
 
@@ -2035,15 +2038,15 @@
 
 .method public static roundOrientation(II)I
     .locals 3
-    .param p0, "orientation"    # I
-    .param p1, "orientationHistory"    # I
+    .parameter "orientation"
+    .parameter "orientationHistory"
 
     .prologue
     .line 360
     const/4 v0, 0x0
 
     .line 361
-    .local v0, "changeOrientation":Z
+    .local v0, changeOrientation:Z
     const/4 v2, -0x1
 
     if-ne p1, v2, :cond_1
@@ -2065,12 +2068,12 @@
     rem-int/lit16 p1, v2, 0x168
 
     .line 371
-    .end local p1    # "orientationHistory":I
+    .end local p1
     :cond_0
     return p1
 
     .line 364
-    .restart local p1    # "orientationHistory":I
+    .restart local p1
     :cond_1
     sub-int v2, p0, p1
 
@@ -2079,7 +2082,7 @@
     move-result v1
 
     .line 365
-    .local v1, "dist":I
+    .local v1, dist:I
     rsub-int v2, v1, 0x168
 
     invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
@@ -2104,8 +2107,8 @@
 
 .method public static setGpsParameters(Landroid/hardware/Camera$Parameters;Landroid/location/Location;)V
     .locals 13
-    .param p0, "parameters"    # Landroid/hardware/Camera$Parameters;
-    .param p1, "loc"    # Landroid/location/Location;
+    .parameter "parameters"
+    .parameter "loc"
 
     .prologue
     const-wide/16 v11, 0x3e8
@@ -2133,13 +2136,13 @@
     move-result-wide v1
 
     .line 669
-    .local v1, "lat":D
+    .local v1, lat:D
     invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
 
     move-result-wide v3
 
     .line 670
-    .local v3, "lon":D
+    .local v3, lon:D
     cmpl-double v7, v1, v9
 
     if-nez v7, :cond_0
@@ -2152,7 +2155,7 @@
     const/4 v0, 0x1
 
     .line 672
-    .local v0, "hasLatLon":Z
+    .local v0, hasLatLon:Z
     :goto_0
     if-eqz v0, :cond_4
 
@@ -2214,28 +2217,28 @@
     div-long v5, v7, v11
 
     .line 689
-    .local v5, "utcTimeSeconds":J
+    .local v5, utcTimeSeconds:J
     invoke-virtual {p0, v5, v6}, Landroid/hardware/Camera$Parameters;->setGpsTimestamp(J)V
 
     .line 695
-    .end local v0    # "hasLatLon":Z
-    .end local v1    # "lat":D
-    .end local v3    # "lon":D
-    .end local v5    # "utcTimeSeconds":J
+    .end local v0           #hasLatLon:Z
+    .end local v1           #lat:D
+    .end local v3           #lon:D
+    .end local v5           #utcTimeSeconds:J
     :cond_1
     :goto_2
     return-void
 
     .line 670
-    .restart local v1    # "lat":D
-    .restart local v3    # "lon":D
+    .restart local v1       #lat:D
+    .restart local v3       #lon:D
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_0
 
     .line 683
-    .restart local v0    # "hasLatLon":Z
+    .restart local v0       #hasLatLon:Z
     :cond_3
     invoke-virtual {p0, v9, v10}, Landroid/hardware/Camera$Parameters;->setGpsAltitude(D)V
 
@@ -2250,16 +2253,16 @@
 
 .method public static setRotationParameter(Landroid/hardware/Camera$Parameters;II)V
     .locals 4
-    .param p0, "parameters"    # Landroid/hardware/Camera$Parameters;
-    .param p1, "cameraId"    # I
-    .param p2, "orientation"    # I
+    .parameter "parameters"
+    .parameter "cameraId"
+    .parameter "orientation"
 
     .prologue
     .line 700
     const/4 v1, 0x0
 
     .line 701
-    .local v1, "rotation":I
+    .local v1, rotation:I
     const/4 v2, -0x1
 
     if-eq p2, v2, :cond_0
@@ -2276,7 +2279,7 @@
     aget-object v0, v2, p1
 
     .line 703
-    .local v0, "info":Landroid/hardware/Camera$CameraInfo;
+    .local v0, info:Landroid/hardware/Camera$CameraInfo;
     iget v2, v0, Landroid/hardware/Camera$CameraInfo;->facing:I
 
     const/4 v3, 0x1
@@ -2293,7 +2296,7 @@
     rem-int/lit16 v1, v2, 0x168
 
     .line 709
-    .end local v0    # "info":Landroid/hardware/Camera$CameraInfo;
+    .end local v0           #info:Landroid/hardware/Camera$CameraInfo;
     :cond_0
     :goto_0
     invoke-virtual {p0, v1}, Landroid/hardware/Camera$Parameters;->setRotation(I)V
@@ -2302,7 +2305,7 @@
     return-void
 
     .line 706
-    .restart local v0    # "info":Landroid/hardware/Camera$CameraInfo;
+    .restart local v0       #info:Landroid/hardware/Camera$CameraInfo;
     :cond_1
     iget v2, v0, Landroid/hardware/Camera$CameraInfo;->orientation:I
 
@@ -2315,8 +2318,8 @@
 
 .method public static showErrorAndFinish(Landroid/app/Activity;I)V
     .locals 3
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "msgId"    # I
+    .parameter "activity"
+    .parameter "msgId"
 
     .prologue
     .line 279
@@ -2325,7 +2328,7 @@
     invoke-direct {v0, p0}, Lcom/android/camera/Util$1;-><init>(Landroid/app/Activity;)V
 
     .line 286
-    .local v0, "buttonListener":Landroid/content/DialogInterface$OnClickListener;
+    .local v0, buttonListener:Landroid/content/DialogInterface$OnClickListener;
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -2342,7 +2345,7 @@
 
     move-result-object v1
 
-    const/high16 v2, 0x7f0d0000
+    const/high16 v2, 0x7f0d
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 

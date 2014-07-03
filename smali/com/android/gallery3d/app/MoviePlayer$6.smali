@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/MoviePlayer;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 155
@@ -38,13 +39,13 @@
 # virtual methods
 .method public onSystemUiVisibilityChange(I)V
     .locals 5
-    .param p1, "visibility"    # I
+    .parameter "visibility"
 
     .prologue
     .line 158
     iget-object v1, p0, Lcom/android/gallery3d/app/MoviePlayer$6;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    # getter for: Lcom/android/gallery3d/app/MoviePlayer;->mLastSystemUiVis:I
+    #getter for: Lcom/android/gallery3d/app/MoviePlayer;->mLastSystemUiVis:I
     invoke-static {v1}, Lcom/android/gallery3d/app/MoviePlayer;->access$700(Lcom/android/gallery3d/app/MoviePlayer;)I
 
     move-result v1
@@ -52,10 +53,10 @@
     xor-int v0, v1, p1
 
     .line 159
-    .local v0, "diff":I
+    .local v0, diff:I
     iget-object v1, p0, Lcom/android/gallery3d/app/MoviePlayer$6;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    # setter for: Lcom/android/gallery3d/app/MoviePlayer;->mLastSystemUiVis:I
+    #setter for: Lcom/android/gallery3d/app/MoviePlayer;->mLastSystemUiVis:I
     invoke-static {v1, p1}, Lcom/android/gallery3d/app/MoviePlayer;->access$702(Lcom/android/gallery3d/app/MoviePlayer;I)I
 
     .line 160
@@ -70,7 +71,7 @@
     .line 162
     iget-object v1, p0, Lcom/android/gallery3d/app/MoviePlayer$6;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    # getter for: Lcom/android/gallery3d/app/MoviePlayer;->mController:Lcom/android/gallery3d/app/MovieControllerOverlay;
+    #getter for: Lcom/android/gallery3d/app/MoviePlayer;->mController:Lcom/android/gallery3d/app/MovieControllerOverlay;
     invoke-static {v1}, Lcom/android/gallery3d/app/MoviePlayer;->access$100(Lcom/android/gallery3d/app/MoviePlayer;)Lcom/android/gallery3d/app/MovieControllerOverlay;
 
     move-result-object v1
@@ -80,14 +81,14 @@
     .line 169
     iget-object v1, p0, Lcom/android/gallery3d/app/MoviePlayer$6;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    # getter for: Lcom/android/gallery3d/app/MoviePlayer;->mHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/gallery3d/app/MoviePlayer;->mHandler:Landroid/os/Handler;
     invoke-static {v1}, Lcom/android/gallery3d/app/MoviePlayer;->access$300(Lcom/android/gallery3d/app/MoviePlayer;)Landroid/os/Handler;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/gallery3d/app/MoviePlayer$6;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    # getter for: Lcom/android/gallery3d/app/MoviePlayer;->mRemoveBackground:Ljava/lang/Runnable;
+    #getter for: Lcom/android/gallery3d/app/MoviePlayer;->mRemoveBackground:Ljava/lang/Runnable;
     invoke-static {v2}, Lcom/android/gallery3d/app/MoviePlayer;->access$800(Lcom/android/gallery3d/app/MoviePlayer;)Ljava/lang/Runnable;
 
     move-result-object v2
@@ -97,12 +98,12 @@
     .line 170
     iget-object v1, p0, Lcom/android/gallery3d/app/MoviePlayer$6;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    # getter for: Lcom/android/gallery3d/app/MoviePlayer;->mRootView:Landroid/view/View;
+    #getter for: Lcom/android/gallery3d/app/MoviePlayer;->mRootView:Landroid/view/View;
     invoke-static {v1}, Lcom/android/gallery3d/app/MoviePlayer;->access$400(Lcom/android/gallery3d/app/MoviePlayer;)Landroid/view/View;
 
     move-result-object v1
 
-    const/high16 v2, -0x1000000
+    const/high16 v2, -0x100
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
@@ -114,14 +115,14 @@
     :cond_0
     iget-object v1, p0, Lcom/android/gallery3d/app/MoviePlayer$6;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    # getter for: Lcom/android/gallery3d/app/MoviePlayer;->mHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/gallery3d/app/MoviePlayer;->mHandler:Landroid/os/Handler;
     invoke-static {v1}, Lcom/android/gallery3d/app/MoviePlayer;->access$300(Lcom/android/gallery3d/app/MoviePlayer;)Landroid/os/Handler;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/gallery3d/app/MoviePlayer$6;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    # getter for: Lcom/android/gallery3d/app/MoviePlayer;->mRemoveBackground:Ljava/lang/Runnable;
+    #getter for: Lcom/android/gallery3d/app/MoviePlayer;->mRemoveBackground:Ljava/lang/Runnable;
     invoke-static {v2}, Lcom/android/gallery3d/app/MoviePlayer;->access$800(Lcom/android/gallery3d/app/MoviePlayer;)Ljava/lang/Runnable;
 
     move-result-object v2
@@ -131,14 +132,14 @@
     .line 175
     iget-object v1, p0, Lcom/android/gallery3d/app/MoviePlayer$6;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    # getter for: Lcom/android/gallery3d/app/MoviePlayer;->mHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/gallery3d/app/MoviePlayer;->mHandler:Landroid/os/Handler;
     invoke-static {v1}, Lcom/android/gallery3d/app/MoviePlayer;->access$300(Lcom/android/gallery3d/app/MoviePlayer;)Landroid/os/Handler;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/gallery3d/app/MoviePlayer$6;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    # getter for: Lcom/android/gallery3d/app/MoviePlayer;->mRemoveBackground:Ljava/lang/Runnable;
+    #getter for: Lcom/android/gallery3d/app/MoviePlayer;->mRemoveBackground:Ljava/lang/Runnable;
     invoke-static {v2}, Lcom/android/gallery3d/app/MoviePlayer;->access$800(Lcom/android/gallery3d/app/MoviePlayer;)Ljava/lang/Runnable;
 
     move-result-object v2

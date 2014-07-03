@@ -20,8 +20,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     const/4 v4, 0x1
@@ -42,7 +42,7 @@
     move-result-object v0
 
     .line 49
-    .local v0, "a":Landroid/content/res/TypedArray;
+    .local v0, a:Landroid/content/res/TypedArray;
     invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v3
@@ -59,13 +59,13 @@
     const/4 v1, 0x1
 
     .line 58
-    .local v1, "attrDefaultValue":I
+    .local v1, attrDefaultValue:I
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->peekValue(I)Landroid/util/TypedValue;
 
     move-result-object v2
 
     .line 59
-    .local v2, "tv":Landroid/util/TypedValue;
+    .local v2, tv:Landroid/util/TypedValue;
     if-eqz v2, :cond_0
 
     iget v3, v2, Landroid/util/TypedValue;->type:I
@@ -129,7 +129,7 @@
     .line 103
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     iget-object v2, p0, Lcom/android/camera/ListPreference;->mDefaultValues:[Ljava/lang/CharSequence;
 
@@ -140,7 +140,7 @@
     .line 104
     const/4 v1, 0x0
 
-    .local v1, "j":I
+    .local v1, j:I
     :goto_1
     iget-object v2, p0, Lcom/android/camera/ListPreference;->mEntryValues:[Ljava/lang/CharSequence;
 
@@ -173,12 +173,12 @@
     move-result-object v2
 
     .line 112
-    .end local v1    # "j":I
+    .end local v1           #j:I
     :goto_2
     return-object v2
 
     .line 104
-    .restart local v1    # "j":I
+    .restart local v1       #j:I
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
@@ -191,7 +191,7 @@
     goto :goto_0
 
     .line 112
-    .end local v1    # "j":I
+    .end local v1           #j:I
     :cond_2
     const/4 v2, 0x0
 
@@ -202,6 +202,7 @@
 # virtual methods
 .method public filterUnsupported(Ljava/util/List;)V
     .locals 6
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -214,27 +215,27 @@
 
     .prologue
     .line 148
-    .local p1, "supported":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .local p1, supported:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 149
-    .local v0, "entries":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
+    .local v0, entries:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 150
-    .local v1, "entryValues":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
+    .local v1, entryValues:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/CharSequence;>;"
     const/4 v2, 0x0
 
-    .local v2, "i":I
+    .local v2, i:I
     iget-object v5, p0, Lcom/android/camera/ListPreference;->mEntryValues:[Ljava/lang/CharSequence;
 
     array-length v3, v5
 
-    .local v3, "len":I
+    .local v3, len:I
     :goto_0
     if-ge v2, v3, :cond_1
 
@@ -280,7 +281,7 @@
     move-result v4
 
     .line 157
-    .local v4, "size":I
+    .local v4, size:I
     new-array v5, v4, [Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
@@ -308,18 +309,18 @@
 
 .method public findIndexOfValue(Ljava/lang/String;)I
     .locals 3
-    .param p1, "value"    # Ljava/lang/String;
+    .parameter "value"
 
     .prologue
     .line 126
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     iget-object v2, p0, Lcom/android/camera/ListPreference;->mEntryValues:[Ljava/lang/CharSequence;
 
     array-length v1, v2
 
-    .local v1, "n":I
+    .local v1, n:I
     :goto_0
     if-ge v0, v1, :cond_1
 
@@ -335,12 +336,12 @@
     if-eqz v2, :cond_0
 
     .line 129
-    .end local v0    # "i":I
+    .end local v0           #i:I
     :goto_1
     return v0
 
     .line 126
-    .restart local v0    # "i":I
+    .restart local v0       #i:I
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
@@ -423,7 +424,7 @@
 
 .method protected persistStringValue(Ljava/lang/String;)V
     .locals 2
-    .param p1, "value"    # Ljava/lang/String;
+    .parameter "value"
 
     .prologue
     .line 137
@@ -436,7 +437,7 @@
     move-result-object v0
 
     .line 138
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
+    .local v0, editor:Landroid/content/SharedPreferences$Editor;
     iget-object v1, p0, Lcom/android/camera/ListPreference;->mKey:Ljava/lang/String;
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
@@ -496,7 +497,7 @@
     .line 163
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     iget-object v1, p0, Lcom/android/camera/ListPreference;->mEntryValues:[Ljava/lang/CharSequence;
 
@@ -566,7 +567,7 @@
 
 .method public setEntries([Ljava/lang/CharSequence;)V
     .locals 1
-    .param p1, "entries"    # [Ljava/lang/CharSequence;
+    .parameter "entries"
 
     .prologue
     .line 85
@@ -576,7 +577,7 @@
 
     new-array p1, v0, [Ljava/lang/CharSequence;
 
-    .end local p1    # "entries":[Ljava/lang/CharSequence;
+    .end local p1
     :cond_0
     iput-object p1, p0, Lcom/android/camera/ListPreference;->mEntries:[Ljava/lang/CharSequence;
 
@@ -586,7 +587,7 @@
 
 .method public setEntryValues([Ljava/lang/CharSequence;)V
     .locals 1
-    .param p1, "values"    # [Ljava/lang/CharSequence;
+    .parameter "values"
 
     .prologue
     .line 89
@@ -596,7 +597,7 @@
 
     new-array p1, v0, [Ljava/lang/CharSequence;
 
-    .end local p1    # "values":[Ljava/lang/CharSequence;
+    .end local p1
     :cond_0
     iput-object p1, p0, Lcom/android/camera/ListPreference;->mEntryValues:[Ljava/lang/CharSequence;
 
@@ -606,7 +607,7 @@
 
 .method public setValue(Ljava/lang/String;)V
     .locals 1
-    .param p1, "value"    # Ljava/lang/String;
+    .parameter "value"
 
     .prologue
     .line 116
@@ -635,7 +636,7 @@
 
 .method public setValueIndex(I)V
     .locals 1
-    .param p1, "index"    # I
+    .parameter "index"
 
     .prologue
     .line 122

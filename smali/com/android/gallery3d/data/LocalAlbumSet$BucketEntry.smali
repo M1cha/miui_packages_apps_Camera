@@ -23,8 +23,8 @@
 # direct methods
 .method public constructor <init>(ILjava/lang/String;)V
     .locals 1
-    .param p1, "id"    # I
-    .param p2, "name"    # Ljava/lang/String;
+    .parameter "id"
+    .parameter "name"
 
     .prologue
     .line 315
@@ -48,7 +48,7 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "object"    # Ljava/lang/Object;
+    .parameter "object"
 
     .prologue
     const/4 v1, 0x0
@@ -70,7 +70,7 @@
     check-cast v0, Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;
 
     .line 329
-    .local v0, "entry":Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;
+    .local v0, entry:Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;
     iget v2, p0, Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;->bucketId:I
 
     iget v3, v0, Lcom/android/gallery3d/data/LocalAlbumSet$BucketEntry;->bucketId:I

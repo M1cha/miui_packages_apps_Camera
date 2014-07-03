@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Landroid/app/Activity;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 280
@@ -38,8 +39,8 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
+    .parameter "dialog"
+    .parameter "which"
 
     .prologue
     .line 283

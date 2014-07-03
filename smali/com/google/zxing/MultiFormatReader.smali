@@ -34,7 +34,7 @@
 
 .method private decodeInternal(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
     .locals 5
-    .param p1, "image"    # Lcom/google/zxing/BinaryBitmap;
+    .parameter "image"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -50,20 +50,20 @@
     .line 169
     iget-object v0, p0, Lcom/google/zxing/MultiFormatReader;->readers:[Lcom/google/zxing/Reader;
 
-    .local v0, "arr$":[Lcom/google/zxing/Reader;
+    .local v0, arr$:[Lcom/google/zxing/Reader;
     array-length v2, v0
 
-    .local v2, "len$":I
+    .local v2, len$:I
     const/4 v1, 0x0
 
-    .local v1, "i$":I
+    .local v1, i$:I
     :goto_0
     if-ge v1, v2, :cond_0
 
     aget-object v3, v0, v1
 
     .line 171
-    .local v3, "reader":Lcom/google/zxing/Reader;
+    .local v3, reader:Lcom/google/zxing/Reader;
     :try_start_0
     iget-object v4, p0, Lcom/google/zxing/MultiFormatReader;->hints:Ljava/util/Map;
 
@@ -85,10 +85,10 @@
     goto :goto_0
 
     .line 177
-    .end local v0    # "arr$":[Lcom/google/zxing/Reader;
-    .end local v1    # "i$":I
-    .end local v2    # "len$":I
-    .end local v3    # "reader":Lcom/google/zxing/Reader;
+    .end local v0           #arr$:[Lcom/google/zxing/Reader;
+    .end local v1           #i$:I
+    .end local v2           #len$:I
+    .end local v3           #reader:Lcom/google/zxing/Reader;
     :cond_0
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 
@@ -101,7 +101,8 @@
 # virtual methods
 .method public decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 1
-    .param p1, "image"    # Lcom/google/zxing/BinaryBitmap;
+    .parameter "image"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -122,7 +123,7 @@
 
     .prologue
     .line 68
-    .local p2, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p2, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     invoke-virtual {p0, p2}, Lcom/google/zxing/MultiFormatReader;->setHints(Ljava/util/Map;)V
 
     .line 69
@@ -135,7 +136,7 @@
 
 .method public decodeWithState(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
     .locals 1
-    .param p1, "image"    # Lcom/google/zxing/BinaryBitmap;
+    .parameter "image"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -174,20 +175,20 @@
     .line 161
     iget-object v0, p0, Lcom/google/zxing/MultiFormatReader;->readers:[Lcom/google/zxing/Reader;
 
-    .local v0, "arr$":[Lcom/google/zxing/Reader;
+    .local v0, arr$:[Lcom/google/zxing/Reader;
     array-length v2, v0
 
-    .local v2, "len$":I
+    .local v2, len$:I
     const/4 v1, 0x0
 
-    .local v1, "i$":I
+    .local v1, i$:I
     :goto_0
     if-ge v1, v2, :cond_0
 
     aget-object v3, v0, v1
 
     .line 162
-    .local v3, "reader":Lcom/google/zxing/Reader;
+    .local v3, reader:Lcom/google/zxing/Reader;
     invoke-interface {v3}, Lcom/google/zxing/Reader;->reset()V
 
     .line 161
@@ -196,16 +197,17 @@
     goto :goto_0
 
     .line 165
-    .end local v0    # "arr$":[Lcom/google/zxing/Reader;
-    .end local v1    # "i$":I
-    .end local v2    # "len$":I
-    .end local v3    # "reader":Lcom/google/zxing/Reader;
+    .end local v0           #arr$:[Lcom/google/zxing/Reader;
+    .end local v1           #i$:I
+    .end local v2           #len$:I
+    .end local v3           #reader:Lcom/google/zxing/Reader;
     :cond_0
     return-void
 .end method
 
 .method public setHints(Ljava/util/Map;)V
     .locals 6
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -217,7 +219,7 @@
     .end annotation
 
     .prologue
-    .local p1, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p1, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     const/4 v5, 0x1
 
     const/4 v0, 0x0
@@ -239,21 +241,21 @@
     move v3, v5
 
     .line 100
-    .local v3, "tryHarder":Z
+    .local v3, tryHarder:Z
     :goto_0
     if-nez p1, :cond_c
 
     const/4 v1, 0x0
 
     .line 102
-    .local v1, "formats":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/google/zxing/BarcodeFormat;>;"
+    .local v1, formats:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/zxing/BarcodeFormat;>;"
     :goto_1
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     .line 103
-    .local v2, "readers":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/google/zxing/Reader;>;"
+    .local v2, readers:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/zxing/Reader;>;"
     if-eqz v1, :cond_8
 
     .line 104
@@ -349,7 +351,7 @@
     move v0, v5
 
     .line 117
-    .local v0, "addOneDReader":Z
+    .local v0, addOneDReader:Z
     :cond_1
     if-eqz v0, :cond_2
 
@@ -461,7 +463,7 @@
     invoke-interface {v2, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     .line 140
-    .end local v0    # "addOneDReader":Z
+    .end local v0           #addOneDReader:Z
     :cond_8
     invoke-interface {v2}, Ljava/util/Collection;->isEmpty()Z
 
@@ -544,9 +546,9 @@
     .line 156
     return-void
 
-    .end local v1    # "formats":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/google/zxing/BarcodeFormat;>;"
-    .end local v2    # "readers":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/google/zxing/Reader;>;"
-    .end local v3    # "tryHarder":Z
+    .end local v1           #formats:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/zxing/BarcodeFormat;>;"
+    .end local v2           #readers:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/zxing/Reader;>;"
+    .end local v3           #tryHarder:Z
     :cond_b
     move v3, v0
 
@@ -554,7 +556,7 @@
     goto/16 :goto_0
 
     .line 100
-    .restart local v3    # "tryHarder":Z
+    .restart local v3       #tryHarder:Z
     :cond_c
     sget-object v4, Lcom/google/zxing/DecodeHintType;->POSSIBLE_FORMATS:Lcom/google/zxing/DecodeHintType;
 

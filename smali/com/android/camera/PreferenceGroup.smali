@@ -19,8 +19,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 33
@@ -41,7 +41,7 @@
 # virtual methods
 .method public addChild(Lcom/android/camera/CameraPreference;)V
     .locals 1
-    .param p1, "child"    # Lcom/android/camera/CameraPreference;
+    .parameter "child"
 
     .prologue
     .line 37
@@ -55,7 +55,7 @@
 
 .method public findPreference(Ljava/lang/String;)Lcom/android/camera/ListPreference;
     .locals 4
-    .param p1, "key"    # Ljava/lang/String;
+    .parameter "key"
 
     .prologue
     .line 67
@@ -65,7 +65,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -80,7 +80,7 @@
     check-cast v2, Lcom/android/camera/CameraPreference;
 
     .line 68
-    .local v2, "pref":Lcom/android/camera/CameraPreference;
+    .local v2, pref:Lcom/android/camera/CameraPreference;
     instance-of v3, v2, Lcom/android/camera/ListPreference;
 
     if-eqz v3, :cond_1
@@ -91,7 +91,7 @@
     check-cast v1, Lcom/android/camera/ListPreference;
 
     .line 70
-    .local v1, "listPref":Lcom/android/camera/ListPreference;
+    .local v1, listPref:Lcom/android/camera/ListPreference;
     invoke-virtual {v1}, Lcom/android/camera/ListPreference;->getKey()Ljava/lang/String;
 
     move-result-object v3
@@ -103,13 +103,13 @@
     if-eqz v3, :cond_0
 
     .line 77
-    .end local v1    # "listPref":Lcom/android/camera/ListPreference;
-    .end local v2    # "pref":Lcom/android/camera/CameraPreference;
+    .end local v1           #listPref:Lcom/android/camera/ListPreference;
+    .end local v2           #pref:Lcom/android/camera/CameraPreference;
     :goto_0
     return-object v1
 
     .line 71
-    .restart local v2    # "pref":Lcom/android/camera/CameraPreference;
+    .restart local v2       #pref:Lcom/android/camera/CameraPreference;
     :cond_1
     instance-of v3, v2, Lcom/android/camera/PreferenceGroup;
 
@@ -118,19 +118,19 @@
     .line 72
     check-cast v2, Lcom/android/camera/PreferenceGroup;
 
-    .end local v2    # "pref":Lcom/android/camera/CameraPreference;
+    .end local v2           #pref:Lcom/android/camera/CameraPreference;
     invoke-virtual {v2, p1}, Lcom/android/camera/PreferenceGroup;->findPreference(Ljava/lang/String;)Lcom/android/camera/ListPreference;
 
     move-result-object v1
 
     .line 74
-    .restart local v1    # "listPref":Lcom/android/camera/ListPreference;
+    .restart local v1       #listPref:Lcom/android/camera/ListPreference;
     if-eqz v1, :cond_0
 
     goto :goto_0
 
     .line 77
-    .end local v1    # "listPref":Lcom/android/camera/ListPreference;
+    .end local v1           #listPref:Lcom/android/camera/ListPreference;
     :cond_2
     const/4 v1, 0x0
 
@@ -139,7 +139,7 @@
 
 .method public get(I)Lcom/android/camera/CameraPreference;
     .locals 1
-    .param p1, "index"    # I
+    .parameter "index"
 
     .prologue
     .line 45
@@ -165,7 +165,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -180,20 +180,20 @@
     check-cast v1, Lcom/android/camera/CameraPreference;
 
     .line 55
-    .local v1, "pref":Lcom/android/camera/CameraPreference;
+    .local v1, pref:Lcom/android/camera/CameraPreference;
     invoke-virtual {v1}, Lcom/android/camera/CameraPreference;->reloadValue()V
 
     goto :goto_0
 
     .line 57
-    .end local v1    # "pref":Lcom/android/camera/CameraPreference;
+    .end local v1           #pref:Lcom/android/camera/CameraPreference;
     :cond_0
     return-void
 .end method
 
 .method public removePreference(I)V
     .locals 1
-    .param p1, "index"    # I
+    .parameter "index"
 
     .prologue
     .line 41

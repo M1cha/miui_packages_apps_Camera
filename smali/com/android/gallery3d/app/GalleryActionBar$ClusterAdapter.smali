@@ -21,6 +21,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/gallery3d/app/GalleryActionBar;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 91
@@ -33,8 +34,8 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/app/GalleryActionBar;Lcom/android/gallery3d/app/GalleryActionBar$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/app/GalleryActionBar;
-    .param p2, "x1"    # Lcom/android/gallery3d/app/GalleryActionBar$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 91
@@ -50,7 +51,6 @@
 
     .prologue
     .line 94
-    # getter for: Lcom/android/gallery3d/app/GalleryActionBar;->sClusterItems:[Lcom/android/gallery3d/app/GalleryActionBar$ActionItem;
     invoke-static {}, Lcom/android/gallery3d/app/GalleryActionBar;->access$100()[Lcom/android/gallery3d/app/GalleryActionBar$ActionItem;
 
     move-result-object v0
@@ -62,11 +62,10 @@
 
 .method public getItem(I)Ljava/lang/Object;
     .locals 1
-    .param p1, "position"    # I
+    .parameter "position"
 
     .prologue
     .line 98
-    # getter for: Lcom/android/gallery3d/app/GalleryActionBar;->sClusterItems:[Lcom/android/gallery3d/app/GalleryActionBar$ActionItem;
     invoke-static {}, Lcom/android/gallery3d/app/GalleryActionBar;->access$100()[Lcom/android/gallery3d/app/GalleryActionBar$ActionItem;
 
     move-result-object v0
@@ -78,11 +77,10 @@
 
 .method public getItemId(I)J
     .locals 2
-    .param p1, "position"    # I
+    .parameter "position"
 
     .prologue
     .line 102
-    # getter for: Lcom/android/gallery3d/app/GalleryActionBar;->sClusterItems:[Lcom/android/gallery3d/app/GalleryActionBar$ActionItem;
     invoke-static {}, Lcom/android/gallery3d/app/GalleryActionBar;->access$100()[Lcom/android/gallery3d/app/GalleryActionBar$ActionItem;
 
     move-result-object v0
@@ -98,9 +96,9 @@
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 4
-    .param p1, "position"    # I
-    .param p2, "convertView"    # Landroid/view/View;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
+    .parameter "position"
+    .parameter "convertView"
+    .parameter "parent"
 
     .prologue
     .line 106
@@ -109,12 +107,12 @@
     .line 107
     iget-object v1, p0, Lcom/android/gallery3d/app/GalleryActionBar$ClusterAdapter;->this$0:Lcom/android/gallery3d/app/GalleryActionBar;
 
-    # getter for: Lcom/android/gallery3d/app/GalleryActionBar;->mInflater:Landroid/view/LayoutInflater;
+    #getter for: Lcom/android/gallery3d/app/GalleryActionBar;->mInflater:Landroid/view/LayoutInflater;
     invoke-static {v1}, Lcom/android/gallery3d/app/GalleryActionBar;->access$200(Lcom/android/gallery3d/app/GalleryActionBar;)Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    const/high16 v2, 0x7f040000
+    const/high16 v2, 0x7f04
 
     const/4 v3, 0x0
 
@@ -129,8 +127,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 111
-    .local v0, "view":Landroid/widget/TextView;
-    # getter for: Lcom/android/gallery3d/app/GalleryActionBar;->sClusterItems:[Lcom/android/gallery3d/app/GalleryActionBar$ActionItem;
+    .local v0, view:Landroid/widget/TextView;
     invoke-static {}, Lcom/android/gallery3d/app/GalleryActionBar;->access$100()[Lcom/android/gallery3d/app/GalleryActionBar$ActionItem;
 
     move-result-object v1

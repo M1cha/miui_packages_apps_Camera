@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/MoviePlayer;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 131
@@ -38,14 +39,14 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
+    .parameter "v"
+    .parameter "event"
 
     .prologue
     .line 134
     iget-object v0, p0, Lcom/android/gallery3d/app/MoviePlayer$4;->this$0:Lcom/android/gallery3d/app/MoviePlayer;
 
-    # getter for: Lcom/android/gallery3d/app/MoviePlayer;->mController:Lcom/android/gallery3d/app/MovieControllerOverlay;
+    #getter for: Lcom/android/gallery3d/app/MoviePlayer;->mController:Lcom/android/gallery3d/app/MovieControllerOverlay;
     invoke-static {v0}, Lcom/android/gallery3d/app/MoviePlayer;->access$100(Lcom/android/gallery3d/app/MoviePlayer;)Lcom/android/gallery3d/app/MovieControllerOverlay;
 
     move-result-object v0

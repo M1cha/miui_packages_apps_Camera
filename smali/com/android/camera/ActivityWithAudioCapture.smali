@@ -35,10 +35,10 @@
     nop
 
     :array_0
-    .array-data 4
-        0x7f020045
-        0x7f020046
-        0x7f020047
+    .array-data 0x4
+        0x45t 0x0t 0x2t 0x7ft
+        0x46t 0x0t 0x2t 0x7ft
+        0x47t 0x0t 0x2t 0x7ft
     .end array-data
 .end method
 
@@ -137,7 +137,7 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 1
-    .param p1, "icicle"    # Landroid/os/Bundle;
+    .parameter "icicle"
 
     .prologue
     .line 30
@@ -156,8 +156,8 @@
 
 .method public onIndicatorClick(Landroid/view/View;Ljava/lang/String;)V
     .locals 2
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "key"    # Ljava/lang/String;
+    .parameter "view"
+    .parameter "key"
 
     .prologue
     const/4 v1, 0x0
@@ -350,7 +350,7 @@
 
 .method public setAudioCaptureICPressed(Z)V
     .locals 3
-    .param p1, "pressed"    # Z
+    .parameter "pressed"
 
     .prologue
     .line 97
@@ -381,7 +381,7 @@
 
 .method protected setDelayStep(I)V
     .locals 2
-    .param p1, "step"    # I
+    .parameter "step"
 
     .prologue
     .line 61

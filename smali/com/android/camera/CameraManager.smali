@@ -68,7 +68,7 @@
     invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
     .line 86
-    .local v0, "ht":Landroid/os/HandlerThread;
+    .local v0, ht:Landroid/os/HandlerThread;
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
     .line 87
@@ -88,7 +88,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/CameraManager;
+    .parameter "x0"
 
     .prologue
     .line 41
@@ -99,8 +99,8 @@
 
 .method static synthetic access$002(Lcom/android/camera/CameraManager;Landroid/hardware/Camera;)Landroid/hardware/Camera;
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/CameraManager;
-    .param p1, "x1"    # Landroid/hardware/Camera;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 41
@@ -111,8 +111,8 @@
 
 .method static synthetic access$102(Lcom/android/camera/CameraManager;Lcom/android/camera/CameraManager$CameraProxy;)Lcom/android/camera/CameraManager$CameraProxy;
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/CameraManager;
-    .param p1, "x1"    # Lcom/android/camera/CameraManager$CameraProxy;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 41
@@ -123,7 +123,7 @@
 
 .method static synthetic access$200(Lcom/android/camera/CameraManager;)Ljava/io/IOException;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/CameraManager;
+    .parameter "x0"
 
     .prologue
     .line 41
@@ -134,8 +134,8 @@
 
 .method static synthetic access$202(Lcom/android/camera/CameraManager;Ljava/io/IOException;)Ljava/io/IOException;
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/CameraManager;
-    .param p1, "x1"    # Ljava/io/IOException;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 41
@@ -146,7 +146,7 @@
 
 .method static synthetic access$300(Lcom/android/camera/CameraManager;)Landroid/hardware/Camera$Parameters;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/CameraManager;
+    .parameter "x0"
 
     .prologue
     .line 41
@@ -157,8 +157,8 @@
 
 .method static synthetic access$302(Lcom/android/camera/CameraManager;Landroid/hardware/Camera$Parameters;)Landroid/hardware/Camera$Parameters;
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/CameraManager;
-    .param p1, "x1"    # Landroid/hardware/Camera$Parameters;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 41
@@ -169,7 +169,7 @@
 
 .method static synthetic access$400(Lcom/android/camera/CameraManager;)Landroid/os/ConditionVariable;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/CameraManager;
+    .parameter "x0"
 
     .prologue
     .line 41
@@ -180,7 +180,7 @@
 
 .method static synthetic access$600(Lcom/android/camera/CameraManager;)Landroid/os/Handler;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/CameraManager;
+    .parameter "x0"
 
     .prologue
     .line 41
@@ -203,7 +203,7 @@
 # virtual methods
 .method cameraOpen(I)Lcom/android/camera/CameraManager$CameraProxy;
     .locals 2
-    .param p1, "cameraId"    # I
+    .parameter "cameraId"
 
     .prologue
     const/4 v0, 0x0

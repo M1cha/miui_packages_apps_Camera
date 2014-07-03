@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/EffectsRecorder;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 838
@@ -38,7 +39,7 @@
 # virtual methods
 .method public onRunnerDone(I)V
     .locals 9
-    .param p1, "result"    # I
+    .parameter "result"
 
     .prologue
     const/4 v8, 0x6
@@ -56,7 +57,7 @@
     :try_start_0
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mLogVerbose:Z
+    #getter for: Lcom/android/camera/EffectsRecorder;->mLogVerbose:Z
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$000(Lcom/android/camera/EffectsRecorder;)Z
 
     move-result v2
@@ -90,7 +91,7 @@
 
     iget-object v5, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mRunner:Landroid/filterfw/core/GraphRunner;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mRunner:Landroid/filterfw/core/GraphRunner;
     invoke-static {v5}, Lcom/android/camera/EffectsRecorder;->access$600(Lcom/android/camera/EffectsRecorder;)Landroid/filterfw/core/GraphRunner;
 
     move-result-object v5
@@ -107,7 +108,7 @@
 
     iget-object v5, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mOldRunner:Landroid/filterfw/core/GraphRunner;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mOldRunner:Landroid/filterfw/core/GraphRunner;
     invoke-static {v5}, Lcom/android/camera/EffectsRecorder;->access$700(Lcom/android/camera/EffectsRecorder;)Landroid/filterfw/core/GraphRunner;
 
     move-result-object v5
@@ -143,10 +144,10 @@
     const/4 v0, 0x0
 
     .line 852
-    .local v0, "e":Ljava/lang/Exception;
+    .local v0, e:Ljava/lang/Exception;
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mRunner:Landroid/filterfw/core/GraphRunner;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mRunner:Landroid/filterfw/core/GraphRunner;
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$600(Lcom/android/camera/EffectsRecorder;)Landroid/filterfw/core/GraphRunner;
 
     move-result-object v2
@@ -156,7 +157,7 @@
     .line 853
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mRunner:Landroid/filterfw/core/GraphRunner;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mRunner:Landroid/filterfw/core/GraphRunner;
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$600(Lcom/android/camera/EffectsRecorder;)Landroid/filterfw/core/GraphRunner;
 
     move-result-object v2
@@ -170,15 +171,15 @@
     :goto_0
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # invokes: Lcom/android/camera/EffectsRecorder;->raiseError(Ljava/lang/Exception;)V
+    #calls: Lcom/android/camera/EffectsRecorder;->raiseError(Ljava/lang/Exception;)V
     invoke-static {v2, v0}, Lcom/android/camera/EffectsRecorder;->access$800(Lcom/android/camera/EffectsRecorder;Ljava/lang/Exception;)V
 
     .line 859
-    .end local v0    # "e":Ljava/lang/Exception;
+    .end local v0           #e:Ljava/lang/Exception;
     :cond_2
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mOldRunner:Landroid/filterfw/core/GraphRunner;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mOldRunner:Landroid/filterfw/core/GraphRunner;
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$700(Lcom/android/camera/EffectsRecorder;)Landroid/filterfw/core/GraphRunner;
 
     move-result-object v2
@@ -188,7 +189,7 @@
     .line 861
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mLogVerbose:Z
+    #getter for: Lcom/android/camera/EffectsRecorder;->mLogVerbose:Z
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$000(Lcom/android/camera/EffectsRecorder;)Z
 
     move-result v2
@@ -205,7 +206,7 @@
     :cond_3
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mGraphEnv:Landroid/filterfw/GraphEnvironment;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mGraphEnv:Landroid/filterfw/GraphEnvironment;
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$900(Lcom/android/camera/EffectsRecorder;)Landroid/filterfw/GraphEnvironment;
 
     move-result-object v2
@@ -219,7 +220,7 @@
     move-result-object v1
 
     .line 863
-    .local v1, "glEnv":Landroid/filterfw/core/GLEnvironment;
+    .local v1, glEnv:Landroid/filterfw/core/GLEnvironment;
     if-eqz v1, :cond_4
 
     invoke-virtual {v1}, Landroid/filterfw/core/GLEnvironment;->isActive()Z
@@ -235,7 +236,7 @@
     :cond_4
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mOldRunner:Landroid/filterfw/core/GraphRunner;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mOldRunner:Landroid/filterfw/core/GraphRunner;
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$700(Lcom/android/camera/EffectsRecorder;)Landroid/filterfw/core/GraphRunner;
 
     move-result-object v2
@@ -246,7 +247,7 @@
 
     iget-object v4, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mGraphEnv:Landroid/filterfw/GraphEnvironment;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mGraphEnv:Landroid/filterfw/GraphEnvironment;
     invoke-static {v4}, Lcom/android/camera/EffectsRecorder;->access$900(Lcom/android/camera/EffectsRecorder;)Landroid/filterfw/GraphEnvironment;
 
     move-result-object v4
@@ -275,15 +276,15 @@
 
     const/4 v4, 0x0
 
-    # setter for: Lcom/android/camera/EffectsRecorder;->mOldRunner:Landroid/filterfw/core/GraphRunner;
+    #setter for: Lcom/android/camera/EffectsRecorder;->mOldRunner:Landroid/filterfw/core/GraphRunner;
     invoke-static {v2, v4}, Lcom/android/camera/EffectsRecorder;->access$702(Lcom/android/camera/EffectsRecorder;Landroid/filterfw/core/GraphRunner;)Landroid/filterfw/core/GraphRunner;
 
     .line 872
-    .end local v1    # "glEnv":Landroid/filterfw/core/GLEnvironment;
+    .end local v1           #glEnv:Landroid/filterfw/core/GLEnvironment;
     :cond_6
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mState:I
+    #getter for: Lcom/android/camera/EffectsRecorder;->mState:I
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$200(Lcom/android/camera/EffectsRecorder;)I
 
     move-result v2
@@ -292,7 +293,7 @@
 
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mState:I
+    #getter for: Lcom/android/camera/EffectsRecorder;->mState:I
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$200(Lcom/android/camera/EffectsRecorder;)I
 
     move-result v2
@@ -303,7 +304,7 @@
     :cond_7
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mLogVerbose:Z
+    #getter for: Lcom/android/camera/EffectsRecorder;->mLogVerbose:Z
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$000(Lcom/android/camera/EffectsRecorder;)Z
 
     move-result v2
@@ -325,7 +326,7 @@
 
     iget-object v5, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mState:I
+    #getter for: Lcom/android/camera/EffectsRecorder;->mState:I
     invoke-static {v5}, Lcom/android/camera/EffectsRecorder;->access$200(Lcom/android/camera/EffectsRecorder;)I
 
     move-result v5
@@ -353,7 +354,7 @@
 
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mCurrentEffect:I
+    #getter for: Lcom/android/camera/EffectsRecorder;->mCurrentEffect:I
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$400(Lcom/android/camera/EffectsRecorder;)I
 
     move-result v2
@@ -367,14 +368,14 @@
 
     const/4 v5, 0x0
 
-    # invokes: Lcom/android/camera/EffectsRecorder;->sendMessage(II)V
+    #calls: Lcom/android/camera/EffectsRecorder;->sendMessage(II)V
     invoke-static {v2, v4, v5}, Lcom/android/camera/EffectsRecorder;->access$500(Lcom/android/camera/EffectsRecorder;II)V
 
     .line 894
     :cond_9
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mRunner:Landroid/filterfw/core/GraphRunner;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mRunner:Landroid/filterfw/core/GraphRunner;
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$600(Lcom/android/camera/EffectsRecorder;)Landroid/filterfw/core/GraphRunner;
 
     move-result-object v2
@@ -390,11 +391,11 @@
     return-void
 
     .line 854
-    .restart local v0    # "e":Ljava/lang/Exception;
+    .restart local v0       #e:Ljava/lang/Exception;
     :cond_b
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mOldRunner:Landroid/filterfw/core/GraphRunner;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mOldRunner:Landroid/filterfw/core/GraphRunner;
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$700(Lcom/android/camera/EffectsRecorder;)Landroid/filterfw/core/GraphRunner;
 
     move-result-object v2
@@ -404,7 +405,7 @@
     .line 855
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mOldRunner:Landroid/filterfw/core/GraphRunner;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mOldRunner:Landroid/filterfw/core/GraphRunner;
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$700(Lcom/android/camera/EffectsRecorder;)Landroid/filterfw/core/GraphRunner;
 
     move-result-object v2
@@ -416,11 +417,11 @@
     goto/16 :goto_0
 
     .line 895
-    .end local v0    # "e":Ljava/lang/Exception;
+    .end local v0           #e:Ljava/lang/Exception;
     :cond_c
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mState:I
+    #getter for: Lcom/android/camera/EffectsRecorder;->mState:I
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$200(Lcom/android/camera/EffectsRecorder;)I
 
     move-result v2
@@ -432,7 +433,7 @@
     .line 897
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$4;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mLogVerbose:Z
+    #getter for: Lcom/android/camera/EffectsRecorder;->mLogVerbose:Z
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$000(Lcom/android/camera/EffectsRecorder;)Z
 
     move-result v2
@@ -460,7 +461,7 @@
 
     const/4 v5, 0x3
 
-    # invokes: Lcom/android/camera/EffectsRecorder;->sendMessage(II)V
+    #calls: Lcom/android/camera/EffectsRecorder;->sendMessage(II)V
     invoke-static {v2, v4, v5}, Lcom/android/camera/EffectsRecorder;->access$500(Lcom/android/camera/EffectsRecorder;II)V
 
     goto :goto_1

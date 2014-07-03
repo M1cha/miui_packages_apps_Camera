@@ -12,7 +12,7 @@
 # direct methods
 .method constructor <init>(Lcom/google/zxing/common/BitArray;)V
     .locals 1
-    .param p1, "information"    # Lcom/google/zxing/common/BitArray;
+    .parameter "information"
 
     .prologue
     .line 41
@@ -34,7 +34,7 @@
 
 .method public static createDecoder(Lcom/google/zxing/common/BitArray;)Lcom/google/zxing/oned/rss/expanded/decoders/AbstractExpandedDecoder;
     .locals 6
-    .param p0, "information"    # Lcom/google/zxing/common/BitArray;
+    .parameter "information"
 
     .prologue
     const/4 v4, 0x1
@@ -81,7 +81,7 @@
     move-result v1
 
     .line 66
-    .local v1, "fourBitEncodationMethod":I
+    .local v1, fourBitEncodationMethod:I
     packed-switch v1, :pswitch_data_0
 
     .line 71
@@ -92,7 +92,7 @@
     move-result v0
 
     .line 72
-    .local v0, "fiveBitEncodationMethod":I
+    .local v0, fiveBitEncodationMethod:I
     packed-switch v0, :pswitch_data_1
 
     .line 77
@@ -103,7 +103,7 @@
     move-result v2
 
     .line 78
-    .local v2, "sevenBitEncodationMethod":I
+    .local v2, sevenBitEncodationMethod:I
     packed-switch v2, :pswitch_data_2
 
     .line 89
@@ -132,8 +132,8 @@
     throw v3
 
     .line 67
-    .end local v0    # "fiveBitEncodationMethod":I
-    .end local v2    # "sevenBitEncodationMethod":I
+    .end local v0           #fiveBitEncodationMethod:I
+    .end local v2           #sevenBitEncodationMethod:I
     :pswitch_0
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013103decoder;
 
@@ -150,7 +150,7 @@
     goto :goto_0
 
     .line 73
-    .restart local v0    # "fiveBitEncodationMethod":I
+    .restart local v0       #fiveBitEncodationMethod:I
     :pswitch_2
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI01392xDecoder;
 
@@ -167,7 +167,7 @@
     goto :goto_0
 
     .line 79
-    .restart local v2    # "sevenBitEncodationMethod":I
+    .restart local v2       #sevenBitEncodationMethod:I
     :pswitch_4
     new-instance v3, Lcom/google/zxing/oned/rss/expanded/decoders/AI013x0x1xDecoder;
 

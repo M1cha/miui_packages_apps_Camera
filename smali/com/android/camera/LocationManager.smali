@@ -67,7 +67,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/LocationManager;)Lcom/android/camera/LocationManager$Listener;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/LocationManager;
+    .parameter "x0"
 
     .prologue
     .line 28
@@ -78,7 +78,7 @@
 
 .method static synthetic access$100(Lcom/android/camera/LocationManager;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/LocationManager;
+    .parameter "x0"
 
     .prologue
     .line 28
@@ -212,7 +212,7 @@
     move-exception v6
 
     .line 100
-    .local v6, "ex":Ljava/lang/SecurityException;
+    .local v6, ex:Ljava/lang/SecurityException;
     const-string v0, "LocationManager"
 
     const-string v1, "fail to request location update, ignore"
@@ -222,12 +222,12 @@
     goto :goto_0
 
     .line 101
-    .end local v6    # "ex":Ljava/lang/SecurityException;
+    .end local v6           #ex:Ljava/lang/SecurityException;
     :catch_1
     move-exception v6
 
     .line 102
-    .local v6, "ex":Ljava/lang/IllegalArgumentException;
+    .local v6, ex:Ljava/lang/IllegalArgumentException;
     const-string v0, "LocationManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -257,12 +257,12 @@
     goto :goto_0
 
     .line 111
-    .end local v6    # "ex":Ljava/lang/IllegalArgumentException;
+    .end local v6           #ex:Ljava/lang/IllegalArgumentException;
     :catch_2
     move-exception v6
 
     .line 112
-    .local v6, "ex":Ljava/lang/SecurityException;
+    .local v6, ex:Ljava/lang/SecurityException;
     const-string v0, "LocationManager"
 
     const-string v1, "fail to request location update, ignore"
@@ -272,12 +272,12 @@
     goto :goto_1
 
     .line 113
-    .end local v6    # "ex":Ljava/lang/SecurityException;
+    .end local v6           #ex:Ljava/lang/SecurityException;
     :catch_3
     move-exception v6
 
     .line 114
-    .local v6, "ex":Ljava/lang/IllegalArgumentException;
+    .local v6, ex:Ljava/lang/IllegalArgumentException;
     const-string v0, "LocationManager"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -319,7 +319,7 @@
     .line 122
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     iget-object v2, p0, Lcom/android/camera/LocationManager;->mLocationListeners:[Lcom/android/camera/LocationManager$LocationListener;
 
@@ -350,7 +350,7 @@
     move-exception v0
 
     .line 126
-    .local v0, "ex":Ljava/lang/Exception;
+    .local v0, ex:Ljava/lang/Exception;
     const-string v2, "LocationManager"
 
     const-string v3, "fail to remove location listners, ignore"
@@ -360,7 +360,7 @@
     goto :goto_1
 
     .line 129
-    .end local v0    # "ex":Ljava/lang/Exception;
+    .end local v0           #ex:Ljava/lang/Exception;
     :cond_0
     const-string v2, "LocationManager"
 
@@ -369,7 +369,7 @@
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 131
-    .end local v1    # "i":I
+    .end local v1           #i:I
     :cond_1
     iget-object v2, p0, Lcom/android/camera/LocationManager;->mListener:Lcom/android/camera/LocationManager$Listener;
 
@@ -408,7 +408,7 @@
     :cond_1
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_1
     iget-object v3, p0, Lcom/android/camera/LocationManager;->mLocationListeners:[Lcom/android/camera/LocationManager$LocationListener;
 
@@ -426,7 +426,7 @@
     move-result-object v1
 
     .line 70
-    .local v1, "l":Landroid/location/Location;
+    .local v1, l:Landroid/location/Location;
     if-nez v1, :cond_0
 
     .line 68
@@ -435,7 +435,7 @@
     goto :goto_1
 
     .line 72
-    .end local v1    # "l":Landroid/location/Location;
+    .end local v1           #l:Landroid/location/Location;
     :cond_2
     const-string v3, "LocationManager"
 
@@ -451,7 +451,7 @@
 
 .method public recordLocation(Z)V
     .locals 1
-    .param p1, "recordLocation"    # Z
+    .parameter "recordLocation"
 
     .prologue
     .line 77

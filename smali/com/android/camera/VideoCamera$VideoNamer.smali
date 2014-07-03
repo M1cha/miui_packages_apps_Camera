@@ -82,7 +82,7 @@
     move-result-object v0
 
     .line 3403
-    .local v0, "videoTable":Landroid/net/Uri;
+    .local v0, videoTable:Landroid/net/Uri;
     iget-object v1, p0, Lcom/android/camera/VideoCamera$VideoNamer;->mResolver:Landroid/content/ContentResolver;
 
     iget-object v2, p0, Lcom/android/camera/VideoCamera$VideoNamer;->mValues:Landroid/content/ContentValues;
@@ -149,8 +149,8 @@
     :try_start_1
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
     :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_0
 
@@ -166,7 +166,7 @@
     iget-object v0, p0, Lcom/android/camera/VideoCamera$VideoNamer;->mUri:Landroid/net/Uri;
 
     .line 3369
-    .local v0, "uri":Landroid/net/Uri;
+    .local v0, uri:Landroid/net/Uri;
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/camera/VideoCamera$VideoNamer;->mUri:Landroid/net/Uri;
@@ -179,7 +179,7 @@
     return-object v0
 
     .line 3361
-    .end local v0    # "uri":Landroid/net/Uri;
+    .end local v0           #uri:Landroid/net/Uri;
     :catchall_0
     move-exception v1
 
@@ -190,8 +190,8 @@
 
 .method public declared-synchronized prepareUri(Landroid/content/ContentResolver;Landroid/content/ContentValues;)V
     .locals 1
-    .param p1, "resolver"    # Landroid/content/ContentResolver;
-    .param p2, "values"    # Landroid/content/ContentValues;
+    .parameter "resolver"
+    .parameter "values"
 
     .prologue
     .line 3352
@@ -267,8 +267,8 @@
     :try_start_2
     invoke-virtual {p0}, Ljava/lang/Object;->wait()V
     :try_end_2
-    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
 
     goto :goto_0
 

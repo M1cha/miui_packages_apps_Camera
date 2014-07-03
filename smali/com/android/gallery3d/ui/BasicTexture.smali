@@ -79,9 +79,9 @@
 
 .method protected constructor <init>(Lcom/android/gallery3d/ui/GLCanvas;II)V
     .locals 3
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
-    .param p2, "id"    # I
-    .param p3, "state"    # I
+    .parameter "canvas"
+    .parameter "id"
+    .parameter "state"
 
     .prologue
     const/4 v1, 0x0
@@ -147,7 +147,7 @@
     iget-object v0, p0, Lcom/android/gallery3d/ui/BasicTexture;->mCanvasRef:Lcom/android/gallery3d/ui/GLCanvas;
 
     .line 163
-    .local v0, "canvas":Lcom/android/gallery3d/ui/GLCanvas;
+    .local v0, canvas:Lcom/android/gallery3d/ui/GLCanvas;
     if-eqz v0, :cond_0
 
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/BasicTexture;->isLoaded()Z
@@ -219,7 +219,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -234,7 +234,7 @@
     check-cast v1, Lcom/android/gallery3d/ui/BasicTexture;
 
     .line 195
-    .local v1, "t":Lcom/android/gallery3d/ui/BasicTexture;
+    .local v1, t:Lcom/android/gallery3d/ui/BasicTexture;
     const/4 v2, 0x0
 
     iput v2, v1, Lcom/android/gallery3d/ui/BasicTexture;->mState:I
@@ -247,7 +247,7 @@
     goto :goto_0
 
     .line 198
-    .end local v1    # "t":Lcom/android/gallery3d/ui/BasicTexture;
+    .end local v1           #t:Lcom/android/gallery3d/ui/BasicTexture;
     :catchall_0
     move-exception v2
 
@@ -288,7 +288,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -303,13 +303,13 @@
     check-cast v1, Lcom/android/gallery3d/ui/BasicTexture;
 
     .line 187
-    .local v1, "t":Lcom/android/gallery3d/ui/BasicTexture;
+    .local v1, t:Lcom/android/gallery3d/ui/BasicTexture;
     invoke-virtual {v1}, Lcom/android/gallery3d/ui/BasicTexture;->yield()V
 
     goto :goto_0
 
     .line 189
-    .end local v1    # "t":Lcom/android/gallery3d/ui/BasicTexture;
+    .end local v1           #t:Lcom/android/gallery3d/ui/BasicTexture;
     :catchall_0
     move-exception v2
 
@@ -333,9 +333,9 @@
 # virtual methods
 .method public draw(Lcom/android/gallery3d/ui/GLCanvas;II)V
     .locals 6
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
-    .param p2, "x"    # I
-    .param p3, "y"    # I
+    .parameter "canvas"
+    .parameter "x"
+    .parameter "y"
 
     .prologue
     .line 128
@@ -363,11 +363,11 @@
 
 .method public draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
     .locals 6
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
-    .param p2, "x"    # I
-    .param p3, "y"    # I
-    .param p4, "w"    # I
-    .param p5, "h"    # I
+    .parameter "canvas"
+    .parameter "x"
+    .parameter "y"
+    .parameter "w"
+    .parameter "h"
 
     .prologue
     .line 132
@@ -513,7 +513,7 @@
 
 .method protected setAssociatedCanvas(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 0
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .parameter "canvas"
 
     .prologue
     .line 68
@@ -525,7 +525,7 @@
 
 .method protected setBorder(Z)V
     .locals 0
-    .param p1, "hasBorder"    # Z
+    .parameter "hasBorder"
 
     .prologue
     .line 124
@@ -537,8 +537,8 @@
 
 .method protected setSize(II)V
     .locals 5
-    .param p1, "width"    # I
-    .param p2, "height"    # I
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     const/16 v1, 0x800

@@ -66,8 +66,8 @@
 
 .method private updateScreenNail(Lcom/android/gallery3d/ui/ScreenNail;Z)V
     .locals 1
-    .param p1, "screenNail"    # Lcom/android/gallery3d/ui/ScreenNail;
-    .param p2, "own"    # Z
+    .parameter "screenNail"
+    .parameter "own"
 
     .prologue
     .line 78
@@ -189,23 +189,23 @@
 
 .method public getTile(IIIIILcom/android/gallery3d/data/BitmapPool;)Landroid/graphics/Bitmap;
     .locals 14
-    .param p1, "level"    # I
-    .param p2, "x"    # I
-    .param p3, "y"    # I
-    .param p4, "tileSize"    # I
-    .param p5, "borderSize"    # I
-    .param p6, "pool"    # Lcom/android/gallery3d/data/BitmapPool;
+    .parameter "level"
+    .parameter "x"
+    .parameter "y"
+    .parameter "tileSize"
+    .parameter "borderSize"
+    .parameter "pool"
 
     .prologue
     .line 111
     shl-int v1, p5, p1
 
     .line 112
-    .local v1, "b":I
+    .local v1, b:I
     shl-int v7, p4, p1
 
     .line 114
-    .local v7, "t":I
+    .local v7, t:I
     new-instance v8, Landroid/graphics/Rect;
 
     sub-int v9, p2, v1
@@ -223,11 +223,11 @@
     invoke-direct {v8, v9, v10, v11, v12}, Landroid/graphics/Rect;-><init>(IIII)V
 
     .line 117
-    .local v8, "wantRegion":Landroid/graphics/Rect;
+    .local v8, wantRegion:Landroid/graphics/Rect;
     const/4 v5, 0x0
 
     .line 119
-    .local v5, "regionDecoder":Landroid/graphics/BitmapRegionDecoder;
+    .local v5, regionDecoder:Landroid/graphics/BitmapRegionDecoder;
     monitor-enter p0
 
     .line 120
@@ -269,7 +269,7 @@
     const/4 v3, 0x1
 
     .line 127
-    .local v3, "needClear":Z
+    .local v3, needClear:Z
     :goto_1
     monitor-exit p0
     :try_end_0
@@ -281,7 +281,7 @@
     const/4 v2, 0x0
 
     .line 130
-    .local v2, "bitmap":Landroid/graphics/Bitmap;
+    .local v2, bitmap:Landroid/graphics/Bitmap;
     :goto_2
     if-eqz v2, :cond_7
 
@@ -300,7 +300,7 @@
     invoke-direct {v4}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
     .line 138
-    .local v4, "options":Landroid/graphics/BitmapFactory$Options;
+    .local v4, options:Landroid/graphics/BitmapFactory$Options;
     sget-object v9, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     iput-object v9, v4, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
@@ -375,9 +375,9 @@
     goto :goto_0
 
     .line 125
-    .end local v2    # "bitmap":Landroid/graphics/Bitmap;
-    .end local v3    # "needClear":Z
-    .end local v4    # "options":Landroid/graphics/BitmapFactory$Options;
+    .end local v2           #bitmap:Landroid/graphics/Bitmap;
+    .end local v3           #needClear:Z
+    .end local v4           #options:Landroid/graphics/BitmapFactory$Options;
     :cond_5
     const/4 v3, 0x0
 
@@ -395,7 +395,7 @@
     throw v9
 
     .line 129
-    .restart local v3    # "needClear":Z
+    .restart local v3       #needClear:Z
     :cond_6
     invoke-virtual/range {p6 .. p6}, Lcom/android/gallery3d/data/BitmapPool;->getBitmap()Landroid/graphics/Bitmap;
 
@@ -404,14 +404,14 @@
     goto :goto_2
 
     .line 133
-    .restart local v2    # "bitmap":Landroid/graphics/Bitmap;
+    .restart local v2       #bitmap:Landroid/graphics/Bitmap;
     :cond_7
     mul-int/lit8 v9, p5, 0x2
 
     add-int v6, p4, v9
 
     .line 134
-    .local v6, "s":I
+    .local v6, s:I
     sget-object v9, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v6, v6, v9}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
@@ -421,8 +421,8 @@
     goto :goto_3
 
     .line 147
-    .end local v6    # "s":I
-    .restart local v4    # "options":Landroid/graphics/BitmapFactory$Options;
+    .end local v6           #s:I
+    .restart local v4       #options:Landroid/graphics/BitmapFactory$Options;
     :catchall_1
     move-exception v9
 
@@ -469,7 +469,7 @@
 
 .method public declared-synchronized setRegionDecoder(Landroid/graphics/BitmapRegionDecoder;)V
     .locals 1
-    .param p1, "decoder"    # Landroid/graphics/BitmapRegionDecoder;
+    .parameter "decoder"
 
     .prologue
     .line 86
@@ -523,9 +523,9 @@
 
 .method public declared-synchronized setScreenNail(Landroid/graphics/Bitmap;II)V
     .locals 2
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
-    .param p2, "width"    # I
-    .param p3, "height"    # I
+    .parameter "bitmap"
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 59
@@ -577,9 +577,9 @@
 
 .method public declared-synchronized setScreenNail(Lcom/android/gallery3d/ui/ScreenNail;II)V
     .locals 1
-    .param p1, "screenNail"    # Lcom/android/gallery3d/ui/ScreenNail;
-    .param p2, "width"    # I
-    .param p3, "height"    # I
+    .parameter "screenNail"
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 69

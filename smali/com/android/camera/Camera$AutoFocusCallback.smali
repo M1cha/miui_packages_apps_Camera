@@ -24,6 +24,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 926
@@ -36,8 +37,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/Camera;Lcom/android/camera/Camera$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/camera/Camera;
-    .param p2, "x1"    # Lcom/android/camera/Camera$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 926
@@ -50,8 +51,8 @@
 # virtual methods
 .method public onAutoFocus(ZLandroid/hardware/Camera;)V
     .locals 5
-    .param p1, "focused"    # Z
-    .param p2, "camera"    # Landroid/hardware/Camera;
+    .parameter "focused"
+    .parameter "camera"
 
     .prologue
     .line 931
@@ -75,7 +76,7 @@
 
     iget-object v3, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mFocusStartTime:J
+    #getter for: Lcom/android/camera/Camera;->mFocusStartTime:J
     invoke-static {v3}, Lcom/android/camera/Camera;->access$5800(Lcom/android/camera/Camera;)J
 
     move-result-wide v3
@@ -122,13 +123,13 @@
 
     const/4 v1, 0x1
 
-    # invokes: Lcom/android/camera/Camera;->setCameraState(I)V
+    #calls: Lcom/android/camera/Camera;->setCameraState(I)V
     invoke-static {v0, v1}, Lcom/android/camera/Camera;->access$2000(Lcom/android/camera/Camera;I)V
 
     .line 936
     iget-object v0, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
+    #getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
     invoke-static {v0}, Lcom/android/camera/Camera;->access$700(Lcom/android/camera/Camera;)Lcom/android/camera/FocusManager;
 
     move-result-object v0
@@ -138,7 +139,7 @@
     .line 937
     iget-object v0, p0, Lcom/android/camera/Camera$AutoFocusCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mMotionFocusManager:Lcom/android/camera/MotionFocusManager;
+    #getter for: Lcom/android/camera/Camera;->mMotionFocusManager:Lcom/android/camera/MotionFocusManager;
     invoke-static {v0}, Lcom/android/camera/Camera;->access$5900(Lcom/android/camera/Camera;)Lcom/android/camera/MotionFocusManager;
 
     move-result-object v0

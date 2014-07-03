@@ -12,7 +12,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/CameraAppImpl;)V
     .locals 3
-    .param p1, "application"    # Lcom/android/camera/CameraAppImpl;
+    .parameter "application"
 
     .prologue
     .line 28
@@ -56,7 +56,7 @@
 # virtual methods
 .method public createMediaObject(Lcom/android/gallery3d/data/Path;)Lcom/android/gallery3d/data/MediaObject;
     .locals 5
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .parameter "path"
 
     .prologue
     const/4 v3, 0x2
@@ -69,7 +69,7 @@
     move-result-object v1
 
     .line 39
-    .local v1, "segments":[Ljava/lang/String;
+    .local v1, segments:[Ljava/lang/String;
     array-length v2, v1
 
     if-ge v2, v3, :cond_0
@@ -108,7 +108,7 @@
     move-result-object v0
 
     .line 44
-    .local v0, "dataManager":Lcom/android/gallery3d/data/DataManager;
+    .local v0, dataManager:Lcom/android/gallery3d/data/DataManager;
     iget-object v2, p0, Lcom/android/gallery3d/data/ComboSource;->mMatcher:Lcom/android/gallery3d/data/PathMatcher;
 
     invoke-virtual {v2, p1}, Lcom/android/gallery3d/data/PathMatcher;->match(Lcom/android/gallery3d/data/Path;)I

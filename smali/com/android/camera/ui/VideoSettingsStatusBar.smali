@@ -10,7 +10,7 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
     .locals 1
-    .param p1, "activity"    # Landroid/app/Activity;
+    .parameter "activity"
 
     .prologue
     .line 17
@@ -33,7 +33,7 @@
 
 .method private updateVideoSpeedIndicator(Ljava/lang/String;)V
     .locals 2
-    .param p1, "value"    # Ljava/lang/String;
+    .parameter "value"
 
     .prologue
     .line 22
@@ -86,8 +86,8 @@
 # virtual methods
 .method public updateOnScreenIndicators(Landroid/hardware/Camera$Parameters;Z)V
     .locals 3
-    .param p1, "parameters"    # Landroid/hardware/Camera$Parameters;
-    .param p2, "isHDR"    # Z
+    .parameter "parameters"
+    .parameter "isHDR"
 
     .prologue
     .line 35

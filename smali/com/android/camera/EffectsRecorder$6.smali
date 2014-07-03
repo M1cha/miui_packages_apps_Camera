@@ -26,6 +26,8 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/EffectsRecorder;Ljava/lang/Exception;)V
     .locals 0
+    .parameter
+    .parameter
 
     .prologue
     .line 940
@@ -47,7 +49,7 @@
     .line 943
     iget-object v0, p0, Lcom/android/camera/EffectsRecorder$6;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mFd:Ljava/io/FileDescriptor;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mFd:Ljava/io/FileDescriptor;
     invoke-static {v0}, Lcom/android/camera/EffectsRecorder;->access$1100(Lcom/android/camera/EffectsRecorder;)Ljava/io/FileDescriptor;
 
     move-result-object v0
@@ -57,7 +59,7 @@
     .line 944
     iget-object v0, p0, Lcom/android/camera/EffectsRecorder$6;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mEffectsListener:Lcom/android/camera/EffectsRecorder$EffectsListener;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mEffectsListener:Lcom/android/camera/EffectsRecorder$EffectsListener;
     invoke-static {v0}, Lcom/android/camera/EffectsRecorder;->access$1000(Lcom/android/camera/EffectsRecorder;)Lcom/android/camera/EffectsRecorder$EffectsListener;
 
     move-result-object v0
@@ -76,7 +78,7 @@
     :cond_0
     iget-object v0, p0, Lcom/android/camera/EffectsRecorder$6;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mEffectsListener:Lcom/android/camera/EffectsRecorder$EffectsListener;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mEffectsListener:Lcom/android/camera/EffectsRecorder$EffectsListener;
     invoke-static {v0}, Lcom/android/camera/EffectsRecorder;->access$1000(Lcom/android/camera/EffectsRecorder;)Lcom/android/camera/EffectsRecorder$EffectsListener;
 
     move-result-object v0
@@ -85,7 +87,7 @@
 
     iget-object v2, p0, Lcom/android/camera/EffectsRecorder$6;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mOutputFile:Ljava/lang/String;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mOutputFile:Ljava/lang/String;
     invoke-static {v2}, Lcom/android/camera/EffectsRecorder;->access$1200(Lcom/android/camera/EffectsRecorder;)Ljava/lang/String;
 
     move-result-object v2

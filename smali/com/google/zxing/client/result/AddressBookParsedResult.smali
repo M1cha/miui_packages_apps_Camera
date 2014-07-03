@@ -40,22 +40,22 @@
 # direct methods
 .method public constructor <init>([Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
     .locals 2
-    .param p1, "names"    # [Ljava/lang/String;
-    .param p2, "nicknames"    # [Ljava/lang/String;
-    .param p3, "pronunciation"    # Ljava/lang/String;
-    .param p4, "phoneNumbers"    # [Ljava/lang/String;
-    .param p5, "phoneTypes"    # [Ljava/lang/String;
-    .param p6, "emails"    # [Ljava/lang/String;
-    .param p7, "emailTypes"    # [Ljava/lang/String;
-    .param p8, "instantMessenger"    # Ljava/lang/String;
-    .param p9, "note"    # Ljava/lang/String;
-    .param p10, "addresses"    # [Ljava/lang/String;
-    .param p11, "addressTypes"    # [Ljava/lang/String;
-    .param p12, "org"    # Ljava/lang/String;
-    .param p13, "birthday"    # Ljava/lang/String;
-    .param p14, "title"    # Ljava/lang/String;
-    .param p15, "urls"    # [Ljava/lang/String;
-    .param p16, "geo"    # [Ljava/lang/String;
+    .parameter "names"
+    .parameter "nicknames"
+    .parameter "pronunciation"
+    .parameter "phoneNumbers"
+    .parameter "phoneTypes"
+    .parameter "emails"
+    .parameter "emailTypes"
+    .parameter "instantMessenger"
+    .parameter "note"
+    .parameter "addresses"
+    .parameter "addressTypes"
+    .parameter "org"
+    .parameter "birthday"
+    .parameter "title"
+    .parameter "urls"
+    .parameter "geo"
 
     .prologue
     .line 82
@@ -155,7 +155,7 @@
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 192
-    .local v0, "result":Ljava/lang/StringBuilder;
+    .local v0, result:Ljava/lang/StringBuilder;
     iget-object v1, p0, Lcom/google/zxing/client/result/AddressBookParsedResult;->names:[Ljava/lang/String;
 
     invoke-static {v1, v0}, Lcom/google/zxing/client/result/AddressBookParsedResult;->maybeAppend([Ljava/lang/String;Ljava/lang/StringBuilder;)V

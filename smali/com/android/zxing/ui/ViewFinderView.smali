@@ -64,22 +64,22 @@
     return-void
 
     :array_0
-    .array-data 4
-        0x0
-        0x40
-        0x80
-        0xc0
-        0xff
-        0xc0
-        0x80
-        0x40
+    .array-data 0x4
+        0x0t 0x0t 0x0t 0x0t
+        0x40t 0x0t 0x0t 0x0t
+        0x80t 0x0t 0x0t 0x0t
+        0xc0t 0x0t 0x0t 0x0t
+        0xfft 0x0t 0x0t 0x0t
+        0xc0t 0x0t 0x0t 0x0t
+        0x80t 0x0t 0x0t 0x0t
+        0x40t 0x0t 0x0t 0x0t
     .end array-data
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 38
@@ -98,7 +98,7 @@
     move-result-object v0
 
     .line 43
-    .local v0, "resources":Landroid/content/res/Resources;
+    .local v0, resources:Landroid/content/res/Resources;
     const v1, 0x7f0a000f
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
@@ -165,7 +165,7 @@
 # virtual methods
 .method public addPossibleResultPoint(Lcom/google/zxing/ResultPoint;)V
     .locals 1
-    .param p1, "point"    # Lcom/google/zxing/ResultPoint;
+    .parameter "point"
 
     .prologue
     .line 128
@@ -195,7 +195,7 @@
 
 .method public onDraw(Landroid/graphics/Canvas;)V
     .locals 16
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
+    .parameter "canvas"
 
     .prologue
     .line 54
@@ -212,19 +212,19 @@
     move-result-object v10
 
     .line 55
-    .local v10, "frame":Landroid/graphics/Rect;
+    .local v10, frame:Landroid/graphics/Rect;
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->getWidth()I
 
     move-result v15
 
     .line 56
-    .local v15, "width":I
+    .local v15, width:I
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->getHeight()I
 
     move-result v11
 
     .line 59
-    .local v11, "height":I
+    .local v11, height:I
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/android/zxing/ui/ViewFinderView;->mPaint:Landroid/graphics/Paint;
@@ -572,7 +572,7 @@
     add-int v13, v1, v2
 
     .line 83
-    .local v13, "middle":I
+    .local v13, middle:I
     iget v1, v10, Landroid/graphics/Rect;->left:I
 
     add-int/lit8 v1, v1, 0x2
@@ -607,13 +607,13 @@
     iget-object v9, v0, Lcom/android/zxing/ui/ViewFinderView;->mPossibleResultPoints:Ljava/util/Collection;
 
     .line 86
-    .local v9, "currentPossible":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/google/zxing/ResultPoint;>;"
+    .local v9, currentPossible:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/zxing/ResultPoint;>;"
     move-object/from16 v0, p0
 
     iget-object v8, v0, Lcom/android/zxing/ui/ViewFinderView;->mLastPossibleResultPoints:Ljava/util/Collection;
 
     .line 87
-    .local v8, "currentLast":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/google/zxing/ResultPoint;>;"
+    .local v8, currentLast:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/zxing/ResultPoint;>;"
     invoke-interface {v9}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v1
@@ -656,7 +656,7 @@
 
     move-result-object v12
 
-    .local v12, "i$":Ljava/util/Iterator;
+    .local v12, i$:Ljava/util/Iterator;
     :goto_2
     invoke-interface {v12}, Ljava/util/Iterator;->hasNext()Z
 
@@ -671,7 +671,7 @@
     check-cast v14, Lcom/google/zxing/ResultPoint;
 
     .line 102
-    .local v14, "point":Lcom/google/zxing/ResultPoint;
+    .local v14, point:Lcom/google/zxing/ResultPoint;
     iget v1, v10, Landroid/graphics/Rect;->left:I
 
     int-to-float v1, v1
@@ -692,7 +692,7 @@
 
     add-float/2addr v2, v3
 
-    const/high16 v3, 0x40400000
+    const/high16 v3, 0x4040
 
     move-object/from16 v0, p0
 
@@ -705,8 +705,8 @@
     goto :goto_2
 
     .line 90
-    .end local v12    # "i$":Ljava/util/Iterator;
-    .end local v14    # "point":Lcom/google/zxing/ResultPoint;
+    .end local v12           #i$:Ljava/util/Iterator;
+    .end local v14           #point:Lcom/google/zxing/ResultPoint;
     :cond_3
     new-instance v1, Ljava/util/HashSet;
 
@@ -748,7 +748,7 @@
 
     move-result-object v12
 
-    .restart local v12    # "i$":Ljava/util/Iterator;
+    .restart local v12       #i$:Ljava/util/Iterator;
     :goto_3
     invoke-interface {v12}, Ljava/util/Iterator;->hasNext()Z
 
@@ -763,7 +763,7 @@
     check-cast v14, Lcom/google/zxing/ResultPoint;
 
     .line 95
-    .restart local v14    # "point":Lcom/google/zxing/ResultPoint;
+    .restart local v14       #point:Lcom/google/zxing/ResultPoint;
     iget v1, v10, Landroid/graphics/Rect;->left:I
 
     int-to-float v1, v1
@@ -784,7 +784,7 @@
 
     add-float/2addr v2, v3
 
-    const/high16 v3, 0x40c00000
+    const/high16 v3, 0x40c0
 
     move-object/from16 v0, p0
 
@@ -797,8 +797,8 @@
     goto :goto_3
 
     .line 108
-    .end local v12    # "i$":Ljava/util/Iterator;
-    .end local v14    # "point":Lcom/google/zxing/ResultPoint;
+    .end local v12           #i$:Ljava/util/Iterator;
+    .end local v14           #point:Lcom/google/zxing/ResultPoint;
     :cond_4
     const-wide/16 v2, 0x64
 
