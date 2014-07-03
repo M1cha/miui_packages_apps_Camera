@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/AbstractGalleryActivity;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 191
@@ -38,8 +39,8 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 0
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
+    .parameter "dialog"
+    .parameter "which"
 
     .prologue
     .line 194

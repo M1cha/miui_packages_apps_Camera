@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/BasePreferenceActivity;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 247
@@ -43,7 +44,7 @@
     .line 250
     iget-object v0, p0, Lcom/android/camera/BasePreferenceActivity$1;->this$0:Lcom/android/camera/BasePreferenceActivity;
 
-    # invokes: Lcom/android/camera/BasePreferenceActivity;->restorePreferences()V
+    #calls: Lcom/android/camera/BasePreferenceActivity;->restorePreferences()V
     invoke-static {v0}, Lcom/android/camera/BasePreferenceActivity;->access$000(Lcom/android/camera/BasePreferenceActivity;)V
 
     .line 251

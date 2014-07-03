@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/zxing/ui/QRCodeFragment;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 334
@@ -38,13 +39,13 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 337
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$3;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
+    #getter for: Lcom/android/zxing/ui/QRCodeFragment;->mType:Lcom/android/zxing/QRCodeType;
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$000(Lcom/android/zxing/ui/QRCodeFragment;)Lcom/android/zxing/QRCodeType;
 
     move-result-object v0
@@ -56,7 +57,7 @@
     .line 338
     iget-object v0, p0, Lcom/android/zxing/ui/QRCodeFragment$3;->this$0:Lcom/android/zxing/ui/QRCodeFragment;
 
-    # invokes: Lcom/android/zxing/ui/QRCodeFragment;->launchMIUIMartket()V
+    #calls: Lcom/android/zxing/ui/QRCodeFragment;->launchMIUIMartket()V
     invoke-static {v0}, Lcom/android/zxing/ui/QRCodeFragment;->access$600(Lcom/android/zxing/ui/QRCodeFragment;)V
 
     .line 340

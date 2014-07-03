@@ -60,7 +60,7 @@
 # virtual methods
 .method public addActivity(Landroid/app/Activity;)V
     .locals 1
-    .param p1, "activity"    # Landroid/app/Activity;
+    .parameter "activity"
 
     .prologue
     .line 89
@@ -81,21 +81,21 @@
 
 .method public closeAllActivitiesBut(Landroid/app/Activity;)V
     .locals 4
-    .param p1, "current"    # Landroid/app/Activity;
+    .parameter "current"
 
     .prologue
     .line 103
     const/4 v0, 0x0
 
     .line 104
-    .local v0, "activity":Landroid/app/Activity;
+    .local v0, activity:Landroid/app/Activity;
     const/4 v1, 0x0
 
     .line 105
-    .local v1, "i":I
+    .local v1, i:I
     const/4 v2, 0x0
 
-    .local v2, "j":I
+    .local v2, j:I
     :goto_0
     invoke-virtual {p0}, Lcom/android/camera/CameraAppImpl;->getActivityCount()I
 
@@ -138,7 +138,7 @@
 
 .method public getActivity(I)Landroid/app/Activity;
     .locals 1
-    .param p1, "index"    # I
+    .parameter "index"
 
     .prologue
     .line 52
@@ -339,7 +339,7 @@
 
 .method public removeActivity(Landroid/app/Activity;)V
     .locals 1
-    .param p1, "activity"    # Landroid/app/Activity;
+    .parameter "activity"
 
     .prologue
     .line 96

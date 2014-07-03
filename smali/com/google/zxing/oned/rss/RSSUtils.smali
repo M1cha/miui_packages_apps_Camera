@@ -16,8 +16,8 @@
 
 .method private static combins(II)I
     .locals 6
-    .param p0, "n"    # I
-    .param p1, "r"    # I
+    .parameter "n"
+    .parameter "r"
 
     .prologue
     .line 104
@@ -29,23 +29,23 @@
     move v3, p1
 
     .line 106
-    .local v3, "minDenom":I
+    .local v3, minDenom:I
     sub-int v2, p0, p1
 
     .line 111
-    .local v2, "maxDenom":I
+    .local v2, maxDenom:I
     :goto_0
     const/4 v4, 0x1
 
     .line 112
-    .local v4, "val":I
+    .local v4, val:I
     const/4 v1, 0x1
 
     .line 113
-    .local v1, "j":I
+    .local v1, j:I
     move v0, p0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_1
     if-le v0, v2, :cond_2
 
@@ -68,25 +68,25 @@
     goto :goto_1
 
     .line 108
-    .end local v0    # "i":I
-    .end local v1    # "j":I
-    .end local v2    # "maxDenom":I
-    .end local v3    # "minDenom":I
-    .end local v4    # "val":I
+    .end local v0           #i:I
+    .end local v1           #j:I
+    .end local v2           #maxDenom:I
+    .end local v3           #minDenom:I
+    .end local v4           #val:I
     :cond_1
     sub-int v3, p0, p1
 
     .line 109
-    .restart local v3    # "minDenom":I
+    .restart local v3       #minDenom:I
     move v2, p1
 
-    .restart local v2    # "maxDenom":I
+    .restart local v2       #maxDenom:I
     goto :goto_0
 
     .line 120
-    .restart local v0    # "i":I
-    .restart local v1    # "j":I
-    .restart local v4    # "val":I
+    .restart local v0       #i:I
+    .restart local v1       #j:I
+    .restart local v4       #val:I
     :cond_2
     :goto_2
     if-gt v1, v3, :cond_3
@@ -106,9 +106,9 @@
 
 .method public static getRSSvalue([IIZ)I
     .locals 16
-    .param p0, "widths"    # [I
-    .param p1, "maxWidth"    # I
-    .param p2, "noNarrow"    # Z
+    .parameter "widths"
+    .parameter "maxWidth"
+    .parameter "noNarrow"
 
     .prologue
     .line 65
@@ -117,27 +117,27 @@
     array-length v3, v0
 
     .line 66
-    .local v3, "elements":I
+    .local v3, elements:I
     const/4 v9, 0x0
 
     .line 67
-    .local v9, "n":I
+    .local v9, n:I
     move-object/from16 v1, p0
 
-    .local v1, "arr$":[I
+    .local v1, arr$:[I
     array-length v6, v1
 
-    .local v6, "len$":I
+    .local v6, len$:I
     const/4 v5, 0x0
 
-    .local v5, "i$":I
+    .local v5, i$:I
     :goto_0
     if-ge v5, v6, :cond_0
 
     aget v13, v1, v5
 
     .line 68
-    .local v13, "width":I
+    .local v13, width:I
     add-int/2addr v9, v13
 
     .line 67
@@ -146,19 +146,19 @@
     goto :goto_0
 
     .line 70
-    .end local v13    # "width":I
+    .end local v13           #width:I
     :cond_0
     const/4 v12, 0x0
 
     .line 71
-    .local v12, "val":I
+    .local v12, val:I
     const/4 v10, 0x0
 
     .line 72
-    .local v10, "narrowMask":I
+    .local v10, narrowMask:I
     const/4 v2, 0x0
 
-    .local v2, "bar":I
+    .local v2, bar:I
     :goto_1
     add-int/lit8 v14, v3, -0x1
 
@@ -167,7 +167,7 @@
     .line 74
     const/4 v4, 0x1
 
-    .local v4, "elmWidth":I
+    .local v4, elmWidth:I
     const/4 v14, 0x1
 
     shl-int/2addr v14, v2
@@ -194,7 +194,7 @@
     move-result v11
 
     .line 78
-    .local v11, "subVal":I
+    .local v11, subVal:I
     if-eqz p2, :cond_1
 
     if-nez v10, :cond_1
@@ -244,7 +244,7 @@
     const/4 v7, 0x0
 
     .line 85
-    .local v7, "lessVal":I
+    .local v7, lessVal:I
     sub-int v14, v9, v4
 
     sub-int v15, v3, v2
@@ -254,7 +254,7 @@
     sub-int v8, v14, v15
 
     .line 86
-    .local v8, "mxwElement":I
+    .local v8, mxwElement:I
     :goto_3
     move/from16 v0, p1
 
@@ -293,8 +293,8 @@
     sub-int/2addr v11, v14
 
     .line 94
-    .end local v7    # "lessVal":I
-    .end local v8    # "mxwElement":I
+    .end local v7           #lessVal:I
+    .end local v8           #mxwElement:I
     :cond_3
     :goto_4
     add-int/2addr v12, v11
@@ -326,7 +326,7 @@
     goto :goto_4
 
     .line 96
-    .end local v11    # "subVal":I
+    .end local v11           #subVal:I
     :cond_5
     sub-int/2addr v9, v4
 
@@ -336,7 +336,7 @@
     goto :goto_1
 
     .line 98
-    .end local v4    # "elmWidth":I
+    .end local v4           #elmWidth:I
     :cond_6
     return v12
 .end method

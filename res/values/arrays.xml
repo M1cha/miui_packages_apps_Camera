@@ -371,7 +371,7 @@
         <item>flowers</item>
     </string-array>
     <array name="camera_scenemode_largeicons">
-        <item>@android:color/transparent</item>
+        <item>@*android:color/transparent</item>
         <item>@drawable/ic_camera_scenemode_auto</item>
         <item>@drawable/ic_camera_scenemode_portrait</item>
         <item>@drawable/ic_camera_scenemode_landscape</item>

@@ -21,6 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 682
@@ -35,8 +36,8 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
     .line 685
@@ -45,7 +46,7 @@
     move-result-object v0
 
     .line 686
-    .local v0, "action":Ljava/lang/String;
+    .local v0, action:Ljava/lang/String;
     const-string v1, "camera"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -126,7 +127,7 @@
     .line 693
     iget-object v1, p0, Lcom/android/camera/Camera$3;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mIsImageCaptureIntent:Z
+    #getter for: Lcom/android/camera/Camera;->mIsImageCaptureIntent:Z
     invoke-static {v1}, Lcom/android/camera/Camera;->access$3400(Lcom/android/camera/Camera;)Z
 
     move-result v1

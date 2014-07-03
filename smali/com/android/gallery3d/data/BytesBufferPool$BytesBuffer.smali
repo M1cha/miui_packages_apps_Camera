@@ -25,7 +25,7 @@
 # direct methods
 .method private constructor <init>(I)V
     .locals 1
-    .param p1, "capacity"    # I
+    .parameter "capacity"
 
     .prologue
     .line 35
@@ -42,8 +42,8 @@
 
 .method synthetic constructor <init>(ILcom/android/gallery3d/data/BytesBufferPool$1;)V
     .locals 0
-    .param p1, "x0"    # I
-    .param p2, "x1"    # Lcom/android/gallery3d/data/BytesBufferPool$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 30

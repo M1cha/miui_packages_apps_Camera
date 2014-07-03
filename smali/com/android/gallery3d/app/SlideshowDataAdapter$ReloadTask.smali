@@ -34,6 +34,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/gallery3d/app/SlideshowDataAdapter;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 94
@@ -46,8 +47,8 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/app/SlideshowDataAdapter;Lcom/android/gallery3d/app/SlideshowDataAdapter$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/app/SlideshowDataAdapter;
-    .param p2, "x1"    # Lcom/android/gallery3d/app/SlideshowDataAdapter$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 94
@@ -60,7 +61,7 @@
 # virtual methods
 .method public bridge synthetic run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
+    .parameter "x0"
 
     .prologue
     .line 94
@@ -73,7 +74,7 @@
 
 .method public run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Ljava/lang/Void;
     .locals 8
-    .param p1, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
+    .parameter "jc"
 
     .prologue
     const/4 v7, 0x1
@@ -91,7 +92,7 @@
     :try_start_0
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mIsActive:Z
+    #getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mIsActive:Z
     invoke-static {v2}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$100(Lcom/android/gallery3d/app/SlideshowDataAdapter;)Z
 
     move-result v2
@@ -100,7 +101,7 @@
 
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mDataReady:Z
+    #getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mDataReady:Z
     invoke-static {v2}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$200(Lcom/android/gallery3d/app/SlideshowDataAdapter;)Z
 
     move-result v2
@@ -109,7 +110,7 @@
 
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mImageQueue:Ljava/util/LinkedList;
+    #getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mImageQueue:Ljava/util/LinkedList;
     invoke-static {v2}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$300(Lcom/android/gallery3d/app/SlideshowDataAdapter;)Ljava/util/LinkedList;
 
     move-result-object v2
@@ -131,8 +132,8 @@
 
     invoke-virtual {v2}, Ljava/lang/Object;->wait()V
     :try_end_1
-    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_1
 
@@ -152,7 +153,7 @@
     .line 108
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mIsActive:Z
+    #getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mIsActive:Z
     invoke-static {v2}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$100(Lcom/android/gallery3d/app/SlideshowDataAdapter;)Z
 
     move-result v2
@@ -178,22 +179,22 @@
     :cond_2
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    # setter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mNeedReset:Z
+    #setter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mNeedReset:Z
     invoke-static {v2, v6}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$402(Lcom/android/gallery3d/app/SlideshowDataAdapter;Z)Z
 
     .line 111
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    # invokes: Lcom/android/gallery3d/app/SlideshowDataAdapter;->loadItem()Lcom/android/gallery3d/data/MediaItem;
+    #calls: Lcom/android/gallery3d/app/SlideshowDataAdapter;->loadItem()Lcom/android/gallery3d/data/MediaItem;
     invoke-static {v2}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$500(Lcom/android/gallery3d/app/SlideshowDataAdapter;)Lcom/android/gallery3d/data/MediaItem;
 
     move-result-object v1
 
     .line 113
-    .local v1, "item":Lcom/android/gallery3d/data/MediaItem;
+    .local v1, item:Lcom/android/gallery3d/data/MediaItem;
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mNeedReset:Z
+    #getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mNeedReset:Z
     invoke-static {v2}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$400(Lcom/android/gallery3d/app/SlideshowDataAdapter;)Z
 
     move-result v2
@@ -209,7 +210,7 @@
     :try_start_4
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mImageQueue:Ljava/util/LinkedList;
+    #getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mImageQueue:Ljava/util/LinkedList;
     invoke-static {v2}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$300(Lcom/android/gallery3d/app/SlideshowDataAdapter;)Ljava/util/LinkedList;
 
     move-result-object v2
@@ -221,12 +222,12 @@
 
     iget-object v4, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mNextOutput:I
+    #getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mNextOutput:I
     invoke-static {v4}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$700(Lcom/android/gallery3d/app/SlideshowDataAdapter;)I
 
     move-result v4
 
-    # setter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mLoadIndex:I
+    #setter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mLoadIndex:I
     invoke-static {v2, v4}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$602(Lcom/android/gallery3d/app/SlideshowDataAdapter;I)I
 
     .line 117
@@ -256,7 +257,7 @@
     :try_start_5
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mNeedReload:Ljava/util/concurrent/atomic/AtomicBoolean;
+    #getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mNeedReload:Ljava/util/concurrent/atomic/AtomicBoolean;
     invoke-static {v2}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$800(Lcom/android/gallery3d/app/SlideshowDataAdapter;)Ljava/util/concurrent/atomic/AtomicBoolean;
 
     move-result-object v2
@@ -271,7 +272,7 @@
 
     const/4 v4, 0x0
 
-    # setter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mDataReady:Z
+    #setter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mDataReady:Z
     invoke-static {v2, v4}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$202(Lcom/android/gallery3d/app/SlideshowDataAdapter;Z)Z
 
     .line 124
@@ -307,7 +308,7 @@
     check-cast v0, Landroid/graphics/Bitmap;
 
     .line 133
-    .local v0, "bitmap":Landroid/graphics/Bitmap;
+    .local v0, bitmap:Landroid/graphics/Bitmap;
     if-eqz v0, :cond_7
 
     .line 134
@@ -319,7 +320,7 @@
     :try_start_6
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mImageQueue:Ljava/util/LinkedList;
+    #getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mImageQueue:Ljava/util/LinkedList;
     invoke-static {v2}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$300(Lcom/android/gallery3d/app/SlideshowDataAdapter;)Ljava/util/LinkedList;
 
     move-result-object v2
@@ -328,7 +329,7 @@
 
     iget-object v5, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mLoadIndex:I
+    #getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mLoadIndex:I
     invoke-static {v5}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$600(Lcom/android/gallery3d/app/SlideshowDataAdapter;)I
 
     move-result v5
@@ -340,7 +341,7 @@
     .line 137
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mImageQueue:Ljava/util/LinkedList;
+    #getter for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mImageQueue:Ljava/util/LinkedList;
     invoke-static {v2}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$300(Lcom/android/gallery3d/app/SlideshowDataAdapter;)Ljava/util/LinkedList;
 
     move-result-object v2
@@ -366,7 +367,6 @@
     :cond_7
     iget-object v2, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$ReloadTask;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    # ++operator for: Lcom/android/gallery3d/app/SlideshowDataAdapter;->mLoadIndex:I
     invoke-static {v2}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$604(Lcom/android/gallery3d/app/SlideshowDataAdapter;)I
 
     goto/16 :goto_0

@@ -12,9 +12,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/data/MediaSet;Landroid/net/Uri;Lcom/android/camera/CameraAppImpl;)V
     .locals 2
-    .param p1, "set"    # Lcom/android/gallery3d/data/MediaSet;
-    .param p2, "uri"    # Landroid/net/Uri;
-    .param p3, "application"    # Lcom/android/camera/CameraAppImpl;
+    .parameter "set"
+    .parameter "uri"
+    .parameter "application"
 
     .prologue
     .line 31
@@ -65,7 +65,7 @@
 
 .method protected onChange(Z)V
     .locals 3
-    .param p1, "selfChange"    # Z
+    .parameter "selfChange"
 
     .prologue
     .line 47

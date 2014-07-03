@@ -48,7 +48,7 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
+    .parameter "in"
 
     .prologue
     .line 1699
@@ -72,8 +72,8 @@
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Lcom/android/camera/ui/ScreenView$1;)V
     .locals 0
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Lcom/android/camera/ui/ScreenView$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 1691
@@ -84,7 +84,7 @@
 
 .method constructor <init>(Landroid/os/Parcelable;)V
     .locals 1
-    .param p1, "superState"    # Landroid/os/Parcelable;
+    .parameter "superState"
 
     .prologue
     .line 1695
@@ -103,8 +103,8 @@
 # virtual methods
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
+    .parameter "out"
+    .parameter "flags"
 
     .prologue
     .line 1705

@@ -15,8 +15,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 33
@@ -64,11 +64,11 @@
 
 .method protected onLayout(ZIIII)V
     .locals 4
-    .param p1, "change"    # Z
-    .param p2, "left"    # I
-    .param p3, "top"    # I
-    .param p4, "right"    # I
-    .param p5, "bottom"    # I
+    .parameter "change"
+    .parameter "left"
+    .parameter "top"
+    .parameter "right"
+    .parameter "bottom"
 
     .prologue
     const/4 v3, 0x0
@@ -77,11 +77,11 @@
     sub-int v1, p4, p2
 
     .line 52
-    .local v1, "width":I
+    .local v1, width:I
     sub-int v0, p5, p3
 
     .line 53
-    .local v0, "height":I
+    .local v0, height:I
     iget v2, p0, Lcom/android/camera/ui/RotateLayout;->mOrientation:I
 
     sparse-switch v2, :sswitch_data_0
@@ -120,8 +120,8 @@
 
 .method protected onMeasure(II)V
     .locals 5
-    .param p1, "widthSpec"    # I
-    .param p2, "heightSpec"    # I
+    .parameter "widthSpec"
+    .parameter "heightSpec"
 
     .prologue
     const/4 v4, 0x0
@@ -129,11 +129,11 @@
     .line 67
     const/4 v1, 0x0
 
-    .local v1, "w":I
+    .local v1, w:I
     const/4 v0, 0x0
 
     .line 68
-    .local v0, "h":I
+    .local v0, h:I
     iget v2, p0, Lcom/android/camera/ui/RotateLayout;->mOrientation:I
 
     sparse-switch v2, :sswitch_data_0
@@ -288,8 +288,8 @@
 
 .method public setOrientation(IZ)V
     .locals 1
-    .param p1, "orientation"    # I
-    .param p2, "animation"    # Z
+    .parameter "orientation"
+    .parameter "animation"
 
     .prologue
     .line 113

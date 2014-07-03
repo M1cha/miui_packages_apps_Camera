@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/PhotoPage;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 580
@@ -38,7 +39,7 @@
 # virtual methods
 .method public onConfirmDialogDismissed(Z)V
     .locals 2
-    .param p1, "confirmed"    # Z
+    .parameter "confirmed"
 
     .prologue
     .line 594
@@ -47,7 +48,7 @@
     .line 595
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$4;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mMenuExecutor:Lcom/android/gallery3d/ui/MenuExecutor;
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mMenuExecutor:Lcom/android/gallery3d/ui/MenuExecutor;
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$1700(Lcom/android/gallery3d/app/PhotoPage;)Lcom/android/gallery3d/ui/MenuExecutor;
 
     move-result-object v0
@@ -63,7 +64,7 @@
     :goto_0
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$4;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # invokes: Lcom/android/gallery3d/app/PhotoPage;->refreshHidingMessage()V
+    #calls: Lcom/android/gallery3d/app/PhotoPage;->refreshHidingMessage()V
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$100(Lcom/android/gallery3d/app/PhotoPage;)V
 
     .line 602
@@ -73,14 +74,14 @@
     :pswitch_0
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$4;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mModel:Lcom/android/gallery3d/app/PhotoPage$Model;
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mModel:Lcom/android/gallery3d/app/PhotoPage$Model;
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$700(Lcom/android/gallery3d/app/PhotoPage;)Lcom/android/gallery3d/app/PhotoPage$Model;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/gallery3d/app/PhotoPage$4;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mModel:Lcom/android/gallery3d/app/PhotoPage$Model;
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mModel:Lcom/android/gallery3d/app/PhotoPage$Model;
     invoke-static {v1}, Lcom/android/gallery3d/app/PhotoPage;->access$700(Lcom/android/gallery3d/app/PhotoPage;)Lcom/android/gallery3d/app/PhotoPage$Model;
 
     move-result-object v1
@@ -111,7 +112,7 @@
     .line 589
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$4;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mHandler:Landroid/os/Handler;
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mHandler:Landroid/os/Handler;
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$1600(Lcom/android/gallery3d/app/PhotoPage;)Landroid/os/Handler;
 
     move-result-object v0
@@ -126,7 +127,7 @@
 
 .method public onProgressComplete(I)V
     .locals 0
-    .param p1, "result"    # I
+    .parameter "result"
 
     .prologue
     .line 585
@@ -135,7 +136,7 @@
 
 .method public onProgressUpdate(I)V
     .locals 0
-    .param p1, "index"    # I
+    .parameter "index"
 
     .prologue
     .line 582

@@ -16,7 +16,7 @@
 
 .method public static convertToQuotedString(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
-    .param p0, "string"    # Ljava/lang/String;
+    .parameter "string"
 
     .prologue
     const/16 v2, 0x22
@@ -32,15 +32,15 @@
     const-string p0, ""
 
     .line 63
-    .end local p0    # "string":Ljava/lang/String;
-    .local v0, "lastPos":I
+    .end local p0
+    .local v0, lastPos:I
     :cond_0
     :goto_0
     return-object p0
 
     .line 59
-    .end local v0    # "lastPos":I
-    .restart local p0    # "string":Ljava/lang/String;
+    .end local v0           #lastPos:I
+    .restart local p0
     :cond_1
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -49,7 +49,7 @@
     add-int/lit8 v0, v1, -0x1
 
     .line 60
-    .restart local v0    # "lastPos":I
+    .restart local v0       #lastPos:I
     if-ltz v0, :cond_0
 
     const/4 v1, 0x0
@@ -97,9 +97,9 @@
 
 .method public static getConfig(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/wifi/WifiConfiguration;
     .locals 6
-    .param p0, "ssid"    # Ljava/lang/String;
-    .param p1, "security"    # Ljava/lang/String;
-    .param p2, "password"    # Ljava/lang/String;
+    .parameter "ssid"
+    .parameter "security"
+    .parameter "password"
 
     .prologue
     const/4 v3, 0x1
@@ -114,7 +114,7 @@
     invoke-direct {v0}, Landroid/net/wifi/WifiConfiguration;-><init>()V
 
     .line 121
-    .local v0, "config":Landroid/net/wifi/WifiConfiguration;
+    .local v0, config:Landroid/net/wifi/WifiConfiguration;
     invoke-static {p0}, Lcom/android/zxing/WiFiUtil;->convertToQuotedString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
@@ -132,13 +132,13 @@
     const/4 v0, 0x0
 
     .line 157
-    .end local v0    # "config":Landroid/net/wifi/WifiConfiguration;
+    .end local v0           #config:Landroid/net/wifi/WifiConfiguration;
     :cond_0
     :goto_0
     return-object v0
 
     .line 125
-    .restart local v0    # "config":Landroid/net/wifi/WifiConfiguration;
+    .restart local v0       #config:Landroid/net/wifi/WifiConfiguration;
     :pswitch_0
     iget-object v2, v0, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
 
@@ -175,7 +175,7 @@
     move-result v1
 
     .line 135
-    .local v1, "length":I
+    .local v1, length:I
     const/16 v2, 0xa
 
     if-eq v1, v2, :cond_1
@@ -233,7 +233,7 @@
     goto :goto_0
 
     .line 144
-    .end local v1    # "length":I
+    .end local v1           #length:I
     :pswitch_2
     iget-object v2, v0, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
 
@@ -297,7 +297,7 @@
 
 .method public static getSecurity(Landroid/net/wifi/ScanResult;)I
     .locals 2
-    .param p0, "result"    # Landroid/net/wifi/ScanResult;
+    .parameter "result"
 
     .prologue
     .line 98
@@ -361,7 +361,7 @@
 
 .method public static getSecurity(Landroid/net/wifi/WifiConfiguration;)I
     .locals 5
-    .param p0, "config"    # Landroid/net/wifi/WifiConfiguration;
+    .parameter "config"
 
     .prologue
     const/4 v3, 0x3
@@ -427,7 +427,7 @@
 
 .method public static getSecurity(Ljava/lang/String;)I
     .locals 1
-    .param p0, "security"    # Ljava/lang/String;
+    .parameter "security"
 
     .prologue
     .line 87
@@ -502,9 +502,9 @@
 
 .method public static isCurrentConnection(Landroid/net/wifi/WifiManager;Ljava/lang/String;I)Z
     .locals 9
-    .param p0, "wifiMgr"    # Landroid/net/wifi/WifiManager;
-    .param p1, "SSID"    # Ljava/lang/String;
-    .param p2, "security"    # I
+    .parameter "wifiMgr"
+    .parameter "SSID"
+    .parameter "security"
 
     .prologue
     const/4 v7, 0x0
@@ -528,7 +528,7 @@
     move-result-object v4
 
     .line 30
-    .local v4, "info":Landroid/net/wifi/WifiInfo;
+    .local v4, info:Landroid/net/wifi/WifiInfo;
     if-eqz v4, :cond_0
 
     .line 33
@@ -537,7 +537,7 @@
     move-result-object v6
 
     .line 34
-    .local v6, "ssid":Ljava/lang/String;
+    .local v6, ssid:Ljava/lang/String;
     invoke-virtual {p0}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
 
     move-result-object v8
@@ -547,7 +547,7 @@
     move-result v5
 
     .line 36
-    .local v5, "networdId":I
+    .local v5, networdId:I
     const/4 v8, -0x1
 
     if-eq v5, v8, :cond_0
@@ -569,7 +569,7 @@
     move-result-object v2
 
     .line 43
-    .local v2, "configurations":Ljava/util/List;, "Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
+    .local v2, configurations:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
     if-eqz v2, :cond_0
 
     .line 44
@@ -577,7 +577,7 @@
 
     move-result-object v3
 
-    .local v3, "i$":Ljava/util/Iterator;
+    .local v3, i$:Ljava/util/Iterator;
     :cond_2
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
@@ -592,7 +592,7 @@
     check-cast v0, Landroid/net/wifi/WifiConfiguration;
 
     .line 45
-    .local v0, "config":Landroid/net/wifi/WifiConfiguration;
+    .local v0, config:Landroid/net/wifi/WifiConfiguration;
     iget v8, v0, Landroid/net/wifi/WifiConfiguration;->networkId:I
 
     if-ne v5, v8, :cond_2
@@ -603,7 +603,7 @@
     move-result v1
 
     .line 47
-    .local v1, "configSecurity":I
+    .local v1, configSecurity:I
     if-ne p2, v1, :cond_2
 
     .line 48
@@ -614,7 +614,7 @@
 
 .method public static removeDoubleQuotes(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
-    .param p0, "string"    # Ljava/lang/String;
+    .parameter "string"
 
     .prologue
     const/16 v3, 0x22
@@ -627,7 +627,7 @@
     move-result v0
 
     .line 68
-    .local v0, "length":I
+    .local v0, length:I
     if-le v0, v2, :cond_0
 
     const/4 v1, 0x0
@@ -654,7 +654,7 @@
     move-result-object p0
 
     .line 72
-    .end local p0    # "string":Ljava/lang/String;
+    .end local p0
     :cond_0
     return-object p0
 .end method

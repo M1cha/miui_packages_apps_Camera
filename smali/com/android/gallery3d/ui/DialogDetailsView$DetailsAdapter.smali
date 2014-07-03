@@ -39,7 +39,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/ui/DialogDetailsView;Lcom/android/gallery3d/data/MediaDetails;)V
     .locals 3
-    .param p2, "details"    # Lcom/android/gallery3d/data/MediaDetails;
+    .parameter
+    .parameter "details"
 
     .prologue
     .line 115
@@ -48,7 +49,7 @@
     invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
     .line 116
-    # getter for: Lcom/android/gallery3d/ui/DialogDetailsView;->mContext:Lcom/android/gallery3d/app/GalleryActivity;
+    #getter for: Lcom/android/gallery3d/ui/DialogDetailsView;->mContext:Lcom/android/gallery3d/app/GalleryActivity;
     invoke-static {p1}, Lcom/android/gallery3d/ui/DialogDetailsView;->access$200(Lcom/android/gallery3d/ui/DialogDetailsView;)Lcom/android/gallery3d/app/GalleryActivity;
 
     move-result-object v1
@@ -58,7 +59,7 @@
     move-result-object v0
 
     .line 117
-    .local v0, "context":Landroid/content/Context;
+    .local v0, context:Landroid/content/Context;
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Lcom/android/gallery3d/data/MediaDetails;->size()I
@@ -83,8 +84,8 @@
 
 .method private setDetails(Landroid/content/Context;Lcom/android/gallery3d/data/MediaDetails;)V
     .locals 19
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "details"    # Lcom/android/gallery3d/data/MediaDetails;
+    .parameter "context"
+    .parameter "details"
 
     .prologue
     .line 127
@@ -92,7 +93,7 @@
 
     move-result-object v3
 
-    .local v3, "i$":Ljava/util/Iterator;
+    .local v3, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
@@ -107,7 +108,7 @@
     check-cast v1, Ljava/util/Map$Entry;
 
     .line 129
-    .local v1, "detail":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/Object;>;"
+    .local v1, detail:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/Object;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v11
@@ -126,7 +127,7 @@
     move-result-object v10
 
     .line 177
-    .local v10, "valueObj":Ljava/lang/Object;
+    .local v10, valueObj:Ljava/lang/Object;
     if-nez v10, :cond_0
 
     .line 178
@@ -165,8 +166,8 @@
     move-result-object v9
 
     .line 184
-    .end local v10    # "valueObj":Ljava/lang/Object;
-    .local v9, "value":Ljava/lang/String;
+    .end local v10           #valueObj:Ljava/lang/Object;
+    .local v9, value:Ljava/lang/String;
     :cond_1
     :goto_1
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -180,7 +181,7 @@
     move-result v5
 
     .line 185
-    .local v5, "key":I
+    .local v5, key:I
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v5}, Lcom/android/gallery3d/data/MediaDetails;->hasUnit(I)Z
@@ -241,8 +242,8 @@
     goto :goto_0
 
     .line 131
-    .end local v5    # "key":I
-    .end local v9    # "value":Ljava/lang/String;
+    .end local v5           #key:I
+    .end local v9           #value:Ljava/lang/String;
     :sswitch_0
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -255,7 +256,7 @@
     check-cast v6, [D
 
     .line 132
-    .local v6, "latlng":[D
+    .local v6, latlng:[D
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/android/gallery3d/ui/DialogDetailsView$DetailsAdapter;->mItems:Ljava/util/ArrayList;
@@ -273,7 +274,7 @@
 
     iget-object v11, v0, Lcom/android/gallery3d/ui/DialogDetailsView$DetailsAdapter;->this$0:Lcom/android/gallery3d/ui/DialogDetailsView;
 
-    # getter for: Lcom/android/gallery3d/ui/DialogDetailsView;->mContext:Lcom/android/gallery3d/app/GalleryActivity;
+    #getter for: Lcom/android/gallery3d/ui/DialogDetailsView;->mContext:Lcom/android/gallery3d/app/GalleryActivity;
     invoke-static {v11}, Lcom/android/gallery3d/ui/DialogDetailsView;->access$200(Lcom/android/gallery3d/ui/DialogDetailsView;)Lcom/android/gallery3d/app/GalleryActivity;
 
     move-result-object v11
@@ -285,12 +286,12 @@
     move-result-object v9
 
     .line 134
-    .restart local v9    # "value":Ljava/lang/String;
+    .restart local v9       #value:Ljava/lang/String;
     goto :goto_1
 
     .line 137
-    .end local v6    # "latlng":[D
-    .end local v9    # "value":Ljava/lang/String;
+    .end local v6           #latlng:[D
+    .end local v9           #value:Ljava/lang/String;
     :sswitch_1
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -309,11 +310,11 @@
     move-result-object v9
 
     .line 139
-    .restart local v9    # "value":Ljava/lang/String;
+    .restart local v9       #value:Ljava/lang/String;
     goto :goto_1
 
     .line 142
-    .end local v9    # "value":Ljava/lang/String;
+    .end local v9           #value:Ljava/lang/String;
     :sswitch_2
     const-string v11, "1"
 
@@ -336,12 +337,12 @@
     move-result-object v9
 
     .line 145
-    .restart local v9    # "value":Ljava/lang/String;
+    .restart local v9       #value:Ljava/lang/String;
     :goto_3
     goto/16 :goto_1
 
     .line 142
-    .end local v9    # "value":Ljava/lang/String;
+    .end local v9           #value:Ljava/lang/String;
     :cond_2
     const v11, 0x7f0d01b0
 
@@ -362,7 +363,7 @@
     check-cast v2, Lcom/android/gallery3d/data/MediaDetails$FlashState;
 
     .line 152
-    .local v2, "flash":Lcom/android/gallery3d/data/MediaDetails$FlashState;
+    .local v2, flash:Lcom/android/gallery3d/data/MediaDetails$FlashState;
     invoke-virtual {v2}, Lcom/android/gallery3d/data/MediaDetails$FlashState;->isFlashFired()Z
 
     move-result v11
@@ -378,11 +379,11 @@
 
     move-result-object v9
 
-    .restart local v9    # "value":Ljava/lang/String;
+    .restart local v9       #value:Ljava/lang/String;
     goto/16 :goto_1
 
     .line 155
-    .end local v9    # "value":Ljava/lang/String;
+    .end local v9           #value:Ljava/lang/String;
     :cond_3
     const v11, 0x7f0d01b2
 
@@ -393,12 +394,12 @@
     move-result-object v9
 
     .line 157
-    .restart local v9    # "value":Ljava/lang/String;
+    .restart local v9       #value:Ljava/lang/String;
     goto/16 :goto_1
 
     .line 160
-    .end local v2    # "flash":Lcom/android/gallery3d/data/MediaDetails$FlashState;
-    .end local v9    # "value":Ljava/lang/String;
+    .end local v2           #flash:Lcom/android/gallery3d/data/MediaDetails$FlashState;
+    .end local v9           #value:Ljava/lang/String;
     :sswitch_4
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -407,7 +408,7 @@
     check-cast v9, Ljava/lang/String;
 
     .line 161
-    .restart local v9    # "value":Ljava/lang/String;
+    .restart local v9       #value:Ljava/lang/String;
     invoke-static {v9}, Ljava/lang/Double;->valueOf(Ljava/lang/String;)Ljava/lang/Double;
 
     move-result-object v11
@@ -417,8 +418,8 @@
     move-result-wide v7
 
     .line 162
-    .local v7, "time":D
-    const-wide/high16 v11, 0x3ff0000000000000L
+    .local v7, time:D
+    const-wide/high16 v11, 0x3ff0
 
     cmpg-double v11, v7, v11
 
@@ -433,9 +434,9 @@
 
     const/4 v13, 0x0
 
-    const-wide/high16 v14, 0x3fe0000000000000L
+    const-wide/high16 v14, 0x3fe0
 
-    const-wide/high16 v16, 0x3ff0000000000000L
+    const-wide/high16 v16, 0x3ff0
 
     div-double v16, v16, v7
 
@@ -460,7 +461,7 @@
     double-to-int v4, v7
 
     .line 166
-    .local v4, "integer":I
+    .local v4, integer:I
     int-to-double v11, v4
 
     sub-double/2addr v7, v11
@@ -512,9 +513,9 @@
 
     const/4 v14, 0x0
 
-    const-wide/high16 v15, 0x3fe0000000000000L
+    const-wide/high16 v15, 0x3fe0
 
-    const-wide/high16 v17, 0x3ff0000000000000L
+    const-wide/high16 v17, 0x3ff0
 
     div-double v17, v17, v7
 
@@ -543,9 +544,9 @@
     goto/16 :goto_1
 
     .line 189
-    .end local v4    # "integer":I
-    .end local v7    # "time":D
-    .restart local v5    # "key":I
+    .end local v4           #integer:I
+    .end local v7           #time:D
+    .restart local v5       #key:I
     :cond_5
     const-string v11, "%s : %s"
 
@@ -574,9 +575,9 @@
     goto/16 :goto_2
 
     .line 194
-    .end local v1    # "detail":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/Object;>;"
-    .end local v5    # "key":I
-    .end local v9    # "value":Ljava/lang/String;
+    .end local v1           #detail:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/Object;>;"
+    .end local v5           #key:I
+    .end local v9           #value:Ljava/lang/String;
     :cond_6
     return-void
 
@@ -619,13 +620,13 @@
 
 .method public getItem(I)Ljava/lang/Object;
     .locals 1
-    .param p1, "position"    # I
+    .parameter "position"
 
     .prologue
     .line 211
     iget-object v0, p0, Lcom/android/gallery3d/ui/DialogDetailsView$DetailsAdapter;->this$0:Lcom/android/gallery3d/ui/DialogDetailsView;
 
-    # getter for: Lcom/android/gallery3d/ui/DialogDetailsView;->mDetails:Lcom/android/gallery3d/data/MediaDetails;
+    #getter for: Lcom/android/gallery3d/ui/DialogDetailsView;->mDetails:Lcom/android/gallery3d/data/MediaDetails;
     invoke-static {v0}, Lcom/android/gallery3d/ui/DialogDetailsView;->access$300(Lcom/android/gallery3d/ui/DialogDetailsView;)Lcom/android/gallery3d/data/MediaDetails;
 
     move-result-object v0
@@ -639,7 +640,7 @@
 
 .method public getItemId(I)J
     .locals 2
-    .param p1, "position"    # I
+    .parameter "position"
 
     .prologue
     .line 215
@@ -650,9 +651,9 @@
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
     .locals 4
-    .param p1, "position"    # I
-    .param p2, "convertView"    # Landroid/view/View;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
+    .parameter "position"
+    .parameter "convertView"
+    .parameter "parent"
 
     .prologue
     .line 220
@@ -672,7 +673,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 225
-    .local v0, "tv":Landroid/widget/TextView;
+    .local v0, tv:Landroid/widget/TextView;
     :goto_0
     iget-object v1, p0, Lcom/android/gallery3d/ui/DialogDetailsView$DetailsAdapter;->mItems:Ljava/util/ArrayList;
 
@@ -687,20 +688,20 @@
     .line 226
     return-object v0
 
-    .end local v0    # "tv":Landroid/widget/TextView;
+    .end local v0           #tv:Landroid/widget/TextView;
     :cond_0
     move-object v0, p2
 
     .line 223
     check-cast v0, Landroid/widget/TextView;
 
-    .restart local v0    # "tv":Landroid/widget/TextView;
+    .restart local v0       #tv:Landroid/widget/TextView;
     goto :goto_0
 .end method
 
 .method public isEnabled(I)Z
     .locals 1
-    .param p1, "position"    # I
+    .parameter "position"
 
     .prologue
     .line 203
@@ -711,7 +712,7 @@
 
 .method public onAddressAvailable(Ljava/lang/String;)V
     .locals 2
-    .param p1, "address"    # Ljava/lang/String;
+    .parameter "address"
 
     .prologue
     .line 230
@@ -730,7 +731,7 @@
 
 .method public setLayoutInflater(Landroid/view/LayoutInflater;)V
     .locals 0
-    .param p1, "inflater"    # Landroid/view/LayoutInflater;
+    .parameter "inflater"
 
     .prologue
     .line 123

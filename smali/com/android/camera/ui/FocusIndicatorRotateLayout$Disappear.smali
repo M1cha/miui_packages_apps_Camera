@@ -24,6 +24,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/ui/FocusIndicatorRotateLayout;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 90
@@ -36,8 +37,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/ui/FocusIndicatorRotateLayout;Lcom/android/camera/ui/FocusIndicatorRotateLayout$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/camera/ui/FocusIndicatorRotateLayout;
-    .param p2, "x1"    # Lcom/android/camera/ui/FocusIndicatorRotateLayout$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 90
@@ -66,7 +67,7 @@
 
     const/4 v1, 0x0
 
-    # setter for: Lcom/android/camera/ui/FocusIndicatorRotateLayout;->mState:I
+    #setter for: Lcom/android/camera/ui/FocusIndicatorRotateLayout;->mState:I
     invoke-static {v0, v1}, Lcom/android/camera/ui/FocusIndicatorRotateLayout;->access$302(Lcom/android/camera/ui/FocusIndicatorRotateLayout;I)I
 
     .line 95

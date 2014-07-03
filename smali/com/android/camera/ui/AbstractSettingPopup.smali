@@ -24,8 +24,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 40
@@ -86,7 +86,7 @@
 
 .method public setOrientation(I)V
     .locals 0
-    .param p1, "orientation"    # I
+    .parameter "orientation"
 
     .prologue
     .line 62
@@ -95,7 +95,7 @@
 
 .method public setSettingChangedListener(Lcom/android/camera/ui/AbstractSettingPopup$Listener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/camera/ui/AbstractSettingPopup$Listener;
+    .parameter "listener"
 
     .prologue
     .line 52

@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/data/ClusterAlbum;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 125
@@ -38,8 +39,8 @@
 # virtual methods
 .method public consume(ILcom/android/gallery3d/data/MediaItem;)V
     .locals 1
-    .param p1, "index"    # I
-    .param p2, "item"    # Lcom/android/gallery3d/data/MediaItem;
+    .parameter "index"
+    .parameter "item"
 
     .prologue
     .line 127

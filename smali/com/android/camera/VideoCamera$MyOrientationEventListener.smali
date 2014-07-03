@@ -21,7 +21,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/VideoCamera;Landroid/content/Context;)V
     .locals 0
-    .param p2, "context"    # Landroid/content/Context;
+    .parameter
+    .parameter "context"
 
     .prologue
     .line 546
@@ -38,7 +39,7 @@
 # virtual methods
 .method public onOrientationChanged(I)V
     .locals 5
-    .param p1, "orientation"    # I
+    .parameter "orientation"
 
     .prologue
     .line 555
@@ -62,7 +63,7 @@
     move-result v0
 
     .line 558
-    .local v0, "newOrientation":I
+    .local v0, newOrientation:I
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyOrientationEventListener;->this$0:Lcom/android/camera/VideoCamera;
 
     iget v2, v2, Lcom/android/camera/VideoCamera;->mOrientation:I
@@ -77,7 +78,7 @@
     .line 565
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyOrientationEventListener;->this$0:Lcom/android/camera/VideoCamera;
 
-    # invokes: Lcom/android/camera/VideoCamera;->effectsActive()Z
+    #calls: Lcom/android/camera/VideoCamera;->effectsActive()Z
     invoke-static {v2}, Lcom/android/camera/VideoCamera;->access$1300(Lcom/android/camera/VideoCamera;)Z
 
     move-result v2
@@ -87,7 +88,7 @@
     .line 566
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyOrientationEventListener;->this$0:Lcom/android/camera/VideoCamera;
 
-    # getter for: Lcom/android/camera/VideoCamera;->mEffectsRecorder:Lcom/android/camera/EffectsRecorder;
+    #getter for: Lcom/android/camera/VideoCamera;->mEffectsRecorder:Lcom/android/camera/EffectsRecorder;
     invoke-static {v2}, Lcom/android/camera/VideoCamera;->access$1400(Lcom/android/camera/VideoCamera;)Lcom/android/camera/EffectsRecorder;
 
     move-result-object v2
@@ -115,7 +116,7 @@
     rem-int/lit16 v1, v2, 0x168
 
     .line 575
-    .local v1, "orientationCompensation":I
+    .local v1, orientationCompensation:I
     iget-object v2, p0, Lcom/android/camera/VideoCamera$MyOrientationEventListener;->this$0:Lcom/android/camera/VideoCamera;
 
     iget v2, v2, Lcom/android/camera/VideoCamera;->mOrientationCompensation:I

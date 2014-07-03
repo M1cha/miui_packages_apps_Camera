@@ -34,7 +34,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/CameraScreenNail$Listener;)V
     .locals 2
-    .param p1, "listener"    # Lcom/android/camera/CameraScreenNail$Listener;
+    .parameter "listener"
 
     .prologue
     const/4 v1, 0x0
@@ -85,7 +85,7 @@
 
 .method private copyPreviewTexture(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 1
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .parameter "canvas"
 
     .prologue
     .line 228
@@ -99,13 +99,13 @@
 
 .method private copyTexture(Lcom/android/gallery3d/ui/GLCanvas;Lcom/android/gallery3d/ui/RawTexture;)V
     .locals 7
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
-    .param p2, "texture"    # Lcom/android/gallery3d/ui/RawTexture;
+    .parameter "canvas"
+    .parameter "texture"
 
     .prologue
     const/4 v3, 0x0
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f80
 
     .line 232
     invoke-virtual {p2}, Lcom/android/gallery3d/ui/RawTexture;->getWidth()I
@@ -113,13 +113,13 @@
     move-result v5
 
     .line 233
-    .local v5, "width":I
+    .local v5, width:I
     invoke-virtual {p2}, Lcom/android/gallery3d/ui/RawTexture;->getHeight()I
 
     move-result v6
 
     .line 234
-    .local v6, "height":I
+    .local v6, height:I
     invoke-interface {p1, p2}, Lcom/android/gallery3d/ui/GLCanvas;->beginRenderTarget(Lcom/android/gallery3d/ui/RawTexture;)V
 
     .line 237
@@ -130,7 +130,7 @@
     invoke-interface {p1, v0, v1}, Lcom/android/gallery3d/ui/GLCanvas;->translate(FF)V
 
     .line 238
-    const/high16 v0, -0x40800000
+    const/high16 v0, -0x4080
 
     invoke-interface {p1, v2, v0, v2}, Lcom/android/gallery3d/ui/GLCanvas;->scale(FFF)V
 
@@ -205,7 +205,7 @@
 
 .method public animateCapture(I)V
     .locals 2
-    .param p1, "animOrientation"    # I
+    .parameter "animOrientation"
 
     .prologue
     .line 122
@@ -338,11 +338,11 @@
 
 .method public directDraw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
     .locals 0
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
-    .param p2, "x"    # I
-    .param p3, "y"    # I
-    .param p4, "width"    # I
-    .param p5, "height"    # I
+    .parameter "canvas"
+    .parameter "x"
+    .parameter "y"
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 133
@@ -354,11 +354,11 @@
 
 .method public draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
     .locals 15
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
-    .param p2, "x"    # I
-    .param p3, "y"    # I
-    .param p4, "width"    # I
-    .param p5, "height"    # I
+    .parameter "canvas"
+    .parameter "x"
+    .parameter "y"
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 138
@@ -411,7 +411,7 @@
     move-result-object v13
 
     .line 146
-    .local v13, "surfaceTexture":Landroid/graphics/SurfaceTexture;
+    .local v13, surfaceTexture:Landroid/graphics/SurfaceTexture;
     if-eqz v13, :cond_2
 
     iget-boolean v4, p0, Lcom/android/camera/CameraScreenNail;->mFirstFrameArrived:Z
@@ -424,7 +424,7 @@
     goto :goto_0
 
     .line 219
-    .end local v13    # "surfaceTexture":Landroid/graphics/SurfaceTexture;
+    .end local v13           #surfaceTexture:Landroid/graphics/SurfaceTexture;
     :catchall_0
     move-exception v4
 
@@ -435,7 +435,7 @@
     throw v4
 
     .line 148
-    .restart local v13    # "surfaceTexture":Landroid/graphics/SurfaceTexture;
+    .restart local v13       #surfaceTexture:Landroid/graphics/SurfaceTexture;
     :cond_3
     :try_start_1
     iget v4, p0, Lcom/android/camera/CameraScreenNail;->mAnimState:I
@@ -579,7 +579,7 @@
     const/4 v12, 0x0
 
     .line 185
-    .local v12, "drawn":Z
+    .local v12, drawn:Z
     invoke-virtual {v13}, Landroid/graphics/SurfaceTexture;->updateTexImage()V
 
     .line 186
@@ -617,7 +617,7 @@
     invoke-interface {v4}, Lcom/android/camera/CameraScreenNail$Listener;->requestRender()V
 
     .line 219
-    .end local v12    # "drawn":Z
+    .end local v12           #drawn:Z
     :cond_6
     :goto_2
     monitor-exit v14
@@ -625,7 +625,7 @@
     goto/16 :goto_0
 
     .line 192
-    .restart local v12    # "drawn":Z
+    .restart local v12       #drawn:Z
     :cond_7
     const/4 v4, 0x1
 
@@ -689,7 +689,7 @@
     goto :goto_2
 
     .line 208
-    .end local v12    # "drawn":Z
+    .end local v12           #drawn:Z
     :cond_a
     iget v4, p0, Lcom/android/camera/CameraScreenNail;->mAnimState:I
 
@@ -709,7 +709,7 @@
     move-result v12
 
     .line 210
-    .restart local v12    # "drawn":Z
+    .restart local v12       #drawn:Z
     if-eqz v12, :cond_b
 
     .line 211
@@ -780,7 +780,7 @@
 
 .method public onFrameAvailable(Landroid/graphics/SurfaceTexture;)V
     .locals 3
-    .param p1, "surfaceTexture"    # Landroid/graphics/SurfaceTexture;
+    .parameter "surfaceTexture"
 
     .prologue
     .line 268
@@ -928,7 +928,7 @@
 
 .method public renderBitmapToCanvas(Landroid/graphics/Bitmap;)V
     .locals 1
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
+    .parameter "bitmap"
 
     .prologue
     .line 247
@@ -954,8 +954,8 @@
 
 .method public setPreviewFrameLayoutSize(II)V
     .locals 2
-    .param p1, "width"    # I
-    .param p2, "height"    # I
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 286

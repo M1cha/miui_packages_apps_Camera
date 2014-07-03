@@ -38,7 +38,7 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/ui/UploadedTexture$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/ui/UploadedTexture$1;
+    .parameter "x0"
 
     .prologue
     .line 86
@@ -70,7 +70,7 @@
     move-exception v0
 
     .line 110
-    .local v0, "e":Ljava/lang/CloneNotSupportedException;
+    .local v0, e:Ljava/lang/CloneNotSupportedException;
     new-instance v1, Ljava/lang/AssertionError;
 
     invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
@@ -97,7 +97,7 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "object"    # Ljava/lang/Object;
+    .parameter "object"
 
     .prologue
     const/4 v1, 0x0
@@ -119,7 +119,7 @@
     check-cast v0, Lcom/android/gallery3d/ui/UploadedTexture$BorderKey;
 
     .line 101
-    .local v0, "o":Lcom/android/gallery3d/ui/UploadedTexture$BorderKey;
+    .local v0, o:Lcom/android/gallery3d/ui/UploadedTexture$BorderKey;
     iget-boolean v2, p0, Lcom/android/gallery3d/ui/UploadedTexture$BorderKey;->vertical:Z
 
     iget-boolean v3, v0, Lcom/android/gallery3d/ui/UploadedTexture$BorderKey;->vertical:Z
@@ -159,16 +159,16 @@
     xor-int v0, v1, v2
 
     .line 94
-    .local v0, "x":I
+    .local v0, x:I
     iget-boolean v1, p0, Lcom/android/gallery3d/ui/UploadedTexture$BorderKey;->vertical:Z
 
     if-eqz v1, :cond_0
 
-    .end local v0    # "x":I
+    .end local v0           #x:I
     :goto_0
     return v0
 
-    .restart local v0    # "x":I
+    .restart local v0       #x:I
     :cond_0
     neg-int v0, v0
 

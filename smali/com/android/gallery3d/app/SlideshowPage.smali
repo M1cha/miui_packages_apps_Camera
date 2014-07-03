@@ -70,7 +70,7 @@
 
 .method static synthetic access$000(Lcom/android/gallery3d/app/SlideshowPage;)Lcom/android/gallery3d/ui/SlideshowView;
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/app/SlideshowPage;
+    .parameter "x0"
 
     .prologue
     .line 43
@@ -81,7 +81,7 @@
 
 .method static synthetic access$100(Lcom/android/gallery3d/app/SlideshowPage;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/gallery3d/app/SlideshowPage;
+    .parameter "x0"
 
     .prologue
     .line 43
@@ -92,7 +92,7 @@
 
 .method static synthetic access$200(Lcom/android/gallery3d/app/SlideshowPage;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/gallery3d/app/SlideshowPage;
+    .parameter "x0"
 
     .prologue
     .line 43
@@ -103,8 +103,8 @@
 
 .method static synthetic access$302(Lcom/android/gallery3d/app/SlideshowPage;Lcom/android/gallery3d/app/SlideshowPage$Slide;)Lcom/android/gallery3d/app/SlideshowPage$Slide;
     .locals 0
-    .param p0, "x0"    # Lcom/android/gallery3d/app/SlideshowPage;
-    .param p1, "x1"    # Lcom/android/gallery3d/app/SlideshowPage$Slide;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 43
@@ -115,7 +115,7 @@
 
 .method static synthetic access$400(Lcom/android/gallery3d/app/SlideshowPage;)Landroid/os/Handler;
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/app/SlideshowPage;
+    .parameter "x0"
 
     .prologue
     .line 43
@@ -126,8 +126,8 @@
 
 .method static synthetic access$500(Lcom/android/gallery3d/data/MediaSet;I)Lcom/android/gallery3d/data/MediaItem;
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/data/MediaSet;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 43
@@ -140,19 +140,19 @@
 
 .method private static findMediaItem(Lcom/android/gallery3d/data/MediaSet;I)Lcom/android/gallery3d/data/MediaItem;
     .locals 6
-    .param p0, "mediaSet"    # Lcom/android/gallery3d/data/MediaSet;
-    .param p1, "index"    # I
+    .parameter "mediaSet"
+    .parameter "index"
 
     .prologue
     .line 227
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     invoke-virtual {p0}, Lcom/android/gallery3d/data/MediaSet;->getSubMediaSetCount()I
 
     move-result v3
 
-    .local v3, "n":I
+    .local v3, n:I
     :goto_0
     if-ge v1, v3, :cond_1
 
@@ -162,13 +162,13 @@
     move-result-object v4
 
     .line 229
-    .local v4, "subset":Lcom/android/gallery3d/data/MediaSet;
+    .local v4, subset:Lcom/android/gallery3d/data/MediaSet;
     invoke-virtual {v4}, Lcom/android/gallery3d/data/MediaSet;->getTotalMediaItemCount()I
 
     move-result v0
 
     .line 230
-    .local v0, "count":I
+    .local v0, count:I
     if-ge p1, v0, :cond_0
 
     .line 231
@@ -177,14 +177,14 @@
     move-result-object v5
 
     .line 236
-    .end local v0    # "count":I
-    .end local v4    # "subset":Lcom/android/gallery3d/data/MediaSet;
+    .end local v0           #count:I
+    .end local v4           #subset:Lcom/android/gallery3d/data/MediaSet;
     :goto_1
     return-object v5
 
     .line 233
-    .restart local v0    # "count":I
-    .restart local v4    # "subset":Lcom/android/gallery3d/data/MediaSet;
+    .restart local v0       #count:I
+    .restart local v4       #subset:Lcom/android/gallery3d/data/MediaSet;
     :cond_0
     sub-int/2addr p1, v0
 
@@ -194,8 +194,8 @@
     goto :goto_0
 
     .line 235
-    .end local v0    # "count":I
-    .end local v4    # "subset":Lcom/android/gallery3d/data/MediaSet;
+    .end local v0           #count:I
+    .end local v4           #subset:Lcom/android/gallery3d/data/MediaSet;
     :cond_1
     const/4 v5, 0x1
 
@@ -204,7 +204,7 @@
     move-result-object v2
 
     .line 236
-    .local v2, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .local v2, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v5
@@ -229,7 +229,7 @@
 
 .method private initializeData(Landroid/os/Bundle;)V
     .locals 12
-    .param p1, "data"    # Landroid/os/Bundle;
+    .parameter "data"
 
     .prologue
     const/4 v3, 0x0
@@ -246,7 +246,7 @@
     move-result v4
 
     .line 201
-    .local v4, "random":Z
+    .local v4, random:Z
     const-string v6, "media-set-path"
 
     invoke-virtual {p1, v6}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -254,7 +254,7 @@
     move-result-object v2
 
     .line 202
-    .local v2, "mediaPath":Ljava/lang/String;
+    .local v2, mediaPath:Ljava/lang/String;
     const/4 v6, 0x1
 
     invoke-static {v2, v6}, Lcom/android/gallery3d/app/FilterUtils;->newFilterPath(Ljava/lang/String;I)Ljava/lang/String;
@@ -285,7 +285,7 @@
     move-result v5
 
     .line 206
-    .local v5, "repeat":Z
+    .local v5, repeat:Z
     new-instance v6, Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
     iget-object v7, p0, Lcom/android/gallery3d/app/SlideshowPage;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
@@ -316,7 +316,7 @@
     return-void
 
     .line 210
-    .end local v5    # "repeat":Z
+    .end local v5           #repeat:Z
     :cond_0
     const-string v6, "photo-index"
 
@@ -325,7 +325,7 @@
     move-result v0
 
     .line 211
-    .local v0, "index":I
+    .local v0, index:I
     const-string v6, "media-item-path"
 
     invoke-virtual {p1, v6}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -333,7 +333,7 @@
     move-result-object v1
 
     .line 212
-    .local v1, "itemPath":Ljava/lang/String;
+    .local v1, itemPath:Ljava/lang/String;
     if-eqz v1, :cond_1
 
     invoke-static {v1}, Lcom/android/gallery3d/data/Path;->fromString(Ljava/lang/String;)Lcom/android/gallery3d/data/Path;
@@ -341,7 +341,7 @@
     move-result-object v3
 
     .line 213
-    .local v3, "path":Lcom/android/gallery3d/data/Path;
+    .local v3, path:Lcom/android/gallery3d/data/Path;
     :cond_1
     const-string v6, "repeat"
 
@@ -350,7 +350,7 @@
     move-result v5
 
     .line 214
-    .restart local v5    # "repeat":Z
+    .restart local v5       #repeat:Z
     new-instance v6, Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
     iget-object v7, p0, Lcom/android/gallery3d/app/SlideshowPage;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
@@ -431,7 +431,7 @@
     iget-object v0, p0, Lcom/android/gallery3d/app/SlideshowPage;->mPendingSlide:Lcom/android/gallery3d/app/SlideshowPage$Slide;
 
     .line 149
-    .local v0, "slide":Lcom/android/gallery3d/app/SlideshowPage$Slide;
+    .local v0, slide:Lcom/android/gallery3d/app/SlideshowPage$Slide;
     if-nez v0, :cond_1
 
     .line 150
@@ -514,8 +514,8 @@
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "data"    # Landroid/os/Bundle;
-    .param p2, "restoreState"    # Landroid/os/Bundle;
+    .parameter "data"
+    .parameter "restoreState"
 
     .prologue
     .line 108

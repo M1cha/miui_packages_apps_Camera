@@ -23,8 +23,8 @@
 # direct methods
 .method public constructor <init>(Landroid/graphics/BitmapRegionDecoder;Landroid/graphics/Bitmap;)V
     .locals 0
-    .param p1, "decoder"    # Landroid/graphics/BitmapRegionDecoder;
-    .param p2, "backupImage"    # Landroid/graphics/Bitmap;
+    .parameter "decoder"
+    .parameter "backupImage"
 
     .prologue
     .line 79

@@ -23,8 +23,8 @@
 # direct methods
 .method private constructor <init>(ILcom/google/zxing/datamatrix/decoder/Version$ECB;)V
     .locals 2
-    .param p1, "ecCodewords"    # I
-    .param p2, "ecBlocks"    # Lcom/google/zxing/datamatrix/decoder/Version$ECB;
+    .parameter "ecCodewords"
+    .parameter "ecBlocks"
 
     .prologue
     .line 122
@@ -50,9 +50,9 @@
 
 .method synthetic constructor <init>(ILcom/google/zxing/datamatrix/decoder/Version$ECB;Lcom/google/zxing/datamatrix/decoder/Version$1;)V
     .locals 0
-    .param p1, "x0"    # I
-    .param p2, "x1"    # Lcom/google/zxing/datamatrix/decoder/Version$ECB;
-    .param p3, "x2"    # Lcom/google/zxing/datamatrix/decoder/Version$1;
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
 
     .prologue
     .line 118
@@ -63,9 +63,9 @@
 
 .method private constructor <init>(ILcom/google/zxing/datamatrix/decoder/Version$ECB;Lcom/google/zxing/datamatrix/decoder/Version$ECB;)V
     .locals 2
-    .param p1, "ecCodewords"    # I
-    .param p2, "ecBlocks1"    # Lcom/google/zxing/datamatrix/decoder/Version$ECB;
-    .param p3, "ecBlocks2"    # Lcom/google/zxing/datamatrix/decoder/Version$ECB;
+    .parameter "ecCodewords"
+    .parameter "ecBlocks1"
+    .parameter "ecBlocks2"
 
     .prologue
     .line 127
@@ -95,10 +95,10 @@
 
 .method synthetic constructor <init>(ILcom/google/zxing/datamatrix/decoder/Version$ECB;Lcom/google/zxing/datamatrix/decoder/Version$ECB;Lcom/google/zxing/datamatrix/decoder/Version$1;)V
     .locals 0
-    .param p1, "x0"    # I
-    .param p2, "x1"    # Lcom/google/zxing/datamatrix/decoder/Version$ECB;
-    .param p3, "x2"    # Lcom/google/zxing/datamatrix/decoder/Version$ECB;
-    .param p4, "x3"    # Lcom/google/zxing/datamatrix/decoder/Version$1;
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+    .parameter "x3"
 
     .prologue
     .line 118

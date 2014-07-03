@@ -22,7 +22,7 @@
 # direct methods
 .method public constructor <init>(Lcom/google/zxing/common/BitMatrix;)V
     .locals 2
-    .param p1, "image"    # Lcom/google/zxing/common/BitMatrix;
+    .parameter "image"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -122,10 +122,10 @@
 
 .method public constructor <init>(Lcom/google/zxing/common/BitMatrix;III)V
     .locals 3
-    .param p1, "image"    # Lcom/google/zxing/common/BitMatrix;
-    .param p2, "initSize"    # I
-    .param p3, "x"    # I
-    .param p4, "y"    # I
+    .parameter "image"
+    .parameter "initSize"
+    .parameter "x"
+    .parameter "y"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -157,7 +157,7 @@
     shr-int/lit8 v0, p2, 0x1
 
     .line 70
-    .local v0, "halfsize":I
+    .local v0, halfsize:I
     sub-int v1, p3, v0
 
     iput v1, p0, Lcom/google/zxing/common/detector/WhiteRectangleDetector;->leftInit:I
@@ -213,10 +213,10 @@
 
 .method private centerEdges(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;)[Lcom/google/zxing/ResultPoint;
     .locals 13
-    .param p1, "y"    # Lcom/google/zxing/ResultPoint;
-    .param p2, "z"    # Lcom/google/zxing/ResultPoint;
-    .param p3, "x"    # Lcom/google/zxing/ResultPoint;
-    .param p4, "t"    # Lcom/google/zxing/ResultPoint;
+    .parameter "y"
+    .parameter "z"
+    .parameter "x"
+    .parameter "t"
 
     .prologue
     .line 281
@@ -225,54 +225,54 @@
     move-result v4
 
     .line 282
-    .local v4, "yi":F
+    .local v4, yi:F
     invoke-virtual {p1}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v5
 
     .line 283
-    .local v5, "yj":F
+    .local v5, yj:F
     invoke-virtual {p2}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v6
 
     .line 284
-    .local v6, "zi":F
+    .local v6, zi:F
     invoke-virtual {p2}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v7
 
     .line 285
-    .local v7, "zj":F
+    .local v7, zj:F
     invoke-virtual/range {p3 .. p3}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v2
 
     .line 286
-    .local v2, "xi":F
+    .local v2, xi:F
     invoke-virtual/range {p3 .. p3}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v3
 
     .line 287
-    .local v3, "xj":F
+    .local v3, xj:F
     invoke-virtual/range {p4 .. p4}, Lcom/google/zxing/ResultPoint;->getX()F
 
     move-result v0
 
     .line 288
-    .local v0, "ti":F
+    .local v0, ti:F
     invoke-virtual/range {p4 .. p4}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v1
 
     .line 290
-    .local v1, "tj":F
+    .local v1, tj:F
     iget v8, p0, Lcom/google/zxing/common/detector/WhiteRectangleDetector;->width:I
 
     int-to-float v8, v8
 
-    const/high16 v9, 0x40000000
+    const/high16 v9, 0x4000
 
     div-float/2addr v8, v9
 
@@ -289,11 +289,11 @@
 
     new-instance v10, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f80
 
     sub-float v11, v0, v11
 
-    const/high16 v12, 0x3f800000
+    const/high16 v12, 0x3f80
 
     add-float/2addr v12, v1
 
@@ -305,11 +305,11 @@
 
     new-instance v10, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f80
 
     add-float/2addr v11, v6
 
-    const/high16 v12, 0x3f800000
+    const/high16 v12, 0x3f80
 
     add-float/2addr v12, v7
 
@@ -321,11 +321,11 @@
 
     new-instance v10, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f80
 
     sub-float v11, v2, v11
 
-    const/high16 v12, 0x3f800000
+    const/high16 v12, 0x3f80
 
     sub-float v12, v3, v12
 
@@ -337,11 +337,11 @@
 
     new-instance v10, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f80
 
     add-float/2addr v11, v4
 
-    const/high16 v12, 0x3f800000
+    const/high16 v12, 0x3f80
 
     sub-float v12, v5, v12
 
@@ -362,11 +362,11 @@
 
     new-instance v10, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f80
 
     add-float/2addr v11, v0
 
-    const/high16 v12, 0x3f800000
+    const/high16 v12, 0x3f80
 
     add-float/2addr v12, v1
 
@@ -378,11 +378,11 @@
 
     new-instance v10, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f80
 
     add-float/2addr v11, v6
 
-    const/high16 v12, 0x3f800000
+    const/high16 v12, 0x3f80
 
     sub-float v12, v7, v12
 
@@ -394,11 +394,11 @@
 
     new-instance v10, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f80
 
     sub-float v11, v2, v11
 
-    const/high16 v12, 0x3f800000
+    const/high16 v12, 0x3f80
 
     add-float/2addr v12, v3
 
@@ -410,11 +410,11 @@
 
     new-instance v10, Lcom/google/zxing/ResultPoint;
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f80
 
     sub-float v11, v4, v11
 
-    const/high16 v12, 0x3f800000
+    const/high16 v12, 0x3f80
 
     sub-float v12, v5, v12
 
@@ -427,10 +427,10 @@
 
 .method private containsBlackPoint(IIIZ)Z
     .locals 4
-    .param p1, "a"    # I
-    .param p2, "b"    # I
-    .param p3, "fixed"    # I
-    .param p4, "horizontal"    # Z
+    .parameter "a"
+    .parameter "b"
+    .parameter "fixed"
+    .parameter "horizontal"
 
     .prologue
     const/4 v2, 0x1
@@ -441,7 +441,7 @@
     .line 317
     move v0, p1
 
-    .local v0, "x":I
+    .local v0, x:I
     :goto_0
     if-gt v0, p2, :cond_3
 
@@ -455,24 +455,24 @@
     if-eqz v3, :cond_1
 
     .line 330
-    .end local v0    # "x":I
+    .end local v0           #x:I
     :cond_0
     :goto_1
     return v2
 
     .line 317
-    .restart local v0    # "x":I
+    .restart local v0       #x:I
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
     .line 323
-    .end local v0    # "x":I
+    .end local v0           #x:I
     :cond_2
     move v1, p1
 
-    .local v1, "y":I
+    .local v1, y:I
     :goto_2
     if-gt v1, p2, :cond_3
 
@@ -491,7 +491,7 @@
     goto :goto_2
 
     .line 330
-    .end local v1    # "y":I
+    .end local v1           #y:I
     :cond_3
     const/4 v2, 0x0
 
@@ -500,10 +500,10 @@
 
 .method private getBlackPointOnSegment(FFFF)Lcom/google/zxing/ResultPoint;
     .locals 9
-    .param p1, "aX"    # F
-    .param p2, "aY"    # F
-    .param p3, "bX"    # F
-    .param p4, "bY"    # F
+    .parameter "aX"
+    .parameter "aY"
+    .parameter "bX"
+    .parameter "bY"
 
     .prologue
     .line 244
@@ -516,7 +516,7 @@
     move-result v0
 
     .line 245
-    .local v0, "dist":I
+    .local v0, dist:I
     sub-float v6, p3, p1
 
     int-to-float v7, v0
@@ -524,7 +524,7 @@
     div-float v3, v6, v7
 
     .line 246
-    .local v3, "xStep":F
+    .local v3, xStep:F
     sub-float v6, p4, p2
 
     int-to-float v7, v0
@@ -532,10 +532,10 @@
     div-float v5, v6, v7
 
     .line 248
-    .local v5, "yStep":F
+    .local v5, yStep:F
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     if-ge v1, v0, :cond_1
 
@@ -551,7 +551,7 @@
     move-result v2
 
     .line 250
-    .local v2, "x":I
+    .local v2, x:I
     int-to-float v6, v1
 
     mul-float/2addr v6, v5
@@ -563,7 +563,7 @@
     move-result v4
 
     .line 251
-    .local v4, "y":I
+    .local v4, y:I
     iget-object v6, p0, Lcom/google/zxing/common/detector/WhiteRectangleDetector;->image:Lcom/google/zxing/common/BitMatrix;
 
     invoke-virtual {v6, v2, v4}, Lcom/google/zxing/common/BitMatrix;->get(II)Z
@@ -582,22 +582,22 @@
     invoke-direct {v6, v7, v8}, Lcom/google/zxing/ResultPoint;-><init>(FF)V
 
     .line 255
-    .end local v2    # "x":I
-    .end local v4    # "y":I
+    .end local v2           #x:I
+    .end local v4           #y:I
     :goto_1
     return-object v6
 
     .line 248
-    .restart local v2    # "x":I
-    .restart local v4    # "y":I
+    .restart local v2       #x:I
+    .restart local v4       #y:I
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     .line 255
-    .end local v2    # "x":I
-    .end local v4    # "y":I
+    .end local v2           #x:I
+    .end local v4           #y:I
     :cond_1
     const/4 v6, 0x0
 
@@ -621,13 +621,13 @@
     iget v10, v0, Lcom/google/zxing/common/detector/WhiteRectangleDetector;->leftInit:I
 
     .line 96
-    .local v10, "left":I
+    .local v10, left:I
     move-object/from16 v0, p0
 
     iget v13, v0, Lcom/google/zxing/common/detector/WhiteRectangleDetector;->rightInit:I
 
     .line 97
-    .local v13, "right":I
+    .local v13, right:I
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/google/zxing/common/detector/WhiteRectangleDetector;->upInit:I
@@ -635,25 +635,25 @@
     move/from16 v18, v0
 
     .line 98
-    .local v18, "up":I
+    .local v18, up:I
     move-object/from16 v0, p0
 
     iget v8, v0, Lcom/google/zxing/common/detector/WhiteRectangleDetector;->downInit:I
 
     .line 99
-    .local v8, "down":I
+    .local v8, down:I
     const/4 v15, 0x0
 
     .line 100
-    .local v15, "sizeExceeded":Z
+    .local v15, sizeExceeded:Z
     const/4 v5, 0x1
 
     .line 101
-    .local v5, "aBlackPointFoundOnBorder":Z
+    .local v5, aBlackPointFoundOnBorder:Z
     const/4 v6, 0x0
 
     .line 103
-    .local v6, "atLeastOneBlackPointFoundOnBorder":Z
+    .local v6, atLeastOneBlackPointFoundOnBorder:Z
     :cond_0
     :goto_0
     if-eqz v5, :cond_3
@@ -665,7 +665,7 @@
     const/4 v14, 0x1
 
     .line 111
-    .local v14, "rightBorderNotWhite":Z
+    .local v14, rightBorderNotWhite:Z
     :cond_1
     :goto_1
     if-eqz v14, :cond_2
@@ -720,7 +720,7 @@
     const/4 v15, 0x1
 
     .line 181
-    .end local v14    # "rightBorderNotWhite":Z
+    .end local v14           #rightBorderNotWhite:Z
     :cond_3
     :goto_2
     if-nez v15, :cond_1a
@@ -731,14 +731,14 @@
     sub-int v12, v13, v10
 
     .line 185
-    .local v12, "maxSize":I
+    .local v12, maxSize:I
     const/16 v21, 0x0
 
     .line 186
-    .local v21, "z":Lcom/google/zxing/ResultPoint;
+    .local v21, z:Lcom/google/zxing/ResultPoint;
     const/4 v9, 0x1
 
-    .local v9, "i":I
+    .local v9, i:I
     :goto_3
     if-ge v9, v12, :cond_4
 
@@ -796,15 +796,15 @@
     throw v22
 
     .line 127
-    .end local v9    # "i":I
-    .end local v12    # "maxSize":I
-    .end local v21    # "z":Lcom/google/zxing/ResultPoint;
-    .restart local v14    # "rightBorderNotWhite":Z
+    .end local v9           #i:I
+    .end local v12           #maxSize:I
+    .end local v21           #z:Lcom/google/zxing/ResultPoint;
+    .restart local v14       #rightBorderNotWhite:Z
     :cond_5
     const/4 v7, 0x1
 
     .line 128
-    .local v7, "bottomBorderNotWhite":Z
+    .local v7, bottomBorderNotWhite:Z
     :cond_6
     :goto_4
     if-eqz v7, :cond_7
@@ -864,7 +864,7 @@
     const/4 v11, 0x1
 
     .line 145
-    .local v11, "leftBorderNotWhite":Z
+    .local v11, leftBorderNotWhite:Z
     :cond_9
     :goto_5
     if-eqz v11, :cond_a
@@ -910,7 +910,7 @@
     const/16 v17, 0x1
 
     .line 162
-    .local v17, "topBorderNotWhite":Z
+    .local v17, topBorderNotWhite:Z
     :cond_c
     :goto_6
     if-eqz v17, :cond_d
@@ -961,13 +961,13 @@
     goto/16 :goto_0
 
     .line 186
-    .end local v7    # "bottomBorderNotWhite":Z
-    .end local v11    # "leftBorderNotWhite":Z
-    .end local v14    # "rightBorderNotWhite":Z
-    .end local v17    # "topBorderNotWhite":Z
-    .restart local v9    # "i":I
-    .restart local v12    # "maxSize":I
-    .restart local v21    # "z":Lcom/google/zxing/ResultPoint;
+    .end local v7           #bottomBorderNotWhite:Z
+    .end local v11           #leftBorderNotWhite:Z
+    .end local v14           #rightBorderNotWhite:Z
+    .end local v17           #topBorderNotWhite:Z
+    .restart local v9       #i:I
+    .restart local v12       #maxSize:I
+    .restart local v21       #z:Lcom/google/zxing/ResultPoint;
     :cond_f
     add-int/lit8 v9, v9, 0x1
 
@@ -978,7 +978,7 @@
     const/16 v16, 0x0
 
     .line 199
-    .local v16, "t":Lcom/google/zxing/ResultPoint;
+    .local v16, t:Lcom/google/zxing/ResultPoint;
     const/4 v9, 0x1
 
     :goto_7
@@ -1050,7 +1050,7 @@
     const/16 v19, 0x0
 
     .line 212
-    .local v19, "x":Lcom/google/zxing/ResultPoint;
+    .local v19, x:Lcom/google/zxing/ResultPoint;
     const/4 v9, 0x1
 
     :goto_8
@@ -1122,7 +1122,7 @@
     const/16 v20, 0x0
 
     .line 225
-    .local v20, "y":Lcom/google/zxing/ResultPoint;
+    .local v20, y:Lcom/google/zxing/ResultPoint;
     const/4 v9, 0x1
 
     :goto_9
@@ -1206,12 +1206,12 @@
     return-object v22
 
     .line 239
-    .end local v9    # "i":I
-    .end local v12    # "maxSize":I
-    .end local v16    # "t":Lcom/google/zxing/ResultPoint;
-    .end local v19    # "x":Lcom/google/zxing/ResultPoint;
-    .end local v20    # "y":Lcom/google/zxing/ResultPoint;
-    .end local v21    # "z":Lcom/google/zxing/ResultPoint;
+    .end local v9           #i:I
+    .end local v12           #maxSize:I
+    .end local v16           #t:Lcom/google/zxing/ResultPoint;
+    .end local v19           #x:Lcom/google/zxing/ResultPoint;
+    .end local v20           #y:Lcom/google/zxing/ResultPoint;
+    .end local v21           #z:Lcom/google/zxing/ResultPoint;
     :cond_1a
     invoke-static {}, Lcom/google/zxing/NotFoundException;->getNotFoundInstance()Lcom/google/zxing/NotFoundException;
 

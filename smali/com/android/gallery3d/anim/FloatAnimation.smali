@@ -14,9 +14,9 @@
 # direct methods
 .method public constructor <init>(FFI)V
     .locals 0
-    .param p1, "from"    # F
-    .param p2, "to"    # F
-    .param p3, "duration"    # I
+    .parameter "from"
+    .parameter "to"
+    .parameter "duration"
 
     .prologue
     .line 25
@@ -52,7 +52,7 @@
 
 .method protected onCalculate(F)V
     .locals 3
-    .param p1, "progress"    # F
+    .parameter "progress"
 
     .prologue
     .line 34

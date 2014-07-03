@@ -57,14 +57,14 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/camera/ComboPreferences;[Ljava/lang/String;Landroid/view/View;Landroid/hardware/Camera$Parameters;Lcom/android/camera/FocusManager$Listener;ZLandroid/os/Looper;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "preferences"    # Lcom/android/camera/ComboPreferences;
-    .param p3, "defaultFocusModes"    # [Ljava/lang/String;
-    .param p4, "focusIndicatorRotate"    # Landroid/view/View;
-    .param p5, "parameters"    # Landroid/hardware/Camera$Parameters;
-    .param p6, "listener"    # Lcom/android/camera/FocusManager$Listener;
-    .param p7, "mirror"    # Z
-    .param p8, "looper"    # Landroid/os/Looper;
+    .parameter "context"
+    .parameter "preferences"
+    .parameter "defaultFocusModes"
+    .parameter "focusIndicatorRotate"
+    .parameter "parameters"
+    .parameter "listener"
+    .parameter "mirror"
+    .parameter "looper"
 
     .prologue
     const/4 v0, 0x0
@@ -117,7 +117,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/FocusManager;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/FocusManager;
+    .parameter "x0"
 
     .prologue
     .line 130
@@ -128,7 +128,7 @@
 
 .method static synthetic access$100(Lcom/android/camera/FocusManager;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/FocusManager;
+    .parameter "x0"
 
     .prologue
     .line 130
@@ -139,7 +139,7 @@
 
 .method static synthetic access$200(Lcom/android/camera/FocusManager;)Lcom/android/camera/ui/FocusIndicatorRotateLayout;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/FocusManager;
+    .parameter "x0"
 
     .prologue
     .line 130
@@ -150,7 +150,7 @@
 
 .method private autoFocus(I)V
     .locals 4
-    .param p1, "focusMode"    # I
+    .parameter "focusMode"
 
     .prologue
     const/4 v2, 0x0
@@ -238,7 +238,7 @@
     move-result-object v0
 
     .line 706
-    .local v0, "focusMode":Ljava/lang/String;
+    .local v0, focusMode:Ljava/lang/String;
     const-string v1, "auto"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -419,9 +419,9 @@
 
 .method private focusPoint(III)V
     .locals 3
-    .param p1, "x"    # I
-    .param p2, "y"    # I
-    .param p3, "focusMode"    # I
+    .parameter "x"
+    .parameter "y"
+    .parameter "focusMode"
 
     .prologue
     const/4 v2, 0x1
@@ -509,8 +509,8 @@
 
 .method private initFoucusVariables(II)V
     .locals 13
-    .param p1, "x"    # I
-    .param p2, "y"    # I
+    .parameter "x"
+    .parameter "y"
 
     .prologue
     .line 430
@@ -521,7 +521,7 @@
 
     iget v2, p0, Lcom/android/camera/FocusManager;->FOCUS_AREA_HEIGHT:I
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f80
 
     iget v6, p0, Lcom/android/camera/FocusManager;->mPreviewWidth:I
 
@@ -552,7 +552,7 @@
 
     iget v2, p0, Lcom/android/camera/FocusManager;->FOCUS_AREA_HEIGHT:I
 
-    const/high16 v3, 0x3fc00000
+    const/high16 v3, 0x3fc0
 
     iget v6, p0, Lcom/android/camera/FocusManager;->mPreviewWidth:I
 
@@ -588,7 +588,7 @@
     check-cast v10, Landroid/widget/RelativeLayout$LayoutParams;
 
     .line 443
-    .local v10, "p":Landroid/widget/RelativeLayout$LayoutParams;
+    .local v10, p:Landroid/widget/RelativeLayout$LayoutParams;
     iget v0, p0, Lcom/android/camera/FocusManager;->FOCUS_INDICATOR_WIDTH:I
 
     div-int/lit8 v0, v0, 0x2
@@ -614,7 +614,7 @@
     move-result v9
 
     .line 445
-    .local v9, "left":I
+    .local v9, left:I
     iget v0, p0, Lcom/android/camera/FocusManager;->FOCUS_INDICATOR_WIDTH:I
 
     div-int/lit8 v0, v0, 0x2
@@ -640,7 +640,7 @@
     move-result v12
 
     .line 447
-    .local v12, "top":I
+    .local v12, top:I
     const/4 v0, 0x0
 
     const/4 v1, 0x0
@@ -653,7 +653,7 @@
     move-result-object v11
 
     .line 450
-    .local v11, "rules":[I
+    .local v11, rules:[I
     const/16 v0, 0xd
 
     const/4 v1, 0x0
@@ -711,7 +711,7 @@
 
 .method private isFocusValide(I)Z
     .locals 7
-    .param p1, "focusMode"    # I
+    .parameter "focusMode"
 
     .prologue
     const/4 v6, 0x1
@@ -722,7 +722,7 @@
     move-result-wide v0
 
     .line 529
-    .local v0, "now":J
+    .local v0, now:J
     iget v2, p0, Lcom/android/camera/FocusManager;->mLastFocusMode:I
 
     const/4 v3, 0x2
@@ -732,7 +732,7 @@
     const-wide/16 v4, 0x1388
 
     .line 531
-    .local v4, "timeout":J
+    .local v4, timeout:J
     :goto_0
     iget v2, p0, Lcom/android/camera/FocusManager;->mLastFocusMode:I
 
@@ -771,14 +771,14 @@
     return v2
 
     .line 529
-    .end local v4    # "timeout":J
+    .end local v4           #timeout:J
     :cond_1
     const-wide/16 v4, 0xfa0
 
     goto :goto_0
 
     .line 537
-    .restart local v4    # "timeout":J
+    .restart local v4       #timeout:J
     :cond_2
     iget v2, p0, Lcom/android/camera/FocusManager;->mLastFocusMode:I
 
@@ -796,7 +796,8 @@
 
 .method private static isSupported(Ljava/lang/String;Ljava/util/List;)Z
     .locals 2
-    .param p0, "value"    # Ljava/lang/String;
+    .parameter "value"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -809,7 +810,7 @@
     .end annotation
 
     .prologue
-    .local p1, "supported":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .local p1, supported:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     const/4 v0, 0x0
 
     .line 693
@@ -900,7 +901,7 @@
     move-result-object v0
 
     .line 698
-    .local v0, "focusMode":Ljava/lang/String;
+    .local v0, focusMode:Ljava/lang/String;
     const-string v1, "infinity"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -946,7 +947,7 @@
 
 .method private setFocusState(I)V
     .locals 0
-    .param p1, "state"    # I
+    .parameter "state"
 
     .prologue
     .line 257
@@ -958,7 +959,7 @@
 
 .method private setLastFocusState(I)V
     .locals 0
-    .param p1, "state"    # I
+    .parameter "state"
 
     .prologue
     .line 261
@@ -1006,14 +1007,14 @@
 # virtual methods
 .method public bridge synthetic calculateTapArea(IIFIIIILandroid/graphics/Rect;)V
     .locals 0
-    .param p1, "x0"    # I
-    .param p2, "x1"    # I
-    .param p3, "x2"    # F
-    .param p4, "x3"    # I
-    .param p5, "x4"    # I
-    .param p6, "x5"    # I
-    .param p7, "x6"    # I
-    .param p8, "x7"    # Landroid/graphics/Rect;
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+    .parameter "x3"
+    .parameter "x4"
+    .parameter "x5"
+    .parameter "x6"
+    .parameter "x7"
 
     .prologue
     .line 130
@@ -1171,9 +1172,9 @@
     .locals 10
 
     .prologue
-    const/high16 v9, 0x42a00000
+    const/high16 v9, 0x42a0
 
-    const/high16 v8, 0x40000000
+    const/high16 v8, 0x4000
 
     const/4 v4, 0x1
 
@@ -1204,7 +1205,7 @@
     move-result-object v0
 
     .line 491
-    .local v0, "rect":Landroid/graphics/RectF;
+    .local v0, rect:Landroid/graphics/RectF;
     if-eqz v0, :cond_0
 
     .line 494
@@ -1275,7 +1276,7 @@
     float-to-int v1, v3
 
     .line 503
-    .local v1, "x":I
+    .local v1, x:I
     iget v3, v0, Landroid/graphics/RectF;->top:F
 
     iget v5, v0, Landroid/graphics/RectF;->bottom:F
@@ -1287,7 +1288,7 @@
     float-to-int v2, v3
 
     .line 504
-    .local v2, "y":I
+    .local v2, y:I
     invoke-direct {p0, v1, v2, v4}, Lcom/android/camera/FocusManager;->focusPoint(III)V
 
     move v3, v4
@@ -1349,7 +1350,7 @@
     move-result-object v2
 
     .line 591
-    .local v2, "supportedFocusModes":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    .local v2, supportedFocusModes:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     iget-object v3, p0, Lcom/android/camera/FocusManager;->mPreferences:Lcom/android/camera/ComboPreferences;
 
     const-string v4, "pref_camera_focusmode_key"
@@ -1370,7 +1371,7 @@
     .line 596
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_1
     iget-object v3, p0, Lcom/android/camera/FocusManager;->mDefaultFocusModes:[Ljava/lang/String;
 
@@ -1384,7 +1385,7 @@
     aget-object v1, v3, v0
 
     .line 598
-    .local v1, "mode":Ljava/lang/String;
+    .local v1, mode:Ljava/lang/String;
     invoke-static {v1, v2}, Lcom/android/camera/FocusManager;->isSupported(Ljava/lang/String;Ljava/util/List;)Z
 
     move-result v3
@@ -1395,8 +1396,8 @@
     iput-object v1, p0, Lcom/android/camera/FocusManager;->mFocusMode:Ljava/lang/String;
 
     .line 605
-    .end local v0    # "i":I
-    .end local v1    # "mode":Ljava/lang/String;
+    .end local v0           #i:I
+    .end local v1           #mode:Ljava/lang/String;
     :cond_1
     iget-object v3, p0, Lcom/android/camera/FocusManager;->mFocusMode:Ljava/lang/String;
 
@@ -1434,16 +1435,16 @@
     goto :goto_0
 
     .line 596
-    .restart local v0    # "i":I
-    .restart local v1    # "mode":Ljava/lang/String;
+    .restart local v0       #i:I
+    .restart local v1       #mode:Ljava/lang/String;
     :cond_3
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
     .line 612
-    .end local v0    # "i":I
-    .end local v1    # "mode":Ljava/lang/String;
+    .end local v0           #i:I
+    .end local v1           #mode:Ljava/lang/String;
     :cond_4
     iget-object v3, p0, Lcom/android/camera/FocusManager;->mParameters:Landroid/hardware/Camera$Parameters;
 
@@ -1506,7 +1507,7 @@
 
 .method public onAutoFocus(Z)V
     .locals 6
-    .param p1, "focused"    # Z
+    .parameter "focused"
 
     .prologue
     const/4 v5, 0x0
@@ -1656,7 +1657,7 @@
 
 .method public onAutoFocusMoving(Z)V
     .locals 0
-    .param p1, "moving"    # Z
+    .parameter "moving"
 
     .prologue
     .line 418
@@ -1710,7 +1711,7 @@
 
 .method public onDeviceKeepMoving(D)V
     .locals 7
-    .param p1, "a"    # D
+    .parameter "a"
 
     .prologue
     const/4 v6, 0x0
@@ -1743,7 +1744,7 @@
     invoke-direct {p0, v6}, Lcom/android/camera/FocusManager;->setFocusState(I)V
 
     .line 722
-    const-wide/high16 v0, 0x3ff8000000000000L
+    const-wide/high16 v0, 0x3ff8
 
     cmpl-double v0, p1, v0
 
@@ -1809,7 +1810,7 @@
 
 .method public onShutterDown(I)V
     .locals 2
-    .param p1, "fromWhat"    # I
+    .parameter "fromWhat"
 
     .prologue
     const/4 v1, 0x3
@@ -1934,8 +1935,8 @@
 
 .method public onSingleTapUp(II)V
     .locals 2
-    .param p1, "x"    # I
-    .param p2, "y"    # I
+    .parameter "x"
+    .parameter "y"
 
     .prologue
     .line 455
@@ -1962,7 +1963,7 @@
 
 .method public overrideFocusMode(Ljava/lang/String;)V
     .locals 0
-    .param p1, "focusMode"    # Ljava/lang/String;
+    .parameter "focusMode"
 
     .prologue
     .line 681
@@ -2054,13 +2055,13 @@
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
     .line 655
-    .local v0, "p":Landroid/widget/RelativeLayout$LayoutParams;
+    .local v0, p:Landroid/widget/RelativeLayout$LayoutParams;
     invoke-virtual {v0}, Landroid/widget/RelativeLayout$LayoutParams;->getRules()[I
 
     move-result-object v1
 
     .line 656
-    .local v1, "rules":[I
+    .local v1, rules:[I
     const/16 v2, 0xd
 
     const/4 v3, -0x1
@@ -2095,7 +2096,7 @@
 
 .method public setAeAwbLock(Z)V
     .locals 0
-    .param p1, "lock"    # Z
+    .parameter "lock"
 
     .prologue
     .line 685
@@ -2107,7 +2108,7 @@
 
 .method public bridge synthetic setDisplayOrientation(I)V
     .locals 0
-    .param p1, "x0"    # I
+    .parameter "x0"
 
     .prologue
     .line 130
@@ -2118,7 +2119,7 @@
 
 .method public setFaceView(Lcom/android/camera/ui/FaceView;)V
     .locals 0
-    .param p1, "faceView"    # Lcom/android/camera/ui/FaceView;
+    .parameter "faceView"
 
     .prologue
     .line 252
@@ -2130,7 +2131,7 @@
 
 .method public setFocusAreaIndicator(Landroid/view/View;)V
     .locals 2
-    .param p1, "l"    # Landroid/view/View;
+    .parameter "l"
 
     .prologue
     .line 212
@@ -2157,7 +2158,7 @@
     move-result-object v0
 
     .line 216
-    .local v0, "layout":Landroid/view/ViewGroup$LayoutParams;
+    .local v0, layout:Landroid/view/ViewGroup$LayoutParams;
     iget v1, p0, Lcom/android/camera/FocusManager;->FOCUS_INDICATOR_WIDTH:I
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
@@ -2173,7 +2174,7 @@
 
 .method public bridge synthetic setMirror(Z)V
     .locals 0
-    .param p1, "x0"    # Z
+    .parameter "x0"
 
     .prologue
     .line 130
@@ -2184,7 +2185,7 @@
 
 .method public setParameters(Landroid/hardware/Camera$Parameters;)V
     .locals 4
-    .param p1, "parameters"    # Landroid/hardware/Camera$Parameters;
+    .parameter "parameters"
 
     .prologue
     const/4 v1, 0x1
@@ -2257,8 +2258,8 @@
 
 .method public setPreviewSize(II)V
     .locals 1
-    .param p1, "previewWidth"    # I
-    .param p2, "previewHeight"    # I
+    .parameter "previewWidth"
+    .parameter "previewHeight"
 
     .prologue
     .line 244
@@ -2315,7 +2316,7 @@
     check-cast v0, Lcom/android/camera/ui/FocusIndicator;
 
     .line 633
-    .local v0, "focusIndicator":Lcom/android/camera/ui/FocusIndicator;
+    .local v0, focusIndicator:Lcom/android/camera/ui/FocusIndicator;
     iget v1, p0, Lcom/android/camera/FocusManager;->mState:I
 
     if-nez v1, :cond_3
@@ -2326,14 +2327,14 @@
     goto :goto_0
 
     .line 630
-    .end local v0    # "focusIndicator":Lcom/android/camera/ui/FocusIndicator;
+    .end local v0           #focusIndicator:Lcom/android/camera/ui/FocusIndicator;
     :cond_2
     iget-object v0, p0, Lcom/android/camera/FocusManager;->mFocusIndicatorRotateLayout:Lcom/android/camera/ui/FocusIndicatorRotateLayout;
 
     goto :goto_1
 
     .line 635
-    .restart local v0    # "focusIndicator":Lcom/android/camera/ui/FocusIndicator;
+    .restart local v0       #focusIndicator:Lcom/android/camera/ui/FocusIndicator;
     :cond_3
     iget v1, p0, Lcom/android/camera/FocusManager;->mState:I
 

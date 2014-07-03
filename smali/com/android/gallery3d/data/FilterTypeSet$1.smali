@@ -28,6 +28,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/data/FilterTypeSet;I[Lcom/android/gallery3d/data/Path;)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
     .line 102
@@ -46,8 +49,8 @@
 # virtual methods
 .method public consume(ILcom/android/gallery3d/data/MediaItem;)V
     .locals 3
-    .param p1, "index"    # I
-    .param p2, "item"    # Lcom/android/gallery3d/data/MediaItem;
+    .parameter "index"
+    .parameter "item"
 
     .prologue
     .line 104
@@ -57,7 +60,7 @@
 
     iget-object v2, p0, Lcom/android/gallery3d/data/FilterTypeSet$1;->this$0:Lcom/android/gallery3d/data/FilterTypeSet;
 
-    # getter for: Lcom/android/gallery3d/data/FilterTypeSet;->mMediaType:I
+    #getter for: Lcom/android/gallery3d/data/FilterTypeSet;->mMediaType:I
     invoke-static {v2}, Lcom/android/gallery3d/data/FilterTypeSet;->access$000(Lcom/android/gallery3d/data/FilterTypeSet;)I
 
     move-result v2
@@ -83,7 +86,7 @@
     move-result-object v0
 
     .line 107
-    .local v0, "path":Lcom/android/gallery3d/data/Path;
+    .local v0, path:Lcom/android/gallery3d/data/Path;
     iget-object v1, p0, Lcom/android/gallery3d/data/FilterTypeSet$1;->val$buf:[Lcom/android/gallery3d/data/Path;
 
     aput-object v0, v1, p1

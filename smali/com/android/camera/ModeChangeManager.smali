@@ -58,7 +58,7 @@
 
 .method public constructor <init>(Landroid/app/Activity;)V
     .locals 2
-    .param p1, "activity"    # Landroid/app/Activity;
+    .parameter "activity"
 
     .prologue
     .line 34
@@ -150,7 +150,7 @@
 
 .method public static setCurrentMode(I)V
     .locals 0
-    .param p0, "mode"    # I
+    .parameter "mode"
 
     .prologue
     .line 103
@@ -175,7 +175,7 @@
     const/4 v0, 0x0
 
     .line 90
-    .local v0, "newMode":I
+    .local v0, newMode:I
     :goto_0
     invoke-static {v0}, Lcom/android/camera/ModeChangeManager;->setCurrentMode(I)V
 
@@ -210,11 +210,11 @@
     return-void
 
     .line 87
-    .end local v0    # "newMode":I
+    .end local v0           #newMode:I
     :cond_1
     const/4 v0, 0x1
 
-    .restart local v0    # "newMode":I
+    .restart local v0       #newMode:I
     goto :goto_0
 .end method
 
@@ -236,7 +236,7 @@
     new-array v2, v3, [Landroid/graphics/drawable/Drawable;
 
     .line 54
-    .local v2, "thumbs":[Landroid/graphics/drawable/Drawable;
+    .local v2, thumbs:[Landroid/graphics/drawable/Drawable;
     sget-object v3, Lcom/android/camera/ModeChangeManager;->mActivity:Landroid/app/Activity;
 
     invoke-virtual {v3}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
@@ -244,7 +244,7 @@
     move-result-object v0
 
     .line 55
-    .local v0, "resources":Landroid/content/res/Resources;
+    .local v0, resources:Landroid/content/res/Resources;
     invoke-static {}, Lcom/android/camera/ModeChangeManager;->isCameraEnabled()Z
 
     move-result v3
@@ -277,7 +277,7 @@
     invoke-direct {v1, v2}, Landroid/graphics/drawable/TransitionDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
 
     .line 64
-    .local v1, "thumbTransition":Landroid/graphics/drawable/TransitionDrawable;
+    .local v1, thumbTransition:Landroid/graphics/drawable/TransitionDrawable;
     iget-object v3, p0, Lcom/android/camera/ModeChangeManager;->mScrollButton:Lcom/android/camera/ui/ScrollButton;
 
     invoke-virtual {v3, v1}, Lcom/android/camera/ui/ScrollButton;->setSliderDrawable(Landroid/graphics/drawable/Drawable;)V
@@ -294,7 +294,7 @@
     sput-boolean v5, Lcom/android/camera/ModeChangeManager;->sAnimating:Z
 
     .line 71
-    .end local v1    # "thumbTransition":Landroid/graphics/drawable/TransitionDrawable;
+    .end local v1           #thumbTransition:Landroid/graphics/drawable/TransitionDrawable;
     :goto_1
     iget-object v3, p0, Lcom/android/camera/ModeChangeManager;->mScrollButton:Lcom/android/camera/ui/ScrollButton;
 
@@ -374,7 +374,7 @@
 # virtual methods
 .method public onCheckedChanged(Z)V
     .locals 0
-    .param p1, "isChecked"    # Z
+    .parameter "isChecked"
 
     .prologue
     .line 79
@@ -386,7 +386,7 @@
 
 .method public setEnabled(Z)V
     .locals 1
-    .param p1, "enabled"    # Z
+    .parameter "enabled"
 
     .prologue
     .line 119
@@ -400,7 +400,7 @@
 
 .method public setOnModeChangeListener(Lcom/android/camera/ModeChangeManager$OnModeChangeListener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/camera/ModeChangeManager$OnModeChangeListener;
+    .parameter "listener"
 
     .prologue
     .line 99
@@ -412,8 +412,8 @@
 
 .method public setOrientation(IZ)V
     .locals 1
-    .param p1, "orientation"    # I
-    .param p2, "animation"    # Z
+    .parameter "orientation"
+    .parameter "animation"
 
     .prologue
     .line 111
@@ -427,7 +427,7 @@
 
 .method public setVisibility(I)V
     .locals 1
-    .param p1, "visibility"    # I
+    .parameter "visibility"
 
     .prologue
     .line 115

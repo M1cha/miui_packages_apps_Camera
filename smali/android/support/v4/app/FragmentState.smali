@@ -60,7 +60,7 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 3
-    .param p1, "in"    # Landroid/os/Parcel;
+    .parameter "in"
 
     .prologue
     const/4 v1, 0x1
@@ -177,7 +177,7 @@
 
 .method public constructor <init>(Landroid/support/v4/app/Fragment;)V
     .locals 1
-    .param p1, "frag"    # Landroid/support/v4/app/Fragment;
+    .parameter "frag"
 
     .prologue
     .line 63
@@ -252,7 +252,7 @@
 
 .method public instantiate(Landroid/support/v4/app/FragmentActivity;)Landroid/support/v4/app/Fragment;
     .locals 3
-    .param p1, "activity"    # Landroid/support/v4/app/FragmentActivity;
+    .parameter "activity"
 
     .prologue
     .line 89
@@ -417,8 +417,8 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 3
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
+    .parameter "dest"
+    .parameter "flags"
 
     .prologue
     const/4 v1, 0x1

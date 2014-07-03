@@ -37,7 +37,7 @@
 
 .method public constructor <init>(I)V
     .locals 3
-    .param p1, "target"    # I
+    .parameter "target"
 
     .prologue
     const/4 v2, 0x0
@@ -68,7 +68,7 @@
 
 .method private uploadToCanvas(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 10
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .parameter "canvas"
 
     .prologue
     const v9, 0x812f
@@ -85,19 +85,19 @@
     move-result-object v0
 
     .line 39
-    .local v0, "gl":Ljavax/microedition/khronos/opengles/GL11;
+    .local v0, gl:Ljavax/microedition/khronos/opengles/GL11;
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/ExtTexture;->getWidth()I
 
     move-result v2
 
     .line 40
-    .local v2, "width":I
+    .local v2, width:I
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/ExtTexture;->getHeight()I
 
     move-result v1
 
     .line 44
-    .local v1, "height":I
+    .local v1, height:I
     sget-object v3, Lcom/android/gallery3d/ui/ExtTexture;->sCropRect:[F
 
     const/4 v4, 0x0
@@ -189,9 +189,9 @@
 # virtual methods
 .method public bridge synthetic draw(Lcom/android/gallery3d/ui/GLCanvas;II)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/ui/GLCanvas;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
 
     .prologue
     .line 24
@@ -202,11 +202,11 @@
 
 .method public bridge synthetic draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/ui/GLCanvas;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
-    .param p4, "x3"    # I
-    .param p5, "x4"    # I
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+    .parameter "x3"
+    .parameter "x4"
 
     .prologue
     .line 24
@@ -321,7 +321,7 @@
 
 .method protected onBind(Lcom/android/gallery3d/ui/GLCanvas;)Z
     .locals 1
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .parameter "canvas"
 
     .prologue
     .line 68

@@ -14,7 +14,7 @@
 # direct methods
 .method public constructor <init>([Lcom/google/zxing/qrcode/detector/FinderPattern;)V
     .locals 1
-    .param p1, "patternCenters"    # [Lcom/google/zxing/qrcode/detector/FinderPattern;
+    .parameter "patternCenters"
 
     .prologue
     .line 31

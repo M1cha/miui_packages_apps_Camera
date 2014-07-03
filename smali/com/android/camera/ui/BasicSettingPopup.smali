@@ -13,8 +13,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 42
@@ -33,7 +33,7 @@
 # virtual methods
 .method public initialize(Lcom/android/camera/IconListPreference;)V
     .locals 12
-    .param p1, "preference"    # Lcom/android/camera/IconListPreference;
+    .parameter "preference"
 
     .prologue
     const/4 v11, 0x2
@@ -47,7 +47,7 @@
     move-result-object v1
 
     .line 48
-    .local v1, "context":Landroid/content/Context;
+    .local v1, context:Landroid/content/Context;
     iget-object v3, p0, Lcom/android/camera/ui/BasicSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
     invoke-virtual {v3}, Lcom/android/camera/IconListPreference;->getEntries()[Ljava/lang/CharSequence;
@@ -55,7 +55,7 @@
     move-result-object v6
 
     .line 49
-    .local v6, "entries":[Ljava/lang/CharSequence;
+    .local v6, entries:[Ljava/lang/CharSequence;
     iget-object v3, p0, Lcom/android/camera/ui/BasicSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
     invoke-virtual {v3}, Lcom/android/camera/IconListPreference;->getImageIds()[I
@@ -63,7 +63,7 @@
     move-result-object v8
 
     .line 50
-    .local v8, "iconIds":[I
+    .local v8, iconIds:[I
     if-nez v8, :cond_0
 
     .line 51
@@ -91,10 +91,10 @@
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     .line 60
-    .local v2, "listItem":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;>;"
+    .local v2, listItem:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;>;"
     const/4 v7, 0x0
 
-    .local v7, "i":I
+    .local v7, i:I
     :goto_0
     array-length v3, v6
 
@@ -106,7 +106,7 @@
     invoke-direct {v9}, Ljava/util/HashMap;-><init>()V
 
     .line 62
-    .local v9, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
+    .local v9, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     const-string v3, "text"
 
     aget-object v4, v6, v7
@@ -140,7 +140,7 @@
     goto :goto_0
 
     .line 66
-    .end local v9    # "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
+    .end local v9           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     :cond_2
     new-instance v0, Landroid/widget/SimpleAdapter;
 
@@ -167,7 +167,7 @@
     invoke-direct/range {v0 .. v5}, Landroid/widget/SimpleAdapter;-><init>(Landroid/content/Context;Ljava/util/List;I[Ljava/lang/String;[I)V
 
     .line 71
-    .local v0, "listItemAdapter":Landroid/widget/SimpleAdapter;
+    .local v0, listItemAdapter:Landroid/widget/SimpleAdapter;
     iget-object v3, p0, Lcom/android/camera/ui/BasicSettingPopup;->mSettingList:Landroid/view/ViewGroup;
 
     check-cast v3, Landroid/widget/AbsListView;
@@ -191,17 +191,18 @@
     nop
 
     :array_0
-    .array-data 4
-        0x7f0c0039
-        0x7f0c0038
+    .array-data 0x4
+        0x39t 0x0t 0xct 0x7ft
+        0x38t 0x0t 0xct 0x7ft
     .end array-data
 .end method
 
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 1
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "index"    # I
-    .param p4, "id"    # J
+    .parameter
+    .parameter "view"
+    .parameter "index"
+    .parameter "id"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -214,7 +215,7 @@
 
     .prologue
     .line 99
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
+    .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/android/camera/ui/BasicSettingPopup;->mPreference:Lcom/android/camera/IconListPreference;
 
     invoke-virtual {v0, p3}, Lcom/android/camera/IconListPreference;->setValueIndex(I)V
@@ -235,8 +236,8 @@
 
 .method protected onMeasure(II)V
     .locals 7
-    .param p1, "widthSpec"    # I
-    .param p2, "heightSpec"    # I
+    .parameter "widthSpec"
+    .parameter "heightSpec"
 
     .prologue
     .line 105
@@ -245,7 +246,7 @@
     move-result v0
 
     .line 107
-    .local v0, "heightSpecSize":I
+    .local v0, heightSpecSize:I
     invoke-virtual {p0}, Lcom/android/camera/ui/BasicSettingPopup;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
@@ -257,7 +258,7 @@
     move-result v2
 
     .line 108
-    .local v2, "popupTitleHeight":I
+    .local v2, popupTitleHeight:I
     invoke-virtual {p0}, Lcom/android/camera/ui/BasicSettingPopup;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
@@ -269,7 +270,7 @@
     move-result v1
 
     .line 109
-    .local v1, "popupSeperatorHeight":I
+    .local v1, popupSeperatorHeight:I
     invoke-virtual {p0}, Lcom/android/camera/ui/BasicSettingPopup;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
@@ -281,7 +282,7 @@
     move-result v3
 
     .line 111
-    .local v3, "settingItemHeight":I
+    .local v3, settingItemHeight:I
     add-int v5, v2, v1
 
     mul-int/lit8 v6, v3, 0x5
@@ -289,7 +290,7 @@
     add-int v4, v5, v6
 
     .line 112
-    .local v4, "specSize":I
+    .local v4, specSize:I
     if-le v4, v0, :cond_0
 
     .line 113
@@ -297,7 +298,7 @@
 
     .line 115
     :cond_0
-    const/high16 v5, 0x40000000
+    const/high16 v5, 0x4000
 
     invoke-static {v4, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
@@ -328,7 +329,7 @@
     move-result v0
 
     .line 81
-    .local v0, "index":I
+    .local v0, index:I
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
@@ -380,7 +381,7 @@
     move-result v0
 
     .line 91
-    .local v0, "index":I
+    .local v0, index:I
     iget-object v1, p0, Lcom/android/camera/ui/BasicSettingPopup;->mSettingList:Landroid/view/ViewGroup;
 
     instance-of v1, v1, Landroid/widget/ListView;

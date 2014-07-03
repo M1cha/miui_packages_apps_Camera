@@ -19,6 +19,8 @@
 
 .method private doDecode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 17
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -275,7 +277,7 @@
 
     sub-float v15, v15, v16
 
-    const/high16 v16, 0x3f800000
+    const/high16 v16, 0x3f80
 
     sub-float v15, v15, v16
 
@@ -308,7 +310,7 @@
 
     sub-float v15, v15, v16
 
-    const/high16 v16, 0x3f800000
+    const/high16 v16, 0x3f80
 
     sub-float v15, v15, v16
 
@@ -363,9 +365,9 @@
 
 .method protected static patternMatchVariance([I[II)I
     .locals 12
-    .param p0, "counters"    # [I
-    .param p1, "pattern"    # [I
-    .param p2, "maxIndividualVariance"    # I
+    .parameter "counters"
+    .parameter "pattern"
+    .parameter "maxIndividualVariance"
 
     .prologue
     const v10, 0x7fffffff
@@ -374,18 +376,18 @@
     array-length v2, p0
 
     .line 260
-    .local v2, "numCounters":I
+    .local v2, numCounters:I
     const/4 v5, 0x0
 
     .line 261
-    .local v5, "total":I
+    .local v5, total:I
     const/4 v3, 0x0
 
     .line 262
-    .local v3, "patternLength":I
+    .local v3, patternLength:I
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     if-ge v1, v2, :cond_0
 
@@ -420,7 +422,7 @@
     div-int v7, v11, v3
 
     .line 275
-    .local v7, "unitBarWidth":I
+    .local v7, unitBarWidth:I
     mul-int v11, p2, v7
 
     shr-int/lit8 p2, v11, 0x8
@@ -429,10 +431,10 @@
     const/4 v6, 0x0
 
     .line 278
-    .local v6, "totalVariance":I
+    .local v6, totalVariance:I
     const/4 v9, 0x0
 
-    .local v9, "x":I
+    .local v9, x:I
     :goto_2
     if-ge v9, v2, :cond_4
 
@@ -442,19 +444,19 @@
     shl-int/lit8 v0, v11, 0x8
 
     .line 280
-    .local v0, "counter":I
+    .local v0, counter:I
     aget v11, p1, v9
 
     mul-int v4, v11, v7
 
     .line 281
-    .local v4, "scaledPattern":I
+    .local v4, scaledPattern:I
     if-le v0, v4, :cond_3
 
     sub-int v8, v0, v4
 
     .line 282
-    .local v8, "variance":I
+    .local v8, variance:I
     :goto_3
     if-gt v8, p2, :cond_1
 
@@ -467,15 +469,15 @@
     goto :goto_2
 
     .line 281
-    .end local v8    # "variance":I
+    .end local v8           #variance:I
     :cond_3
     sub-int v8, v4, v0
 
     goto :goto_3
 
     .line 287
-    .end local v0    # "counter":I
-    .end local v4    # "scaledPattern":I
+    .end local v0           #counter:I
+    .end local v4           #scaledPattern:I
     :cond_4
     div-int v10, v6, v5
 
@@ -484,9 +486,9 @@
 
 .method protected static recordPattern(Lcom/google/zxing/common/BitArray;I[I)V
     .locals 8
-    .param p0, "row"    # Lcom/google/zxing/common/BitArray;
-    .param p1, "start"    # I
-    .param p2, "counters"    # [I
+    .parameter "row"
+    .parameter "start"
+    .parameter "counters"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -502,7 +504,7 @@
     array-length v4, p2
 
     .line 197
-    .local v4, "numCounters":I
+    .local v4, numCounters:I
     invoke-static {p2, v6, v4, v6}, Ljava/util/Arrays;->fill([IIII)V
 
     .line 198
@@ -511,7 +513,7 @@
     move-result v1
 
     .line 199
-    .local v1, "end":I
+    .local v1, end:I
     if-lt p1, v1, :cond_0
 
     .line 200
@@ -532,16 +534,16 @@
     move v3, v5
 
     .line 203
-    .local v3, "isWhite":Z
+    .local v3, isWhite:Z
     :goto_0
     const/4 v0, 0x0
 
     .line 204
-    .local v0, "counterPosition":I
+    .local v0, counterPosition:I
     move v2, p1
 
     .line 205
-    .local v2, "i":I
+    .local v2, i:I
     :goto_1
     if-ge v2, v1, :cond_3
 
@@ -567,9 +569,9 @@
 
     goto :goto_1
 
-    .end local v0    # "counterPosition":I
-    .end local v2    # "i":I
-    .end local v3    # "isWhite":Z
+    .end local v0           #counterPosition:I
+    .end local v2           #i:I
+    .end local v3           #isWhite:Z
     :cond_1
     move v3, v6
 
@@ -577,9 +579,9 @@
     goto :goto_0
 
     .line 209
-    .restart local v0    # "counterPosition":I
-    .restart local v2    # "i":I
-    .restart local v3    # "isWhite":Z
+    .restart local v0       #counterPosition:I
+    .restart local v2       #i:I
+    .restart local v3       #isWhite:Z
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
@@ -628,9 +630,9 @@
 
 .method protected static recordPatternInReverse(Lcom/google/zxing/common/BitArray;I[I)V
     .locals 3
-    .param p0, "row"    # Lcom/google/zxing/common/BitArray;
-    .param p1, "start"    # I
-    .param p2, "counters"    # [I
+    .parameter "row"
+    .parameter "start"
+    .parameter "counters"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -642,13 +644,13 @@
     array-length v1, p2
 
     .line 230
-    .local v1, "numTransitionsLeft":I
+    .local v1, numTransitionsLeft:I
     invoke-virtual {p0, p1}, Lcom/google/zxing/common/BitArray;->get(I)Z
 
     move-result v0
 
     .line 231
-    .local v0, "last":Z
+    .local v0, last:Z
     :cond_0
     :goto_0
     if-lez p1, :cond_2
@@ -705,7 +707,8 @@
 # virtual methods
 .method public decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 12
-    .param p1, "image"    # Lcom/google/zxing/BinaryBitmap;
+    .parameter "image"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -727,7 +730,7 @@
 
     .prologue
     .line 57
-    .local p2, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p2, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     :try_start_0
     invoke-direct {p0, p1, p2}, Lcom/google/zxing/oned/OneDReader;->doDecode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
     :try_end_0
@@ -744,7 +747,7 @@
     move-exception v3
 
     .line 59
-    .local v3, "nfe":Lcom/google/zxing/NotFoundException;
+    .local v3, nfe:Lcom/google/zxing/NotFoundException;
     if-eqz p2, :cond_2
 
     sget-object v9, Lcom/google/zxing/DecodeHintType;->TRY_HARDER:Lcom/google/zxing/DecodeHintType;
@@ -758,7 +761,7 @@
     const/4 v8, 0x1
 
     .line 60
-    .local v8, "tryHarder":Z
+    .local v8, tryHarder:Z
     :goto_0
     if-eqz v8, :cond_3
 
@@ -774,23 +777,23 @@
     move-result-object v7
 
     .line 62
-    .local v7, "rotatedImage":Lcom/google/zxing/BinaryBitmap;
+    .local v7, rotatedImage:Lcom/google/zxing/BinaryBitmap;
     invoke-direct {p0, v7, p2}, Lcom/google/zxing/oned/OneDReader;->doDecode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
 
     move-result-object v6
 
     .line 64
-    .local v6, "result":Lcom/google/zxing/Result;
+    .local v6, result:Lcom/google/zxing/Result;
     invoke-virtual {v6}, Lcom/google/zxing/Result;->getResultMetadata()Ljava/util/Map;
 
     move-result-object v2
 
     .line 65
-    .local v2, "metadata":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;*>;"
+    .local v2, metadata:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;*>;"
     const/16 v4, 0x10e
 
     .line 66
-    .local v4, "orientation":I
+    .local v4, orientation:I
     if-eqz v2, :cond_1
 
     sget-object v9, Lcom/google/zxing/ResultMetadataType;->ORIENTATION:Lcom/google/zxing/ResultMetadataType;
@@ -834,7 +837,7 @@
     move-result-object v5
 
     .line 74
-    .local v5, "points":[Lcom/google/zxing/ResultPoint;
+    .local v5, points:[Lcom/google/zxing/ResultPoint;
     if-eqz v5, :cond_0
 
     .line 75
@@ -843,10 +846,10 @@
     move-result v0
 
     .line 76
-    .local v0, "height":I
+    .local v0, height:I
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_1
     array-length v9, v5
 
@@ -865,7 +868,7 @@
 
     sub-float/2addr v10, v11
 
-    const/high16 v11, 0x3f800000
+    const/high16 v11, 0x3f80
 
     sub-float/2addr v10, v11
 
@@ -885,21 +888,21 @@
     goto :goto_1
 
     .line 59
-    .end local v0    # "height":I
-    .end local v1    # "i":I
-    .end local v2    # "metadata":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;*>;"
-    .end local v4    # "orientation":I
-    .end local v5    # "points":[Lcom/google/zxing/ResultPoint;
-    .end local v6    # "result":Lcom/google/zxing/Result;
-    .end local v7    # "rotatedImage":Lcom/google/zxing/BinaryBitmap;
-    .end local v8    # "tryHarder":Z
+    .end local v0           #height:I
+    .end local v1           #i:I
+    .end local v2           #metadata:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;*>;"
+    .end local v4           #orientation:I
+    .end local v5           #points:[Lcom/google/zxing/ResultPoint;
+    .end local v6           #result:Lcom/google/zxing/Result;
+    .end local v7           #rotatedImage:Lcom/google/zxing/BinaryBitmap;
+    .end local v8           #tryHarder:Z
     :cond_2
     const/4 v8, 0x0
 
     goto :goto_0
 
     .line 82
-    .restart local v8    # "tryHarder":Z
+    .restart local v8       #tryHarder:Z
     :cond_3
     throw v3
 .end method

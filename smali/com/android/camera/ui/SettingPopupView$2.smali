@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ui/SettingPopupView;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 228
@@ -38,7 +39,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 231
@@ -59,7 +60,7 @@
 
     const/4 v1, 0x1
 
-    # setter for: Lcom/android/camera/ui/SettingPopupView;->mNeedReinstall:Z
+    #setter for: Lcom/android/camera/ui/SettingPopupView;->mNeedReinstall:Z
     invoke-static {v0, v1}, Lcom/android/camera/ui/SettingPopupView;->access$002(Lcom/android/camera/ui/SettingPopupView;Z)Z
 
     .line 234

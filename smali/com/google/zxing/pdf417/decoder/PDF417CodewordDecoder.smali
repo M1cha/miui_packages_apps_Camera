@@ -36,7 +36,7 @@
     .line 32
     const/4 v2, 0x0
 
-    .local v2, "i":I
+    .local v2, i:I
     :goto_0
     sget-object v5, Lcom/google/zxing/pdf417/PDF417Common;->SYMBOL_TABLE:[I
 
@@ -50,14 +50,14 @@
     aget v1, v5, v2
 
     .line 34
-    .local v1, "currentSymbol":I
+    .local v1, currentSymbol:I
     and-int/lit8 v0, v1, 0x1
 
     .line 35
-    .local v0, "currentBit":I
+    .local v0, currentBit:I
     const/4 v3, 0x0
 
-    .local v3, "j":I
+    .local v3, j:I
     :goto_1
     if-ge v3, v8, :cond_1
 
@@ -65,14 +65,14 @@
     const/4 v4, 0x0
 
     .line 37
-    .local v4, "size":F
+    .local v4, size:F
     :goto_2
     and-int/lit8 v5, v1, 0x1
 
     if-ne v5, v0, :cond_0
 
     .line 38
-    const/high16 v5, 0x3f800000
+    const/high16 v5, 0x3f80
 
     add-float/2addr v4, v5
 
@@ -94,7 +94,7 @@
 
     add-int/lit8 v6, v6, -0x1
 
-    const/high16 v7, 0x41880000
+    const/high16 v7, 0x4188
 
     div-float v7, v4, v7
 
@@ -106,16 +106,16 @@
     goto :goto_1
 
     .line 32
-    .end local v4    # "size":F
+    .end local v4           #size:F
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
     .line 45
-    .end local v0    # "currentBit":I
-    .end local v1    # "currentSymbol":I
-    .end local v3    # "j":I
+    .end local v0           #currentBit:I
+    .end local v1           #currentSymbol:I
+    .end local v3           #j:I
     :cond_2
     return-void
 .end method
@@ -133,7 +133,7 @@
 
 .method private static getBitValue([I)I
     .locals 10
-    .param p0, "moduleBitCount"    # [I
+    .parameter "moduleBitCount"
 
     .prologue
     const/4 v5, 0x1
@@ -142,10 +142,10 @@
     const-wide/16 v2, 0x0
 
     .line 83
-    .local v2, "result":J
+    .local v2, result:J
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     array-length v4, p0
 
@@ -154,7 +154,7 @@
     .line 84
     const/4 v0, 0x0
 
-    .local v0, "bit":I
+    .local v0, bit:I
     :goto_1
     aget v4, p0, v1
 
@@ -192,7 +192,7 @@
     goto :goto_0
 
     .line 88
-    .end local v0    # "bit":I
+    .end local v0           #bit:I
     :cond_2
     long-to-int v4, v2
 
@@ -201,7 +201,7 @@
 
 .method private static getClosestDecodedValue([I)I
     .locals 12
-    .param p0, "moduleBitCount"    # [I
+    .parameter "moduleBitCount"
 
     .prologue
     const/16 v11, 0x8
@@ -212,14 +212,14 @@
     move-result v3
 
     .line 93
-    .local v3, "bitCountSum":I
+    .local v3, bitCountSum:I
     new-array v2, v11, [F
 
     .line 94
-    .local v2, "bitCountRatios":[F
+    .local v2, bitCountRatios:[F
     const/4 v6, 0x0
 
-    .local v6, "i":I
+    .local v6, i:I
     :goto_0
     array-length v9, v2
 
@@ -246,14 +246,14 @@
     const v1, 0x7f7fffff
 
     .line 98
-    .local v1, "bestMatchError":F
+    .local v1, bestMatchError:F
     const/4 v0, -0x1
 
     .line 99
-    .local v0, "bestMatch":I
+    .local v0, bestMatch:I
     const/4 v7, 0x0
 
-    .local v7, "j":I
+    .local v7, j:I
     :goto_1
     sget-object v9, Lcom/google/zxing/pdf417/decoder/PDF417CodewordDecoder;->RATIOS_TABLE:[[F
 
@@ -265,10 +265,10 @@
     const/4 v5, 0x0
 
     .line 101
-    .local v5, "error":F
+    .local v5, error:F
     const/4 v8, 0x0
 
-    .local v8, "k":I
+    .local v8, k:I
     :goto_2
     if-ge v8, v11, :cond_1
 
@@ -284,7 +284,7 @@
     sub-float v4, v9, v10
 
     .line 103
-    .local v4, "diff":F
+    .local v4, diff:F
     mul-float v9, v4, v4
 
     add-float/2addr v5, v9
@@ -295,7 +295,7 @@
     goto :goto_2
 
     .line 105
-    .end local v4    # "diff":F
+    .end local v4           #diff:F
     :cond_1
     cmpg-float v9, v5, v1
 
@@ -316,15 +316,15 @@
     goto :goto_1
 
     .line 110
-    .end local v5    # "error":F
-    .end local v8    # "k":I
+    .end local v5           #error:F
+    .end local v8           #k:I
     :cond_3
     return v0
 .end method
 
 .method private static getDecodedCodewordValue([I)I
     .locals 4
-    .param p0, "moduleBitCount"    # [I
+    .parameter "moduleBitCount"
 
     .prologue
     const/4 v1, -0x1
@@ -335,7 +335,7 @@
     move-result v0
 
     .line 78
-    .local v0, "decodedValue":I
+    .local v0, decodedValue:I
     int-to-long v2, v0
 
     invoke-static {v2, v3}, Lcom/google/zxing/pdf417/PDF417Common;->getCodeword(J)I
@@ -346,14 +346,14 @@
 
     move v0, v1
 
-    .end local v0    # "decodedValue":I
+    .end local v0           #decodedValue:I
     :cond_0
     return v0
 .end method
 
 .method static getDecodedValue([I)I
     .locals 2
-    .param p0, "moduleBitCount"    # [I
+    .parameter "moduleBitCount"
 
     .prologue
     .line 51
@@ -366,17 +366,17 @@
     move-result v0
 
     .line 52
-    .local v0, "decodedValue":I
+    .local v0, decodedValue:I
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
     .line 55
-    .end local v0    # "decodedValue":I
+    .end local v0           #decodedValue:I
     :goto_0
     return v0
 
-    .restart local v0    # "decodedValue":I
+    .restart local v0       #decodedValue:I
     :cond_0
     invoke-static {p0}, Lcom/google/zxing/pdf417/decoder/PDF417CodewordDecoder;->getClosestDecodedValue([I)I
 
@@ -387,7 +387,7 @@
 
 .method private static sampleBitCounts([I)[I
     .locals 9
-    .param p0, "moduleBitCount"    # [I
+    .parameter "moduleBitCount"
 
     .prologue
     .line 59
@@ -398,31 +398,31 @@
     int-to-float v1, v6
 
     .line 60
-    .local v1, "bitCountSum":F
+    .local v1, bitCountSum:F
     const/16 v6, 0x8
 
     new-array v3, v6, [I
 
     .line 61
-    .local v3, "result":[I
+    .local v3, result:[I
     const/4 v0, 0x0
 
     .line 62
-    .local v0, "bitCountIndex":I
+    .local v0, bitCountIndex:I
     const/4 v5, 0x0
 
     .line 63
-    .local v5, "sumPreviousBits":I
+    .local v5, sumPreviousBits:I
     const/4 v2, 0x0
 
-    .local v2, "i":I
+    .local v2, i:I
     :goto_0
     const/16 v6, 0x11
 
     if-ge v2, v6, :cond_1
 
     .line 64
-    const/high16 v6, 0x42080000
+    const/high16 v6, 0x4208
 
     div-float v6, v1, v6
 
@@ -430,14 +430,14 @@
 
     mul-float/2addr v7, v1
 
-    const/high16 v8, 0x41880000
+    const/high16 v8, 0x4188
 
     div-float/2addr v7, v8
 
     add-float v4, v6, v7
 
     .line 67
-    .local v4, "sampleIndex":F
+    .local v4, sampleIndex:F
     aget v6, p0, v0
 
     add-int/2addr v6, v5
@@ -470,7 +470,7 @@
     goto :goto_0
 
     .line 73
-    .end local v4    # "sampleIndex":F
+    .end local v4           #sampleIndex:F
     :cond_1
     return-object v3
 .end method

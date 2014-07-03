@@ -80,7 +80,8 @@
 # virtual methods
 .method callOnLoadFinished(Landroid/support/v4/content/Loader;Ljava/lang/Object;)V
     .locals 4
-    .param p2, "data"    # Ljava/lang/Object;
+    .parameter
+    .parameter "data"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -95,7 +96,7 @@
 
     .prologue
     .line 416
-    .local p1, "loader":Landroid/support/v4/content/Loader;, "Landroid/support/v4/content/Loader<Ljava/lang/Object;>;"
+    .local p1, loader:Landroid/support/v4/content/Loader;,"Landroid/support/v4/content/Loader<Ljava/lang/Object;>;"
     iget-object v1, p0, Landroid/support/v4/app/LoaderManagerImpl$LoaderInfo;->mCallbacks:Landroid/support/v4/app/LoaderManager$LoaderCallbacks;
 
     if-eqz v1, :cond_3
@@ -104,7 +105,7 @@
     const/4 v0, 0x0
 
     .line 418
-    .local v0, "lastBecause":Ljava/lang/String;
+    .local v0, lastBecause:Ljava/lang/String;
     iget-object v1, p0, Landroid/support/v4/app/LoaderManagerImpl$LoaderInfo;->this$0:Landroid/support/v4/app/LoaderManagerImpl;
 
     iget-object v1, v1, Landroid/support/v4/app/LoaderManagerImpl;->mActivity:Landroid/support/v4/app/FragmentActivity;
@@ -205,12 +206,12 @@
     iput-boolean v1, p0, Landroid/support/v4/app/LoaderManagerImpl$LoaderInfo;->mDeliveredData:Z
 
     .line 433
-    .end local v0    # "lastBecause":Ljava/lang/String;
+    .end local v0           #lastBecause:Ljava/lang/String;
     :cond_3
     return-void
 
     .line 427
-    .restart local v0    # "lastBecause":Ljava/lang/String;
+    .restart local v0       #lastBecause:Ljava/lang/String;
     :catchall_0
     move-exception v1
 
@@ -278,7 +279,7 @@
     iget-boolean v1, p0, Landroid/support/v4/app/LoaderManagerImpl$LoaderInfo;->mDeliveredData:Z
 
     .line 328
-    .local v1, "needReset":Z
+    .local v1, needReset:Z
     iput-boolean v5, p0, Landroid/support/v4/app/LoaderManagerImpl$LoaderInfo;->mDeliveredData:Z
 
     .line 329
@@ -328,7 +329,7 @@
     const/4 v0, 0x0
 
     .line 332
-    .local v0, "lastBecause":Ljava/lang/String;
+    .local v0, lastBecause:Ljava/lang/String;
     iget-object v2, p0, Landroid/support/v4/app/LoaderManagerImpl$LoaderInfo;->this$0:Landroid/support/v4/app/LoaderManagerImpl;
 
     iget-object v2, v2, Landroid/support/v4/app/LoaderManagerImpl;->mActivity:Landroid/support/v4/app/FragmentActivity;
@@ -383,7 +384,7 @@
     iput-object v0, v2, Landroid/support/v4/app/FragmentManagerImpl;->mNoTransactionsBecause:Ljava/lang/String;
 
     .line 344
-    .end local v0    # "lastBecause":Ljava/lang/String;
+    .end local v0           #lastBecause:Ljava/lang/String;
     :cond_3
     iput-object v6, p0, Landroid/support/v4/app/LoaderManagerImpl$LoaderInfo;->mCallbacks:Landroid/support/v4/app/LoaderManager$LoaderCallbacks;
 
@@ -433,7 +434,7 @@
     return-void
 
     .line 339
-    .restart local v0    # "lastBecause":Ljava/lang/String;
+    .restart local v0       #lastBecause:Ljava/lang/String;
     :catchall_0
     move-exception v2
 
@@ -458,10 +459,10 @@
 
 .method public dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 3
-    .param p1, "prefix"    # Ljava/lang/String;
-    .param p2, "fd"    # Ljava/io/FileDescriptor;
-    .param p3, "writer"    # Ljava/io/PrintWriter;
-    .param p4, "args"    # [Ljava/lang/String;
+    .parameter "prefix"
+    .parameter "fd"
+    .parameter "writer"
+    .parameter "args"
 
     .prologue
     .line 449
@@ -1109,7 +1110,7 @@
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 438
-    .local v0, "sb":Ljava/lang/StringBuilder;
+    .local v0, sb:Ljava/lang/StringBuilder;
     const-string v1, "LoaderInfo{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;

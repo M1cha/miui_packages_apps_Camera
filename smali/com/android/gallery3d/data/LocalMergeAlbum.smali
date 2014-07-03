@@ -51,9 +51,10 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;Ljava/util/Comparator;[Lcom/android/gallery3d/data/MediaSet;I)V
     .locals 6
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
-    .param p3, "sources"    # [Lcom/android/gallery3d/data/MediaSet;
-    .param p4, "bucketId"    # I
+    .parameter "path"
+    .parameter
+    .parameter "sources"
+    .parameter "bucketId"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -69,7 +70,7 @@
 
     .prologue
     .line 51
-    .local p2, "comparator":Ljava/util/Comparator;, "Ljava/util/Comparator<Lcom/android/gallery3d/data/MediaItem;>;"
+    .local p2, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<Lcom/android/gallery3d/data/MediaItem;>;"
     const-wide/16 v4, -0x1
 
     invoke-direct {p0, p1, v4, v5}, Lcom/android/gallery3d/data/MediaSet;-><init>(Lcom/android/gallery3d/data/Path;J)V
@@ -103,20 +104,20 @@
     .line 56
     iget-object v0, p0, Lcom/android/gallery3d/data/LocalMergeAlbum;->mSources:[Lcom/android/gallery3d/data/MediaSet;
 
-    .local v0, "arr$":[Lcom/android/gallery3d/data/MediaSet;
+    .local v0, arr$:[Lcom/android/gallery3d/data/MediaSet;
     array-length v2, v0
 
-    .local v2, "len$":I
+    .local v2, len$:I
     const/4 v1, 0x0
 
-    .local v1, "i$":I
+    .local v1, i$:I
     :goto_1
     if-ge v1, v2, :cond_1
 
     aget-object v3, v0, v1
 
     .line 57
-    .local v3, "set":Lcom/android/gallery3d/data/MediaSet;
+    .local v3, set:Lcom/android/gallery3d/data/MediaSet;
     invoke-virtual {v3, p0}, Lcom/android/gallery3d/data/MediaSet;->addContentListener(Lcom/android/gallery3d/data/ContentListener;)V
 
     .line 56
@@ -125,10 +126,10 @@
     goto :goto_1
 
     .line 54
-    .end local v0    # "arr$":[Lcom/android/gallery3d/data/MediaSet;
-    .end local v1    # "i$":I
-    .end local v2    # "len$":I
-    .end local v3    # "set":Lcom/android/gallery3d/data/MediaSet;
+    .end local v0           #arr$:[Lcom/android/gallery3d/data/MediaSet;
+    .end local v1           #i$:I
+    .end local v2           #len$:I
+    .end local v3           #set:Lcom/android/gallery3d/data/MediaSet;
     :cond_0
     const/4 v4, 0x0
 
@@ -141,9 +142,9 @@
     goto :goto_0
 
     .line 59
-    .restart local v0    # "arr$":[Lcom/android/gallery3d/data/MediaSet;
-    .restart local v1    # "i$":I
-    .restart local v2    # "len$":I
+    .restart local v0       #arr$:[Lcom/android/gallery3d/data/MediaSet;
+    .restart local v1       #i$:I
+    .restart local v2       #len$:I
     :cond_1
     return-void
 .end method
@@ -155,12 +156,12 @@
     .line 76
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     iget-object v2, p0, Lcom/android/gallery3d/data/LocalMergeAlbum;->mSources:[Lcom/android/gallery3d/data/MediaSet;
 
     array-length v1, v2
 
-    .local v1, "n":I
+    .local v1, n:I
     :goto_0
     if-ge v0, v1, :cond_0
 
@@ -215,7 +216,7 @@
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 63
-    .local v1, "matches":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSet;>;"
+    .local v1, matches:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaSet;>;"
     iget-object v5, p0, Lcom/android/gallery3d/data/LocalMergeAlbum;->mSources:[Lcom/android/gallery3d/data/MediaSet;
 
     array-length v5, v5
@@ -225,7 +226,7 @@
     move v3, v4
 
     .line 64
-    .local v3, "supported":I
+    .local v3, supported:I
     :goto_0
     iget-object v5, p0, Lcom/android/gallery3d/data/LocalMergeAlbum;->mSources:[Lcom/android/gallery3d/data/MediaSet;
 
@@ -238,12 +239,12 @@
     .line 65
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     iget-object v5, p0, Lcom/android/gallery3d/data/LocalMergeAlbum;->mSources:[Lcom/android/gallery3d/data/MediaSet;
 
     array-length v2, v5
 
-    .local v2, "n":I
+    .local v2, n:I
     :goto_1
     if-ge v0, v2, :cond_1
 
@@ -277,18 +278,18 @@
     goto :goto_1
 
     .line 63
-    .end local v0    # "i":I
-    .end local v2    # "n":I
-    .end local v3    # "supported":I
+    .end local v0           #i:I
+    .end local v2           #n:I
+    .end local v3           #supported:I
     :cond_0
     const/4 v3, -0x1
 
     goto :goto_0
 
     .line 69
-    .restart local v0    # "i":I
-    .restart local v2    # "n":I
-    .restart local v3    # "supported":I
+    .restart local v0       #i:I
+    .restart local v2       #n:I
+    .restart local v3       #supported:I
     :cond_1
     iput v3, p0, Lcom/android/gallery3d/data/LocalMergeAlbum;->mSupportedOperation:I
 
@@ -349,20 +350,20 @@
     .line 181
     iget-object v0, p0, Lcom/android/gallery3d/data/LocalMergeAlbum;->mSources:[Lcom/android/gallery3d/data/MediaSet;
 
-    .local v0, "arr$":[Lcom/android/gallery3d/data/MediaSet;
+    .local v0, arr$:[Lcom/android/gallery3d/data/MediaSet;
     array-length v2, v0
 
-    .local v2, "len$":I
+    .local v2, len$:I
     const/4 v1, 0x0
 
-    .local v1, "i$":I
+    .local v1, i$:I
     :goto_0
     if-ge v1, v2, :cond_0
 
     aget-object v3, v0, v1
 
     .line 182
-    .local v3, "set":Lcom/android/gallery3d/data/MediaSet;
+    .local v3, set:Lcom/android/gallery3d/data/MediaSet;
     invoke-virtual {v3}, Lcom/android/gallery3d/data/MediaSet;->delete()V
 
     .line 181
@@ -371,7 +372,7 @@
     goto :goto_0
 
     .line 184
-    .end local v3    # "set":Lcom/android/gallery3d/data/MediaSet;
+    .end local v3           #set:Lcom/android/gallery3d/data/MediaSet;
     :cond_0
     return-void
 .end method
@@ -412,8 +413,8 @@
 
 .method public getMediaItem(II)Ljava/util/ArrayList;
     .locals 13
-    .param p1, "start"    # I
-    .param p2, "count"    # I
+    .parameter "start"
+    .parameter "count"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -441,7 +442,7 @@
     move-result-object v0
 
     .line 104
-    .local v0, "head":Ljava/util/SortedMap;, "Ljava/util/SortedMap<Ljava/lang/Integer;[I>;"
+    .local v0, head:Ljava/util/SortedMap;,"Ljava/util/SortedMap<Ljava/lang/Integer;[I>;"
     invoke-interface {v0}, Ljava/util/SortedMap;->lastKey()Ljava/lang/Object;
 
     move-result-object v9
@@ -453,7 +454,7 @@
     move-result v4
 
     .line 105
-    .local v4, "markPos":I
+    .local v4, markPos:I
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
@@ -471,7 +472,7 @@
     check-cast v8, [I
 
     .line 106
-    .local v8, "subPos":[I
+    .local v8, subPos:[I
     iget-object v9, p0, Lcom/android/gallery3d/data/LocalMergeAlbum;->mSources:[Lcom/android/gallery3d/data/MediaSet;
 
     array-length v9, v9
@@ -479,16 +480,16 @@
     new-array v7, v9, [Lcom/android/gallery3d/data/MediaItem;
 
     .line 108
-    .local v7, "slot":[Lcom/android/gallery3d/data/MediaItem;
+    .local v7, slot:[Lcom/android/gallery3d/data/MediaItem;
     iget-object v9, p0, Lcom/android/gallery3d/data/LocalMergeAlbum;->mSources:[Lcom/android/gallery3d/data/MediaSet;
 
     array-length v6, v9
 
     .line 111
-    .local v6, "size":I
+    .local v6, size:I
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     if-ge v1, v6, :cond_0
 
@@ -517,7 +518,7 @@
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
     .line 117
-    .local v5, "result":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .local v5, result:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     move v1, v4
 
     :goto_1
@@ -529,10 +530,10 @@
     const/4 v3, -0x1
 
     .line 119
-    .local v3, "k":I
+    .local v3, k:I
     const/4 v2, 0x0
 
-    .local v2, "j":I
+    .local v2, j:I
     :goto_2
     if-ge v2, v6, :cond_3
 
@@ -571,14 +572,14 @@
     if-ne v3, v12, :cond_5
 
     .line 143
-    .end local v2    # "j":I
-    .end local v3    # "k":I
+    .end local v2           #j:I
+    .end local v3           #k:I
     :cond_4
     return-object v5
 
     .line 131
-    .restart local v2    # "j":I
-    .restart local v3    # "k":I
+    .restart local v2       #j:I
+    .restart local v3       #k:I
     :cond_5
     aget v9, v8, v3
 
@@ -677,23 +678,23 @@
     const/4 v1, 0x0
 
     .line 149
-    .local v1, "count":I
+    .local v1, count:I
     iget-object v0, p0, Lcom/android/gallery3d/data/LocalMergeAlbum;->mSources:[Lcom/android/gallery3d/data/MediaSet;
 
-    .local v0, "arr$":[Lcom/android/gallery3d/data/MediaSet;
+    .local v0, arr$:[Lcom/android/gallery3d/data/MediaSet;
     array-length v3, v0
 
-    .local v3, "len$":I
+    .local v3, len$:I
     const/4 v2, 0x0
 
-    .local v2, "i$":I
+    .local v2, i$:I
     :goto_0
     if-ge v2, v3, :cond_0
 
     aget-object v4, v0, v2
 
     .line 150
-    .local v4, "set":Lcom/android/gallery3d/data/MediaSet;
+    .local v4, set:Lcom/android/gallery3d/data/MediaSet;
     invoke-virtual {v4}, Lcom/android/gallery3d/data/MediaSet;->getTotalMediaItemCount()I
 
     move-result v5
@@ -706,7 +707,7 @@
     goto :goto_0
 
     .line 152
-    .end local v4    # "set":Lcom/android/gallery3d/data/MediaSet;
+    .end local v4           #set:Lcom/android/gallery3d/data/MediaSet;
     :cond_0
     return v1
 .end method
@@ -730,15 +731,15 @@
     const/4 v0, 0x0
 
     .line 158
-    .local v0, "changed":Z
+    .local v0, changed:Z
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     iget-object v3, p0, Lcom/android/gallery3d/data/LocalMergeAlbum;->mSources:[Lcom/android/gallery3d/data/MediaSet;
 
     array-length v2, v3
 
-    .local v2, "n":I
+    .local v2, n:I
     :goto_0
     if-ge v1, v2, :cond_1
 
@@ -791,26 +792,26 @@
 
 .method public rotate(I)V
     .locals 4
-    .param p1, "degrees"    # I
+    .parameter "degrees"
 
     .prologue
     .line 188
     iget-object v0, p0, Lcom/android/gallery3d/data/LocalMergeAlbum;->mSources:[Lcom/android/gallery3d/data/MediaSet;
 
-    .local v0, "arr$":[Lcom/android/gallery3d/data/MediaSet;
+    .local v0, arr$:[Lcom/android/gallery3d/data/MediaSet;
     array-length v2, v0
 
-    .local v2, "len$":I
+    .local v2, len$:I
     const/4 v1, 0x0
 
-    .local v1, "i$":I
+    .local v1, i$:I
     :goto_0
     if-ge v1, v2, :cond_0
 
     aget-object v3, v0, v1
 
     .line 189
-    .local v3, "set":Lcom/android/gallery3d/data/MediaSet;
+    .local v3, set:Lcom/android/gallery3d/data/MediaSet;
     invoke-virtual {v3, p1}, Lcom/android/gallery3d/data/MediaSet;->rotate(I)V
 
     .line 188
@@ -819,7 +820,7 @@
     goto :goto_0
 
     .line 191
-    .end local v3    # "set":Lcom/android/gallery3d/data/MediaSet;
+    .end local v3           #set:Lcom/android/gallery3d/data/MediaSet;
     :cond_0
     return-void
 .end method

@@ -42,7 +42,7 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/app/FragmentManagerState;
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
+    .parameter "in"
 
     .prologue
     .line 365
@@ -55,7 +55,7 @@
 
 .method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # Landroid/os/Parcel;
+    .parameter "x0"
 
     .prologue
     .line 363
@@ -68,7 +68,7 @@
 
 .method public newArray(I)[Landroid/support/v4/app/FragmentManagerState;
     .locals 1
-    .param p1, "size"    # I
+    .parameter "size"
 
     .prologue
     .line 369
@@ -79,7 +79,7 @@
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # I
+    .parameter "x0"
 
     .prologue
     .line 363

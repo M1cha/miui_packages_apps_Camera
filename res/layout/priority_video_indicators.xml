@@ -7,6 +7,6 @@
             <com.android.camera.ui.RotateImageView android:id="@id/onscreen_white_balance_indicator" style="@style/OnScreenIndicator" />
             <com.android.camera.ui.RotateImageView android:id="@id/onscreen_coloreffect_indicator" style="@style/OnScreenIndicator" />
         </LinearLayout>
-        <com.android.camera.ui.RotateTextView android:textSize="@dimen/onscreen_exposure_indicator_text_size" android:textColor="@android:color/white" android:gravity="center_vertical" android:id="@id/recording_time" android:visibility="gone" android:layout_alignParentRight="true" style="@style/OnScreenIndicator" />
+        <com.android.camera.ui.RotateTextView android:textSize="@dimen/onscreen_exposure_indicator_text_size" android:textColor="@*android:color/white" android:gravity="center_vertical" android:id="@id/recording_time" android:visibility="gone" android:layout_alignParentRight="true" style="@style/OnScreenIndicator" />
     </RelativeLayout>
 </com.android.camera.ui.RestrictRotateLayout>

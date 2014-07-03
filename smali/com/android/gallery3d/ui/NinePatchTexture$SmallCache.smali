@@ -42,7 +42,7 @@
     .locals 2
 
     .prologue
-    .local p0, "this":Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;, "Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache<TV;>;"
+    .local p0, this:Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;,"Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache<TV;>;"
     const/16 v1, 0x10
 
     .line 82
@@ -65,11 +65,11 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/ui/NinePatchTexture$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/ui/NinePatchTexture$1;
+    .parameter "x0"
 
     .prologue
     .line 82
-    .local p0, "this":Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;, "Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache<TV;>;"
+    .local p0, this:Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;,"Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache<TV;>;"
     invoke-direct {p0}, Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;-><init>()V
 
     return-void
@@ -82,10 +82,10 @@
 
     .prologue
     .line 127
-    .local p0, "this":Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;, "Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache<TV;>;"
+    .local p0, this:Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;,"Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache<TV;>;"
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     iget v1, p0, Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;->mCount:I
 
@@ -115,7 +115,7 @@
 
 .method public get(I)Ljava/lang/Object;
     .locals 6
-    .param p1, "key"    # I
+    .parameter "key"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TV;"
@@ -124,10 +124,10 @@
 
     .prologue
     .line 106
-    .local p0, "this":Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;, "Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache<TV;>;"
+    .local p0, this:Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;,"Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache<TV;>;"
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     iget v3, p0, Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;->mCount:I
 
@@ -155,7 +155,7 @@
     aget v1, v3, v0
 
     .line 113
-    .local v1, "tmpKey":I
+    .local v1, tmpKey:I
     iget-object v3, p0, Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;->mKey:[I
 
     iget-object v4, p0, Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;->mKey:[I
@@ -179,7 +179,7 @@
     aget-object v2, v3, v0
 
     .line 117
-    .local v2, "tmpValue":Ljava/lang/Object;, "TV;"
+    .local v2, tmpValue:Ljava/lang/Object;,"TV;"
     iget-object v3, p0, Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;->mValue:[Ljava/lang/Object;
 
     iget-object v4, p0, Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;->mValue:[Ljava/lang/Object;
@@ -198,8 +198,8 @@
     aput-object v2, v3, v4
 
     .line 120
-    .end local v1    # "tmpKey":I
-    .end local v2    # "tmpValue":Ljava/lang/Object;, "TV;"
+    .end local v1           #tmpKey:I
+    .end local v2           #tmpValue:Ljava/lang/Object;,"TV;"
     :cond_0
     iget-object v3, p0, Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;->mValue:[Ljava/lang/Object;
 
@@ -224,7 +224,8 @@
 
 .method public put(ILjava/lang/Object;)Ljava/lang/Object;
     .locals 4
-    .param p1, "key"    # I
+    .parameter "key"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ITV;)TV;"
@@ -232,8 +233,8 @@
     .end annotation
 
     .prologue
-    .local p0, "this":Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;, "Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache<TV;>;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
+    .local p0, this:Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;,"Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache<TV;>;"
+    .local p2, value:Ljava/lang/Object;,"TV;"
     const/16 v3, 0xf
 
     .line 92
@@ -249,7 +250,7 @@
     aget-object v0, v1, v3
 
     .line 94
-    .local v0, "old":Ljava/lang/Object;, "TV;"
+    .local v0, old:Ljava/lang/Object;,"TV;"
     iget-object v1, p0, Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;->mKey:[I
 
     aput p1, v1, v3
@@ -260,7 +261,7 @@
     aput-object p2, v1, v3
 
     .line 101
-    .end local v0    # "old":Ljava/lang/Object;, "TV;"
+    .end local v0           #old:Ljava/lang/Object;,"TV;"
     :goto_0
     return-object v0
 
@@ -297,7 +298,7 @@
 
     .prologue
     .line 134
-    .local p0, "this":Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;, "Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache<TV;>;"
+    .local p0, this:Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;,"Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache<TV;>;"
     iget v0, p0, Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;->mCount:I
 
     return v0
@@ -305,7 +306,7 @@
 
 .method public valueAt(I)Ljava/lang/Object;
     .locals 1
-    .param p1, "i"    # I
+    .parameter "i"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TV;"
@@ -314,7 +315,7 @@
 
     .prologue
     .line 138
-    .local p0, "this":Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;, "Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache<TV;>;"
+    .local p0, this:Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;,"Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache<TV;>;"
     iget-object v0, p0, Lcom/android/gallery3d/ui/NinePatchTexture$SmallCache;->mValue:[Ljava/lang/Object;
 
     aget-object v0, v0, p1

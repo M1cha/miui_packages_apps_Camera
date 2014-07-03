@@ -25,9 +25,9 @@
 
 .method public static createBitmapRegionDecoder(Lcom/android/gallery3d/util/ThreadPool$JobContext;Ljava/lang/String;Z)Landroid/graphics/BitmapRegionDecoder;
     .locals 2
-    .param p0, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
-    .param p1, "filePath"    # Ljava/lang/String;
-    .param p2, "shareable"    # Z
+    .parameter "jc"
+    .parameter "filePath"
+    .parameter "shareable"
 
     .prologue
     .line 205
@@ -47,7 +47,7 @@
     move-exception v0
 
     .line 207
-    .local v0, "t":Ljava/lang/Throwable;
+    .local v0, t:Ljava/lang/Throwable;
     const-string v1, "DecodeService"
 
     invoke-static {v1, v0}, Lcom/android/gallery3d/data/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
@@ -60,11 +60,11 @@
 
 .method public static decode(Lcom/android/gallery3d/util/ThreadPool$JobContext;[BIILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
     .locals 1
-    .param p0, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
-    .param p1, "bytes"    # [B
-    .param p2, "offset"    # I
-    .param p3, "length"    # I
-    .param p4, "options"    # Landroid/graphics/BitmapFactory$Options;
+    .parameter "jc"
+    .parameter "bytes"
+    .parameter "offset"
+    .parameter "length"
+    .parameter "options"
 
     .prologue
     .line 73
@@ -72,11 +72,11 @@
 
     new-instance p4, Landroid/graphics/BitmapFactory$Options;
 
-    .end local p4    # "options":Landroid/graphics/BitmapFactory$Options;
+    .end local p4
     invoke-direct {p4}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
     .line 74
-    .restart local p4    # "options":Landroid/graphics/BitmapFactory$Options;
+    .restart local p4
     :cond_0
     new-instance v0, Lcom/android/gallery3d/data/DecodeUtils$DecodeCanceller;
 
@@ -98,11 +98,11 @@
 
 .method public static decodeBounds(Lcom/android/gallery3d/util/ThreadPool$JobContext;[BIILandroid/graphics/BitmapFactory$Options;)V
     .locals 3
-    .param p0, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
-    .param p1, "bytes"    # [B
-    .param p2, "offset"    # I
-    .param p3, "length"    # I
-    .param p4, "options"    # Landroid/graphics/BitmapFactory$Options;
+    .parameter "jc"
+    .parameter "bytes"
+    .parameter "offset"
+    .parameter "length"
+    .parameter "options"
 
     .prologue
     const/4 v1, 0x1
@@ -145,10 +145,10 @@
 
 .method public static decodeIfBigEnough(Lcom/android/gallery3d/util/ThreadPool$JobContext;[BLandroid/graphics/BitmapFactory$Options;I)Landroid/graphics/Bitmap;
     .locals 3
-    .param p0, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
-    .param p1, "data"    # [B
-    .param p2, "options"    # Landroid/graphics/BitmapFactory$Options;
-    .param p3, "targetSize"    # I
+    .parameter "jc"
+    .parameter "data"
+    .parameter "options"
+    .parameter "targetSize"
 
     .prologue
     const/4 v0, 0x0
@@ -160,11 +160,11 @@
 
     new-instance p2, Landroid/graphics/BitmapFactory$Options;
 
-    .end local p2    # "options":Landroid/graphics/BitmapFactory$Options;
+    .end local p2
     invoke-direct {p2}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
     .line 159
-    .restart local p2    # "options":Landroid/graphics/BitmapFactory$Options;
+    .restart local p2
     :cond_0
     new-instance v1, Lcom/android/gallery3d/data/DecodeUtils$DecodeCanceller;
 
@@ -234,11 +234,11 @@
 
 .method public static decodeThumbnail(Lcom/android/gallery3d/util/ThreadPool$JobContext;Ljava/io/FileDescriptor;Landroid/graphics/BitmapFactory$Options;II)Landroid/graphics/Bitmap;
     .locals 10
-    .param p0, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
-    .param p1, "fd"    # Ljava/io/FileDescriptor;
-    .param p2, "options"    # Landroid/graphics/BitmapFactory$Options;
-    .param p3, "targetSize"    # I
-    .param p4, "type"    # I
+    .parameter "jc"
+    .parameter "fd"
+    .parameter "options"
+    .parameter "targetSize"
+    .parameter "type"
 
     .prologue
     const/4 v8, 0x2
@@ -252,11 +252,11 @@
 
     new-instance p2, Landroid/graphics/BitmapFactory$Options;
 
-    .end local p2    # "options":Landroid/graphics/BitmapFactory$Options;
+    .end local p2
     invoke-direct {p2}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
     .line 106
-    .restart local p2    # "options":Landroid/graphics/BitmapFactory$Options;
+    .restart local p2
     :cond_0
     new-instance v6, Lcom/android/gallery3d/data/DecodeUtils$DecodeCanceller;
 
@@ -287,11 +287,11 @@
     iget v4, p2, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     .line 113
-    .local v4, "w":I
+    .local v4, w:I
     iget v1, p2, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
     .line 115
-    .local v1, "h":I
+    .local v1, h:I
     if-ne p4, v8, :cond_5
 
     .line 118
@@ -306,7 +306,7 @@
     div-float v3, v6, v7
 
     .line 119
-    .local v3, "scale":F
+    .local v3, scale:F
     invoke-static {v3}, Lcom/android/gallery3d/common/BitmapUtils;->computeSampleSizeLarger(F)I
 
     move-result v6
@@ -317,7 +317,7 @@
     const v0, 0x9c400
 
     .line 124
-    .local v0, "MAX_PIXEL_COUNT":I
+    .local v0, MAX_PIXEL_COUNT:I
     iget v6, p2, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
     div-int v6, v4, v6
@@ -352,7 +352,7 @@
     iput v6, p2, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
     .line 134
-    .end local v0    # "MAX_PIXEL_COUNT":I
+    .end local v0           #MAX_PIXEL_COUNT:I
     :cond_3
     :goto_1
     const/4 v6, 0x0
@@ -365,7 +365,7 @@
     move-result-object v2
 
     .line 137
-    .local v2, "result":Landroid/graphics/Bitmap;
+    .local v2, result:Landroid/graphics/Bitmap;
     if-eqz v2, :cond_1
 
     .line 141
@@ -393,7 +393,7 @@
     .line 145
     float-to-double v5, v3
 
-    const-wide/high16 v7, 0x3fe0000000000000L
+    const-wide/high16 v7, 0x3fe0
 
     cmpg-double v5, v5, v7
 
@@ -412,8 +412,8 @@
     goto :goto_0
 
     .line 130
-    .end local v2    # "result":Landroid/graphics/Bitmap;
-    .end local v3    # "scale":F
+    .end local v2           #result:Landroid/graphics/Bitmap;
+    .end local v3           #scale:F
     :cond_5
     int-to-float v6, p3
 
@@ -426,7 +426,7 @@
     div-float v3, v6, v7
 
     .line 131
-    .restart local v3    # "scale":F
+    .restart local v3       #scale:F
     invoke-static {v3}, Lcom/android/gallery3d/common/BitmapUtils;->computeSampleSizeLarger(F)I
 
     move-result v6
@@ -436,7 +436,7 @@
     goto :goto_1
 
     .line 141
-    .restart local v2    # "result":Landroid/graphics/Bitmap;
+    .restart local v2       #result:Landroid/graphics/Bitmap;
     :cond_6
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -455,40 +455,40 @@
 
 .method public static decodeThumbnail(Lcom/android/gallery3d/util/ThreadPool$JobContext;Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;II)Landroid/graphics/Bitmap;
     .locals 5
-    .param p0, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
-    .param p1, "filePath"    # Ljava/lang/String;
-    .param p2, "options"    # Landroid/graphics/BitmapFactory$Options;
-    .param p3, "targetSize"    # I
-    .param p4, "type"    # I
+    .parameter "jc"
+    .parameter "filePath"
+    .parameter "options"
+    .parameter "targetSize"
+    .parameter "type"
 
     .prologue
     .line 90
     const/4 v2, 0x0
 
     .line 92
-    .local v2, "fis":Ljava/io/FileInputStream;
+    .local v2, fis:Ljava/io/FileInputStream;
     :try_start_0
     new-instance v3, Ljava/io/FileInputStream;
 
     invoke-direct {v3, p1}, Ljava/io/FileInputStream;-><init>(Ljava/lang/String;)V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 93
-    .end local v2    # "fis":Ljava/io/FileInputStream;
-    .local v3, "fis":Ljava/io/FileInputStream;
+    .end local v2           #fis:Ljava/io/FileInputStream;
+    .local v3, fis:Ljava/io/FileInputStream;
     :try_start_1
     invoke-virtual {v3}, Ljava/io/FileInputStream;->getFD()Ljava/io/FileDescriptor;
 
     move-result-object v1
 
     .line 94
-    .local v1, "fd":Ljava/io/FileDescriptor;
+    .local v1, fd:Ljava/io/FileDescriptor;
     invoke-static {p0, v1, p2, p3, p4}, Lcom/android/gallery3d/data/DecodeUtils;->decodeThumbnail(Lcom/android/gallery3d/util/ThreadPool$JobContext;Ljava/io/FileDescriptor;Landroid/graphics/BitmapFactory$Options;II)Landroid/graphics/Bitmap;
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     move-result-object v4
 
@@ -497,9 +497,9 @@
 
     move-object v2, v3
 
-    .end local v1    # "fd":Ljava/io/FileDescriptor;
-    .end local v3    # "fis":Ljava/io/FileInputStream;
-    .restart local v2    # "fis":Ljava/io/FileInputStream;
+    .end local v1           #fd:Ljava/io/FileDescriptor;
+    .end local v3           #fis:Ljava/io/FileInputStream;
+    .restart local v2       #fis:Ljava/io/FileInputStream;
     :goto_0
     return-object v4
 
@@ -508,7 +508,7 @@
     move-exception v0
 
     .line 96
-    .local v0, "ex":Ljava/lang/Exception;
+    .local v0, ex:Ljava/lang/Exception;
     :goto_1
     :try_start_2
     const-string v4, "DecodeService"
@@ -525,7 +525,7 @@
 
     goto :goto_0
 
-    .end local v0    # "ex":Ljava/lang/Exception;
+    .end local v0           #ex:Ljava/lang/Exception;
     :catchall_0
     move-exception v4
 
@@ -534,33 +534,33 @@
 
     throw v4
 
-    .end local v2    # "fis":Ljava/io/FileInputStream;
-    .restart local v3    # "fis":Ljava/io/FileInputStream;
+    .end local v2           #fis:Ljava/io/FileInputStream;
+    .restart local v3       #fis:Ljava/io/FileInputStream;
     :catchall_1
     move-exception v4
 
     move-object v2, v3
 
-    .end local v3    # "fis":Ljava/io/FileInputStream;
-    .restart local v2    # "fis":Ljava/io/FileInputStream;
+    .end local v3           #fis:Ljava/io/FileInputStream;
+    .restart local v2       #fis:Ljava/io/FileInputStream;
     goto :goto_2
 
     .line 95
-    .end local v2    # "fis":Ljava/io/FileInputStream;
-    .restart local v3    # "fis":Ljava/io/FileInputStream;
+    .end local v2           #fis:Ljava/io/FileInputStream;
+    .restart local v3       #fis:Ljava/io/FileInputStream;
     :catch_1
     move-exception v0
 
     move-object v2, v3
 
-    .end local v3    # "fis":Ljava/io/FileInputStream;
-    .restart local v2    # "fis":Ljava/io/FileInputStream;
+    .end local v3           #fis:Ljava/io/FileInputStream;
+    .restart local v2       #fis:Ljava/io/FileInputStream;
     goto :goto_1
 .end method
 
 .method public static ensureGLCompatibleBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
     .locals 3
-    .param p0, "bitmap"    # Landroid/graphics/Bitmap;
+    .parameter "bitmap"
 
     .prologue
     .line 178
@@ -590,7 +590,7 @@
     move-result-object v0
 
     .line 180
-    .local v0, "newBitmap":Landroid/graphics/Bitmap;
+    .local v0, newBitmap:Landroid/graphics/Bitmap;
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->recycle()V
 
     goto :goto_0

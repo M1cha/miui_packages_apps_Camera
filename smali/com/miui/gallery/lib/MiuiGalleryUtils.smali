@@ -179,7 +179,8 @@
 
 .method private static hasMatch(Ljava/util/ArrayList;Ljava/lang/String;)Z
     .locals 4
-    .param p1, "url"    # Ljava/lang/String;
+    .parameter
+    .parameter "url"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -193,7 +194,7 @@
     .end annotation
 
     .prologue
-    .local p0, "patterns":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/util/regex/Pattern;>;"
+    .local p0, patterns:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/util/regex/Pattern;>;"
     const/4 v2, 0x0
 
     .line 285
@@ -214,7 +215,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :cond_2
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -229,7 +230,7 @@
     check-cast v1, Ljava/util/regex/Pattern;
 
     .line 290
-    .local v1, "p":Ljava/util/regex/Pattern;
+    .local v1, p:Ljava/util/regex/Pattern;
     invoke-virtual {v1, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v3
@@ -248,7 +249,9 @@
 
 .method private static initPatterns([Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 7
-    .param p0, "strs"    # [Ljava/lang/String;
+    .parameter "strs"
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -266,24 +269,24 @@
 
     .prologue
     .line 143
-    .local p1, "patterns":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/util/regex/Pattern;>;"
-    .local p2, "strictPatterns":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/util/regex/Pattern;>;"
+    .local p1, patterns:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/util/regex/Pattern;>;"
+    .local p2, strictPatterns:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/util/regex/Pattern;>;"
     move-object v0, p0
 
-    .local v0, "arr$":[Ljava/lang/String;
+    .local v0, arr$:[Ljava/lang/String;
     array-length v2, v0
 
-    .local v2, "len$":I
+    .local v2, len$:I
     const/4 v1, 0x0
 
-    .local v1, "i$":I
+    .local v1, i$:I
     :goto_0
     if-ge v1, v2, :cond_1
 
     aget-object v3, v0, v1
 
     .line 144
-    .local v3, "p":Ljava/lang/String;
+    .local v3, p:Ljava/lang/String;
     if-eqz v3, :cond_0
 
     .line 145
@@ -321,14 +324,14 @@
     goto :goto_0
 
     .line 149
-    .end local v3    # "p":Ljava/lang/String;
+    .end local v3           #p:Ljava/lang/String;
     :cond_1
     return-void
 .end method
 
 .method public static isAlbumShareBarcodeUrl(Ljava/lang/String;)Z
     .locals 1
-    .param p0, "url"    # Ljava/lang/String;
+    .parameter "url"
 
     .prologue
     .line 271
@@ -355,7 +358,7 @@
 
 .method public static isAlbumShareInvitationUrl(Ljava/lang/String;)Z
     .locals 1
-    .param p0, "url"    # Ljava/lang/String;
+    .parameter "url"
 
     .prologue
     .line 259
@@ -382,7 +385,7 @@
 
 .method public static isAlbumShareUrl(Ljava/lang/String;)Z
     .locals 2
-    .param p0, "url"    # Ljava/lang/String;
+    .parameter "url"
 
     .prologue
     const/4 v0, 0x0

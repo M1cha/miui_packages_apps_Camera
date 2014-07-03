@@ -42,7 +42,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     const/4 v3, 0x1
@@ -253,7 +253,7 @@
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 4
-    .param p1, "ev"    # Landroid/view/MotionEvent;
+    .parameter "ev"
 
     .prologue
     const/4 v1, 0x0
@@ -279,7 +279,7 @@
     move-result v0
 
     .line 98
-    .local v0, "action":I
+    .local v0, action:I
     if-nez v0, :cond_2
 
     invoke-virtual {p0}, Lcom/android/camera/ui/AbstractIndicatorButton;->isOverridden()Z
@@ -463,7 +463,7 @@
 
 .method public setEnabled(Z)V
     .locals 1
-    .param p1, "enabled"    # Z
+    .parameter "enabled"
 
     .prologue
     .line 130
@@ -496,7 +496,7 @@
 
 .method public setIndicatorClickListener(Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/camera/ui/AbstractIndicatorButton$IndicatorClickListener;
+    .parameter "listener"
 
     .prologue
     .line 75
@@ -508,7 +508,7 @@
 
 .method public setOrientation(I)V
     .locals 1
-    .param p1, "orientation"    # I
+    .parameter "orientation"
 
     .prologue
     .line 143
@@ -531,7 +531,7 @@
 
 .method protected showPopup(Z)V
     .locals 4
-    .param p1, "animate"    # Z
+    .parameter "animate"
 
     .prologue
     const/4 v3, 0x1

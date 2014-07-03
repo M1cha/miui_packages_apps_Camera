@@ -10,7 +10,7 @@
 # direct methods
 .method public constructor <init>(Landroid/graphics/Bitmap;)V
     .locals 1
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
+    .parameter "bitmap"
 
     .prologue
     .line 32
@@ -24,8 +24,8 @@
 
 .method public constructor <init>(Landroid/graphics/Bitmap;Z)V
     .locals 1
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
-    .param p2, "hasBorder"    # Z
+    .parameter "bitmap"
+    .parameter "hasBorder"
 
     .prologue
     .line 36
@@ -62,9 +62,9 @@
 # virtual methods
 .method public bridge synthetic draw(Lcom/android/gallery3d/ui/GLCanvas;II)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/ui/GLCanvas;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
 
     .prologue
     .line 28
@@ -75,11 +75,11 @@
 
 .method public bridge synthetic draw(Lcom/android/gallery3d/ui/GLCanvas;IIII)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/ui/GLCanvas;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
-    .param p4, "x3"    # I
-    .param p5, "x4"    # I
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+    .parameter "x3"
+    .parameter "x4"
 
     .prologue
     .line 28
@@ -208,7 +208,7 @@
 
 .method protected onFreeBitmap(Landroid/graphics/Bitmap;)V
     .locals 0
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
+    .parameter "bitmap"
 
     .prologue
     .line 44
@@ -237,7 +237,7 @@
 
 .method public bridge synthetic setOpaque(Z)V
     .locals 0
-    .param p1, "x0"    # Z
+    .parameter "x0"
 
     .prologue
     .line 28
@@ -248,7 +248,7 @@
 
 .method public bridge synthetic updateContent(Lcom/android/gallery3d/ui/GLCanvas;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/ui/GLCanvas;
+    .parameter "x0"
 
     .prologue
     .line 28

@@ -35,7 +35,7 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/ui/PositionController$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/ui/PositionController$1;
+    .parameter "x0"
 
     .prologue
     .line 1364
@@ -46,17 +46,17 @@
 
 .method private static applyInterpolationCurve(IF)F
     .locals 3
-    .param p0, "kind"    # I
-    .param p1, "progress"    # F
+    .parameter "kind"
+    .parameter "progress"
 
     .prologue
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f80
 
     .line 1410
     sub-float v0, v2, p1
 
     .line 1411
-    .local v0, "f":F
+    .local v0, f:F
     packed-switch p0, :pswitch_data_0
 
     .line 1431
@@ -169,19 +169,19 @@
     if-nez v4, :cond_3
 
     .line 1387
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f80
 
     .line 1394
-    .local v3, "progress":F
+    .local v3, progress:F
     :goto_1
-    const/high16 v4, 0x3f800000
+    const/high16 v4, 0x3f80
 
     cmpl-float v4, v3, v4
 
     if-ltz v4, :cond_4
 
     .line 1395
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f80
 
     .line 1400
     :goto_2
@@ -190,7 +190,7 @@
     move-result v0
 
     .line 1402
-    .local v0, "done":Z
+    .local v0, done:Z
     if-eqz v0, :cond_2
 
     .line 1403
@@ -203,15 +203,15 @@
     goto :goto_0
 
     .line 1389
-    .end local v0    # "done":Z
-    .end local v3    # "progress":F
+    .end local v0           #done:Z
+    .end local v3           #progress:F
     :cond_3
     invoke-static {}, Lcom/android/gallery3d/ui/AnimationTime;->get()J
 
     move-result-wide v1
 
     .line 1390
-    .local v1, "now":J
+    .local v1, now:J
     iget-wide v4, p0, Lcom/android/gallery3d/ui/PositionController$Animatable;->mAnimationStartTime:J
 
     sub-long v4, v1, v4
@@ -224,11 +224,11 @@
 
     div-float v3, v4, v5
 
-    .restart local v3    # "progress":F
+    .restart local v3       #progress:F
     goto :goto_1
 
     .line 1397
-    .end local v1    # "now":J
+    .end local v1           #now:J
     :cond_4
     iget v4, p0, Lcom/android/gallery3d/ui/PositionController$Animatable;->mAnimationKind:I
 

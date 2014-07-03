@@ -10,7 +10,7 @@
 # direct methods
 .method protected constructor <init>(Lcom/google/zxing/client/result/ParsedResultType;)V
     .locals 0
-    .param p1, "type"    # Lcom/google/zxing/client/result/ParsedResultType;
+    .parameter "type"
 
     .prologue
     .line 34
@@ -25,8 +25,8 @@
 
 .method public static maybeAppend(Ljava/lang/String;Ljava/lang/StringBuilder;)V
     .locals 1
-    .param p0, "value"    # Ljava/lang/String;
-    .param p1, "result"    # Ljava/lang/StringBuilder;
+    .parameter "value"
+    .parameter "result"
 
     .prologue
     .line 50
@@ -61,8 +61,8 @@
 
 .method public static maybeAppend([Ljava/lang/String;Ljava/lang/StringBuilder;)V
     .locals 4
-    .param p0, "values"    # [Ljava/lang/String;
-    .param p1, "result"    # Ljava/lang/StringBuilder;
+    .parameter "values"
+    .parameter "result"
 
     .prologue
     .line 60
@@ -71,20 +71,20 @@
     .line 61
     move-object v0, p0
 
-    .local v0, "arr$":[Ljava/lang/String;
+    .local v0, arr$:[Ljava/lang/String;
     array-length v2, v0
 
-    .local v2, "len$":I
+    .local v2, len$:I
     const/4 v1, 0x0
 
-    .local v1, "i$":I
+    .local v1, i$:I
     :goto_0
     if-ge v1, v2, :cond_0
 
     aget-object v3, v0, v1
 
     .line 62
-    .local v3, "value":Ljava/lang/String;
+    .local v3, value:Ljava/lang/String;
     invoke-static {v3, p1}, Lcom/google/zxing/client/result/ParsedResult;->maybeAppend(Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
     .line 61
@@ -93,10 +93,10 @@
     goto :goto_0
 
     .line 65
-    .end local v0    # "arr$":[Ljava/lang/String;
-    .end local v1    # "i$":I
-    .end local v2    # "len$":I
-    .end local v3    # "value":Ljava/lang/String;
+    .end local v0           #arr$:[Ljava/lang/String;
+    .end local v1           #i$:I
+    .end local v2           #len$:I
+    .end local v3           #value:Ljava/lang/String;
     :cond_0
     return-void
 .end method

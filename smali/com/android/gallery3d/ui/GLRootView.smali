@@ -81,7 +81,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     .line 111
@@ -95,8 +95,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     const/4 v3, 0x0
@@ -217,7 +217,7 @@
 
 .method static synthetic access$100(Lcom/android/gallery3d/ui/GLRootView;)Ljava/util/ArrayDeque;
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/ui/GLRootView;
+    .parameter "x0"
 
     .prologue
     .line 52
@@ -228,7 +228,7 @@
 
 .method static synthetic access$200(Lcom/android/gallery3d/ui/GLRootView;)Ljava/util/concurrent/locks/ReentrantLock;
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/ui/GLRootView;
+    .parameter "x0"
 
     .prologue
     .line 52
@@ -239,7 +239,7 @@
 
 .method static synthetic access$300(Lcom/android/gallery3d/ui/GLRootView;)Lcom/android/gallery3d/ui/GLCanvas;
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/ui/GLRootView;
+    .parameter "x0"
 
     .prologue
     .line 52
@@ -250,7 +250,7 @@
 
 .method static synthetic access$400(Lcom/android/gallery3d/ui/GLRootView;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/ui/GLRootView;
+    .parameter "x0"
 
     .prologue
     .line 52
@@ -278,21 +278,21 @@
     move-result v4
 
     .line 198
-    .local v4, "w":I
+    .local v4, w:I
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->getHeight()I
 
     move-result v2
 
     .line 199
-    .local v2, "h":I
+    .local v2, h:I
     const/4 v1, 0x0
 
     .line 200
-    .local v1, "displayRotation":I
+    .local v1, displayRotation:I
     const/4 v0, 0x0
 
     .line 203
-    .local v0, "compensation":I
+    .local v0, compensation:I
     iget-object v5, p0, Lcom/android/gallery3d/ui/GLRootView;->mOrientationSource:Lcom/android/gallery3d/ui/OrientationSource;
 
     if-eqz v5, :cond_3
@@ -382,14 +382,14 @@
     move v3, v4
 
     .line 228
-    .local v3, "tmp":I
+    .local v3, tmp:I
     move v4, v2
 
     .line 229
     move v2, v3
 
     .line 231
-    .end local v3    # "tmp":I
+    .end local v3           #tmp:I
     :cond_1
     const-string v5, "GLRootView"
 
@@ -491,7 +491,7 @@
 
 .method private onDrawFrameLocked(Ljavax/microedition/khronos/opengles/GL10;)V
     .locals 6
-    .param p1, "gl"    # Ljavax/microedition/khronos/opengles/GL10;
+    .parameter "gl"
 
     .prologue
     .line 346
@@ -564,17 +564,17 @@
     move-result-wide v2
 
     .line 364
-    .local v2, "now":J
+    .local v2, now:J
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     iget-object v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mAnimations:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .local v1, "n":I
+    .local v1, n:I
     :goto_0
     if-ge v0, v1, :cond_2
 
@@ -601,9 +601,9 @@
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
     .line 370
-    .end local v0    # "i":I
-    .end local v1    # "n":I
-    .end local v2    # "now":J
+    .end local v0           #i:I
+    .end local v1           #n:I
+    .end local v2           #now:J
     :cond_3
     invoke-static {}, Lcom/android/gallery3d/ui/UploadedTexture;->uploadLimitReached()Z
 
@@ -654,7 +654,7 @@
 
 .method private rotateCanvas(I)V
     .locals 8
-    .param p1, "degrees"    # I
+    .parameter "degrees"
 
     .prologue
     const/4 v7, 0x0
@@ -673,21 +673,21 @@
     move-result v3
 
     .line 391
-    .local v3, "w":I
+    .local v3, w:I
     invoke-virtual {p0}, Lcom/android/gallery3d/ui/GLRootView;->getHeight()I
 
     move-result v2
 
     .line 392
-    .local v2, "h":I
+    .local v2, h:I
     div-int/lit8 v0, v3, 0x2
 
     .line 393
-    .local v0, "cx":I
+    .local v0, cx:I
     div-int/lit8 v1, v2, 0x2
 
     .line 394
-    .local v1, "cy":I
+    .local v1, cy:I
     iget-object v4, p0, Lcom/android/gallery3d/ui/GLRootView;->mCanvas:Lcom/android/gallery3d/ui/GLCanvas;
 
     int-to-float v5, v0
@@ -701,7 +701,7 @@
 
     int-to-float v5, p1
 
-    const/high16 v6, 0x3f800000
+    const/high16 v6, 0x3f80
 
     invoke-interface {v4, v5, v7, v7, v6}, Lcom/android/gallery3d/ui/GLCanvas;->rotate(FFFF)V
 
@@ -746,7 +746,7 @@
 # virtual methods
 .method public addOnGLIdleListener(Lcom/android/gallery3d/ui/GLRoot$OnGLIdleListener;)V
     .locals 2
-    .param p1, "listener"    # Lcom/android/gallery3d/ui/GLRoot$OnGLIdleListener;
+    .parameter "listener"
 
     .prologue
     .line 137
@@ -784,7 +784,7 @@
 
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 4
-    .param p1, "event"    # Landroid/view/MotionEvent;
+    .parameter "event"
 
     .prologue
     const/4 v2, 0x1
@@ -809,7 +809,7 @@
     move-result v0
 
     .line 408
-    .local v0, "action":I
+    .local v0, action:I
     const/4 v3, 0x3
 
     if-eq v0, v3, :cond_1
@@ -854,7 +854,7 @@
     move v1, v2
 
     .line 424
-    .local v1, "handled":Z
+    .local v1, handled:Z
     :cond_4
     if-nez v0, :cond_5
 
@@ -876,7 +876,7 @@
     goto :goto_0
 
     .line 411
-    .end local v1    # "handled":Z
+    .end local v1           #handled:Z
     :cond_6
     iget-boolean v3, p0, Lcom/android/gallery3d/ui/GLRootView;->mInDownState:Z
 
@@ -1009,7 +1009,7 @@
 
 .method public onDrawFrame(Ljavax/microedition/khronos/opengles/GL10;)V
     .locals 2
-    .param p1, "gl"    # Ljavax/microedition/khronos/opengles/GL10;
+    .parameter "gl"
 
     .prologue
     .line 309
@@ -1061,11 +1061,11 @@
 
 .method protected onLayout(ZIIII)V
     .locals 0
-    .param p1, "changed"    # Z
-    .param p2, "left"    # I
-    .param p3, "top"    # I
-    .param p4, "right"    # I
-    .param p5, "bottom"    # I
+    .parameter "changed"
+    .parameter "left"
+    .parameter "top"
+    .parameter "right"
+    .parameter "bottom"
 
     .prologue
     .line 243
@@ -1094,9 +1094,9 @@
 
 .method public onSurfaceChanged(Ljavax/microedition/khronos/opengles/GL10;II)V
     .locals 4
-    .param p1, "gl1"    # Ljavax/microedition/khronos/opengles/GL10;
-    .param p2, "width"    # I
-    .param p3, "height"    # I
+    .parameter "gl1"
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 280
@@ -1160,7 +1160,7 @@
     check-cast v0, Ljavax/microedition/khronos/opengles/GL11;
 
     .line 289
-    .local v0, "gl":Ljavax/microedition/khronos/opengles/GL11;
+    .local v0, gl:Ljavax/microedition/khronos/opengles/GL11;
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView;->mGL:Ljavax/microedition/khronos/opengles/GL11;
 
     if-ne v1, v0, :cond_0
@@ -1187,8 +1187,8 @@
 
 .method public onSurfaceCreated(Ljavax/microedition/khronos/opengles/GL10;Ljavax/microedition/khronos/egl/EGLConfig;)V
     .locals 4
-    .param p1, "gl1"    # Ljavax/microedition/khronos/opengles/GL10;
-    .param p2, "config"    # Ljavax/microedition/khronos/egl/EGLConfig;
+    .parameter "gl1"
+    .parameter "config"
 
     .prologue
     .line 252
@@ -1197,7 +1197,7 @@
     check-cast v0, Ljavax/microedition/khronos/opengles/GL11;
 
     .line 253
-    .local v0, "gl":Ljavax/microedition/khronos/opengles/GL11;
+    .local v0, gl:Ljavax/microedition/khronos/opengles/GL11;
     iget-object v1, p0, Lcom/android/gallery3d/ui/GLRootView;->mGL:Ljavax/microedition/khronos/opengles/GL11;
 
     if-eqz v1, :cond_0
@@ -1392,7 +1392,7 @@
 
 .method public setContentPane(Lcom/android/gallery3d/ui/GLView;)V
     .locals 9
-    .param p1, "content"    # Lcom/android/gallery3d/ui/GLView;
+    .parameter "content"
 
     .prologue
     const/4 v7, 0x0
@@ -1426,7 +1426,7 @@
     move-result-wide v0
 
     .line 149
-    .local v0, "now":J
+    .local v0, now:J
     const/4 v4, 0x3
 
     move-wide v2, v0
@@ -1438,7 +1438,7 @@
     move-result-object v8
 
     .line 151
-    .local v8, "cancelEvent":Landroid/view/MotionEvent;
+    .local v8, cancelEvent:Landroid/view/MotionEvent;
     iget-object v2, p0, Lcom/android/gallery3d/ui/GLRootView;->mContentView:Lcom/android/gallery3d/ui/GLView;
 
     invoke-virtual {v2, v8}, Lcom/android/gallery3d/ui/GLView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
@@ -1450,8 +1450,8 @@
     iput-boolean v7, p0, Lcom/android/gallery3d/ui/GLRootView;->mInDownState:Z
 
     .line 155
-    .end local v0    # "now":J
-    .end local v8    # "cancelEvent":Landroid/view/MotionEvent;
+    .end local v0           #now:J
+    .end local v8           #cancelEvent:Landroid/view/MotionEvent;
     :cond_2
     iget-object v2, p0, Lcom/android/gallery3d/ui/GLRootView;->mContentView:Lcom/android/gallery3d/ui/GLView;
 
@@ -1478,7 +1478,7 @@
 
 .method public setLightsOutMode(Z)V
     .locals 1
-    .param p1, "enabled"    # Z
+    .parameter "enabled"
 
     .prologue
     .line 524
@@ -1487,7 +1487,7 @@
     const/16 v0, 0x105
 
     .line 529
-    .local v0, "flags":I
+    .local v0, flags:I
     :goto_0
     invoke-virtual {p0, v0}, Lcom/android/gallery3d/ui/GLRootView;->setSystemUiVisibility(I)V
 
@@ -1495,7 +1495,7 @@
     return-void
 
     .line 524
-    .end local v0    # "flags":I
+    .end local v0           #flags:I
     :cond_0
     const/4 v0, 0x0
 
@@ -1504,7 +1504,7 @@
 
 .method public setOrientationSource(Lcom/android/gallery3d/ui/OrientationSource;)V
     .locals 0
-    .param p1, "source"    # Lcom/android/gallery3d/ui/OrientationSource;
+    .parameter "source"
 
     .prologue
     .line 489
@@ -1516,10 +1516,10 @@
 
 .method public surfaceChanged(Landroid/view/SurfaceHolder;III)V
     .locals 0
-    .param p1, "holder"    # Landroid/view/SurfaceHolder;
-    .param p2, "format"    # I
-    .param p3, "w"    # I
-    .param p4, "h"    # I
+    .parameter "holder"
+    .parameter "format"
+    .parameter "w"
+    .parameter "h"
 
     .prologue
     .line 538
@@ -1534,7 +1534,7 @@
 
 .method public surfaceCreated(Landroid/view/SurfaceHolder;)V
     .locals 0
-    .param p1, "holder"    # Landroid/view/SurfaceHolder;
+    .parameter "holder"
 
     .prologue
     .line 544
@@ -1549,7 +1549,7 @@
 
 .method public surfaceDestroyed(Landroid/view/SurfaceHolder;)V
     .locals 0
-    .param p1, "holder"    # Landroid/view/SurfaceHolder;
+    .parameter "holder"
 
     .prologue
     .line 550

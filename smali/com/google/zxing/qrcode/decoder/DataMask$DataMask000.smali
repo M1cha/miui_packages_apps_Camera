@@ -29,7 +29,7 @@
 
 .method synthetic constructor <init>(Lcom/google/zxing/qrcode/decoder/DataMask$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/zxing/qrcode/decoder/DataMask$1;
+    .parameter "x0"
 
     .prologue
     .line 85
@@ -42,8 +42,8 @@
 # virtual methods
 .method isMasked(II)Z
     .locals 1
-    .param p1, "i"    # I
-    .param p2, "j"    # I
+    .parameter "i"
+    .parameter "j"
 
     .prologue
     .line 88

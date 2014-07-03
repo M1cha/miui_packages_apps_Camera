@@ -24,6 +24,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/gallery3d/app/PhotoDataAdapter;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 883
@@ -36,8 +37,8 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/app/PhotoDataAdapter;Lcom/android/gallery3d/app/PhotoDataAdapter$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/app/PhotoDataAdapter;
-    .param p2, "x1"    # Lcom/android/gallery3d/app/PhotoDataAdapter$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 883
@@ -55,7 +56,7 @@
     .line 885
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoDataAdapter$SourceListener;->this$0:Lcom/android/gallery3d/app/PhotoDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoDataAdapter;->mReloadTask:Lcom/android/gallery3d/app/PhotoDataAdapter$ReloadTask;
+    #getter for: Lcom/android/gallery3d/app/PhotoDataAdapter;->mReloadTask:Lcom/android/gallery3d/app/PhotoDataAdapter$ReloadTask;
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoDataAdapter;->access$1000(Lcom/android/gallery3d/app/PhotoDataAdapter;)Lcom/android/gallery3d/app/PhotoDataAdapter$ReloadTask;
 
     move-result-object v0
@@ -64,7 +65,7 @@
 
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoDataAdapter$SourceListener;->this$0:Lcom/android/gallery3d/app/PhotoDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoDataAdapter;->mReloadTask:Lcom/android/gallery3d/app/PhotoDataAdapter$ReloadTask;
+    #getter for: Lcom/android/gallery3d/app/PhotoDataAdapter;->mReloadTask:Lcom/android/gallery3d/app/PhotoDataAdapter$ReloadTask;
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoDataAdapter;->access$1000(Lcom/android/gallery3d/app/PhotoDataAdapter;)Lcom/android/gallery3d/app/PhotoDataAdapter$ReloadTask;
 
     move-result-object v0

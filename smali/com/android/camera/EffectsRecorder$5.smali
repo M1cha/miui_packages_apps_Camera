@@ -28,6 +28,9 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/EffectsRecorder;II)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
     .line 929
@@ -51,7 +54,7 @@
     .line 932
     iget-object v0, p0, Lcom/android/camera/EffectsRecorder$5;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mEffectsListener:Lcom/android/camera/EffectsRecorder$EffectsListener;
+    #getter for: Lcom/android/camera/EffectsRecorder;->mEffectsListener:Lcom/android/camera/EffectsRecorder$EffectsListener;
     invoke-static {v0}, Lcom/android/camera/EffectsRecorder;->access$1000(Lcom/android/camera/EffectsRecorder;)Lcom/android/camera/EffectsRecorder$EffectsListener;
 
     move-result-object v0

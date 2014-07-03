@@ -143,7 +143,7 @@
 
 .method public constructor <init>(Lcom/android/gallery3d/app/GalleryActivity;)V
     .locals 2
-    .param p1, "activity"    # Lcom/android/gallery3d/app/GalleryActivity;
+    .parameter "activity"
 
     .prologue
     .line 134
@@ -211,7 +211,7 @@
 
 .method static synthetic access$200(Lcom/android/gallery3d/app/GalleryActionBar;)Landroid/view/LayoutInflater;
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/app/GalleryActionBar;
+    .parameter "x0"
 
     .prologue
     .line 38
@@ -222,7 +222,7 @@
 
 .method static synthetic access$300(Lcom/android/gallery3d/app/GalleryActionBar;)Lcom/android/gallery3d/app/GalleryActivity;
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/app/GalleryActionBar;
+    .parameter "x0"
 
     .prologue
     .line 38
@@ -233,7 +233,7 @@
 
 .method public static initializeShareActionProvider(Landroid/view/Menu;)Landroid/widget/ShareActionProvider;
     .locals 3
-    .param p0, "menu"    # Landroid/view/Menu;
+    .parameter "menu"
 
     .prologue
     .line 126
@@ -244,11 +244,11 @@
     move-result-object v0
 
     .line 127
-    .local v0, "item":Landroid/view/MenuItem;
+    .local v0, item:Landroid/view/MenuItem;
     const/4 v1, 0x0
 
     .line 128
-    .local v1, "shareActionProvider":Landroid/widget/ShareActionProvider;
+    .local v1, shareActionProvider:Landroid/widget/ShareActionProvider;
     if-eqz v0, :cond_0
 
     .line 129
@@ -256,11 +256,11 @@
 
     move-result-object v1
 
-    .end local v1    # "shareActionProvider":Landroid/widget/ShareActionProvider;
+    .end local v1           #shareActionProvider:Landroid/widget/ShareActionProvider;
     check-cast v1, Landroid/widget/ShareActionProvider;
 
     .line 131
-    .restart local v1    # "shareActionProvider":Landroid/widget/ShareActionProvider;
+    .restart local v1       #shareActionProvider:Landroid/widget/ShareActionProvider;
     :cond_0
     return-object v1
 .end method
@@ -269,7 +269,7 @@
 # virtual methods
 .method public addOnMenuVisibilityListener(Landroid/app/ActionBar$OnMenuVisibilityListener;)V
     .locals 1
-    .param p1, "listener"    # Landroid/app/ActionBar$OnMenuVisibilityListener;
+    .parameter "listener"
 
     .prologue
     .line 257
@@ -330,8 +330,8 @@
 
 .method public onNavigationItemSelected(IJ)Z
     .locals 2
-    .param p1, "itemPosition"    # I
-    .param p2, "itemId"    # J
+    .parameter "itemPosition"
+    .parameter "itemId"
 
     .prologue
     .line 280
@@ -398,7 +398,7 @@
 
 .method public removeOnMenuVisibilityListener(Landroid/app/ActionBar$OnMenuVisibilityListener;)V
     .locals 1
-    .param p1, "listener"    # Landroid/app/ActionBar$OnMenuVisibilityListener;
+    .parameter "listener"
 
     .prologue
     .line 261
@@ -417,8 +417,8 @@
 
 .method public setDisplayOptions(ZZ)V
     .locals 3
-    .param p1, "displayHomeAsUp"    # Z
-    .param p2, "showTitle"    # Z
+    .parameter "displayHomeAsUp"
+    .parameter "showTitle"
 
     .prologue
     const/4 v1, 0x0
@@ -442,7 +442,7 @@
     or-int v0, v2, v1
 
     .line 226
-    .local v0, "options":I
+    .local v0, options:I
     iget-object v1, p0, Lcom/android/gallery3d/app/GalleryActionBar;->mActionBar:Landroid/app/ActionBar;
 
     const/16 v2, 0xc
@@ -455,7 +455,7 @@
     invoke-virtual {v1, p1}, Landroid/app/ActionBar;->setHomeButtonEnabled(Z)V
 
     .line 230
-    .end local v0    # "options":I
+    .end local v0           #options:I
     :cond_1
     return-void
 
@@ -468,7 +468,7 @@
 
 .method public setTitle(Ljava/lang/String;)V
     .locals 1
-    .param p1, "title"    # Ljava/lang/String;
+    .parameter "title"
 
     .prologue
     .line 233

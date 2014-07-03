@@ -3,8 +3,8 @@
 .source "ComboPreferences.java"
 
 # interfaces
-.implements Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
 .implements Landroid/content/SharedPreferences;
+.implements Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
 
 
 # annotations
@@ -41,7 +41,7 @@
 # direct methods
 .method private constructor <init>(Landroid/content/Context;)V
     .locals 3
-    .param p1, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     .line 31
@@ -71,7 +71,7 @@
     move-result-object v0
 
     .line 33
-    .local v0, "prefName":Ljava/lang/String;
+    .local v0, prefName:Ljava/lang/String;
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
@@ -98,7 +98,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/ComboPreferences;)Landroid/content/SharedPreferences;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/ComboPreferences;
+    .parameter "x0"
 
     .prologue
     .line 26
@@ -109,7 +109,7 @@
 
 .method static synthetic access$100(Lcom/android/camera/ComboPreferences;)Landroid/content/SharedPreferences;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/ComboPreferences;
+    .parameter "x0"
 
     .prologue
     .line 26
@@ -120,7 +120,7 @@
 
 .method static synthetic access$200(Lcom/android/camera/ComboPreferences;)Landroid/content/SharedPreferences;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/ComboPreferences;
+    .parameter "x0"
 
     .prologue
     .line 26
@@ -131,7 +131,7 @@
 
 .method static synthetic access$300(Ljava/lang/String;)Z
     .locals 1
-    .param p0, "x0"    # Ljava/lang/String;
+    .parameter "x0"
 
     .prologue
     .line 26
@@ -144,7 +144,7 @@
 
 .method static synthetic access$400(Ljava/lang/String;)Z
     .locals 1
-    .param p0, "x0"    # Ljava/lang/String;
+    .parameter "x0"
 
     .prologue
     .line 26
@@ -218,7 +218,7 @@
 
 .method private static isGlobal(Ljava/lang/String;)Z
     .locals 1
-    .param p0, "key"    # Ljava/lang/String;
+    .parameter "key"
 
     .prologue
     .line 115
@@ -316,7 +316,7 @@
 
 .method private static isModeGlobal(Ljava/lang/String;)Z
     .locals 1
-    .param p0, "key"    # Ljava/lang/String;
+    .parameter "key"
 
     .prologue
     .line 128
@@ -360,7 +360,7 @@
 # virtual methods
 .method public contains(Ljava/lang/String;)Z
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
+    .parameter "key"
 
     .prologue
     const/4 v0, 0x1
@@ -439,8 +439,8 @@
 
 .method public getBoolean(Ljava/lang/String;Z)Z
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "defValue"    # Z
+    .parameter "key"
+    .parameter "defValue"
 
     .prologue
     .line 179
@@ -517,8 +517,8 @@
 
 .method public getFloat(Ljava/lang/String;F)F
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "defValue"    # F
+    .parameter "key"
+    .parameter "defValue"
 
     .prologue
     .line 168
@@ -579,8 +579,8 @@
 
 .method public getInt(Ljava/lang/String;I)I
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "defValue"    # I
+    .parameter "key"
+    .parameter "defValue"
 
     .prologue
     .line 146
@@ -631,8 +631,8 @@
 
 .method public getLong(Ljava/lang/String;J)J
     .locals 2
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "defValue"    # J
+    .parameter "key"
+    .parameter "defValue"
 
     .prologue
     .line 157
@@ -683,8 +683,8 @@
 
 .method public getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "defValue"    # Ljava/lang/String;
+    .parameter "key"
+    .parameter "defValue"
 
     .prologue
     .line 135
@@ -735,7 +735,8 @@
 
 .method public getStringSet(Ljava/lang/String;Ljava/util/Set;)Ljava/util/Set;
     .locals 1
-    .param p1, "key"    # Ljava/lang/String;
+    .parameter "key"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -753,7 +754,7 @@
 
     .prologue
     .line 191
-    .local p2, "defValues":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
+    .local p2, defValues:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -788,8 +789,8 @@
 
 .method public onSharedPreferenceChanged(Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 3
-    .param p1, "sharedPreferences"    # Landroid/content/SharedPreferences;
-    .param p2, "key"    # Ljava/lang/String;
+    .parameter "sharedPreferences"
+    .parameter "key"
 
     .prologue
     .line 334
@@ -799,7 +800,7 @@
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
+    .local v0, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -814,20 +815,20 @@
     check-cast v1, Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
 
     .line 335
-    .local v1, "listener":Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
+    .local v1, listener:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
     invoke-interface {v1, p0, p2}, Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;->onSharedPreferenceChanged(Landroid/content/SharedPreferences;Ljava/lang/String;)V
 
     goto :goto_0
 
     .line 337
-    .end local v1    # "listener":Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
+    .end local v1           #listener:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
     :cond_0
     return-void
 .end method
 
 .method public registerOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
     .locals 1
-    .param p1, "listener"    # Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
+    .parameter "listener"
 
     .prologue
     .line 322
@@ -841,7 +842,7 @@
 
 .method public setLayoutMode(Z)Lcom/android/camera/ComboPreferences;
     .locals 1
-    .param p1, "isSimpleMode"    # Z
+    .parameter "isSimpleMode"
 
     .prologue
     .line 64
@@ -858,7 +859,7 @@
 
 .method public setLocalId(I)Lcom/android/camera/ComboPreferences;
     .locals 1
-    .param p1, "cameraId"    # I
+    .parameter "cameraId"
 
     .prologue
     .line 60
@@ -875,8 +876,8 @@
 
 .method public setLocalId(IZ)Lcom/android/camera/ComboPreferences;
     .locals 5
-    .param p1, "cameraId"    # I
-    .param p2, "isSimpleMode"    # Z
+    .parameter "cameraId"
+    .parameter "isSimpleMode"
 
     .prologue
     const/4 v4, 0x0
@@ -885,11 +886,11 @@
     const/4 v1, 0x0
 
     .line 69
-    .local v1, "prefName":Ljava/lang/String;
+    .local v1, prefName:Ljava/lang/String;
     const/4 v0, 0x0
 
     .line 70
-    .local v0, "prefModeGlobalName":Ljava/lang/String;
+    .local v0, prefModeGlobalName:Ljava/lang/String;
     if-eqz p2, :cond_2
 
     .line 71
@@ -1079,7 +1080,7 @@
 
 .method public unregisterOnSharedPreferenceChangeListener(Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;)V
     .locals 1
-    .param p1, "listener"    # Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
+    .parameter "listener"
 
     .prologue
     .line 328

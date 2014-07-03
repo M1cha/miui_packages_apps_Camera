@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/PanoramaActivity;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 703
@@ -38,13 +39,13 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 705
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$6;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    # invokes: Lcom/android/camera/PanoramaActivity;->switchToCameraMode()V
+    #calls: Lcom/android/camera/PanoramaActivity;->switchToCameraMode()V
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$2200(Lcom/android/camera/PanoramaActivity;)V
 
     .line 706

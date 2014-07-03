@@ -30,7 +30,7 @@
 
 .method public constructor <init>(Lcom/google/zxing/LuminanceSource;)V
     .locals 1
-    .param p1, "source"    # Lcom/google/zxing/LuminanceSource;
+    .parameter "source"
 
     .prologue
     .line 45
@@ -54,7 +54,7 @@
 
 .method private static estimateBlackPoint([I)I
     .locals 15
-    .param p0, "buckets"    # [I
+    .parameter "buckets"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -66,22 +66,22 @@
     array-length v7, p0
 
     .line 142
-    .local v7, "numBuckets":I
+    .local v7, numBuckets:I
     const/4 v6, 0x0
 
     .line 143
-    .local v6, "maxBucketCount":I
+    .local v6, maxBucketCount:I
     const/4 v3, 0x0
 
     .line 144
-    .local v3, "firstPeak":I
+    .local v3, firstPeak:I
     const/4 v4, 0x0
 
     .line 145
-    .local v4, "firstPeakSize":I
+    .local v4, firstPeakSize:I
     const/4 v12, 0x0
 
-    .local v12, "x":I
+    .local v12, x:I
     :goto_0
     if-ge v12, v7, :cond_2
 
@@ -116,11 +116,11 @@
     const/4 v9, 0x0
 
     .line 157
-    .local v9, "secondPeak":I
+    .local v9, secondPeak:I
     const/4 v10, 0x0
 
     .line 158
-    .local v10, "secondPeakScore":I
+    .local v10, secondPeakScore:I
     const/4 v12, 0x0
 
     :goto_1
@@ -130,7 +130,7 @@
     sub-int v2, v12, v3
 
     .line 161
-    .local v2, "distanceToBiggest":I
+    .local v2, distanceToBiggest:I
     aget v13, p0, v12
 
     mul-int/2addr v13, v2
@@ -138,7 +138,7 @@
     mul-int v8, v13, v2
 
     .line 162
-    .local v8, "score":I
+    .local v8, score:I
     if-le v8, v10, :cond_3
 
     .line 163
@@ -154,8 +154,8 @@
     goto :goto_1
 
     .line 169
-    .end local v2    # "distanceToBiggest":I
-    .end local v8    # "score":I
+    .end local v2           #distanceToBiggest:I
+    .end local v8           #score:I
     :cond_4
     if-le v3, v9, :cond_5
 
@@ -163,14 +163,14 @@
     move v11, v3
 
     .line 171
-    .local v11, "temp":I
+    .local v11, temp:I
     move v3, v9
 
     .line 172
     move v9, v11
 
     .line 177
-    .end local v11    # "temp":I
+    .end local v11           #temp:I
     :cond_5
     sub-int v13, v9, v3
 
@@ -190,11 +190,11 @@
     add-int/lit8 v0, v9, -0x1
 
     .line 183
-    .local v0, "bestValley":I
+    .local v0, bestValley:I
     const/4 v1, -0x1
 
     .line 184
-    .local v1, "bestValleyScore":I
+    .local v1, bestValleyScore:I
     add-int/lit8 v12, v9, -0x1
 
     :goto_2
@@ -204,7 +204,7 @@
     sub-int v5, v12, v3
 
     .line 186
-    .local v5, "fromFirst":I
+    .local v5, fromFirst:I
     mul-int v13, v5, v5
 
     sub-int v14, v9, v12
@@ -218,7 +218,7 @@
     mul-int v8, v13, v14
 
     .line 187
-    .restart local v8    # "score":I
+    .restart local v8       #score:I
     if-le v8, v1, :cond_7
 
     .line 188
@@ -234,8 +234,8 @@
     goto :goto_2
 
     .line 193
-    .end local v5    # "fromFirst":I
-    .end local v8    # "score":I
+    .end local v5           #fromFirst:I
+    .end local v8           #score:I
     :cond_8
     shl-int/lit8 v13, v0, 0x3
 
@@ -244,7 +244,7 @@
 
 .method private initArrays(I)V
     .locals 3
-    .param p1, "luminanceSize"    # I
+    .parameter "luminanceSize"
 
     .prologue
     .line 131
@@ -263,7 +263,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .local v0, "x":I
+    .local v0, x:I
     :goto_0
     const/16 v1, 0x20
 
@@ -290,7 +290,7 @@
 # virtual methods
 .method public createBinarizer(Lcom/google/zxing/LuminanceSource;)Lcom/google/zxing/Binarizer;
     .locals 1
-    .param p1, "source"    # Lcom/google/zxing/LuminanceSource;
+    .parameter "source"
 
     .prologue
     .line 127
@@ -316,35 +316,35 @@
     move-result-object v9
 
     .line 89
-    .local v9, "source":Lcom/google/zxing/LuminanceSource;
+    .local v9, source:Lcom/google/zxing/LuminanceSource;
     invoke-virtual {v9}, Lcom/google/zxing/LuminanceSource;->getWidth()I
 
     move-result v10
 
     .line 90
-    .local v10, "width":I
+    .local v10, width:I
     invoke-virtual {v9}, Lcom/google/zxing/LuminanceSource;->getHeight()I
 
     move-result v1
 
     .line 91
-    .local v1, "height":I
+    .local v1, height:I
     new-instance v4, Lcom/google/zxing/common/BitMatrix;
 
     invoke-direct {v4, v10, v1}, Lcom/google/zxing/common/BitMatrix;-><init>(II)V
 
     .line 95
-    .local v4, "matrix":Lcom/google/zxing/common/BitMatrix;
+    .local v4, matrix:Lcom/google/zxing/common/BitMatrix;
     invoke-direct {p0, v10}, Lcom/google/zxing/common/GlobalHistogramBinarizer;->initArrays(I)V
 
     .line 96
     iget-object v2, p0, Lcom/google/zxing/common/GlobalHistogramBinarizer;->buckets:[I
 
     .line 97
-    .local v2, "localBuckets":[I
+    .local v2, localBuckets:[I
     const/4 v12, 0x1
 
-    .local v12, "y":I
+    .local v12, y:I
     :goto_0
     const/4 v13, 0x5
 
@@ -356,7 +356,7 @@
     div-int/lit8 v8, v13, 0x5
 
     .line 99
-    .local v8, "row":I
+    .local v8, row:I
     iget-object v13, p0, Lcom/google/zxing/common/GlobalHistogramBinarizer;->luminances:[B
 
     invoke-virtual {v9, v8, v13}, Lcom/google/zxing/LuminanceSource;->getRow(I[B)[B
@@ -364,16 +364,16 @@
     move-result-object v3
 
     .line 100
-    .local v3, "localLuminances":[B
+    .local v3, localLuminances:[B
     shl-int/lit8 v13, v10, 0x2
 
     div-int/lit8 v7, v13, 0x5
 
     .line 101
-    .local v7, "right":I
+    .local v7, right:I
     div-int/lit8 v11, v10, 0x5
 
-    .local v11, "x":I
+    .local v11, x:I
     :goto_1
     if-ge v11, v7, :cond_0
 
@@ -383,7 +383,7 @@
     and-int/lit16 v6, v13, 0xff
 
     .line 103
-    .local v6, "pixel":I
+    .local v6, pixel:I
     shr-int/lit8 v13, v6, 0x3
 
     aget v14, v2, v13
@@ -398,30 +398,30 @@
     goto :goto_1
 
     .line 97
-    .end local v6    # "pixel":I
+    .end local v6           #pixel:I
     :cond_0
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_0
 
     .line 106
-    .end local v3    # "localLuminances":[B
-    .end local v7    # "right":I
-    .end local v8    # "row":I
-    .end local v11    # "x":I
+    .end local v3           #localLuminances:[B
+    .end local v7           #right:I
+    .end local v8           #row:I
+    .end local v11           #x:I
     :cond_1
     invoke-static {v2}, Lcom/google/zxing/common/GlobalHistogramBinarizer;->estimateBlackPoint([I)I
 
     move-result v0
 
     .line 111
-    .local v0, "blackPoint":I
+    .local v0, blackPoint:I
     invoke-virtual {v9}, Lcom/google/zxing/LuminanceSource;->getMatrix()[B
 
     move-result-object v3
 
     .line 112
-    .restart local v3    # "localLuminances":[B
+    .restart local v3       #localLuminances:[B
     const/4 v12, 0x0
 
     :goto_2
@@ -431,10 +431,10 @@
     mul-int v5, v12, v10
 
     .line 114
-    .local v5, "offset":I
+    .local v5, offset:I
     const/4 v11, 0x0
 
-    .restart local v11    # "x":I
+    .restart local v11       #x:I
     :goto_3
     if-ge v11, v10, :cond_3
 
@@ -446,7 +446,7 @@
     and-int/lit16 v6, v13, 0xff
 
     .line 116
-    .restart local v6    # "pixel":I
+    .restart local v6       #pixel:I
     if-ge v6, v0, :cond_2
 
     .line 117
@@ -459,23 +459,23 @@
     goto :goto_3
 
     .line 112
-    .end local v6    # "pixel":I
+    .end local v6           #pixel:I
     :cond_3
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_2
 
     .line 122
-    .end local v5    # "offset":I
-    .end local v11    # "x":I
+    .end local v5           #offset:I
+    .end local v11           #x:I
     :cond_4
     return-object v4
 .end method
 
 .method public getBlackRow(ILcom/google/zxing/common/BitArray;)Lcom/google/zxing/common/BitArray;
     .locals 13
-    .param p1, "y"    # I
-    .param p2, "row"    # Lcom/google/zxing/common/BitArray;
+    .parameter "y"
+    .parameter "row"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -489,13 +489,13 @@
     move-result-object v8
 
     .line 54
-    .local v8, "source":Lcom/google/zxing/LuminanceSource;
+    .local v8, source:Lcom/google/zxing/LuminanceSource;
     invoke-virtual {v8}, Lcom/google/zxing/LuminanceSource;->getWidth()I
 
     move-result v9
 
     .line 55
-    .local v9, "width":I
+    .local v9, width:I
     if-eqz p2, :cond_0
 
     invoke-virtual {p2}, Lcom/google/zxing/common/BitArray;->getSize()I
@@ -508,11 +508,11 @@
     :cond_0
     new-instance p2, Lcom/google/zxing/common/BitArray;
 
-    .end local p2    # "row":Lcom/google/zxing/common/BitArray;
+    .end local p2
     invoke-direct {p2, v9}, Lcom/google/zxing/common/BitArray;-><init>(I)V
 
     .line 61
-    .restart local p2    # "row":Lcom/google/zxing/common/BitArray;
+    .restart local p2
     :goto_0
     invoke-direct {p0, v9}, Lcom/google/zxing/common/GlobalHistogramBinarizer;->initArrays(I)V
 
@@ -524,14 +524,14 @@
     move-result-object v4
 
     .line 63
-    .local v4, "localLuminances":[B
+    .local v4, localLuminances:[B
     iget-object v3, p0, Lcom/google/zxing/common/GlobalHistogramBinarizer;->buckets:[I
 
     .line 64
-    .local v3, "localBuckets":[I
+    .local v3, localBuckets:[I
     const/4 v10, 0x0
 
-    .local v10, "x":I
+    .local v10, x:I
     :goto_1
     if-ge v10, v9, :cond_2
 
@@ -541,7 +541,7 @@
     and-int/lit16 v6, v11, 0xff
 
     .line 66
-    .local v6, "pixel":I
+    .local v6, pixel:I
     shr-int/lit8 v11, v6, 0x3
 
     aget v12, v3, v11
@@ -556,26 +556,26 @@
     goto :goto_1
 
     .line 58
-    .end local v3    # "localBuckets":[I
-    .end local v4    # "localLuminances":[B
-    .end local v6    # "pixel":I
-    .end local v10    # "x":I
+    .end local v3           #localBuckets:[I
+    .end local v4           #localLuminances:[B
+    .end local v6           #pixel:I
+    .end local v10           #x:I
     :cond_1
     invoke-virtual {p2}, Lcom/google/zxing/common/BitArray;->clear()V
 
     goto :goto_0
 
     .line 68
-    .restart local v3    # "localBuckets":[I
-    .restart local v4    # "localLuminances":[B
-    .restart local v10    # "x":I
+    .restart local v3       #localBuckets:[I
+    .restart local v4       #localLuminances:[B
+    .restart local v10       #x:I
     :cond_2
     invoke-static {v3}, Lcom/google/zxing/common/GlobalHistogramBinarizer;->estimateBlackPoint([I)I
 
     move-result v0
 
     .line 70
-    .local v0, "blackPoint":I
+    .local v0, blackPoint:I
     const/4 v11, 0x0
 
     aget-byte v11, v4, v11
@@ -583,7 +583,7 @@
     and-int/lit16 v2, v11, 0xff
 
     .line 71
-    .local v2, "left":I
+    .local v2, left:I
     const/4 v11, 0x1
 
     aget-byte v11, v4, v11
@@ -591,7 +591,7 @@
     and-int/lit16 v1, v11, 0xff
 
     .line 72
-    .local v1, "center":I
+    .local v1, center:I
     const/4 v10, 0x1
 
     :goto_2
@@ -607,7 +607,7 @@
     and-int/lit16 v7, v11, 0xff
 
     .line 75
-    .local v7, "right":I
+    .local v7, right:I
     shl-int/lit8 v11, v1, 0x2
 
     sub-int/2addr v11, v2
@@ -617,7 +617,7 @@
     shr-int/lit8 v5, v11, 0x1
 
     .line 76
-    .local v5, "luminance":I
+    .local v5, luminance:I
     if-ge v5, v0, :cond_3
 
     .line 77
@@ -636,8 +636,8 @@
     goto :goto_2
 
     .line 82
-    .end local v5    # "luminance":I
-    .end local v7    # "right":I
+    .end local v5           #luminance:I
+    .end local v7           #right:I
     :cond_4
     return-object p2
 .end method

@@ -29,8 +29,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 25
@@ -44,7 +44,7 @@
 # virtual methods
 .method public initialize(Lcom/android/camera/IconListPreference;)V
     .locals 1
-    .param p1, "preference"    # Lcom/android/camera/IconListPreference;
+    .parameter "preference"
 
     .prologue
     .line 34
@@ -112,7 +112,7 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 54
@@ -154,7 +154,7 @@
 
 .method public setSettingChangedListener(Lcom/android/camera/ui/AbstractSettingPopup$Listener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/camera/ui/AbstractSettingPopup$Listener;
+    .parameter "listener"
 
     .prologue
     .line 47

@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 916
@@ -38,9 +39,9 @@
 # virtual methods
 .method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
     .locals 0
-    .param p1, "bar"    # Landroid/widget/SeekBar;
-    .param p2, "progress"    # I
-    .param p3, "fromtouch"    # Z
+    .parameter "bar"
+    .parameter "progress"
+    .parameter "fromtouch"
 
     .prologue
     .line 921
@@ -49,7 +50,7 @@
 
 .method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
     .locals 0
-    .param p1, "bar"    # Landroid/widget/SeekBar;
+    .parameter "bar"
 
     .prologue
     .line 919
@@ -58,7 +59,7 @@
 
 .method public onStopTrackingTouch(Landroid/widget/SeekBar;)V
     .locals 0
-    .param p1, "bar"    # Landroid/widget/SeekBar;
+    .parameter "bar"
 
     .prologue
     .line 923

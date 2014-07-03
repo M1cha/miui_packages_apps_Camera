@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ui/RulerSettingPopup;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 33
@@ -38,8 +39,8 @@
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 7
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
+    .parameter "v"
+    .parameter "event"
 
     .prologue
     const/4 v6, 0x1
@@ -50,13 +51,13 @@
     move-result v0
 
     .line 37
-    .local v0, "action":I
+    .local v0, action:I
     if-nez v0, :cond_1
 
     .line 38
     iget-object v2, p0, Lcom/android/camera/ui/RulerSettingPopup$1;->this$0:Lcom/android/camera/ui/RulerSettingPopup;
 
-    # getter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursor:Landroid/widget/ImageView;
+    #getter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursor:Landroid/widget/ImageView;
     invoke-static {v2}, Lcom/android/camera/ui/RulerSettingPopup;->access$000(Lcom/android/camera/ui/RulerSettingPopup;)Landroid/widget/ImageView;
 
     move-result-object v2
@@ -85,12 +86,12 @@
 
     float-to-int v4, v4
 
-    # invokes: Lcom/android/camera/ui/RulerSettingPopup;->filterX(I)I
+    #calls: Lcom/android/camera/ui/RulerSettingPopup;->filterX(I)I
     invoke-static {v3, v4}, Lcom/android/camera/ui/RulerSettingPopup;->access$200(Lcom/android/camera/ui/RulerSettingPopup;I)I
 
     move-result v3
 
-    # setter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorX:I
+    #setter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorX:I
     invoke-static {v2, v3}, Lcom/android/camera/ui/RulerSettingPopup;->access$102(Lcom/android/camera/ui/RulerSettingPopup;I)I
 
     .line 42
@@ -98,28 +99,28 @@
 
     iget-object v3, p0, Lcom/android/camera/ui/RulerSettingPopup$1;->this$0:Lcom/android/camera/ui/RulerSettingPopup;
 
-    # getter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorX:I
+    #getter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorX:I
     invoke-static {v3}, Lcom/android/camera/ui/RulerSettingPopup;->access$100(Lcom/android/camera/ui/RulerSettingPopup;)I
 
     move-result v3
 
-    # invokes: Lcom/android/camera/ui/RulerSettingPopup;->indexOfPos(I)I
+    #calls: Lcom/android/camera/ui/RulerSettingPopup;->indexOfPos(I)I
     invoke-static {v2, v3}, Lcom/android/camera/ui/RulerSettingPopup;->access$300(Lcom/android/camera/ui/RulerSettingPopup;I)I
 
     move-result v1
 
     .line 43
-    .local v1, "index":I
+    .local v1, index:I
     iget-object v2, p0, Lcom/android/camera/ui/RulerSettingPopup$1;->this$0:Lcom/android/camera/ui/RulerSettingPopup;
 
-    # getter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorX:I
+    #getter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorX:I
     invoke-static {v2}, Lcom/android/camera/ui/RulerSettingPopup;->access$100(Lcom/android/camera/ui/RulerSettingPopup;)I
 
     move-result v2
 
     iget-object v3, p0, Lcom/android/camera/ui/RulerSettingPopup$1;->this$0:Lcom/android/camera/ui/RulerSettingPopup;
 
-    # getter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorPos:[I
+    #getter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorPos:[I
     invoke-static {v3}, Lcom/android/camera/ui/RulerSettingPopup;->access$400(Lcom/android/camera/ui/RulerSettingPopup;)[I
 
     move-result-object v3
@@ -141,14 +142,14 @@
 
     iget-object v3, p0, Lcom/android/camera/ui/RulerSettingPopup$1;->this$0:Lcom/android/camera/ui/RulerSettingPopup;
 
-    # getter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorPos:[I
+    #getter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorPos:[I
     invoke-static {v3}, Lcom/android/camera/ui/RulerSettingPopup;->access$400(Lcom/android/camera/ui/RulerSettingPopup;)[I
 
     move-result-object v3
 
     aget v3, v3, v1
 
-    # setter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorX:I
+    #setter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorX:I
     invoke-static {v2, v3}, Lcom/android/camera/ui/RulerSettingPopup;->access$102(Lcom/android/camera/ui/RulerSettingPopup;I)I
 
     .line 46
@@ -160,7 +161,7 @@
     goto :goto_0
 
     .line 48
-    .end local v1    # "index":I
+    .end local v1           #index:I
     :cond_3
     if-ne v0, v6, :cond_0
 
@@ -177,17 +178,17 @@
 
     float-to-int v5, v5
 
-    # invokes: Lcom/android/camera/ui/RulerSettingPopup;->filterX(I)I
+    #calls: Lcom/android/camera/ui/RulerSettingPopup;->filterX(I)I
     invoke-static {v4, v5}, Lcom/android/camera/ui/RulerSettingPopup;->access$200(Lcom/android/camera/ui/RulerSettingPopup;I)I
 
     move-result v4
 
-    # invokes: Lcom/android/camera/ui/RulerSettingPopup;->indexOfPos(I)I
+    #calls: Lcom/android/camera/ui/RulerSettingPopup;->indexOfPos(I)I
     invoke-static {v3, v4}, Lcom/android/camera/ui/RulerSettingPopup;->access$300(Lcom/android/camera/ui/RulerSettingPopup;I)I
 
     move-result v3
 
-    # setter for: Lcom/android/camera/ui/RulerSettingPopup;->mValueIndex:I
+    #setter for: Lcom/android/camera/ui/RulerSettingPopup;->mValueIndex:I
     invoke-static {v2, v3}, Lcom/android/camera/ui/RulerSettingPopup;->access$502(Lcom/android/camera/ui/RulerSettingPopup;I)I
 
     .line 50
@@ -195,27 +196,27 @@
 
     iget-object v3, p0, Lcom/android/camera/ui/RulerSettingPopup$1;->this$0:Lcom/android/camera/ui/RulerSettingPopup;
 
-    # getter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorPos:[I
+    #getter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorPos:[I
     invoke-static {v3}, Lcom/android/camera/ui/RulerSettingPopup;->access$400(Lcom/android/camera/ui/RulerSettingPopup;)[I
 
     move-result-object v3
 
     iget-object v4, p0, Lcom/android/camera/ui/RulerSettingPopup$1;->this$0:Lcom/android/camera/ui/RulerSettingPopup;
 
-    # getter for: Lcom/android/camera/ui/RulerSettingPopup;->mValueIndex:I
+    #getter for: Lcom/android/camera/ui/RulerSettingPopup;->mValueIndex:I
     invoke-static {v4}, Lcom/android/camera/ui/RulerSettingPopup;->access$500(Lcom/android/camera/ui/RulerSettingPopup;)I
 
     move-result v4
 
     aget v3, v3, v4
 
-    # setter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorX:I
+    #setter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursorX:I
     invoke-static {v2, v3}, Lcom/android/camera/ui/RulerSettingPopup;->access$102(Lcom/android/camera/ui/RulerSettingPopup;I)I
 
     .line 51
     iget-object v2, p0, Lcom/android/camera/ui/RulerSettingPopup$1;->this$0:Lcom/android/camera/ui/RulerSettingPopup;
 
-    # getter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursor:Landroid/widget/ImageView;
+    #getter for: Lcom/android/camera/ui/RulerSettingPopup;->mCursor:Landroid/widget/ImageView;
     invoke-static {v2}, Lcom/android/camera/ui/RulerSettingPopup;->access$000(Lcom/android/camera/ui/RulerSettingPopup;)Landroid/widget/ImageView;
 
     move-result-object v2
@@ -236,14 +237,14 @@
 
     iget-object v3, p0, Lcom/android/camera/ui/RulerSettingPopup$1;->this$0:Lcom/android/camera/ui/RulerSettingPopup;
 
-    # getter for: Lcom/android/camera/ui/RulerSettingPopup;->mValueCount:I
+    #getter for: Lcom/android/camera/ui/RulerSettingPopup;->mValueCount:I
     invoke-static {v3}, Lcom/android/camera/ui/RulerSettingPopup;->access$600(Lcom/android/camera/ui/RulerSettingPopup;)I
 
     move-result v3
 
     iget-object v4, p0, Lcom/android/camera/ui/RulerSettingPopup$1;->this$0:Lcom/android/camera/ui/RulerSettingPopup;
 
-    # getter for: Lcom/android/camera/ui/RulerSettingPopup;->mValueIndex:I
+    #getter for: Lcom/android/camera/ui/RulerSettingPopup;->mValueIndex:I
     invoke-static {v4}, Lcom/android/camera/ui/RulerSettingPopup;->access$500(Lcom/android/camera/ui/RulerSettingPopup;)I
 
     move-result v4

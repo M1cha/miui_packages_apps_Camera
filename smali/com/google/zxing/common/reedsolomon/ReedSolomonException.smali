@@ -6,7 +6,7 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .locals 0
-    .param p1, "message"    # Ljava/lang/String;
+    .parameter "message"
 
     .prologue
     .line 28

@@ -30,10 +30,10 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
     .locals 7
-    .param p1, "text"    # Ljava/lang/String;
-    .param p2, "rawBytes"    # [B
-    .param p3, "resultPoints"    # [Lcom/google/zxing/ResultPoint;
-    .param p4, "format"    # Lcom/google/zxing/BarcodeFormat;
+    .parameter "text"
+    .parameter "rawBytes"
+    .parameter "resultPoints"
+    .parameter "format"
 
     .prologue
     .line 40
@@ -59,11 +59,11 @@
 
 .method public constructor <init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;J)V
     .locals 1
-    .param p1, "text"    # Ljava/lang/String;
-    .param p2, "rawBytes"    # [B
-    .param p3, "resultPoints"    # [Lcom/google/zxing/ResultPoint;
-    .param p4, "format"    # Lcom/google/zxing/BarcodeFormat;
-    .param p5, "timestamp"    # J
+    .parameter "text"
+    .parameter "rawBytes"
+    .parameter "resultPoints"
+    .parameter "format"
+    .parameter "timestamp"
 
     .prologue
     .line 47
@@ -97,7 +97,7 @@
 # virtual methods
 .method public addResultPoints([Lcom/google/zxing/ResultPoint;)V
     .locals 5
-    .param p1, "newPoints"    # [Lcom/google/zxing/ResultPoint;
+    .parameter "newPoints"
 
     .prologue
     const/4 v4, 0x0
@@ -106,7 +106,7 @@
     iget-object v1, p0, Lcom/google/zxing/Result;->resultPoints:[Lcom/google/zxing/ResultPoint;
 
     .line 114
-    .local v1, "oldPoints":[Lcom/google/zxing/ResultPoint;
+    .local v1, oldPoints:[Lcom/google/zxing/ResultPoint;
     if-nez v1, :cond_1
 
     .line 115
@@ -135,7 +135,7 @@
     new-array v0, v2, [Lcom/google/zxing/ResultPoint;
 
     .line 118
-    .local v0, "allPoints":[Lcom/google/zxing/ResultPoint;
+    .local v0, allPoints:[Lcom/google/zxing/ResultPoint;
     array-length v2, v1
 
     invoke-static {v1, v4, v0, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
@@ -215,6 +215,7 @@
 
 .method public putAllMetadata(Ljava/util/Map;)V
     .locals 1
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -228,7 +229,7 @@
 
     .prologue
     .line 103
-    .local p1, "metadata":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;>;"
+    .local p1, metadata:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;>;"
     if-eqz p1, :cond_0
 
     .line 104
@@ -255,6 +256,8 @@
 
 .method public putMetadata(Lcom/google/zxing/ResultMetadataType;Ljava/lang/Object;)V
     .locals 2
+    .parameter
+    .parameter
 
     .prologue
     .line 96

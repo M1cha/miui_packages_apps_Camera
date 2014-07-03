@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/MoviePlayer;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 228
@@ -38,7 +39,7 @@
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
     .locals 1
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
+    .parameter "dialog"
 
     .prologue
     .line 231

@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/data/LocalAlbumSet;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 297

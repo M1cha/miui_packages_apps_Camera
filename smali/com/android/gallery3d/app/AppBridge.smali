@@ -73,8 +73,8 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 0
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
+    .parameter "dest"
+    .parameter "flags"
 
     .prologue
     .line 32

@@ -26,6 +26,8 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/BasePreferenceActivity;Landroid/preference/CheckBoxPreference;)V
     .locals 0
+    .parameter
+    .parameter
 
     .prologue
     .line 292
@@ -47,7 +49,7 @@
     .line 297
     iget-object v1, p0, Lcom/android/camera/BasePreferenceActivity$3;->this$0:Lcom/android/camera/BasePreferenceActivity;
 
-    # getter for: Lcom/android/camera/BasePreferenceActivity;->mPreferences:Lcom/android/camera/ComboPreferences;
+    #getter for: Lcom/android/camera/BasePreferenceActivity;->mPreferences:Lcom/android/camera/ComboPreferences;
     invoke-static {v1}, Lcom/android/camera/BasePreferenceActivity;->access$200(Lcom/android/camera/BasePreferenceActivity;)Lcom/android/camera/ComboPreferences;
 
     move-result-object v1
@@ -57,12 +59,12 @@
     move-result-object v0
 
     .line 298
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
+    .local v0, editor:Landroid/content/SharedPreferences$Editor;
     const-string v2, "pref_layout_mode_key"
 
     iget-object v1, p0, Lcom/android/camera/BasePreferenceActivity$3;->this$0:Lcom/android/camera/BasePreferenceActivity;
 
-    # getter for: Lcom/android/camera/BasePreferenceActivity;->mIsSimpleMode:Z
+    #getter for: Lcom/android/camera/BasePreferenceActivity;->mIsSimpleMode:Z
     invoke-static {v1}, Lcom/android/camera/BasePreferenceActivity;->access$100(Lcom/android/camera/BasePreferenceActivity;)Z
 
     move-result v1
@@ -82,7 +84,7 @@
 
     iget-object v2, p0, Lcom/android/camera/BasePreferenceActivity$3;->this$0:Lcom/android/camera/BasePreferenceActivity;
 
-    # getter for: Lcom/android/camera/BasePreferenceActivity;->mIsSimpleMode:Z
+    #getter for: Lcom/android/camera/BasePreferenceActivity;->mIsSimpleMode:Z
     invoke-static {v2}, Lcom/android/camera/BasePreferenceActivity;->access$100(Lcom/android/camera/BasePreferenceActivity;)Z
 
     move-result v2

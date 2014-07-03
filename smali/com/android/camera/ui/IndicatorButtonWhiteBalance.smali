@@ -14,8 +14,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/camera/IconListPreference;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "pref"    # Lcom/android/camera/IconListPreference;
+    .parameter "context"
+    .parameter "pref"
 
     .prologue
     .line 18
@@ -48,7 +48,7 @@
     check-cast v0, Landroid/view/ViewGroup;
 
     .line 50
-    .local v0, "root":Landroid/view/ViewGroup;
+    .local v0, root:Landroid/view/ViewGroup;
     iget-object v1, p0, Lcom/android/camera/ui/IndicatorButtonWhiteBalance;->mPopup:Lcom/android/camera/ui/AbstractSettingPopup;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V

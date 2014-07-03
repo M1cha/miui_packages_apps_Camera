@@ -19,10 +19,10 @@
 # direct methods
 .method public constructor <init>(IIZI)V
     .locals 2
-    .param p1, "previewWidth"    # I
-    .param p2, "previewHeight"    # I
-    .param p3, "mirror"    # Z
-    .param p4, "displayOrientation"    # I
+    .parameter "previewWidth"
+    .parameter "previewHeight"
+    .parameter "mirror"
+    .parameter "displayOrientation"
 
     .prologue
     .line 743
@@ -69,8 +69,8 @@
 
 .method public getFocusArea(II)Ljava/util/List;
     .locals 10
-    .param p1, "x"    # I
-    .param p2, "y"    # I
+    .parameter "x"
+    .parameter "y"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(II)",
@@ -93,7 +93,7 @@
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
     .line 762
-    .local v9, "focusArea":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/Camera$Area;>;"
+    .local v9, focusArea:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
     new-instance v0, Landroid/hardware/Camera$Area;
 
     new-instance v1, Landroid/graphics/Rect;
@@ -111,7 +111,7 @@
 
     iget v2, p0, Lcom/android/camera/FocusManagerVideo;->FOCUS_AREA_HEIGHT:I
 
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f80
 
     iget v6, p0, Lcom/android/camera/FocusManagerVideo;->mPreviewWidth:I
 
@@ -136,7 +136,7 @@
     invoke-virtual/range {v0 .. v8}, Lcom/android/camera/FocusManagerVideo;->calculateTapArea(IIFIIIILandroid/graphics/Rect;)V
 
     .line 769
-    .end local v9    # "focusArea":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/Camera$Area;>;"
+    .end local v9           #focusArea:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Area;>;"
     :goto_0
     return-object v9
 
@@ -148,8 +148,8 @@
 
 .method public setPreviewSize(II)V
     .locals 1
-    .param p1, "previewWidth"    # I
-    .param p2, "previewHeight"    # I
+    .parameter "previewWidth"
+    .parameter "previewHeight"
 
     .prologue
     .line 752

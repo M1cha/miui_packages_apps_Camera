@@ -31,7 +31,7 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/ui/TileImageView$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/ui/TileImageView$1;
+    .parameter "x0"
 
     .prologue
     .line 723
@@ -63,7 +63,7 @@
     iget-object v0, p0, Lcom/android/gallery3d/ui/TileImageView$TileQueue;->mHead:Lcom/android/gallery3d/ui/TileImageView$Tile;
 
     .line 728
-    .local v0, "tile":Lcom/android/gallery3d/ui/TileImageView$Tile;
+    .local v0, tile:Lcom/android/gallery3d/ui/TileImageView$Tile;
     if-eqz v0, :cond_0
 
     iget-object v1, v0, Lcom/android/gallery3d/ui/TileImageView$Tile;->mNext:Lcom/android/gallery3d/ui/TileImageView$Tile;
@@ -77,7 +77,7 @@
 
 .method public push(Lcom/android/gallery3d/ui/TileImageView$Tile;)Z
     .locals 2
-    .param p1, "tile"    # Lcom/android/gallery3d/ui/TileImageView$Tile;
+    .parameter "tile"
 
     .prologue
     .line 733
@@ -88,7 +88,7 @@
     const/4 v0, 0x1
 
     .line 734
-    .local v0, "wasEmpty":Z
+    .local v0, wasEmpty:Z
     :goto_0
     iget-object v1, p0, Lcom/android/gallery3d/ui/TileImageView$TileQueue;->mHead:Lcom/android/gallery3d/ui/TileImageView$Tile;
 
@@ -101,7 +101,7 @@
     return v0
 
     .line 733
-    .end local v0    # "wasEmpty":Z
+    .end local v0           #wasEmpty:Z
     :cond_0
     const/4 v0, 0x0
 

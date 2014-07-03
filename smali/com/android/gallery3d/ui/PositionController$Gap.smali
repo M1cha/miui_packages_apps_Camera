@@ -29,6 +29,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/gallery3d/ui/PositionController;)V
     .locals 1
+    .parameter
 
     .prologue
     .line 1738
@@ -43,8 +44,8 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/ui/PositionController;Lcom/android/gallery3d/ui/PositionController$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/ui/PositionController;
-    .param p2, "x1"    # Lcom/android/gallery3d/ui/PositionController$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 1738
@@ -57,8 +58,8 @@
 # virtual methods
 .method public doAnimation(II)Z
     .locals 2
-    .param p1, "targetSize"    # I
-    .param p2, "kind"    # I
+    .parameter "targetSize"
+    .parameter "kind"
 
     .prologue
     .line 1755
@@ -97,7 +98,6 @@
     iput-wide v0, p0, Lcom/android/gallery3d/ui/PositionController$Gap;->mAnimationStartTime:J
 
     .line 1762
-    # getter for: Lcom/android/gallery3d/ui/PositionController;->ANIM_TIME:[I
     invoke-static {}, Lcom/android/gallery3d/ui/PositionController;->access$2400()[I
 
     move-result-object v0
@@ -119,7 +119,7 @@
 
 .method protected interpolate(F)Z
     .locals 6
-    .param p1, "progress"    # F
+    .parameter "progress"
 
     .prologue
     const/4 v1, 0x1
@@ -127,7 +127,7 @@
     const/4 v2, 0x0
 
     .line 1769
-    const/high16 v3, 0x3f800000
+    const/high16 v3, 0x3f80
 
     cmpl-float v3, p1, v3
 
@@ -178,7 +178,7 @@
     move-result v0
 
     .line 1776
-    .local v0, "f":F
+    .local v0, f:F
     iget v1, p0, Lcom/android/gallery3d/ui/PositionController$Gap;->mCurrentGap:I
 
     int-to-float v1, v1
@@ -195,7 +195,7 @@
     goto :goto_0
 
     .line 1779
-    .end local v0    # "f":F
+    .end local v0           #f:F
     :cond_2
     iget v3, p0, Lcom/android/gallery3d/ui/PositionController$Gap;->mCurrentGap:I
 

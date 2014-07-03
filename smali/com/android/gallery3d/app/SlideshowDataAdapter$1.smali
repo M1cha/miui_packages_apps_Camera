@@ -34,6 +34,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/SlideshowDataAdapter;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 172
@@ -48,7 +49,7 @@
 # virtual methods
 .method public run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Lcom/android/gallery3d/app/SlideshowPage$Slide;
     .locals 1
-    .param p1, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
+    .parameter "jc"
 
     .prologue
     .line 174
@@ -59,7 +60,7 @@
     .line 175
     iget-object v0, p0, Lcom/android/gallery3d/app/SlideshowDataAdapter$1;->this$0:Lcom/android/gallery3d/app/SlideshowDataAdapter;
 
-    # invokes: Lcom/android/gallery3d/app/SlideshowDataAdapter;->innerNextBitmap()Lcom/android/gallery3d/app/SlideshowPage$Slide;
+    #calls: Lcom/android/gallery3d/app/SlideshowDataAdapter;->innerNextBitmap()Lcom/android/gallery3d/app/SlideshowPage$Slide;
     invoke-static {v0}, Lcom/android/gallery3d/app/SlideshowDataAdapter;->access$900(Lcom/android/gallery3d/app/SlideshowDataAdapter;)Lcom/android/gallery3d/app/SlideshowPage$Slide;
 
     move-result-object v0
@@ -69,7 +70,7 @@
 
 .method public bridge synthetic run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
+    .parameter "x0"
 
     .prologue
     .line 172

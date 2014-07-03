@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/VideoCamera;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 480
@@ -43,13 +44,13 @@
     .line 483
     iget-object v0, p0, Lcom/android/camera/VideoCamera$1;->this$0:Lcom/android/camera/VideoCamera;
 
-    # invokes: Lcom/android/camera/VideoCamera;->readVideoPreferences()V
+    #calls: Lcom/android/camera/VideoCamera;->readVideoPreferences()V
     invoke-static {v0}, Lcom/android/camera/VideoCamera;->access$1100(Lcom/android/camera/VideoCamera;)V
 
     .line 484
     iget-object v0, p0, Lcom/android/camera/VideoCamera$1;->this$0:Lcom/android/camera/VideoCamera;
 
-    # invokes: Lcom/android/camera/VideoCamera;->startPreview()V
+    #calls: Lcom/android/camera/VideoCamera;->startPreview()V
     invoke-static {v0}, Lcom/android/camera/VideoCamera;->access$600(Lcom/android/camera/VideoCamera;)V
 
     .line 485

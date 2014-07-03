@@ -30,9 +30,9 @@
 # virtual methods
 .method protected decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuilder;)I
     .locals 12
-    .param p1, "row"    # Lcom/google/zxing/common/BitArray;
-    .param p2, "startRange"    # [I
-    .param p3, "result"    # Ljava/lang/StringBuilder;
+    .parameter "row"
+    .parameter "startRange"
+    .parameter "result"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -44,7 +44,7 @@
     iget-object v3, p0, Lcom/google/zxing/oned/EAN8Reader;->decodeMiddleCounters:[I
 
     .line 41
-    .local v3, "counters":[I
+    .local v3, counters:[I
     const/4 v10, 0x0
 
     const/4 v11, 0x0
@@ -78,16 +78,16 @@
     move-result v4
 
     .line 46
-    .local v4, "end":I
+    .local v4, end:I
     const/4 v10, 0x1
 
     aget v8, p2, v10
 
     .line 48
-    .local v8, "rowOffset":I
+    .local v8, rowOffset:I
     const/4 v9, 0x0
 
-    .local v9, "x":I
+    .local v9, x:I
     :goto_0
     const/4 v10, 0x4
 
@@ -103,7 +103,7 @@
     move-result v1
 
     .line 50
-    .local v1, "bestMatch":I
+    .local v1, bestMatch:I
     add-int/lit8 v10, v1, 0x30
 
     int-to-char v10, v10
@@ -113,20 +113,20 @@
     .line 51
     move-object v0, v3
 
-    .local v0, "arr$":[I
+    .local v0, arr$:[I
     array-length v6, v0
 
-    .local v6, "len$":I
+    .local v6, len$:I
     const/4 v5, 0x0
 
-    .local v5, "i$":I
+    .local v5, i$:I
     :goto_1
     if-ge v5, v6, :cond_0
 
     aget v2, v0, v5
 
     .line 52
-    .local v2, "counter":I
+    .local v2, counter:I
     add-int/2addr v8, v2
 
     .line 51
@@ -135,17 +135,17 @@
     goto :goto_1
 
     .line 48
-    .end local v2    # "counter":I
+    .end local v2           #counter:I
     :cond_0
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_0
 
     .line 56
-    .end local v0    # "arr$":[I
-    .end local v1    # "bestMatch":I
-    .end local v5    # "i$":I
-    .end local v6    # "len$":I
+    .end local v0           #arr$:[I
+    .end local v1           #bestMatch:I
+    .end local v5           #i$:I
+    .end local v6           #len$:I
     :cond_1
     const/4 v10, 0x1
 
@@ -156,7 +156,7 @@
     move-result-object v7
 
     .line 57
-    .local v7, "middleRange":[I
+    .local v7, middleRange:[I
     const/4 v10, 0x1
 
     aget v8, v7, v10
@@ -179,7 +179,7 @@
     move-result v1
 
     .line 61
-    .restart local v1    # "bestMatch":I
+    .restart local v1       #bestMatch:I
     add-int/lit8 v10, v1, 0x30
 
     int-to-char v10, v10
@@ -189,20 +189,20 @@
     .line 62
     move-object v0, v3
 
-    .restart local v0    # "arr$":[I
+    .restart local v0       #arr$:[I
     array-length v6, v0
 
-    .restart local v6    # "len$":I
+    .restart local v6       #len$:I
     const/4 v5, 0x0
 
-    .restart local v5    # "i$":I
+    .restart local v5       #i$:I
     :goto_3
     if-ge v5, v6, :cond_2
 
     aget v2, v0, v5
 
     .line 63
-    .restart local v2    # "counter":I
+    .restart local v2       #counter:I
     add-int/2addr v8, v2
 
     .line 62
@@ -211,17 +211,17 @@
     goto :goto_3
 
     .line 59
-    .end local v2    # "counter":I
+    .end local v2           #counter:I
     :cond_2
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_2
 
     .line 67
-    .end local v0    # "arr$":[I
-    .end local v1    # "bestMatch":I
-    .end local v5    # "i$":I
-    .end local v6    # "len$":I
+    .end local v0           #arr$:[I
+    .end local v1           #bestMatch:I
+    .end local v5           #i$:I
+    .end local v6           #len$:I
     :cond_3
     return v8
 .end method

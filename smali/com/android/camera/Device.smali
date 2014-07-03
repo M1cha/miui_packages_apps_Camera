@@ -102,7 +102,7 @@
 
 .method public static isM2Supremacy(Landroid/hardware/Camera$Parameters;)Z
     .locals 8
-    .param p0, "parameter"    # Landroid/hardware/Camera$Parameters;
+    .parameter "parameter"
 
     .prologue
     const/4 v5, 0x0
@@ -122,7 +122,7 @@
     move-result v2
 
     .line 122
-    .local v2, "index":I
+    .local v2, index:I
     const-string v6, "4208x2368"
 
     invoke-virtual {v6, v5, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
@@ -134,18 +134,18 @@
     move-result v0
 
     .line 123
-    .local v0, "WIDTH":I
+    .local v0, WIDTH:I
     invoke-virtual {p0}, Landroid/hardware/Camera$Parameters;->getSupportedPictureSizes()Ljava/util/List;
 
     move-result-object v4
 
     .line 124
-    .local v4, "sizes":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/Camera$Size;>;"
+    .local v4, sizes:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Size;>;"
     invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .local v1, "i$":Ljava/util/Iterator;
+    .local v1, i$:Ljava/util/Iterator;
     :cond_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -160,7 +160,7 @@
     check-cast v3, Landroid/hardware/Camera$Size;
 
     .line 125
-    .local v3, "s":Landroid/hardware/Camera$Size;
+    .local v3, s:Landroid/hardware/Camera$Size;
     iget v6, v3, Landroid/hardware/Camera$Size;->width:I
 
     if-ne v6, v0, :cond_0
@@ -169,11 +169,11 @@
     const/4 v5, 0x1
 
     .line 130
-    .end local v0    # "WIDTH":I
-    .end local v1    # "i$":Ljava/util/Iterator;
-    .end local v2    # "index":I
-    .end local v3    # "s":Landroid/hardware/Camera$Size;
-    .end local v4    # "sizes":Ljava/util/List;, "Ljava/util/List<Landroid/hardware/Camera$Size;>;"
+    .end local v0           #WIDTH:I
+    .end local v1           #i$:Ljava/util/Iterator;
+    .end local v2           #index:I
+    .end local v3           #s:Landroid/hardware/Camera$Size;
+    .end local v4           #sizes:Ljava/util/List;,"Ljava/util/List<Landroid/hardware/Camera$Size;>;"
     :cond_1
     return v5
 .end method
@@ -379,7 +379,7 @@
 
 .method public static updatePreviewSize(Landroid/hardware/Camera$Size;)V
     .locals 6
-    .param p0, "size"    # Landroid/hardware/Camera$Size;
+    .parameter "size"
 
     .prologue
     .line 97

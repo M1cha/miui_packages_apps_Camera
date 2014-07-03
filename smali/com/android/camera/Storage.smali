@@ -84,15 +84,15 @@
 
 .method public static addImage(Landroid/app/Activity;Ljava/lang/String;JLandroid/location/Location;I[BIIZ)Landroid/net/Uri;
     .locals 13
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "title"    # Ljava/lang/String;
-    .param p2, "date"    # J
-    .param p4, "location"    # Landroid/location/Location;
-    .param p5, "orientation"    # I
-    .param p6, "jpeg"    # [B
-    .param p7, "width"    # I
-    .param p8, "height"    # I
-    .param p9, "mirror"    # Z
+    .parameter "activity"
+    .parameter "title"
+    .parameter "date"
+    .parameter "location"
+    .parameter "orientation"
+    .parameter "jpeg"
+    .parameter "width"
+    .parameter "height"
+    .parameter "mirror"
 
     .prologue
     .line 64
@@ -101,22 +101,22 @@
     move-result-object v6
 
     .line 65
-    .local v6, "path":Ljava/lang/String;
+    .local v6, path:Ljava/lang/String;
     const/4 v4, 0x0
 
     .line 67
-    .local v4, "out":Ljava/io/FileOutputStream;
+    .local v4, out:Ljava/io/FileOutputStream;
     :try_start_0
     new-instance v5, Ljava/io/FileOutputStream;
 
     invoke-direct {v5, v6}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_5
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_5
 
     .line 68
-    .end local v4    # "out":Ljava/io/FileOutputStream;
-    .local v5, "out":Ljava/io/FileOutputStream;
+    .end local v4           #out:Ljava/io/FileOutputStream;
+    .local v5, out:Ljava/io/FileOutputStream;
     if-eqz p9, :cond_2
 
     .line 69
@@ -126,7 +126,7 @@
     move-result-object v2
 
     .line 70
-    .local v2, "b":Landroid/graphics/Bitmap;
+    .local v2, b:Landroid/graphics/Bitmap;
     if-eqz v2, :cond_1
 
     .line 71
@@ -153,11 +153,11 @@
 
     invoke-static {v6, v0, v1, v10, v11}, Lcom/android/camera/ExifHelper;->writeExif(Ljava/lang/String;ILandroid/location/Location;J)V
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 87
-    .end local v2    # "b":Landroid/graphics/Bitmap;
+    .end local v2           #b:Landroid/graphics/Bitmap;
     :goto_0
     :try_start_2
     invoke-virtual {v5}, Ljava/io/FileOutputStream;->close()V
@@ -173,7 +173,7 @@
     invoke-direct {v9, v10}, Landroid/content/ContentValues;-><init>(I)V
 
     .line 94
-    .local v9, "values":Landroid/content/ContentValues;
+    .local v9, values:Landroid/content/ContentValues;
     const-string v10, "title"
 
     invoke-virtual {v9, v10, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
@@ -300,7 +300,7 @@
     const/4 v8, 0x0
 
     .line 112
-    .local v8, "uri":Landroid/net/Uri;
+    .local v8, uri:Landroid/net/Uri;
     :try_start_3
     invoke-virtual {p0}, Landroid/app/Activity;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -321,39 +321,39 @@
     move-object v4, v5
 
     .line 125
-    .end local v5    # "out":Ljava/io/FileOutputStream;
-    .end local v8    # "uri":Landroid/net/Uri;
-    .end local v9    # "values":Landroid/content/ContentValues;
-    .restart local v4    # "out":Ljava/io/FileOutputStream;
+    .end local v5           #out:Ljava/io/FileOutputStream;
+    .end local v8           #uri:Landroid/net/Uri;
+    .end local v9           #values:Landroid/content/ContentValues;
+    .restart local v4       #out:Ljava/io/FileOutputStream;
     :goto_3
     return-object v8
 
     .line 77
-    .end local v4    # "out":Ljava/io/FileOutputStream;
-    .restart local v2    # "b":Landroid/graphics/Bitmap;
-    .restart local v5    # "out":Ljava/io/FileOutputStream;
+    .end local v4           #out:Ljava/io/FileOutputStream;
+    .restart local v2       #b:Landroid/graphics/Bitmap;
+    .restart local v5       #out:Ljava/io/FileOutputStream;
     :cond_1
     :try_start_4
     move-object/from16 v0, p6
 
     invoke-virtual {v5, v0}, Ljava/io/FileOutputStream;->write([B)V
     :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
 
     goto/16 :goto_0
 
     .line 82
-    .end local v2    # "b":Landroid/graphics/Bitmap;
+    .end local v2           #b:Landroid/graphics/Bitmap;
     :catch_0
     move-exception v3
 
     move-object v4, v5
 
     .line 83
-    .end local v5    # "out":Ljava/io/FileOutputStream;
-    .local v3, "e":Ljava/lang/Exception;
-    .restart local v4    # "out":Ljava/io/FileOutputStream;
+    .end local v5           #out:Ljava/io/FileOutputStream;
+    .local v3, e:Ljava/lang/Exception;
+    .restart local v4       #out:Ljava/io/FileOutputStream;
     :goto_4
     :try_start_5
     const-string v10, "CameraStorage"
@@ -382,17 +382,17 @@
     goto :goto_3
 
     .line 80
-    .end local v3    # "e":Ljava/lang/Exception;
-    .end local v4    # "out":Ljava/io/FileOutputStream;
-    .restart local v5    # "out":Ljava/io/FileOutputStream;
+    .end local v3           #e:Ljava/lang/Exception;
+    .end local v4           #out:Ljava/io/FileOutputStream;
+    .restart local v5       #out:Ljava/io/FileOutputStream;
     :cond_2
     :try_start_7
     move-object/from16 v0, p6
 
     invoke-virtual {v5, v0}, Ljava/io/FileOutputStream;->write([B)V
     :try_end_7
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_0
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_0
 
     goto/16 :goto_0
 
@@ -403,8 +403,8 @@
     move-object v4, v5
 
     .line 87
-    .end local v5    # "out":Ljava/io/FileOutputStream;
-    .restart local v4    # "out":Ljava/io/FileOutputStream;
+    .end local v5           #out:Ljava/io/FileOutputStream;
+    .restart local v4       #out:Ljava/io/FileOutputStream;
     :goto_5
     :try_start_8
     invoke-virtual {v4}, Ljava/io/FileOutputStream;->close()V
@@ -416,15 +416,15 @@
     throw v10
 
     .line 113
-    .end local v4    # "out":Ljava/io/FileOutputStream;
-    .restart local v5    # "out":Ljava/io/FileOutputStream;
-    .restart local v8    # "uri":Landroid/net/Uri;
-    .restart local v9    # "values":Landroid/content/ContentValues;
+    .end local v4           #out:Ljava/io/FileOutputStream;
+    .restart local v5       #out:Ljava/io/FileOutputStream;
+    .restart local v8       #uri:Landroid/net/Uri;
+    .restart local v9       #values:Landroid/content/ContentValues;
     :catch_2
     move-exception v7
 
     .line 119
-    .local v7, "th":Ljava/lang/Throwable;
+    .local v7, th:Ljava/lang/Throwable;
     const-string v10, "CameraStorage"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -450,16 +450,16 @@
     goto :goto_2
 
     .line 88
-    .end local v7    # "th":Ljava/lang/Throwable;
-    .end local v8    # "uri":Landroid/net/Uri;
-    .end local v9    # "values":Landroid/content/ContentValues;
+    .end local v7           #th:Ljava/lang/Throwable;
+    .end local v8           #uri:Landroid/net/Uri;
+    .end local v9           #values:Landroid/content/ContentValues;
     :catch_3
     move-exception v10
 
     goto/16 :goto_1
 
-    .end local v5    # "out":Ljava/io/FileOutputStream;
-    .restart local v4    # "out":Ljava/io/FileOutputStream;
+    .end local v5           #out:Ljava/io/FileOutputStream;
+    .restart local v4       #out:Ljava/io/FileOutputStream;
     :catch_4
     move-exception v11
 
@@ -480,8 +480,8 @@
 
 .method public static deleteImage(Landroid/content/ContentResolver;Landroid/net/Uri;)V
     .locals 4
-    .param p0, "resolver"    # Landroid/content/ContentResolver;
-    .param p1, "uri"    # Landroid/net/Uri;
+    .parameter "resolver"
+    .parameter "uri"
 
     .prologue
     .line 266
@@ -503,7 +503,7 @@
     move-exception v0
 
     .line 268
-    .local v0, "th":Ljava/lang/Throwable;
+    .local v0, th:Ljava/lang/Throwable;
     const-string v1, "CameraStorage"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -545,7 +545,7 @@
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 307
-    .local v0, "nnnAAAAA":Ljava/io/File;
+    .local v0, nnnAAAAA:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v1
@@ -594,14 +594,14 @@
 
 .method public static flipJpeg([B)Landroid/graphics/Bitmap;
     .locals 12
-    .param p0, "jpeg"    # [B
+    .parameter "jpeg"
 
     .prologue
     const/4 v1, 0x1
 
     const/4 v11, -0x1
 
-    const/high16 v6, 0x3f000000
+    const/high16 v6, 0x3f00
 
     const/4 v10, 0x0
 
@@ -624,7 +624,7 @@
     invoke-direct {v8}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
     .line 169
-    .local v8, "options":Landroid/graphics/BitmapFactory$Options;
+    .local v8, options:Landroid/graphics/BitmapFactory$Options;
     iput-boolean v1, v8, Landroid/graphics/BitmapFactory$Options;->inPurgeable:Z
 
     .line 170
@@ -635,16 +635,16 @@
     move-result-object v0
 
     .line 171
-    .local v0, "bitmap":Landroid/graphics/Bitmap;
+    .local v0, bitmap:Landroid/graphics/Bitmap;
     new-instance v5, Landroid/graphics/Matrix;
 
     invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
 
     .line 172
-    .local v5, "m":Landroid/graphics/Matrix;
-    const/high16 v1, -0x40800000
+    .local v5, m:Landroid/graphics/Matrix;
+    const/high16 v1, -0x4080
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f80
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -685,7 +685,7 @@
     move-result-object v7
 
     .line 179
-    .local v7, "flip":Landroid/graphics/Bitmap;
+    .local v7, flip:Landroid/graphics/Bitmap;
     if-eq v7, v0, :cond_2
 
     .line 180
@@ -714,12 +714,12 @@
     goto :goto_0
 
     .line 187
-    .end local v7    # "flip":Landroid/graphics/Bitmap;
+    .end local v7           #flip:Landroid/graphics/Bitmap;
     :catch_0
     move-exception v9
 
     .line 188
-    .local v9, "t":Ljava/lang/Throwable;
+    .local v9, t:Ljava/lang/Throwable;
     const-string v1, "CameraStorage"
 
     const-string v2, "Failed to rotate thumbnail"
@@ -734,7 +734,7 @@
 
 .method public static generateFilepath(Ljava/lang/String;)Ljava/lang/String;
     .locals 2
-    .param p0, "title"    # Ljava/lang/String;
+    .parameter "title"
 
     .prologue
     .line 273
@@ -785,7 +785,7 @@
     move-result-object v3
 
     .line 278
-    .local v3, "state":Ljava/lang/String;
+    .local v3, state:Ljava/lang/String;
     const-string v6, "CameraStorage"
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -843,7 +843,7 @@
     invoke-direct {v0, v6}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     .line 287
-    .local v0, "dir":Ljava/io/File;
+    .local v0, dir:Ljava/io/File;
     const/16 v6, 0x1ff
 
     invoke-static {v0, v6, v9, v9}, Lcom/android/camera/Util;->mkdirs(Ljava/io/File;III)Z
@@ -870,7 +870,7 @@
     invoke-direct {v2, v4}, Landroid/os/StatFs;-><init>(Ljava/lang/String;)V
 
     .line 294
-    .local v2, "stat":Landroid/os/StatFs;
+    .local v2, stat:Landroid/os/StatFs;
     invoke-virtual {v2}, Landroid/os/StatFs;->getAvailableBlocks()I
 
     move-result v4
@@ -890,12 +890,12 @@
     goto :goto_0
 
     .line 295
-    .end local v2    # "stat":Landroid/os/StatFs;
+    .end local v2           #stat:Landroid/os/StatFs;
     :catch_0
     move-exception v1
 
     .line 296
-    .local v1, "e":Ljava/lang/Exception;
+    .local v1, e:Ljava/lang/Exception;
     const-string v4, "CameraStorage"
 
     const-string v5, "Fail to access external storage"
@@ -910,11 +910,11 @@
 
 .method public static newImage(Landroid/content/ContentResolver;Ljava/lang/String;JII)Landroid/net/Uri;
     .locals 7
-    .param p0, "resolver"    # Landroid/content/ContentResolver;
-    .param p1, "title"    # Ljava/lang/String;
-    .param p2, "date"    # J
-    .param p4, "width"    # I
-    .param p5, "height"    # I
+    .parameter "resolver"
+    .parameter "title"
+    .parameter "date"
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 142
@@ -923,7 +923,7 @@
     move-result-object v0
 
     .line 145
-    .local v0, "path":Ljava/lang/String;
+    .local v0, path:Ljava/lang/String;
     new-instance v3, Landroid/content/ContentValues;
 
     const/4 v4, 0x5
@@ -931,7 +931,7 @@
     invoke-direct {v3, v4}, Landroid/content/ContentValues;-><init>(I)V
 
     .line 146
-    .local v3, "values":Landroid/content/ContentValues;
+    .local v3, values:Landroid/content/ContentValues;
     const-string v4, "datetaken"
 
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -974,7 +974,7 @@
     const/4 v2, 0x0
 
     .line 154
-    .local v2, "uri":Landroid/net/Uri;
+    .local v2, uri:Landroid/net/Uri;
     :try_start_0
     sget-object v4, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
@@ -993,7 +993,7 @@
     move-exception v1
 
     .line 161
-    .local v1, "th":Ljava/lang/Throwable;
+    .local v1, th:Ljava/lang/Throwable;
     const-string v4, "CameraStorage"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1021,8 +1021,8 @@
 
 .method public static saveToCloudAlbum(Landroid/content/Context;Ljava/lang/String;)V
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "filePath"    # Ljava/lang/String;
+    .parameter "context"
+    .parameter "filePath"
 
     .prologue
     .line 129
@@ -1033,7 +1033,7 @@
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 130
-    .local v0, "intent":Landroid/content/Intent;
+    .local v0, intent:Landroid/content/Intent;
     const-string v1, "extra_file_path"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
@@ -1047,15 +1047,15 @@
 
 .method public static updateImage(Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;Landroid/location/Location;I[BIIZ)Z
     .locals 16
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "uri"    # Landroid/net/Uri;
-    .param p2, "title"    # Ljava/lang/String;
-    .param p3, "location"    # Landroid/location/Location;
-    .param p4, "orientation"    # I
-    .param p5, "jpeg"    # [B
-    .param p6, "width"    # I
-    .param p7, "height"    # I
-    .param p8, "mirror"    # Z
+    .parameter "context"
+    .parameter "uri"
+    .parameter "title"
+    .parameter "location"
+    .parameter "orientation"
+    .parameter "jpeg"
+    .parameter "width"
+    .parameter "height"
+    .parameter "mirror"
 
     .prologue
     .line 202
@@ -1064,7 +1064,7 @@
     move-result-object v8
 
     .line 203
-    .local v8, "path":Ljava/lang/String;
+    .local v8, path:Ljava/lang/String;
     new-instance v13, Ljava/lang/StringBuilder;
 
     invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
@@ -1084,11 +1084,11 @@
     move-result-object v11
 
     .line 204
-    .local v11, "tmpPath":Ljava/lang/String;
+    .local v11, tmpPath:Ljava/lang/String;
     const/4 v6, 0x0
 
     .line 205
-    .local v6, "out":Ljava/io/FileOutputStream;
+    .local v6, out:Ljava/io/FileOutputStream;
     move-object/from16 v0, p5
 
     array-length v13, v0
@@ -1096,18 +1096,18 @@
     int-to-long v4, v13
 
     .line 209
-    .local v4, "fileLength":J
+    .local v4, fileLength:J
     :try_start_0
     new-instance v7, Ljava/io/FileOutputStream;
 
     invoke-direct {v7, v11}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;)V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_5
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_5
 
     .line 210
-    .end local v6    # "out":Ljava/io/FileOutputStream;
-    .local v7, "out":Ljava/io/FileOutputStream;
+    .end local v6           #out:Ljava/io/FileOutputStream;
+    .local v7, out:Ljava/io/FileOutputStream;
     if-eqz p8, :cond_2
 
     .line 211
@@ -1117,7 +1117,7 @@
     move-result-object v2
 
     .line 212
-    .local v2, "b":Landroid/graphics/Bitmap;
+    .local v2, b:Landroid/graphics/Bitmap;
     if-eqz v2, :cond_1
 
     .line 213
@@ -1145,14 +1145,14 @@
     invoke-static {v11, v0, v1, v13, v14}, Lcom/android/camera/ExifHelper;->writeExif(Ljava/lang/String;ILandroid/location/Location;J)V
 
     .line 224
-    .end local v2    # "b":Landroid/graphics/Bitmap;
+    .end local v2           #b:Landroid/graphics/Bitmap;
     :goto_0
     new-instance v10, Ljava/io/File;
 
     invoke-direct {v10, v11}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     .line 225
-    .local v10, "tmpFile":Ljava/io/File;
+    .local v10, tmpFile:Ljava/io/File;
     invoke-virtual {v10}, Ljava/io/File;->length()J
 
     move-result-wide v4
@@ -1164,8 +1164,8 @@
 
     invoke-virtual {v10, v13}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 232
     :try_start_2
@@ -1182,7 +1182,7 @@
     invoke-direct {v12, v13}, Landroid/content/ContentValues;-><init>(I)V
 
     .line 239
-    .local v12, "values":Landroid/content/ContentValues;
+    .local v12, values:Landroid/content/ContentValues;
     const-string v13, "title"
 
     move-object/from16 v0, p2
@@ -1313,39 +1313,39 @@
 
     move-object v6, v7
 
-    .end local v7    # "out":Ljava/io/FileOutputStream;
-    .end local v10    # "tmpFile":Ljava/io/File;
-    .end local v12    # "values":Landroid/content/ContentValues;
-    .restart local v6    # "out":Ljava/io/FileOutputStream;
+    .end local v7           #out:Ljava/io/FileOutputStream;
+    .end local v10           #tmpFile:Ljava/io/File;
+    .end local v12           #values:Landroid/content/ContentValues;
+    .restart local v6       #out:Ljava/io/FileOutputStream;
     :goto_2
     return v13
 
     .line 219
-    .end local v6    # "out":Ljava/io/FileOutputStream;
-    .restart local v2    # "b":Landroid/graphics/Bitmap;
-    .restart local v7    # "out":Ljava/io/FileOutputStream;
+    .end local v6           #out:Ljava/io/FileOutputStream;
+    .restart local v2       #b:Landroid/graphics/Bitmap;
+    .restart local v7       #out:Ljava/io/FileOutputStream;
     :cond_1
     :try_start_4
     move-object/from16 v0, p5
 
     invoke-virtual {v7, v0}, Ljava/io/FileOutputStream;->write([B)V
     :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
 
     goto/16 :goto_0
 
     .line 227
-    .end local v2    # "b":Landroid/graphics/Bitmap;
+    .end local v2           #b:Landroid/graphics/Bitmap;
     :catch_0
     move-exception v3
 
     move-object v6, v7
 
     .line 228
-    .end local v7    # "out":Ljava/io/FileOutputStream;
-    .local v3, "e":Ljava/lang/Exception;
-    .restart local v6    # "out":Ljava/io/FileOutputStream;
+    .end local v7           #out:Ljava/io/FileOutputStream;
+    .local v3, e:Ljava/lang/Exception;
+    .restart local v6       #out:Ljava/io/FileOutputStream;
     :goto_3
     :try_start_5
     const-string v13, "CameraStorage"
@@ -1374,17 +1374,17 @@
     goto :goto_2
 
     .line 222
-    .end local v3    # "e":Ljava/lang/Exception;
-    .end local v6    # "out":Ljava/io/FileOutputStream;
-    .restart local v7    # "out":Ljava/io/FileOutputStream;
+    .end local v3           #e:Ljava/lang/Exception;
+    .end local v6           #out:Ljava/io/FileOutputStream;
+    .restart local v7       #out:Ljava/io/FileOutputStream;
     :cond_2
     :try_start_7
     move-object/from16 v0, p5
 
     invoke-virtual {v7, v0}, Ljava/io/FileOutputStream;->write([B)V
     :try_end_7
-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_0
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_0
 
     goto/16 :goto_0
 
@@ -1395,8 +1395,8 @@
     move-object v6, v7
 
     .line 232
-    .end local v7    # "out":Ljava/io/FileOutputStream;
-    .restart local v6    # "out":Ljava/io/FileOutputStream;
+    .end local v7           #out:Ljava/io/FileOutputStream;
+    .restart local v6       #out:Ljava/io/FileOutputStream;
     :goto_4
     :try_start_8
     invoke-virtual {v6}, Ljava/io/FileOutputStream;->close()V
@@ -1408,15 +1408,15 @@
     throw v13
 
     .line 255
-    .end local v6    # "out":Ljava/io/FileOutputStream;
-    .restart local v7    # "out":Ljava/io/FileOutputStream;
-    .restart local v10    # "tmpFile":Ljava/io/File;
-    .restart local v12    # "values":Landroid/content/ContentValues;
+    .end local v6           #out:Ljava/io/FileOutputStream;
+    .restart local v7       #out:Ljava/io/FileOutputStream;
+    .restart local v10       #tmpFile:Ljava/io/File;
+    .restart local v12       #values:Landroid/content/ContentValues;
     :catch_2
     move-exception v9
 
     .line 256
-    .local v9, "th":Ljava/lang/Throwable;
+    .local v9, th:Ljava/lang/Throwable;
     const-string v13, "CameraStorage"
 
     new-instance v14, Ljava/lang/StringBuilder;
@@ -1444,23 +1444,23 @@
 
     move-object v6, v7
 
-    .end local v7    # "out":Ljava/io/FileOutputStream;
-    .restart local v6    # "out":Ljava/io/FileOutputStream;
+    .end local v7           #out:Ljava/io/FileOutputStream;
+    .restart local v6       #out:Ljava/io/FileOutputStream;
     goto :goto_2
 
     .line 233
-    .end local v6    # "out":Ljava/io/FileOutputStream;
-    .end local v9    # "th":Ljava/lang/Throwable;
-    .end local v12    # "values":Landroid/content/ContentValues;
-    .restart local v7    # "out":Ljava/io/FileOutputStream;
+    .end local v6           #out:Ljava/io/FileOutputStream;
+    .end local v9           #th:Ljava/lang/Throwable;
+    .end local v12           #values:Landroid/content/ContentValues;
+    .restart local v7       #out:Ljava/io/FileOutputStream;
     :catch_3
     move-exception v13
 
     goto/16 :goto_1
 
-    .end local v7    # "out":Ljava/io/FileOutputStream;
-    .end local v10    # "tmpFile":Ljava/io/File;
-    .restart local v6    # "out":Ljava/io/FileOutputStream;
+    .end local v7           #out:Ljava/io/FileOutputStream;
+    .end local v10           #tmpFile:Ljava/io/File;
+    .restart local v6       #out:Ljava/io/FileOutputStream;
     :catch_4
     move-exception v14
 
@@ -1481,9 +1481,9 @@
 
 .method public static updateImageSize(Landroid/content/ContentResolver;Landroid/net/Uri;J)Z
     .locals 5
-    .param p0, "resolver"    # Landroid/content/ContentResolver;
-    .param p1, "uri"    # Landroid/net/Uri;
-    .param p2, "size"    # J
+    .parameter "resolver"
+    .parameter "uri"
+    .parameter "size"
 
     .prologue
     const/4 v2, 0x1
@@ -1494,7 +1494,7 @@
     invoke-direct {v1, v2}, Landroid/content/ContentValues;-><init>(I)V
 
     .line 318
-    .local v1, "values":Landroid/content/ContentValues;
+    .local v1, values:Landroid/content/ContentValues;
     const-string v3, "_size"
 
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1522,7 +1522,7 @@
     move-exception v0
 
     .line 323
-    .local v0, "th":Ljava/lang/Throwable;
+    .local v0, th:Ljava/lang/Throwable;
     const-string v2, "CameraStorage"
 
     new-instance v3, Ljava/lang/StringBuilder;

@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ui/RotateTextToast;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 46

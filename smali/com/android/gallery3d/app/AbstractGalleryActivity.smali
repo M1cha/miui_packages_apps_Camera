@@ -103,7 +103,7 @@
     move-result-object v0
 
     .line 292
-    .local v0, "win":Landroid/view/Window;
+    .local v0, win:Landroid/view/Window;
     invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -306,7 +306,7 @@
     check-cast v1, Landroid/view/ViewGroup;
 
     .line 137
-    .local v1, "parent":Landroid/view/ViewGroup;
+    .local v1, parent:Landroid/view/ViewGroup;
     new-instance v2, Lcom/android/gallery3d/ui/GLRootView;
 
     invoke-direct {v2, p0}, Lcom/android/gallery3d/ui/GLRootView;-><init>(Landroid/content/Context;)V
@@ -326,17 +326,17 @@
     move-result-object v0
 
     .line 140
-    .local v0, "params":Landroid/view/ViewGroup$LayoutParams;
+    .local v0, params:Landroid/view/ViewGroup$LayoutParams;
     if-nez v0, :cond_1
 
     .line 141
     new-instance v0, Landroid/view/ViewGroup$LayoutParams;
 
-    .end local v0    # "params":Landroid/view/ViewGroup$LayoutParams;
+    .end local v0           #params:Landroid/view/ViewGroup$LayoutParams;
     invoke-direct {v0, v3, v3}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     .line 146
-    .restart local v0    # "params":Landroid/view/ViewGroup$LayoutParams;
+    .restart local v0       #params:Landroid/view/ViewGroup$LayoutParams;
     :goto_1
     iget-object v2, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
@@ -366,9 +366,9 @@
 
 .method protected onActivityResult(IILandroid/content/Intent;)V
     .locals 2
-    .param p1, "requestCode"    # I
-    .param p2, "resultCode"    # I
-    .param p3, "data"    # Landroid/content/Intent;
+    .parameter "requestCode"
+    .parameter "resultCode"
+    .parameter "data"
 
     .prologue
     .line 243
@@ -415,7 +415,7 @@
     move-result-object v0
 
     .line 256
-    .local v0, "root":Lcom/android/gallery3d/ui/GLRoot;
+    .local v0, root:Lcom/android/gallery3d/ui/GLRoot;
     invoke-interface {v0}, Lcom/android/gallery3d/ui/GLRoot;->lockRenderThread()V
 
     .line 258
@@ -445,7 +445,7 @@
 
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 1
-    .param p1, "config"    # Landroid/content/res/Configuration;
+    .parameter "config"
 
     .prologue
     .line 103
@@ -468,7 +468,7 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
+    .parameter "savedInstanceState"
 
     .prologue
     .line 84
@@ -540,7 +540,7 @@
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .locals 2
-    .param p1, "item"    # Landroid/view/MenuItem;
+    .parameter "item"
 
     .prologue
     .line 274
@@ -549,7 +549,7 @@
     move-result-object v0
 
     .line 275
-    .local v0, "root":Lcom/android/gallery3d/ui/GLRoot;
+    .local v0, root:Lcom/android/gallery3d/ui/GLRoot;
     invoke-interface {v0}, Lcom/android/gallery3d/ui/GLRoot;->lockRenderThread()V
 
     .line 277
@@ -607,7 +607,7 @@
 
 .method protected onSaveInstanceState(Landroid/os/Bundle;)V
     .locals 2
-    .param p1, "outState"    # Landroid/os/Bundle;
+    .parameter "outState"
 
     .prologue
     .line 92
@@ -664,7 +664,7 @@
     move-result-object v0
 
     .line 184
-    .local v0, "externalFilesDir":Ljava/io/File;
+    .local v0, externalFilesDir:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v3
@@ -685,13 +685,13 @@
     invoke-direct {v1, p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity$3;-><init>(Lcom/android/gallery3d/app/AbstractGalleryActivity;)V
 
     .line 191
-    .local v1, "onCancel":Landroid/content/DialogInterface$OnCancelListener;
+    .local v1, onCancel:Landroid/content/DialogInterface$OnCancelListener;
     new-instance v2, Lcom/android/gallery3d/app/AbstractGalleryActivity$4;
 
     invoke-direct {v2, p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity$4;-><init>(Lcom/android/gallery3d/app/AbstractGalleryActivity;)V
 
     .line 197
-    .local v2, "onClick":Landroid/content/DialogInterface$OnClickListener;
+    .local v2, onClick:Landroid/content/DialogInterface$OnClickListener;
     new-instance v3, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v3, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -734,8 +734,8 @@
     invoke-virtual {p0, v3, v4}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
     .line 204
-    .end local v1    # "onCancel":Landroid/content/DialogInterface$OnCancelListener;
-    .end local v2    # "onClick":Landroid/content/DialogInterface$OnClickListener;
+    .end local v1           #onCancel:Landroid/content/DialogInterface$OnCancelListener;
+    .end local v2           #onClick:Landroid/content/DialogInterface$OnClickListener;
     :cond_0
     invoke-virtual {p0}, Lcom/android/gallery3d/app/AbstractGalleryActivity;->start()V
 
@@ -911,7 +911,7 @@
     check-cast v0, Landroid/view/ViewGroup;
 
     .line 154
-    .local v0, "parent":Landroid/view/ViewGroup;
+    .local v0, parent:Landroid/view/ViewGroup;
     iget-object v1, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootView:Lcom/android/gallery3d/ui/GLRootView;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
@@ -929,7 +929,7 @@
     iput-boolean v1, p0, Lcom/android/gallery3d/app/AbstractGalleryActivity;->mGLRootViewInitilized:Z
 
     .line 158
-    .end local v0    # "parent":Landroid/view/ViewGroup;
+    .end local v0           #parent:Landroid/view/ViewGroup;
     :cond_0
     return-void
 .end method
@@ -1014,7 +1014,7 @@
 
 .method public setContentView(I)V
     .locals 1
-    .param p1, "resId"    # I
+    .parameter "resId"
 
     .prologue
     .line 166

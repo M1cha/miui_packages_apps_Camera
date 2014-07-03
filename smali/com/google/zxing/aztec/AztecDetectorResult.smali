@@ -14,11 +14,11 @@
 # direct methods
 .method public constructor <init>(Lcom/google/zxing/common/BitMatrix;[Lcom/google/zxing/ResultPoint;ZII)V
     .locals 0
-    .param p1, "bits"    # Lcom/google/zxing/common/BitMatrix;
-    .param p2, "points"    # [Lcom/google/zxing/ResultPoint;
-    .param p3, "compact"    # Z
-    .param p4, "nbDatablocks"    # I
-    .param p5, "nbLayers"    # I
+    .parameter "bits"
+    .parameter "points"
+    .parameter "compact"
+    .parameter "nbDatablocks"
+    .parameter "nbLayers"
 
     .prologue
     .line 34

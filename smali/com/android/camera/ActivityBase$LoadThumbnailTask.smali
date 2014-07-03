@@ -34,7 +34,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/ActivityBase;Z)V
     .locals 0
-    .param p2, "lookAtCache"    # Z
+    .parameter
+    .parameter "lookAtCache"
 
     .prologue
     .line 471
@@ -53,7 +54,7 @@
 # virtual methods
 .method protected varargs doInBackground([Ljava/lang/Void;)Lcom/android/camera/Thumbnail;
     .locals 8
-    .param p1, "params"    # [Ljava/lang/Void;
+    .parameter "params"
 
     .prologue
     const/4 v7, 0x1
@@ -68,11 +69,11 @@
     move-result-object v1
 
     .line 479
-    .local v1, "resolver":Landroid/content/ContentResolver;
+    .local v1, resolver:Landroid/content/ContentResolver;
     const/4 v3, 0x0
 
     .line 480
-    .local v3, "t":Lcom/android/camera/Thumbnail;
+    .local v3, t:Lcom/android/camera/Thumbnail;
     iget-object v6, p0, Lcom/android/camera/ActivityBase$LoadThumbnailTask;->this$0:Lcom/android/camera/ActivityBase;
 
     iget-boolean v6, v6, Lcom/android/camera/ActivityBase;->mShowWhenLocked:Z
@@ -122,7 +123,7 @@
     const/4 v4, 0x0
 
     .line 490
-    .local v4, "uri":Landroid/net/Uri;
+    .local v4, uri:Landroid/net/Uri;
     if-eqz v3, :cond_3
 
     .line 491
@@ -135,13 +136,13 @@
     new-array v2, v7, [Lcom/android/camera/Thumbnail;
 
     .line 495
-    .local v2, "result":[Lcom/android/camera/Thumbnail;
+    .local v2, result:[Lcom/android/camera/Thumbnail;
     invoke-static {v1, v2, v4}, Lcom/android/camera/Thumbnail;->getLastThumbnailFromContentResolver(Landroid/content/ContentResolver;[Lcom/android/camera/Thumbnail;Landroid/net/Uri;)I
 
     move-result v0
 
     .line 497
-    .local v0, "code":I
+    .local v0, code:I
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
@@ -180,13 +181,13 @@
 
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # [Ljava/lang/Object;
+    .parameter "x0"
 
     .prologue
     .line 468
     check-cast p1, [Ljava/lang/Void;
 
-    .end local p1    # "x0":[Ljava/lang/Object;
+    .end local p1
     invoke-virtual {p0, p1}, Lcom/android/camera/ActivityBase$LoadThumbnailTask;->doInBackground([Ljava/lang/Void;)Lcom/android/camera/Thumbnail;
 
     move-result-object v0
@@ -196,7 +197,7 @@
 
 .method protected onPostExecute(Lcom/android/camera/Thumbnail;)V
     .locals 1
-    .param p1, "thumbnail"    # Lcom/android/camera/Thumbnail;
+    .parameter "thumbnail"
 
     .prologue
     .line 513
@@ -226,13 +227,13 @@
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "x0"    # Ljava/lang/Object;
+    .parameter "x0"
 
     .prologue
     .line 468
     check-cast p1, Lcom/android/camera/Thumbnail;
 
-    .end local p1    # "x0":Ljava/lang/Object;
+    .end local p1
     invoke-virtual {p0, p1}, Lcom/android/camera/ActivityBase$LoadThumbnailTask;->onPostExecute(Lcom/android/camera/Thumbnail;)V
 
     return-void

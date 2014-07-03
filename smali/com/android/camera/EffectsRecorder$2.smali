@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/EffectsRecorder;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 615
@@ -38,7 +39,7 @@
 # virtual methods
 .method public onLearningDone(Landroid/filterpacks/videoproc/BackDropperFilter;)V
     .locals 3
-    .param p1, "filter"    # Landroid/filterpacks/videoproc/BackDropperFilter;
+    .parameter "filter"
 
     .prologue
     const/4 v2, 0x1
@@ -46,7 +47,7 @@
     .line 618
     iget-object v0, p0, Lcom/android/camera/EffectsRecorder$2;->this$0:Lcom/android/camera/EffectsRecorder;
 
-    # getter for: Lcom/android/camera/EffectsRecorder;->mLogVerbose:Z
+    #getter for: Lcom/android/camera/EffectsRecorder;->mLogVerbose:Z
     invoke-static {v0}, Lcom/android/camera/EffectsRecorder;->access$000(Lcom/android/camera/EffectsRecorder;)Z
 
     move-result v0
@@ -65,7 +66,7 @@
 
     const/4 v1, 0x2
 
-    # invokes: Lcom/android/camera/EffectsRecorder;->sendMessage(II)V
+    #calls: Lcom/android/camera/EffectsRecorder;->sendMessage(II)V
     invoke-static {v0, v1, v2}, Lcom/android/camera/EffectsRecorder;->access$500(Lcom/android/camera/EffectsRecorder;II)V
 
     .line 622

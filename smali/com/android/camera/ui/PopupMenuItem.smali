@@ -15,7 +15,7 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     .line 15
@@ -32,8 +32,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 23
@@ -50,9 +50,9 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyle"    # I
+    .parameter "context"
+    .parameter "attrs"
+    .parameter "defStyle"
 
     .prologue
     .line 19
@@ -69,7 +69,7 @@
 
 .method private setTextShadow(Z)V
     .locals 5
-    .param p1, "selected"    # Z
+    .parameter "selected"
 
     .prologue
     const/4 v4, 0x0
@@ -95,9 +95,9 @@
     .line 77
     iget-object v0, p0, Lcom/android/camera/ui/PopupMenuItem;->mText:Landroid/widget/TextView;
 
-    const/high16 v1, 0x40a00000
+    const/high16 v1, 0x40a0
 
-    const/high16 v2, 0x40000000
+    const/high16 v2, 0x4000
 
     const v3, 0x75ffffff
 
@@ -151,7 +151,7 @@
 
 .method public setActivated(Z)V
     .locals 0
-    .param p1, "activated"    # Z
+    .parameter "activated"
 
     .prologue
     .line 64
@@ -166,7 +166,7 @@
 
 .method public setEnabled(Z)V
     .locals 1
-    .param p1, "enabled"    # Z
+    .parameter "enabled"
 
     .prologue
     .line 54
@@ -176,7 +176,7 @@
     if-eqz p1, :cond_0
 
     .line 56
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f80
 
     invoke-virtual {p0, v0}, Lcom/android/camera/ui/PopupMenuItem;->setAlpha(F)V
 
@@ -195,8 +195,8 @@
 
 .method public setOrientation(IZ)V
     .locals 6
-    .param p1, "orientation"    # I
-    .param p2, "animation"    # Z
+    .parameter "orientation"
+    .parameter "animation"
 
     .prologue
     .line 34
@@ -207,18 +207,18 @@
     float-to-int v2, v3
 
     .line 35
-    .local v2, "rotation":I
+    .local v2, rotation:I
     if-ltz v2, :cond_0
 
     rem-int/lit16 v1, v2, 0x168
 
     .line 36
-    .local v1, "r":I
+    .local v1, r:I
     :goto_0
     sub-int v0, p1, v1
 
     .line 37
-    .local v0, "deltaR":I
+    .local v0, deltaR:I
     if-nez v0, :cond_1
 
     .line 50
@@ -226,8 +226,8 @@
     return-void
 
     .line 35
-    .end local v0    # "deltaR":I
-    .end local v1    # "r":I
+    .end local v0           #deltaR:I
+    .end local v1           #r:I
     :cond_0
     rem-int/lit16 v3, v2, 0x168
 
@@ -236,8 +236,8 @@
     goto :goto_0
 
     .line 38
-    .restart local v0    # "deltaR":I
-    .restart local v1    # "r":I
+    .restart local v0       #deltaR:I
+    .restart local v1       #r:I
     :cond_1
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
@@ -322,7 +322,7 @@
 
 .method public setPressed(Z)V
     .locals 0
-    .param p1, "pressed"    # Z
+    .parameter "pressed"
 
     .prologue
     .line 70

@@ -21,6 +21,7 @@
 # direct methods
 .method constructor <init>(Landroid/support/v4/app/FragmentActivity;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 80
@@ -35,7 +36,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "msg"    # Landroid/os/Message;
+    .parameter "msg"
 
     .prologue
     .line 83

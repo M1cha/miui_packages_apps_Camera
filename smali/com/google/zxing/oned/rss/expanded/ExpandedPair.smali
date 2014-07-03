@@ -16,10 +16,10 @@
 # direct methods
 .method constructor <init>(Lcom/google/zxing/oned/rss/DataCharacter;Lcom/google/zxing/oned/rss/DataCharacter;Lcom/google/zxing/oned/rss/FinderPattern;Z)V
     .locals 0
-    .param p1, "leftChar"    # Lcom/google/zxing/oned/rss/DataCharacter;
-    .param p2, "rightChar"    # Lcom/google/zxing/oned/rss/DataCharacter;
-    .param p3, "finderPattern"    # Lcom/google/zxing/oned/rss/FinderPattern;
-    .param p4, "mayBeLast"    # Z
+    .parameter "leftChar"
+    .parameter "rightChar"
+    .parameter "finderPattern"
+    .parameter "mayBeLast"
 
     .prologue
     .line 45
@@ -43,8 +43,8 @@
 
 .method private static equalsOrNull(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 1
-    .param p0, "o1"    # Ljava/lang/Object;
-    .param p1, "o2"    # Ljava/lang/Object;
+    .parameter "o1"
+    .parameter "o2"
 
     .prologue
     .line 92
@@ -72,7 +72,7 @@
 
 .method private static hashNotNull(Ljava/lang/Object;)I
     .locals 1
-    .param p0, "o"    # Ljava/lang/Object;
+    .parameter "o"
 
     .prologue
     .line 101
@@ -95,7 +95,7 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "o"    # Ljava/lang/Object;
+    .parameter "o"
 
     .prologue
     const/4 v1, 0x0
@@ -117,7 +117,7 @@
     check-cast v0, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
 
     .line 85
-    .local v0, "that":Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
+    .local v0, that:Lcom/google/zxing/oned/rss/expanded/ExpandedPair;
     iget-object v2, p0, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->leftChar:Lcom/google/zxing/oned/rss/DataCharacter;
 
     iget-object v3, v0, Lcom/google/zxing/oned/rss/expanded/ExpandedPair;->leftChar:Lcom/google/zxing/oned/rss/DataCharacter;

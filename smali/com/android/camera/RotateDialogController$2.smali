@@ -26,6 +26,8 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/RotateDialogController;Ljava/lang/Runnable;)V
     .locals 0
+    .parameter
+    .parameter
 
     .prologue
     .line 143
@@ -42,7 +44,7 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 146

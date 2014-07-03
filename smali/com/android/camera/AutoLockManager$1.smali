@@ -21,7 +21,8 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/AutoLockManager;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "x0"    # Landroid/os/Looper;
+    .parameter
+    .parameter "x0"
 
     .prologue
     .line 75
@@ -36,7 +37,7 @@
 # virtual methods
 .method public dispatchMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
+    .parameter "msg"
 
     .prologue
     .line 78
@@ -47,7 +48,7 @@
     .line 79
     iget-object v0, p0, Lcom/android/camera/AutoLockManager$1;->this$0:Lcom/android/camera/AutoLockManager;
 
-    # invokes: Lcom/android/camera/AutoLockManager;->lockSreen()V
+    #calls: Lcom/android/camera/AutoLockManager;->lockSreen()V
     invoke-static {v0}, Lcom/android/camera/AutoLockManager;->access$000(Lcom/android/camera/AutoLockManager;)V
 
     .line 81

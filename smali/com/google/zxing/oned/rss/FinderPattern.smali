@@ -14,11 +14,11 @@
 # direct methods
 .method public constructor <init>(I[IIII)V
     .locals 5
-    .param p1, "value"    # I
-    .param p2, "startEnd"    # [I
-    .param p3, "start"    # I
-    .param p4, "end"    # I
-    .param p5, "rowNumber"    # I
+    .parameter "value"
+    .parameter "startEnd"
+    .parameter "start"
+    .parameter "end"
+    .parameter "rowNumber"
 
     .prologue
     .line 27
@@ -69,7 +69,7 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "o"    # Ljava/lang/Object;
+    .parameter "o"
 
     .prologue
     const/4 v1, 0x0
@@ -91,7 +91,7 @@
     check-cast v0, Lcom/google/zxing/oned/rss/FinderPattern;
 
     .line 54
-    .local v0, "that":Lcom/google/zxing/oned/rss/FinderPattern;
+    .local v0, that:Lcom/google/zxing/oned/rss/FinderPattern;
     iget v2, p0, Lcom/google/zxing/oned/rss/FinderPattern;->value:I
 
     iget v3, v0, Lcom/google/zxing/oned/rss/FinderPattern;->value:I

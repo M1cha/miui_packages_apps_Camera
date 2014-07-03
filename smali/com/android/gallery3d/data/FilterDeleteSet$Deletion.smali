@@ -23,8 +23,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;I)V
     .locals 0
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
-    .param p2, "index"    # I
+    .parameter "path"
+    .parameter "index"
 
     .prologue
     .line 51

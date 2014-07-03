@@ -24,7 +24,7 @@
 # direct methods
 .method public constructor <init>(Landroid/graphics/BitmapFactory$Options;)V
     .locals 0
-    .param p1, "options"    # Landroid/graphics/BitmapFactory$Options;
+    .parameter "options"
 
     .prologue
     .line 41

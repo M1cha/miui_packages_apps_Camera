@@ -10,7 +10,7 @@
 # direct methods
 .method public constructor <init>(Landroid/view/ViewGroup;)V
     .locals 0
-    .param p1, "view"    # Landroid/view/ViewGroup;
+    .parameter "view"
 
     .prologue
     .line 37
@@ -25,8 +25,8 @@
 
 .method public static makeText(Landroid/app/Activity;Ljava/lang/CharSequence;)Lcom/android/camera/OnScreenHint;
     .locals 4
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "text"    # Ljava/lang/CharSequence;
+    .parameter "activity"
+    .parameter "text"
 
     .prologue
     .line 55
@@ -39,13 +39,13 @@
     check-cast v0, Landroid/view/ViewGroup;
 
     .line 56
-    .local v0, "hintView":Landroid/view/ViewGroup;
+    .local v0, hintView:Landroid/view/ViewGroup;
     new-instance v1, Lcom/android/camera/OnScreenHint;
 
     invoke-direct {v1, v0}, Lcom/android/camera/OnScreenHint;-><init>(Landroid/view/ViewGroup;)V
 
     .line 57
-    .local v1, "result":Lcom/android/camera/OnScreenHint;
+    .local v1, result:Lcom/android/camera/OnScreenHint;
     const v3, 0x7f0c004a
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
@@ -55,7 +55,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 58
-    .local v2, "tv":Landroid/widget/TextView;
+    .local v2, tv:Landroid/widget/TextView;
     invoke-virtual {v2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 59
@@ -93,7 +93,7 @@
 
 .method public setText(Ljava/lang/CharSequence;)V
     .locals 3
-    .param p1, "s"    # Ljava/lang/CharSequence;
+    .parameter "s"
 
     .prologue
     .line 63
@@ -123,7 +123,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 68
-    .local v0, "tv":Landroid/widget/TextView;
+    .local v0, tv:Landroid/widget/TextView;
     if-nez v0, :cond_1
 
     .line 69

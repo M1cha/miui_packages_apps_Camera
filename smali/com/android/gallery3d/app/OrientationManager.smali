@@ -43,7 +43,7 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
     .locals 2
-    .param p1, "activity"    # Landroid/app/Activity;
+    .parameter "activity"
 
     .prologue
     const/4 v1, 0x0
@@ -88,7 +88,7 @@
 
 .method static synthetic access$000(Lcom/android/gallery3d/app/OrientationManager;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/app/OrientationManager;
+    .parameter "x0"
 
     .prologue
     .line 33
@@ -99,8 +99,8 @@
 
 .method static synthetic access$002(Lcom/android/gallery3d/app/OrientationManager;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/android/gallery3d/app/OrientationManager;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 33
@@ -111,8 +111,8 @@
 
 .method static synthetic access$100(II)I
     .locals 1
-    .param p0, "x0"    # I
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 33
@@ -125,7 +125,7 @@
 
 .method static synthetic access$200(Lcom/android/gallery3d/app/OrientationManager;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/app/OrientationManager;
+    .parameter "x0"
 
     .prologue
     .line 33
@@ -136,7 +136,7 @@
 
 .method static synthetic access$300(Lcom/android/gallery3d/app/OrientationManager;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/gallery3d/app/OrientationManager;
+    .parameter "x0"
 
     .prologue
     .line 33
@@ -169,7 +169,7 @@
 
 .method private static getDisplayRotation(Landroid/app/Activity;)I
     .locals 3
-    .param p0, "activity"    # Landroid/app/Activity;
+    .parameter "activity"
 
     .prologue
     const/4 v1, 0x0
@@ -188,7 +188,7 @@
     move-result v0
 
     .line 202
-    .local v0, "rotation":I
+    .local v0, rotation:I
     packed-switch v0, :pswitch_data_0
 
     .line 208
@@ -236,7 +236,7 @@
     .line 149
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :try_start_0
     iget-object v2, p0, Lcom/android/gallery3d/app/OrientationManager;->mListeners:Ljava/util/ArrayList;
 
@@ -244,7 +244,7 @@
 
     move-result v1
 
-    .local v1, "n":I
+    .local v1, n:I
     :goto_0
     if-ge v0, v1, :cond_0
 
@@ -272,7 +272,7 @@
     return-void
 
     .line 152
-    .end local v1    # "n":I
+    .end local v1           #n:I
     :catchall_0
     move-exception v2
 
@@ -285,15 +285,15 @@
 
 .method private static roundOrientation(II)I
     .locals 3
-    .param p0, "orientation"    # I
-    .param p1, "orientationHistory"    # I
+    .parameter "orientation"
+    .parameter "orientationHistory"
 
     .prologue
     .line 185
     const/4 v0, 0x0
 
     .line 186
-    .local v0, "changeOrientation":Z
+    .local v0, changeOrientation:Z
     const/4 v2, -0x1
 
     if-ne p1, v2, :cond_1
@@ -315,12 +315,12 @@
     rem-int/lit16 p1, v2, 0x168
 
     .line 196
-    .end local p1    # "orientationHistory":I
+    .end local p1
     :cond_0
     return p1
 
     .line 189
-    .restart local p1    # "orientationHistory":I
+    .restart local p1
     :cond_1
     sub-int v2, p0, p1
 
@@ -329,7 +329,7 @@
     move-result v1
 
     .line 190
-    .local v1, "dist":I
+    .local v1, dist:I
     rsub-int v2, v1, 0x168
 
     invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
@@ -383,7 +383,7 @@
     rem-int/lit16 v0, v1, 0x168
 
     .line 133
-    .local v0, "orientationCompensation":I
+    .local v0, orientationCompensation:I
     iget v1, p0, Lcom/android/gallery3d/app/OrientationManager;->mOrientationCompensation:I
 
     if-eq v1, v0, :cond_0
@@ -401,7 +401,7 @@
 # virtual methods
 .method public addListener(Lcom/android/gallery3d/app/OrientationManager$Listener;)V
     .locals 2
-    .param p1, "listener"    # Lcom/android/gallery3d/app/OrientationManager$Listener;
+    .parameter "listener"
 
     .prologue
     .line 78
@@ -543,7 +543,7 @@
 
 .method public removeListener(Lcom/android/gallery3d/app/OrientationManager$Listener;)V
     .locals 2
-    .param p1, "listener"    # Lcom/android/gallery3d/app/OrientationManager$Listener;
+    .parameter "listener"
 
     .prologue
     .line 84
@@ -590,7 +590,7 @@
     move-result-object v0
 
     .line 68
-    .local v0, "resolver":Landroid/content/ContentResolver;
+    .local v0, resolver:Landroid/content/ContentResolver;
     const-string v3, "accelerometer_rotation"
 
     invoke-static {v0, v3, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I

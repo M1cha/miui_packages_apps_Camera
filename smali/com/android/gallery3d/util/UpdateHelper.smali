@@ -37,8 +37,8 @@
 
 .method public update(DD)D
     .locals 1
-    .param p1, "original"    # D
-    .param p3, "update"    # D
+    .parameter "original"
+    .parameter "update"
 
     .prologue
     .line 41
@@ -61,8 +61,8 @@
 
 .method public update(II)I
     .locals 1
-    .param p1, "original"    # I
-    .param p2, "update"    # I
+    .parameter "original"
+    .parameter "update"
 
     .prologue
     .line 25
@@ -83,8 +83,8 @@
 
 .method public update(JJ)J
     .locals 1
-    .param p1, "original"    # J
-    .param p3, "update"    # J
+    .parameter "original"
+    .parameter "update"
 
     .prologue
     .line 33
@@ -107,6 +107,8 @@
 
 .method public update(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -117,8 +119,8 @@
 
     .prologue
     .line 49
-    .local p1, "original":Ljava/lang/Object;, "TT;"
-    .local p2, "update":Ljava/lang/Object;, "TT;"
+    .local p1, original:Ljava/lang/Object;,"TT;"
+    .local p2, update:Ljava/lang/Object;,"TT;"
     invoke-static {p1, p2}, Lcom/android/gallery3d/common/Utils;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0

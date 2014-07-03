@@ -21,6 +21,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/VideoCamera;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 383
@@ -33,8 +34,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/VideoCamera;Lcom/android/camera/VideoCamera$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/camera/VideoCamera;
-    .param p2, "x1"    # Lcom/android/camera/VideoCamera$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 383
@@ -47,8 +48,8 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
     .line 386
@@ -57,7 +58,7 @@
     move-result-object v0
 
     .line 387
-    .local v0, "action":Ljava/lang/String;
+    .local v0, action:Ljava/lang/String;
     const-string v1, "android.intent.action.MEDIA_EJECT"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -76,7 +77,7 @@
     .line 389
     iget-object v1, p0, Lcom/android/camera/VideoCamera$MyBroadcastReceiver;->this$0:Lcom/android/camera/VideoCamera;
 
-    # invokes: Lcom/android/camera/VideoCamera;->stopVideoRecording()Z
+    #calls: Lcom/android/camera/VideoCamera;->stopVideoRecording()Z
     invoke-static {v1}, Lcom/android/camera/VideoCamera;->access$1000(Lcom/android/camera/VideoCamera;)Z
 
     .line 402

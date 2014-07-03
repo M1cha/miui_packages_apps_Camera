@@ -6,8 +6,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 25
@@ -21,14 +21,14 @@
 # virtual methods
 .method protected onMeasure(II)V
     .locals 2
-    .param p1, "widthMeasureSpec"    # I
-    .param p2, "heightMeasureSpec"    # I
+    .parameter "widthMeasureSpec"
+    .parameter "heightMeasureSpec"
 
     .prologue
     .line 33
-    const/high16 v0, 0x10000
+    const/high16 v0, 0x1
 
-    const/high16 v1, -0x80000000
+    const/high16 v1, -0x8000
 
     invoke-static {v0, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 

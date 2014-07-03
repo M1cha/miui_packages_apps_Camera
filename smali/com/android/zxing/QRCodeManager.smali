@@ -154,7 +154,7 @@
     invoke-direct {v0}, Landroid/util/DisplayMetrics;-><init>()V
 
     .line 77
-    .local v0, "metrics":Landroid/util/DisplayMetrics;
+    .local v0, metrics:Landroid/util/DisplayMetrics;
     invoke-static {}, Lcom/android/camera/CameraAppImpl;->sGetAndroidContext()Landroid/content/Context;
 
     move-result-object v2
@@ -168,7 +168,7 @@
     check-cast v1, Landroid/view/WindowManager;
 
     .line 79
-    .local v1, "wm":Landroid/view/WindowManager;
+    .local v1, wm:Landroid/view/WindowManager;
     invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v2
@@ -230,7 +230,7 @@
 
 .method static synthetic access$000(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/DecodeHandlerFactory;
     .locals 1
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
+    .parameter "x0"
 
     .prologue
     .line 32
@@ -241,7 +241,7 @@
 
 .method static synthetic access$100(Lcom/android/zxing/QRCodeManager;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
+    .parameter "x0"
 
     .prologue
     .line 32
@@ -252,7 +252,7 @@
 
 .method static synthetic access$1000(Lcom/android/zxing/QRCodeManager;)Landroid/widget/TextView;
     .locals 1
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
+    .parameter "x0"
 
     .prologue
     .line 32
@@ -263,8 +263,8 @@
 
 .method static synthetic access$1100(Lcom/android/zxing/QRCodeManager;I)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 32
@@ -275,7 +275,7 @@
 
 .method static synthetic access$1200(Lcom/android/zxing/QRCodeManager;)Landroid/hardware/Camera$PreviewCallback;
     .locals 1
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
+    .parameter "x0"
 
     .prologue
     .line 32
@@ -286,7 +286,7 @@
 
 .method static synthetic access$1300(Lcom/android/zxing/QRCodeManager;)Lcom/android/camera/CameraManager$CameraProxy;
     .locals 1
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
+    .parameter "x0"
 
     .prologue
     .line 32
@@ -297,7 +297,7 @@
 
 .method static synthetic access$1400(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/ui/ViewFinderView;
     .locals 1
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
+    .parameter "x0"
 
     .prologue
     .line 32
@@ -308,7 +308,7 @@
 
 .method static synthetic access$200(Lcom/android/zxing/QRCodeManager;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
+    .parameter "x0"
 
     .prologue
     .line 32
@@ -319,7 +319,7 @@
 
 .method static synthetic access$300(Lcom/android/zxing/QRCodeManager;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
+    .parameter "x0"
 
     .prologue
     .line 32
@@ -330,7 +330,7 @@
 
 .method static synthetic access$400(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;
     .locals 1
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
+    .parameter "x0"
 
     .prologue
     .line 32
@@ -341,7 +341,7 @@
 
 .method static synthetic access$500(Lcom/android/zxing/QRCodeManager;)Ljava/lang/String;
     .locals 1
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
+    .parameter "x0"
 
     .prologue
     .line 32
@@ -352,8 +352,8 @@
 
 .method static synthetic access$502(Lcom/android/zxing/QRCodeManager;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
-    .param p1, "x1"    # Ljava/lang/String;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 32
@@ -364,7 +364,7 @@
 
 .method static synthetic access$600(Lcom/android/zxing/QRCodeManager;)Landroid/app/Activity;
     .locals 1
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
+    .parameter "x0"
 
     .prologue
     .line 32
@@ -375,7 +375,7 @@
 
 .method static synthetic access$700(Lcom/android/zxing/QRCodeManager;)Landroid/view/ViewGroup;
     .locals 1
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
+    .parameter "x0"
 
     .prologue
     .line 32
@@ -386,7 +386,7 @@
 
 .method static synthetic access$800(Lcom/android/zxing/QRCodeManager;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
+    .parameter "x0"
 
     .prologue
     .line 32
@@ -399,7 +399,7 @@
 
 .method static synthetic access$900(Lcom/android/zxing/QRCodeManager;)Lcom/android/zxing/QRCodeType;
     .locals 1
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
+    .parameter "x0"
 
     .prologue
     .line 32
@@ -410,8 +410,8 @@
 
 .method static synthetic access$902(Lcom/android/zxing/QRCodeManager;Lcom/android/zxing/QRCodeType;)Lcom/android/zxing/QRCodeType;
     .locals 0
-    .param p0, "x0"    # Lcom/android/zxing/QRCodeManager;
-    .param p1, "x1"    # Lcom/android/zxing/QRCodeType;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 32
@@ -451,7 +451,7 @@
 
 .method public static instance(Landroid/content/Context;)Lcom/android/zxing/QRCodeManager;
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     .line 235
@@ -464,17 +464,17 @@
     check-cast v0, Lcom/android/zxing/QRCodeManager;
 
     .line 236
-    .local v0, "instance":Lcom/android/zxing/QRCodeManager;
+    .local v0, instance:Lcom/android/zxing/QRCodeManager;
     if-nez v0, :cond_0
 
     .line 237
     new-instance v0, Lcom/android/zxing/QRCodeManager;
 
-    .end local v0    # "instance":Lcom/android/zxing/QRCodeManager;
+    .end local v0           #instance:Lcom/android/zxing/QRCodeManager;
     invoke-direct {v0}, Lcom/android/zxing/QRCodeManager;-><init>()V
 
     .line 238
-    .restart local v0    # "instance":Lcom/android/zxing/QRCodeManager;
+    .restart local v0       #instance:Lcom/android/zxing/QRCodeManager;
     sget-object v1, Lcom/android/zxing/QRCodeManager;->sMap:Ljava/util/WeakHashMap;
 
     invoke-virtual {v1, p0, v0}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -486,7 +486,7 @@
 
 .method public static removeInstance(Landroid/content/Context;)V
     .locals 2
-    .param p0, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     .line 244
@@ -499,7 +499,7 @@
     check-cast v0, Lcom/android/zxing/QRCodeManager;
 
     .line 245
-    .local v0, "instance":Lcom/android/zxing/QRCodeManager;
+    .local v0, instance:Lcom/android/zxing/QRCodeManager;
     if-eqz v0, :cond_0
 
     .line 246
@@ -570,7 +570,7 @@
 
 .method private sendDecodeMessageSafe(I)V
     .locals 4
-    .param p1, "delay"    # I
+    .parameter "delay"
 
     .prologue
     const v3, 0x7f0c0007
@@ -692,7 +692,7 @@
     div-float v1, v2, v3
 
     .line 339
-    .local v1, "scaleWidth":F
+    .local v1, scaleWidth:F
     iget v2, p0, Lcom/android/zxing/QRCodeManager;->mPreviewHeight:I
 
     int-to-float v2, v2
@@ -704,7 +704,7 @@
     div-float v0, v2, v3
 
     .line 340
-    .local v0, "scaleHeight":F
+    .local v0, scaleHeight:F
     sget-object v2, Lcom/android/zxing/QRCodeManager;->mRectPreviewFocusArea:Landroid/graphics/Rect;
 
     sget-object v3, Lcom/android/zxing/QRCodeManager;->mRectFinderFocusArea:Landroid/graphics/Rect;
@@ -801,10 +801,10 @@
 # virtual methods
 .method public buildLuminanceSource([BIIZ)Lcom/android/zxing/YUVLuminanceSource;
     .locals 8
-    .param p1, "data"    # [B
-    .param p2, "width"    # I
-    .param p3, "height"    # I
-    .param p4, "center"    # Z
+    .parameter "data"
+    .parameter "width"
+    .parameter "height"
+    .parameter "center"
 
     .prologue
     .line 396
@@ -1010,7 +1010,7 @@
 
 .method public needScanQRCode(Z)V
     .locals 2
-    .param p1, "scan"    # Z
+    .parameter "scan"
 
     .prologue
     .line 125
@@ -1079,7 +1079,7 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 1
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 99
@@ -1100,10 +1100,10 @@
 
 .method public onCreate(Landroid/app/Activity;Landroid/os/Looper;Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;Z)V
     .locals 3
-    .param p1, "activity"    # Landroid/app/Activity;
-    .param p2, "looper"    # Landroid/os/Looper;
-    .param p3, "listener"    # Lcom/android/zxing/QRCodeManager$QRCodeManagerListener;
-    .param p4, "isScanQRCodeIntent"    # Z
+    .parameter "activity"
+    .parameter "looper"
+    .parameter "listener"
+    .parameter "isScanQRCodeIntent"
 
     .prologue
     const/4 v2, 0x1
@@ -1347,7 +1347,7 @@
 
 .method public setCameraDevice(Lcom/android/camera/CameraManager$CameraProxy;)V
     .locals 0
-    .param p1, "cameraDevice"    # Lcom/android/camera/CameraManager$CameraProxy;
+    .parameter "cameraDevice"
 
     .prologue
     .line 285
@@ -1359,7 +1359,7 @@
 
 .method public setPreviewFormat(I)V
     .locals 0
-    .param p1, "format"    # I
+    .parameter "format"
 
     .prologue
     .line 305
@@ -1371,8 +1371,8 @@
 
 .method public setPreviewLayoutSize(II)V
     .locals 1
-    .param p1, "width"    # I
-    .param p2, "height"    # I
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 289
@@ -1401,8 +1401,8 @@
 
 .method public setTransposePreviewSize(II)V
     .locals 1
-    .param p1, "width"    # I
-    .param p2, "height"    # I
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 297
@@ -1444,7 +1444,7 @@
 
 .method public updateViewFinderRect(Landroid/graphics/Point;)V
     .locals 9
-    .param p1, "area"    # Landroid/graphics/Point;
+    .parameter "area"
 
     .prologue
     const/4 v8, 0x0
@@ -1459,7 +1459,7 @@
     move-result v5
 
     .line 310
-    .local v5, "width":I
+    .local v5, width:I
     iget v6, p0, Lcom/android/zxing/QRCodeManager;->mPreviewLayoutHeight:I
 
     sget v7, Lcom/android/zxing/QRCodeManager;->CENTER_FRAME_WIDTH:I
@@ -1469,20 +1469,20 @@
     move-result v1
 
     .line 311
-    .local v1, "height":I
+    .local v1, height:I
     const/4 v2, 0x0
 
-    .local v2, "left":I
+    .local v2, left:I
     const/4 v4, 0x0
 
-    .local v4, "top":I
+    .local v4, top:I
     const/4 v3, 0x0
 
-    .local v3, "right":I
+    .local v3, right:I
     const/4 v0, 0x0
 
     .line 312
-    .local v0, "bottom":I
+    .local v0, bottom:I
     iget v6, p0, Lcom/android/zxing/QRCodeManager;->mPreviewLayoutWidth:I
 
     sub-int/2addr v6, v5

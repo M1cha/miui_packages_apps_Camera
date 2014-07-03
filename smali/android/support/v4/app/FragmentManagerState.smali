@@ -55,7 +55,7 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .locals 1
-    .param p1, "in"    # Landroid/os/Parcel;
+    .parameter "in"
 
     .prologue
     .line 346
@@ -108,8 +108,8 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .locals 1
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
+    .parameter "dest"
+    .parameter "flags"
 
     .prologue
     .line 357

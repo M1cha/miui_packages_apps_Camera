@@ -28,6 +28,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/gallery3d/app/PhotoPage;)V
     .locals 1
+    .parameter
 
     .prologue
     .line 981
@@ -52,8 +53,8 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/app/PhotoPage;Lcom/android/gallery3d/app/PhotoPage$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/app/PhotoPage;
-    .param p2, "x1"    # Lcom/android/gallery3d/app/PhotoPage$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 981
@@ -106,21 +107,21 @@
 
 .method public onGLIdle(Lcom/android/gallery3d/ui/GLCanvas;Z)Z
     .locals 2
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvas;
-    .param p2, "renderRequested"    # Z
+    .parameter "canvas"
+    .parameter "renderRequested"
 
     .prologue
     .line 994
     iget-object v0, p0, Lcom/android/gallery3d/app/PhotoPage$PreparePhotoFallback;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mPhotoView:Lcom/android/gallery3d/ui/PhotoView;
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mPhotoView:Lcom/android/gallery3d/ui/PhotoView;
     invoke-static {v0}, Lcom/android/gallery3d/app/PhotoPage;->access$200(Lcom/android/gallery3d/app/PhotoPage;)Lcom/android/gallery3d/ui/PhotoView;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/gallery3d/app/PhotoPage$PreparePhotoFallback;->this$0:Lcom/android/gallery3d/app/PhotoPage;
 
-    # getter for: Lcom/android/gallery3d/app/PhotoPage;->mRootPane:Lcom/android/gallery3d/ui/GLView;
+    #getter for: Lcom/android/gallery3d/app/PhotoPage;->mRootPane:Lcom/android/gallery3d/ui/GLView;
     invoke-static {v1}, Lcom/android/gallery3d/app/PhotoPage;->access$2000(Lcom/android/gallery3d/app/PhotoPage;)Lcom/android/gallery3d/ui/GLView;
 
     move-result-object v1

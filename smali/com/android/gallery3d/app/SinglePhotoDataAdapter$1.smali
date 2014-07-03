@@ -21,7 +21,8 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/SinglePhotoDataAdapter;Lcom/android/gallery3d/app/GalleryActivity;)V
     .locals 0
-    .param p2, "x0"    # Lcom/android/gallery3d/app/GalleryActivity;
+    .parameter
+    .parameter "x0"
 
     .prologue
     .line 60
@@ -36,7 +37,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 2
-    .param p1, "message"    # Landroid/os/Message;
+    .parameter "message"
 
     .prologue
     const/4 v0, 0x1
@@ -52,7 +53,7 @@
     .line 65
     iget-object v0, p0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter$1;->this$0:Lcom/android/gallery3d/app/SinglePhotoDataAdapter;
 
-    # getter for: Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mHasFullImage:Z
+    #getter for: Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->mHasFullImage:Z
     invoke-static {v0}, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->access$000(Lcom/android/gallery3d/app/SinglePhotoDataAdapter;)Z
 
     move-result v0
@@ -66,7 +67,7 @@
 
     check-cast v0, Lcom/android/gallery3d/app/SinglePhotoDataAdapter$ImageBundle;
 
-    # invokes: Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->onDecodeLargeComplete(Lcom/android/gallery3d/app/SinglePhotoDataAdapter$ImageBundle;)V
+    #calls: Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->onDecodeLargeComplete(Lcom/android/gallery3d/app/SinglePhotoDataAdapter$ImageBundle;)V
     invoke-static {v1, v0}, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->access$100(Lcom/android/gallery3d/app/SinglePhotoDataAdapter;Lcom/android/gallery3d/app/SinglePhotoDataAdapter$ImageBundle;)V
 
     .line 70
@@ -87,7 +88,7 @@
 
     check-cast v0, Lcom/android/gallery3d/util/Future;
 
-    # invokes: Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->onDecodeThumbComplete(Lcom/android/gallery3d/util/Future;)V
+    #calls: Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->onDecodeThumbComplete(Lcom/android/gallery3d/util/Future;)V
     invoke-static {v1, v0}, Lcom/android/gallery3d/app/SinglePhotoDataAdapter;->access$200(Lcom/android/gallery3d/app/SinglePhotoDataAdapter;Lcom/android/gallery3d/util/Future;)V
 
     goto :goto_1

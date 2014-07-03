@@ -16,7 +16,7 @@
 
 .method static invalidateOptionsMenu(Landroid/app/Activity;)V
     .locals 0
-    .param p0, "activity"    # Landroid/app/Activity;
+    .parameter "activity"
 
     .prologue
     .line 29

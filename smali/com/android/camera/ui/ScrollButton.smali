@@ -66,8 +66,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     const/4 v0, 0x0
@@ -82,7 +82,7 @@
     iput-boolean v0, p0, Lcom/android/camera/ui/ScrollButton;->mAnimating:Z
 
     .line 49
-    const/high16 v0, 0x42c80000
+    const/high16 v0, 0x42c8
 
     iput v0, p0, Lcom/android/camera/ui/ScrollButton;->mAnimatedVelocity:F
 
@@ -111,7 +111,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/ui/ScrollButton;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/camera/ui/ScrollButton;
+    .parameter "x0"
 
     .prologue
     .line 22
@@ -125,7 +125,7 @@
 
     .prologue
     .line 192
-    const/high16 v0, -0x3d380000
+    const/high16 v0, -0x3d38
 
     invoke-direct {p0, v0}, Lcom/android/camera/ui/ScrollButton;->performFling(F)V
 
@@ -141,7 +141,7 @@
 
     .prologue
     .line 187
-    const/high16 v0, 0x42c80000
+    const/high16 v0, 0x42c8
 
     invoke-direct {p0, v0}, Lcom/android/camera/ui/ScrollButton;->performFling(F)V
 
@@ -234,7 +234,7 @@
     const/4 v0, 0x1
 
     .line 252
-    .local v0, "b":Z
+    .local v0, b:Z
     :cond_3
     iget-object v1, p0, Lcom/android/camera/ui/ScrollButton;->mOnCheckedChangedListener:Lcom/android/camera/ui/ScrollButton$OnCheckedChangedListener;
 
@@ -257,7 +257,7 @@
     goto :goto_0
 
     .line 257
-    .end local v0    # "b":Z
+    .end local v0           #b:Z
     :cond_4
     iget-wide v1, p0, Lcom/android/camera/ui/ScrollButton;->mCurrentAnimationTime:J
 
@@ -295,7 +295,7 @@
     const v0, 0x7f0d0005
 
     .line 324
-    .local v0, "resId":I
+    .local v0, resId:I
     :goto_0
     invoke-virtual {p0}, Lcom/android/camera/ui/ScrollButton;->getResources()Landroid/content/res/Resources;
 
@@ -308,7 +308,7 @@
     return-object v1
 
     .line 323
-    .end local v0    # "resId":I
+    .end local v0           #resId:I
     :cond_0
     const v0, 0x7f0d0004
 
@@ -325,23 +325,23 @@
     move-result-wide v0
 
     .line 264
-    .local v0, "now":J
+    .local v0, now:J
     iget-wide v4, p0, Lcom/android/camera/ui/ScrollButton;->mAnimationLastTime:J
 
     sub-long v4, v0, v4
 
     long-to-float v4, v4
 
-    const/high16 v5, 0x447a0000
+    const/high16 v5, 0x447a
 
     div-float v3, v4, v5
 
     .line 265
-    .local v3, "t":F
+    .local v3, t:F
     iget v2, p0, Lcom/android/camera/ui/ScrollButton;->mAnimationPosition:F
 
     .line 266
-    .local v2, "position":F
+    .local v2, position:F
     iget v4, p0, Lcom/android/camera/ui/ScrollButton;->mAnimatedVelocity:F
 
     mul-float/2addr v4, v3
@@ -359,7 +359,7 @@
 
 .method private moveSlider(I)V
     .locals 2
-    .param p1, "offsetX"    # I
+    .parameter "offsetX"
 
     .prologue
     .line 198
@@ -405,7 +405,7 @@
 
 .method private performFling(F)V
     .locals 6
-    .param p1, "velocity"    # F
+    .parameter "velocity"
 
     .prologue
     const/4 v4, 0x0
@@ -429,7 +429,7 @@
     move-result-wide v0
 
     .line 235
-    .local v0, "now":J
+    .local v0, now:J
     iput-wide v0, p0, Lcom/android/camera/ui/ScrollButton;->mAnimationLastTime:J
 
     .line 236
@@ -485,7 +485,7 @@
 
 .method public onClick(Landroid/view/View;)V
     .locals 0
-    .param p1, "v"    # Landroid/view/View;
+    .parameter "v"
 
     .prologue
     .line 83
@@ -494,7 +494,7 @@
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 2
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
+    .parameter "canvas"
 
     .prologue
     .line 293
@@ -597,7 +597,7 @@
     move-result-object v1
 
     .line 97
-    .local v1, "frameDrawable":Landroid/graphics/drawable/Drawable;
+    .local v1, frameDrawable:Landroid/graphics/drawable/Drawable;
     if-nez v1, :cond_0
 
     .line 110
@@ -664,12 +664,12 @@
     iget v0, v2, Landroid/util/DisplayMetrics;->density:F
 
     .line 107
-    .local v0, "density":F
-    const/high16 v2, 0x40800000
+    .local v0, density:F
+    const/high16 v2, 0x4080
 
     mul-float/2addr v2, v0
 
-    const/high16 v3, 0x3f000000
+    const/high16 v3, 0x3f00
 
     add-float/2addr v2, v3
 
@@ -688,7 +688,7 @@
 
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 5
-    .param p1, "info"    # Landroid/view/accessibility/AccessibilityNodeInfo;
+    .parameter "info"
 
     .prologue
     .line 315
@@ -722,7 +722,7 @@
     move-result-object v0
 
     .line 319
-    .local v0, "contentDescription":Ljava/lang/String;
+    .local v0, contentDescription:Ljava/lang/String;
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentDescription(Ljava/lang/CharSequence;)V
 
     .line 320
@@ -731,11 +731,11 @@
 
 .method protected onMeasure(II)V
     .locals 3
-    .param p1, "widthMeasureSpec"    # I
-    .param p2, "heightMeasureSpec"    # I
+    .parameter "widthMeasureSpec"
+    .parameter "heightMeasureSpec"
 
     .prologue
-    const/high16 v2, 0x40000000
+    const/high16 v2, 0x4000
 
     .line 225
     iget v0, p0, Lcom/android/camera/ui/ScrollButton;->mWidth:I
@@ -765,7 +765,7 @@
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 9
-    .param p1, "event"    # Landroid/view/MotionEvent;
+    .parameter "event"
 
     .prologue
     const/4 v5, 0x1
@@ -790,7 +790,7 @@
     move-result v0
 
     .line 118
-    .local v0, "action":I
+    .local v0, action:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v6
@@ -798,7 +798,7 @@
     float-to-int v2, v6
 
     .line 119
-    .local v2, "x":I
+    .local v2, x:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v6
@@ -806,7 +806,7 @@
     float-to-int v3, v6
 
     .line 120
-    .local v3, "y":I
+    .local v3, y:I
     new-instance v1, Landroid/graphics/Rect;
 
     iget v6, p0, Lcom/android/camera/ui/ScrollButton;->mSliderOffset:I
@@ -822,7 +822,7 @@
     invoke-direct {v1, v6, v4, v7, v8}, Landroid/graphics/Rect;-><init>(IIII)V
 
     .line 122
-    .local v1, "sliderFrame":Landroid/graphics/Rect;
+    .local v1, sliderFrame:Landroid/graphics/Rect;
     packed-switch v0, :pswitch_data_0
 
     :cond_1
@@ -997,7 +997,7 @@
 
 .method public setCameraIconDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
+    .parameter "drawable"
 
     .prologue
     .line 275
@@ -1011,7 +1011,7 @@
 
 .method public setChecked(Z)V
     .locals 1
-    .param p1, "checked"    # Z
+    .parameter "checked"
 
     .prologue
     .line 209
@@ -1048,7 +1048,7 @@
 
 .method public setEnabled(Z)V
     .locals 1
-    .param p1, "enabled"    # Z
+    .parameter "enabled"
 
     .prologue
     .line 309
@@ -1065,7 +1065,7 @@
 
 .method public setFrameBackground(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
+    .parameter "drawable"
 
     .prologue
     .line 283
@@ -1079,7 +1079,7 @@
 
 .method public setOnCheckedChangedListener(Lcom/android/camera/ui/ScrollButton$OnCheckedChangedListener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/camera/ui/ScrollButton$OnCheckedChangedListener;
+    .parameter "listener"
 
     .prologue
     .line 72
@@ -1091,8 +1091,8 @@
 
 .method public setOrientation(IZ)V
     .locals 1
-    .param p1, "orientation"    # I
-    .param p2, "animation"    # Z
+    .parameter "orientation"
+    .parameter "animation"
 
     .prologue
     .line 302
@@ -1116,7 +1116,7 @@
 
 .method public setSliderBackground(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
+    .parameter "drawable"
 
     .prologue
     .line 288
@@ -1130,7 +1130,7 @@
 
 .method public setSliderDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
+    .parameter "drawable"
 
     .prologue
     .line 271
@@ -1144,7 +1144,7 @@
 
 .method public setVideoIconDrawable(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
+    .parameter "drawable"
 
     .prologue
     .line 279

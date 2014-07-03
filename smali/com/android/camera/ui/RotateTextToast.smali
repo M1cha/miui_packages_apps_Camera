@@ -16,9 +16,9 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;II)V
     .locals 5
-    .param p1, "activity"    # Landroid/app/Activity;
-    .param p2, "textResourceId"    # I
-    .param p3, "orientation"    # I
+    .parameter "activity"
+    .parameter "textResourceId"
+    .parameter "orientation"
 
     .prologue
     .line 35
@@ -50,7 +50,7 @@
     move-result-object v0
 
     .line 38
-    .local v0, "inflater":Landroid/view/LayoutInflater;
+    .local v0, inflater:Landroid/view/LayoutInflater;
     const v3, 0x7f040029
 
     iget-object v4, p0, Lcom/android/camera/ui/RotateTextToast;->mLayoutRoot:Landroid/view/ViewGroup;
@@ -60,7 +60,7 @@
     move-result-object v2
 
     .line 39
-    .local v2, "v":Landroid/view/View;
+    .local v2, v:Landroid/view/View;
     const v3, 0x7f0c0091
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -83,7 +83,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 41
-    .local v1, "tv":Landroid/widget/TextView;
+    .local v1, tv:Landroid/widget/TextView;
     invoke-virtual {v1, p2}, Landroid/widget/TextView;->setText(I)V
 
     .line 42

@@ -23,8 +23,8 @@
 # direct methods
 .method private constructor <init>(II)V
     .locals 0
-    .param p1, "count"    # I
-    .param p2, "dataCodewords"    # I
+    .parameter "count"
+    .parameter "dataCodewords"
 
     .prologue
     .line 150
@@ -42,9 +42,9 @@
 
 .method synthetic constructor <init>(IILcom/google/zxing/datamatrix/decoder/Version$1;)V
     .locals 0
-    .param p1, "x0"    # I
-    .param p2, "x1"    # I
-    .param p3, "x2"    # Lcom/google/zxing/datamatrix/decoder/Version$1;
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
 
     .prologue
     .line 146

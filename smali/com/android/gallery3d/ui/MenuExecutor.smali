@@ -39,8 +39,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/app/GalleryActivity;Lcom/android/gallery3d/ui/SelectionManager;)V
     .locals 2
-    .param p1, "activity"    # Lcom/android/gallery3d/app/GalleryActivity;
-    .param p2, "selectionManager"    # Lcom/android/gallery3d/ui/SelectionManager;
+    .parameter "activity"
+    .parameter "selectionManager"
 
     .prologue
     .line 93
@@ -79,7 +79,7 @@
 
 .method static synthetic access$000(Lcom/android/gallery3d/ui/MenuExecutor;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/gallery3d/ui/MenuExecutor;
+    .parameter "x0"
 
     .prologue
     .line 47
@@ -90,7 +90,7 @@
 
 .method static synthetic access$100(Lcom/android/gallery3d/ui/MenuExecutor;)Lcom/android/gallery3d/ui/SelectionManager;
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/ui/MenuExecutor;
+    .parameter "x0"
 
     .prologue
     .line 47
@@ -101,7 +101,7 @@
 
 .method static synthetic access$200(Lcom/android/gallery3d/ui/MenuExecutor;)Landroid/app/ProgressDialog;
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/ui/MenuExecutor;
+    .parameter "x0"
 
     .prologue
     .line 47
@@ -112,7 +112,7 @@
 
 .method static synthetic access$300(Lcom/android/gallery3d/ui/MenuExecutor;)Lcom/android/gallery3d/app/GalleryActivity;
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/ui/MenuExecutor;
+    .parameter "x0"
 
     .prologue
     .line 47
@@ -123,7 +123,7 @@
 
 .method static synthetic access$400(Lcom/android/gallery3d/ui/MenuExecutor;)I
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/ui/MenuExecutor;
+    .parameter "x0"
 
     .prologue
     .line 47
@@ -134,8 +134,8 @@
 
 .method static synthetic access$402(Lcom/android/gallery3d/ui/MenuExecutor;I)I
     .locals 0
-    .param p0, "x0"    # Lcom/android/gallery3d/ui/MenuExecutor;
-    .param p1, "x1"    # I
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 47
@@ -146,9 +146,9 @@
 
 .method static synthetic access$500(Lcom/android/gallery3d/ui/MenuExecutor;ILcom/android/gallery3d/ui/MenuExecutor$ProgressListener;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/gallery3d/ui/MenuExecutor;
-    .param p1, "x1"    # I
-    .param p2, "x2"    # Lcom/android/gallery3d/ui/MenuExecutor$ProgressListener;
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
 
     .prologue
     .line 47
@@ -159,11 +159,11 @@
 
 .method static synthetic access$600(Lcom/android/gallery3d/ui/MenuExecutor;Lcom/android/gallery3d/data/DataManager;Lcom/android/gallery3d/util/ThreadPool$JobContext;ILcom/android/gallery3d/data/Path;)Z
     .locals 1
-    .param p0, "x0"    # Lcom/android/gallery3d/ui/MenuExecutor;
-    .param p1, "x1"    # Lcom/android/gallery3d/data/DataManager;
-    .param p2, "x2"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
-    .param p3, "x3"    # I
-    .param p4, "x4"    # Lcom/android/gallery3d/data/Path;
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+    .parameter "x3"
+    .parameter "x4"
 
     .prologue
     .line 47
@@ -176,9 +176,9 @@
 
 .method static synthetic access$700(Lcom/android/gallery3d/ui/MenuExecutor;ILcom/android/gallery3d/ui/MenuExecutor$ProgressListener;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/gallery3d/ui/MenuExecutor;
-    .param p1, "x1"    # I
-    .param p2, "x2"    # Lcom/android/gallery3d/ui/MenuExecutor$ProgressListener;
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
 
     .prologue
     .line 47
@@ -189,9 +189,9 @@
 
 .method static synthetic access$800(Lcom/android/gallery3d/ui/MenuExecutor;ILcom/android/gallery3d/ui/MenuExecutor$ProgressListener;)V
     .locals 0
-    .param p0, "x0"    # Lcom/android/gallery3d/ui/MenuExecutor;
-    .param p1, "x1"    # I
-    .param p2, "x2"    # Lcom/android/gallery3d/ui/MenuExecutor$ProgressListener;
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
 
     .prologue
     .line 47
@@ -202,9 +202,9 @@
 
 .method private static createProgressDialog(Landroid/content/Context;II)Landroid/app/ProgressDialog;
     .locals 3
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "titleId"    # I
-    .param p2, "progressMax"    # I
+    .parameter "context"
+    .parameter "titleId"
+    .parameter "progressMax"
 
     .prologue
     const/4 v2, 0x1
@@ -217,7 +217,7 @@
     invoke-direct {v0, p0}, Landroid/app/ProgressDialog;-><init>(Landroid/content/Context;)V
 
     .line 72
-    .local v0, "dialog":Landroid/app/ProgressDialog;
+    .local v0, dialog:Landroid/app/ProgressDialog;
     invoke-virtual {v0, p1}, Landroid/app/ProgressDialog;->setTitle(I)V
 
     .line 73
@@ -242,17 +242,17 @@
 
 .method private execute(Lcom/android/gallery3d/data/DataManager;Lcom/android/gallery3d/util/ThreadPool$JobContext;ILcom/android/gallery3d/data/Path;)Z
     .locals 13
-    .param p1, "manager"    # Lcom/android/gallery3d/data/DataManager;
-    .param p2, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
-    .param p3, "cmd"    # I
-    .param p4, "path"    # Lcom/android/gallery3d/data/Path;
+    .parameter "manager"
+    .parameter "jc"
+    .parameter "cmd"
+    .parameter "path"
 
     .prologue
     .line 332
     const/4 v5, 0x1
 
     .line 333
-    .local v5, "result":Z
+    .local v5, result:Z
     const-string v8, "MenuExecutor"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -295,7 +295,7 @@
     move-result-wide v6
 
     .line 336
-    .local v6, "startTime":J
+    .local v6, startTime:J
     sparse-switch p3, :sswitch_data_0
 
     .line 372
@@ -386,13 +386,13 @@
     move-result-object v4
 
     .line 348
-    .local v4, "obj":Lcom/android/gallery3d/data/MediaObject;
+    .local v4, obj:Lcom/android/gallery3d/data/MediaObject;
     invoke-virtual {v4}, Lcom/android/gallery3d/data/MediaObject;->getCacheFlag()I
 
     move-result v1
 
     .line 349
-    .local v1, "cacheFlag":I
+    .local v1, cacheFlag:I
     const/4 v8, 0x2
 
     if-ne v1, v8, :cond_1
@@ -413,8 +413,8 @@
     goto :goto_1
 
     .line 358
-    .end local v1    # "cacheFlag":I
-    .end local v4    # "obj":Lcom/android/gallery3d/data/MediaObject;
+    .end local v1           #cacheFlag:I
+    .end local v4           #obj:Lcom/android/gallery3d/data/MediaObject;
     :sswitch_4
     move-object/from16 v0, p4
 
@@ -425,13 +425,13 @@
     check-cast v2, Lcom/android/gallery3d/data/MediaItem;
 
     .line 359
-    .local v2, "item":Lcom/android/gallery3d/data/MediaItem;
+    .local v2, item:Lcom/android/gallery3d/data/MediaItem;
     const/4 v8, 0x2
 
     new-array v3, v8, [D
 
     .line 360
-    .local v3, "latlng":[D
+    .local v3, latlng:[D
     invoke-virtual {v2, v3}, Lcom/android/gallery3d/data/MediaItem;->getLatLong([D)V
 
     .line 361
@@ -467,8 +467,8 @@
     goto :goto_0
 
     .line 367
-    .end local v2    # "item":Lcom/android/gallery3d/data/MediaItem;
-    .end local v3    # "latlng":[D
+    .end local v2           #item:Lcom/android/gallery3d/data/MediaItem;
+    .end local v3           #latlng:[D
     :sswitch_5
     move-object/from16 v0, p4
 
@@ -477,7 +477,7 @@
     move-result-object v4
 
     .line 368
-    .restart local v4    # "obj":Lcom/android/gallery3d/data/MediaObject;
+    .restart local v4       #obj:Lcom/android/gallery3d/data/MediaObject;
     invoke-virtual {v4}, Lcom/android/gallery3d/data/MediaObject;->Import()Z
 
     move-result v5
@@ -499,7 +499,7 @@
 
 .method private getIntentBySingleSelectedPath(Ljava/lang/String;)Landroid/content/Intent;
     .locals 5
-    .param p1, "action"    # Ljava/lang/String;
+    .parameter "action"
 
     .prologue
     .line 186
@@ -510,13 +510,13 @@
     move-result-object v0
 
     .line 187
-    .local v0, "manager":Lcom/android/gallery3d/data/DataManager;
+    .local v0, manager:Lcom/android/gallery3d/data/DataManager;
     invoke-direct {p0}, Lcom/android/gallery3d/ui/MenuExecutor;->getSingleSelectedPath()Lcom/android/gallery3d/data/Path;
 
     move-result-object v2
 
     .line 188
-    .local v2, "path":Lcom/android/gallery3d/data/Path;
+    .local v2, path:Lcom/android/gallery3d/data/Path;
     invoke-virtual {v0, v2}, Lcom/android/gallery3d/data/DataManager;->getMediaType(Lcom/android/gallery3d/data/Path;)I
 
     move-result v3
@@ -526,7 +526,7 @@
     move-result-object v1
 
     .line 189
-    .local v1, "mimeType":Ljava/lang/String;
+    .local v1, mimeType:Ljava/lang/String;
     new-instance v3, Landroid/content/Intent;
 
     invoke-direct {v3, p1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
@@ -544,7 +544,7 @@
 
 .method public static getMimeType(I)Ljava/lang/String;
     .locals 1
-    .param p0, "type"    # I
+    .parameter "type"
 
     .prologue
     .line 321
@@ -594,7 +594,7 @@
     move-result-object v0
 
     .line 181
-    .local v0, "ids":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/Path;>;"
+    .local v0, ids:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/Path;>;"
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -622,8 +622,8 @@
 
 .method private onMenuClicked(ILcom/android/gallery3d/ui/MenuExecutor$ProgressListener;)V
     .locals 2
-    .param p1, "action"    # I
-    .param p2, "listener"    # Lcom/android/gallery3d/ui/MenuExecutor$ProgressListener;
+    .parameter "action"
+    .parameter "listener"
 
     .prologue
     .line 193
@@ -639,8 +639,8 @@
 
 .method private onProgressComplete(ILcom/android/gallery3d/ui/MenuExecutor$ProgressListener;)V
     .locals 4
-    .param p1, "result"    # I
-    .param p2, "listener"    # Lcom/android/gallery3d/ui/MenuExecutor$ProgressListener;
+    .parameter "result"
+    .parameter "listener"
 
     .prologue
     .line 146
@@ -664,8 +664,8 @@
 
 .method private onProgressUpdate(ILcom/android/gallery3d/ui/MenuExecutor$ProgressListener;)V
     .locals 4
-    .param p1, "index"    # I
-    .param p2, "listener"    # Lcom/android/gallery3d/ui/MenuExecutor$ProgressListener;
+    .parameter "index"
+    .parameter "listener"
 
     .prologue
     .line 141
@@ -689,9 +689,9 @@
 
 .method private static setMenuItemVisibility(Landroid/view/Menu;IZ)V
     .locals 1
-    .param p0, "menu"    # Landroid/view/Menu;
-    .param p1, "id"    # I
-    .param p2, "visibility"    # Z
+    .parameter "menu"
+    .parameter "id"
+    .parameter "visibility"
 
     .prologue
     .line 151
@@ -700,7 +700,7 @@
     move-result-object v0
 
     .line 152
-    .local v0, "item":Landroid/view/MenuItem;
+    .local v0, item:Landroid/view/MenuItem;
     if-eqz v0, :cond_0
 
     invoke-interface {v0, p2}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
@@ -754,9 +754,9 @@
 
 .method public static updateMenuOperation(Landroid/view/Menu;IZ)V
     .locals 12
-    .param p0, "menu"    # Landroid/view/Menu;
-    .param p1, "supported"    # I
-    .param p2, "isSecure"    # Z
+    .parameter "menu"
+    .parameter "supported"
+    .parameter "isSecure"
 
     .prologue
     const/4 v4, 0x1
@@ -771,7 +771,7 @@
     move v2, v4
 
     .line 157
-    .local v2, "supportDelete":Z
+    .local v2, supportDelete:Z
     :goto_0
     and-int/lit8 v11, p1, 0x2
 
@@ -780,7 +780,7 @@
     move v6, v4
 
     .line 158
-    .local v6, "supportRotate":Z
+    .local v6, supportRotate:Z
     :goto_1
     and-int/lit16 v11, p1, 0x400
 
@@ -789,7 +789,7 @@
     move v5, v4
 
     .line 159
-    .local v5, "supportInfo":Z
+    .local v5, supportInfo:Z
     :goto_2
     if-eqz p2, :cond_3
 
@@ -800,7 +800,7 @@
     move v1, v4
 
     .line 160
-    .local v1, "supportCrop":Z
+    .local v1, supportCrop:Z
     :goto_3
     if-eqz p2, :cond_4
 
@@ -811,7 +811,7 @@
     move v8, v4
 
     .line 161
-    .local v8, "supportShare":Z
+    .local v8, supportShare:Z
     :goto_4
     if-eqz p2, :cond_5
 
@@ -822,7 +822,7 @@
     move v7, v4
 
     .line 162
-    .local v7, "supportSetAs":Z
+    .local v7, supportSetAs:Z
     :goto_5
     if-eqz p2, :cond_6
 
@@ -833,7 +833,7 @@
     move v9, v4
 
     .line 163
-    .local v9, "supportShowOnMap":Z
+    .local v9, supportShowOnMap:Z
     :goto_6
     if-eqz p2, :cond_7
 
@@ -844,7 +844,7 @@
     move v0, v4
 
     .line 164
-    .local v0, "supportCache":Z
+    .local v0, supportCache:Z
     :goto_7
     if-eqz p2, :cond_8
 
@@ -855,7 +855,7 @@
     move v3, v4
 
     .line 165
-    .local v3, "supportEdit":Z
+    .local v3, supportEdit:Z
     :goto_8
     if-eqz p2, :cond_9
 
@@ -864,7 +864,7 @@
     if-eqz v11, :cond_9
 
     .line 167
-    .local v4, "supportImport":Z
+    .local v4, supportImport:Z
     :goto_9
     const v10, 0x7f0c009d
 
@@ -913,79 +913,79 @@
     .line 177
     return-void
 
-    .end local v0    # "supportCache":Z
-    .end local v1    # "supportCrop":Z
-    .end local v2    # "supportDelete":Z
-    .end local v3    # "supportEdit":Z
-    .end local v4    # "supportImport":Z
-    .end local v5    # "supportInfo":Z
-    .end local v6    # "supportRotate":Z
-    .end local v7    # "supportSetAs":Z
-    .end local v8    # "supportShare":Z
-    .end local v9    # "supportShowOnMap":Z
+    .end local v0           #supportCache:Z
+    .end local v1           #supportCrop:Z
+    .end local v2           #supportDelete:Z
+    .end local v3           #supportEdit:Z
+    .end local v4           #supportImport:Z
+    .end local v5           #supportInfo:Z
+    .end local v6           #supportRotate:Z
+    .end local v7           #supportSetAs:Z
+    .end local v8           #supportShare:Z
+    .end local v9           #supportShowOnMap:Z
     :cond_0
     move v2, v10
 
     .line 156
     goto :goto_0
 
-    .restart local v2    # "supportDelete":Z
+    .restart local v2       #supportDelete:Z
     :cond_1
     move v6, v10
 
     .line 157
     goto :goto_1
 
-    .restart local v6    # "supportRotate":Z
+    .restart local v6       #supportRotate:Z
     :cond_2
     move v5, v10
 
     .line 158
     goto :goto_2
 
-    .restart local v5    # "supportInfo":Z
+    .restart local v5       #supportInfo:Z
     :cond_3
     move v1, v10
 
     .line 159
     goto :goto_3
 
-    .restart local v1    # "supportCrop":Z
+    .restart local v1       #supportCrop:Z
     :cond_4
     move v8, v10
 
     .line 160
     goto :goto_4
 
-    .restart local v8    # "supportShare":Z
+    .restart local v8       #supportShare:Z
     :cond_5
     move v7, v10
 
     .line 161
     goto :goto_5
 
-    .restart local v7    # "supportSetAs":Z
+    .restart local v7       #supportSetAs:Z
     :cond_6
     move v9, v10
 
     .line 162
     goto :goto_6
 
-    .restart local v9    # "supportShowOnMap":Z
+    .restart local v9       #supportShowOnMap:Z
     :cond_7
     move v0, v10
 
     .line 163
     goto :goto_7
 
-    .restart local v0    # "supportCache":Z
+    .restart local v0       #supportCache:Z
     :cond_8
     move v3, v10
 
     .line 164
     goto :goto_8
 
-    .restart local v3    # "supportEdit":Z
+    .restart local v3       #supportEdit:Z
     :cond_9
     move v4, v10
 
@@ -1007,10 +1007,10 @@
 
 .method public onMenuClicked(ILcom/android/gallery3d/ui/MenuExecutor$ProgressListener;ZZ)V
     .locals 8
-    .param p1, "action"    # I
-    .param p2, "listener"    # Lcom/android/gallery3d/ui/MenuExecutor$ProgressListener;
-    .param p3, "waitOnStop"    # Z
-    .param p4, "showDialog"    # Z
+    .parameter "action"
+    .parameter "listener"
+    .parameter "waitOnStop"
+    .parameter "showDialog"
 
     .prologue
     const/4 v1, 0x1
@@ -1061,7 +1061,7 @@
     move-result-object v7
 
     .line 215
-    .local v7, "intent":Landroid/content/Intent;
+    .local v7, intent:Landroid/content/Intent;
     iget-object v0, p0, Lcom/android/gallery3d/ui/MenuExecutor;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
 
     check-cast v0, Landroid/app/Activity;
@@ -1077,7 +1077,7 @@
     goto :goto_0
 
     .line 219
-    .end local v7    # "intent":Landroid/content/Intent;
+    .end local v7           #intent:Landroid/content/Intent;
     :pswitch_3
     const-string v0, "android.intent.action.ATTACH_DATA"
 
@@ -1090,7 +1090,7 @@
     move-result-object v7
 
     .line 221
-    .restart local v7    # "intent":Landroid/content/Intent;
+    .restart local v7       #intent:Landroid/content/Intent;
     const-string v0, "mimeType"
 
     invoke-virtual {v7}, Landroid/content/Intent;->getType()Ljava/lang/String;
@@ -1105,7 +1105,7 @@
     check-cast v6, Landroid/app/Activity;
 
     .line 223
-    .local v6, "activity":Landroid/app/Activity;
+    .local v6, activity:Landroid/app/Activity;
     const v0, 0x7f0d01bf
 
     invoke-virtual {v6, v0}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
@@ -1121,12 +1121,12 @@
     goto :goto_0
 
     .line 228
-    .end local v6    # "activity":Landroid/app/Activity;
-    .end local v7    # "intent":Landroid/content/Intent;
+    .end local v6           #activity:Landroid/app/Activity;
+    .end local v7           #intent:Landroid/content/Intent;
     :pswitch_4
     const v2, 0x7f0d01a1
 
-    .local v2, "title":I
+    .local v2, title:I
     :goto_1
     move-object v0, p0
 
@@ -1144,39 +1144,39 @@
     goto :goto_0
 
     .line 231
-    .end local v2    # "title":I
+    .end local v2           #title:I
     :pswitch_5
     const v2, 0x7f0d01a5
 
     .line 232
-    .restart local v2    # "title":I
+    .restart local v2       #title:I
     goto :goto_1
 
     .line 234
-    .end local v2    # "title":I
+    .end local v2           #title:I
     :pswitch_6
     const v2, 0x7f0d01a4
 
     .line 235
-    .restart local v2    # "title":I
+    .restart local v2       #title:I
     goto :goto_1
 
     .line 237
-    .end local v2    # "title":I
+    .end local v2           #title:I
     :pswitch_7
     const v2, 0x7f0d01a8
 
     .line 238
-    .restart local v2    # "title":I
+    .restart local v2       #title:I
     goto :goto_1
 
     .line 240
-    .end local v2    # "title":I
+    .end local v2           #title:I
     :pswitch_8
     const v2, 0x7f0d01a0
 
     .line 241
-    .restart local v2    # "title":I
+    .restart local v2       #title:I
     goto :goto_1
 
     .line 199
@@ -1197,9 +1197,9 @@
 
 .method public onMenuClicked(Landroid/view/MenuItem;Ljava/lang/String;Lcom/android/gallery3d/ui/MenuExecutor$ProgressListener;)V
     .locals 4
-    .param p1, "menuItem"    # Landroid/view/MenuItem;
-    .param p2, "confirmMsg"    # Ljava/lang/String;
-    .param p3, "listener"    # Lcom/android/gallery3d/ui/MenuExecutor$ProgressListener;
+    .parameter "menuItem"
+    .parameter "confirmMsg"
+    .parameter "listener"
 
     .prologue
     .line 284
@@ -1208,7 +1208,7 @@
     move-result v0
 
     .line 286
-    .local v0, "action":I
+    .local v0, action:I
     if-eqz p2, :cond_1
 
     .line 287
@@ -1223,7 +1223,7 @@
     invoke-direct {v1, p0, v0, p3}, Lcom/android/gallery3d/ui/MenuExecutor$ConfirmDialogListener;-><init>(Lcom/android/gallery3d/ui/MenuExecutor;ILcom/android/gallery3d/ui/MenuExecutor$ProgressListener;)V
 
     .line 289
-    .local v1, "cdl":Lcom/android/gallery3d/ui/MenuExecutor$ConfirmDialogListener;
+    .local v1, cdl:Lcom/android/gallery3d/ui/MenuExecutor$ConfirmDialogListener;
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
     iget-object v3, p0, Lcom/android/gallery3d/ui/MenuExecutor;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
@@ -1267,7 +1267,7 @@
     invoke-virtual {v2}, Landroid/app/AlertDialog;->show()V
 
     .line 299
-    .end local v1    # "cdl":Lcom/android/gallery3d/ui/MenuExecutor$ConfirmDialogListener;
+    .end local v1           #cdl:Lcom/android/gallery3d/ui/MenuExecutor$ConfirmDialogListener;
     :goto_0
     return-void
 
@@ -1291,11 +1291,11 @@
 
 .method public startAction(IILcom/android/gallery3d/ui/MenuExecutor$ProgressListener;ZZ)V
     .locals 5
-    .param p1, "action"    # I
-    .param p2, "title"    # I
-    .param p3, "listener"    # Lcom/android/gallery3d/ui/MenuExecutor$ProgressListener;
-    .param p4, "waitOnStop"    # Z
-    .param p5, "showDialog"    # Z
+    .parameter "action"
+    .parameter "title"
+    .parameter "listener"
+    .parameter "waitOnStop"
+    .parameter "showDialog"
 
     .prologue
     .line 307
@@ -1308,7 +1308,7 @@
     move-result-object v1
 
     .line 308
-    .local v1, "ids":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/Path;>;"
+    .local v1, ids:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/Path;>;"
     invoke-direct {p0}, Lcom/android/gallery3d/ui/MenuExecutor;->stopTaskAndDismissDialog()V
 
     .line 310
@@ -1317,7 +1317,7 @@
     check-cast v0, Landroid/app/Activity;
 
     .line 311
-    .local v0, "activity":Landroid/app/Activity;
+    .local v0, activity:Landroid/app/Activity;
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -1343,7 +1343,7 @@
     invoke-direct {v2, p0, p1, v1, p3}, Lcom/android/gallery3d/ui/MenuExecutor$MediaOperation;-><init>(Lcom/android/gallery3d/ui/MenuExecutor;ILjava/util/ArrayList;Lcom/android/gallery3d/ui/MenuExecutor$ProgressListener;)V
 
     .line 316
-    .local v2, "operation":Lcom/android/gallery3d/ui/MenuExecutor$MediaOperation;
+    .local v2, operation:Lcom/android/gallery3d/ui/MenuExecutor$MediaOperation;
     iget-object v3, p0, Lcom/android/gallery3d/ui/MenuExecutor;->mActivity:Lcom/android/gallery3d/app/GalleryActivity;
 
     invoke-interface {v3}, Lcom/android/gallery3d/app/GalleryActivity;->getThreadPool()Lcom/android/gallery3d/util/ThreadPool;

@@ -36,7 +36,7 @@
 # direct methods
 .method private constructor <init>(F)V
     .locals 0
-    .param p1, "f"    # F
+    .parameter "f"
 
     .prologue
     .line 570
@@ -51,8 +51,8 @@
 
 .method synthetic constructor <init>(FLcom/google/zxing/qrcode/detector/FinderPatternFinder$1;)V
     .locals 0
-    .param p1, "x0"    # F
-    .param p2, "x1"    # Lcom/google/zxing/qrcode/detector/FinderPatternFinder$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 568
@@ -65,8 +65,8 @@
 # virtual methods
 .method public compare(Lcom/google/zxing/qrcode/detector/FinderPattern;Lcom/google/zxing/qrcode/detector/FinderPattern;)I
     .locals 4
-    .param p1, "center1"    # Lcom/google/zxing/qrcode/detector/FinderPattern;
-    .param p2, "center2"    # Lcom/google/zxing/qrcode/detector/FinderPattern;
+    .parameter "center1"
+    .parameter "center2"
 
     .prologue
     .line 575
@@ -94,7 +94,7 @@
     move-result v0
 
     .line 577
-    .local v0, "dA":F
+    .local v0, dA:F
     invoke-virtual {p1}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getEstimatedModuleSize()F
 
     move-result v2
@@ -108,7 +108,7 @@
     move-result v1
 
     .line 578
-    .local v1, "dB":F
+    .local v1, dB:F
     cmpg-float v2, v0, v1
 
     if-gez v2, :cond_0
@@ -116,14 +116,14 @@
     const/4 v2, 0x1
 
     .line 580
-    .end local v0    # "dA":F
-    .end local v1    # "dB":F
+    .end local v0           #dA:F
+    .end local v1           #dB:F
     :goto_0
     return v2
 
     .line 578
-    .restart local v0    # "dA":F
-    .restart local v1    # "dB":F
+    .restart local v0       #dA:F
+    .restart local v1       #dB:F
     :cond_0
     cmpl-float v2, v0, v1
 
@@ -139,8 +139,8 @@
     goto :goto_0
 
     .line 580
-    .end local v0    # "dA":F
-    .end local v1    # "dB":F
+    .end local v0           #dA:F
+    .end local v1           #dB:F
     :cond_2
     invoke-virtual {p2}, Lcom/google/zxing/qrcode/detector/FinderPattern;->getCount()I
 
@@ -157,17 +157,17 @@
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 1
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Ljava/lang/Object;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 568
     check-cast p1, Lcom/google/zxing/qrcode/detector/FinderPattern;
 
-    .end local p1    # "x0":Ljava/lang/Object;
+    .end local p1
     check-cast p2, Lcom/google/zxing/qrcode/detector/FinderPattern;
 
-    .end local p2    # "x1":Ljava/lang/Object;
+    .end local p2
     invoke-virtual {p0, p1, p2}, Lcom/google/zxing/qrcode/detector/FinderPatternFinder$CenterComparator;->compare(Lcom/google/zxing/qrcode/detector/FinderPattern;Lcom/google/zxing/qrcode/detector/FinderPattern;)I
 
     move-result v0

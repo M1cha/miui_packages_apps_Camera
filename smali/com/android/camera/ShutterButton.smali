@@ -47,8 +47,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 70
@@ -67,7 +67,7 @@
 
 .method static synthetic access$000(Lcom/android/camera/ShutterButton;)Lcom/android/camera/ShutterButton$OnShutterButtonListener;
     .locals 1
-    .param p0, "x0"    # Lcom/android/camera/ShutterButton;
+    .parameter "x0"
 
     .prologue
     .line 35
@@ -80,7 +80,7 @@
 # virtual methods
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 9
-    .param p1, "event"    # Landroid/view/MotionEvent;
+    .parameter "event"
 
     .prologue
     const/4 v7, 0x2
@@ -95,19 +95,19 @@
     move-result v0
 
     .line 117
-    .local v0, "action":I
+    .local v0, action:I
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v2
 
     .line 118
-    .local v2, "x":F
+    .local v2, x:F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v3
 
     .line 120
-    .local v3, "y":F
+    .local v3, y:F
     packed-switch v0, :pswitch_data_0
 
     .line 149
@@ -136,7 +136,7 @@
     move v1, v5
 
     .line 124
-    .local v1, "needClick":Z
+    .local v1, needClick:Z
     :goto_1
     iget-object v6, p0, Lcom/android/camera/ShutterButton;->mHandler:Landroid/os/Handler;
 
@@ -179,7 +179,7 @@
 
     goto :goto_0
 
-    .end local v1    # "needClick":Z
+    .end local v1           #needClick:Z
     :cond_3
     move v1, v4
 
@@ -301,7 +301,7 @@
 
 .method public setBackground(Landroid/graphics/drawable/Drawable;)V
     .locals 1
-    .param p1, "background"    # Landroid/graphics/drawable/Drawable;
+    .parameter "background"
 
     .prologue
     .line 97
@@ -315,7 +315,7 @@
 
 .method public setBackgroundResource(I)V
     .locals 1
-    .param p1, "resid"    # I
+    .parameter "resid"
 
     .prologue
     .line 92
@@ -329,7 +329,7 @@
 
 .method public setImageResource(I)V
     .locals 1
-    .param p1, "resid"    # I
+    .parameter "resid"
 
     .prologue
     .line 101
@@ -343,7 +343,7 @@
 
 .method public setLongClickable(Z)V
     .locals 0
-    .param p1, "longClickable"    # Z
+    .parameter "longClickable"
 
     .prologue
     .line 111
@@ -355,7 +355,7 @@
 
 .method public setOnShutterButtonListener(Lcom/android/camera/ShutterButton$OnShutterButtonListener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/camera/ShutterButton$OnShutterButtonListener;
+    .parameter "listener"
 
     .prologue
     .line 74
@@ -367,8 +367,8 @@
 
 .method public setOrientation(IZ)V
     .locals 1
-    .param p1, "orientation"    # I
-    .param p2, "animation"    # Z
+    .parameter "orientation"
+    .parameter "animation"
 
     .prologue
     .line 158
@@ -387,7 +387,7 @@
 
 .method public setPressed(Z)V
     .locals 1
-    .param p1, "pressed"    # Z
+    .parameter "pressed"
 
     .prologue
     .line 79

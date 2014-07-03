@@ -21,7 +21,8 @@
 # virtual methods
 .method public decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 15
-    .param p1, "image"    # Lcom/google/zxing/BinaryBitmap;
+    .parameter "image"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -43,7 +44,7 @@
 
     .prologue
     .line 60
-    .local p2, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p2, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     new-instance v12, Lcom/google/zxing/aztec/detector/Detector;
 
     invoke-virtual/range {p1 .. p1}, Lcom/google/zxing/BinaryBitmap;->getBlackMatrix()Lcom/google/zxing/common/BitMatrix;
@@ -57,13 +58,13 @@
     move-result-object v4
 
     .line 61
-    .local v4, "detectorResult":Lcom/google/zxing/aztec/AztecDetectorResult;
+    .local v4, detectorResult:Lcom/google/zxing/aztec/AztecDetectorResult;
     invoke-virtual {v4}, Lcom/google/zxing/aztec/AztecDetectorResult;->getPoints()[Lcom/google/zxing/ResultPoint;
 
     move-result-object v9
 
     .line 63
-    .local v9, "points":[Lcom/google/zxing/ResultPoint;
+    .local v9, points:[Lcom/google/zxing/ResultPoint;
     if-eqz p2, :cond_0
 
     .line 64
@@ -78,26 +79,26 @@
     check-cast v11, Lcom/google/zxing/ResultPointCallback;
 
     .line 65
-    .local v11, "rpcb":Lcom/google/zxing/ResultPointCallback;
+    .local v11, rpcb:Lcom/google/zxing/ResultPointCallback;
     if-eqz v11, :cond_0
 
     .line 66
     move-object v1, v9
 
-    .local v1, "arr$":[Lcom/google/zxing/ResultPoint;
+    .local v1, arr$:[Lcom/google/zxing/ResultPoint;
     array-length v7, v1
 
-    .local v7, "len$":I
+    .local v7, len$:I
     const/4 v6, 0x0
 
-    .local v6, "i$":I
+    .local v6, i$:I
     :goto_0
     if-ge v6, v7, :cond_0
 
     aget-object v8, v1, v6
 
     .line 67
-    .local v8, "point":Lcom/google/zxing/ResultPoint;
+    .local v8, point:Lcom/google/zxing/ResultPoint;
     invoke-interface {v11, v8}, Lcom/google/zxing/ResultPointCallback;->foundPossibleResultPoint(Lcom/google/zxing/ResultPoint;)V
 
     .line 66
@@ -106,11 +107,11 @@
     goto :goto_0
 
     .line 72
-    .end local v1    # "arr$":[Lcom/google/zxing/ResultPoint;
-    .end local v6    # "i$":I
-    .end local v7    # "len$":I
-    .end local v8    # "point":Lcom/google/zxing/ResultPoint;
-    .end local v11    # "rpcb":Lcom/google/zxing/ResultPointCallback;
+    .end local v1           #arr$:[Lcom/google/zxing/ResultPoint;
+    .end local v6           #i$:I
+    .end local v7           #len$:I
+    .end local v8           #point:Lcom/google/zxing/ResultPoint;
+    .end local v11           #rpcb:Lcom/google/zxing/ResultPointCallback;
     :cond_0
     new-instance v12, Lcom/google/zxing/aztec/decoder/Decoder;
 
@@ -121,7 +122,7 @@
     move-result-object v3
 
     .line 74
-    .local v3, "decoderResult":Lcom/google/zxing/common/DecoderResult;
+    .local v3, decoderResult:Lcom/google/zxing/common/DecoderResult;
     new-instance v10, Lcom/google/zxing/Result;
 
     invoke-virtual {v3}, Lcom/google/zxing/common/DecoderResult;->getText()Ljava/lang/String;
@@ -137,13 +138,13 @@
     invoke-direct {v10, v12, v13, v9, v14}, Lcom/google/zxing/Result;-><init>(Ljava/lang/String;[B[Lcom/google/zxing/ResultPoint;Lcom/google/zxing/BarcodeFormat;)V
 
     .line 76
-    .local v10, "result":Lcom/google/zxing/Result;
+    .local v10, result:Lcom/google/zxing/Result;
     invoke-virtual {v3}, Lcom/google/zxing/common/DecoderResult;->getByteSegments()Ljava/util/List;
 
     move-result-object v2
 
     .line 77
-    .local v2, "byteSegments":Ljava/util/List;, "Ljava/util/List<[B>;"
+    .local v2, byteSegments:Ljava/util/List;,"Ljava/util/List<[B>;"
     if-eqz v2, :cond_1
 
     .line 78
@@ -158,7 +159,7 @@
     move-result-object v5
 
     .line 81
-    .local v5, "ecLevel":Ljava/lang/String;
+    .local v5, ecLevel:Ljava/lang/String;
     if-eqz v5, :cond_2
 
     .line 82

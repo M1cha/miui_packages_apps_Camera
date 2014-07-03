@@ -42,7 +42,7 @@
     .line 33
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
-    const/high16 v1, 0x3fc00000
+    const/high16 v1, 0x3fc0
 
     invoke-direct {v0, v1}, Landroid/view/animation/DecelerateInterpolator;-><init>(F)V
 
@@ -97,9 +97,9 @@
 # virtual methods
 .method public addEntry(Lcom/android/gallery3d/data/Path;Landroid/graphics/Rect;Lcom/android/gallery3d/ui/RawTexture;)V
     .locals 2
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
-    .param p2, "rect"    # Landroid/graphics/Rect;
-    .param p3, "texture"    # Lcom/android/gallery3d/ui/RawTexture;
+    .parameter "path"
+    .parameter "rect"
+    .parameter "texture"
 
     .prologue
     .line 67
@@ -117,7 +117,7 @@
 
 .method protected onCalculate(F)V
     .locals 0
-    .param p1, "progress"    # F
+    .parameter "progress"
 
     .prologue
     .line 156

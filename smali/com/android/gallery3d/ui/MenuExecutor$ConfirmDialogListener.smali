@@ -27,8 +27,9 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/ui/MenuExecutor;ILcom/android/gallery3d/ui/MenuExecutor$ProgressListener;)V
     .locals 0
-    .param p2, "actionId"    # I
-    .param p3, "listener"    # Lcom/android/gallery3d/ui/MenuExecutor$ProgressListener;
+    .parameter
+    .parameter "actionId"
+    .parameter "listener"
 
     .prologue
     .line 251
@@ -37,7 +38,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 252
-    # setter for: Lcom/android/gallery3d/ui/MenuExecutor;->mActionId:I
+    #setter for: Lcom/android/gallery3d/ui/MenuExecutor;->mActionId:I
     invoke-static {p1, p2}, Lcom/android/gallery3d/ui/MenuExecutor;->access$402(Lcom/android/gallery3d/ui/MenuExecutor;I)I
 
     .line 253
@@ -51,7 +52,7 @@
 # virtual methods
 .method public onCancel(Landroid/content/DialogInterface;)V
     .locals 2
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
+    .parameter "dialog"
 
     .prologue
     .line 272
@@ -73,8 +74,8 @@
 
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
+    .parameter "dialog"
+    .parameter "which"
 
     .prologue
     .line 258
@@ -100,14 +101,14 @@
 
     iget-object v1, p0, Lcom/android/gallery3d/ui/MenuExecutor$ConfirmDialogListener;->this$0:Lcom/android/gallery3d/ui/MenuExecutor;
 
-    # getter for: Lcom/android/gallery3d/ui/MenuExecutor;->mActionId:I
+    #getter for: Lcom/android/gallery3d/ui/MenuExecutor;->mActionId:I
     invoke-static {v1}, Lcom/android/gallery3d/ui/MenuExecutor;->access$400(Lcom/android/gallery3d/ui/MenuExecutor;)I
 
     move-result v1
 
     iget-object v2, p0, Lcom/android/gallery3d/ui/MenuExecutor$ConfirmDialogListener;->mListener:Lcom/android/gallery3d/ui/MenuExecutor$ProgressListener;
 
-    # invokes: Lcom/android/gallery3d/ui/MenuExecutor;->onMenuClicked(ILcom/android/gallery3d/ui/MenuExecutor$ProgressListener;)V
+    #calls: Lcom/android/gallery3d/ui/MenuExecutor;->onMenuClicked(ILcom/android/gallery3d/ui/MenuExecutor$ProgressListener;)V
     invoke-static {v0, v1, v2}, Lcom/android/gallery3d/ui/MenuExecutor;->access$500(Lcom/android/gallery3d/ui/MenuExecutor;ILcom/android/gallery3d/ui/MenuExecutor$ProgressListener;)V
 
     .line 268

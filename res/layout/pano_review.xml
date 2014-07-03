@@ -16,7 +16,7 @@
             </RelativeLayout>
             <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip">
                 <com.android.camera.ui.RotateLayout android:layout_gravity="center" android:id="@id/pano_review_cancel_button_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
-                    <TextView android:textSize="@dimen/pano_review_saving_indication_size" android:textColor="@android:color/black" android:gravity="center" android:layout_gravity="center" android:id="@id/pano_review_cancel_button" android:background="@drawable/btn_pano_review_exit" android:paddingLeft="30.0dip" android:paddingRight="30.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/review_cancel" android:onClick="onCancelButtonClicked" />
+                    <TextView android:textSize="@dimen/pano_review_saving_indication_size" android:textColor="@*android:color/black" android:gravity="center" android:layout_gravity="center" android:id="@id/pano_review_cancel_button" android:background="@drawable/btn_pano_review_exit" android:paddingLeft="30.0dip" android:paddingRight="30.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/review_cancel" android:onClick="onCancelButtonClicked" />
                 </com.android.camera.ui.RotateLayout>
             </LinearLayout>
         </LinearLayout>

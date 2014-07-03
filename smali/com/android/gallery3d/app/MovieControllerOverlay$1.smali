@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/gallery3d/app/MovieControllerOverlay;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 120
@@ -43,7 +44,7 @@
     .line 122
     iget-object v0, p0, Lcom/android/gallery3d/app/MovieControllerOverlay$1;->this$0:Lcom/android/gallery3d/app/MovieControllerOverlay;
 
-    # invokes: Lcom/android/gallery3d/app/MovieControllerOverlay;->startHiding()V
+    #calls: Lcom/android/gallery3d/app/MovieControllerOverlay;->startHiding()V
     invoke-static {v0}, Lcom/android/gallery3d/app/MovieControllerOverlay;->access$000(Lcom/android/gallery3d/app/MovieControllerOverlay;)V
 
     .line 123

@@ -16,11 +16,11 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;IIII)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "rowCount"    # I
-    .param p3, "columnCount"    # I
-    .param p4, "childWidth"    # I
-    .param p5, "childHeight"    # I
+    .parameter "context"
+    .parameter "rowCount"
+    .parameter "columnCount"
+    .parameter "childWidth"
+    .parameter "childHeight"
 
     .prologue
     .line 270
@@ -45,8 +45,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 277
@@ -60,9 +60,9 @@
 # virtual methods
 .method public addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
     .locals 0
-    .param p1, "child"    # Landroid/view/View;
-    .param p2, "index"    # I
-    .param p3, "params"    # Landroid/view/ViewGroup$LayoutParams;
+    .parameter "child"
+    .parameter "index"
+    .parameter "params"
 
     .prologue
     .line 336
@@ -74,16 +74,16 @@
 
 .method protected doLayout(IIII)V
     .locals 2
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
+    .parameter "left"
+    .parameter "top"
+    .parameter "right"
+    .parameter "bottom"
 
     .prologue
     .line 330
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     invoke-virtual {p0}, Lcom/android/camera/ui/StaticGridView;->getChildCount()I
 
@@ -106,7 +106,7 @@
 
 .method protected layoutChildByIndex(I)V
     .locals 8
-    .param p1, "index"    # I
+    .parameter "index"
 
     .prologue
     .line 315
@@ -115,13 +115,13 @@
     div-int v1, p1, v2
 
     .line 316
-    .local v1, "rowIndex":I
+    .local v1, rowIndex:I
     iget v2, p0, Lcom/android/camera/ui/StaticGridView;->mColumnCount:I
 
     rem-int v0, p1, v2
 
     .line 317
-    .local v0, "columnIndex":I
+    .local v0, columnIndex:I
     invoke-virtual {p0, p1}, Lcom/android/camera/ui/StaticGridView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -162,8 +162,8 @@
 
 .method measureDimension(II)I
     .locals 1
-    .param p1, "measureSpec"    # I
-    .param p2, "contentDimension"    # I
+    .parameter "measureSpec"
+    .parameter "contentDimension"
 
     .prologue
     .line 303
@@ -176,13 +176,13 @@
     .line 311
     const/4 p2, 0x0
 
-    .end local p2    # "contentDimension":I
+    .end local p2
     :goto_0
     :sswitch_0
     return p2
 
     .line 307
-    .restart local p2    # "contentDimension":I
+    .restart local p2
     :sswitch_1
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -215,11 +215,11 @@
 
 .method protected onLayout(ZIIII)V
     .locals 0
-    .param p1, "changed"    # Z
-    .param p2, "left"    # I
-    .param p3, "top"    # I
-    .param p4, "right"    # I
-    .param p5, "bottom"    # I
+    .parameter "changed"
+    .parameter "left"
+    .parameter "top"
+    .parameter "right"
+    .parameter "bottom"
 
     .prologue
     .line 326
@@ -231,11 +231,11 @@
 
 .method protected onMeasure(II)V
     .locals 4
-    .param p1, "widthMeasureSpec"    # I
-    .param p2, "heightMeasureSpec"    # I
+    .parameter "widthMeasureSpec"
+    .parameter "heightMeasureSpec"
 
     .prologue
-    const/high16 v3, 0x40000000
+    const/high16 v3, 0x4000
 
     .line 294
     iget v0, p0, Lcom/android/camera/ui/StaticGridView;->mChildWidth:I
@@ -281,10 +281,10 @@
 
 .method public set(IIII)V
     .locals 2
-    .param p1, "rowCount"    # I
-    .param p2, "columnCount"    # I
-    .param p3, "childWidth"    # I
-    .param p4, "childHeight"    # I
+    .parameter "rowCount"
+    .parameter "columnCount"
+    .parameter "childWidth"
+    .parameter "childHeight"
 
     .prologue
     const/4 v1, 0x1

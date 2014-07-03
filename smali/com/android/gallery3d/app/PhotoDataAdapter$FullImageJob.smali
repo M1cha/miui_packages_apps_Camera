@@ -36,7 +36,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/app/PhotoDataAdapter;Lcom/android/gallery3d/data/MediaItem;)V
     .locals 0
-    .param p2, "item"    # Lcom/android/gallery3d/data/MediaItem;
+    .parameter
+    .parameter "item"
 
     .prologue
     .line 698
@@ -55,7 +56,7 @@
 # virtual methods
 .method public run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Landroid/graphics/BitmapRegionDecoder;
     .locals 2
-    .param p1, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
+    .parameter "jc"
 
     .prologue
     .line 704
@@ -63,7 +64,7 @@
 
     iget-object v1, p0, Lcom/android/gallery3d/app/PhotoDataAdapter$FullImageJob;->mItem:Lcom/android/gallery3d/data/MediaItem;
 
-    # invokes: Lcom/android/gallery3d/app/PhotoDataAdapter;->isTemporaryItem(Lcom/android/gallery3d/data/MediaItem;)Z
+    #calls: Lcom/android/gallery3d/app/PhotoDataAdapter;->isTemporaryItem(Lcom/android/gallery3d/data/MediaItem;)Z
     invoke-static {v0, v1}, Lcom/android/gallery3d/app/PhotoDataAdapter;->access$400(Lcom/android/gallery3d/app/PhotoDataAdapter;Lcom/android/gallery3d/data/MediaItem;)Z
 
     move-result v0
@@ -95,7 +96,7 @@
 
 .method public bridge synthetic run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
+    .parameter "x0"
 
     .prologue
     .line 695

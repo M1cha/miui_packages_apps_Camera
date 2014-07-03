@@ -50,8 +50,8 @@
 
 .method public constructor <init>(Lcom/android/gallery3d/data/Path;J)V
     .locals 0
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
-    .param p2, "version"    # J
+    .parameter "path"
+    .parameter "version"
 
     .prologue
     .line 58
@@ -83,7 +83,7 @@
 
 .method public static getTargetSize(I)I
     .locals 2
-    .param p0, "type"    # I
+    .parameter "type"
 
     .prologue
     .line 110
@@ -160,7 +160,7 @@
 
 .method public getLatLong([D)V
     .locals 3
-    .param p1, "latLong"    # [D
+    .parameter "latLong"
 
     .prologue
     const-wide/16 v1, 0x0

@@ -27,8 +27,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/android/camera/IconListPreference;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "pref"    # Lcom/android/camera/IconListPreference;
+    .parameter "context"
+    .parameter "pref"
 
     .prologue
     .line 45
@@ -131,7 +131,7 @@
     check-cast v0, Landroid/view/ViewGroup;
 
     .line 116
-    .local v0, "root":Landroid/view/ViewGroup;
+    .local v0, root:Landroid/view/ViewGroup;
     invoke-virtual {p0}, Lcom/android/camera/ui/IndicatorButton;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -210,7 +210,7 @@
 
 .method public varargs overrideSettings([Ljava/lang/String;)V
     .locals 4
-    .param p1, "keyvalues"    # [Ljava/lang/String;
+    .parameter "keyvalues"
 
     .prologue
     .line 94
@@ -221,7 +221,7 @@
     .line 95
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     array-length v3, p1
 
@@ -231,13 +231,13 @@
     aget-object v1, p1, v0
 
     .line 97
-    .local v1, "key":Ljava/lang/String;
+    .local v1, key:Ljava/lang/String;
     add-int/lit8 v3, v0, 0x1
 
     aget-object v2, p1, v3
 
     .line 98
-    .local v2, "value":Ljava/lang/String;
+    .local v2, value:Ljava/lang/String;
     invoke-virtual {p0}, Lcom/android/camera/ui/IndicatorButton;->getKey()Ljava/lang/String;
 
     move-result-object v3
@@ -260,8 +260,8 @@
     invoke-virtual {p0, v3}, Lcom/android/camera/ui/IndicatorButton;->setEnabled(Z)V
 
     .line 104
-    .end local v1    # "key":Ljava/lang/String;
-    .end local v2    # "value":Ljava/lang/String;
+    .end local v1           #key:Ljava/lang/String;
+    .end local v2           #value:Ljava/lang/String;
     :cond_0
     invoke-virtual {p0}, Lcom/android/camera/ui/IndicatorButton;->reloadPreference()V
 
@@ -269,8 +269,8 @@
     return-void
 
     .line 100
-    .restart local v1    # "key":Ljava/lang/String;
-    .restart local v2    # "value":Ljava/lang/String;
+    .restart local v1       #key:Ljava/lang/String;
+    .restart local v2       #value:Ljava/lang/String;
     :cond_1
     const/4 v3, 0x0
 
@@ -295,7 +295,7 @@
     move-result v2
 
     .line 53
-    .local v2, "singleIcon":I
+    .local v2, singleIcon:I
     iget-boolean v4, p0, Lcom/android/camera/ui/IndicatorButton;->mBackgroundLocked:Z
 
     if-eqz v4, :cond_0
@@ -326,7 +326,7 @@
     move-result-object v0
 
     .line 64
-    .local v0, "iconIds":[I
+    .local v0, iconIds:[I
     iget-object v4, p0, Lcom/android/camera/ui/IndicatorButton;->mOverrideValue:Ljava/lang/String;
 
     if-nez v4, :cond_3
@@ -345,7 +345,7 @@
     move-result v1
 
     .line 69
-    .local v1, "index":I
+    .local v1, index:I
     :goto_2
     if-ltz v1, :cond_2
 
@@ -366,7 +366,7 @@
     move-result-object v3
 
     .line 73
-    .local v3, "value":Ljava/lang/String;
+    .local v3, value:Ljava/lang/String;
     :goto_3
     const-string v4, "IndicatorButton"
 
@@ -398,8 +398,8 @@
     goto :goto_0
 
     .line 67
-    .end local v1    # "index":I
-    .end local v3    # "value":Ljava/lang/String;
+    .end local v1           #index:I
+    .end local v3           #value:Ljava/lang/String;
     :cond_3
     iget-object v4, p0, Lcom/android/camera/ui/IndicatorButton;->mPreference:Lcom/android/camera/IconListPreference;
 
@@ -409,7 +409,7 @@
 
     move-result v1
 
-    .restart local v1    # "index":I
+    .restart local v1       #index:I
     goto :goto_2
 
     .line 71
@@ -429,7 +429,7 @@
 
 .method public setSettingChangedListener(Lcom/android/camera/ui/IndicatorButton$Listener;)V
     .locals 0
-    .param p1, "listener"    # Lcom/android/camera/ui/IndicatorButton$Listener;
+    .parameter "listener"
 
     .prologue
     .line 41

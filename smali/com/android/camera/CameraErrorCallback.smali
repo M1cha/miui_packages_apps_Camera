@@ -13,7 +13,7 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
     .locals 0
-    .param p1, "activity"    # Landroid/app/Activity;
+    .parameter "activity"
 
     .prologue
     .line 43
@@ -30,8 +30,8 @@
 # virtual methods
 .method public onError(ILandroid/hardware/Camera;)V
     .locals 6
-    .param p1, "error"    # I
-    .param p2, "camera"    # Landroid/hardware/Camera;
+    .parameter "error"
+    .parameter "camera"
 
     .prologue
     .line 27

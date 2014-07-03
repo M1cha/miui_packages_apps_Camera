@@ -24,6 +24,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 2969
@@ -61,7 +62,7 @@
     .line 2973
     iget-object v0, p0, Lcom/android/camera/Camera$6;->this$0:Lcom/android/camera/Camera;
 
-    # invokes: Lcom/android/camera/Camera;->switchToOtherMode(I)V
+    #calls: Lcom/android/camera/Camera;->switchToOtherMode(I)V
     invoke-static {v0, v2}, Lcom/android/camera/Camera;->access$6300(Lcom/android/camera/Camera;I)V
 
     .line 2974

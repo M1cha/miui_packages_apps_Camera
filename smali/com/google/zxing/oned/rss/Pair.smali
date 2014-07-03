@@ -12,9 +12,9 @@
 # direct methods
 .method constructor <init>(IILcom/google/zxing/oned/rss/FinderPattern;)V
     .locals 0
-    .param p1, "value"    # I
-    .param p2, "checksumPortion"    # I
-    .param p3, "finderPattern"    # Lcom/google/zxing/oned/rss/FinderPattern;
+    .parameter "value"
+    .parameter "checksumPortion"
+    .parameter "finderPattern"
 
     .prologue
     .line 25

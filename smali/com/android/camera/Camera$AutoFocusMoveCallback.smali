@@ -24,6 +24,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/Camera;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 941
@@ -36,8 +37,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/Camera;Lcom/android/camera/Camera$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/camera/Camera;
-    .param p2, "x1"    # Lcom/android/camera/Camera$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 941
@@ -50,14 +51,14 @@
 # virtual methods
 .method public onAutoFocusMoving(ZLandroid/hardware/Camera;)V
     .locals 1
-    .param p1, "moving"    # Z
-    .param p2, "camera"    # Landroid/hardware/Camera;
+    .parameter "moving"
+    .parameter "camera"
 
     .prologue
     .line 946
     iget-object v0, p0, Lcom/android/camera/Camera$AutoFocusMoveCallback;->this$0:Lcom/android/camera/Camera;
 
-    # getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
+    #getter for: Lcom/android/camera/Camera;->mFocusManager:Lcom/android/camera/FocusManager;
     invoke-static {v0}, Lcom/android/camera/Camera;->access$700(Lcom/android/camera/Camera;)Lcom/android/camera/FocusManager;
 
     move-result-object v0

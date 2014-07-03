@@ -16,9 +16,9 @@
 
 .method public static e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .locals 1
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "tr"    # Ljava/lang/Throwable;
+    .parameter "tag"
+    .parameter "msg"
+    .parameter "tr"
 
     .prologue
     .line 51
@@ -31,9 +31,9 @@
 
 .method public static w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     .locals 1
-    .param p0, "tag"    # Ljava/lang/String;
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "tr"    # Ljava/lang/Throwable;
+    .parameter "tag"
+    .parameter "msg"
+    .parameter "tr"
 
     .prologue
     .line 42

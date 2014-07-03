@@ -21,6 +21,7 @@
 # direct methods
 .method constructor <init>(Lcom/android/zxing/WiFiConManager;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 56
@@ -35,14 +36,14 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
     .line 59
     iget-object v0, p0, Lcom/android/zxing/WiFiConManager$1;->this$0:Lcom/android/zxing/WiFiConManager;
 
-    # invokes: Lcom/android/zxing/WiFiConManager;->handleEvent(Landroid/content/Intent;)V
+    #calls: Lcom/android/zxing/WiFiConManager;->handleEvent(Landroid/content/Intent;)V
     invoke-static {v0, p2}, Lcom/android/zxing/WiFiConManager;->access$000(Lcom/android/zxing/WiFiConManager;Landroid/content/Intent;)V
 
     .line 60

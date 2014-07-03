@@ -10,7 +10,7 @@
 # direct methods
 .method public constructor <init>(Lcom/google/zxing/common/reedsolomon/GenericGF;)V
     .locals 0
-    .param p1, "field"    # Lcom/google/zxing/common/reedsolomon/GenericGF;
+    .parameter "field"
 
     .prologue
     .line 45
@@ -25,7 +25,7 @@
 
 .method private findErrorLocations(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;)[I
     .locals 6
-    .param p1, "errorLocator"    # Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .parameter "errorLocator"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
@@ -41,7 +41,7 @@
     move-result v2
 
     .line 146
-    .local v2, "numErrors":I
+    .local v2, numErrors:I
     if-ne v2, v5, :cond_1
 
     .line 147
@@ -64,14 +64,14 @@
     new-array v3, v2, [I
 
     .line 150
-    .local v3, "result":[I
+    .local v3, result:[I
     const/4 v0, 0x0
 
     .line 151
-    .local v0, "e":I
+    .local v0, e:I
     const/4 v1, 0x1
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     iget-object v4, p0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
@@ -124,22 +124,22 @@
 
 .method private findErrorMagnitudes(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;[I)[I
     .locals 11
-    .param p1, "errorEvaluator"    # Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    .param p2, "errorLocations"    # [I
+    .parameter "errorEvaluator"
+    .parameter "errorLocations"
 
     .prologue
     .line 165
     array-length v4, p2
 
     .line 166
-    .local v4, "s":I
+    .local v4, s:I
     new-array v3, v4, [I
 
     .line 167
-    .local v3, "result":[I
+    .local v3, result:[I
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     if-ge v1, v4, :cond_4
 
@@ -153,14 +153,14 @@
     move-result v7
 
     .line 169
-    .local v7, "xiInverse":I
+    .local v7, xiInverse:I
     const/4 v0, 0x1
 
     .line 170
-    .local v0, "denominator":I
+    .local v0, denominator:I
     const/4 v2, 0x0
 
-    .local v2, "j":I
+    .local v2, j:I
     :goto_1
     if-ge v2, v4, :cond_2
 
@@ -177,7 +177,7 @@
     move-result v5
 
     .line 177
-    .local v5, "term":I
+    .local v5, term:I
     and-int/lit8 v8, v5, 0x1
 
     if-nez v8, :cond_1
@@ -185,7 +185,7 @@
     or-int/lit8 v6, v5, 0x1
 
     .line 178
-    .local v6, "termPlus1":I
+    .local v6, termPlus1:I
     :goto_2
     iget-object v8, p0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
@@ -194,22 +194,22 @@
     move-result v0
 
     .line 170
-    .end local v5    # "term":I
-    .end local v6    # "termPlus1":I
+    .end local v5           #term:I
+    .end local v6           #termPlus1:I
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
     .line 177
-    .restart local v5    # "term":I
+    .restart local v5       #term:I
     :cond_1
     and-int/lit8 v6, v5, -0x2
 
     goto :goto_2
 
     .line 181
-    .end local v5    # "term":I
+    .end local v5           #term:I
     :cond_2
     iget-object v8, p0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
 
@@ -256,9 +256,9 @@
     goto :goto_0
 
     .line 187
-    .end local v0    # "denominator":I
-    .end local v2    # "j":I
-    .end local v7    # "xiInverse":I
+    .end local v0           #denominator:I
+    .end local v2           #j:I
+    .end local v7           #xiInverse:I
     :cond_4
     return-object v3
 .end method
@@ -267,8 +267,8 @@
 # virtual methods
 .method public decode([II)V
     .locals 17
-    .param p1, "received"    # [I
-    .param p2, "twoS"    # I
+    .parameter "received"
+    .parameter "twoS"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
@@ -288,20 +288,20 @@
     invoke-direct {v8, v14, v0}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;[I)V
 
     .line 60
-    .local v8, "poly":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .local v8, poly:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     move/from16 v0, p2
 
     new-array v13, v0, [I
 
     .line 61
-    .local v13, "syndromeCoefficients":[I
+    .local v13, syndromeCoefficients:[I
     const/4 v6, 0x1
 
     .line 62
-    .local v6, "noError":Z
+    .local v6, noError:Z
     const/4 v5, 0x0
 
-    .local v5, "i":I
+    .local v5, i:I
     :goto_0
     move/from16 v0, p2
 
@@ -331,7 +331,7 @@
     move-result v4
 
     .line 64
-    .local v4, "eval":I
+    .local v4, eval:I
     array-length v14, v13
 
     add-int/lit8 v14, v14, -0x1
@@ -353,7 +353,7 @@
     goto :goto_0
 
     .line 69
-    .end local v4    # "eval":I
+    .end local v4           #eval:I
     :cond_1
     if-eqz v6, :cond_3
 
@@ -372,7 +372,7 @@
     invoke-direct {v12, v14, v13}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;-><init>(Lcom/google/zxing/common/reedsolomon/GenericGF;[I)V
 
     .line 73
-    .local v12, "syndrome":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .local v12, syndrome:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     move-object/from16 v0, p0
 
     iget-object v14, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
@@ -394,19 +394,19 @@
     move-result-object v11
 
     .line 75
-    .local v11, "sigmaOmega":[Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .local v11, sigmaOmega:[Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     const/4 v14, 0x0
 
     aget-object v10, v11, v14
 
     .line 76
-    .local v10, "sigma":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .local v10, sigma:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     const/4 v14, 0x1
 
     aget-object v7, v11, v14
 
     .line 77
-    .local v7, "omega":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .local v7, omega:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     move-object/from16 v0, p0
 
     invoke-direct {v0, v10}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->findErrorLocations(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;)[I
@@ -414,7 +414,7 @@
     move-result-object v2
 
     .line 78
-    .local v2, "errorLocations":[I
+    .local v2, errorLocations:[I
     move-object/from16 v0, p0
 
     invoke-direct {v0, v7, v2}, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->findErrorMagnitudes(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;[I)[I
@@ -422,7 +422,7 @@
     move-result-object v3
 
     .line 79
-    .local v3, "errorMagnitudes":[I
+    .local v3, errorMagnitudes:[I
     const/4 v5, 0x0
 
     :goto_1
@@ -450,7 +450,7 @@
     sub-int v9, v14, v15
 
     .line 81
-    .local v9, "position":I
+    .local v9, position:I
     if-gez v9, :cond_4
 
     .line 82
@@ -482,9 +482,9 @@
 
 .method public runEuclideanAlgorithm(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;Lcom/google/zxing/common/reedsolomon/GenericGFPoly;I)[Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     .locals 20
-    .param p1, "a"    # Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    .param p2, "b"    # Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    .param p3, "R"    # I
+    .parameter "a"
+    .parameter "b"
+    .parameter "R"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/common/reedsolomon/ReedSolomonException;
@@ -511,23 +511,23 @@
     move-object/from16 v17, p1
 
     .line 93
-    .local v17, "temp":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .local v17, temp:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     move-object/from16 p1, p2
 
     .line 94
     move-object/from16 p2, v17
 
     .line 97
-    .end local v17    # "temp":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .end local v17           #temp:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     :cond_0
     move-object/from16 v9, p1
 
     .line 98
-    .local v9, "rLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .local v9, rLast:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     move-object/from16 v8, p2
 
     .line 99
-    .local v8, "r":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .local v8, r:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
@@ -539,7 +539,7 @@
     move-result-object v15
 
     .line 100
-    .local v15, "tLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .local v15, tLast:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
@@ -551,7 +551,7 @@
     move-result-object v14
 
     .line 103
-    .local v14, "t":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .local v14, t:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     :cond_1
     invoke-virtual {v8}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
 
@@ -569,11 +569,11 @@
     move-object v10, v9
 
     .line 105
-    .local v10, "rLastLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .local v10, rLastLast:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     move-object/from16 v16, v15
 
     .line 106
-    .local v16, "tLastLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .local v16, tLastLast:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     move-object v9, v8
 
     .line 107
@@ -611,7 +611,7 @@
     move-result-object v7
 
     .line 116
-    .local v7, "q":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .local v7, q:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     invoke-virtual {v9}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
 
     move-result v18
@@ -623,7 +623,7 @@
     move-result v3
 
     .line 117
-    .local v3, "denominatorLeadingTerm":I
+    .local v3, denominatorLeadingTerm:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
@@ -637,7 +637,7 @@
     move-result v4
 
     .line 118
-    .local v4, "dltInverse":I
+    .local v4, dltInverse:I
     :goto_0
     invoke-virtual {v8}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->getDegree()I
 
@@ -671,7 +671,7 @@
     sub-int v2, v18, v19
 
     .line 120
-    .local v2, "degreeDiff":I
+    .local v2, degreeDiff:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
@@ -697,7 +697,7 @@
     move-result v11
 
     .line 121
-    .local v11, "scale":I
+    .local v11, scale:I
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/zxing/common/reedsolomon/ReedSolomonDecoder;->field:Lcom/google/zxing/common/reedsolomon/GenericGF;
@@ -731,8 +731,8 @@
     goto :goto_0
 
     .line 125
-    .end local v2    # "degreeDiff":I
-    .end local v11    # "scale":I
+    .end local v2           #degreeDiff:I
+    .end local v11           #scale:I
     :cond_3
     invoke-virtual {v7, v15}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->multiply(Lcom/google/zxing/common/reedsolomon/GenericGFPoly;)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
@@ -771,11 +771,11 @@
     throw v18
 
     .line 132
-    .end local v3    # "denominatorLeadingTerm":I
-    .end local v4    # "dltInverse":I
-    .end local v7    # "q":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    .end local v10    # "rLastLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
-    .end local v16    # "tLastLast":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .end local v3           #denominatorLeadingTerm:I
+    .end local v4           #dltInverse:I
+    .end local v7           #q:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .end local v10           #rLastLast:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .end local v16           #tLastLast:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     :cond_4
     const/16 v18, 0x0
 
@@ -786,7 +786,7 @@
     move-result v13
 
     .line 133
-    .local v13, "sigmaTildeAtZero":I
+    .local v13, sigmaTildeAtZero:I
     if-nez v13, :cond_5
 
     .line 134
@@ -813,19 +813,19 @@
     move-result v5
 
     .line 138
-    .local v5, "inverse":I
+    .local v5, inverse:I
     invoke-virtual {v14, v5}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->multiply(I)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
     move-result-object v12
 
     .line 139
-    .local v12, "sigma":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .local v12, sigma:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     invoke-virtual {v8, v5}, Lcom/google/zxing/common/reedsolomon/GenericGFPoly;->multiply(I)Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
 
     move-result-object v6
 
     .line 140
-    .local v6, "omega":Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
+    .local v6, omega:Lcom/google/zxing/common/reedsolomon/GenericGFPoly;
     const/16 v18, 0x2
 
     move/from16 v0, v18

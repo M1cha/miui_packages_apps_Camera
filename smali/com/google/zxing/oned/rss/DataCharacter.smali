@@ -12,8 +12,8 @@
 # direct methods
 .method public constructor <init>(II)V
     .locals 0
-    .param p1, "value"    # I
-    .param p2, "checksumPortion"    # I
+    .parameter "value"
+    .parameter "checksumPortion"
 
     .prologue
     .line 24
@@ -33,7 +33,7 @@
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
     .locals 4
-    .param p1, "o"    # Ljava/lang/Object;
+    .parameter "o"
 
     .prologue
     const/4 v1, 0x0
@@ -55,7 +55,7 @@
     check-cast v0, Lcom/google/zxing/oned/rss/DataCharacter;
 
     .line 48
-    .local v0, "that":Lcom/google/zxing/oned/rss/DataCharacter;
+    .local v0, that:Lcom/google/zxing/oned/rss/DataCharacter;
     iget v2, p0, Lcom/google/zxing/oned/rss/DataCharacter;->value:I
 
     iget v3, v0, Lcom/google/zxing/oned/rss/DataCharacter;->value:I

@@ -34,8 +34,8 @@
 
 .method protected static checkAndNudgePoints(Lcom/google/zxing/common/BitMatrix;[F)V
     .locals 10
-    .param p0, "image"    # Lcom/google/zxing/common/BitMatrix;
-    .param p1, "points"    # [F
+    .parameter "image"
+    .parameter "points"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -53,20 +53,20 @@
     move-result v3
 
     .line 103
-    .local v3, "width":I
+    .local v3, width:I
     invoke-virtual {p0}, Lcom/google/zxing/common/BitMatrix;->getHeight()I
 
     move-result v0
 
     .line 105
-    .local v0, "height":I
+    .local v0, height:I
     const/4 v1, 0x1
 
     .line 106
-    .local v1, "nudged":Z
+    .local v1, nudged:Z
     const/4 v2, 0x0
 
-    .local v2, "offset":I
+    .local v2, offset:I
     :goto_0
     array-length v6, p1
 
@@ -80,7 +80,7 @@
     float-to-int v4, v6
 
     .line 108
-    .local v4, "x":I
+    .local v4, x:I
     add-int/lit8 v6, v2, 0x1
 
     aget v6, p1, v6
@@ -88,7 +88,7 @@
     float-to-int v5, v6
 
     .line 109
-    .local v5, "y":I
+    .local v5, y:I
     if-lt v4, v8, :cond_0
 
     if-gt v4, v3, :cond_0
@@ -173,8 +173,8 @@
     goto :goto_2
 
     .line 129
-    .end local v4    # "x":I
-    .end local v5    # "y":I
+    .end local v4           #x:I
+    .end local v5           #y:I
     :cond_6
     const/4 v1, 0x1
 
@@ -194,7 +194,7 @@
     float-to-int v4, v6
 
     .line 132
-    .restart local v4    # "x":I
+    .restart local v4       #x:I
     add-int/lit8 v6, v2, 0x1
 
     aget v6, p1, v6
@@ -202,7 +202,7 @@
     float-to-int v5, v6
 
     .line 133
-    .restart local v5    # "y":I
+    .restart local v5       #y:I
     if-lt v4, v8, :cond_7
 
     if-gt v4, v3, :cond_7
@@ -287,8 +287,8 @@
     goto :goto_5
 
     .line 152
-    .end local v4    # "x":I
-    .end local v5    # "y":I
+    .end local v4           #x:I
+    .end local v5           #y:I
     :cond_d
     return-void
 .end method

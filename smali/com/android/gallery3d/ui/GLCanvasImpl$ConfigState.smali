@@ -42,7 +42,7 @@
 
 .method synthetic constructor <init>(Lcom/android/gallery3d/ui/GLCanvasImpl$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/gallery3d/ui/GLCanvasImpl$1;
+    .parameter "x0"
 
     .prologue
     .line 750
@@ -55,7 +55,7 @@
 # virtual methods
 .method public restore(Lcom/android/gallery3d/ui/GLCanvasImpl;)V
     .locals 4
-    .param p1, "canvas"    # Lcom/android/gallery3d/ui/GLCanvasImpl;
+    .parameter "canvas"
 
     .prologue
     const/4 v3, 0x0
@@ -79,7 +79,7 @@
 
     aget v0, v0, v3
 
-    const/high16 v1, -0x800000
+    const/high16 v1, -0x80
 
     cmpl-float v0, v0, v1
 
@@ -88,7 +88,7 @@
     .line 758
     iget-object v0, p0, Lcom/android/gallery3d/ui/GLCanvasImpl$ConfigState;->mMatrix:[F
 
-    # getter for: Lcom/android/gallery3d/ui/GLCanvasImpl;->mMatrixValues:[F
+    #getter for: Lcom/android/gallery3d/ui/GLCanvasImpl;->mMatrixValues:[F
     invoke-static {p1}, Lcom/android/gallery3d/ui/GLCanvasImpl;->access$100(Lcom/android/gallery3d/ui/GLCanvasImpl;)[F
 
     move-result-object v1

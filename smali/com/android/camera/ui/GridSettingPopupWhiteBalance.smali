@@ -18,8 +18,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .parameter "context"
+    .parameter "attrs"
 
     .prologue
     .line 25
@@ -33,7 +33,7 @@
 # virtual methods
 .method public initialize(Lcom/android/camera/IconListPreference;)V
     .locals 13
-    .param p1, "preference"    # Lcom/android/camera/IconListPreference;
+    .parameter "preference"
 
     .prologue
     const/4 v12, 0x2
@@ -49,7 +49,7 @@
     move-result-object v2
 
     .line 32
-    .local v2, "context":Landroid/content/Context;
+    .local v2, context:Landroid/content/Context;
     iget-object v1, p0, Lcom/android/camera/ui/GridSettingPopupWhiteBalance;->mPreference:Lcom/android/camera/IconListPreference;
 
     invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->getEntries()[Ljava/lang/CharSequence;
@@ -57,7 +57,7 @@
     move-result-object v7
 
     .line 33
-    .local v7, "entries":[Ljava/lang/CharSequence;
+    .local v7, entries:[Ljava/lang/CharSequence;
     iget-object v1, p0, Lcom/android/camera/ui/GridSettingPopupWhiteBalance;->mPreference:Lcom/android/camera/IconListPreference;
 
     invoke-virtual {v1}, Lcom/android/camera/IconListPreference;->getImageIds()[I
@@ -65,7 +65,7 @@
     move-result-object v9
 
     .line 34
-    .local v9, "iconIds":[I
+    .local v9, iconIds:[I
     if-nez v9, :cond_0
 
     .line 35
@@ -93,10 +93,10 @@
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     .line 44
-    .local v3, "listItem":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;>;"
+    .local v3, listItem:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;>;"
     const/4 v8, 0x0
 
-    .local v8, "i":I
+    .local v8, i:I
     :goto_0
     array-length v1, v7
 
@@ -108,7 +108,7 @@
     invoke-direct {v10}, Ljava/util/HashMap;-><init>()V
 
     .line 46
-    .local v10, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
+    .local v10, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     const-string v1, "text"
 
     aget-object v4, v7, v8
@@ -142,7 +142,7 @@
     goto :goto_0
 
     .line 56
-    .end local v10    # "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
+    .end local v10           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/Object;>;"
     :cond_2
     new-instance v0, Lcom/android/camera/ui/GridSettingPopup$MySimpleAdapter;
 
@@ -169,7 +169,7 @@
     invoke-direct/range {v0 .. v6}, Lcom/android/camera/ui/GridSettingPopup$MySimpleAdapter;-><init>(Lcom/android/camera/ui/GridSettingPopup;Landroid/content/Context;Ljava/util/List;I[Ljava/lang/String;[I)V
 
     .line 60
-    .local v0, "listItemAdapter":Lcom/android/camera/ui/GridSettingPopup$MySimpleAdapter;
+    .local v0, listItemAdapter:Lcom/android/camera/ui/GridSettingPopup$MySimpleAdapter;
     iget-object v1, p0, Lcom/android/camera/ui/GridSettingPopupWhiteBalance;->mGridView:Landroid/widget/GridView;
 
     invoke-virtual {v1, v0}, Landroid/widget/GridView;->setAdapter(Landroid/widget/ListAdapter;)V
@@ -187,15 +187,15 @@
 
     .line 56
     :array_0
-    .array-data 4
-        0x7f0c0038
-        0x7f0c0039
+    .array-data 0x4
+        0x38t 0x0t 0xct 0x7ft
+        0x39t 0x0t 0xct 0x7ft
     .end array-data
 .end method
 
 .method public setShowKViewCallBack(Lcom/android/camera/ui/GridSettingPopupWhiteBalance$ShowKViewCallBack;)V
     .locals 0
-    .param p1, "showKViewCallBack"    # Lcom/android/camera/ui/GridSettingPopupWhiteBalance$ShowKViewCallBack;
+    .parameter "showKViewCallBack"
 
     .prologue
     .line 66

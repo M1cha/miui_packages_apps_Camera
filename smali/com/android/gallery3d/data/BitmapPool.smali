@@ -27,7 +27,7 @@
 # direct methods
 .method public constructor <init>(I)V
     .locals 1
-    .param p1, "poolLimit"    # I
+    .parameter "poolLimit"
 
     .prologue
     const/4 v0, -0x1
@@ -62,9 +62,9 @@
 
 .method public constructor <init>(III)V
     .locals 1
-    .param p1, "width"    # I
-    .param p2, "height"    # I
-    .param p3, "poolLimit"    # I
+    .parameter "width"
+    .parameter "height"
+    .parameter "poolLimit"
 
     .prologue
     .line 41
@@ -97,11 +97,11 @@
 
 .method private findCachedBitmap(Lcom/android/gallery3d/util/ThreadPool$JobContext;[BIILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
     .locals 2
-    .param p1, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
-    .param p2, "data"    # [B
-    .param p3, "offset"    # I
-    .param p4, "length"    # I
-    .param p5, "options"    # Landroid/graphics/BitmapFactory$Options;
+    .parameter "jc"
+    .parameter "data"
+    .parameter "offset"
+    .parameter "length"
+    .parameter "options"
 
     .prologue
     .line 99
@@ -165,11 +165,11 @@
 
 .method public decode(Lcom/android/gallery3d/util/ThreadPool$JobContext;[BIILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
     .locals 5
-    .param p1, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
-    .param p2, "data"    # [B
-    .param p3, "offset"    # I
-    .param p4, "length"    # I
-    .param p5, "options"    # Landroid/graphics/BitmapFactory$Options;
+    .parameter "jc"
+    .parameter "data"
+    .parameter "offset"
+    .parameter "length"
+    .parameter "options"
 
     .prologue
     const/4 v3, 0x0
@@ -181,11 +181,11 @@
 
     new-instance p5, Landroid/graphics/BitmapFactory$Options;
 
-    .end local p5    # "options":Landroid/graphics/BitmapFactory$Options;
+    .end local p5
     invoke-direct {p5}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
     .line 114
-    .restart local p5    # "options":Landroid/graphics/BitmapFactory$Options;
+    .restart local p5
     :cond_0
     iget v2, p5, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
@@ -218,7 +218,7 @@
     move-result-object v0
 
     .line 120
-    .local v0, "bitmap":Landroid/graphics/Bitmap;
+    .local v0, bitmap:Landroid/graphics/Bitmap;
     iget-object v2, p5, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v2, :cond_2
@@ -240,7 +240,7 @@
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 131
-    .end local v0    # "bitmap":Landroid/graphics/Bitmap;
+    .end local v0           #bitmap:Landroid/graphics/Bitmap;
     :cond_2
     :goto_1
     return-object v0
@@ -256,7 +256,7 @@
     move-exception v1
 
     .line 126
-    .local v1, "e":Ljava/lang/IllegalArgumentException;
+    .local v1, e:Ljava/lang/IllegalArgumentException;
     iget-object v2, p5, Landroid/graphics/BitmapFactory$Options;->inBitmap:Landroid/graphics/Bitmap;
 
     if-nez v2, :cond_4
@@ -307,7 +307,7 @@
     move-result v0
 
     .line 62
-    .local v0, "size":I
+    .local v0, size:I
     if-lez v0, :cond_0
 
     iget-object v1, p0, Lcom/android/gallery3d/data/BitmapPool;->mPool:Ljava/util/ArrayList;
@@ -333,7 +333,7 @@
     goto :goto_0
 
     .line 60
-    .end local v0    # "size":I
+    .end local v0           #size:I
     :catchall_0
     move-exception v1
 
@@ -344,8 +344,8 @@
 
 .method public declared-synchronized getBitmap(II)Landroid/graphics/Bitmap;
     .locals 3
-    .param p1, "width"    # I
-    .param p2, "height"    # I
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 67
@@ -370,7 +370,7 @@
 
     add-int/lit8 v1, v2, -0x1
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_1
     if-ltz v1, :cond_2
 
@@ -384,7 +384,7 @@
     check-cast v0, Landroid/graphics/Bitmap;
 
     .line 70
-    .local v0, "b":Landroid/graphics/Bitmap;
+    .local v0, b:Landroid/graphics/Bitmap;
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
@@ -409,36 +409,36 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 74
-    .end local v0    # "b":Landroid/graphics/Bitmap;
+    .end local v0           #b:Landroid/graphics/Bitmap;
     :goto_2
     monitor-exit p0
 
     return-object v2
 
     .line 67
-    .end local v1    # "i":I
+    .end local v1           #i:I
     :cond_0
     const/4 v2, 0x0
 
     goto :goto_0
 
     .line 68
-    .restart local v0    # "b":Landroid/graphics/Bitmap;
-    .restart local v1    # "i":I
+    .restart local v0       #b:Landroid/graphics/Bitmap;
+    .restart local v1       #i:I
     :cond_1
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_1
 
     .line 74
-    .end local v0    # "b":Landroid/graphics/Bitmap;
+    .end local v0           #b:Landroid/graphics/Bitmap;
     :cond_2
     const/4 v2, 0x0
 
     goto :goto_2
 
     .line 67
-    .end local v1    # "i":I
+    .end local v1           #i:I
     :catchall_0
     move-exception v2
 
@@ -449,7 +449,7 @@
 
 .method public recycle(Landroid/graphics/Bitmap;)V
     .locals 2
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
+    .parameter "bitmap"
 
     .prologue
     .line 81

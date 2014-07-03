@@ -44,6 +44,7 @@
 # virtual methods
 .method public dataToString(Ljava/lang/Object;)Ljava/lang/String;
     .locals 2
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TD;)",
@@ -53,8 +54,8 @@
 
     .prologue
     .line 341
-    .local p0, "this":Landroid/support/v4/content/Loader;, "Landroid/support/v4/content/Loader<TD;>;"
-    .local p1, "data":Ljava/lang/Object;, "TD;"
+    .local p0, this:Landroid/support/v4/content/Loader;,"Landroid/support/v4/content/Loader<TD;>;"
+    .local p1, data:Ljava/lang/Object;,"TD;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x40
@@ -62,7 +63,7 @@
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 342
-    .local v0, "sb":Ljava/lang/StringBuilder;
+    .local v0, sb:Ljava/lang/StringBuilder;
     invoke-static {p1, v0}, Landroid/support/v4/util/DebugUtils;->buildShortClassTag(Ljava/lang/Object;Ljava/lang/StringBuilder;)V
 
     .line 343
@@ -80,14 +81,14 @@
 
 .method public dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
     .locals 1
-    .param p1, "prefix"    # Ljava/lang/String;
-    .param p2, "fd"    # Ljava/io/FileDescriptor;
-    .param p3, "writer"    # Ljava/io/PrintWriter;
-    .param p4, "args"    # [Ljava/lang/String;
+    .parameter "prefix"
+    .parameter "fd"
+    .parameter "writer"
+    .parameter "args"
 
     .prologue
     .line 366
-    .local p0, "this":Landroid/support/v4/content/Loader;, "Landroid/support/v4/content/Loader<TD;>;"
+    .local p0, this:Landroid/support/v4/content/Loader;,"Landroid/support/v4/content/Loader<TD;>;"
     invoke-virtual {p3, p1}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "mId="
@@ -154,7 +155,7 @@
 
     .prologue
     .line 304
-    .local p0, "this":Landroid/support/v4/content/Loader;, "Landroid/support/v4/content/Loader<TD;>;"
+    .local p0, this:Landroid/support/v4/content/Loader;,"Landroid/support/v4/content/Loader<TD;>;"
     return-void
 .end method
 
@@ -163,7 +164,7 @@
 
     .prologue
     .line 206
-    .local p0, "this":Landroid/support/v4/content/Loader;, "Landroid/support/v4/content/Loader<TD;>;"
+    .local p0, this:Landroid/support/v4/content/Loader;,"Landroid/support/v4/content/Loader<TD;>;"
     return-void
 .end method
 
@@ -172,13 +173,14 @@
 
     .prologue
     .line 253
-    .local p0, "this":Landroid/support/v4/content/Loader;, "Landroid/support/v4/content/Loader<TD;>;"
+    .local p0, this:Landroid/support/v4/content/Loader;,"Landroid/support/v4/content/Loader<TD;>;"
     return-void
 .end method
 
 .method public registerListener(ILandroid/support/v4/content/Loader$OnLoadCompleteListener;)V
     .locals 2
-    .param p1, "id"    # I
+    .parameter "id"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -189,8 +191,8 @@
 
     .prologue
     .line 129
-    .local p0, "this":Landroid/support/v4/content/Loader;, "Landroid/support/v4/content/Loader<TD;>;"
-    .local p2, "listener":Landroid/support/v4/content/Loader$OnLoadCompleteListener;, "Landroid/support/v4/content/Loader$OnLoadCompleteListener<TD;>;"
+    .local p0, this:Landroid/support/v4/content/Loader;,"Landroid/support/v4/content/Loader<TD;>;"
+    .local p2, listener:Landroid/support/v4/content/Loader$OnLoadCompleteListener;,"Landroid/support/v4/content/Loader$OnLoadCompleteListener<TD;>;"
     iget-object v0, p0, Landroid/support/v4/content/Loader;->mListener:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
 
     if-eqz v0, :cond_0
@@ -219,7 +221,7 @@
     .locals 2
 
     .prologue
-    .local p0, "this":Landroid/support/v4/content/Loader;, "Landroid/support/v4/content/Loader<TD;>;"
+    .local p0, this:Landroid/support/v4/content/Loader;,"Landroid/support/v4/content/Loader<TD;>;"
     const/4 v1, 0x0
 
     .line 290
@@ -247,7 +249,7 @@
     .locals 2
 
     .prologue
-    .local p0, "this":Landroid/support/v4/content/Loader;, "Landroid/support/v4/content/Loader<TD;>;"
+    .local p0, this:Landroid/support/v4/content/Loader;,"Landroid/support/v4/content/Loader<TD;>;"
     const/4 v1, 0x0
 
     .line 194
@@ -273,7 +275,7 @@
 
     .prologue
     .line 242
-    .local p0, "this":Landroid/support/v4/content/Loader;, "Landroid/support/v4/content/Loader<TD;>;"
+    .local p0, this:Landroid/support/v4/content/Loader;,"Landroid/support/v4/content/Loader<TD;>;"
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/support/v4/content/Loader;->mStarted:Z
@@ -290,7 +292,7 @@
 
     .prologue
     .line 349
-    .local p0, "this":Landroid/support/v4/content/Loader;, "Landroid/support/v4/content/Loader<TD;>;"
+    .local p0, this:Landroid/support/v4/content/Loader;,"Landroid/support/v4/content/Loader<TD;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
     const/16 v1, 0x40
@@ -298,7 +300,7 @@
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 350
-    .local v0, "sb":Ljava/lang/StringBuilder;
+    .local v0, sb:Ljava/lang/StringBuilder;
     invoke-static {p0, v0}, Landroid/support/v4/util/DebugUtils;->buildShortClassTag(Ljava/lang/Object;Ljava/lang/StringBuilder;)V
 
     .line 351
@@ -326,6 +328,7 @@
 
 .method public unregisterListener(Landroid/support/v4/content/Loader$OnLoadCompleteListener;)V
     .locals 2
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -336,8 +339,8 @@
 
     .prologue
     .line 142
-    .local p0, "this":Landroid/support/v4/content/Loader;, "Landroid/support/v4/content/Loader<TD;>;"
-    .local p1, "listener":Landroid/support/v4/content/Loader$OnLoadCompleteListener;, "Landroid/support/v4/content/Loader$OnLoadCompleteListener<TD;>;"
+    .local p0, this:Landroid/support/v4/content/Loader;,"Landroid/support/v4/content/Loader<TD;>;"
+    .local p1, listener:Landroid/support/v4/content/Loader$OnLoadCompleteListener;,"Landroid/support/v4/content/Loader$OnLoadCompleteListener<TD;>;"
     iget-object v0, p0, Landroid/support/v4/content/Loader;->mListener:Landroid/support/v4/content/Loader$OnLoadCompleteListener;
 
     if-nez v0, :cond_0

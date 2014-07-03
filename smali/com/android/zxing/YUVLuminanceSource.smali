@@ -18,13 +18,13 @@
 # direct methods
 .method public constructor <init>([BIIIIII)V
     .locals 2
-    .param p1, "yuvData"    # [B
-    .param p2, "dataWidth"    # I
-    .param p3, "dataHeight"    # I
-    .param p4, "left"    # I
-    .param p5, "top"    # I
-    .param p6, "width"    # I
-    .param p7, "height"    # I
+    .parameter "yuvData"
+    .parameter "dataWidth"
+    .parameter "dataHeight"
+    .parameter "left"
+    .parameter "top"
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 22
@@ -81,13 +81,13 @@
     move-result v5
 
     .line 52
-    .local v5, "width":I
+    .local v5, width:I
     invoke-virtual {p0}, Lcom/android/zxing/YUVLuminanceSource;->getHeight()I
 
     move-result v1
 
     .line 56
-    .local v1, "height":I
+    .local v1, height:I
     iget v8, p0, Lcom/android/zxing/YUVLuminanceSource;->mDataWidth:I
 
     if-ne v5, v8, :cond_1
@@ -109,11 +109,11 @@
     mul-int v0, v5, v1
 
     .line 61
-    .local v0, "area":I
+    .local v0, area:I
     new-array v3, v0, [B
 
     .line 62
-    .local v3, "matrix":[B
+    .local v3, matrix:[B
     iget v8, p0, Lcom/android/zxing/YUVLuminanceSource;->mTop:I
 
     iget v9, p0, Lcom/android/zxing/YUVLuminanceSource;->mDataWidth:I
@@ -125,7 +125,7 @@
     add-int v2, v8, v9
 
     .line 65
-    .local v2, "inputOffset":I
+    .local v2, inputOffset:I
     iget v8, p0, Lcom/android/zxing/YUVLuminanceSource;->mDataWidth:I
 
     if-ne v5, v8, :cond_2
@@ -144,10 +144,10 @@
     iget-object v7, p0, Lcom/android/zxing/YUVLuminanceSource;->mYUVData:[B
 
     .line 72
-    .local v7, "yuv":[B
+    .local v7, yuv:[B
     const/4 v6, 0x0
 
-    .local v6, "y":I
+    .local v6, y:I
     :goto_1
     if-ge v6, v1, :cond_0
 
@@ -155,7 +155,7 @@
     mul-int v4, v6, v5
 
     .line 74
-    .local v4, "outputOffset":I
+    .local v4, outputOffset:I
     invoke-static {v7, v2, v3, v4, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 75
@@ -171,8 +171,8 @@
 
 .method public getRow(I[B)[B
     .locals 5
-    .param p1, "y"    # I
-    .param p2, "row"    # [B
+    .parameter "y"
+    .parameter "row"
 
     .prologue
     .line 37
@@ -217,7 +217,7 @@
     move-result v1
 
     .line 41
-    .local v1, "width":I
+    .local v1, width:I
     if-eqz p2, :cond_2
 
     array-length v2, p2
@@ -243,7 +243,7 @@
     add-int v0, v2, v3
 
     .line 45
-    .local v0, "offset":I
+    .local v0, offset:I
     iget-object v2, p0, Lcom/android/zxing/YUVLuminanceSource;->mYUVData:[B
 
     const/4 v3, 0x0

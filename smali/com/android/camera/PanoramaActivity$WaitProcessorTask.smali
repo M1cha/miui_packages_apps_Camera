@@ -32,6 +32,7 @@
 # direct methods
 .method private constructor <init>(Lcom/android/camera/PanoramaActivity;)V
     .locals 0
+    .parameter
 
     .prologue
     .line 1299
@@ -44,8 +45,8 @@
 
 .method synthetic constructor <init>(Lcom/android/camera/PanoramaActivity;Lcom/android/camera/PanoramaActivity$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/android/camera/PanoramaActivity;
-    .param p2, "x1"    # Lcom/android/camera/PanoramaActivity$1;
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
     .line 1299
@@ -58,13 +59,13 @@
 # virtual methods
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # [Ljava/lang/Object;
+    .parameter "x0"
 
     .prologue
     .line 1299
     check-cast p1, [Ljava/lang/Void;
 
-    .end local p1    # "x0":[Ljava/lang/Object;
+    .end local p1
     invoke-virtual {p0, p1}, Lcom/android/camera/PanoramaActivity$WaitProcessorTask;->doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
 
     move-result-object v0
@@ -74,13 +75,13 @@
 
 .method protected varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Void;
     .locals 2
-    .param p1, "params"    # [Ljava/lang/Void;
+    .parameter "params"
 
     .prologue
     .line 1302
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$WaitProcessorTask;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    # getter for: Lcom/android/camera/PanoramaActivity;->mMosaicFrameProcessor:Lcom/android/camera/MosaicFrameProcessor;
+    #getter for: Lcom/android/camera/PanoramaActivity;->mMosaicFrameProcessor:Lcom/android/camera/MosaicFrameProcessor;
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$600(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/MosaicFrameProcessor;
 
     move-result-object v1
@@ -98,7 +99,7 @@
 
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$WaitProcessorTask;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    # getter for: Lcom/android/camera/PanoramaActivity;->mMosaicFrameProcessor:Lcom/android/camera/MosaicFrameProcessor;
+    #getter for: Lcom/android/camera/PanoramaActivity;->mMosaicFrameProcessor:Lcom/android/camera/MosaicFrameProcessor;
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$600(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/MosaicFrameProcessor;
 
     move-result-object v0
@@ -115,15 +116,15 @@
     :try_start_1
     iget-object v0, p0, Lcom/android/camera/PanoramaActivity$WaitProcessorTask;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    # getter for: Lcom/android/camera/PanoramaActivity;->mMosaicFrameProcessor:Lcom/android/camera/MosaicFrameProcessor;
+    #getter for: Lcom/android/camera/PanoramaActivity;->mMosaicFrameProcessor:Lcom/android/camera/MosaicFrameProcessor;
     invoke-static {v0}, Lcom/android/camera/PanoramaActivity;->access$600(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/MosaicFrameProcessor;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Object;->wait()V
     :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_0
 
@@ -156,13 +157,13 @@
 
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
-    .param p1, "x0"    # Ljava/lang/Object;
+    .parameter "x0"
 
     .prologue
     .line 1299
     check-cast p1, Ljava/lang/Void;
 
-    .end local p1    # "x0":Ljava/lang/Object;
+    .end local p1
     invoke-virtual {p0, p1}, Lcom/android/camera/PanoramaActivity$WaitProcessorTask;->onPostExecute(Ljava/lang/Void;)V
 
     return-void
@@ -170,7 +171,7 @@
 
 .method protected onPostExecute(Ljava/lang/Void;)V
     .locals 4
-    .param p1, "result"    # Ljava/lang/Void;
+    .parameter "result"
 
     .prologue
     .line 1316
@@ -178,13 +179,13 @@
 
     const/4 v3, 0x0
 
-    # setter for: Lcom/android/camera/PanoramaActivity;->mWaitProcessorTask:Landroid/os/AsyncTask;
+    #setter for: Lcom/android/camera/PanoramaActivity;->mWaitProcessorTask:Landroid/os/AsyncTask;
     invoke-static {v2, v3}, Lcom/android/camera/PanoramaActivity;->access$3402(Lcom/android/camera/PanoramaActivity;Landroid/os/AsyncTask;)Landroid/os/AsyncTask;
 
     .line 1317
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$WaitProcessorTask;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    # getter for: Lcom/android/camera/PanoramaActivity;->mRotateDialog:Lcom/android/camera/RotateDialogController;
+    #getter for: Lcom/android/camera/PanoramaActivity;->mRotateDialog:Lcom/android/camera/RotateDialogController;
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$1400(Lcom/android/camera/PanoramaActivity;)Lcom/android/camera/RotateDialogController;
 
     move-result-object v2
@@ -207,13 +208,13 @@
     .line 1319
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$WaitProcessorTask;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    # invokes: Lcom/android/camera/PanoramaActivity;->initMosaicFrameProcessorIfNeeded()V
+    #calls: Lcom/android/camera/PanoramaActivity;->initMosaicFrameProcessorIfNeeded()V
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$3500(Lcom/android/camera/PanoramaActivity;)V
 
     .line 1320
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$WaitProcessorTask;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    # getter for: Lcom/android/camera/PanoramaActivity;->mPreviewArea:Landroid/view/View;
+    #getter for: Lcom/android/camera/PanoramaActivity;->mPreviewArea:Landroid/view/View;
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$3600(Lcom/android/camera/PanoramaActivity;)Landroid/view/View;
 
     move-result-object v2
@@ -223,10 +224,10 @@
     move-result v1
 
     .line 1321
-    .local v1, "w":I
+    .local v1, w:I
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$WaitProcessorTask;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    # getter for: Lcom/android/camera/PanoramaActivity;->mPreviewArea:Landroid/view/View;
+    #getter for: Lcom/android/camera/PanoramaActivity;->mPreviewArea:Landroid/view/View;
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$3600(Lcom/android/camera/PanoramaActivity;)Landroid/view/View;
 
     move-result-object v2
@@ -236,7 +237,7 @@
     move-result v0
 
     .line 1322
-    .local v0, "h":I
+    .local v0, h:I
     if-eqz v1, :cond_0
 
     if-eqz v0, :cond_0
@@ -244,14 +245,14 @@
     .line 1323
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$WaitProcessorTask;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    # invokes: Lcom/android/camera/PanoramaActivity;->configMosaicPreview(II)V
+    #calls: Lcom/android/camera/PanoramaActivity;->configMosaicPreview(II)V
     invoke-static {v2, v1, v0}, Lcom/android/camera/PanoramaActivity;->access$3700(Lcom/android/camera/PanoramaActivity;II)V
 
     .line 1325
     :cond_0
     iget-object v2, p0, Lcom/android/camera/PanoramaActivity$WaitProcessorTask;->this$0:Lcom/android/camera/PanoramaActivity;
 
-    # invokes: Lcom/android/camera/PanoramaActivity;->resetToPreview()V
+    #calls: Lcom/android/camera/PanoramaActivity;->resetToPreview()V
     invoke-static {v2}, Lcom/android/camera/PanoramaActivity;->access$900(Lcom/android/camera/PanoramaActivity;)V
 
     .line 1326

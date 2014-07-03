@@ -18,7 +18,7 @@
 # direct methods
 .method public constructor <init>(Landroid/app/Activity;)V
     .locals 1
-    .param p1, "activity"    # Landroid/app/Activity;
+    .parameter "activity"
 
     .prologue
     .line 21
@@ -131,7 +131,7 @@
     move-result-object v0
 
     .line 155
-    .local v0, "value":Ljava/lang/String;
+    .local v0, value:Ljava/lang/String;
     const v1, 0x7f0d017f
 
     invoke-virtual {p0, v1}, Lcom/android/camera/ui/CameraSettingsStatusBar;->getString(I)Ljava/lang/String;
@@ -147,7 +147,7 @@
 
 .method private updateExposureOnScreenIndicator(I)V
     .locals 2
-    .param p1, "value"    # I
+    .parameter "value"
 
     .prologue
     .line 62
@@ -192,7 +192,7 @@
 
 .method private updateFocusOnScreenIndicator(Ljava/lang/String;)V
     .locals 3
-    .param p1, "value"    # Ljava/lang/String;
+    .parameter "value"
 
     .prologue
     const/16 v1, 0x8
@@ -282,7 +282,7 @@
 
 .method private updateISOOnScreenIndicator(Ljava/lang/String;)V
     .locals 3
-    .param p1, "value"    # Ljava/lang/String;
+    .parameter "value"
 
     .prologue
     const/4 v2, 0x0
@@ -536,7 +536,7 @@
 # virtual methods
 .method public updateAudioOnScreenIndicator(Z)V
     .locals 2
-    .param p1, "visible"    # Z
+    .parameter "visible"
 
     .prologue
     .line 102
@@ -581,8 +581,8 @@
 
 .method public updateOnScreenIndicators(Landroid/hardware/Camera$Parameters;Z)V
     .locals 4
-    .param p1, "parameters"    # Landroid/hardware/Camera$Parameters;
-    .param p2, "isHDR"    # Z
+    .parameter "parameters"
+    .parameter "isHDR"
 
     .prologue
     const/16 v3, 0x8
@@ -633,7 +633,7 @@
     const/4 v0, 0x1
 
     .line 42
-    .local v0, "isSceneOn":Z
+    .local v0, isSceneOn:Z
     :goto_1
     if-nez v0, :cond_3
 
@@ -665,14 +665,14 @@
     goto :goto_0
 
     .line 37
-    .end local v0    # "isSceneOn":Z
+    .end local v0           #isSceneOn:Z
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_1
 
     .line 48
-    .restart local v0    # "isSceneOn":Z
+    .restart local v0       #isSceneOn:Z
     :cond_3
     iget-object v1, p0, Lcom/android/camera/ui/CameraSettingsStatusBar;->mWhiteBalanceIndicator:Landroid/widget/ImageView;
 

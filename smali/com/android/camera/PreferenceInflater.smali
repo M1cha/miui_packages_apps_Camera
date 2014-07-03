@@ -82,7 +82,7 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
-    .param p1, "context"    # Landroid/content/Context;
+    .parameter "context"
 
     .prologue
     .line 46
@@ -97,7 +97,7 @@
 
 .method private inflate(Lorg/xmlpull/v1/XmlPullParser;)Lcom/android/camera/CameraPreference;
     .locals 11
-    .param p1, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
+    .parameter "parser"
 
     .prologue
     const/4 v10, 0x2
@@ -112,13 +112,13 @@
     move-result-object v1
 
     .line 78
-    .local v1, "attrs":Landroid/util/AttributeSet;
+    .local v1, attrs:Landroid/util/AttributeSet;
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
     .line 79
-    .local v4, "list":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/camera/CameraPreference;>;"
+    .local v4, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/camera/CameraPreference;>;"
     new-array v0, v10, [Ljava/lang/Object;
 
     iget-object v7, p0, Lcom/android/camera/PreferenceInflater;->mContext:Landroid/content/Context;
@@ -128,14 +128,14 @@
     aput-object v1, v0, v8
 
     .line 82
-    .local v0, "args":[Ljava/lang/Object;
+    .local v0, args:[Ljava/lang/Object;
     :try_start_0
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v6
 
     .line 83
-    .local v6, "type":I
+    .local v6, type:I
     :goto_0
     if-eq v6, v8, :cond_3
 
@@ -162,13 +162,13 @@
     move-result-object v5
 
     .line 87
-    .local v5, "pref":Lcom/android/camera/CameraPreference;
+    .local v5, pref:Lcom/android/camera/CameraPreference;
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v2
 
     .line 88
-    .local v2, "depth":I
+    .local v2, depth:I
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v7
@@ -199,14 +199,14 @@
     goto :goto_1
 
     .line 102
-    .end local v2    # "depth":I
-    .end local v5    # "pref":Lcom/android/camera/CameraPreference;
-    .end local v6    # "type":I
+    .end local v2           #depth:I
+    .end local v5           #pref:Lcom/android/camera/CameraPreference;
+    .end local v6           #type:I
     :catch_0
     move-exception v3
 
     .line 103
-    .local v3, "e":Lorg/xmlpull/v1/XmlPullParserException;
+    .local v3, e:Lorg/xmlpull/v1/XmlPullParserException;
     new-instance v7, Landroid/view/InflateException;
 
     invoke-direct {v7, v3}, Landroid/view/InflateException;-><init>(Ljava/lang/Throwable;)V
@@ -214,10 +214,10 @@
     throw v7
 
     .line 91
-    .end local v3    # "e":Lorg/xmlpull/v1/XmlPullParserException;
-    .restart local v2    # "depth":I
-    .restart local v5    # "pref":Lcom/android/camera/CameraPreference;
-    .restart local v6    # "type":I
+    .end local v3           #e:Lorg/xmlpull/v1/XmlPullParserException;
+    .restart local v2       #depth:I
+    .restart local v5       #pref:Lcom/android/camera/CameraPreference;
+    .restart local v6       #type:I
     :cond_2
     add-int/lit8 v7, v2, -0x1
 
@@ -230,14 +230,14 @@
     goto :goto_2
 
     .line 104
-    .end local v2    # "depth":I
-    .end local v5    # "pref":Lcom/android/camera/CameraPreference;
-    .end local v6    # "type":I
+    .end local v2           #depth:I
+    .end local v5           #pref:Lcom/android/camera/CameraPreference;
+    .end local v6           #type:I
     :catch_1
     move-exception v3
 
     .line 105
-    .local v3, "e":Ljava/io/IOException;
+    .local v3, e:Ljava/io/IOException;
     new-instance v7, Landroid/view/InflateException;
 
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;
@@ -249,8 +249,8 @@
     throw v7
 
     .line 98
-    .end local v3    # "e":Ljava/io/IOException;
-    .restart local v6    # "type":I
+    .end local v3           #e:Ljava/io/IOException;
+    .restart local v6       #type:I
     :cond_3
     :try_start_2
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -286,8 +286,8 @@
 
 .method private newPreference(Ljava/lang/String;[Ljava/lang/Object;)Lcom/android/camera/CameraPreference;
     .locals 7
-    .param p1, "tagName"    # Ljava/lang/String;
-    .param p2, "args"    # [Ljava/lang/Object;
+    .parameter "tagName"
+    .parameter "args"
 
     .prologue
     .line 55
@@ -316,7 +316,7 @@
     move-result-object v3
 
     .line 56
-    .local v3, "name":Ljava/lang/String;
+    .local v3, name:Ljava/lang/String;
     sget-object v4, Lcom/android/camera/PreferenceInflater;->sConstructorMap:Ljava/util/HashMap;
 
     invoke-virtual {v4, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -326,7 +326,7 @@
     check-cast v1, Ljava/lang/reflect/Constructor;
 
     .line 58
-    .local v1, "constructor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<*>;"
+    .local v1, constructor:Ljava/lang/reflect/Constructor;,"Ljava/lang/reflect/Constructor<*>;"
     if-nez v1, :cond_0
 
     .line 61
@@ -342,7 +342,7 @@
     move-result-object v0
 
     .line 62
-    .local v0, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
+    .local v0, clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     sget-object v4, Lcom/android/camera/PreferenceInflater;->CTOR_SIGNATURE:[Ljava/lang/Class;
 
     invoke-virtual {v0, v4}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
@@ -355,7 +355,7 @@
     invoke-virtual {v4, v3, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 65
-    .end local v0    # "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
+    .end local v0           #clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     :cond_0
     invoke-virtual {v1, p2}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -374,7 +374,7 @@
     move-exception v2
 
     .line 67
-    .local v2, "e":Ljava/lang/NoSuchMethodException;
+    .local v2, e:Ljava/lang/NoSuchMethodException;
     new-instance v4, Landroid/view/InflateException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -400,12 +400,12 @@
     throw v4
 
     .line 68
-    .end local v2    # "e":Ljava/lang/NoSuchMethodException;
+    .end local v2           #e:Ljava/lang/NoSuchMethodException;
     :catch_1
     move-exception v2
 
     .line 69
-    .local v2, "e":Ljava/lang/ClassNotFoundException;
+    .local v2, e:Ljava/lang/ClassNotFoundException;
     new-instance v4, Landroid/view/InflateException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -431,12 +431,12 @@
     throw v4
 
     .line 70
-    .end local v2    # "e":Ljava/lang/ClassNotFoundException;
+    .end local v2           #e:Ljava/lang/ClassNotFoundException;
     :catch_2
     move-exception v2
 
     .line 71
-    .local v2, "e":Ljava/lang/Exception;
+    .local v2, e:Ljava/lang/Exception;
     new-instance v4, Landroid/view/InflateException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -466,7 +466,7 @@
 # virtual methods
 .method public inflate(I)Lcom/android/camera/CameraPreference;
     .locals 1
-    .param p1, "resId"    # I
+    .parameter "resId"
 
     .prologue
     .line 51

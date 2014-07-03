@@ -36,7 +36,8 @@
 # direct methods
 .method protected constructor <init>(Lcom/android/gallery3d/ui/DetailsAddressResolver;[D)V
     .locals 0
-    .param p2, "latlng"    # [D
+    .parameter
+    .parameter "latlng"
 
     .prologue
     .line 42
@@ -55,7 +56,7 @@
 # virtual methods
 .method public run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Landroid/location/Address;
     .locals 6
-    .param p1, "jc"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
+    .parameter "jc"
 
     .prologue
     const/4 v5, 0x1
@@ -65,7 +66,7 @@
 
     iget-object v1, p0, Lcom/android/gallery3d/ui/DetailsAddressResolver$AddressLookupJob;->this$0:Lcom/android/gallery3d/ui/DetailsAddressResolver;
 
-    # getter for: Lcom/android/gallery3d/ui/DetailsAddressResolver;->mContext:Lcom/android/gallery3d/app/GalleryActivity;
+    #getter for: Lcom/android/gallery3d/ui/DetailsAddressResolver;->mContext:Lcom/android/gallery3d/app/GalleryActivity;
     invoke-static {v1}, Lcom/android/gallery3d/ui/DetailsAddressResolver;->access$000(Lcom/android/gallery3d/ui/DetailsAddressResolver;)Lcom/android/gallery3d/app/GalleryActivity;
 
     move-result-object v1
@@ -77,7 +78,7 @@
     invoke-direct {v0, v1}, Lcom/android/gallery3d/util/ReverseGeocoder;-><init>(Landroid/content/Context;)V
 
     .line 48
-    .local v0, "geocoder":Lcom/android/gallery3d/util/ReverseGeocoder;
+    .local v0, geocoder:Lcom/android/gallery3d/util/ReverseGeocoder;
     iget-object v1, p0, Lcom/android/gallery3d/ui/DetailsAddressResolver$AddressLookupJob;->mLatlng:[D
 
     const/4 v2, 0x0
@@ -97,7 +98,7 @@
 
 .method public bridge synthetic run(Lcom/android/gallery3d/util/ThreadPool$JobContext;)Ljava/lang/Object;
     .locals 1
-    .param p1, "x0"    # Lcom/android/gallery3d/util/ThreadPool$JobContext;
+    .parameter "x0"
 
     .prologue
     .line 39

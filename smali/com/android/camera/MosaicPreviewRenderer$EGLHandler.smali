@@ -21,7 +21,8 @@
 # direct methods
 .method public constructor <init>(Lcom/android/camera/MosaicPreviewRenderer;Landroid/os/Looper;)V
     .locals 0
-    .param p2, "looper"    # Landroid/os/Looper;
+    .parameter
+    .parameter "looper"
 
     .prologue
     .line 67
@@ -41,7 +42,7 @@
     .line 95
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mInputSurfaceTexture:Landroid/graphics/SurfaceTexture;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mInputSurfaceTexture:Landroid/graphics/SurfaceTexture;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$100(Lcom/android/camera/MosaicPreviewRenderer;)Landroid/graphics/SurfaceTexture;
 
     move-result-object v0
@@ -51,14 +52,14 @@
     .line 96
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mInputSurfaceTexture:Landroid/graphics/SurfaceTexture;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mInputSurfaceTexture:Landroid/graphics/SurfaceTexture;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$100(Lcom/android/camera/MosaicPreviewRenderer;)Landroid/graphics/SurfaceTexture;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mTransformMatrix:[F
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mTransformMatrix:[F
     invoke-static {v1}, Lcom/android/camera/MosaicPreviewRenderer;->access$200(Lcom/android/camera/MosaicPreviewRenderer;)[F
 
     move-result-object v1
@@ -73,7 +74,7 @@
     .line 100
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mTransformMatrix:[F
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mTransformMatrix:[F
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$200(Lcom/android/camera/MosaicPreviewRenderer;)[F
 
     move-result-object v0
@@ -89,27 +90,27 @@
     .line 104
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # invokes: Lcom/android/camera/MosaicPreviewRenderer;->draw()V
+    #calls: Lcom/android/camera/MosaicPreviewRenderer;->draw()V
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$300(Lcom/android/camera/MosaicPreviewRenderer;)V
 
     .line 105
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$600(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGL10;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
     invoke-static {v1}, Lcom/android/camera/MosaicPreviewRenderer;->access$400(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLDisplay;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
     invoke-static {v2}, Lcom/android/camera/MosaicPreviewRenderer;->access$500(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLSurface;
 
     move-result-object v2
@@ -150,7 +151,7 @@
 
     check-cast v2, Ljavax/microedition/khronos/egl/EGL10;
 
-    # setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
+    #setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
     invoke-static {v3, v2}, Lcom/android/camera/MosaicPreviewRenderer;->access$602(Lcom/android/camera/MosaicPreviewRenderer;Ljavax/microedition/khronos/egl/EGL10;)Ljavax/microedition/khronos/egl/EGL10;
 
     .line 126
@@ -158,7 +159,7 @@
 
     iget-object v3, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
     invoke-static {v3}, Lcom/android/camera/MosaicPreviewRenderer;->access$600(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGL10;
 
     move-result-object v3
@@ -169,13 +170,13 @@
 
     move-result-object v3
 
-    # setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+    #setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
     invoke-static {v2, v3}, Lcom/android/camera/MosaicPreviewRenderer;->access$402(Lcom/android/camera/MosaicPreviewRenderer;Ljavax/microedition/khronos/egl/EGLDisplay;)Ljavax/microedition/khronos/egl/EGLDisplay;
 
     .line 127
     iget-object v2, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
     invoke-static {v2}, Lcom/android/camera/MosaicPreviewRenderer;->access$400(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLDisplay;
 
     move-result-object v2
@@ -200,17 +201,17 @@
     new-array v1, v2, [I
 
     .line 131
-    .local v1, "version":[I
+    .local v1, version:[I
     iget-object v2, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
     invoke-static {v2}, Lcom/android/camera/MosaicPreviewRenderer;->access$600(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGL10;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
     invoke-static {v3}, Lcom/android/camera/MosaicPreviewRenderer;->access$400(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLDisplay;
 
     move-result-object v3
@@ -280,29 +281,29 @@
     fill-array-data v0, :array_0
 
     .line 137
-    .local v0, "attribList":[I
+    .local v0, attribList:[I
     iget-object v2, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
     iget-object v3, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
     invoke-static {v3}, Lcom/android/camera/MosaicPreviewRenderer;->access$600(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGL10;
 
     move-result-object v3
 
     iget-object v4, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
     invoke-static {v4}, Lcom/android/camera/MosaicPreviewRenderer;->access$400(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLDisplay;
 
     move-result-object v4
 
-    # invokes: Lcom/android/camera/MosaicPreviewRenderer;->chooseConfig(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;)Ljavax/microedition/khronos/egl/EGLConfig;
+    #calls: Lcom/android/camera/MosaicPreviewRenderer;->chooseConfig(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;)Ljavax/microedition/khronos/egl/EGLConfig;
     invoke-static {v3, v4}, Lcom/android/camera/MosaicPreviewRenderer;->access$800(Ljavax/microedition/khronos/egl/EGL10;Ljavax/microedition/khronos/egl/EGLDisplay;)Ljavax/microedition/khronos/egl/EGLConfig;
 
     move-result-object v3
 
-    # setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglConfig:Ljavax/microedition/khronos/egl/EGLConfig;
+    #setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglConfig:Ljavax/microedition/khronos/egl/EGLConfig;
     invoke-static {v2, v3}, Lcom/android/camera/MosaicPreviewRenderer;->access$702(Lcom/android/camera/MosaicPreviewRenderer;Ljavax/microedition/khronos/egl/EGLConfig;)Ljavax/microedition/khronos/egl/EGLConfig;
 
     .line 138
@@ -310,21 +311,21 @@
 
     iget-object v3, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
     invoke-static {v3}, Lcom/android/camera/MosaicPreviewRenderer;->access$600(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGL10;
 
     move-result-object v3
 
     iget-object v4, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
     invoke-static {v4}, Lcom/android/camera/MosaicPreviewRenderer;->access$400(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLDisplay;
 
     move-result-object v4
 
     iget-object v5, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglConfig:Ljavax/microedition/khronos/egl/EGLConfig;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglConfig:Ljavax/microedition/khronos/egl/EGLConfig;
     invoke-static {v5}, Lcom/android/camera/MosaicPreviewRenderer;->access$700(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLConfig;
 
     move-result-object v5
@@ -335,13 +336,13 @@
 
     move-result-object v3
 
-    # setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
+    #setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
     invoke-static {v2, v3}, Lcom/android/camera/MosaicPreviewRenderer;->access$902(Lcom/android/camera/MosaicPreviewRenderer;Ljavax/microedition/khronos/egl/EGLContext;)Ljavax/microedition/khronos/egl/EGLContext;
 
     .line 141
     iget-object v2, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
     invoke-static {v2}, Lcom/android/camera/MosaicPreviewRenderer;->access$900(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLContext;
 
     move-result-object v2
@@ -350,7 +351,7 @@
 
     iget-object v2, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
     invoke-static {v2}, Lcom/android/camera/MosaicPreviewRenderer;->access$900(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLContext;
 
     move-result-object v2
@@ -375,28 +376,28 @@
 
     iget-object v3, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
     invoke-static {v3}, Lcom/android/camera/MosaicPreviewRenderer;->access$600(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGL10;
 
     move-result-object v3
 
     iget-object v4, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
     invoke-static {v4}, Lcom/android/camera/MosaicPreviewRenderer;->access$400(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLDisplay;
 
     move-result-object v4
 
     iget-object v5, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglConfig:Ljavax/microedition/khronos/egl/EGLConfig;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglConfig:Ljavax/microedition/khronos/egl/EGLConfig;
     invoke-static {v5}, Lcom/android/camera/MosaicPreviewRenderer;->access$700(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLConfig;
 
     move-result-object v5
 
     iget-object v6, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mMosaicOutputSurfaceTexture:Landroid/graphics/SurfaceTexture;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mMosaicOutputSurfaceTexture:Landroid/graphics/SurfaceTexture;
     invoke-static {v6}, Lcom/android/camera/MosaicPreviewRenderer;->access$1000(Lcom/android/camera/MosaicPreviewRenderer;)Landroid/graphics/SurfaceTexture;
 
     move-result-object v6
@@ -407,13 +408,13 @@
 
     move-result-object v3
 
-    # setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
+    #setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
     invoke-static {v2, v3}, Lcom/android/camera/MosaicPreviewRenderer;->access$502(Lcom/android/camera/MosaicPreviewRenderer;Ljavax/microedition/khronos/egl/EGLSurface;)Ljavax/microedition/khronos/egl/EGLSurface;
 
     .line 146
     iget-object v2, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
     invoke-static {v2}, Lcom/android/camera/MosaicPreviewRenderer;->access$500(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLSurface;
 
     move-result-object v2
@@ -422,7 +423,7 @@
 
     iget-object v2, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
     invoke-static {v2}, Lcom/android/camera/MosaicPreviewRenderer;->access$500(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLSurface;
 
     move-result-object v2
@@ -445,35 +446,35 @@
     :cond_5
     iget-object v2, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
     invoke-static {v2}, Lcom/android/camera/MosaicPreviewRenderer;->access$600(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGL10;
 
     move-result-object v2
 
     iget-object v3, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
     invoke-static {v3}, Lcom/android/camera/MosaicPreviewRenderer;->access$400(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLDisplay;
 
     move-result-object v3
 
     iget-object v4, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
     invoke-static {v4}, Lcom/android/camera/MosaicPreviewRenderer;->access$500(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLSurface;
 
     move-result-object v4
 
     iget-object v5, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
     invoke-static {v5}, Lcom/android/camera/MosaicPreviewRenderer;->access$500(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLSurface;
 
     move-result-object v5
 
     iget-object v6, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
     invoke-static {v6}, Lcom/android/camera/MosaicPreviewRenderer;->access$900(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLContext;
 
     move-result-object v6
@@ -499,7 +500,7 @@
 
     iget-object v2, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
     invoke-static {v2}, Lcom/android/camera/MosaicPreviewRenderer;->access$900(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLContext;
 
     move-result-object v2
@@ -510,7 +511,7 @@
 
     check-cast v2, Ljavax/microedition/khronos/opengles/GL10;
 
-    # setter for: Lcom/android/camera/MosaicPreviewRenderer;->mGl:Ljavax/microedition/khronos/opengles/GL10;
+    #setter for: Lcom/android/camera/MosaicPreviewRenderer;->mGl:Ljavax/microedition/khronos/opengles/GL10;
     invoke-static {v3, v2}, Lcom/android/camera/MosaicPreviewRenderer;->access$1102(Lcom/android/camera/MosaicPreviewRenderer;Ljavax/microedition/khronos/opengles/GL10;)Ljavax/microedition/khronos/opengles/GL10;
 
     .line 156
@@ -524,27 +525,27 @@
 
     invoke-direct {v3, v4}, Landroid/graphics/SurfaceTexture;-><init>(I)V
 
-    # setter for: Lcom/android/camera/MosaicPreviewRenderer;->mInputSurfaceTexture:Landroid/graphics/SurfaceTexture;
+    #setter for: Lcom/android/camera/MosaicPreviewRenderer;->mInputSurfaceTexture:Landroid/graphics/SurfaceTexture;
     invoke-static {v2, v3}, Lcom/android/camera/MosaicPreviewRenderer;->access$102(Lcom/android/camera/MosaicPreviewRenderer;Landroid/graphics/SurfaceTexture;)Landroid/graphics/SurfaceTexture;
 
     .line 157
     iget-object v2, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mWidth:I
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mWidth:I
     invoke-static {v2}, Lcom/android/camera/MosaicPreviewRenderer;->access$1200(Lcom/android/camera/MosaicPreviewRenderer;)I
 
     move-result v2
 
     iget-object v3, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mHeight:I
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mHeight:I
     invoke-static {v3}, Lcom/android/camera/MosaicPreviewRenderer;->access$1300(Lcom/android/camera/MosaicPreviewRenderer;)I
 
     move-result v3
 
     iget-object v4, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mIsLandscape:Z
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mIsLandscape:Z
     invoke-static {v4}, Lcom/android/camera/MosaicPreviewRenderer;->access$1400(Lcom/android/camera/MosaicPreviewRenderer;)Z
 
     move-result v4
@@ -556,10 +557,10 @@
 
     .line 136
     :array_0
-    .array-data 4
-        0x3098
-        0x2
-        0x3038
+    .array-data 0x4
+        0x98t 0x30t 0x0t 0x0t
+        0x2t 0x0t 0x0t 0x0t
+        0x38t 0x30t 0x0t 0x0t
     .end array-data
 .end method
 
@@ -572,21 +573,21 @@
     .line 161
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$600(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGL10;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
     invoke-static {v1}, Lcom/android/camera/MosaicPreviewRenderer;->access$400(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLDisplay;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
     invoke-static {v2}, Lcom/android/camera/MosaicPreviewRenderer;->access$500(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLSurface;
 
     move-result-object v2
@@ -596,21 +597,21 @@
     .line 162
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$600(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGL10;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
     invoke-static {v1}, Lcom/android/camera/MosaicPreviewRenderer;->access$400(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLDisplay;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
     invoke-static {v2}, Lcom/android/camera/MosaicPreviewRenderer;->access$900(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLContext;
 
     move-result-object v2
@@ -620,14 +621,14 @@
     .line 163
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$600(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGL10;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
     invoke-static {v1}, Lcom/android/camera/MosaicPreviewRenderer;->access$400(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLDisplay;
 
     move-result-object v1
@@ -643,14 +644,14 @@
     .line 165
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$600(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGL10;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
     invoke-static {v1}, Lcom/android/camera/MosaicPreviewRenderer;->access$400(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLDisplay;
 
     move-result-object v1
@@ -660,25 +661,25 @@
     .line 166
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
+    #setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
     invoke-static {v0, v5}, Lcom/android/camera/MosaicPreviewRenderer;->access$502(Lcom/android/camera/MosaicPreviewRenderer;Ljavax/microedition/khronos/egl/EGLSurface;)Ljavax/microedition/khronos/egl/EGLSurface;
 
     .line 167
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
+    #setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglContext:Ljavax/microedition/khronos/egl/EGLContext;
     invoke-static {v0, v5}, Lcom/android/camera/MosaicPreviewRenderer;->access$902(Lcom/android/camera/MosaicPreviewRenderer;Ljavax/microedition/khronos/egl/EGLContext;)Ljavax/microedition/khronos/egl/EGLContext;
 
     .line 168
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+    #setter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
     invoke-static {v0, v5}, Lcom/android/camera/MosaicPreviewRenderer;->access$402(Lcom/android/camera/MosaicPreviewRenderer;Ljavax/microedition/khronos/egl/EGLDisplay;)Ljavax/microedition/khronos/egl/EGLDisplay;
 
     .line 169
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mInputSurfaceTexture:Landroid/graphics/SurfaceTexture;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mInputSurfaceTexture:Landroid/graphics/SurfaceTexture;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$100(Lcom/android/camera/MosaicPreviewRenderer;)Landroid/graphics/SurfaceTexture;
 
     move-result-object v0
@@ -688,7 +689,7 @@
     .line 170
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglThread:Landroid/os/HandlerThread;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglThread:Landroid/os/HandlerThread;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$1500(Lcom/android/camera/MosaicPreviewRenderer;)Landroid/os/HandlerThread;
 
     move-result-object v0
@@ -706,7 +707,7 @@
     .line 112
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mInputSurfaceTexture:Landroid/graphics/SurfaceTexture;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mInputSurfaceTexture:Landroid/graphics/SurfaceTexture;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$100(Lcom/android/camera/MosaicPreviewRenderer;)Landroid/graphics/SurfaceTexture;
 
     move-result-object v0
@@ -716,14 +717,14 @@
     .line 113
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mInputSurfaceTexture:Landroid/graphics/SurfaceTexture;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mInputSurfaceTexture:Landroid/graphics/SurfaceTexture;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$100(Lcom/android/camera/MosaicPreviewRenderer;)Landroid/graphics/SurfaceTexture;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mTransformMatrix:[F
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mTransformMatrix:[F
     invoke-static {v1}, Lcom/android/camera/MosaicPreviewRenderer;->access$200(Lcom/android/camera/MosaicPreviewRenderer;)[F
 
     move-result-object v1
@@ -738,7 +739,7 @@
     .line 117
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mTransformMatrix:[F
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mTransformMatrix:[F
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$200(Lcom/android/camera/MosaicPreviewRenderer;)[F
 
     move-result-object v0
@@ -751,27 +752,27 @@
     .line 119
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # invokes: Lcom/android/camera/MosaicPreviewRenderer;->draw()V
+    #calls: Lcom/android/camera/MosaicPreviewRenderer;->draw()V
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$300(Lcom/android/camera/MosaicPreviewRenderer;)V
 
     .line 120
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEgl:Ljavax/microedition/khronos/egl/EGL10;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$600(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGL10;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
     invoke-static {v1}, Lcom/android/camera/MosaicPreviewRenderer;->access$400(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLDisplay;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
     invoke-static {v2}, Lcom/android/camera/MosaicPreviewRenderer;->access$500(Lcom/android/camera/MosaicPreviewRenderer;)Ljavax/microedition/khronos/egl/EGLSurface;
 
     move-result-object v2
@@ -786,7 +787,7 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .locals 1
-    .param p1, "msg"    # Landroid/os/Message;
+    .parameter "msg"
 
     .prologue
     .line 73
@@ -805,7 +806,7 @@
     .line 76
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglThreadBlockVar:Landroid/os/ConditionVariable;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglThreadBlockVar:Landroid/os/ConditionVariable;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$000(Lcom/android/camera/MosaicPreviewRenderer;)Landroid/os/ConditionVariable;
 
     move-result-object v0
@@ -821,7 +822,7 @@
     .line 80
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglThreadBlockVar:Landroid/os/ConditionVariable;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglThreadBlockVar:Landroid/os/ConditionVariable;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$000(Lcom/android/camera/MosaicPreviewRenderer;)Landroid/os/ConditionVariable;
 
     move-result-object v0
@@ -861,13 +862,13 @@
 
 .method public sendMessageSync(I)V
     .locals 1
-    .param p1, "msg"    # I
+    .parameter "msg"
 
     .prologue
     .line 175
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglThreadBlockVar:Landroid/os/ConditionVariable;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglThreadBlockVar:Landroid/os/ConditionVariable;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$000(Lcom/android/camera/MosaicPreviewRenderer;)Landroid/os/ConditionVariable;
 
     move-result-object v0
@@ -880,7 +881,7 @@
     .line 177
     iget-object v0, p0, Lcom/android/camera/MosaicPreviewRenderer$EGLHandler;->this$0:Lcom/android/camera/MosaicPreviewRenderer;
 
-    # getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglThreadBlockVar:Landroid/os/ConditionVariable;
+    #getter for: Lcom/android/camera/MosaicPreviewRenderer;->mEglThreadBlockVar:Landroid/os/ConditionVariable;
     invoke-static {v0}, Lcom/android/camera/MosaicPreviewRenderer;->access$000(Lcom/android/camera/MosaicPreviewRenderer;)Landroid/os/ConditionVariable;
 
     move-result-object v0

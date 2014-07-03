@@ -25,9 +25,9 @@
 # direct methods
 .method private constructor <init>(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;I)V
     .locals 0
-    .param p1, "from"    # Lcom/google/zxing/ResultPoint;
-    .param p2, "to"    # Lcom/google/zxing/ResultPoint;
-    .param p3, "transitions"    # I
+    .parameter "from"
+    .parameter "to"
+    .parameter "transitions"
 
     .prologue
     .line 405
@@ -48,10 +48,10 @@
 
 .method synthetic constructor <init>(Lcom/google/zxing/ResultPoint;Lcom/google/zxing/ResultPoint;ILcom/google/zxing/datamatrix/detector/Detector$1;)V
     .locals 0
-    .param p1, "x0"    # Lcom/google/zxing/ResultPoint;
-    .param p2, "x1"    # Lcom/google/zxing/ResultPoint;
-    .param p3, "x2"    # I
-    .param p4, "x3"    # Lcom/google/zxing/datamatrix/detector/Detector$1;
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+    .parameter "x3"
 
     .prologue
     .line 399

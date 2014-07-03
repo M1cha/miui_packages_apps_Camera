@@ -66,8 +66,8 @@
 # virtual methods
 .method public add(Ljava/lang/String;I)V
     .locals 4
-    .param p1, "pattern"    # Ljava/lang/String;
-    .param p2, "kind"    # I
+    .parameter "pattern"
+    .parameter "kind"
 
     .prologue
     .line 33
@@ -76,14 +76,14 @@
     move-result-object v2
 
     .line 34
-    .local v2, "segments":[Ljava/lang/String;
+    .local v2, segments:[Ljava/lang/String;
     iget-object v0, p0, Lcom/android/gallery3d/data/PathMatcher;->mRoot:Lcom/android/gallery3d/data/PathMatcher$Node;
 
     .line 35
-    .local v0, "current":Lcom/android/gallery3d/data/PathMatcher$Node;
+    .local v0, current:Lcom/android/gallery3d/data/PathMatcher$Node;
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     array-length v3, v2
 
@@ -111,7 +111,7 @@
 
 .method public getIntVar(I)I
     .locals 1
-    .param p1, "index"    # I
+    .parameter "index"
 
     .prologue
     .line 65
@@ -132,7 +132,7 @@
 
 .method public getVar(I)Ljava/lang/String;
     .locals 1
-    .param p1, "index"    # I
+    .parameter "index"
 
     .prologue
     .line 61
@@ -149,7 +149,7 @@
 
 .method public match(Lcom/android/gallery3d/data/Path;)I
     .locals 6
-    .param p1, "path"    # Lcom/android/gallery3d/data/Path;
+    .parameter "path"
 
     .prologue
     .line 42
@@ -158,7 +158,7 @@
     move-result-object v3
 
     .line 43
-    .local v3, "segments":[Ljava/lang/String;
+    .local v3, segments:[Ljava/lang/String;
     iget-object v4, p0, Lcom/android/gallery3d/data/PathMatcher;->mVariables:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
@@ -167,10 +167,10 @@
     iget-object v0, p0, Lcom/android/gallery3d/data/PathMatcher;->mRoot:Lcom/android/gallery3d/data/PathMatcher$Node;
 
     .line 45
-    .local v0, "current":Lcom/android/gallery3d/data/PathMatcher$Node;
+    .local v0, current:Lcom/android/gallery3d/data/PathMatcher$Node;
     const/4 v1, 0x0
 
-    .local v1, "i":I
+    .local v1, i:I
     :goto_0
     array-length v4, v3
 
@@ -184,7 +184,7 @@
     move-result-object v2
 
     .line 47
-    .local v2, "next":Lcom/android/gallery3d/data/PathMatcher$Node;
+    .local v2, next:Lcom/android/gallery3d/data/PathMatcher$Node;
     if-nez v2, :cond_0
 
     .line 48
@@ -218,7 +218,7 @@
     const/4 v4, -0x1
 
     .line 57
-    .end local v2    # "next":Lcom/android/gallery3d/data/PathMatcher$Node;
+    .end local v2           #next:Lcom/android/gallery3d/data/PathMatcher$Node;
     :goto_1
     return v4
 

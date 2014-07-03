@@ -27,7 +27,7 @@
 
 .method private static maybeReturnResult(Lcom/google/zxing/Result;)Lcom/google/zxing/Result;
     .locals 6
-    .param p0, "result"    # Lcom/google/zxing/Result;
+    .parameter "result"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/FormatException;
@@ -41,7 +41,7 @@
     move-result-object v0
 
     .line 79
-    .local v0, "text":Ljava/lang/String;
+    .local v0, text:Ljava/lang/String;
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
@@ -86,7 +86,8 @@
 # virtual methods
 .method public decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 1
-    .param p1, "image"    # Lcom/google/zxing/BinaryBitmap;
+    .parameter "image"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -108,7 +109,7 @@
 
     .prologue
     .line 63
-    .local p2, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p2, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     iget-object v0, p0, Lcom/google/zxing/oned/UPCAReader;->ean13Reader:Lcom/google/zxing/oned/UPCEANReader;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/zxing/oned/UPCEANReader;->decode(Lcom/google/zxing/BinaryBitmap;Ljava/util/Map;)Lcom/google/zxing/Result;
@@ -124,9 +125,9 @@
 
 .method protected decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuilder;)I
     .locals 1
-    .param p1, "row"    # Lcom/google/zxing/common/BitArray;
-    .param p2, "startRange"    # [I
-    .param p3, "resultString"    # Ljava/lang/StringBuilder;
+    .parameter "row"
+    .parameter "startRange"
+    .parameter "resultString"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -146,8 +147,9 @@
 
 .method public decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
     .locals 1
-    .param p1, "rowNumber"    # I
-    .param p2, "row"    # Lcom/google/zxing/common/BitArray;
+    .parameter "rowNumber"
+    .parameter "row"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -170,7 +172,7 @@
 
     .prologue
     .line 52
-    .local p3, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p3, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     iget-object v0, p0, Lcom/google/zxing/oned/UPCAReader;->ean13Reader:Lcom/google/zxing/oned/UPCEANReader;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/zxing/oned/UPCEANReader;->decodeRow(ILcom/google/zxing/common/BitArray;Ljava/util/Map;)Lcom/google/zxing/Result;
@@ -186,9 +188,10 @@
 
 .method public decodeRow(ILcom/google/zxing/common/BitArray;[ILjava/util/Map;)Lcom/google/zxing/Result;
     .locals 1
-    .param p1, "rowNumber"    # I
-    .param p2, "row"    # Lcom/google/zxing/common/BitArray;
-    .param p3, "startGuardRange"    # [I
+    .parameter "rowNumber"
+    .parameter "row"
+    .parameter "startGuardRange"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -212,7 +215,7 @@
 
     .prologue
     .line 46
-    .local p4, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
+    .local p4, hints:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/zxing/DecodeHintType;*>;"
     iget-object v0, p0, Lcom/google/zxing/oned/UPCAReader;->ean13Reader:Lcom/google/zxing/oned/UPCEANReader;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Lcom/google/zxing/oned/UPCEANReader;->decodeRow(ILcom/google/zxing/common/BitArray;[ILjava/util/Map;)Lcom/google/zxing/Result;

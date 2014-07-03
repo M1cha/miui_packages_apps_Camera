@@ -53,7 +53,7 @@
     .line 144
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_1
     if-ge v0, v10, :cond_4
 
@@ -61,10 +61,10 @@
     int-to-long v2, v0
 
     .line 146
-    .local v2, "part":J
+    .local v2, part:J
     const/4 v1, 0x0
 
-    .local v1, "j":I
+    .local v1, j:I
     :goto_2
     const/16 v6, 0x8
 
@@ -80,7 +80,7 @@
     const-wide v4, -0x6a536cd653b4364bL
 
     .line 148
-    .local v4, "x":J
+    .local v4, x:J
     :goto_3
     shr-long v8, v2, v7
 
@@ -92,19 +92,19 @@
     goto :goto_2
 
     .line 40
-    .end local v0    # "i":I
-    .end local v1    # "j":I
-    .end local v2    # "part":J
-    .end local v4    # "x":J
+    .end local v0           #i:I
+    .end local v1           #j:I
+    .end local v2           #part:J
+    .end local v4           #x:J
     :cond_1
     const/4 v6, 0x0
 
     goto :goto_0
 
     .line 147
-    .restart local v0    # "i":I
-    .restart local v1    # "j":I
-    .restart local v2    # "part":J
+    .restart local v0       #i:I
+    .restart local v1       #j:I
+    .restart local v2       #part:J
     :cond_2
     const-wide/16 v4, 0x0
 
@@ -122,8 +122,8 @@
     goto :goto_1
 
     .line 152
-    .end local v1    # "j":I
-    .end local v2    # "part":J
+    .end local v1           #j:I
+    .end local v2           #part:J
     :cond_4
     return-void
 .end method
@@ -140,7 +140,7 @@
 
 .method public static assertTrue(Z)V
     .locals 1
-    .param p0, "cond"    # Z
+    .parameter "cond"
 
     .prologue
     .line 47
@@ -160,13 +160,13 @@
 
 .method public static ceilLog2(F)I
     .locals 2
-    .param p0, "value"    # F
+    .parameter "value"
 
     .prologue
     .line 187
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     const/16 v1, 0x1f
 
@@ -196,6 +196,7 @@
 
 .method public static checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -206,7 +207,7 @@
 
     .prologue
     .line 64
-    .local p0, "object":Ljava/lang/Object;, "TT;"
+    .local p0, object:Ljava/lang/Object;,"TT;"
     if-nez p0, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -222,9 +223,9 @@
 
 .method public static clamp(FFF)F
     .locals 1
-    .param p0, "x"    # F
-    .param p1, "min"    # F
-    .param p2, "max"    # F
+    .parameter "x"
+    .parameter "min"
+    .parameter "max"
 
     .prologue
     .line 106
@@ -233,12 +234,12 @@
     if-lez v0, :cond_0
 
     .line 108
-    .end local p2    # "max":F
+    .end local p2
     :goto_0
     return p2
 
     .line 107
-    .restart local p2    # "max":F
+    .restart local p2
     :cond_0
     cmpg-float v0, p0, p1
 
@@ -257,21 +258,21 @@
 
 .method public static clamp(III)I
     .locals 0
-    .param p0, "x"    # I
-    .param p1, "min"    # I
-    .param p2, "max"    # I
+    .parameter "x"
+    .parameter "min"
+    .parameter "max"
 
     .prologue
     .line 99
     if-le p0, p2, :cond_0
 
     .line 101
-    .end local p2    # "max":I
+    .end local p2
     :goto_0
     return p2
 
     .line 100
-    .restart local p2    # "max":I
+    .restart local p2
     :cond_0
     if-ge p0, p1, :cond_1
 
@@ -288,7 +289,7 @@
 
 .method public static closeSilently(Landroid/database/Cursor;)V
     .locals 3
-    .param p0, "cursor"    # Landroid/database/Cursor;
+    .parameter "cursor"
 
     .prologue
     .line 211
@@ -309,7 +310,7 @@
     move-exception v0
 
     .line 213
-    .local v0, "t":Ljava/lang/Throwable;
+    .local v0, t:Ljava/lang/Throwable;
     const-string v1, "Utils"
 
     const-string v2, "fail to close"
@@ -321,7 +322,7 @@
 
 .method public static closeSilently(Ljava/io/Closeable;)V
     .locals 3
-    .param p0, "c"    # Ljava/io/Closeable;
+    .parameter "c"
 
     .prologue
     .line 173
@@ -345,7 +346,7 @@
     move-exception v0
 
     .line 177
-    .local v0, "t":Ljava/lang/Throwable;
+    .local v0, t:Ljava/lang/Throwable;
     const-string v1, "Utils"
 
     const-string v2, "close fail"
@@ -357,8 +358,8 @@
 
 .method public static compare(JJ)I
     .locals 1
-    .param p0, "a"    # J
-    .param p2, "b"    # J
+    .parameter "a"
+    .parameter "b"
 
     .prologue
     .line 182
@@ -388,20 +389,20 @@
 
 .method public static final crc64Long([B)J
     .locals 8
-    .param p0, "buffer"    # [B
+    .parameter "buffer"
 
     .prologue
     .line 155
     const-wide/16 v0, -0x1
 
     .line 156
-    .local v0, "crc":J
+    .local v0, crc:J
     const/4 v2, 0x0
 
-    .local v2, "k":I
+    .local v2, k:I
     array-length v3, p0
 
-    .local v3, "n":I
+    .local v3, n:I
     :goto_0
     if-ge v2, v3, :cond_0
 
@@ -436,7 +437,7 @@
 
 .method public static ensureNotNull(Ljava/lang/String;)Ljava/lang/String;
     .locals 0
-    .param p0, "value"    # Ljava/lang/String;
+    .parameter "value"
 
     .prologue
     .line 236
@@ -444,15 +445,15 @@
 
     const-string p0, ""
 
-    .end local p0    # "value":Ljava/lang/String;
+    .end local p0
     :cond_0
     return-object p0
 .end method
 
 .method public static equals(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 1
-    .param p0, "a"    # Ljava/lang/Object;
-    .param p1, "b"    # Ljava/lang/Object;
+    .parameter "a"
+    .parameter "b"
 
     .prologue
     .line 71
@@ -481,8 +482,8 @@
 
 .method public static varargs fail(Ljava/lang/String;[Ljava/lang/Object;)V
     .locals 2
-    .param p0, "message"    # Ljava/lang/String;
-    .param p1, "args"    # [Ljava/lang/Object;
+    .parameter "message"
+    .parameter "args"
 
     .prologue
     .line 58
@@ -492,13 +493,13 @@
 
     if-nez v1, :cond_0
 
-    .end local p0    # "message":Ljava/lang/String;
+    .end local p0
     :goto_0
     invoke-direct {v0, p0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
     throw v0
 
-    .restart local p0    # "message":Ljava/lang/String;
+    .restart local p0
     :cond_0
     invoke-static {p0, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -509,13 +510,13 @@
 
 .method public static floorLog2(F)I
     .locals 2
-    .param p0, "value"    # F
+    .parameter "value"
 
     .prologue
     .line 195
     const/4 v0, 0x0
 
-    .local v0, "i":I
+    .local v0, i:I
     :goto_0
     const/16 v1, 0x1f
 
@@ -547,7 +548,7 @@
 
 .method public static isOpaque(I)Z
     .locals 2
-    .param p0, "color"    # I
+    .parameter "color"
 
     .prologue
     .line 119
@@ -570,13 +571,13 @@
 
 .method public static nextPowerOf2(I)I
     .locals 1
-    .param p0, "n"    # I
+    .parameter "n"
 
     .prologue
     .line 79
     if-lez p0, :cond_0
 
-    const/high16 v0, 0x40000000
+    const/high16 v0, 0x4000
 
     if-le p0, v0, :cond_1
 
@@ -624,7 +625,7 @@
 
 .method public static prevPowerOf2(I)I
     .locals 1
-    .param p0, "n"    # I
+    .parameter "n"
 
     .prologue
     .line 93
@@ -647,16 +648,16 @@
 
 .method public static swap([III)V
     .locals 2
-    .param p0, "array"    # [I
-    .param p1, "i"    # I
-    .param p2, "j"    # I
+    .parameter "array"
+    .parameter "i"
+    .parameter "j"
 
     .prologue
     .line 123
     aget v0, p0, p1
 
     .line 124
-    .local v0, "temp":I
+    .local v0, temp:I
     aget v1, p0, p2
 
     aput v1, p0, p1
@@ -670,7 +671,7 @@
 
 .method public static waitWithoutInterrupt(Ljava/lang/Object;)V
     .locals 4
-    .param p0, "object"    # Ljava/lang/Object;
+    .parameter "object"
 
     .prologue
     .line 263
@@ -688,7 +689,7 @@
     move-exception v0
 
     .line 265
-    .local v0, "e":Ljava/lang/InterruptedException;
+    .local v0, e:Ljava/lang/InterruptedException;
     const-string v1, "Utils"
 
     new-instance v2, Ljava/lang/StringBuilder;

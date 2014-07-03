@@ -36,7 +36,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/data/MediaSet;)V
     .locals 0
-    .param p1, "baseSet"    # Lcom/android/gallery3d/data/MediaSet;
+    .parameter "baseSet"
 
     .prologue
     .line 198
@@ -53,18 +53,18 @@
 # virtual methods
 .method public getItem(I)Lcom/android/gallery3d/data/MediaItem;
     .locals 4
-    .param p1, "index"    # I
+    .parameter "index"
 
     .prologue
     .line 207
     const/4 v1, 0x0
 
     .line 208
-    .local v1, "needLoading":Z
+    .local v1, needLoading:Z
     const/4 v0, 0x0
 
     .line 209
-    .local v0, "cache":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .local v0, cache:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     iget-object v2, p0, Lcom/android/gallery3d/data/LocalMergeAlbum$FetchCache;->mCacheRef:Ljava/lang/ref/SoftReference;
 
     if-eqz v2, :cond_0
@@ -139,11 +139,11 @@
 
     move-result-object v0
 
-    .end local v0    # "cache":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .end local v0           #cache:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     check-cast v0, Ljava/util/ArrayList;
 
     .line 214
-    .restart local v0    # "cache":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
+    .restart local v0       #cache:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Lcom/android/gallery3d/data/MediaItem;>;"
     if-nez v0, :cond_1
 
     .line 215

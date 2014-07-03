@@ -30,6 +30,10 @@
 # direct methods
 .method constructor <init>(Lcom/android/camera/ui/ScreenHint;Lcom/android/camera/ComboPreferences;Lcom/android/camera/LocationManager;Z)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
+    .parameter
 
     .prologue
     .line 75
@@ -63,7 +67,7 @@
 
     iget-boolean v4, p0, Lcom/android/camera/ui/ScreenHint$1;->val$front:Z
 
-    # invokes: Lcom/android/camera/ui/ScreenHint;->updateFirstUseHintState(Lcom/android/camera/ComboPreferences;Lcom/android/camera/LocationManager;ZZ)V
+    #calls: Lcom/android/camera/ui/ScreenHint;->updateFirstUseHintState(Lcom/android/camera/ComboPreferences;Lcom/android/camera/LocationManager;ZZ)V
     invoke-static {v0, v1, v2, v3, v4}, Lcom/android/camera/ui/ScreenHint;->access$000(Lcom/android/camera/ui/ScreenHint;Lcom/android/camera/ComboPreferences;Lcom/android/camera/LocationManager;ZZ)V
 
     .line 79

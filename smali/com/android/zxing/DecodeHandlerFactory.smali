@@ -26,8 +26,8 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Z)V
     .locals 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "all"    # Z
+    .parameter "context"
+    .parameter "all"
 
     .prologue
     const/4 v3, 0x1
@@ -58,7 +58,7 @@
     invoke-direct {v0}, Ljava/util/Vector;-><init>()V
 
     .line 31
-    .local v0, "decodeFormats":Ljava/util/Vector;, "Ljava/util/Vector<Lcom/google/zxing/BarcodeFormat;>;"
+    .local v0, decodeFormats:Ljava/util/Vector;,"Ljava/util/Vector<Lcom/google/zxing/BarcodeFormat;>;"
     sget-object v2, Lcom/android/zxing/DecodeFormats;->QR_CODE_FORMATS:Ljava/util/Vector;
 
     invoke-virtual {v0, v2}, Ljava/util/Vector;->addAll(Ljava/util/Collection;)Z
@@ -89,7 +89,7 @@
     move-result-object v1
 
     .line 37
-    .local v1, "viewFinder":Lcom/android/zxing/ui/ViewFinderView;
+    .local v1, viewFinder:Lcom/android/zxing/ui/ViewFinderView;
     if-eqz v1, :cond_1
 
     .line 38
@@ -182,7 +182,7 @@
     invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
     .line 54
-    .local v0, "handlerThread":Landroid/os/HandlerThread;
+    .local v0, handlerThread:Landroid/os/HandlerThread;
     invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
 
     .line 55

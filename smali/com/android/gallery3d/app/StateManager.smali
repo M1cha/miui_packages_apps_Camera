@@ -33,7 +33,7 @@
 # direct methods
 .method public constructor <init>(Lcom/android/gallery3d/app/GalleryActivity;)V
     .locals 1
-    .param p1, "context"    # Lcom/android/gallery3d/app/GalleryActivity;
+    .parameter "context"
 
     .prologue
     .line 45
@@ -62,7 +62,7 @@
 # virtual methods
 .method public createOptionsMenu(Landroid/view/Menu;)Z
     .locals 1
-    .param p1, "menu"    # Landroid/view/Menu;
+    .parameter "menu"
 
     .prologue
     .line 97
@@ -141,7 +141,7 @@
 
 .method finishState(Lcom/android/gallery3d/app/ActivityState;)V
     .locals 6
-    .param p1, "state"    # Lcom/android/gallery3d/app/ActivityState;
+    .parameter "state"
 
     .prologue
     const/4 v5, 0x1
@@ -165,7 +165,7 @@
     check-cast v0, Landroid/app/Activity;
 
     .line 154
-    .local v0, "activity":Landroid/app/Activity;
+    .local v0, activity:Landroid/app/Activity;
     iget-object v2, p0, Lcom/android/gallery3d/app/StateManager;->mResult:Lcom/android/gallery3d/app/ActivityState$ResultEntry;
 
     if-eqz v2, :cond_0
@@ -200,13 +200,13 @@
     invoke-static {v2, v3}, Lcom/android/gallery3d/app/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 189
-    .end local v0    # "activity":Landroid/app/Activity;
+    .end local v0           #activity:Landroid/app/Activity;
     :cond_1
     :goto_0
     return-void
 
     .line 162
-    .restart local v0    # "activity":Landroid/app/Activity;
+    .restart local v0       #activity:Landroid/app/Activity;
     :cond_2
     const-string v2, "StateManager"
 
@@ -215,7 +215,7 @@
     invoke-static {v2, v3}, Lcom/android/gallery3d/app/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 165
-    .end local v0    # "activity":Landroid/app/Activity;
+    .end local v0           #activity:Landroid/app/Activity;
     :cond_3
     const-string v2, "StateManager"
 
@@ -366,7 +366,7 @@
     iget-object v1, v2, Lcom/android/gallery3d/app/StateManager$StateEntry;->activityState:Lcom/android/gallery3d/app/ActivityState;
 
     .line 187
-    .local v1, "top":Lcom/android/gallery3d/app/ActivityState;
+    .local v1, top:Lcom/android/gallery3d/app/ActivityState;
     iget-boolean v2, p0, Lcom/android/gallery3d/app/StateManager;->mIsResumed:Z
 
     if-eqz v2, :cond_1
@@ -430,7 +430,7 @@
 
 .method public itemSelected(Landroid/view/MenuItem;)Z
     .locals 3
-    .param p1, "item"    # Landroid/view/MenuItem;
+    .parameter "item"
 
     .prologue
     const/4 v0, 0x1
@@ -497,9 +497,9 @@
 
 .method public notifyActivityResult(IILandroid/content/Intent;)V
     .locals 1
-    .param p1, "requestCode"    # I
-    .param p2, "resultCode"    # I
-    .param p3, "data"    # Landroid/content/Intent;
+    .parameter "requestCode"
+    .parameter "resultCode"
+    .parameter "data"
 
     .prologue
     .line 123
@@ -540,7 +540,7 @@
 
 .method public onConfigurationChange(Landroid/content/res/Configuration;)V
     .locals 3
-    .param p1, "config"    # Landroid/content/res/Configuration;
+    .parameter "config"
 
     .prologue
     .line 105
@@ -550,7 +550,7 @@
 
     move-result-object v1
 
-    .local v1, "i$":Ljava/util/Iterator;
+    .local v1, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
@@ -565,7 +565,7 @@
     check-cast v0, Lcom/android/gallery3d/app/StateManager$StateEntry;
 
     .line 106
-    .local v0, "entry":Lcom/android/gallery3d/app/StateManager$StateEntry;
+    .local v0, entry:Lcom/android/gallery3d/app/StateManager$StateEntry;
     iget-object v2, v0, Lcom/android/gallery3d/app/StateManager$StateEntry;->activityState:Lcom/android/gallery3d/app/ActivityState;
 
     invoke-virtual {v2, p1}, Lcom/android/gallery3d/app/ActivityState;->onConfigurationChanged(Landroid/content/res/Configuration;)V
@@ -573,7 +573,7 @@
     goto :goto_0
 
     .line 108
-    .end local v0    # "entry":Lcom/android/gallery3d/app/StateManager$StateEntry;
+    .end local v0           #entry:Lcom/android/gallery3d/app/StateManager$StateEntry;
     :cond_0
     return-void
 .end method
@@ -656,7 +656,7 @@
 
 .method public saveState(Landroid/os/Bundle;)V
     .locals 10
-    .param p1, "outState"    # Landroid/os/Bundle;
+    .parameter "outState"
 
     .prologue
     .line 251
@@ -676,18 +676,18 @@
     new-array v5, v7, [Landroid/os/Parcelable;
 
     .line 254
-    .local v5, "list":[Landroid/os/Parcelable;
+    .local v5, list:[Landroid/os/Parcelable;
     const/4 v2, 0x0
 
     .line 255
-    .local v2, "i":I
+    .local v2, i:I
     iget-object v7, p0, Lcom/android/gallery3d/app/StateManager;->mStack:Ljava/util/Stack;
 
     invoke-virtual {v7}, Ljava/util/Stack;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
 
-    .local v4, "i$":Ljava/util/Iterator;
+    .local v4, i$:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
@@ -702,13 +702,13 @@
     check-cast v1, Lcom/android/gallery3d/app/StateManager$StateEntry;
 
     .line 256
-    .local v1, "entry":Lcom/android/gallery3d/app/StateManager$StateEntry;
+    .local v1, entry:Lcom/android/gallery3d/app/StateManager$StateEntry;
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     .line 257
-    .local v0, "bundle":Landroid/os/Bundle;
+    .local v0, bundle:Landroid/os/Bundle;
     const-string v7, "class"
 
     iget-object v8, v1, Lcom/android/gallery3d/app/StateManager$StateEntry;->activityState:Lcom/android/gallery3d/app/ActivityState;
@@ -732,7 +732,7 @@
     invoke-direct {v6}, Landroid/os/Bundle;-><init>()V
 
     .line 260
-    .local v6, "state":Landroid/os/Bundle;
+    .local v6, state:Landroid/os/Bundle;
     iget-object v7, v1, Lcom/android/gallery3d/app/StateManager$StateEntry;->activityState:Lcom/android/gallery3d/app/ActivityState;
 
     invoke-virtual {v7, v6}, Lcom/android/gallery3d/app/ActivityState;->onSaveState(Landroid/os/Bundle;)V
@@ -774,21 +774,21 @@
     .line 263
     add-int/lit8 v3, v2, 0x1
 
-    .end local v2    # "i":I
-    .local v3, "i":I
+    .end local v2           #i:I
+    .local v3, i:I
     aput-object v0, v5, v2
 
     move v2, v3
 
     .line 264
-    .end local v3    # "i":I
-    .restart local v2    # "i":I
+    .end local v3           #i:I
+    .restart local v2       #i:I
     goto :goto_0
 
     .line 265
-    .end local v0    # "bundle":Landroid/os/Bundle;
-    .end local v1    # "entry":Lcom/android/gallery3d/app/StateManager$StateEntry;
-    .end local v6    # "state":Landroid/os/Bundle;
+    .end local v0           #bundle:Landroid/os/Bundle;
+    .end local v1           #entry:Lcom/android/gallery3d/app/StateManager$StateEntry;
+    .end local v6           #state:Landroid/os/Bundle;
     :cond_0
     const-string v7, "activity-state"
 
@@ -800,7 +800,8 @@
 
 .method public startState(Ljava/lang/Class;Landroid/os/Bundle;)V
     .locals 6
-    .param p2, "data"    # Landroid/os/Bundle;
+    .parameter
+    .parameter "data"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -815,7 +816,7 @@
 
     .prologue
     .line 51
-    .local p1, "klass":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/android/gallery3d/app/ActivityState;>;"
+    .local p1, klass:Ljava/lang/Class;,"Ljava/lang/Class<+Lcom/android/gallery3d/app/ActivityState;>;"
     const-string v3, "StateManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -842,19 +843,19 @@
     const/4 v1, 0x0
 
     .line 54
-    .local v1, "state":Lcom/android/gallery3d/app/ActivityState;
+    .local v1, state:Lcom/android/gallery3d/app/ActivityState;
     :try_start_0
     invoke-virtual {p1}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
     move-result-object v1
 
-    .end local v1    # "state":Lcom/android/gallery3d/app/ActivityState;
+    .end local v1           #state:Lcom/android/gallery3d/app/ActivityState;
     check-cast v1, Lcom/android/gallery3d/app/ActivityState;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 58
-    .restart local v1    # "state":Lcom/android/gallery3d/app/ActivityState;
+    .restart local v1       #state:Lcom/android/gallery3d/app/ActivityState;
     iget-object v3, p0, Lcom/android/gallery3d/app/StateManager;->mStack:Ljava/util/Stack;
 
     invoke-virtual {v3}, Ljava/util/Stack;->isEmpty()Z
@@ -869,7 +870,7 @@
     move-result-object v2
 
     .line 60
-    .local v2, "top":Lcom/android/gallery3d/app/ActivityState;
+    .local v2, top:Lcom/android/gallery3d/app/ActivityState;
     iget-boolean v3, p0, Lcom/android/gallery3d/app/StateManager;->mIsResumed:Z
 
     if-eqz v3, :cond_0
@@ -877,7 +878,7 @@
     invoke-virtual {v2}, Lcom/android/gallery3d/app/ActivityState;->onPause()V
 
     .line 62
-    .end local v2    # "top":Lcom/android/gallery3d/app/ActivityState;
+    .end local v2           #top:Lcom/android/gallery3d/app/ActivityState;
     :cond_0
     iget-object v3, p0, Lcom/android/gallery3d/app/StateManager;->mContext:Lcom/android/gallery3d/app/GalleryActivity;
 
@@ -909,12 +910,12 @@
     return-void
 
     .line 55
-    .end local v1    # "state":Lcom/android/gallery3d/app/ActivityState;
+    .end local v1           #state:Lcom/android/gallery3d/app/ActivityState;
     :catch_0
     move-exception v0
 
     .line 56
-    .local v0, "e":Ljava/lang/Exception;
+    .local v0, e:Ljava/lang/Exception;
     new-instance v3, Ljava/lang/AssertionError;
 
     invoke-direct {v3, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
@@ -924,8 +925,9 @@
 
 .method public startStateForResult(Ljava/lang/Class;ILandroid/os/Bundle;)V
     .locals 6
-    .param p2, "requestCode"    # I
-    .param p3, "data"    # Landroid/os/Bundle;
+    .parameter
+    .parameter "requestCode"
+    .parameter "data"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -940,7 +942,7 @@
 
     .prologue
     .line 71
-    .local p1, "klass":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/android/gallery3d/app/ActivityState;>;"
+    .local p1, klass:Ljava/lang/Class;,"Ljava/lang/Class<+Lcom/android/gallery3d/app/ActivityState;>;"
     const-string v3, "StateManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -977,19 +979,19 @@
     const/4 v2, 0x0
 
     .line 74
-    .local v2, "state":Lcom/android/gallery3d/app/ActivityState;
+    .local v2, state:Lcom/android/gallery3d/app/ActivityState;
     :try_start_0
     invoke-virtual {p1}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
     move-result-object v2
 
-    .end local v2    # "state":Lcom/android/gallery3d/app/ActivityState;
+    .end local v2           #state:Lcom/android/gallery3d/app/ActivityState;
     check-cast v2, Lcom/android/gallery3d/app/ActivityState;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 78
-    .restart local v2    # "state":Lcom/android/gallery3d/app/ActivityState;
+    .restart local v2       #state:Lcom/android/gallery3d/app/ActivityState;
     iget-object v3, p0, Lcom/android/gallery3d/app/StateManager;->mContext:Lcom/android/gallery3d/app/GalleryActivity;
 
     invoke-virtual {v2, v3, p3}, Lcom/android/gallery3d/app/ActivityState;->initialize(Lcom/android/gallery3d/app/GalleryActivity;Landroid/os/Bundle;)V
@@ -1021,7 +1023,7 @@
     move-result-object v0
 
     .line 84
-    .local v0, "as":Lcom/android/gallery3d/app/ActivityState;
+    .local v0, as:Lcom/android/gallery3d/app/ActivityState;
     iget-object v3, v2, Lcom/android/gallery3d/app/ActivityState;->mResult:Lcom/android/gallery3d/app/ActivityState$ResultEntry;
 
     iput-object v3, v0, Lcom/android/gallery3d/app/ActivityState;->mReceivedResults:Lcom/android/gallery3d/app/ActivityState$ResultEntry;
@@ -1034,7 +1036,7 @@
     invoke-virtual {v0}, Lcom/android/gallery3d/app/ActivityState;->onPause()V
 
     .line 90
-    .end local v0    # "as":Lcom/android/gallery3d/app/ActivityState;
+    .end local v0           #as:Lcom/android/gallery3d/app/ActivityState;
     :cond_0
     :goto_0
     iget-object v3, p0, Lcom/android/gallery3d/app/StateManager;->mStack:Ljava/util/Stack;
@@ -1062,12 +1064,12 @@
     return-void
 
     .line 75
-    .end local v2    # "state":Lcom/android/gallery3d/app/ActivityState;
+    .end local v2           #state:Lcom/android/gallery3d/app/ActivityState;
     :catch_0
     move-exception v1
 
     .line 76
-    .local v1, "e":Ljava/lang/Exception;
+    .local v1, e:Ljava/lang/Exception;
     new-instance v3, Ljava/lang/AssertionError;
 
     invoke-direct {v3, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
@@ -1075,8 +1077,8 @@
     throw v3
 
     .line 87
-    .end local v1    # "e":Ljava/lang/Exception;
-    .restart local v2    # "state":Lcom/android/gallery3d/app/ActivityState;
+    .end local v1           #e:Ljava/lang/Exception;
+    .restart local v2       #state:Lcom/android/gallery3d/app/ActivityState;
     :cond_2
     iget-object v3, v2, Lcom/android/gallery3d/app/ActivityState;->mResult:Lcom/android/gallery3d/app/ActivityState$ResultEntry;
 
@@ -1087,8 +1089,9 @@
 
 .method public switchState(Lcom/android/gallery3d/app/ActivityState;Ljava/lang/Class;Landroid/os/Bundle;)V
     .locals 5
-    .param p1, "oldState"    # Lcom/android/gallery3d/app/ActivityState;
-    .param p3, "data"    # Landroid/os/Bundle;
+    .parameter "oldState"
+    .parameter
+    .parameter "data"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1104,7 +1107,7 @@
 
     .prologue
     .line 193
-    .local p2, "klass":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/android/gallery3d/app/ActivityState;>;"
+    .local p2, klass:Ljava/lang/Class;,"Ljava/lang/Class<+Lcom/android/gallery3d/app/ActivityState;>;"
     const-string v2, "StateManager"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1216,19 +1219,19 @@
     const/4 v1, 0x0
 
     .line 207
-    .local v1, "state":Lcom/android/gallery3d/app/ActivityState;
+    .local v1, state:Lcom/android/gallery3d/app/ActivityState;
     :try_start_0
     invoke-virtual {p2}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
     move-result-object v1
 
-    .end local v1    # "state":Lcom/android/gallery3d/app/ActivityState;
+    .end local v1           #state:Lcom/android/gallery3d/app/ActivityState;
     check-cast v1, Lcom/android/gallery3d/app/ActivityState;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 211
-    .restart local v1    # "state":Lcom/android/gallery3d/app/ActivityState;
+    .restart local v1       #state:Lcom/android/gallery3d/app/ActivityState;
     iget-object v2, p0, Lcom/android/gallery3d/app/StateManager;->mContext:Lcom/android/gallery3d/app/GalleryActivity;
 
     invoke-virtual {v1, v2, p3}, Lcom/android/gallery3d/app/ActivityState;->initialize(Lcom/android/gallery3d/app/GalleryActivity;Landroid/os/Bundle;)V
@@ -1259,12 +1262,12 @@
     return-void
 
     .line 208
-    .end local v1    # "state":Lcom/android/gallery3d/app/ActivityState;
+    .end local v1           #state:Lcom/android/gallery3d/app/ActivityState;
     :catch_0
     move-exception v0
 
     .line 209
-    .local v0, "e":Ljava/lang/Exception;
+    .local v0, e:Ljava/lang/Exception;
     new-instance v2, Ljava/lang/AssertionError;
 
     invoke-direct {v2, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V

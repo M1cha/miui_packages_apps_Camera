@@ -12,8 +12,8 @@
 # direct methods
 .method protected constructor <init>(II)V
     .locals 0
-    .param p1, "width"    # I
-    .param p2, "height"    # I
+    .parameter "width"
+    .parameter "height"
 
     .prologue
     .line 33
@@ -91,7 +91,7 @@
     new-array v3, v6, [B
 
     .line 135
-    .local v3, "row":[B
+    .local v3, row:[B
     new-instance v2, Ljava/lang/StringBuilder;
 
     iget v6, p0, Lcom/google/zxing/LuminanceSource;->height:I
@@ -105,10 +105,10 @@
     invoke-direct {v2, v6}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 136
-    .local v2, "result":Ljava/lang/StringBuilder;
+    .local v2, result:Ljava/lang/StringBuilder;
     const/4 v5, 0x0
 
-    .local v5, "y":I
+    .local v5, y:I
     :goto_0
     iget v6, p0, Lcom/google/zxing/LuminanceSource;->height:I
 
@@ -122,7 +122,7 @@
     .line 138
     const/4 v4, 0x0
 
-    .local v4, "x":I
+    .local v4, x:I
     :goto_1
     iget v6, p0, Lcom/google/zxing/LuminanceSource;->width:I
 
@@ -134,7 +134,7 @@
     and-int/lit16 v1, v6, 0xff
 
     .line 141
-    .local v1, "luminance":I
+    .local v1, luminance:I
     const/16 v6, 0x40
 
     if-ge v1, v6, :cond_0
@@ -143,7 +143,7 @@
     const/16 v0, 0x23
 
     .line 150
-    .local v0, "c":C
+    .local v0, c:C
     :goto_2
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
@@ -153,7 +153,7 @@
     goto :goto_1
 
     .line 143
-    .end local v0    # "c":C
+    .end local v0           #c:C
     :cond_0
     const/16 v6, 0x80
 
@@ -162,11 +162,11 @@
     .line 144
     const/16 v0, 0x2b
 
-    .restart local v0    # "c":C
+    .restart local v0       #c:C
     goto :goto_2
 
     .line 145
-    .end local v0    # "c":C
+    .end local v0           #c:C
     :cond_1
     const/16 v6, 0xc0
 
@@ -175,20 +175,20 @@
     .line 146
     const/16 v0, 0x2e
 
-    .restart local v0    # "c":C
+    .restart local v0       #c:C
     goto :goto_2
 
     .line 148
-    .end local v0    # "c":C
+    .end local v0           #c:C
     :cond_2
     const/16 v0, 0x20
 
-    .restart local v0    # "c":C
+    .restart local v0       #c:C
     goto :goto_2
 
     .line 152
-    .end local v0    # "c":C
-    .end local v1    # "luminance":I
+    .end local v0           #c:C
+    .end local v1           #luminance:I
     :cond_3
     const/16 v6, 0xa
 
@@ -200,7 +200,7 @@
     goto :goto_0
 
     .line 154
-    .end local v4    # "x":I
+    .end local v4           #x:I
     :cond_4
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

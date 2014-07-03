@@ -10,8 +10,8 @@
 # direct methods
 .method constructor <init>(Lcom/google/zxing/pdf417/decoder/BoundingBox;Z)V
     .locals 0
-    .param p1, "boundingBox"    # Lcom/google/zxing/pdf417/decoder/BoundingBox;
-    .param p2, "isLeft"    # Z
+    .parameter "boundingBox"
+    .parameter "isLeft"
 
     .prologue
     .line 30
@@ -26,8 +26,8 @@
 
 .method private removeIncorrectCodewords([Lcom/google/zxing/pdf417/decoder/Codeword;Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;)V
     .locals 7
-    .param p1, "codewords"    # [Lcom/google/zxing/pdf417/decoder/Codeword;
-    .param p2, "barcodeMetadata"    # Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;
+    .parameter "codewords"
+    .parameter "barcodeMetadata"
 
     .prologue
     const/4 v6, 0x0
@@ -35,7 +35,7 @@
     .line 220
     const/4 v1, 0x0
 
-    .local v1, "codewordRow":I
+    .local v1, codewordRow:I
     :goto_0
     array-length v4, p1
 
@@ -45,7 +45,7 @@
     aget-object v0, p1, v1
 
     .line 222
-    .local v0, "codeword":Lcom/google/zxing/pdf417/decoder/Codeword;
+    .local v0, codeword:Lcom/google/zxing/pdf417/decoder/Codeword;
     aget-object v4, p1, v1
 
     if-nez v4, :cond_1
@@ -66,13 +66,13 @@
     rem-int/lit8 v3, v4, 0x1e
 
     .line 226
-    .local v3, "rowIndicatorValue":I
+    .local v3, rowIndicatorValue:I
     invoke-virtual {v0}, Lcom/google/zxing/pdf417/decoder/Codeword;->getRowNumber()I
 
     move-result v2
 
     .line 227
-    .local v2, "codewordRowNumber":I
+    .local v2, codewordRowNumber:I
     invoke-virtual {p2}, Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;->getRowCount()I
 
     move-result v4
@@ -158,9 +158,9 @@
     goto :goto_1
 
     .line 253
-    .end local v0    # "codeword":Lcom/google/zxing/pdf417/decoder/Codeword;
-    .end local v2    # "codewordRowNumber":I
-    .end local v3    # "rowIndicatorValue":I
+    .end local v0           #codeword:Lcom/google/zxing/pdf417/decoder/Codeword;
+    .end local v2           #codewordRowNumber:I
+    .end local v3           #rowIndicatorValue:I
     :cond_5
     return-void
 
@@ -179,7 +179,7 @@
 # virtual methods
 .method adjustCompleteIndicatorColumnRowNumbers(Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;)I
     .locals 22
-    .param p1, "barcodeMetadata"    # Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;
+    .parameter "barcodeMetadata"
 
     .prologue
     .line 47
@@ -188,7 +188,7 @@
     move-result-object v9
 
     .line 48
-    .local v9, "codewords":[Lcom/google/zxing/pdf417/decoder/Codeword;
+    .local v9, codewords:[Lcom/google/zxing/pdf417/decoder/Codeword;
     invoke-virtual/range {p0 .. p0}, Lcom/google/zxing/pdf417/decoder/DetectionResultRowIndicatorColumn;->setRowNumbers()V
 
     .line 49
@@ -204,7 +204,7 @@
     move-result-object v5
 
     .line 51
-    .local v5, "boundingBox":Lcom/google/zxing/pdf417/decoder/BoundingBox;
+    .local v5, boundingBox:Lcom/google/zxing/pdf417/decoder/BoundingBox;
     move-object/from16 v0, p0
 
     iget-boolean v0, v0, Lcom/google/zxing/pdf417/decoder/DetectionResultRowIndicatorColumn;->isLeft:Z
@@ -218,7 +218,7 @@
     move-result-object v17
 
     .line 52
-    .local v17, "top":Lcom/google/zxing/ResultPoint;
+    .local v17, top:Lcom/google/zxing/ResultPoint;
     :goto_0
     move-object/from16 v0, p0
 
@@ -233,7 +233,7 @@
     move-result-object v4
 
     .line 53
-    .local v4, "bottom":Lcom/google/zxing/ResultPoint;
+    .local v4, bottom:Lcom/google/zxing/ResultPoint;
     :goto_1
     invoke-virtual/range {v17 .. v17}, Lcom/google/zxing/ResultPoint;->getY()F
 
@@ -254,7 +254,7 @@
     move-result v12
 
     .line 54
-    .local v12, "firstRow":I
+    .local v12, firstRow:I
     invoke-virtual {v4}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v18
@@ -274,7 +274,7 @@
     move-result v14
 
     .line 57
-    .local v14, "lastRow":I
+    .local v14, lastRow:I
     sub-int v18, v14, v12
 
     move/from16 v0, v18
@@ -296,22 +296,22 @@
     div-float v2, v18, v19
 
     .line 58
-    .local v2, "averageRowHeight":F
+    .local v2, averageRowHeight:F
     const/4 v3, -0x1
 
     .line 59
-    .local v3, "barcodeRow":I
+    .local v3, barcodeRow:I
     const/4 v15, 0x1
 
     .line 60
-    .local v15, "maxRowHeight":I
+    .local v15, maxRowHeight:I
     const/4 v11, 0x0
 
     .line 61
-    .local v11, "currentRowHeight":I
+    .local v11, currentRowHeight:I
     move v10, v12
 
-    .local v10, "codewordsRow":I
+    .local v10, codewordsRow:I
     :goto_2
     if-ge v10, v14, :cond_d
 
@@ -327,15 +327,15 @@
     goto :goto_2
 
     .line 51
-    .end local v2    # "averageRowHeight":F
-    .end local v3    # "barcodeRow":I
-    .end local v4    # "bottom":Lcom/google/zxing/ResultPoint;
-    .end local v10    # "codewordsRow":I
-    .end local v11    # "currentRowHeight":I
-    .end local v12    # "firstRow":I
-    .end local v14    # "lastRow":I
-    .end local v15    # "maxRowHeight":I
-    .end local v17    # "top":Lcom/google/zxing/ResultPoint;
+    .end local v2           #averageRowHeight:F
+    .end local v3           #barcodeRow:I
+    .end local v4           #bottom:Lcom/google/zxing/ResultPoint;
+    .end local v10           #codewordsRow:I
+    .end local v11           #currentRowHeight:I
+    .end local v12           #firstRow:I
+    .end local v14           #lastRow:I
+    .end local v15           #maxRowHeight:I
+    .end local v17           #top:Lcom/google/zxing/ResultPoint;
     :cond_0
     invoke-virtual {v5}, Lcom/google/zxing/pdf417/decoder/BoundingBox;->getTopRight()Lcom/google/zxing/ResultPoint;
 
@@ -344,7 +344,7 @@
     goto :goto_0
 
     .line 52
-    .restart local v17    # "top":Lcom/google/zxing/ResultPoint;
+    .restart local v17       #top:Lcom/google/zxing/ResultPoint;
     :cond_1
     invoke-virtual {v5}, Lcom/google/zxing/pdf417/decoder/BoundingBox;->getBottomRight()Lcom/google/zxing/ResultPoint;
 
@@ -353,19 +353,19 @@
     goto :goto_1
 
     .line 65
-    .restart local v2    # "averageRowHeight":F
-    .restart local v3    # "barcodeRow":I
-    .restart local v4    # "bottom":Lcom/google/zxing/ResultPoint;
-    .restart local v10    # "codewordsRow":I
-    .restart local v11    # "currentRowHeight":I
-    .restart local v12    # "firstRow":I
-    .restart local v14    # "lastRow":I
-    .restart local v15    # "maxRowHeight":I
+    .restart local v2       #averageRowHeight:F
+    .restart local v3       #barcodeRow:I
+    .restart local v4       #bottom:Lcom/google/zxing/ResultPoint;
+    .restart local v10       #codewordsRow:I
+    .restart local v11       #currentRowHeight:I
+    .restart local v12       #firstRow:I
+    .restart local v14       #lastRow:I
+    .restart local v15       #maxRowHeight:I
     :cond_2
     aget-object v8, v9, v10
 
     .line 75
-    .local v8, "codeword":Lcom/google/zxing/pdf417/decoder/Codeword;
+    .local v8, codeword:Lcom/google/zxing/pdf417/decoder/Codeword;
     invoke-virtual {v8}, Lcom/google/zxing/pdf417/decoder/Codeword;->getRowNumber()I
 
     move-result v18
@@ -373,7 +373,7 @@
     sub-int v16, v18, v3
 
     .line 79
-    .local v16, "rowDifference":I
+    .local v16, rowDifference:I
     if-nez v16, :cond_3
 
     .line 80
@@ -467,18 +467,18 @@
     mul-int v6, v18, v16
 
     .line 98
-    .local v6, "checkedRows":I
+    .local v6, checkedRows:I
     :goto_4
     if-lt v6, v10, :cond_9
 
     const/4 v7, 0x1
 
     .line 99
-    .local v7, "closePreviousCodewordFound":Z
+    .local v7, closePreviousCodewordFound:Z
     :goto_5
     const/4 v13, 0x1
 
-    .local v13, "i":I
+    .local v13, i:I
     :goto_6
     if-gt v13, v6, :cond_b
 
@@ -500,13 +500,13 @@
     goto :goto_6
 
     .line 96
-    .end local v6    # "checkedRows":I
-    .end local v7    # "closePreviousCodewordFound":Z
-    .end local v13    # "i":I
+    .end local v6           #checkedRows:I
+    .end local v7           #closePreviousCodewordFound:Z
+    .end local v13           #i:I
     :cond_8
     move/from16 v6, v16
 
-    .restart local v6    # "checkedRows":I
+    .restart local v6       #checkedRows:I
     goto :goto_4
 
     .line 98
@@ -516,8 +516,8 @@
     goto :goto_5
 
     .line 102
-    .restart local v7    # "closePreviousCodewordFound":Z
-    .restart local v13    # "i":I
+    .restart local v7       #closePreviousCodewordFound:Z
+    .restart local v13       #i:I
     :cond_a
     const/4 v7, 0x0
 
@@ -546,17 +546,17 @@
     goto :goto_3
 
     .line 112
-    .end local v6    # "checkedRows":I
-    .end local v7    # "closePreviousCodewordFound":Z
-    .end local v8    # "codeword":Lcom/google/zxing/pdf417/decoder/Codeword;
-    .end local v13    # "i":I
-    .end local v16    # "rowDifference":I
+    .end local v6           #checkedRows:I
+    .end local v7           #closePreviousCodewordFound:Z
+    .end local v8           #codeword:Lcom/google/zxing/pdf417/decoder/Codeword;
+    .end local v13           #i:I
+    .end local v16           #rowDifference:I
     :cond_d
     float-to-double v0, v2
 
     move-wide/from16 v18, v0
 
-    const-wide/high16 v20, 0x3fe0000000000000L
+    const-wide/high16 v20, 0x3fe0
 
     add-double v18, v18, v20
 
@@ -571,7 +571,7 @@
 
 .method adjustIncompleteIndicatorColumnRowNumbers(Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;)I
     .locals 18
-    .param p1, "barcodeMetadata"    # Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;
+    .parameter "barcodeMetadata"
 
     .prologue
     .line 134
@@ -580,7 +580,7 @@
     move-result-object v4
 
     .line 135
-    .local v4, "boundingBox":Lcom/google/zxing/pdf417/decoder/BoundingBox;
+    .local v4, boundingBox:Lcom/google/zxing/pdf417/decoder/BoundingBox;
     move-object/from16 v0, p0
 
     iget-boolean v14, v0, Lcom/google/zxing/pdf417/decoder/DetectionResultRowIndicatorColumn;->isLeft:Z
@@ -592,7 +592,7 @@
     move-result-object v13
 
     .line 136
-    .local v13, "top":Lcom/google/zxing/ResultPoint;
+    .local v13, top:Lcom/google/zxing/ResultPoint;
     :goto_0
     move-object/from16 v0, p0
 
@@ -605,7 +605,7 @@
     move-result-object v3
 
     .line 137
-    .local v3, "bottom":Lcom/google/zxing/ResultPoint;
+    .local v3, bottom:Lcom/google/zxing/ResultPoint;
     :goto_1
     invoke-virtual {v13}, Lcom/google/zxing/ResultPoint;->getY()F
 
@@ -620,7 +620,7 @@
     move-result v9
 
     .line 138
-    .local v9, "firstRow":I
+    .local v9, firstRow:I
     invoke-virtual {v3}, Lcom/google/zxing/ResultPoint;->getY()F
 
     move-result v14
@@ -634,7 +634,7 @@
     move-result v10
 
     .line 139
-    .local v10, "lastRow":I
+    .local v10, lastRow:I
     sub-int v14, v10, v9
 
     int-to-float v14, v14
@@ -648,28 +648,28 @@
     div-float v1, v14, v15
 
     .line 140
-    .local v1, "averageRowHeight":F
+    .local v1, averageRowHeight:F
     invoke-virtual/range {p0 .. p0}, Lcom/google/zxing/pdf417/decoder/DetectionResultRowIndicatorColumn;->getCodewords()[Lcom/google/zxing/pdf417/decoder/Codeword;
 
     move-result-object v6
 
     .line 141
-    .local v6, "codewords":[Lcom/google/zxing/pdf417/decoder/Codeword;
+    .local v6, codewords:[Lcom/google/zxing/pdf417/decoder/Codeword;
     const/4 v2, -0x1
 
     .line 142
-    .local v2, "barcodeRow":I
+    .local v2, barcodeRow:I
     const/4 v11, 0x1
 
     .line 143
-    .local v11, "maxRowHeight":I
+    .local v11, maxRowHeight:I
     const/4 v8, 0x0
 
     .line 144
-    .local v8, "currentRowHeight":I
+    .local v8, currentRowHeight:I
     move v7, v9
 
-    .local v7, "codewordsRow":I
+    .local v7, codewordsRow:I
     :goto_2
     if-ge v7, v10, :cond_6
 
@@ -685,16 +685,16 @@
     goto :goto_2
 
     .line 135
-    .end local v1    # "averageRowHeight":F
-    .end local v2    # "barcodeRow":I
-    .end local v3    # "bottom":Lcom/google/zxing/ResultPoint;
-    .end local v6    # "codewords":[Lcom/google/zxing/pdf417/decoder/Codeword;
-    .end local v7    # "codewordsRow":I
-    .end local v8    # "currentRowHeight":I
-    .end local v9    # "firstRow":I
-    .end local v10    # "lastRow":I
-    .end local v11    # "maxRowHeight":I
-    .end local v13    # "top":Lcom/google/zxing/ResultPoint;
+    .end local v1           #averageRowHeight:F
+    .end local v2           #barcodeRow:I
+    .end local v3           #bottom:Lcom/google/zxing/ResultPoint;
+    .end local v6           #codewords:[Lcom/google/zxing/pdf417/decoder/Codeword;
+    .end local v7           #codewordsRow:I
+    .end local v8           #currentRowHeight:I
+    .end local v9           #firstRow:I
+    .end local v10           #lastRow:I
+    .end local v11           #maxRowHeight:I
+    .end local v13           #top:Lcom/google/zxing/ResultPoint;
     :cond_0
     invoke-virtual {v4}, Lcom/google/zxing/pdf417/decoder/BoundingBox;->getTopRight()Lcom/google/zxing/ResultPoint;
 
@@ -703,7 +703,7 @@
     goto :goto_0
 
     .line 136
-    .restart local v13    # "top":Lcom/google/zxing/ResultPoint;
+    .restart local v13       #top:Lcom/google/zxing/ResultPoint;
     :cond_1
     invoke-virtual {v4}, Lcom/google/zxing/pdf417/decoder/BoundingBox;->getBottomRight()Lcom/google/zxing/ResultPoint;
 
@@ -712,20 +712,20 @@
     goto :goto_1
 
     .line 148
-    .restart local v1    # "averageRowHeight":F
-    .restart local v2    # "barcodeRow":I
-    .restart local v3    # "bottom":Lcom/google/zxing/ResultPoint;
-    .restart local v6    # "codewords":[Lcom/google/zxing/pdf417/decoder/Codeword;
-    .restart local v7    # "codewordsRow":I
-    .restart local v8    # "currentRowHeight":I
-    .restart local v9    # "firstRow":I
-    .restart local v10    # "lastRow":I
-    .restart local v11    # "maxRowHeight":I
+    .restart local v1       #averageRowHeight:F
+    .restart local v2       #barcodeRow:I
+    .restart local v3       #bottom:Lcom/google/zxing/ResultPoint;
+    .restart local v6       #codewords:[Lcom/google/zxing/pdf417/decoder/Codeword;
+    .restart local v7       #codewordsRow:I
+    .restart local v8       #currentRowHeight:I
+    .restart local v9       #firstRow:I
+    .restart local v10       #lastRow:I
+    .restart local v11       #maxRowHeight:I
     :cond_2
     aget-object v5, v6, v7
 
     .line 150
-    .local v5, "codeword":Lcom/google/zxing/pdf417/decoder/Codeword;
+    .local v5, codeword:Lcom/google/zxing/pdf417/decoder/Codeword;
     invoke-virtual {v5}, Lcom/google/zxing/pdf417/decoder/Codeword;->setRowNumberAsRowIndicatorColumn()V
 
     .line 152
@@ -736,7 +736,7 @@
     sub-int v12, v14, v2
 
     .line 156
-    .local v12, "rowDifference":I
+    .local v12, rowDifference:I
     if-nez v12, :cond_3
 
     .line 157
@@ -796,12 +796,12 @@
     goto :goto_3
 
     .line 169
-    .end local v5    # "codeword":Lcom/google/zxing/pdf417/decoder/Codeword;
-    .end local v12    # "rowDifference":I
+    .end local v5           #codeword:Lcom/google/zxing/pdf417/decoder/Codeword;
+    .end local v12           #rowDifference:I
     :cond_6
     float-to-double v14, v1
 
-    const-wide/high16 v16, 0x3fe0000000000000L
+    const-wide/high16 v16, 0x3fe0
 
     add-double v14, v14, v16
 
@@ -820,47 +820,47 @@
     move-result-object v9
 
     .line 174
-    .local v9, "codewords":[Lcom/google/zxing/pdf417/decoder/Codeword;
+    .local v9, codewords:[Lcom/google/zxing/pdf417/decoder/Codeword;
     new-instance v2, Lcom/google/zxing/pdf417/decoder/BarcodeValue;
 
     invoke-direct {v2}, Lcom/google/zxing/pdf417/decoder/BarcodeValue;-><init>()V
 
     .line 175
-    .local v2, "barcodeColumnCount":Lcom/google/zxing/pdf417/decoder/BarcodeValue;
+    .local v2, barcodeColumnCount:Lcom/google/zxing/pdf417/decoder/BarcodeValue;
     new-instance v6, Lcom/google/zxing/pdf417/decoder/BarcodeValue;
 
     invoke-direct {v6}, Lcom/google/zxing/pdf417/decoder/BarcodeValue;-><init>()V
 
     .line 176
-    .local v6, "barcodeRowCountUpperPart":Lcom/google/zxing/pdf417/decoder/BarcodeValue;
+    .local v6, barcodeRowCountUpperPart:Lcom/google/zxing/pdf417/decoder/BarcodeValue;
     new-instance v5, Lcom/google/zxing/pdf417/decoder/BarcodeValue;
 
     invoke-direct {v5}, Lcom/google/zxing/pdf417/decoder/BarcodeValue;-><init>()V
 
     .line 177
-    .local v5, "barcodeRowCountLowerPart":Lcom/google/zxing/pdf417/decoder/BarcodeValue;
+    .local v5, barcodeRowCountLowerPart:Lcom/google/zxing/pdf417/decoder/BarcodeValue;
     new-instance v3, Lcom/google/zxing/pdf417/decoder/BarcodeValue;
 
     invoke-direct {v3}, Lcom/google/zxing/pdf417/decoder/BarcodeValue;-><init>()V
 
     .line 178
-    .local v3, "barcodeECLevel":Lcom/google/zxing/pdf417/decoder/BarcodeValue;
+    .local v3, barcodeECLevel:Lcom/google/zxing/pdf417/decoder/BarcodeValue;
     move-object v1, v9
 
-    .local v1, "arr$":[Lcom/google/zxing/pdf417/decoder/Codeword;
+    .local v1, arr$:[Lcom/google/zxing/pdf417/decoder/Codeword;
     array-length v11, v1
 
-    .local v11, "len$":I
+    .local v11, len$:I
     const/4 v10, 0x0
 
-    .local v10, "i$":I
+    .local v10, i$:I
     :goto_0
     if-ge v10, v11, :cond_2
 
     aget-object v7, v1, v10
 
     .line 179
-    .local v7, "codeword":Lcom/google/zxing/pdf417/decoder/Codeword;
+    .local v7, codeword:Lcom/google/zxing/pdf417/decoder/Codeword;
     if-nez v7, :cond_0
 
     .line 178
@@ -881,13 +881,13 @@
     rem-int/lit8 v12, v13, 0x1e
 
     .line 184
-    .local v12, "rowIndicatorValue":I
+    .local v12, rowIndicatorValue:I
     invoke-virtual {v7}, Lcom/google/zxing/pdf417/decoder/Codeword;->getRowNumber()I
 
     move-result v8
 
     .line 185
-    .local v8, "codewordRowNumber":I
+    .local v8, codewordRowNumber:I
     move-object/from16 v0, p0
 
     iget-boolean v13, v0, Lcom/google/zxing/pdf417/decoder/DetectionResultRowIndicatorColumn;->isLeft:Z
@@ -937,9 +937,9 @@
     goto :goto_1
 
     .line 202
-    .end local v7    # "codeword":Lcom/google/zxing/pdf417/decoder/Codeword;
-    .end local v8    # "codewordRowNumber":I
-    .end local v12    # "rowIndicatorValue":I
+    .end local v7           #codeword:Lcom/google/zxing/pdf417/decoder/Codeword;
+    .end local v8           #codewordRowNumber:I
+    .end local v12           #rowIndicatorValue:I
     :cond_2
     invoke-virtual {v2}, Lcom/google/zxing/pdf417/decoder/BarcodeValue;->getValue()[I
 
@@ -1078,7 +1078,7 @@
     invoke-direct {v4, v13, v14, v15, v0}, Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;-><init>(IIII)V
 
     .line 213
-    .local v4, "barcodeMetadata":Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;
+    .local v4, barcodeMetadata:Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;
     move-object/from16 v0, p0
 
     invoke-direct {v0, v9, v4}, Lcom/google/zxing/pdf417/decoder/DetectionResultRowIndicatorColumn;->removeIncorrectCodewords([Lcom/google/zxing/pdf417/decoder/Codeword;Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;)V
@@ -1104,7 +1104,7 @@
     move-result-object v1
 
     .line 117
-    .local v1, "barcodeMetadata":Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;
+    .local v1, barcodeMetadata:Lcom/google/zxing/pdf417/decoder/BarcodeMetadata;
     if-nez v1, :cond_1
 
     .line 118
@@ -1126,25 +1126,25 @@
     new-array v5, v6, [I
 
     .line 122
-    .local v5, "result":[I
+    .local v5, result:[I
     invoke-virtual {p0}, Lcom/google/zxing/pdf417/decoder/DetectionResultRowIndicatorColumn;->getCodewords()[Lcom/google/zxing/pdf417/decoder/Codeword;
 
     move-result-object v0
 
-    .local v0, "arr$":[Lcom/google/zxing/pdf417/decoder/Codeword;
+    .local v0, arr$:[Lcom/google/zxing/pdf417/decoder/Codeword;
     array-length v4, v0
 
-    .local v4, "len$":I
+    .local v4, len$:I
     const/4 v3, 0x0
 
-    .local v3, "i$":I
+    .local v3, i$:I
     :goto_0
     if-ge v3, v4, :cond_0
 
     aget-object v2, v0, v3
 
     .line 123
-    .local v2, "codeword":Lcom/google/zxing/pdf417/decoder/Codeword;
+    .local v2, codeword:Lcom/google/zxing/pdf417/decoder/Codeword;
     if-eqz v2, :cond_2
 
     .line 124
@@ -1184,20 +1184,20 @@
 
     move-result-object v0
 
-    .local v0, "arr$":[Lcom/google/zxing/pdf417/decoder/Codeword;
+    .local v0, arr$:[Lcom/google/zxing/pdf417/decoder/Codeword;
     array-length v3, v0
 
-    .local v3, "len$":I
+    .local v3, len$:I
     const/4 v2, 0x0
 
-    .local v2, "i$":I
+    .local v2, i$:I
     :goto_0
     if-ge v2, v3, :cond_1
 
     aget-object v1, v0, v2
 
     .line 36
-    .local v1, "codeword":Lcom/google/zxing/pdf417/decoder/Codeword;
+    .local v1, codeword:Lcom/google/zxing/pdf417/decoder/Codeword;
     if-eqz v1, :cond_0
 
     .line 37
@@ -1210,7 +1210,7 @@
     goto :goto_0
 
     .line 40
-    .end local v1    # "codeword":Lcom/google/zxing/pdf417/decoder/Codeword;
+    .end local v1           #codeword:Lcom/google/zxing/pdf417/decoder/Codeword;
     :cond_1
     return-void
 .end method

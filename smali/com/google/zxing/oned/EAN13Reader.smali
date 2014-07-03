@@ -28,17 +28,17 @@
     return-void
 
     :array_0
-    .array-data 4
-        0x0
-        0xb
-        0xd
-        0xe
-        0x13
-        0x19
-        0x1c
-        0x15
-        0x16
-        0x1a
+    .array-data 0x4
+        0x0t 0x0t 0x0t 0x0t
+        0xbt 0x0t 0x0t 0x0t
+        0xdt 0x0t 0x0t 0x0t
+        0xet 0x0t 0x0t 0x0t
+        0x13t 0x0t 0x0t 0x0t
+        0x19t 0x0t 0x0t 0x0t
+        0x1ct 0x0t 0x0t 0x0t
+        0x15t 0x0t 0x0t 0x0t
+        0x16t 0x0t 0x0t 0x0t
+        0x1at 0x0t 0x0t 0x0t
     .end array-data
 .end method
 
@@ -62,8 +62,8 @@
 
 .method private static determineFirstDigit(Ljava/lang/StringBuilder;I)V
     .locals 3
-    .param p0, "resultString"    # Ljava/lang/StringBuilder;
-    .param p1, "lgPatternFound"    # I
+    .parameter "resultString"
+    .parameter "lgPatternFound"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -74,7 +74,7 @@
     .line 129
     const/4 v0, 0x0
 
-    .local v0, "d":I
+    .local v0, d:I
     :goto_0
     const/16 v1, 0xa
 
@@ -118,9 +118,9 @@
 # virtual methods
 .method protected decodeMiddle(Lcom/google/zxing/common/BitArray;[ILjava/lang/StringBuilder;)I
     .locals 14
-    .param p1, "row"    # Lcom/google/zxing/common/BitArray;
-    .param p2, "startRange"    # [I
-    .param p3, "resultString"    # Ljava/lang/StringBuilder;
+    .parameter "row"
+    .parameter "startRange"
+    .parameter "resultString"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lcom/google/zxing/NotFoundException;
@@ -132,7 +132,7 @@
     iget-object v4, p0, Lcom/google/zxing/oned/EAN13Reader;->decodeMiddleCounters:[I
 
     .line 76
-    .local v4, "counters":[I
+    .local v4, counters:[I
     const/4 v12, 0x0
 
     const/4 v13, 0x0
@@ -166,20 +166,20 @@
     move-result v5
 
     .line 81
-    .local v5, "end":I
+    .local v5, end:I
     const/4 v12, 0x1
 
     aget v10, p2, v12
 
     .line 83
-    .local v10, "rowOffset":I
+    .local v10, rowOffset:I
     const/4 v8, 0x0
 
     .line 85
-    .local v8, "lgPatternFound":I
+    .local v8, lgPatternFound:I
     const/4 v11, 0x0
 
-    .local v11, "x":I
+    .local v11, x:I
     :goto_0
     const/4 v12, 0x6
 
@@ -195,7 +195,7 @@
     move-result v2
 
     .line 87
-    .local v2, "bestMatch":I
+    .local v2, bestMatch:I
     rem-int/lit8 v12, v2, 0xa
 
     add-int/lit8 v12, v12, 0x30
@@ -209,20 +209,20 @@
     .line 88
     move-object v1, v4
 
-    .local v1, "arr$":[I
+    .local v1, arr$:[I
     array-length v7, v1
 
-    .local v7, "len$":I
+    .local v7, len$:I
     const/4 v6, 0x0
 
-    .local v6, "i$":I
+    .local v6, i$:I
     :goto_1
     if-ge v6, v7, :cond_0
 
     aget v3, v1, v6
 
     .line 89
-    .local v3, "counter":I
+    .local v3, counter:I
     add-int/2addr v10, v3
 
     .line 88
@@ -231,7 +231,7 @@
     goto :goto_1
 
     .line 91
-    .end local v3    # "counter":I
+    .end local v3           #counter:I
     :cond_0
     const/16 v12, 0xa
 
@@ -253,10 +253,10 @@
     goto :goto_0
 
     .line 96
-    .end local v1    # "arr$":[I
-    .end local v2    # "bestMatch":I
-    .end local v6    # "i$":I
-    .end local v7    # "len$":I
+    .end local v1           #arr$:[I
+    .end local v2           #bestMatch:I
+    .end local v6           #i$:I
+    .end local v7           #len$:I
     :cond_2
     move-object/from16 v0, p3
 
@@ -272,7 +272,7 @@
     move-result-object v9
 
     .line 99
-    .local v9, "middleRange":[I
+    .local v9, middleRange:[I
     const/4 v12, 0x1
 
     aget v10, v9, v12
@@ -295,7 +295,7 @@
     move-result v2
 
     .line 103
-    .restart local v2    # "bestMatch":I
+    .restart local v2       #bestMatch:I
     add-int/lit8 v12, v2, 0x30
 
     int-to-char v12, v12
@@ -307,20 +307,20 @@
     .line 104
     move-object v1, v4
 
-    .restart local v1    # "arr$":[I
+    .restart local v1       #arr$:[I
     array-length v7, v1
 
-    .restart local v7    # "len$":I
+    .restart local v7       #len$:I
     const/4 v6, 0x0
 
-    .restart local v6    # "i$":I
+    .restart local v6       #i$:I
     :goto_3
     if-ge v6, v7, :cond_3
 
     aget v3, v1, v6
 
     .line 105
-    .restart local v3    # "counter":I
+    .restart local v3       #counter:I
     add-int/2addr v10, v3
 
     .line 104
@@ -329,17 +329,17 @@
     goto :goto_3
 
     .line 101
-    .end local v3    # "counter":I
+    .end local v3           #counter:I
     :cond_3
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_2
 
     .line 109
-    .end local v1    # "arr$":[I
-    .end local v2    # "bestMatch":I
-    .end local v6    # "i$":I
-    .end local v7    # "len$":I
+    .end local v1           #arr$:[I
+    .end local v2           #bestMatch:I
+    .end local v6           #i$:I
+    .end local v7           #len$:I
     :cond_4
     return v10
 .end method

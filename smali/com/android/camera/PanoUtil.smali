@@ -16,8 +16,8 @@
 
 .method public static createName(Ljava/lang/String;J)Ljava/lang/String;
     .locals 3
-    .param p0, "format"    # Ljava/lang/String;
-    .param p1, "dateTaken"    # J
+    .parameter "format"
+    .parameter "dateTaken"
 
     .prologue
     .line 24
@@ -26,13 +26,13 @@
     invoke-direct {v0, p1, p2}, Ljava/util/Date;-><init>(J)V
 
     .line 25
-    .local v0, "date":Ljava/util/Date;
+    .local v0, date:Ljava/util/Date;
     new-instance v1, Ljava/text/SimpleDateFormat;
 
     invoke-direct {v1, p0}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
 
     .line 26
-    .local v1, "dateFormat":Ljava/text/SimpleDateFormat;
+    .local v1, dateFormat:Ljava/text/SimpleDateFormat;
     invoke-virtual {v1, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v2
