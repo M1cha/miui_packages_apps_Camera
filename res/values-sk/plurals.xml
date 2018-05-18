@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_focus_face_detect">
+        <item quantity="other">Zaostrené. Nájdených %d tvárí.</item>
+        <item quantity="one">Zaostrené. Nájdená %d tvár.</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">Vymazať zvolené položky?</item>
+        <item quantity="one">Vymazať zvolenú položku?</item>
+    </plurals>
+</resources>

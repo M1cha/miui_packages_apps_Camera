@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_focus_face_detect">
+        <item quantity="other">%d명 감지됨</item>
+    </plurals>
+    <plurals name="delete_selection">
+        <item quantity="other">선택하신 항목을 삭제하시겠습니까?</item>
+    </plurals>
+    <plurals name="accessibility_desc_weather_temperature">
+        <item quantity="other">%d도</item>
+    </plurals>
+    <plurals name="notification_group_child_count">
+        <item quantity="other">%1$d개의 알림</item>
+    </plurals>
+    <plurals name="notification_group_overflow_description">
+        <item quantity="other">%s개의 추가 알림이 있습니다.</item>
+    </plurals>
+</resources>

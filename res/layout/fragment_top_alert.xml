@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="@dimen/top_alert_layout_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_gravity="center_horizontal" android:id="@id/alert_recording_time_view" android:layout_width="wrap_content" android:layout_height="@dimen/top_control_panel_height" style="@style/RecordingTimeStyle" />
+    <ImageView android:layout_gravity="center_horizontal" android:id="@id/alert_image" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="@null" />
+    <TextView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/alert_status_value" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/SettingStatusBarText" />
+</FrameLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_focus_face_detect">
+        <item quantity="other">"Enfocat. S'ha detectat %d cares"</item>
+        <item quantity="one">"Enfocat. S'ha detectat %d cara"</item>
+    </plurals>
+</resources>
