@@ -23,12 +23,6 @@
     <uses-permission android:name="com.android.SystemUI.permission.TIGGER_TOGGLE"/>
     <application android:allowBackup="true" android:backupAgent="miui.app.backup.FullBackupAgent" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher_camera" android:label="@string/camera_label" android:name="com.android.camera.CameraAppImpl" android:supportsRtl="true" android:theme="@style/ThemeCamera">
         <meta-data android:name="android.max_aspect" android:value="2.2"/>
-        <uses-library android:name="zxing.jar" android:required="false"/>
-        <uses-library android:name="miui-stat.jar"/>
-        <uses-library android:name="android-support-v13.jar"/>
-        <uses-library android:name="android-support-v7-recyclerview.jar"/>
-        <uses-library android:name="cloud-common.jar"/>
-        <uses-library android:name="volley.jar"/>
         <service android:exported="false" android:name=".snap.SnapService"/>
         <receiver android:name=".snap.SnapKeyReceiver">
             <intent-filter>
