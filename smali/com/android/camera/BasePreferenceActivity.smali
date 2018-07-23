@@ -1,5 +1,5 @@
 .class public abstract Lcom/android/camera/BasePreferenceActivity;
-.super Lmiui/preference/PreferenceActivity;
+.super Landroid/preference/PreferenceActivity;
 .source "BasePreferenceActivity.java"
 
 # interfaces
@@ -89,7 +89,7 @@
 .method public constructor <init>()V
     .locals 1
 
-    invoke-direct {p0}, Lmiui/preference/PreferenceActivity;-><init>()V
+    invoke-direct {p0}, Landroid/preference/PreferenceActivity;-><init>()V
 
     new-instance v0, Lcom/android/camera/BasePreferenceActivity$1;
 
@@ -2029,7 +2029,7 @@
 
     invoke-direct {p0}, Lcom/android/camera/BasePreferenceActivity;->resetTimeOutFlag()V
 
-    invoke-super {p0}, Lmiui/preference/PreferenceActivity;->onBackPressed()V
+    invoke-super {p0}, Landroid/preference/PreferenceActivity;->onBackPressed()V
 
     return-void
 .end method
@@ -2039,7 +2039,7 @@
 
     const/4 v2, 0x0
 
-    invoke-super {p0, p1}, Lmiui/preference/PreferenceActivity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onCreate(Landroid/os/Bundle;)V
 
     invoke-static {p0}, Lcom/android/camera/Util;->updateCountryIso(Landroid/content/Context;)V
 
@@ -2111,7 +2111,7 @@
     return v0
 
     :cond_0
-    invoke-super {p0, p1}, Lmiui/preference/PreferenceActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+    invoke-super {p0, p1}, Landroid/preference/PreferenceActivity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
 
     move-result v0
 
@@ -2473,7 +2473,7 @@
 .method protected onRestart()V
     .locals 0
 
-    invoke-super {p0}, Lmiui/preference/PreferenceActivity;->onRestart()V
+    invoke-super {p0}, Landroid/preference/PreferenceActivity;->onRestart()V
 
     invoke-virtual {p0}, Lcom/android/camera/BasePreferenceActivity;->finish()V
 
@@ -2483,7 +2483,7 @@
 .method protected onResume()V
     .locals 1
 
-    invoke-super {p0}, Lmiui/preference/PreferenceActivity;->onResume()V
+    invoke-super {p0}, Landroid/preference/PreferenceActivity;->onResume()V
 
     invoke-direct {p0}, Lcom/android/camera/BasePreferenceActivity;->updateQRCodeEntry()V
 
