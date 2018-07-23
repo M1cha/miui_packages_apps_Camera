@@ -229,6 +229,7 @@
     <dimen name="screen_on_proximity_sensor_hint_height">582.0dip</dimen>
     <dimen name="focus_big_radius">34.659973dip</dimen>
     <dimen name="focus_center_base_radius">6.0dip</dimen>
+    <dimen name="preference_item_padding_inner">8.0dip</dimen>
     <item type="dimen" name="dualcamera_watermark_size_ratio">57.29443</item>
     <item type="dimen" name="dualcamera_watermark_padding_x_ratio">46.551723</item>
     <item type="dimen" name="dualcamera_watermark_padding_y_ratio">46.551723</item>
