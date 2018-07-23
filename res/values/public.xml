@@ -452,6 +452,9 @@
     <public type="drawable" name="video_effect_image_holiday" id="0x7f0201ad" />
     <public type="drawable" name="video_effect_image_none" id="0x7f0201ae" />
     <public type="drawable" name="video_effect_image_polaroid" id="0x7f0201af" />
+    <public type="drawable" name="arrow_right_disable" id="0x7f0201ce" />
+    <public type="drawable" name="arrow_right_normal" id="0x7f0201cf" />
+    <public type="drawable" name="arrow_right_pressed" id="0x7f0201d0" />
     <public type="mipmap" name="ic_launcher_camera" id="0x7f030000" />
     <public type="layout" name="beauty_level_item" id="0x7f040000" />
     <public type="layout" name="bottom_control_lower_panel" id="0x7f040001" />
@@ -822,6 +825,7 @@
     <public type="dimen" name="dualcamera_watermark_padding_y_ratio" id="0x7f0900e7" />
     <public type="dimen" name="newstyle_time_watermark_padding_x_ratio" id="0x7f0900e8" />
     <public type="dimen" name="newstyle_time_watermark_padding_y_ratio" id="0x7f0900e9" />
+    <public type="dimen" name="preference_item_padding_inner" id="0x7f0900ea" />
     <public type="id" name="item_touch_helper_previous_elevation" id="0x7f0a0000" />
     <public type="id" name="restore_default" id="0x7f0a0001" />
     <public type="id" name="other_setting_indicator" id="0x7f0a0002" />
