@@ -157,13 +157,13 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {p0}, Lcom/android/camera/CameraPreferenceActivity;->getActionBar()Lmiui/app/ActionBar;
+    invoke-virtual {p0}, Lcom/android/camera/CameraPreferenceActivity;->getActionBar()Landroid/app/ActionBar;
 
     move-result-object v0
 
     const v1, 0x7f0f003c
 
-    invoke-virtual {v0, v1}, Lmiui/app/ActionBar;->setTitle(I)V
+    invoke-virtual {v0, v1}, Landroid/app/ActionBar;->setTitle(I)V
 
     :cond_0
     invoke-virtual {p0}, Lcom/android/camera/CameraPreferenceActivity;->changeRequestOrientation()V
