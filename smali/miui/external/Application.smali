@@ -369,22 +369,22 @@
 
     invoke-super {p0, p1}, Landroid/app/Application;->attachBaseContext(Landroid/content/Context;)V
 
-    iget-boolean v0, p0, Lmiui/external/Application;->h:Z
+    #iget-boolean v0, p0, Lmiui/external/Application;->h:Z
 
-    if-nez v0, :cond_0
+    #if-nez v0, :cond_0
 
-    return-void
+    #return-void
 
-    :cond_0
-    invoke-direct {p0}, Lmiui/external/Application;->h()Z
+    #:cond_0
+    #invoke-direct {p0}, Lmiui/external/Application;->h()Z
 
-    move-result v0
+    #move-result v0
 
-    if-nez v0, :cond_1
+    #if-nez v0, :cond_1
 
-    return-void
+    #return-void
 
-    :cond_1
+    #:cond_1
     invoke-virtual {p0}, Lmiui/external/Application;->onCreateApplicationDelegate()Lmiui/external/ApplicationDelegate;
 
     move-result-object v0
